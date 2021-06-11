@@ -2,7 +2,7 @@
 module.exports = {
   title: 'S-Money',
   tagline: 'Baseline',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
