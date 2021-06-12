@@ -1,4 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+const path = require('path');
+
 module.exports = {
   title: 'S-Money',
   tagline: 'Baseline',
@@ -75,6 +77,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   },
+  plugins: [path.resolve(__dirname, './plugins/swaggerui')], // loader required for .svg
   presets: [
     [
       '@docusaurus/preset-classic',
