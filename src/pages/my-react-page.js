@@ -3,6 +3,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Layout from '@theme/Layout';
 import localAPI from '@site/static/swagger2.json';
 import SwaggerUI from 'swagger-ui'
+import TestCpt from '../components/Test';
 import "swagger-ui/dist/swagger-ui.css"
 
 const MyReactPage = () => {
@@ -33,8 +34,10 @@ const MyReactPage = () => {
     return (
         <Layout>
             <div>
+                {/* <TestCpt/> */}
                 displaySwagger: {displaySwagger ? <div>swagger on</div> : <div>swagger off</div>}
                 <div ref={swaggerNode}></div>
+                <TestCpt/>
             </div>
         </Layout>
          );

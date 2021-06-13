@@ -1,5 +1,7 @@
+import React from 'react';
+
 const Test = () => {
-    return ( <span>test component</span> );
+    return ( <div>test component</div> );
 }
  
 export default Test
