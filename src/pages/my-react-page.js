@@ -5,6 +5,7 @@ import localAPI from '@site/static/swagger2.json';
 import SwaggerUI from 'swagger-ui'
 import "swagger-ui/dist/swagger-ui.css"
 import Screenshot from '@theme/Screenshot';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 const MyReactPage = () => {
 
@@ -19,14 +20,16 @@ const MyReactPage = () => {
     useEffect(()=>{
         
             console.log('swaggerNode ', swaggerNode.current);
-            
+            setTimeout(() => {
+                
+                SwaggerUI({
+    //   dom_id: '#testSwagger',
+      domNode: swaggerNode.current,
+      spec: localAPI
+    // url: 'https://petstore.swagger.io/v2/swagger.json'
+    })
+            }, 1000);
             console.log(SwaggerUI);
-            SwaggerUI({
-//   dom_id: '#testSwagger',
-  domNode: swaggerNode.current,
-  spec: localAPI
-// url: 'https://petstore.swagger.io/v2/swagger.json'
-})
 
             setDisplaySwagger(()=> true)
         
@@ -36,6 +39,12 @@ const MyReactPage = () => {
             <div>
                 <Screenshot/>
                 displaySwagger: {displaySwagger ? <div>swagger on</div> : <div>swagger off</div>}
+                 <BrowserOnly
+      fallback={<div>The fallback content to display on prerendering</div>}>
+      {() => {
+        <div ref={swaggerNode}></div>
+      }}
+    </BrowserOnly>
                 <div ref={swaggerNode}></div>
                 
             </div>
