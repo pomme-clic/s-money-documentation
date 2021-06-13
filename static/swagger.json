@@ -1,0 +1,59 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Sample API",
+    "description" : "Description of the sample API",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://api.example.com/v1"
+  } ],
+  "paths" : {
+    "/users/{userId}" : {
+      "get" : {
+        "summary" : "Returns a user by ID",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "The ID of the user to return",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "The specified user ID is invalid (e.g. not a number)"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

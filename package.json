@@ -27,6 +27,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "stream-browserify": "^3.0.0",
+    "swagger-ui": "^3.50.0",
     "swagger-ui-react": "^3.50.0",
     "url-loader": "^4.1.1",
     "util": "^0.12.4"
