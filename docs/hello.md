@@ -24,9 +24,9 @@ import Test from '../src/components/Test.js'
 
 <Test />
 
-import Screenshot from "@theme/Screenshot"
+import SwaggerUI from "@theme/SwaggerUI"
 
-<Screenshot />
+<SwaggerUI />
 
 yo ?
 
