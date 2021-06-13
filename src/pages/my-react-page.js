@@ -3,8 +3,8 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Layout from '@theme/Layout';
 import localAPI from '@site/static/swagger2.json';
 import SwaggerUI from 'swagger-ui'
-import TestCpt from '../components/Test';
 import "swagger-ui/dist/swagger-ui.css"
+import Screenshot from '@theme/Screenshot';
 
 const MyReactPage = () => {
 
@@ -17,7 +17,7 @@ const MyReactPage = () => {
     const location = ExecutionEnvironment.canUseDOM ? window.location.href : null;
 
     useEffect(()=>{
-        setTimeout(() => {
+        
             console.log('swaggerNode ', swaggerNode.current);
             
             console.log(SwaggerUI);
@@ -29,15 +29,15 @@ const MyReactPage = () => {
 })
 
             setDisplaySwagger(()=> true)
-        }, 3000);
+        
     }, [])
     return (
         <Layout>
             <div>
-                {/* <TestCpt/> */}
+                <Screenshot/>
                 displaySwagger: {displaySwagger ? <div>swagger on</div> : <div>swagger off</div>}
                 <div ref={swaggerNode}></div>
-                <TestCpt/>
+                
             </div>
         </Layout>
          );

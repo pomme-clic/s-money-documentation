@@ -24,6 +24,10 @@ import Test from '../src/components/Test.js'
 
 <Test />
 
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot />
+
 yo ?
 
 import Tabs from '@theme/Tabs';
