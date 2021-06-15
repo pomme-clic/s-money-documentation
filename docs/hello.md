@@ -1,10 +1,9 @@
 ---
 sidebar_label: Hello edited2
-id: my-doc-id
 title: Hello
-description: My document description
-slug: /yoyo
+description: Hello description
 ---
+
 # Hello edited
 
 This is my **first Docusaurus document**!
