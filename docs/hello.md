@@ -1,5 +1,5 @@
 ---
-sidebar_label: Hello
+sidebar_label: Hello edited
 id: my-doc-id
 title: Hello
 description: My document description
