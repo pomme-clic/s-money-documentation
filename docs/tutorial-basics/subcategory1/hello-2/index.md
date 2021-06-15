@@ -8,10 +8,6 @@ description: Hello 2 description
 
 This is my **first Docusaurus document**!
 
-[go to intro](./intro)
-
-[go to test page](/test)
-
 ![image name](/img/docusaurus.png)
 
 ```jsx
