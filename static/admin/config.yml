@@ -4,3 +4,13 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
+collections:
+  - name: "docs" # Used in routes, e.g., /admin/collections/blog
+    label: "Docs" # Used in the UI
+    folder: "docs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

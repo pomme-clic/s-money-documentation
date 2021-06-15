@@ -77,6 +77,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   },
+  plugins: [path.resolve(__dirname, './plugins/customDocument')],
   presets: [
     [
       '@docusaurus/preset-classic',
