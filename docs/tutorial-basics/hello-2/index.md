@@ -1,7 +1,8 @@
 ---
-sidebar_label: Hello 2
 title: Hello 2
+# SEO Description
 description: Hello 2 description
+sidebar_label: Hello 2
 ---
 
 # Hello edited
