@@ -29,10 +29,7 @@ module.exports = {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
-        },
-        {
-          type: 'docsVersionDropdown',
-        },
+        }
       ],
     },
     footer: {
