@@ -1,12 +1,11 @@
 ---
-sidebar_label: "Hello"
+sidebar_label: Hello
 id: my-doc-id
 title: Hello
 description: My document description
 slug: /yoyo
 ---
-
-# Hello
+# Hello edited
 
 This is my **first Docusaurus document**!
 
@@ -16,7 +15,7 @@ This is my **first Docusaurus document**!
 
 ![image name](/img/docusaurus.png)
 
-```jsx title="test"
+```jsx
 console.log('test)
 ```
 
@@ -35,7 +34,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="apple"
-values={[
+values={\[
 {label: 'Apple', value: 'apple'},
 {label: 'Orange', value: 'orange'},
 {label: 'Banana', value: 'banana'},
