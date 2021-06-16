@@ -1,18 +1,13 @@
 ---
-sidebar_label: Hello edited4
-title: Hello
+title: Hello 2
 # SEO Description
-description: description stuff fsdf sdf
-sidebar_label: Hello edited2
+description: Hello 2 description
+sidebar_label: Hello 2
 ---
 
 # Hello edited
 
 This is my **first Docusaurus document**!
-
-[go to intro](./intro)
-
-[go to test page](/test)
 
 ![image name](/img/docusaurus.png)
 
