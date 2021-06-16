@@ -22,7 +22,6 @@ collections:
       - label: "Description"
         name: "description"
         widget: "string"
-        comment: "SEO Description"
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
     meta: { path: { widget: string, label: "Path", index_file: "index" } }
