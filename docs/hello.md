@@ -3,7 +3,6 @@ sidebar_label: Hello edited4
 title: Hello
 # SEO Description
 description: description stuff fsdf sdf
-sidebar_label: Hello edited2
 ---
 
 # Hello edited
