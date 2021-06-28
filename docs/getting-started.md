@@ -13,7 +13,9 @@ This is my **first Docusaurus document**!
 ![image name](/img/docusaurus.png)
 
 ```jsx
-console.log('test)
+function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
 ```
 
 ## Level 2 title
@@ -26,8 +28,6 @@ sdfsdf
 
 sdfsdf
 
-### Level 3 title
-
-sdfsdf
+### Level title
 
 ## Level 2 title

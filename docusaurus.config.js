@@ -13,17 +13,17 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My custom title',
+      title: 'API doc',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'S-Money API',
+        src: 'img/logo_s-money.png',
       },
       items: [
-        {
-          href: 'https://github.com/lansolo99/s-money',
-          label: 'GitHub',
-          position: 'right',
-        }
+        // {
+        //   href: 'https://github.com/lansolo99/s-money',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // }
       ],
     },
     footer: {
