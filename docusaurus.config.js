@@ -20,12 +20,6 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
           href: 'https://github.com/lansolo99/s-money',
           label: 'GitHub',
           position: 'right',
@@ -38,10 +32,7 @@ module.exports = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            
           ],
         },
         {

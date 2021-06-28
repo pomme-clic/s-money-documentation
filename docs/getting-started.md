@@ -1,16 +1,12 @@
 ---
-sidebar_label: Getting started
 title: Getting started
-# SEO Description
-description: description
+sidebar_position: 1
 slug: /
 ---
 
-# Hello edited
+# Getting started
 
 This is my **first Docusaurus document**!
-
-[go to intro](./intro)
 
 [go to test page](/test)
 
@@ -20,6 +16,18 @@ This is my **first Docusaurus document**!
 console.log('test)
 ```
 
-yo ?
+## Level 2 title
 
-yo ?
+### Level 3 title
+
+sdfsdf
+
+#### Level 4 title
+
+sdfsdf
+
+### Level 3 title
+
+sdfsdf
+
+## Level 2 title

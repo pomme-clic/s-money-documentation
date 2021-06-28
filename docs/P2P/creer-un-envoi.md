@@ -1,11 +1,9 @@
 ---
-title: Hello 2
-# SEO Description
-description: Hello 2 description
-sidebar_label: Hello 2
+title: Créer un envoi
+hide_table_of_contents: true
 ---
 
-# Hello edited
+# Créer un envoi
 
 This is my **first Docusaurus document**!
 
@@ -15,6 +13,6 @@ This is my **first Docusaurus document**!
 console.log('test)
 ```
 
-yo ?
+## Titre h2
 
-yo ?
+## Titre h2
