@@ -9,10 +9,6 @@ This is my **first Docusaurus document**!
 
 ## Title H2
 
-import Screenshot from "@theme/Screenshot"
-
-<Screenshot />
-
 import Test from "@theme/Test"
 
 <Test>

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  background: red;
+}
+
+.col {
+  padding: 20px;
+  width: 50%;
+}
+
+.colL {
+  background: green;
+}
+
+.colR {
+  background: blue;
+}
