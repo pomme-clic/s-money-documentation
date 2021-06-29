@@ -7,6 +7,22 @@ hide_table_of_contents: true
 
 This is my **first Docusaurus document**!
 
+## Title H2
+
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot />
+
+import Test from "@theme/Test"
+
+<Test>
+
+This is my **first Docusaurus document**!
+
+</Test>
+
+## Title H2
+
 ![image name](/img/docusaurus.png)
 
 ```jsx
