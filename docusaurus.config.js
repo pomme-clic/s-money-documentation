@@ -7,6 +7,7 @@ module.exports = {
   url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
+  noIndex: true,
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'facebook', // Usually your GitHub org/user name.

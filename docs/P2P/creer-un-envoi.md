@@ -5,19 +5,29 @@ title: Créer un envoi
 
 # Créer un envoi P2P
 
-## Créer un envoi P2P
-
-Culpa reprehenderit aute cillum consectetur ullamco nulla ea magna. Exercitation adipisicing minim Lorem deserunt elit nisi voluptate ullamco irure qui eu ullamco. Enim deserunt amet exercitation Lorem dolor Lorem.
+Sunt pariatur minim excepteur sunt id do pariatur ut. Dolore id eu sit et tempor officia enim eu commodo sint. In velit eiusmod eiusmod pariatur duis incididunt ipsum ea labore eu proident ea pariatur aute. Aute ipsum excepteur anim eiusmod pariatur consequat incididunt adipisicing ut et esse. Dolor pariatur quis dolor eu eiusmod non mollit irure qui officia eiusmod Lorem. Laboris adipisicing nisi anim esse nulla commodo esse anim sit commodo. Magna consequat eiusmod do commodo non irure eu elit exercitation sit est ex elit cillum.
 
 ## Créer un objet paiement
 
+Culpa reprehenderit aute cillum consectetur ullamco nulla ea magna. Exercitation adipisicing minim Lorem deserunt elit nisi voluptate ullamco irure qui eu ullamco. Enim deserunt amet exercitation Lorem dolor Lorem.
+
 import UseCase from "@theme/UseCase"
+
+import UseCaseText from "@theme/UseCaseText"
+
+import UseCaseCodeBlock from "@theme/UseCaseCodeBlock"
 
 <UseCase>
 
-This is my **first Docusaurus document**!
+<UseCaseText>
+        Culpa reprehenderit aute cillum consectetur ullamco nulla ea magna. Exercitation adipisicing minim Lorem deserunt elit nisi voluptate ullamco irure qui eu ullamco. Enim deserunt amet exercitation Lorem dolor Lorem.
+</UseCaseText>
 
-Eu ipsum eiusmod sunt dolor ullamco et ullamco nisi nulla ipsum ullamco consequat irure. Esse nulla magna exercitation minim deserunt. Occaecat cillum quis deserunt cupidatat aliquip elit minim voluptate nostrud cupidatat tempor ea duis.
+<UseCaseCodeBlock>
+
+**sdfdsf**
+
+</UseCaseCodeBlock>
 
 </UseCase>
 
