@@ -21,8 +21,7 @@ const UseCase = ({ children }) => {
         >
           <TabItem value="js">
 
-            ```js function helloWorld() {console.log('Hello, world!')}
-            ```
+           ???
 
           </TabItem>
         </Tabs>
