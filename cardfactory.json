@@ -1,0 +1,522 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Version 1.0",
+    "description": "CardFactory Api. Works with legacy inputs and outputs and uses a BIB authentication.",
+    "contact": { },
+    "version": "v1.0"
+  },
+  "paths": {
+    "/api/v1.0/users/{appuserid}/cards/issued": {
+      "get": {
+        "tags": [
+          "CardAdapter"
+        ],
+        "summary": "Gets all cards by holder.",
+        "parameters": [
+          {
+            "name": "appuserid",
+            "in": "path",
+            "description": "Holder reference given by a third-party.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Holder reference given by a third-party.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/users/{appuserid}/cards/issued/{appcardid}": {
+      "get": {
+        "tags": [
+          "CardAdapter"
+        ],
+        "summary": "Gets card details.\r\nNo Need to bind the Holder, the card is unique for a partner/externalref",
+        "parameters": [
+          {
+            "name": "appuserid",
+            "in": "path",
+            "description": "User reference given by a third-party.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "User reference given by a third-party.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "appcardid",
+            "in": "path",
+            "description": "Card reference given by a third-party.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Card reference given by a third-party.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/cards/issued": {
+      "get": {
+        "tags": [
+          "CardAdapter"
+        ],
+        "summary": "Gets all cards.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CardFactory.Application.Adapter.Card.BankCardNetwork": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          -1
+        ],
+        "type": "integer",
+        "description": "Card Network",
+        "format": "int32"
+      },
+      "Foundation.Application.LegacyAdapter.Partner.BankCardType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CardFactory.Application.Adapter.Card.BankCardStatus": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "type": "integer",
+        "description": "Card Status",
+        "format": "int32"
+      },
+      "CardFactory.Application.Adapter.Card.SubAccountRefDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the holder's identifier.",
+            "format": "int64",
+            "nullable": true
+          },
+          "appAccountId": {
+            "type": "string",
+            "description": "Gets or sets the AppAccountId, relates to the HolderExternalRef",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "iban": {
+            "type": "string",
+            "description": "Gets or sets the holder's iban.",
+            "nullable": true
+          },
+          "alias": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Gets or sets the holder's phone number.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Gets or sets the holder's email.",
+            "nullable": true
+          },
+          "href": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Relates to the Holder informations"
+      },
+      "CardFactory.Application.Adapter.Card.CardRefDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the parent card's identifier.",
+            "format": "int64",
+            "nullable": true
+          },
+          "appCardId": {
+            "type": "string",
+            "description": "Gets or sets the parent card appcardId, relates to OldExternalRef.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Defines the parent card in case of a remanufacture"
+      },
+      "CardFactory.Domain.Card.ActionType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CardFactory.Application.Adapter.Card.CreationTypeDto": {
+        "type": "object",
+        "properties": {
+          "relatedCard": {
+            "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.CardRefDto"
+          },
+          "action": {
+            "$ref": "#/components/schemas/CardFactory.Domain.Card.ActionType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Action type"
+      },
+      "CardFactory.Application.Adapter.Card.CardLimitsDto": {
+        "type": "object",
+        "properties": {
+          "transaction": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "atmWeeklyAllowance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "atmWeeklyUsedAllowance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "monthlyAllowance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "monthlyUsedAllowance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CardFactory.Application.Adapter.Card.BankCardDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the card identifier.",
+            "format": "int64",
+            "nullable": true
+          },
+          "appCardId": {
+            "type": "string",
+            "description": "Gets or sets the AppCardId, relates to CardExternalRef.",
+            "nullable": true
+          },
+          "isAlphaTest": {
+            "type": "integer",
+            "description": "Gets or sets the is alpha test, relates to IsAlphaTest boolean.",
+            "format": "int32",
+            "nullable": true
+          },
+          "isContactlessBlocked": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "network": {
+            "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardNetwork"
+          },
+          "hint": {
+            "type": "string",
+            "description": "Gets or sets the card's pan hint in the following format 1234XXXXXXXX5678.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/Foundation.Application.LegacyAdapter.Partner.BankCardType"
+          },
+          "expiryDate": {
+            "type": "string",
+            "description": "Gets or sets the card's expiry date.",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.BankCardStatus"
+          },
+          "opposedReason": {
+            "type": "integer",
+            "description": "Gets or sets the opposition reason when card status is set to OPPOSED(4).",
+            "format": "int32",
+            "nullable": true
+          },
+          "accountId": {
+            "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.SubAccountRefDto"
+          },
+          "creationType": {
+            "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.CreationTypeDto"
+          },
+          "fintechCultureName": {
+            "type": "string",
+            "description": "Gets or sets the fintech culture (Default to 'French').",
+            "nullable": true
+          },
+          "cardLimits": {
+            "$ref": "#/components/schemas/CardFactory.Application.Adapter.Card.CardLimitsDto"
+          },
+          "blocked": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "foreignPaymentBlocked": {
+            "type": "integer",
+            "description": "Gets or sets the foreign payment blocked.",
+            "format": "int32",
+            "nullable": true
+          },
+          "internetPaymentBlocked": {
+            "type": "integer",
+            "description": "Defines if internet payment (VAD) is blocked.",
+            "format": "int32",
+            "nullable": true
+          },
+          "useRandomPin": {
+            "type": "integer",
+            "description": "Defines if the card uses random pin, related to WishPin boolean.",
+            "format": "int32",
+            "nullable": true
+          },
+          "uniqueId": {
+            "type": "string",
+            "description": "Gets or sets the card's unique identifier.",
+            "nullable": true
+          },
+          "bankId": {
+            "type": "string",
+            "description": "Gets or sets the card's bank identifier.",
+            "nullable": true
+          },
+          "cancellationReason": {
+            "type": "integer",
+            "description": "Gets or sets the cancellation reason when card status is set to CANCELLED(1).",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Card Dto Legacy version"
+      }
+    },
+    "securitySchemes": {
+      "Bearer token authorization": {
+        "type": "http",
+        "description": "Authentication with bearer token",
+        "scheme": "bearer"
+      },
+      "Sts authentication": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://connect.xpollens.com//connect/token",
+            "scopes": {
+              "partner": "",
+              "internal_settings": "",
+              "thirdparty_kyc": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer token authorization": [ ]
+    },
+    {
+      "Sts authentication": [ ]
+    }
+  ]
+}

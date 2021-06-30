@@ -1,0 +1,205 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Version 1.0",
+    "description": "XPAY API TARGET (Token BIB backward compatibility)",
+    "contact": {
+      "email": "S-MONEY_CARDS@s-money.fr"
+    },
+    "version": "v1.0"
+  },
+  "paths": {
+    "/api/v1.0/users/{appuserid}/cards/{appcardid}/tokens": {
+      "post": {
+        "tags": [
+          "Card"
+        ],
+        "summary": "In App Provisioning enrollment",
+        "parameters": [
+          {
+            "name": "appCardId",
+            "in": "path",
+            "description": "The application card identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The application card identifier.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "64141b13-777b-4a36-a561-b25ddbc1e2e7"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The enroll card dto.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardXpay.Application.Adapter.Card.Dto.EnrollCardAdapterRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardXpay.BankingBubble.Client.Dto.InApp.InAppEnrollCardResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardXpay.Application.Adapter.Model.ApiAdapterProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardXpay.Application.Adapter.Model.ApiAdapterProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardXpay.Application.Adapter.Model.ApiAdapterProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardXpay.Application.Adapter.Model.ApiAdapterProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CardXpay.Application.Adapter.Card.Dto.EnrollCardAdapterRequestDto": {
+        "type": "object",
+        "properties": {
+          "certificates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "nonce": {
+            "type": "string",
+            "nullable": true
+          },
+          "nonceSignature": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CardXpay.BankingBubble.Client.Dto.InApp.InAppEnrollCardResponseDto": {
+        "type": "object",
+        "properties": {
+          "encryptedPassDataResponse": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "activationData": {
+            "type": "string",
+            "nullable": true
+          },
+          "ephemeralPublicKey": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CardXpay.Application.Adapter.Model.ApiAdapterProblemDetails": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "Code",
+            "format": "int32"
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Error Message",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "Title",
+            "nullable": true
+          },
+          "priority": {
+            "type": "integer",
+            "description": "Priority",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "ApiAdaptedProblemDetails"
+      }
+    },
+    "securitySchemes": {
+      "Bearer token authorization": {
+        "type": "http",
+        "description": "Authentication with bearer token",
+        "scheme": "bearer"
+      },
+      "Sts authentication": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://connect.xpollens.com//connect/token",
+            "scopes": {
+              "partner": "",
+              "internal_settings": "",
+              "thirdparty_kyc": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer token authorization": [ ]
+    },
+    {
+      "Sts authentication": [ ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 ---
 title: Getting started
 sidebar_position: 1
+id: getting-started
 slug: /
 ---
 
@@ -14,7 +15,7 @@ This is my **first Docusaurus document**!
 
 ```jsx
 function HelloCodeTitle(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Hello, {props.name}</h1>
 }
 ```
 
