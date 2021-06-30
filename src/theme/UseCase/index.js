@@ -1,11 +1,13 @@
 import React from 'react';
-import styles from './test.module.css';
+import styles from './use-case.module.css';
 
-const Test = ({children}) => {
+const UseCase = ({children}) => {
     return ( <div className={styles.container}>
+        {/* Col */}
         <div className={`${styles.col} ${styles.colL}`}>
             {children}
             </div>
+            {/* Col */}
         <div className={`${styles.col} ${styles.colR}`}>
             Code snippet here
         </div>
@@ -13,4 +15,4 @@ const Test = ({children}) => {
         </div> );
 }
  
-export default Test
+export default UseCase

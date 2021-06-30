@@ -1,21 +1,23 @@
 ---
 title: Créer un envoi
-hide_table_of_contents: true
+# hide_table_of_contents: true
 ---
 
-# Créer un envoi
+# Créer un envoi P2P
+
+Culpa reprehenderit aute cillum consectetur ullamco nulla ea magna. Exercitation adipisicing minim Lorem deserunt elit nisi voluptate ullamco irure qui eu ullamco. Enim deserunt amet exercitation Lorem dolor Lorem.
+
+## Créer un objet paiement
+
+import UseCase from "@theme/UseCase"
+
+<UseCase>
 
 This is my **first Docusaurus document**!
 
-## Title H2
+Eu ipsum eiusmod sunt dolor ullamco et ullamco nisi nulla ipsum ullamco consequat irure. Esse nulla magna exercitation minim deserunt. Occaecat cillum quis deserunt cupidatat aliquip elit minim voluptate nostrud cupidatat tempor ea duis.
 
-import Test from "@theme/Test"
-
-<Test>
-
-This is my **first Docusaurus document**!
-
-</Test>
+</UseCase>
 
 ## Title H2
 

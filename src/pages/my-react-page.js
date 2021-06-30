@@ -11,7 +11,7 @@ const MyReactPage = () => {
             <div>
                 <Screenshot/>
                 <SwaggerUI/>
-            </div>
+                </div>
         </Layout>
          );
 }
