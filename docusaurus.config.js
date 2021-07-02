@@ -1,5 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   title: 'S-Money',
@@ -7,23 +7,39 @@ module.exports = {
   url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
+  noIndex: true,
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'API doc',
+      // title: 'API doc',
       logo: {
         alt: 'S-Money API',
-        src: 'img/logo_s-money.png',
+        src: 'img/logo_s-money.svg',
       },
       items: [
-        // {
-        //   href: 'https://github.com/lansolo99/s-money',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // }
+        {
+          type: 'doc',
+          docId: 'getting-started',
+          position: 'left',
+          label: 'Docs',
+        },
+        {
+          label: 'API',
+          position: 'left',
+          items: [
+            {
+              label: 'CardFactory',
+              to: '/api/cardfactory',
+            },
+            {
+              label: 'Cardxpay',
+              to: '/api/cardxpay',
+            },
+          ],
+        },
       ],
     },
     footer: {
@@ -31,9 +47,7 @@ module.exports = {
       links: [
         {
           title: 'Docs',
-          items: [
-            
-          ],
+          items: [],
         },
         {
           title: 'Community',
@@ -73,14 +87,28 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/lansolo99/s-money/edit/main/',
+          editUrl: 'https://github.com/lansolo99/s-money/edit/main/',
         },
-        
+
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            routePath: '/api/cardfactory',
+            spec: 'cardfactory.json',
+          },
+          {
+            routePath: '/api/cardxpay',
+            spec: 'cardxpay.json',
+          },
+        ],
+      },
+    ],
   ],
-};
+}
