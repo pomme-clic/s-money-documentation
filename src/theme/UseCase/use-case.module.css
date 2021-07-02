@@ -1,17 +1,19 @@
 .container {
   display: flex;
-  background: red;
+  /* background: red; */
 }
 
 .col {
-  padding: 20px;
+  /* padding: 20px; */
   width: 50%;
 }
 
 .colL {
-  background: green;
+  /* background: green; */
+  padding-right: 20px;
 }
 
 .colR {
-  background: blue;
+  padding-left: 20px;
+  /* background: blue; */
 }

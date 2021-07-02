@@ -102,12 +102,10 @@ module.exports = {
           {
             routePath: '/api/cardfactory',
             spec: 'cardfactory.json',
-            // specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
           },
           {
             routePath: '/api/cardxpay',
             spec: 'cardxpay.json',
-            // specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
           },
         ],
       },
