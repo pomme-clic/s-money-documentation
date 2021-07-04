@@ -1,7 +1,6 @@
 ---
 title: Getting started
 sidebar_position: 1
-id: getting-started
 slug: /
 ---
 

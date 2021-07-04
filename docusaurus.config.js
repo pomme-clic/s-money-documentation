@@ -22,23 +22,15 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'getting-started',
-          position: 'left',
+          docId: 'docs/getting-started',
           label: 'Docs',
+          position: 'left',
         },
         {
-          label: 'API',
+          type: 'doc',
+          docId: 'api/introduction',
+          label: 'API reference',
           position: 'left',
-          items: [
-            {
-              label: 'CardFactory',
-              to: '/api/cardfactory',
-            },
-            {
-              label: 'Cardxpay',
-              to: '/api/cardxpay',
-            },
-          ],
         },
       ],
     },

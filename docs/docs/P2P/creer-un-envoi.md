@@ -9,7 +9,7 @@ import UseCaseText from "@theme/UseCaseText"
 
 import UseCaseCodeBlock from "@theme/UseCaseCodeBlock"
 
-# Créer un envoi P2P
+# Créer un envoi
 
 Sunt pariatur minim excepteur sunt id do pariatur ut. Dolore id eu sit et tempor officia enim eu commodo sint. In velit eiusmod eiusmod pariatur duis incididunt ipsum ea labore eu proident ea pariatur aute. Aute ipsum excepteur anim eiusmod pariatur consequat incididunt adipisicing ut et esse. Dolor pariatur quis dolor eu eiusmod non mollit irure qui officia eiusmod Lorem. Laboris adipisicing nisi anim esse nulla commodo esse anim sit commodo. Magna consequat eiusmod do commodo non irure eu elit exercitation sit est ex elit cillum.
 
