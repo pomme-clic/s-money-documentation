@@ -24,6 +24,10 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .api .padding-vert--lg {
   padding: 0 !important;
 }
