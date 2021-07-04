@@ -87,20 +87,5 @@ module.exports = {
         },
       },
     ],
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            routePath: '/api/cardfactory',
-            spec: 'cardfactory.json',
-          },
-          {
-            routePath: '/api/cardxpay',
-            spec: 'cardxpay.json',
-          },
-        ],
-      },
-    ],
   ],
 }

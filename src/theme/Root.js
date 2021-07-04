@@ -8,7 +8,7 @@ const Root = ({ children }) => {
 
   return (
     <>
-      <div className={apiStyle && 'api'}>{children}</div>
+      <div className={apiStyle ? 'api' : ''}>{children}</div>
     </>
   )
 }
