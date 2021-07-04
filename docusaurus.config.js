@@ -79,7 +79,7 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/lansolo99/s-money/edit/main/',
+          // editUrl: 'https://github.com/lansolo99/s-money/edit/main/',
         },
 
         theme: {
