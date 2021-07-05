@@ -15,6 +15,9 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+  /* --aa-text-color-rgb: #ff0000;
+  --aa-background-color-rgb: #ff0000;
+  --aa-muted-color-rgb: #ff0000 !important; */
 }
 
 .docusaurus-highlight-code-line {
@@ -22,4 +25,27 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.api .padding-vert--lg {
+  padding: 0 !important;
+}
+
+.api .container {
+  max-width: none;
+}
+
+.api .container .row .col > div {
+  padding: 0 !important;
+}
+
+.smoney {
+  .aa-DetachedSearchButton {
+    border-radius: 30px;
+    color: white;
+  }
 }
