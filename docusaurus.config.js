@@ -1,5 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   title: 'S-Money',
@@ -7,29 +7,31 @@ module.exports = {
   url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
+  noIndex: true,
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My custom title',
+      // title: 'API doc',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'S-Money API',
+        src: 'img/logo_s-money.svg',
       },
       items: [
         {
           type: 'doc',
-          docId: 'intro',
-          position: 'left',
+          docId: 'docs/getting-started',
           label: 'Docs',
+          position: 'left',
         },
         {
-          href: 'https://github.com/lansolo99/s-money',
-          label: 'GitHub',
-          position: 'right',
-        }
+          type: 'doc',
+          docId: 'api/introduction',
+          label: 'API reference',
+          position: 'left',
+        },
       ],
     },
     footer: {
@@ -37,12 +39,7 @@ module.exports = {
       links: [
         {
           title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
+          items: [],
         },
         {
           title: 'Community',
@@ -74,7 +71,11 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   },
-  plugins: [path.resolve(__dirname, './plugins/customDocument')],
+  plugins: [
+    path.resolve(__dirname, './plugins/customDocument'),
+    path.resolve(__dirname, './plugins/docusaurus-tailwindcss-loader'),
+    [require.resolve('@cmfcmf/docusaurus-search-local'), {}],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -82,14 +83,13 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/lansolo99/s-money/edit/main/',
+          // editUrl: 'https://github.com/lansolo99/s-money/edit/main/',
         },
-        
+
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],
   ],
-};
+}

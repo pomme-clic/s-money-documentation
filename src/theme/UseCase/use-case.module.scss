@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+}
+
+.col {
+  width: 50%;
+}
+
+.colL {
+  padding-right: 20px;
+}
+
+.colR {
+  padding-left: 20px;
+}
+
+.test2 {
+  span {
+    background: blue;
+  }
+
+
+}
