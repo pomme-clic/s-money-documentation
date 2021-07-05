@@ -74,6 +74,7 @@ module.exports = {
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
     path.resolve(__dirname, './plugins/docusaurus-tailwindcss-loader'),
+    [require.resolve('@cmfcmf/docusaurus-search-local'), {}],
   ],
   presets: [
     [
