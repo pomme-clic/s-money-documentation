@@ -6,12 +6,16 @@ module.exports = {
   tagline: 'Baseline',
   url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
   noIndex: true,
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'xpollens', // Usually your GitHub org/user name.
+  projectName: 's-money-documentation', // Usually your repo name.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+  },
   themeConfig: {
     navbar: {
       // title: 'API doc',
@@ -31,6 +35,10 @@ module.exports = {
           docId: 'api/introduction',
           label: 'API reference',
           position: 'left',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
       ],
     },
@@ -74,7 +82,14 @@ module.exports = {
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
     path.resolve(__dirname, './plugins/docusaurus-tailwindcss-loader'),
-    [require.resolve('@cmfcmf/docusaurus-search-local'), {}],
+    // [
+    //   require.resolve('@cmfcmf/docusaurus-search-local'),
+    //   {
+    //     docsRouteBasePath: '/',
+    //     indexBlog: false,
+    //     indexPages: false,
+    //   },
+    // ],
   ],
   presets: [
     [

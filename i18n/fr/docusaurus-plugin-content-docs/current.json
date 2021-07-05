@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.P2P": {
+    "message": "P2P fr",
+    "description": "The label for category P2P in sidebar docsSidebar"
+  },
+  "sidebar.apisSidebar.category.Group 1": {
+    "message": "Group 1",
+    "description": "The label for category Group 1 in sidebar apisSidebar"
+  }
+}

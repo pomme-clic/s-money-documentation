@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import '@algolia/autocomplete-theme-classic'
+// import '@algolia/autocomplete-theme-classic'
 
 const Root = ({ children }) => {
   const { pathname } = useLocation()
