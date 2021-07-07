@@ -82,14 +82,14 @@ module.exports = {
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
     path.resolve(__dirname, './plugins/docusaurus-tailwindcss-loader'),
-    // [
-    //   require.resolve('@cmfcmf/docusaurus-search-local'),
-    //   {
-    //     docsRouteBasePath: '/',
-    //     indexBlog: false,
-    //     indexPages: false,
-    //   },
-    // ],
+    [
+      require.resolve('@cmfcmf/docusaurus-search-local'),
+      {
+        docsRouteBasePath: '/',
+        indexBlog: false,
+        indexPages: false,
+      },
+    ],
   ],
   presets: [
     [

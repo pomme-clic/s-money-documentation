@@ -158,5 +158,17 @@
   "theme.common.skipToMainContent": {
     "message": "Aller au contenu principal",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "cmfcmf/d-s-l.searchBar.placeholderWithVersion": {
+    "message": "cmfcmf/d-s-l.searchBar.placeholderWithVersion",
+    "description": "Placeholder shown in the searchbar if it is empty and no documentation version has been detected"
+  },
+  "cmfcmf/d-s-l.searchBar.placeholderWithoutVersion": {
+    "message": "cmfcmf/d-s-l.searchBar.placeholderWithoutVersion",
+    "description": "Placeholder shown in the searchbar if it is empty and a documentation version has been detected (available in the {version} placeholder"
+  },
+  "cmfcmf/d-s-l.searchBar.noResults": {
+    "message": "cmfcmf/d-s-l.searchBar.noResults",
+    "description": "message shown if no results are found"
   }
 }
