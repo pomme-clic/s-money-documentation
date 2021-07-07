@@ -1,10 +1,10 @@
 ---
-title: Getting started title EN
+title: Getting started title FR
 sidebar_position: 1
 slug: /
 ---
 
-# Getting started EN
+# Commencer
 
 import DocHomepage from "@theme/DocHomepage"
 
