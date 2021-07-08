@@ -90,6 +90,15 @@ module.exports = {
         indexPages: false,
       },
     ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1100,
+        min: 640,
+        steps: 4,
+      },
+    ],
   ],
   presets: [
     [
