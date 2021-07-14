@@ -12,7 +12,11 @@ import thumbnail from '/img/cyberpunk.png';
 
 <DocHomepage />
 
+<<<<<<< HEAD
 Getting started edited from github by lansolo99 dev again to check prevent
+=======
+Getting started re-edited from github by stephane@pommeclic.com
+>>>>>>> 29e03f23143f6149b14aadc039123e05427b1e8c
 
 ![image name](/img/docusaurus.png)
 
