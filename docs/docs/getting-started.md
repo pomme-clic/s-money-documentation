@@ -12,7 +12,7 @@ import thumbnail from '/img/cyberpunk.png';
 
 <DocHomepage />
 
-This is my **first Docusaurus document**!
+Getting started edited from dev env
 
 ![image name](/img/docusaurus.png)
 
