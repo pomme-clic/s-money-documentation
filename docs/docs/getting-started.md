@@ -12,7 +12,7 @@ import thumbnail from '/img/cyberpunk.png';
 
 <DocHomepage />
 
-Getting started edited from github by stephane@pommeclic.com
+Getting started re-edited from github by stephane@pommeclic.com
 
 ![image name](/img/docusaurus.png)
 
