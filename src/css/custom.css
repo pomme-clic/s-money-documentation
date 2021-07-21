@@ -15,6 +15,8 @@
 html[data-theme='dark'] {
   --ifm-color-primary: #349bb8;
   --ifm-color-primary-dark: #5a91ea;
+  --ifm-navbar-link-color: #bdbdbd;
+  --ifm-background-color: #121e24;
 }
 
 /* Tailwind */
@@ -30,24 +32,7 @@ html[data-theme='dark'] {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.api .padding-vert--lg {
-  padding: 0 !important;
-}
-
-.api .container {
-  max-width: none;
-}
-
-.api .container .row .col > div {
-  padding: 0 !important;
-}
-
-.smoney {
-  .aa-DetachedSearchButton {
-    border-radius: 30px;
-    color: white;
-  }
-}
+/* FONTS */
 
 /* poppins-regular - latin */
 @font-face {
@@ -100,5 +85,25 @@ h6 {
 @media (min-width: 1536px) {
   .container {
     max-width: 1100px !important;
+  }
+}
+
+/* API container */
+.api .padding-vert--lg {
+  padding: 0 !important;
+}
+
+.api .container {
+  max-width: none;
+}
+
+.api .container .row .col > div {
+  padding: 0 !important;
+}
+
+.smoney {
+  .aa-DetachedSearchButton {
+    border-radius: 30px;
+    color: white;
   }
 }

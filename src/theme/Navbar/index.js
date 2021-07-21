@@ -64,14 +64,22 @@ function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className={clsx('navbar', 'navbar--fixed-top', styles.navbar, {
-        'navbar--dark': style === 'dark',
-        'navbar--primary': style === 'primary',
-        'navbar-sidebar--show': sidebarShown,
-        [styles.navbarHideable]: hideOnScroll,
-        [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
-      })}
+      className={clsx(
+        'navbar',
+        'navbar--fixed-top',
+        'shadow-none',
+        'border-b',
+        {
+          'navbar--dark ': style === 'dark',
+          'navbar--primary': style === 'primary',
+          '!border-b-darkmode-divider bg-darkmode-background': isDarkTheme,
+          'navbar-sidebar--show': sidebarShown,
+          [styles.navbarHideable]: hideOnScroll,
+          [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
+        },
+      )}
     >
+      {/* styles.navbar */}
       <div className="navbar__inner">
         <div className="navbar__items">
           {items != null && items.length !== 0 && (
