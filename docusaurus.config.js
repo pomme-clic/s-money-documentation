@@ -2,7 +2,7 @@
 const path = require('path')
 
 module.exports = {
-  title: 'S-Money',
+  title: 'Xpollens API docs',
   tagline: 'Baseline',
   url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
@@ -10,18 +10,19 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'xpollens', // Usually your GitHub org/user name.
-  projectName: 's-money-documentation', // Usually your repo name.
+  organizationName: 'xpollens',
+  projectName: 's-money-documentation',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
   },
   themeConfig: {
     navbar: {
-      // title: 'API doc',
       logo: {
-        alt: 'S-Money API',
-        src: 'img/logo_s-money.svg',
+        alt: 'Xpollens API docs',
+        src: 'img/ui/logo_xpollens.svg',
+        srcDark: 'img/ui/logo_xpollens_dark.svg',
+        href: '/',
       },
       items: [
         {
@@ -33,12 +34,13 @@ module.exports = {
         {
           type: 'doc',
           docId: 'api/introduction',
-          label: 'API reference',
+          label: 'API references',
           position: 'left',
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          href: 'https://www.xpollens.com',
+          label: 'xpollens.com',
+          position: 'left',
         },
       ],
     },
@@ -82,14 +84,14 @@ module.exports = {
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
     path.resolve(__dirname, './plugins/docusaurus-tailwindcss-loader'),
-    [
-      require.resolve('@cmfcmf/docusaurus-search-local'),
-      {
-        docsRouteBasePath: '/',
-        indexBlog: false,
-        indexPages: false,
-      },
-    ],
+    // [
+    //   require.resolve('@cmfcmf/docusaurus-search-local'),
+    //   {
+    //     docsRouteBasePath: '/',
+    //     indexBlog: false,
+    //     indexPages: false,
+    //   },
+    // ],
     [
       '@docusaurus/plugin-ideal-image',
       {
