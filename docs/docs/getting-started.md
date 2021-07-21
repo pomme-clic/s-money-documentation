@@ -1,6 +1,5 @@
 ---
 title: Getting started title EN
-sidebar_position: 1
 slug: /
 ---
 

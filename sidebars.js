@@ -1,6 +1,7 @@
 module.exports = {
   docsSidebar: [
     'docs/getting-started',
+    'docs/endpoints',
     {
       type: 'category',
       label: 'P2P',
