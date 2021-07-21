@@ -1,6 +1,5 @@
 ---
 title: Getting started title EN
-slug: /
 ---
 
 import DocHomepage from "@theme/DocHomepage"

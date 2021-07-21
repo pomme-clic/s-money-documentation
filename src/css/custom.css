@@ -101,9 +101,46 @@ h6 {
   padding: 0 !important;
 }
 
+.api .pagination-nav {
+  display: none;
+}
+
+/* Homepage */
+.smoney {
+  &.homepage {
+    .pagination-nav {
+      display: none;
+    }
+  }
+}
+
+/* Search */
 .smoney {
   .aa-DetachedSearchButton {
     border-radius: 30px;
     color: white;
   }
+}
+
+/* Sidebar */
+.menu {
+  padding: 35px 30px !important;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  @apply bg-transparent;
+}
+
+.menu__list {
+  > .menu__list-item {
+    @apply before:block before:bg-blue-500 before:w-2 before:h-2 before:rounded-full;
+
+    /* &:before{
+      content: '';
+
+    } */
+  }
+  /* &-item {
+    @apply bg-blue-400;
+  } */
 }

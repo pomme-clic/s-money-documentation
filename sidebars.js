@@ -1,6 +1,6 @@
 module.exports = {
   docsSidebar: [
-    'docs/getting-started',
+    'docs/home',
     'docs/endpoints',
     {
       type: 'category',
