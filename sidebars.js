@@ -1,11 +1,30 @@
 module.exports = {
   docsSidebar: [
     'docs/home',
-    'docs/endpoints',
     {
       type: 'category',
-      label: 'P2P',
-      items: ['docs/P2P/creer-un-envoi', 'docs/P2P/creer-un-objet'],
+      label: 'Get started',
+      items: ['docs/get-started/doc1', 'docs/get-started/doc2'],
+    },
+    {
+      type: 'category',
+      label: 'SEPA transaction',
+      items: ['docs/sepa-transactions/doc1'],
+    },
+    {
+      type: 'category',
+      label: 'Credit card',
+      items: ['docs/credit-card/doc1'],
+    },
+    {
+      type: 'category',
+      label: 'Payment',
+      items: ['docs/payment/doc1'],
+    },
+    {
+      type: 'category',
+      label: 'KYC',
+      items: ['docs/kyc/doc1'],
     },
   ],
   apisSidebar: [

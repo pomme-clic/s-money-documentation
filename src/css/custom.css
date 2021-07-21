@@ -124,23 +124,56 @@ h6 {
 
 /* Sidebar */
 .menu {
-  padding: 35px 30px !important;
+  @apply py-9 pl-8 pr-6 !important;
 }
 
 .menu__link--active:not(.menu__link--sublist) {
   @apply bg-transparent;
 }
 
-.menu__list {
-  > .menu__list-item {
-    @apply before:block before:bg-blue-500 before:w-2 before:h-2 before:rounded-full;
-
-    /* &:before{
-      content: '';
-
-    } */
+aside > div > nav > ul > li:nth-child(2) > ul > li {
+  &:not(:first-child) {
+    @apply mt-0;
   }
-  /* &-item {
-    @apply bg-blue-400;
-  } */
+}
+
+.menu {
+  .menu__link {
+    @apply font-normal text-sm;
+    &--active {
+      @apply font-semibold;
+    }
+  }
+
+  > .menu__list {
+    > .menu__list-item {
+      &:not(:first-child) {
+        @apply mt-3;
+      }
+
+      > .menu__link {
+        @apply relative pl-8 pr-0 font-semibold text-[15px];
+        @apply before:absolute before:top-1/2 before:left-2 before:-translate-y-1/2 before:bg-xp-primary-500 before:w-2 before:h-2 before:rounded-full;
+      }
+    }
+  }
+}
+
+.menu__link--sublist:after {
+  background: url('/img/ui/icons/arrow.svg');
+  height: 24px;
+  width: 24px;
+  @apply absolute right-0 top-[4px];
+}
+
+/* Main */
+main {
+  .container {
+    @apply !py-10 !px-10;
+  }
+}
+
+/* Footer */
+.footer {
+  @apply bg-xp-tertiaries-secondary-marine;
 }
