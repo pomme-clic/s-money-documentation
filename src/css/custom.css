@@ -7,9 +7,8 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  /* --aa-text-color-rgb: #ff0000;
-  --aa-background-color-rgb: #ff0000;
-  --aa-muted-color-rgb: #ff0000 !important; */
+  --ifm-font-weight-semibold: 600;
+  --ifm-navbar-link-color: #757575;
 }
 
 /* Darkmode overrides */
@@ -49,8 +48,6 @@ html[data-theme='dark'] {
     color: white;
   }
 }
-
-/* Fonts */
 
 /* poppins-regular - latin */
 @font-face {
@@ -97,4 +94,11 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+}
+
+/* Container */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1100px !important;
+  }
 }

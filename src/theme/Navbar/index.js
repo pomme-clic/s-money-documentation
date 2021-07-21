@@ -64,7 +64,7 @@ function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className={clsx('navbar', 'navbar--fixed-top', {
+      className={clsx('navbar', 'navbar--fixed-top', styles.navbar, {
         'navbar--dark': style === 'dark',
         'navbar--primary': style === 'primary',
         'navbar-sidebar--show': sidebarShown,

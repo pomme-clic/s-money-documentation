@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-// import '@algolia/autocomplete-theme-classic'
+import styles from './root.module.css'
 
 const Root = ({ children }) => {
   const { pathname } = useLocation()
@@ -9,7 +9,9 @@ const Root = ({ children }) => {
 
   return (
     <>
-      <div className={`smoney ${apiStyle ? 'api' : ''}`}>{children}</div>
+      <div className={`smoney ${styles.smoney} ${apiStyle ? 'api' : ''}`}>
+        {children}
+      </div>
     </>
   )
 }
