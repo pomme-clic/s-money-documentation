@@ -48,32 +48,73 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [],
-        },
-        {
-          title: 'Community',
+          title: 'Our solution',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Get started',
+              href: '/docs',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'SEPA transactions',
+              href: '/docs',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Credit card',
+              href: '/docs',
+            },
+            {
+              label: 'Payment',
+              href: '/docs',
+            },
+            {
+              label: 'KYC',
+              href: '/docs',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Our company',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Guides',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Tutorials',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Engineering',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Engineering',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Pricing',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Enterprise',
+              href: 'https://xpollens.com',
+            },
+          ],
+        },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Terms and policies',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Cookies policies',
+              href: 'https://xpollens.com',
+            },
+            {
+              label: 'Copyrights',
+              href: 'https://xpollens.com',
             },
           ],
         },
