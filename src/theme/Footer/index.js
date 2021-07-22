@@ -14,6 +14,13 @@ import styles from './styles.module.css'
 import ThemedImage from '@theme/ThemedImage'
 import IconExternalLink from '@theme/IconExternalLink'
 
+import XpollensLogo from '@site/static/img/ui/logo_xpollens_tagline.svg'
+
+import SocialIconTwitter from '@site/static/img/ui/icons/social/twitter.svg'
+import SocialIconLinkedin from '@site/static/img/ui/icons/social/linkedin.svg'
+import SocialIconFacebook from '@site/static/img/ui/icons/social/facebook.svg'
+import SocialIconDefault from '@site/static/img/ui/icons/social/default.svg'
+
 function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   const toUrl = useBaseUrl(to)
   const normalizedHref = useBaseUrl(href, {
@@ -31,14 +38,7 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
           })}
       {...props}
     >
-      {href && !isInternalUrl(href) ? (
-        <span>
-          {label}
-          <IconExternalLink />
-        </span>
-      ) : (
-        label
-      )}
+      {href && !isInternalUrl(href) ? label : label}
     </Link>
   )
 }
@@ -49,6 +49,8 @@ const FooterLogo = ({ sources, alt }) => (
 
 function Footer() {
   const { footer } = useThemeConfig()
+  const { footerCustom } = useThemeConfig()
+  const { tagline, socialIcons } = footerCustom || {}
   const { copyright, links = [], logo = {} } = footer || {}
   const sources = {
     light: useBaseUrl(logo.src),
@@ -61,17 +63,62 @@ function Footer() {
 
   return (
     <footer
-      className={clsx('footer', {
+      className={clsx('footer py-20', {
         'footer--dark': footer.style === 'dark',
       })}
     >
       <div className="container">
         {links && links.length > 0 && (
           <div className="row footer__links">
-            {/* Brand col */}
-            <div className="w-1/3 bg-red-500">test left + logo</div>
+            {/* Brand */}
+            <div className="w-1/3 pr-10">
+              <XpollensLogo className={`w-[165px] h-auto`} />
+
+              <p
+                className="mt-4 leading-tight opacity-80"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                  __html: tagline,
+                }}
+              ></p>
+
+              <div className="flex mt-5 space-x-4">
+                {socialIcons.map(({ title, href }, key) => {
+                  let Icon
+                  switch (title) {
+                    case 'twitter':
+                      Icon = SocialIconTwitter
+                      break
+                    case 'linkedin':
+                      Icon = SocialIconLinkedin
+                      break
+                    default:
+                      Icon = SocialIconDefault
+                  }
+                  return (
+                    <a
+                      key={key}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon alt={title} />
+                    </a>
+                  )
+                })}
+              </div>
+
+              <p
+                className="mt-8 leading-tight opacity-75"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                  __html: copyright,
+                }}
+              ></p>
+            </div>
+
             {/* Links */}
-            <div className="flex flex-grow bg-blue-500">
+            <div className="flex flex-grow">
               {links.map((linkItem, i) => (
                 <div key={i} className="col footer__col">
                   {linkItem.title != null ? (
@@ -92,10 +139,7 @@ function Footer() {
                             }}
                           />
                         ) : (
-                          <li
-                            key={item.href || item.to}
-                            className="footer__item"
-                          >
+                          <li key={key} className="footer__item">
                             <FooterLink {...item} />
                           </li>
                         ),

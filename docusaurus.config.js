@@ -44,6 +44,27 @@ module.exports = {
         },
       ],
     },
+    customFields: {
+      footerCustom: {},
+    },
+    footerCustom: {
+      socialIcons: [
+        {
+          title: 'linkedin',
+          href: 'https://fr.linkedin.com/showcase/xpollens',
+        },
+        {
+          title: 'twitter',
+          href: 'https://twitter.com/xpollens',
+        },
+        {
+          title: 'test',
+          href: 'https://twitter.com/xpollens',
+        },
+      ],
+      tagline:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.',
+    },
     footer: {
       style: 'dark',
       links: [
@@ -119,7 +140,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Xpollens.`,
     },
   },
   plugins: [

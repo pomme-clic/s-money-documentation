@@ -176,4 +176,13 @@ main {
 /* Footer */
 .footer {
   @apply bg-xp-tertiaries-secondary-marine;
+
+  .container {
+    @apply max-w-[1336px];
+
+    @media (min-width: 1536px) {
+      /* @apply max-w-[1336px]; */
+      max-width: 1336px !important;
+    }
+  }
 }
