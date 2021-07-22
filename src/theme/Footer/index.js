@@ -28,7 +28,7 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   })
   return (
     <Link
-      className="footer__link-item"
+      className="text-sm footer__link-item"
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
@@ -122,12 +122,14 @@ function Footer() {
               {links.map((linkItem, i) => (
                 <div key={i} className="col footer__col">
                   {linkItem.title != null ? (
-                    <div className="footer__title">{linkItem.title}</div>
+                    <div className="font-bold footer__title">
+                      {linkItem.title}
+                    </div>
                   ) : null}
                   {linkItem.items != null &&
                   Array.isArray(linkItem.items) &&
                   linkItem.items.length > 0 ? (
-                    <ul className="footer__items">
+                    <ul className="space-y-3 footer__items">
                       {linkItem.items.map((item, key) =>
                         item.html ? (
                           <li

@@ -95,7 +95,7 @@ function Navbar() {
             </button>
           )}
           <Logo
-            className="navbar__brand"
+            className="relative navbar__brand top-[2px] lg:top-0"
             imageClassName="navbar__logo"
             titleClassName="navbar__title"
           />
@@ -123,9 +123,13 @@ function Navbar() {
         onClick={hideSidebar}
       />
       <div className="navbar-sidebar">
-        <div className="navbar-sidebar__brand">
+        <div
+          className={clsx('border-b', 'shadow-none', 'navbar-sidebar__brand', {
+            '!border-b-darkmode-divider bg-darkmode-background': isDarkTheme,
+          })}
+        >
           <Logo
-            className="navbar__brand"
+            className="navbar__brand relative top-[2px]"
             imageClassName="navbar__logo"
             titleClassName="navbar__title"
             onClick={hideSidebar}

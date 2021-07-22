@@ -9,7 +9,7 @@ module.exports = {
     {
       type: 'category',
       label: 'SEPA transaction',
-      items: ['docs/sepa-transactions/doc1'],
+      items: ['docs/sepa-transactions/doc1', 'docs/sepa-transactions/doc2'],
     },
     {
       type: 'category',
