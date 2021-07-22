@@ -63,19 +63,19 @@ function Footer() {
 
   return (
     <footer
-      className={clsx('footer py-20', {
+      className={clsx('footer py-10 px-5 lg:py-20 lg:px-20', {
         'footer--dark': footer.style === 'dark',
       })}
     >
       <div className="container">
         {links && links.length > 0 && (
-          <div className="row footer__links">
+          <div className="flex-col row footer__links lg:flex-row">
             {/* Brand */}
-            <div className="w-1/3 pr-10">
-              <XpollensLogo className={`w-[165px] h-auto`} />
+            <div className="w-full pr-10 md:w-1/2 lg:w-1/3">
+              <XpollensLogo className={`w-[165px] h-auto`} alt="xpollens" />
 
               <p
-                className="mt-4 leading-tight opacity-80"
+                className="mt-4 opacity-80"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                   __html: tagline,
@@ -118,9 +118,9 @@ function Footer() {
             </div>
 
             {/* Links */}
-            <div className="flex flex-grow">
+            <div className="flex flex-col mt-10 lg:flex-row lg:flex-grow lg:mt-0">
               {links.map((linkItem, i) => (
-                <div key={i} className="col footer__col">
+                <div key={i} className="!pl-0 col footer__col lg:!pl-2">
                   {linkItem.title != null ? (
                     <div className="font-bold footer__title">
                       {linkItem.title}

@@ -10,6 +10,7 @@
   --ifm-font-weight-semibold: 600;
   --ifm-navbar-link-color: #757575;
   --ifm-font-family-base: 'Poppins';
+  --ifm-footer-link-hover-color: #63c2c7;
 }
 
 /* Darkmode overrides */
@@ -18,7 +19,9 @@ html[data-theme='dark'] {
   --ifm-color-primary-dark: #5a91ea;
   --ifm-navbar-link-color: #bdbdbd;
   --ifm-background-color: #121e24;
-  --ifm-navbar-background-color: #121e24;
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-background-surface-color: var(--ifm-background-color);
+  --ifm-footer-link-hover-color: #63c2c7;
 }
 
 /* Tailwind */
@@ -212,8 +215,7 @@ aside > div > nav > ul > li:nth-child(2) > ul > li {
   }
 }
 
-/* Responsive navigation */
-
+/* Responsive doc navigation */
 .menu--responsive {
   button {
     @apply bg-xp-primary-500 text-black border-none;
