@@ -1,7 +1,10 @@
 import React from 'react'
 
-const DocHomepage = () => {
-  return <div>DocHomepage</div>
+// {
+//   title, introduction, cta
+// }
+const DocHomepage = ({ children }) => {
+  return <div>{children}</div>
 }
 
 export default DocHomepage

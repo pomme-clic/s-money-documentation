@@ -5,17 +5,22 @@ import styles from './root.module.css'
 
 const Root = ({ children }) => {
   const { pathname } = useLocation()
-  const apiStyle =
+  const isApiEmbeddingPage =
     pathname.includes('/api') && !pathname.includes('introduction')
+
   const isDocHomepage = pathname === '/'
-  console.log(pathname)
 
   return (
     <>
       <div
-        className={clsx('smoney', styles.smoney, apiStyle ? 'api' : '', {
-          homepage: isDocHomepage,
-        })}
+        className={clsx(
+          'smoney',
+          styles.smoney,
+          isApiEmbeddingPage ? 'api' : '',
+          {
+            homepage: isDocHomepage,
+          },
+        )}
       >
         {children}
       </div>

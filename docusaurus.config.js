@@ -3,7 +3,6 @@ const path = require('path')
 
 module.exports = {
   title: 'Xpollens API docs',
-  tagline: 'Baseline',
   url: 'https://docusaurus-lansolo99-test.netlify.app',
   baseUrl: '/',
   noIndex: true,
