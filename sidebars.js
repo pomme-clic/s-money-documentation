@@ -27,12 +27,5 @@ module.exports = {
       items: ['docs/kyc/doc1'],
     },
   ],
-  apisSidebar: [
-    'api/introduction',
-    {
-      type: 'category',
-      label: 'Group 1',
-      items: ['api/group1/api'],
-    },
-  ],
+  apisSidebar: ['api/api1'],
 }

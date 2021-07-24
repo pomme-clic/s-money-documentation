@@ -1,7 +1,3 @@
----
-title: Endpoints
----
-
 import Endpoint from "@theme/Endpoint"
 
 # Order a card using a wishpin

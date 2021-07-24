@@ -1,13 +1,18 @@
 import React from 'react'
 import Link from '@docusaurus/Link'
+import clsx from 'clsx'
 
-const Cta = ({ children }) => {
+const Cta = ({ context, link, label }) => {
   return (
     <Link
-      className="inline-block px-5 py-2 font-bold text-white rounded bg-xp-tertiaries-secondary-blue"
-      to="docs/get-started/doc1"
+      className={clsx(
+        'inline-block px-8 py-3 font-bold text-white rounded-lg bg-xp-tertiaries-secondary-blue',
+        'hover:no-underline hover:bg-xp-tertiaries-secondary-marine hover:text-white',
+        { 'mt-5': context === 'home' },
+      )}
+      to={link}
     >
-      Get started
+      {label}
     </Link>
   )
 }

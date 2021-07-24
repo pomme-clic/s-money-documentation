@@ -1,0 +1,5 @@
+.hero {
+  h1 {
+    @apply text-black !leading-normal !text-[40px];
+  }
+}

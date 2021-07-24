@@ -11,10 +11,6 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'xpollens',
   projectName: 's-money-documentation',
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'],
-  },
   themeConfig: {
     navbar: {
       logo: {
@@ -32,7 +28,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'api/introduction',
+          docId: 'api/api1',
           label: 'API references',
           position: 'left',
         },
@@ -72,23 +68,23 @@ module.exports = {
           items: [
             {
               label: 'Get started',
-              href: '/docs',
+              href: '/',
             },
             {
               label: 'SEPA transactions',
-              href: '/docs',
+              href: '/',
             },
             {
               label: 'Credit card',
-              href: '/docs',
+              href: '/',
             },
             {
               label: 'Payment',
-              href: '/docs',
+              href: '/',
             },
             {
               label: 'KYC',
-              href: '/docs',
+              href: '/',
             },
           ],
         },
@@ -145,14 +141,6 @@ module.exports = {
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
     path.resolve(__dirname, './plugins/docusaurus-tailwindcss-loader'),
-    // [
-    //   require.resolve('@cmfcmf/docusaurus-search-local'),
-    //   {
-    //     docsRouteBasePath: '/',
-    //     indexBlog: false,
-    //     indexPages: false,
-    //   },
-    // ],
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -170,7 +158,6 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // editUrl: 'https://github.com/lansolo99/s-money/edit/main/',
         },
 
         theme: {

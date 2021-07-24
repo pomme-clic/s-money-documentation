@@ -21,7 +21,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo.
 
-<Cta />
+<Cta context="home" link="docs/get-started/doc1" label="Get started" />
 
 </Hero>
 
