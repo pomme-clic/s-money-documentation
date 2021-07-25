@@ -23,6 +23,7 @@ html[data-theme='dark'] {
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-background-surface-color: var(--ifm-background-color);
   --ifm-footer-link-hover-color: #63c2c7;
+  --ifm-heading-color: #ffffff;
 }
 
 /* Tailwind */
@@ -252,7 +253,7 @@ main {
   }
 }
 
-/* Doc */
+/* TOC */
 .table-of-contents {
   @apply !text-sm pl-[15px];
 
@@ -262,5 +263,40 @@ main {
 
   ul > li {
     @apply font-normal;
+  }
+}
+
+/* /docs */
+.smoney.docpage {
+  h2 {
+    @apply flex items-center;
+    &:before {
+      content: '';
+      background: url('/img/ui/icons/arrow_x_xpollens.svg');
+      background-size: cover;
+      @apply block w-[19px] h-[22px] mr-3;
+    }
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  .markdown {
+    /* Ideal image */
+    div {
+      @apply mb-8 rounded-xl overflow-hidden border border-xp-grey-400;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .smoney.docpage {
+    .markdown {
+      /* Ideal image */
+      div {
+        @apply border-none;
+      }
+    }
   }
 }

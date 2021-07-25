@@ -144,8 +144,8 @@ module.exports = {
     [
       '@docusaurus/plugin-ideal-image',
       {
-        quality: 70,
-        max: 1100,
+        quality: 80,
+        max: 2000,
         min: 640,
         steps: 4,
       },

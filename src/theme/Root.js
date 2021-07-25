@@ -9,6 +9,7 @@ const Root = ({ children }) => {
     pathname.includes('/api') && !pathname.includes('introduction')
 
   const isDocHomepage = pathname === '/'
+  const isDocPage = pathname.includes('/docs')
 
   return (
     <>
@@ -19,6 +20,7 @@ const Root = ({ children }) => {
           isApiEmbeddingPage ? 'api' : '',
           {
             homepage: isDocHomepage,
+            docpage: isDocPage,
           },
         )}
       >

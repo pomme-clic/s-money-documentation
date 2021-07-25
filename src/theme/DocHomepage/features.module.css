@@ -1,5 +1,9 @@
 [data-theme='dark'] {
   .features {
+    h2 {
+      @apply text-black;
+    }
+
     p {
       @apply !text-xp-grey-800;
     }
