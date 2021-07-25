@@ -53,7 +53,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 <!-- Feature 2 -->
 
-<Feature title="Easy to integrate card order" icon="cb">
+<Feature title="Discover our payment solution" icon="payment">
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
@@ -68,7 +68,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 <!-- Feature 3 -->
 
-<Feature title="Easy to integrate card order" icon="cb">
+<Feature title="Delegate your customer KYC" icon="kyc">
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

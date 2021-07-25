@@ -7,7 +7,9 @@ const Feature = ({ children, title, icon }) => {
         <div className="flex items-center justify-center w-16 h-16 p-4 rounded-full bg-xp-primary-500">
           <img src={`/img/ui/icons/${icon}.svg`} />
         </div>
-        <h2 className="text-[20px]">{title}</h2>
+        <div>
+          <h2 className="mt-5 !text-[20px] !leading-normal">{title}</h2>
+        </div>
         <div>{children}</div>
       </div>
     </>

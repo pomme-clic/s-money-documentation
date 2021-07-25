@@ -9,7 +9,7 @@ const Hero = ({ children }) => {
     <>
       <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 ${styles.hero}`}>
         {/* Texts */}
-        <div className="">{children}</div>
+        <div className="relative z-50">{children}</div>
         {/* image */}
         <div>
           <div className="relative">
@@ -19,11 +19,11 @@ const Hero = ({ children }) => {
                 img={require('/img/content/home/hero.jpg')}
               />
             </div>
-
             <HeroPatternX
-              className={`absolute bottom-[-30px] left-[-30px] w-[270px] h-auto`}
+              className={`absolute -bottom-1/2 -left-1/2 translate-x-[60px]  w-[270px] h-auto`}
             />
-
+            {/* bottom-[-30px] */}
+            {/* left-[-30px] */}
             <HeroPatternDots
               className={`absolute top-[-30px] right-[-30px]  w-[150px] h-auto`}
             />
