@@ -1,9 +1,12 @@
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.html', './src/**/*.js', './src/**/*.tsx'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
+      boxShadow: {
+        subtle: '0 0 1px 0 rgba(0,0,0,0.10), 0 2px 30px 0 rgba(0,0,0,0.10)',
+      },
       screens: {
         sm: '640px',
         md: '768px',

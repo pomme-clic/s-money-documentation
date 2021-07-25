@@ -1,10 +1,7 @@
 import React from 'react'
 
-// {
-//   title, introduction, cta
-// }
 const DocHomepage = ({ children }) => {
-  return <div>{children}</div>
+  return <div className="pb-10">{children}</div>
 }
 
 export default DocHomepage

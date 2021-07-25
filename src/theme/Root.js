@@ -14,7 +14,7 @@ const Root = ({ children }) => {
     <>
       <div
         className={clsx(
-          'smoney',
+          'smoney selection:bg-xp-primary-500 selection:text-black',
           styles.smoney,
           isApiEmbeddingPage ? 'api' : '',
           {

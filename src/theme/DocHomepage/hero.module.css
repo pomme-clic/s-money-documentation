@@ -3,3 +3,9 @@
     @apply text-black !leading-normal !text-[40px];
   }
 }
+
+[data-theme='dark'] {
+  h1 {
+    @apply text-white;
+  }
+}
