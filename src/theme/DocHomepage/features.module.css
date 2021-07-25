@@ -1,0 +1,7 @@
+[data-theme='dark'] {
+  .features {
+    p {
+      @apply !text-xp-grey-800;
+    }
+  }
+}

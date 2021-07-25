@@ -1,11 +1,25 @@
 .hero {
   h1 {
-    @apply text-black !leading-normal !text-[40px];
+    @apply text-black !leading-tight !text-3xl;
+  }
+
+  p {
+    @apply text-lg text-xp-grey-700;
+  }
+
+  @screen lg {
+    h1 {
+      @apply !text-[40px];
+    }
   }
 }
 
 [data-theme='dark'] {
   h1 {
     @apply text-white;
+  }
+
+  p {
+    @apply text-xp-grey-400;
   }
 }
