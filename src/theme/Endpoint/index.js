@@ -1,9 +1,17 @@
 import React, { useLayoutEffect, useEffect, useState } from 'react'
+import Collapsible from 'react-collapsible'
+import CustomDisclosure from '@theme/Disclosure'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import axios from 'axios'
+import styles from './endpoint.module.css'
 
 const Endpoint = ({ apiUrl, method, path }) => {
+  const [open, setOpen] = useState(false)
   const [parameters, setParameters] = useState([])
+
+  const handleTriggerClick = () => {
+    setOpen(!open)
+  }
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -36,6 +44,20 @@ const Endpoint = ({ apiUrl, method, path }) => {
 
   return (
     <div>
+      <CustomDisclosure />
+      {/* Collapsible */}
+      {/* <div className={`${styles.collapsibleWrapper}`}>
+        <Collapsible trigger="Start here">
+          <p>
+            This is the collapsible content. It can be any element or React
+            component you like.
+          </p>
+          <p>
+            It can even be another Collapsible component. Check out the next
+            section!
+          </p>
+        </Collapsible>
+      </div> */}
       {/* Route */}
       <div className="flex items-center px-5 py-4 space-x-4 bg-gray-300 rounded">
         {/* Method */}
@@ -45,7 +67,6 @@ const Endpoint = ({ apiUrl, method, path }) => {
         {/* Path */}
         <div className="text-sm text-black">{`${apiUrl}${path}`}</div>
       </div>
-
       {/* Parameters */}
       <div className="mt-4 space-y-4">
         {parameters.map((props, i) => {

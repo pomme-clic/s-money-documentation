@@ -1,6 +1,6 @@
-import Endpoint from "@theme/Endpoint"
 import Image from '@theme/Image';
 import Highlight from '@theme/Highlight';
+import Endpoint from "@theme/Endpoint"
 
 # Order a card using a wishpin
 
