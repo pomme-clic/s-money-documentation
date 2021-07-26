@@ -1,9 +1,42 @@
 import Endpoint from "@theme/Endpoint"
 import Image from '@theme/Image';
+import Highlight from '@theme/Highlight';
 
 # Order a card using a wishpin
 
-<Image src="docs/usecase-exemple-00.jpg" />
+<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
+
+<Highlight>
+
+##### Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+
+</Highlight>
+
+<Highlight type="tip">
+
+##### Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+
+</Highlight>
+
+<Highlight type="caution">
+
+##### Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+
+</Highlight>
+
+<Highlight type="danger">
+
+##### Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+
+</Highlight>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
 

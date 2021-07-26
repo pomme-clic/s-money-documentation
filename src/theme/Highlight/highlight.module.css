@@ -1,0 +1,18 @@
+.highlight {
+  h5 {
+    @apply text-xl mb-2;
+  }
+
+  p {
+    @apply text-xp-grey-700;
+  }
+}
+
+html[data-theme='dark'] {
+  .highlight {
+    @apply shadow-none border border-divider-dark;
+    p {
+      @apply text-xp-grey-400;
+    }
+  }
+}

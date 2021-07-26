@@ -61,6 +61,12 @@ function Footer() {
     return null
   }
 
+  const getSocialIcon = (title) => {
+    if (title === 'twitter') return <SocialIconTwitter alt={title} />
+    if (title === 'linkedin') return <SocialIconLinkedin alt={title} />
+    return <SocialIconDefault alt={title} />
+  }
+
   return (
     <footer
       className={clsx('footer py-10 px-5 lg:py-20 lg:px-20', {
@@ -84,17 +90,6 @@ function Footer() {
 
               <div className="flex mt-5 space-x-4">
                 {socialIcons.map(({ title, href }, key) => {
-                  let Icon
-                  switch (title) {
-                    case 'twitter':
-                      Icon = SocialIconTwitter
-                      break
-                    case 'linkedin':
-                      Icon = SocialIconLinkedin
-                      break
-                    default:
-                      Icon = SocialIconDefault
-                  }
                   return (
                     <a
                       key={key}
@@ -102,7 +97,7 @@ function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Icon alt={title} />
+                      {getSocialIcon(title)}
                     </a>
                   )
                 })}
