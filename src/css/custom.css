@@ -281,22 +281,4 @@ main {
   h3 {
     @apply text-xl;
   }
-
-  .markdown {
-    /* Ideal image */
-    div {
-      @apply mb-8 rounded-xl overflow-hidden border border-xp-grey-400;
-    }
-  }
-}
-
-html[data-theme='dark'] {
-  .smoney.docpage {
-    .markdown {
-      /* Ideal image */
-      div {
-        @apply border-none;
-      }
-    }
-  }
 }

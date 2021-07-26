@@ -1,10 +1,9 @@
 import Endpoint from "@theme/Endpoint"
-import Image from '@theme/IdealImage';
-import Usecase1 from '/img/content/docs/usecase-exemple-00.jpg';
+import Image from '@theme/Image';
 
 # Order a card using a wishpin
 
-<Image img={Usecase1} />
+<Image src="docs/usecase-exemple-00.jpg" />
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
 
