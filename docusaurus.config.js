@@ -41,7 +41,9 @@ module.exports = {
     },
     customFields: {
       footerCustom: {},
+      baseAPIURL: '',
     },
+    baseAPIUrl: 'https://ic-api.s-money.net/swagger/docs/',
     footerCustom: {
       socialIcons: [
         {

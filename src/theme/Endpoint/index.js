@@ -1,11 +1,16 @@
 import React, { useLayoutEffect, useEffect, useState } from 'react'
-import Collapsible from 'react-collapsible'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import CustomDisclosure from '@theme/Disclosure'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import axios from 'axios'
 import styles from './endpoint.module.css'
 
 const Endpoint = ({ apiUrl, method, path }) => {
+  const { siteConfig } = useDocusaurusContext()
+  const {
+    themeConfig: { baseAPIUrl },
+  } = siteConfig
+
   const [open, setOpen] = useState(false)
   const [parameters, setParameters] = useState([])
 
@@ -43,45 +48,36 @@ const Endpoint = ({ apiUrl, method, path }) => {
   }, [])
 
   return (
-    <div>
-      <CustomDisclosure />
-      {/* Collapsible */}
-      {/* <div className={`${styles.collapsibleWrapper}`}>
-        <Collapsible trigger="Start here">
-          <p>
-            This is the collapsible content. It can be any element or React
-            component you like.
-          </p>
-          <p>
-            It can even be another Collapsible component. Check out the next
-            section!
-          </p>
-        </Collapsible>
-      </div> */}
+    <div className="mt-4">
+      <CustomDisclosure title={apiUrl} type="API" method={method}>
+        content
+      </CustomDisclosure>
+
       {/* Route */}
-      <div className="flex items-center px-5 py-4 space-x-4 bg-gray-300 rounded">
-        {/* Method */}
+      {/* <div className="flex items-center px-5 py-4 space-x-4 bg-gray-300 rounded">
+        
         <div className="px-3 py-1 text-xs font-bold text-white uppercase bg-blue-500 rounded">
           {method}
         </div>
-        {/* Path */}
+        
         <div className="text-sm text-black">{`${apiUrl}${path}`}</div>
-      </div>
+      </div> */}
+
       {/* Parameters */}
-      <div className="mt-4 space-y-4">
+      {/* <div className="mt-4 space-y-4">
         {parameters.map((props, i) => {
           return (
             <div className="bg-gray-700" key={`${props[0]}${i}`}>
-              {/* Key + type */}
+              
               <div className="text-white">
                 {props[0]} . {props[1]['type']}
               </div>
-              {/* Description */}
+              
               {props[1]['description'] && <div>{props[1]['description']}</div>}
             </div>
           )
         })}
-      </div>
+      </div> */}
     </div>
   )
 }

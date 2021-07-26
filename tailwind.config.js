@@ -71,6 +71,14 @@ module.exports = {
         divider: {
           dark: '#455464',
         },
+        api: {
+          methods: {
+            post: '#690',
+            get: '#47afe8',
+            put: '#ff9900',
+            delete: '#f06560',
+          },
+        },
       },
     },
   },
