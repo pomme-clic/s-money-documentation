@@ -27,5 +27,5 @@ module.exports = {
       items: ['docs/kyc/doc1'],
     },
   ],
-  apisSidebar: ['api/api1'],
+  apisSidebar: ['api/api1', 'api/api2', 'api/api3'],
 }

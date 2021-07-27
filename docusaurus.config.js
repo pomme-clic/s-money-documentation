@@ -44,7 +44,6 @@ module.exports = {
       baseAPIURL: '',
     },
     baseAPIUrl: 'https://ic-api.s-money.net/swagger/docs',
-    // baseAPIUrl: 'https://petstore.swagger.io',
     footerCustom: {
       socialIcons: [
         {

@@ -51,10 +51,7 @@ const CustomDisclosure = ({
                         {method}
                       </div>
                     )}
-                    <span className="text-sm break-all">
-                      {/* style={{ overflowWrap: 'anywhere' }} */}
-                      {title}
-                    </span>
+                    <span className="text-sm break-all">{title}</span>
                   </div>
                   <Arrow
                     className={`${

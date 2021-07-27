@@ -122,6 +122,18 @@ h2 {
   max-width: none;
 }
 
+/* API doc-page container */
+.api {
+  .doc-page {
+    .container {
+      .row {
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
+}
+
 .api .container .row .col > div {
   padding: 0 !important;
 }
