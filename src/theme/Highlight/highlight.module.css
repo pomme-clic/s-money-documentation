@@ -10,7 +10,9 @@
 
 html[data-theme='dark'] {
   .highlight {
-    @apply shadow-none border border-divider-dark;
+    box-shadow: 0 0px 1px 1px rgba(255, 255, 255, 0.2),
+      0 1px 0px 1px rgba(255, 255, 255, 0.06);
+
     p {
       @apply text-xp-grey-400;
     }

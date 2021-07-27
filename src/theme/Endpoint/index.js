@@ -4,7 +4,7 @@ import CustomDisclosure from '@theme/Disclosure'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import axios from 'axios'
 import clsx from 'clsx'
-import styles from './endpoint.module.css'
+import Loader from '@theme/Loaders'
 
 const sanitizeString = (string) => {
   return string
@@ -16,9 +16,6 @@ const sanitizeString = (string) => {
 }
 
 const getApiParameters = (response, path, method) => {
-  console.log('path:', response.data.paths[sanitizeString(path)])
-  // console.log(response.data.paths[sanitizeString(path)][method]['parameters'])
-
   const responseParameters =
     response.data.paths[sanitizeString(path)][method]['parameters']
   return responseParameters
@@ -34,7 +31,7 @@ const getApiColor = (type) => {
     'ipv4',
     'password',
     'string',
-    'string',
+    'String',
     'uri',
     'url',
     'uuid',
@@ -81,43 +78,55 @@ const Endpoint = ({ apiUrl, path, method }) => {
   return (
     <div className="mt-4">
       <CustomDisclosure title={path} type="API" method={method}>
-        <div className="">
-          {parameters.map((param, i) => {
-            console.log(param)
-            const paramName = param.name
-            const paramType = param.schema['type']
-            const paramDescription = param.description || null
+        {Array.isArray(parameters) && parameters.length ? (
+          <div className="parameters">
+            {parameters.map((param, i) => {
+              console.log(param)
+              const paramName = param.name
+              const paramType = param.schema['type']
+              const paramDescription = param.description || null
+              const isParamaRequired = param.required || null
 
-            return (
-              <div
-                className={clsx('w-full border-xp-grey-300 py-4', {
-                  'border-t': i !== 0,
-                })}
-                key={`${paramName}${i}`}
-              >
-                <div className="flex items-center space-x-2 text-black">
-                  <div className="font-semibold">{paramName}</div>
-                  <div className="w-1 h-1 rounded-full bg-xp-grey-700"></div>
-                  <div
-                    className={clsx({
-                      'text-api-green': getApiColor(paramType) === 'green',
-                      'text-api-blue': getApiColor(paramType) === 'blue',
-                      'text-api-purple': getApiColor(paramType) === 'purple',
-                      'text-api-orange': getApiColor(paramType) === 'orange',
-                    })}
-                  >
-                    {paramType}
+              return (
+                <div
+                  className={clsx('w-full border-xp-grey-300 py-4', {
+                    'border-t': i !== 0,
+                  })}
+                  key={`${paramName}${i}`}
+                >
+                  <div className="flex items-center space-x-2 text-black">
+                    <div className="font-semibold">
+                      {paramName}
+                      {isParamaRequired && (
+                        <span className="inline-block text-red-500 ">*</span>
+                      )}
+                    </div>
+                    <div className="w-1 h-1 rounded-full bg-xp-grey-700"></div>
+                    <div
+                      className={clsx({
+                        'text-api-green': getApiColor(paramType) === 'green',
+                        'text-api-blue': getApiColor(paramType) === 'blue',
+                        'text-api-purple': getApiColor(paramType) === 'purple',
+                        'text-api-orange': getApiColor(paramType) === 'orange',
+                      })}
+                    >
+                      {paramType}
+                    </div>
                   </div>
+                  {paramDescription && (
+                    <div className="mt-2 text-sm text-xp-grey-700">
+                      {paramDescription}
+                    </div>
+                  )}
                 </div>
-                {paramDescription && (
-                  <div className="mt-2 text-sm text-xp-grey-700">
-                    {paramDescription}
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
+              )
+            })}
+          </div>
+        ) : (
+          <div className="flex items-center justify-center my-2">
+            <Loader />
+          </div>
+        )}
       </CustomDisclosure>
     </div>
   )

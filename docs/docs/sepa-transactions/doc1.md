@@ -56,17 +56,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 More information regarding this endpoint in the [API reference](https://www.google.fr)
 
-<!-- /swagger/docs/v1.0/cardfactory -->
-<!-- /v1.0/cardfactory -->
-<!-- /v2/swagger.json -->
-<!-- https://petstore.swagger.io/v2/swagger.json -->
-
-<!-- <Endpoint apiUrl="/v2/swagger.json" path="/store/order" method="post"/> -->
-
-<!-- <Endpoint apiUrl="/v2/swagger.json" path="/store/order/{orderId}"
-method="get"/> -->
-
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/>
 
 ### Hmac adapter 2
 
