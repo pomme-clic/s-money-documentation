@@ -66,7 +66,7 @@ More information regarding this endpoint in the [API reference](https://www.goog
 <!-- <Endpoint apiUrl="/v2/swagger.json" path="/store/order/{orderId}"
 method="get"/> -->
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.0/users/{userid}/cards/registered/{id}" method="get"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
 
 ### Hmac adapter 2
 
