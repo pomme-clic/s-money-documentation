@@ -22,11 +22,8 @@ const Rapidoc = ({ apiUrl }) => {
         .get(fullAPIUrl)
         .then(function (response) {
           const jsonResponse = JSON.stringify(response.data)
-          // const rapidocTimer =
-          // setTimeout(() => {
           setDisplayDoc(true)
           rapidocRef.current.loadSpec(JSON.parse(jsonResponse))
-          // }, 100)
         })
         .catch(function (error) {
           console.log(error)
@@ -34,14 +31,12 @@ const Rapidoc = ({ apiUrl }) => {
     }
 
     return () => {
-      // clearTimeout(rapidocTimer)
       setDisplayDoc(false)
     }
   }, [])
 
   return (
     <div className="flex items-center justify-center">
-      {/* spec-url={fullAPIUrl} */}
       {displayDoc ? (
         <rapi-doc
           ref={rapidocRef}

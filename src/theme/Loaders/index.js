@@ -8,7 +8,9 @@ const Loaders = () => {
 
   return (
     <div className="inline-block loader">
-      <div className="scale-50  loader-inner ball-pulse-rise">{loaderDivs}</div>
+      <div className="scale-[40%] loader-inner ball-pulse-rise">
+        {loaderDivs}
+      </div>
     </div>
   )
 }
