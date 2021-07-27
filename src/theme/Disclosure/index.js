@@ -10,7 +10,6 @@ const CustomDisclosure = ({
   type = 'default',
   method = null,
 }) => {
-  console.log('method:', method)
   const variants = {
     active: {
       height: 'auto',
@@ -40,7 +39,7 @@ const CustomDisclosure = ({
                     {type === 'API' && (
                       <div
                         className={clsx(
-                          ' py-1 mr-4 text-sm font-semibold text-black uppercase border-2 rounded w-[70px] text-center',
+                          ' py-1 mr-2 text-sm font-semibold text-black uppercase border-2 rounded w-[70px] text-center',
                           {
                             'border-api-methods-post': method === 'post',
                             'border-api-methods-get': method === 'get',
@@ -60,6 +59,7 @@ const CustomDisclosure = ({
                     } w-6 h-6 text-gray-300 transform rotate-180`}
                   />
                 </div>
+                {/* Content */}
                 <AnimatePresence>
                   {open && (
                     <Disclosure.Panel
@@ -68,7 +68,7 @@ const CustomDisclosure = ({
                       variants={variants}
                       initial="inactive"
                       animate="active"
-                      className="pt-6 bg-xp-grey-100"
+                      className="w-full pt-6 bg-xp-grey-100"
                     >
                       {children}
                     </Disclosure.Panel>

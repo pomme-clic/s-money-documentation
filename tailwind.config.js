@@ -72,6 +72,10 @@ module.exports = {
           dark: '#455464',
         },
         api: {
+          green: '#690',
+          blue: '#47afe8',
+          purple: '#786ff1',
+          orange: '#ff9900',
           methods: {
             post: '#690',
             get: '#47afe8',

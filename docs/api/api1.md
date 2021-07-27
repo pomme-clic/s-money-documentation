@@ -10,5 +10,6 @@ import Rapidoc from "@theme/Rapidoc"
 <!-- https://ic-api.s-money.net/swagger/docs/v1.0/cardfactory -->
 <!-- https://api.xpollens.com/swagger/docs/v1.0/cardfactory -->
 <!-- https://petstore.swagger.io/v2/swagger.json -->
-<Rapidoc apiUrl="https://ic-api.s-money.net/swagger/docs/v1.0/cardfactory">
+<!-- https://ic-api.s-money.net/swagger/docs/v1.0/cardfactory -->
+<Rapidoc apiUrl="https://petstore.swagger.io/v2/swagger.json">
 </Rapidoc>
