@@ -142,6 +142,17 @@ h2 {
   }
 }
 
+@media (min-width: 1536px) {
+  .api {
+    .doc-page {
+      .container {
+        max-width: none !important;
+      }
+    }
+  }
+}
+
+/* Rapidoc */
 #the-main-body.body {
   background: purple !important;
   display: flex;
@@ -273,7 +284,6 @@ main {
     @apply max-w-[1336px];
 
     @media (min-width: 1536px) {
-      /* @apply max-w-[1336px]; */
       max-width: 1336px !important;
     }
   }

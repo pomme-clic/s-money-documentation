@@ -16,10 +16,10 @@
 
 [data-theme='dark'] {
   h1 {
-    @apply text-white;
+    @apply !text-white;
   }
 
   p {
-    @apply text-xp-grey-400;
+    @apply !text-xp-grey-400;
   }
 }

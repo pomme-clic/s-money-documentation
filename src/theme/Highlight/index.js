@@ -18,9 +18,7 @@ const Highlight = ({ children, type = 'neutral' }) => {
   }
 
   return (
-    <div
-      className={`flex mb-8 overflow-hidden rounded-lg shadow ${styles.highlight}`}
-    >
+    <div className={`flex mb-8 overflow-hidden rounded-lg ${styles.highlight}`}>
       {/* Icon */}
       <div
         className={clsx('px-3 md:px-6 py-4 flex items-center', {

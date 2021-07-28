@@ -12,6 +12,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve --port 3012",
+    "serve3000": "docusaurus serve --port 3000",
     "lint": "eslint ./ --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
