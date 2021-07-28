@@ -24,6 +24,7 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: var(--ifm-background-color);
   --ifm-footer-link-hover-color: #63c2c7;
   --ifm-heading-color: #ffffff;
+  --ifm-toc-border-color: #2a3845;
 }
 
 /* Tailwind */

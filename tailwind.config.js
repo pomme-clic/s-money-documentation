@@ -66,10 +66,10 @@ module.exports = {
         },
         darkmode: {
           background: '#121E24',
-          divider: '#455464',
+          divider: '#2A3845',
         },
         divider: {
-          dark: '#455464',
+          dark: '#2A3845',
         },
         api: {
           green: '#690',
