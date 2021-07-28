@@ -1,10 +1,10 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react'
+import React from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import CustomDisclosure from '@theme/Disclosure'
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
+import { useQuery } from 'react-query'
+import Loader from '@theme/Loaders'
 import axios from 'axios'
 import clsx from 'clsx'
-import Loader from '@theme/Loaders'
 
 const sanitizeString = (string) => {
   return string
@@ -52,40 +52,39 @@ const Endpoint = ({ apiUrl, path, method }) => {
   const {
     themeConfig: { baseAPIUrl },
   } = siteConfig
+
   const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
-  const [open, setOpen] = useState(false)
-  const [parameters, setParameters] = useState([])
-
-  useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      axios
-        .get(fullAPIUrl)
-        .then(function (response) {
-          console.log(getApiParameters(response, path, method))
-          setParameters((prevState) => getApiParameters(response, path, method))
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+  const fetchEndpoint = async () => {
+    try {
+      const response = await axios.get(fullAPIUrl)
+      const data = getApiParameters(response, path, method)
+      return data
+    } catch (error) {
+      console.log(error)
     }
+  }
 
-    return () => {
-      setParameters([])
-    }
-  }, [])
+  const { isLoading, isError, data, error } = useQuery(
+    'fetchEndpoint',
+    fetchEndpoint,
+  )
 
   return (
     <div className="mt-4">
       <CustomDisclosure title={path} type="API" method={method}>
-        {Array.isArray(parameters) && parameters.length ? (
+        {isLoading ? (
+          <div className="flex items-center justify-center my-2">
+            <Loader />
+          </div>
+        ) : (
           <div className="parameters">
-            {parameters.map((param, i) => {
+            {data.map((param, i) => {
               console.log(param)
               const paramName = param.name
               const paramType = param.schema['type']
               const paramDescription = param.description || null
-              const isParamaRequired = param.required || null
+              const isParamRequired = param.required || null
 
               return (
                 <div
@@ -97,7 +96,7 @@ const Endpoint = ({ apiUrl, path, method }) => {
                   <div className="flex items-center space-x-2 text-black">
                     <div className="font-semibold">
                       {paramName}
-                      {isParamaRequired && (
+                      {isParamRequired && (
                         <span className="inline-block text-red-500 ">*</span>
                       )}
                     </div>
@@ -121,10 +120,6 @@ const Endpoint = ({ apiUrl, path, method }) => {
                 </div>
               )
             })}
-          </div>
-        ) : (
-          <div className="flex items-center justify-center my-2">
-            <Loader />
           </div>
         )}
       </CustomDisclosure>
