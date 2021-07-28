@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 const queryClient = new QueryClient()
 
 import { useLocation } from 'react-router-dom'
@@ -31,6 +32,7 @@ const Root = ({ children }) => {
         >
           {children}
         </div>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   )

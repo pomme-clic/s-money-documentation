@@ -66,18 +66,26 @@ const Endpoint = ({ apiUrl, path, method }) => {
   }
 
   const { isLoading, isError, data, error } = useQuery(
-    'fetchEndpoint',
+    ['fetchEndpoint', { apiUrl, path, method }],
     fetchEndpoint,
   )
 
   return (
     <div className="mt-4">
       <CustomDisclosure title={path} type="API" method={method}>
-        {isLoading ? (
+        {isLoading && (
           <div className="flex items-center justify-center my-2">
             <Loader />
           </div>
-        ) : (
+        )}
+        {isError && (
+          <div className="flex items-center justify-center my-2">
+            <span className="text-sm font-semibold text-red-500">
+              Error fetching API : {error}
+            </span>
+          </div>
+        )}
+        {data && (
           <div className="parameters">
             {data.map((param, i) => {
               console.log(param)
