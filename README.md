@@ -56,6 +56,6 @@ Pour l'utiliser
 
 ## Documentation fonctionnelle
 
-Toutes les pages de la documentation fonctionnelle sont répertoriées sous [/doc](/docs).
+Toutes les pages de la documentation fonctionnelle sont des fichiers .md mimant l'arborescence de la sidebar sous /docs/docs.
 
 ## Documentation technique
