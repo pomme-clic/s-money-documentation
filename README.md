@@ -36,6 +36,10 @@ Les contenus se gèrent depuis [home.md](docs/docs/home.md).
 
 Le repo est calé par défaut sur la branche de staging `develop` le temps du développement. Les documents doivent être édités sous cette branche durant cette phase.
 
+### Règles d'édition
+
+Chaque élément (paragraphe, composant, titre..) doit obligatoirement être espacé d'une ligne vierge, auquel cas le bon formattage pourra être compromis.
+
 ### Doc d'example
 
 Différents exemples d'utilisation des composants custom et syntaxes peuvent être consulté sur le [document d'exemple](docs/docs/examples/doc.md) (non référencé en sidebar).
