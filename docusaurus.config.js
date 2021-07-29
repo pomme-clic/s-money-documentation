@@ -21,18 +21,6 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'docs/home',
-          label: 'Docs',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'api/api1',
-          label: 'API references',
-          position: 'left',
-        },
-        {
           href: 'https://www.xpollens.com',
           label: 'xpollens.com',
           position: 'left',
