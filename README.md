@@ -2,7 +2,7 @@
 
 Repo Git du site comprenant le framework Docusaurus dans son ensemble et tous les fichiers pour la contribution de contenu.
 
-## Accès
+## Accès aux différentes prods
 
 - [Prod (Netlify alias)](https://s-money-documentation-site.netlify.app/)
 - [Staging (Netlify alias)](https://develop--s-money-documentation-site.netlify.app/)
@@ -32,30 +32,59 @@ Les items sont référencés de 2 façons :
 
 Les contenus se gèrent depuis [home.md](docs/docs/home.md).
 
-## Process d'édition
+## Process d'édition des fichiers
+
+### Branches Github
 
 Le repo est calé par défaut sur la branche de staging `develop` le temps du développement. Les documents doivent être édités sous cette branche durant cette phase.
 
-### Règles d'édition
+La version du site qui est actuellement sur l'url de prod est basée sur la branche `maintenance`.
 
-Chaque élément (paragraphe, composant, titre..) doit obligatoirement être espacé d'une ligne vierge, auquel cas le bon formattage pourra être compromis.
+Par la suite, la branche de base sera `main`.
 
-### Doc d'example
+### Workflow de publication
 
-Différents exemples d'utilisation des composants custom et syntaxes peuvent être consulté sur le [document d'exemple](docs/docs/examples/doc.md) (non référencé en sidebar).
+1. Un contributeur édite un fichier (le plus souvent sous le dossier [docs](/docs)) via l'icone d'édition.
+2. Une fois la modification faîte, 2 choix:
 
-### Images
+- Commit direct sur la branche `develop` : une build Netlify se lance et le rendu est mis à jour en général sous les 1mn, accessible via [l'url de staging](https://develop--s-money-documentation-site.netlify.app/)
+
+- Création d'une nouvelle branche de commit : l'écran invite ensuite à créer une "pull request". Une build Netlify se lance après avoir passé les tests d'intégration (environ 2mn). Une fois les tests passés, une url de prévisualisation s'affiche permettant de prévisualiser les changements. Si ces changements sont satisfaisants, on peut "merger" la pull request ce qui entraine une nouvelle génération de la [version de staging](https://develop--s-money-documentation-site.netlify.app/) (environ 30s).
+
+De manière générale avec ce flow, il vaut mieux faire une série de changements puis de vérifier tout sur des branches de déploiement, ce qui permet de vérifier en live les tests avant la publication finale.
+
+### Documentation fonctionnelle (Docs)
+
+Toutes les pages de la documentation fonctionnelle sont des fichiers .md mimant l'arborescence de la sidebar sous [/docs/docs](/docs/docs).
+
+Des options additionnelles peuvent être configurées dans en intégrant une section de type frontmatter (ex: déclarer un label de sidebar différent du 1er niveau de titre du document). Toutes les options sont détaillées dans le [plugin Docusaurus](https://docusaurus.io/docs/2.0.0-beta.3/api/plugins/@docusaurus/plugin-content-docs) dédié au traitement des markdowns.
+
+#### Règles d'édition dans les documents markdown
+
+Chaque élément (paragraphe, composant, titre..) doit obligatoirement être espacé d'une ligne vierge, auquel cas, le bon formattage pourra être compromis.
+
+#### Doc markdown d'example
+
+Différents exemples d'utilisation des composants custom et syntaxes peuvent être consultés sur le [document d'exemple](docs/docs/examples/doc.md) (non référencé en sidebar).
+
+#### Images
 
 Les images (ex: use-cases) se gèrent en utilisant un plugin d'optimisation Docusaurus ([idealImage](https://docusaurus.io/docs/2.0.0-beta.3/api/plugins/@docusaurus/plugin-ideal-image)).
 
-Pour l'utiliser
+Pour l'utiliser :
 
 1. Importer la dépendance en début de fichier `import Image from '@theme/Image';`
 2. Utiliser le composant en renseignant les props `<Image src="docs/<nom de l'image>" alt="usecase 1"/>`
-3. La props source est déjà basée sur le répértoire dédié à l'ajout des images de contenu [static/img/content/](static/img/content).
+3. La props "source" est déjà basée sur le répertoire dédié à l'ajout des images de contenu [static/img/content/](static/img/content).
 
-## Documentation fonctionnelle
+### Documentation technique (API references)
 
-Toutes les pages de la documentation fonctionnelle sont des fichiers .md mimant l'arborescence de la sidebar sous /docs/docs.
+Toutes les pages de la documentation technique sont des fichiers .md mimant l'arborescence de la sidebar sous [/docs/api](/docs/api).
 
-## Documentation technique
+Il faut reprendre les propriétés frontmatter mises en place afin de restituer le bon layout (pas de table des matières Docusaurus ni d'affichage du titre du document par défaut)
+
+Chaque fichier d'API utilise un composant enveloppant la solution Rapidoc. Il faut renseigner la prop "apiUrl" contenant le dernier segment appelant le swagger correspondant, celui-ci étant déjà préfixé dans la configuration générale.
+
+## Problèmes rencontrés
+
+Les différents problèmes liés à la contribution peuvent être remontés dans la section "Issues" du repo, permettant d'avoir des threads organisés, plutôt que des échanges mail mais cela reste une suggestion.
