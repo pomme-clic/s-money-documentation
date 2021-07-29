@@ -6,7 +6,7 @@ const Root = ({ children }) => {
       <div className="flex items-center justify-center w-screen h-screen p-10">
         <div className="flex flex-col items-center justify-center">
           <img
-            src="img/ui/logo_xpollens.svg"
+            src="/img/ui/logo_xpollens.svg"
             alt="Xpollens API docs"
             className="block w-[200px]"
           />
