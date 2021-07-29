@@ -43,15 +43,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
 
-## Transfert d'argent P2P
+## H2
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-## Endpoints
+## H2
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-### Hmac adapter 1
+### H3
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
@@ -68,6 +68,6 @@ More information regarding this endpoint in the [API reference](/api/api1)
   label="Try it out"
 />
 
-### Hmac adapter 2
+### H3
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
