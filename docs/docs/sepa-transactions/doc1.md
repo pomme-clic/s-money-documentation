@@ -9,7 +9,7 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-##### Note 1
+##### Note neutre
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
 
