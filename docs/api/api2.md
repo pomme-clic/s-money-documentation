@@ -1,6 +1,6 @@
 ---
 title: Api 1
-sidebar_label: Cardfactory v2.0
+sidebar_label: v2.0
 hide_title: true
 hide_table_of_contents: true
 ---

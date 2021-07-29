@@ -39,29 +39,7 @@ module.exports = {
         },
       ],
     },
-    customFields: {
-      footerCustom: {},
-      baseAPIURL: '',
-    },
     baseAPIUrl: 'https://ic-api.s-money.net/swagger/docs',
-    footerCustom: {
-      socialIcons: [
-        {
-          title: 'linkedin',
-          href: 'https://fr.linkedin.com/showcase/xpollens',
-        },
-        {
-          title: 'twitter',
-          href: 'https://twitter.com/xpollens',
-        },
-        {
-          title: 'test',
-          href: 'https://twitter.com/xpollens',
-        },
-      ],
-      tagline:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.',
-    },
     footer: {
       style: 'dark',
       links: [
@@ -138,6 +116,28 @@ module.exports = {
         },
       ],
       copyright: `© ${new Date().getFullYear()} Xpollens.`,
+    },
+    footerCustom: {
+      socialIcons: [
+        {
+          title: 'linkedin',
+          href: 'https://fr.linkedin.com/showcase/xpollens',
+        },
+        {
+          title: 'twitter',
+          href: 'https://twitter.com/xpollens',
+        },
+        {
+          title: 'test',
+          href: 'https://twitter.com/xpollens',
+        },
+      ],
+      tagline:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.',
+    },
+    customFields: {
+      footerCustom: {},
+      baseAPIURL: '',
     },
   },
   plugins: [

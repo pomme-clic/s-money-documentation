@@ -27,5 +27,13 @@ module.exports = {
       items: ['docs/kyc/doc1'],
     },
   ],
-  apisSidebar: ['api/api1', 'api/api2', 'api/api3'],
+  apisSidebar: [
+    'api/api1',
+    'api/api3',
+    {
+      type: 'category',
+      label: 'Card factory',
+      items: ['api/api2'],
+    },
+  ],
 }
