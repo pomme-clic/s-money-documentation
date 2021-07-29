@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Root = () => {
+const Root = ({ children }) => {
   return (
     <>
       <div className="flex items-center justify-center w-screen h-screen p-10">
-        <div class="flex flex-col justify-center items-center">
+        <div className="flex flex-col items-center justify-center">
           <img
             src="img/ui/logo_xpollens.svg"
             alt="Xpollens API docs"
