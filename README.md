@@ -56,4 +56,6 @@ Pour l'utiliser
 
 ## Documentation fonctionnelle
 
+Toutes les pages de la documentation fonctionnelle sont répertoriées sous [/doc](/docs).
+
 ## Documentation technique
