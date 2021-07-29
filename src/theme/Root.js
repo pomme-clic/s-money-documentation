@@ -6,7 +6,6 @@ const queryClient = new QueryClient()
 
 import { useLocation } from 'react-router-dom'
 import clsx from 'clsx'
-import styles from './root.module.css'
 
 const Root = ({ children }) => {
   const { pathname } = useLocation()
@@ -22,7 +21,6 @@ const Root = ({ children }) => {
         <div
           className={clsx(
             'smoney selection:bg-xp-primary-500 selection:text-black',
-            styles.smoney,
             isApiEmbeddingPage ? 'api' : '',
             {
               homepage: isDocHomepage,

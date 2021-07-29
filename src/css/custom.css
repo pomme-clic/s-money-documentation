@@ -329,4 +329,8 @@ main {
       text-decoration: underline;
     }
   }
+
+  .hash-link {
+    @apply hidden;
+  }
 }
