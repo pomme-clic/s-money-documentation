@@ -11,7 +11,7 @@ import thumbnail from '/img/cyberpunk.png';
 
 <DocHomepage />
 
-Getting started re-edited from github by stephane@pommeclic.com
+Getting started edited 9:47
 
 ![image name](/img/docusaurus.png)
 
