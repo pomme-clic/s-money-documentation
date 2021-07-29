@@ -1,66 +1,136 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react'
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
+import React from 'react'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import CustomDisclosure from '@theme/Disclosure'
+import { useQuery } from 'react-query'
+import Loader from '@theme/Loaders'
 import axios from 'axios'
+import clsx from 'clsx'
 
-const Endpoint = ({ apiUrl, method, path }) => {
-  const [parameters, setParameters] = useState([])
+const sanitizeString = (string) => {
+  return string
+    .split('')
+    .filter((letter) => {
+      return letter.charCodeAt(0) !== 8203
+    })
+    .join('')
+}
 
-  useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      console.log(apiUrl)
+const getApiParameters = (response, path, method) => {
+  const responseParameters =
+    response.data.paths[sanitizeString(path)][method]['parameters']
+  return responseParameters
+}
 
-      axios
-        .get(apiUrl)
-        .then(function (response) {
-          const schemaKey = response.data.paths[path][method]['parameters'][0][
-            'schema'
-          ]['$ref']
-            .split('/')
-            .slice(-1)[0]
+const getApiColor = (type) => {
+  const green = [
+    'binary',
+    'byte',
+    'date',
+    'email',
+    'host',
+    'ipv4',
+    'password',
+    'string',
+    'String',
+    'uri',
+    'url',
+    'uuid',
+  ]
+  const purple = ['enum']
+  const blue = ['integer']
+  const orange = ['boolean']
 
-          setParameters((prevState) =>
-            Object.entries(response.data.definitions[schemaKey]['properties']),
-          )
+  if (green.includes(type)) return 'green'
+  if (blue.includes(type)) return 'blue'
+  if (purple.includes(type)) return 'purple'
+  if (orange.includes(type)) return 'orange'
+  return '#cccccc'
+}
 
-          console.log(parameters)
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+const Endpoint = ({ apiUrl, path, method }) => {
+  const { siteConfig } = useDocusaurusContext()
+  const {
+    themeConfig: { baseAPIUrl },
+  } = siteConfig
+
+  const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+
+  const fetchEndpoint = async () => {
+    try {
+      const response = await axios.get(fullAPIUrl)
+      const data = getApiParameters(response, path, method)
+      return data
+    } catch (error) {
+      console.log(error)
     }
+  }
 
-    return () => {
-      setParameters([])
-    }
-  }, [])
+  const { isLoading, isError, data, error } = useQuery(
+    ['fetchEndpoint', { apiUrl, path, method }],
+    fetchEndpoint,
+  )
 
   return (
-    <div>
-      {/* Route */}
-      <div className="flex items-center px-5 py-4 space-x-4 bg-gray-300 rounded">
-        {/* Method */}
-        <div className="px-3 py-1 text-xs font-bold text-white uppercase bg-blue-500 rounded">
-          {method}
-        </div>
-        {/* Path */}
-        <div className="text-sm text-black">{`${apiUrl}${path}`}</div>
-      </div>
+    <div className="mt-4">
+      <CustomDisclosure title={path} type="API" method={method}>
+        {isLoading && (
+          <div className="flex items-center justify-center my-2">
+            <Loader />
+          </div>
+        )}
+        {isError && (
+          <div className="flex items-center justify-center my-2">
+            <span className="text-sm font-semibold text-red-500">
+              Error fetching API : {error}
+            </span>
+          </div>
+        )}
+        {data && (
+          <div className="parameters">
+            {data.map((param, i) => {
+              console.log(param)
+              const paramName = param.name
+              const paramType = param.schema['type']
+              const paramDescription = param.description || null
+              const isParamRequired = param.required || null
 
-      {/* Parameters */}
-      <div className="mt-4 space-y-4">
-        {parameters.map((props, i) => {
-          return (
-            <div className="bg-gray-700" key={`${props[0]}${i}`}>
-              {/* Key + type */}
-              <div className="text-white">
-                {props[0]} . {props[1]['type']}
-              </div>
-              {/* Description */}
-              {props[1]['description'] && <div>{props[1]['description']}</div>}
-            </div>
-          )
-        })}
-      </div>
+              return (
+                <div
+                  className={clsx('w-full border-xp-grey-300 py-4', {
+                    'border-t': i !== 0,
+                  })}
+                  key={`${paramName}${i}`}
+                >
+                  <div className="flex items-center space-x-2 text-black">
+                    <div className="font-semibold">
+                      {paramName}
+                      {isParamRequired && (
+                        <span className="inline-block text-red-500 ">*</span>
+                      )}
+                    </div>
+                    <div className="w-1 h-1 rounded-full bg-xp-grey-700"></div>
+                    <div
+                      className={clsx({
+                        'text-api-green': getApiColor(paramType) === 'green',
+                        'text-api-blue': getApiColor(paramType) === 'blue',
+                        'text-api-purple': getApiColor(paramType) === 'purple',
+                        'text-api-orange': getApiColor(paramType) === 'orange',
+                      })}
+                    >
+                      {paramType}
+                    </div>
+                  </div>
+                  {paramDescription && (
+                    <div className="mt-2 text-sm text-xp-grey-700">
+                      {paramDescription}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        )}
+      </CustomDisclosure>
     </div>
   )
 }

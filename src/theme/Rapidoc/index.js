@@ -1,50 +1,75 @@
-import React, { useRef, useState, useLayoutEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
+import { useQuery } from 'react-query'
+import axios from 'axios'
+import Loader from '@theme/Loaders'
 
-const Rapidoc = ({ apiUrl, children }) => {
-  const [displayDoc, setDisplayDoc] = useState(false)
+const Rapidoc = ({ apiUrl }) => {
+  const { siteConfig } = useDocusaurusContext()
+  const {
+    themeConfig: { baseAPIUrl },
+  } = siteConfig
+  const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
-  useLayoutEffect(() => {
+  const rapidocRef = useRef()
+
+  const fetchAPI = async () => {
+    try {
+      const response = await axios.get(fullAPIUrl)
+      return response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const { isLoading, isError, data, error } = useQuery(
+    ['fetchAPI', { apiUrl }],
+    fetchAPI,
+  )
+
+  useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
       require('rapidoc')
-      setDisplayDoc(true)
-      console.log('can execute DOM')
     }
   }, [])
 
+  useEffect(() => {
+    if (data) {
+      const stringifiedData = JSON.stringify(data)
+      rapidocRef.current.loadSpec(JSON.parse(stringifiedData))
+    }
+  }, [data])
+
   return (
-    <div>
-      {children}
-      {displayDoc && (
-        <rapi-doc
-          theme="light"
-          nav-bg-color="#ffffff"
-          nav-text-color="black"
-          nav-accent-color="#ff0000"
-          spec-url={apiUrl}
-          layout="row"
-          sort-tags="true"
-          render-style="read"
-          show-header="false"
-          show-info="true"
-          show-components="false"
-          allow-search="false"
-          allow-advanced-search="false"
-          // allow-schema-description-expand-toggle="false"
-          allow-api-list-style-selection="false"
-          style={{ height: '100vh', width: '100%' }}
-        >
-          {/* <p> This is an example of adding external HTML content. </p>
-          <p> You may add: </p>
-          <ul>
-            <li> Tables </li>
-            <li> Text </li>
-            <li> Images </li>
-            <li> Links </li>
-            <li> Any HTML content </li>
-          </ul> */}
-        </rapi-doc>
+    <div className="flex items-center justify-center">
+      {isLoading && (
+        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
+          <Loader />
+        </div>
       )}
+      {isError && (
+        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
+          Error fetching API : {error}
+        </div>
+      )}
+      <rapi-doc
+        ref={rapidocRef}
+        theme="light"
+        nav-bg-color="#ffffff"
+        nav-text-color="black"
+        nav-accent-color="#ff0000"
+        layout="row"
+        sort-tags="true"
+        render-style="read"
+        show-header="false"
+        show-info="true"
+        show-components="false"
+        allow-search="false"
+        allow-advanced-search="false"
+        allow-api-list-style-selection="false"
+        style={{ height: '100vh', width: '100%' }}
+      ></rapi-doc>
     </div>
   )
 }

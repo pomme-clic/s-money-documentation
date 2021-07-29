@@ -1,13 +1,5 @@
-/* stylelint-disable docusaurus/copyright-header */
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #006d8c;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -15,11 +7,32 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  /* --aa-text-color-rgb: #ff0000;
-  --aa-background-color-rgb: #ff0000;
-  --aa-muted-color-rgb: #ff0000 !important; */
+  --ifm-font-weight-semibold: 600;
+  --ifm-navbar-link-color: #757575;
+  --ifm-font-family-base: 'Poppins';
+  --ifm-footer-link-hover-color: #63c2c7;
+  --ifm-heading-color: #000;
 }
 
+/* Darkmode overrides */
+html[data-theme='dark'] {
+  --ifm-color-primary: #349bb8;
+  --ifm-color-primary-dark: #5a91ea;
+  --ifm-navbar-link-color: #bdbdbd;
+  --ifm-background-color: #121e24;
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-background-surface-color: var(--ifm-background-color);
+  --ifm-footer-link-hover-color: #63c2c7;
+  --ifm-heading-color: #ffffff;
+  --ifm-toc-border-color: #2a3845;
+}
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globals */
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
@@ -27,9 +40,86 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* FONTS */
+
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-regular.woff') format('woff');
+}
+/* poppins-italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''), url('../fonts/poppins-v15-latin-italic.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-italic.woff') format('woff');
+}
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''), url('../fonts/poppins-v15-latin-600.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-600.woff') format('woff');
+}
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''), url('../fonts/poppins-v15-latin-700.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-700.woff') format('woff');
+}
+
+html {
+  font-family: 'Poppins';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  @apply !text-3xl;
+}
+
+h2 {
+  @apply !text-xl;
+}
+
+@screen md {
+  h1 {
+    @apply !text-4xl;
+  }
+
+  h2 {
+    @apply !text-2xl;
+  }
+}
+
+/* Container */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1100px !important;
+  }
+}
+
+/* API container */
+.smoney.api {
+  footer {
+    display: none;
+  }
+}
 
 .api .padding-vert--lg {
   padding: 0 !important;
@@ -39,13 +129,208 @@
   max-width: none;
 }
 
-.api .container .row .col > div {
+/* API doc-page container */
+.api {
+  .doc-page {
+    .container {
+      height: calc(100vh - 60px);
+      padding: 0 !important;
+      .row {
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
+}
+
+@media (min-width: 1536px) {
+  .api {
+    .doc-page {
+      .container {
+        max-width: none !important;
+      }
+    }
+  }
+}
+
+/* Rapidoc */
+#the-main-body.body {
+  background: purple !important;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#the-main-body .api .container .row .col > div {
   padding: 0 !important;
 }
 
+.api .pagination-nav {
+  display: none;
+}
+
+/* Homepage */
+.smoney {
+  &.homepage {
+    .pagination-nav {
+      display: none;
+    }
+  }
+}
+
+/* Search */
 .smoney {
   .aa-DetachedSearchButton {
     border-radius: 30px;
     color: white;
+  }
+}
+
+/* Sidebar */
+.main-wrapper {
+  aside {
+    width: 0px !important;
+  }
+}
+
+@screen lg {
+  .main-wrapper {
+    aside {
+      display: block;
+      width: auto !important;
+    }
+  }
+}
+
+@screen md {
+  .menu {
+    @apply py-9 pl-8 pr-6 !important;
+  }
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  @apply bg-transparent;
+}
+
+aside > div > nav > ul > li:nth-child(2) > ul > li {
+  &:not(:first-child) {
+    @apply mt-0;
+  }
+}
+
+.menu {
+  .menu__link {
+    @apply font-normal text-sm;
+    &--active {
+      @apply font-semibold;
+    }
+  }
+
+  > .menu__list {
+    > .menu__list-item {
+      &:not(:first-child) {
+        @apply mt-3;
+      }
+
+      > .menu__link {
+        @apply relative pl-8 pr-0 font-semibold text-[15px];
+        @apply before:absolute before:top-1/2 before:left-2 before:-translate-y-1/2 before:bg-xp-primary-500 before:w-2 before:h-2 before:rounded-full;
+      }
+    }
+  }
+}
+
+.menu__link--sublist:after {
+  background: url('/img/ui/icons/arrow.svg');
+  height: 24px;
+  width: 24px;
+  @apply absolute right-0 top-[4px];
+}
+
+.navbar-sidebar__items {
+  .menu__link {
+    @apply !pl-4;
+    &:before {
+      @apply hidden;
+    }
+  }
+}
+
+/* Responsive doc navigation */
+.menu--responsive {
+  button {
+    @apply bg-xp-primary-500 text-black border-none;
+  }
+}
+
+/* Main */
+main {
+  .container {
+    @apply !pt-8 !pb-5 !px-5;
+  }
+}
+
+@screen md {
+  main {
+    .container {
+      @apply !py-10 !px-10;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  @apply bg-xp-tertiaries-secondary-marine;
+
+  .container {
+    @apply max-w-[1336px];
+
+    @media (min-width: 1536px) {
+      max-width: 1336px !important;
+    }
+  }
+}
+
+/* TOC */
+.table-of-contents {
+  @apply !text-sm pl-[15px];
+
+  &__link--active {
+    @apply font-bold;
+  }
+
+  ul > li {
+    @apply font-normal;
+  }
+}
+
+/* /docs */
+.smoney.docpage {
+  h2 {
+    @apply flex items-center;
+    &:before {
+      content: '';
+      background: url('/img/ui/icons/arrow_x_xpollens.svg');
+      background-size: cover;
+      @apply block w-[19px] h-[22px] mr-3;
+    }
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  hr {
+    @apply border-none h-[3px] mt-12 mb-10;
+    background: url('/img/ui/doc_divider.svg') repeat-x;
+  }
+
+  .markdown {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .hash-link {
+    @apply hidden;
   }
 }
