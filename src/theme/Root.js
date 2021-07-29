@@ -1,37 +1,20 @@
 import React from 'react'
 
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
-const queryClient = new QueryClient()
-
-import { useLocation } from 'react-router-dom'
-import clsx from 'clsx'
-
-const Root = ({ children }) => {
-  const { pathname } = useLocation()
-  const isApiEmbeddingPage =
-    pathname.includes('/api') && !pathname.includes('introduction')
-
-  const isDocHomepage = pathname === '/'
-  const isDocPage = pathname.includes('/docs')
-
+const Root = () => {
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <div
-          className={clsx(
-            'smoney selection:bg-xp-primary-500 selection:text-black',
-            isApiEmbeddingPage ? 'api' : '',
-            {
-              homepage: isDocHomepage,
-              docpage: isDocPage,
-            },
-          )}
-        >
-          {children}
+      <div className="flex items-center justify-center w-screen h-screen p-10">
+        <div class="flex flex-col justify-center items-center">
+          <img
+            src="img/ui/logo_xpollens.svg"
+            alt="Xpollens API docs"
+            className="block w-[200px]"
+          />
+          <p className="mt-2 text-sm text-center text-xp-grey-700">
+            Xpollens API docs is currently down for maintenance.
+          </p>
         </div>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+      </div>
     </>
   )
 }
