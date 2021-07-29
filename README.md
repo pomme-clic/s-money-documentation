@@ -42,6 +42,14 @@ Différents exemples d'utilisation des composants custom et syntaxes peuvent êt
 
 ### Images
 
+Les images (ex: use-cases) se gèrent en utilisant un plugin d'optimisation Docusaurus ([idealImage](https://docusaurus.io/docs/2.0.0-beta.3/api/plugins/@docusaurus/plugin-ideal-image)).
+
+Pour l'utiliser
+
+1. Importer la dépendance en début de fichier `import Image from '@theme/Image';`
+2. Utiliser le composant en renseignant les props `<Image src="docs/<nom de l'image>" alt="usecase 1"/>`
+3. La props source est déjà basée sur le répértoire dédié à l'ajout des images de contenu [static/img/content/](static/img/content).
+
 ## Documentation fonctionnelle
 
 ## Documentation technique
