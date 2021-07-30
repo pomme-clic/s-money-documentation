@@ -19,6 +19,8 @@ html[data-theme='dark'] {
   --ifm-color-primary: #349bb8;
   --ifm-color-primary-dark: #5a91ea;
   --ifm-navbar-link-color: #bdbdbd;
+  --ifm-navbar-link-hover-color: #63c2c7;
+  --ifm-menu-color-active: #63c2c7;
   --ifm-background-color: #121e24;
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-background-surface-color: var(--ifm-background-color);
@@ -332,5 +334,27 @@ main {
 
   .hash-link {
     @apply hidden;
+  }
+}
+
+/* Pagination */
+.pagination-nav__item {
+  .pagination-nav__link {
+    .pagination-nav__sublabel {
+      @apply font-normal;
+    }
+    @apply shadow border-xp-grey-300;
+  }
+}
+
+html[data-theme='dark'] {
+  .pagination-nav__item {
+    .pagination-nav__link {
+      @apply border-xp-grey-700;
+
+      &:hover {
+        @apply border-xp-grey-500;
+      }
+    }
   }
 }

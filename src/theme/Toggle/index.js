@@ -45,13 +45,11 @@ const Toggle = memo(
           onClick={() => inputRef.current?.click()}
         >
           <div className="react-toggle-track-check">
-            {/* {icons.checked} */}
             <CustomToggleImgDark
               className={`${styles.customToggleImg} w-full relative top-[-7px] left-[2px]`}
             />
           </div>
           <div className="react-toggle-track-x !w-[18px]">
-            {/* {icons.unchecked} */}
             <CustomToggleImgLight
               className={`${styles.customToggleImg} w-full relative top-[-7px] left-[2px]`}
             />

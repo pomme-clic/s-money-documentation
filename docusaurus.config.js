@@ -8,7 +8,7 @@ module.exports = {
   noIndex: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   organizationName: 'xpollens',
   projectName: 's-money-documentation',
   themeConfig: {

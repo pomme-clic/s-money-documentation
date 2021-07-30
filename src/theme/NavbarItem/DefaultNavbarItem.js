@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import { useLocation } from '@docusaurus/router'
 import { isSamePath } from '@docusaurus/theme-common'
-import IconExternalLink from '@theme/IconExternalLink'
+import CustomIconExternalLink from '@site/static/img/ui/icons/external link.svg'
 import isInternalUrl from '@docusaurus/isInternalUrl'
 const dropdownLinkActiveClass = 'dropdown__link--active'
 
@@ -54,18 +54,18 @@ function NavLink({
           })}
       {...props}
     >
-      {isExternalLink
-        ? label
-        : // <span>
-          //   {label}
-          //   <IconExternalLink
-          //     {...(isDropdownLink && {
-          //       width: 12,
-          //       height: 12,
-          //     })}
-          //   />
-          // </span>
-          label}
+      {isExternalLink ? (
+        <span className="flex items-center group link">
+          <span>{label}</span>
+          <span>
+            <CustomIconExternalLink
+              className={`w-5 h-5 relative left-1 top-[-1px] fill-current`}
+            />
+          </span>
+        </span>
+      ) : (
+        label
+      )}
     </Link>
   )
 }
