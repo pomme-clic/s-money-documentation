@@ -30,7 +30,7 @@ const Root = ({ children }) => {
         >
           {children}
         </div>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   )
