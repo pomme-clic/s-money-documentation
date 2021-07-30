@@ -1,0 +1,17 @@
+.cta {
+  &.inlineStyle {
+    @apply text-xp-tertiaries-secondary-blue;
+  }
+}
+
+.arrow {
+  @apply inline rotate-90 fill-current relative left-[-4px] w-6;
+}
+
+html[data-theme='dark'] {
+  .cta {
+    &.inlineStyle {
+      @apply text-xp-tertiaries-primary-ciel;
+    }
+  }
+}
