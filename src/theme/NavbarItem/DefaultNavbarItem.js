@@ -12,7 +12,6 @@ import { useLocation } from '@docusaurus/router'
 import { isSamePath } from '@docusaurus/theme-common'
 import CustomIconExternalLink from '@site/static/img/ui/icons/external link.svg'
 import isInternalUrl from '@docusaurus/isInternalUrl'
-import styles from './styles.module.css'
 const dropdownLinkActiveClass = 'dropdown__link--active'
 
 function NavLink({
@@ -60,7 +59,7 @@ function NavLink({
           <span>{label}</span>
           <span>
             <CustomIconExternalLink
-              className={`${styles.customIconExternalLink}  w-5 h-5 relative left-1 top-[-1px] fill-current`}
+              className={`w-5 h-5 relative left-1 top-[-1px] fill-current`}
             />
           </span>
         </span>
