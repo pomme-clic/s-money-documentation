@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react'
+
+import useThemeContext from '@theme/hooks/useThemeContext'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import { useQuery } from 'react-query'
@@ -11,6 +13,8 @@ const Rapidoc = ({ apiUrl }) => {
     themeConfig: { baseAPIUrl },
   } = siteConfig
   const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+
+  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext()
 
   const rapidocRef = useRef()
 
@@ -53,15 +57,20 @@ const Rapidoc = ({ apiUrl }) => {
           Error fetching API : {error}
         </div>
       )}
+      {/* nav-accent-color="#ff0000" */}
       <rapi-doc
         ref={rapidocRef}
-        theme="light"
-        nav-bg-color="#ffffff"
-        nav-text-color="black"
-        nav-accent-color="#ff0000"
+        theme={isDarkTheme ? 'dark' : 'light'}
+        bg-color={isDarkTheme ? '#121E24' : '#fff'}
+        nav-bg-color={isDarkTheme ? '#081014' : '#fff'}
+        nav-text-color={isDarkTheme ? '#ffffff' : '#000000'}
+        nav-item-spacing="relaxed"
         layout="row"
         sort-tags="true"
         render-style="read"
+        load-fonts="false"
+        regular-font="Poppins"
+        primary-color="#63C2C7"
         show-header="false"
         show-info="true"
         show-components="false"
