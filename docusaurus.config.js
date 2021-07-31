@@ -152,15 +152,17 @@ module.exports = {
         steps: 4,
       },
     ],
-    // [
-    //   require.resolve('@cmfcmf/docusaurus-search-local'),
-    //   {
-    //     // Options here
-    //     docsRouteBasePath: '/',
-    //     indexDocSidebarParentCategories: 2,
-    //   },
-    // ],
-    'docusaurus-lunr-search',
+    [
+      path.resolve(__dirname, './plugins/@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexPages: true,
+        indexBlog: false,
+        docsRouteBasePath: ['/docs/', '/api'],
+        docsDir: ['docs/docs', 'docs/api'],
+      },
+    ],
   ],
   presets: [
     [
