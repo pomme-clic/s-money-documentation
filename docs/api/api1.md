@@ -1,7 +1,7 @@
 ---
 title: Core API
 sidebar_label: Core Api v1.0
-hide_title: true
+# hide_title: true
 hide_table_of_contents: true
 ---
 

@@ -152,14 +152,15 @@ module.exports = {
         steps: 4,
       },
     ],
-    [
-      require.resolve('@cmfcmf/docusaurus-search-local'),
-      {
-        // Options here
-        docsRouteBasePath: '/',
-        indexDocSidebarParentCategories: 2,
-      },
-    ],
+    // [
+    //   require.resolve('@cmfcmf/docusaurus-search-local'),
+    //   {
+    //     // Options here
+    //     docsRouteBasePath: '/',
+    //     indexDocSidebarParentCategories: 2,
+    //   },
+    // ],
+    'docusaurus-lunr-search',
   ],
   presets: [
     [

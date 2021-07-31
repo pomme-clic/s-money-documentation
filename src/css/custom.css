@@ -121,6 +121,10 @@ h2 {
   footer {
     display: none;
   }
+
+  header {
+    display: none;
+  }
 }
 
 .api .padding-vert--lg {
