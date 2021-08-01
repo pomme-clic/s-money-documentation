@@ -1,12 +1,21 @@
-export const iconTitle =
-  '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linejoin="round"></path></svg>'
+export const iconTitle = `<svg height="20" width="20" viewBox="0 0 24 24">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <path d="M20.5 22.07h-17V1.93h11l6 6z"/>
+    <path d="M14.5 1.93v6h6M7.5 8.93H11M7.5 11.93h9M7.5 14.93h9M7.5 17.93h9"/>
+  </g>
+</svg>
+`
+export const iconTitleApi = `<svg height="20" width="20" viewBox="0 0 24 24">
+  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.5 22.07h-17V1.93h11l6 6v14.14z"/>
+  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.5 1.93v6h6"/>
+  <path fill="currentColor" d="M14.59 11l-1.15.47-.8-.26-.83-.18-.77-1-1.11.3-.18 1.23s-.44.36-.64.56-.56.64-.56.64L7.32 13 7 14.11l1 .77s.12.55.19.82.25.81.25.81L8 17.66l.81.81L9.93 18s.54.18.81.25l.81.18.77 1 1.11-.3.18-1.23s.44-.36.64-.56.56-.64.56-.64l1.19-.2.3-1.11-1-.77s-.15-.54-.22-.81l-.14-.81.46-1.16zM13 13.42a1.89 1.89 0 010 2.66 1.88 1.88 0 110-2.66z"/>
+</svg>
+`
 export const iconHeading =
   '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 13h4-4V8H7v5h6v4-4H7V8H3h4V3v5h6V3v5h4-4v5zm-6 0v4-4H3h4z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
 export const iconContent =
   '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M17 5H3h14zm0 5H3h14zm0 5H3h14z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linejoin="round"></path></svg>'
-export const iconAction = `<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24">
-  <defs/>
-  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.42 13.92H15a4 4 0 004-4v-2"/>
+export const iconAction = `<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.42 13.92H15a4 4 0 004-4v-2"/>
   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.41 9.93l-3.99 3.99 3.99 3.99"/>
 </svg>`
 export const iconNoResults = `<svg width="40" height="40" viewBox="0 0 23.8 23.8">
