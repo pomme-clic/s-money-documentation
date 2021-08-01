@@ -363,7 +363,7 @@ html[data-theme='dark'] {
   }
 }
 
-/* Search */
+/* Searchbar */
 .navbar__search-input {
   @apply bg-white border border-solid border-xp-grey-400 rounded-xl h-[36px] text-black text-sm bg-no-repeat;
   @apply focus:border-xp-primary-500 focus:outline-none;
@@ -381,4 +381,14 @@ html[data-theme='dark'] {
 
 .apiSubtreeSuggestion {
   display: none !important;
+}
+
+html[data-theme='dark'] {
+  .navbar__search-input {
+    @apply bg-transparent text-white border-xp-grey-700;
+  }
+
+  &::placeholder {
+    @apply text-xp-grey-400;
+  }
 }
