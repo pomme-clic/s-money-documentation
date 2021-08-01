@@ -7,6 +7,7 @@
     "start": "docusaurus start",
     "startfr": "npm run start -- --locale fr",
     "writefr": "npm run write - translations-- --locale fr",
+    "preview": "npm run build && npm run serve",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

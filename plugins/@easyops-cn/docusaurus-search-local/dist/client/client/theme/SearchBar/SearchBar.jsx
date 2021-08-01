@@ -113,6 +113,7 @@ export default function SearchBar({ handleSearchBarToggle, }) {
         }
     }, [baseUrl, history]);
     useEffect(() => {
+        
         if (!Mark) {
             return;
         }
@@ -148,7 +149,13 @@ export default function SearchBar({ handleSearchBarToggle, }) {
         loadIndex();
     }, [loadIndex]);
     const onInputChange = useCallback((event) => {
+        
         if (event.target.value) {
+            const apiSubtreeElements = Array.from(document.querySelectorAll(".isApiSubtree"))
+                apiSubtreeElements.forEach((element)=>{
+                    console.log(element.parentNode);
+                    element.parentNode.classList.add('apiSubtreeSuggestion')
+                })
             setInputChanged(true);
         }
     }, []);

@@ -378,3 +378,7 @@ html[data-theme='dark'] {
     @apply text-xp-grey-600 text-sm;
   }
 }
+
+.apiSubtreeSuggestion {
+  display: none !important;
+}

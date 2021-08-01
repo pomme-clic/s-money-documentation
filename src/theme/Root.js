@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -14,6 +15,15 @@ const Root = ({ children }) => {
 
   const isDocHomepage = pathname === '/'
   const isDocPage = pathname.includes('/docs')
+
+  useEffect(() => {
+    if (ExecutionEnvironment.canUseDOM) {
+      // console.log('document:', document)
+      // const getApiSubTreesElements = () => {
+      //   console.log(ocument)
+      // }
+    }
+  })
 
   return (
     <>

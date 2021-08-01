@@ -1,3 +1,4 @@
+// import { useRef } from 'react'
 import { highlight } from '../../utils/highlight'
 import { highlightStemmed } from '../../utils/highlightStemmed'
 import { getStemmedPositions } from '../../utils/getStemmedPositions'
@@ -20,6 +21,7 @@ export function SuggestionTemplate({
   isInterOfTree,
   isLastOfTree,
 }) {
+  // const apiSubTree = useRef()
   const isTitle = type === 0
   const isDoc = document.u.startsWith('/docs')
   const isApi = document.u.startsWith('/api')
@@ -32,9 +34,12 @@ export function SuggestionTemplate({
     tree.push(iconTreeLast)
   }
   const treeWrapper = tree.map(
-    (item) => `<span class="${styles.hitTree}">${item}</span>`,
+    (item) =>
+      `<span  class="${styles.hitTree} ${
+        isApi ? 'isApiSubtree' : ''
+      }">${item}</span>`,
   )
-  const icon = `<span class="${styles.hitIcon} ${isDoc ? 'isDoc' : 'isApi'}">${
+  const icon = `<span class="${styles.hitIcon}">${
     isTitle ? iconTitleType : isHeading ? iconHeading : iconContent
   }</span>`
   const wrapped = [
@@ -57,6 +62,7 @@ export function SuggestionTemplate({
     )
   }
   const action = `<span class="${styles.hitAction}">${iconAction}</span>`
+
   return [
     ...treeWrapper,
     icon,
@@ -65,4 +71,17 @@ export function SuggestionTemplate({
     '</span>',
     action,
   ].join('')
+
+  // if ((isApi && isInterOfTree) || (isApi && isLastOfTree)) {
+  //   return [].join('')
+  // } else {
+  //   return [
+  //     ...treeWrapper,
+  //     icon,
+  //     `<span class="${styles.hitWrapper}">`,
+  //     ...wrapped,
+  //     '</span>',
+  //     action,
+  //   ].join('')
+  // }
 }
