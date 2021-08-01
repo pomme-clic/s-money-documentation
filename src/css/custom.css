@@ -12,12 +12,10 @@
   --ifm-font-family-base: 'Poppins';
   --ifm-footer-link-hover-color: #63c2c7;
   --ifm-heading-color: #000;
-  /* --search-local-modal-background: #ff0000; */
 }
 
 /* Darkmode overrides */
 html[data-theme='dark'] {
-  /* --search-local-modal-background: #ff0000; */
   --ifm-color-primary: #349bb8;
   --ifm-color-primary-dark: #5a91ea;
   --ifm-navbar-link-color: #bdbdbd;

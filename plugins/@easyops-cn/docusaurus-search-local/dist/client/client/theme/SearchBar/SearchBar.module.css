@@ -2,15 +2,9 @@
   left: auto !important;
   right: 0 !important;
 
-  /* background: var(--search-local-modal-background, #f5f6f7); */
-  /* background: green !important; */
-  background: blue !important;
+  background: var(--search-local-modal-background, #f5f6f7);
   border-radius: 6px;
-  box-shadow: var(
-    --search-local-modal-shadow,
-    inset 1px 1px 0 0 hsla(0, 0%, 100%, 0.5),
-    0 3px 8px 0 #555a64
-  );
+  box-shadow: 0 0px 0px 1px rgb(0 0 0 / 5%), 0 5px 15px 0px rgb(0 0 0 / 30%);
   margin-top: 8px;
   width: var(--search-local-modal-width, 560px);
   position: relative;
@@ -29,9 +23,7 @@
 }
 
 html[data-theme='dark'] .searchBar .dropdownMenu {
-  /* background: var(--search-local-modal-background, var(--ifm-background-color)); */
-  /* background: green !important; */
-  background: blue !important;
+  background: var(--search-local-modal-background, var(--ifm-background-color));
   box-shadow: var(
     --search-local-modal-shadow,
     inset 1px 1px 0 0 #2c2e40,
@@ -161,6 +153,7 @@ html[data-theme='dark'] .noResultsIcon {
   text-align: center;
   margin-top: var(--search-local-spacing, 12px);
   font-size: 0.85em;
+  display: none;
 }
 
 .hitFooter a {
