@@ -364,6 +364,17 @@ html[data-theme='dark'] {
 }
 
 /* Search */
-.searchBar .dropdownMenu {
-  background: purple !important;
+.navbar__search-input {
+  @apply bg-white border border-solid border-xp-grey-400 rounded-xl h-[36px] text-black text-sm bg-no-repeat;
+  @apply focus:border-xp-primary-500 focus:outline-none;
+  &:focus {
+    box-shadow: 0px 0px 0px 1px #ffcc00;
+  }
+  padding: 17px 10px 15px 40px;
+  background-image: url('/img/ui/icons/search--searchbar.svg');
+  background-size: 20px 20px;
+
+  &::placeholder {
+    @apply text-xp-grey-600 text-sm;
+  }
 }
