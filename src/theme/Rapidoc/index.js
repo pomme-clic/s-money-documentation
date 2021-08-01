@@ -18,7 +18,7 @@ const Rapidoc = ({ apiUrl }) => {
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext()
 
   const customThemeColors = {
-    background: '#121E24',
+    'darkmode-background': '#121E24',
     'xp-primary-500': '#FFCC00',
     'xp-tertiaries': {
       'primary-ciel': '#63C2C7',
@@ -67,11 +67,12 @@ const Rapidoc = ({ apiUrl }) => {
           Error fetching API : {error}
         </div>
       )}
-
       <rapi-doc
         ref={rapidocRef}
         theme={isDarkTheme ? 'dark' : 'light'}
-        bg-color={isDarkTheme ? '#121E24' : '#fff'}
+        bg-color={
+          isDarkTheme ? customThemeColors['darkmode-background'] : '#fff'
+        }
         nav-bg-color={isDarkTheme ? '#081014' : '#F5F5F5'}
         nav-text-color={isDarkTheme ? '#ffffff' : '#000000'}
         nav-accent-color={
@@ -89,8 +90,6 @@ const Rapidoc = ({ apiUrl }) => {
         show-header="false"
         show-info="true"
         show-components="false"
-        allow-search="false"
-        allow-advanced-search="false"
         allow-api-list-style-selection="false"
         style={{ height: 'calc(100vh - 60px)', width: '100%' }}
       ></rapi-doc>

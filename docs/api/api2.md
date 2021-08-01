@@ -1,9 +1,11 @@
 ---
-title: Api 1
+title: v2
 sidebar_label: v2.0
-hide_title: true
+# hide_title: true
 hide_table_of_contents: true
 ---
+
+# API 2
 
 import Rapidoc from "@theme/Rapidoc"
 

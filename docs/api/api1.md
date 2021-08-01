@@ -1,9 +1,11 @@
 ---
-title: Api 1
+title: Core API
 sidebar_label: Core Api v1.0
-hide_title: true
+# hide_title: true
 hide_table_of_contents: true
 ---
+
+# Core API
 
 import Rapidoc from "@theme/Rapidoc"
 
