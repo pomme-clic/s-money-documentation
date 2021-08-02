@@ -358,6 +358,13 @@ main {
   }
 
   ul {
+    &.table-of-contents {
+      @apply mt-0 !important;
+      ul {
+        @apply mt-0 !important;
+      }
+    }
+
     li {
       &:before {
         content: '';
@@ -390,6 +397,10 @@ html[data-theme='dark'] {
       }
     }
   }
+}
+
+code[class*='markdown'] pre[class*='language-'] {
+  word-wrap: normal;
 }
 
 /* Pagination */
