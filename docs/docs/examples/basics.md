@@ -77,12 +77,12 @@ _Italic_
 ## Links
 
 ```markdown
-[Link to internal page](/docs/examples/doc)
+[Link to internal page](/docs/examples/basics)
 [Link to external page](https://www.xpollens.com)
 [Link to page anchor](#headers)
 ```
 
-[Link to internal page](/docs/examples/doc)
+[Link to internal page](/docs/examples/basics)
 
 [Link to external page](https://www.xpollens.com)
 
