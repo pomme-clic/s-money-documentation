@@ -339,6 +339,57 @@ main {
   .hash-link {
     @apply hidden;
   }
+
+  code {
+    @apply text-sm;
+  }
+
+  .copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+    @apply text-sm !important;
+  }
+
+  ol,
+  ul {
+    @apply mt-6 ml-3 space-y-2;
+
+    li {
+      @apply relative block pl-2 !important;
+    }
+  }
+
+  ul {
+    li {
+      &:before {
+        content: '';
+        @apply absolute rounded-full w-[5px] h-[5px] left-[-10px] top-[10px] bg-black;
+      }
+    }
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: counter;
+
+    li {
+      counter-increment: counter;
+      &:before {
+        content: counter(counter) '. ';
+        @apply absolute left-[-10px] top-[0px];
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .smoney.docpage {
+    ul {
+      li {
+        &:before {
+          @apply bg-white;
+        }
+      }
+    }
+  }
 }
 
 /* Pagination */
