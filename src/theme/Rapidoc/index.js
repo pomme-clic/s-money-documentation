@@ -8,6 +8,15 @@ import axios from 'axios'
 import Loader from '@theme/Loaders'
 import './styles.module.css'
 
+const customThemeColors = {
+  'darkmode-background': '#121E24',
+  'xp-primary-500': '#FFCC00',
+  'xp-tertiaries': {
+    'primary-ciel': '#63C2C7',
+    'secondary-blue': '#006D8C',
+  },
+}
+
 const Rapidoc = ({ apiUrl }) => {
   const { siteConfig } = useDocusaurusContext()
   const {
@@ -15,38 +24,32 @@ const Rapidoc = ({ apiUrl }) => {
   } = siteConfig
   const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext()
-
-  const customThemeColors = {
-    'darkmode-background': '#121E24',
-    'xp-primary-500': '#FFCC00',
-    'xp-tertiaries': {
-      'primary-ciel': '#63C2C7',
-      'secondary-blue': '#006D8C',
-    },
-  }
+  const { isDarkTheme } = useThemeContext()
 
   const rapidocRef = useRef()
-
-  const fetchAPI = async () => {
-    try {
-      const response = await axios.get(fullAPIUrl)
-      return response.data
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  const { isLoading, isError, data, error } = useQuery(
-    ['fetchAPI', { apiUrl }],
-    fetchAPI,
-  )
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
       require('rapidoc')
     }
   }, [])
+
+  const fetchAPI = async () => {
+    try {
+      const response = await axios.get(fullAPIUrl)
+      return response.data
+    } catch (error) {
+      throw new Error(error.message)
+    }
+  }
+
+  const { isLoading, isError, isSuccess, error, data } = useQuery(
+    ['fetchAPI', apiUrl],
+    fetchAPI,
+    {
+      retry: false,
+    },
+  )
 
   useEffect(() => {
     if (data) {
@@ -63,8 +66,8 @@ const Rapidoc = ({ apiUrl }) => {
         </div>
       )}
       {isError && (
-        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
-          Error fetching API : {error}
+        <div className="absolute text-red-500 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
+          Error fetching API : {error.message}
         </div>
       )}
       <rapi-doc

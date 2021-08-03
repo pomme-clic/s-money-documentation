@@ -232,7 +232,23 @@ aside > div > nav > ul > li:nth-child(2) > ul > li {
   }
 
   > .menu__list {
+    > .menu__list-item--collapsed {
+      .menu__list {
+        @apply transition duration-100 ease-out pt-0 !important;
+      }
+    }
+
     > .menu__list-item {
+      .menu__list {
+        @apply pt-2;
+      }
+
+      .menu__list-item {
+        &:not(:first-child) {
+          @apply mt-0;
+        }
+      }
+
       &:not(:first-child) {
         @apply mt-3;
       }
@@ -309,79 +325,75 @@ main {
   }
 }
 
-/* /docs */
+/* /Markdow docs */
 .smoney.docpage {
-  h2 {
-    @apply flex items-center;
-    &:before {
-      content: '';
-      background: url('/img/ui/icons/arrow_x_xpollens.svg');
-      background-size: cover;
-      @apply block w-[19px] h-[22px] mr-3;
-    }
-  }
-
-  h3 {
-    @apply text-xl;
-  }
-
-  hr {
-    @apply border-none h-[3px] mt-12 mb-10;
-    background: url('/img/ui/doc_divider.svg') repeat-x;
-  }
-
   .markdown {
+    h2 {
+      @apply flex items-center;
+      &:before {
+        content: '';
+        background: url('/img/ui/icons/arrow_x_xpollens.svg');
+        background-size: cover;
+        @apply block w-[19px] h-[22px] mr-3;
+      }
+    }
+
+    h3 {
+      @apply text-xl;
+    }
+
+    hr {
+      @apply border-none h-[3px] mt-12 mb-10;
+      background: url('/img/ui/doc_divider.svg') repeat-x;
+    }
+
     a {
       text-decoration: underline;
     }
-  }
 
-  .hash-link {
-    @apply hidden;
-  }
-
-  code {
-    @apply text-sm;
-  }
-
-  .copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
-    @apply text-sm !important;
-  }
-
-  ol,
-  ul {
-    @apply mt-6 ml-3 space-y-2;
-
-    li {
-      @apply relative block pl-2 !important;
+    .hash-link {
+      @apply hidden;
     }
-  }
 
-  ul {
-    &.table-of-contents {
-      @apply mt-0 !important;
-      ul {
+    .copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+      @apply text-sm !important;
+    }
+
+    ol,
+    ul {
+      @apply mt-6 ml-3 space-y-2;
+
+      li {
+        @apply relative block pl-2 !important;
+      }
+    }
+
+    ul {
+      &.table-of-contents {
         @apply mt-0 !important;
+        ul {
+          @apply mt-0 !important;
+        }
+      }
+
+      li {
+        &:before {
+          content: '';
+          @apply absolute rounded-full w-[5px] h-[5px] left-[-10px] top-[10px] bg-black;
+        }
       }
     }
 
-    li {
-      &:before {
-        content: '';
-        @apply absolute rounded-full w-[5px] h-[5px] left-[-10px] top-[10px] bg-black;
-      }
-    }
-  }
+    ol {
+      list-style: none;
+      counter-reset: counter;
 
-  ol {
-    list-style: none;
-    counter-reset: counter;
-
-    li {
-      counter-increment: counter;
-      &:before {
-        content: counter(counter) '. ';
-        @apply absolute left-[-10px] top-[0px];
+      li {
+        counter-increment: counter;
+        &:before {
+          content: counter(counter) '. ';
+          @apply absolute left-[-10px] top-[0px];
+        }
       }
     }
   }
@@ -389,18 +401,16 @@ main {
 
 html[data-theme='dark'] {
   .smoney.docpage {
-    ul {
-      li {
-        &:before {
-          @apply bg-white;
+    .markdown {
+      ul {
+        li {
+          &:before {
+            @apply bg-white;
+          }
         }
       }
     }
   }
-}
-
-code[class*='markdown'] pre[class*='language-'] {
-  word-wrap: normal;
 }
 
 /* Pagination */
@@ -409,7 +419,12 @@ code[class*='markdown'] pre[class*='language-'] {
     .pagination-nav__sublabel {
       @apply font-normal;
     }
-    @apply shadow border-xp-grey-300;
+
+    @apply border-xp-grey-300;
+
+    &:hover {
+      @apply border-xp-grey-400;
+    }
   }
 }
 
