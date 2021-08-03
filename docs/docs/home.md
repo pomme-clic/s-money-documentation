@@ -69,7 +69,7 @@ Xpollens vous permet de mettre immédiatement à disposition de vos clients une 
 
 <Feature title="Delegate your customer KYC" icon="kyc">
 
-La plateforme de paiement Xpollens vous permet d’ouvrir des comptes de paiement et de monnaie électronique de façon totalement automatisée par API, adaptés à tous les profils d’utilisateur et sans contrainte de volume.
+Xpollens vous permet d’ouvrir des comptes de paiement et de monnaie électronique de façon totalement automatisée par API, adaptés à tous les profils d’utilisateur et sans contrainte de volume.
 
 <Cta
   context="feature"
