@@ -49,40 +49,41 @@ const getApiColor = (type) => {
 
 const Endpoint = ({ apiUrl, path, method }) => {
   const { siteConfig } = useDocusaurusContext()
-  const {
-    themeConfig: { baseAPIUrl },
-  } = siteConfig
-
+  const baseAPIUrl = siteConfig.themeConfig.baseAPIUrl
   const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
+  // React Query
   const fetchEndpoint = async () => {
     try {
       const response = await axios.get(fullAPIUrl)
-      const data = getApiParameters(response, path, method)
-      return data
+      const apiParameters = getApiParameters(response, path, method)
+      return apiParameters
     } catch (error) {
-      console.log(error)
+      throw new Error(error.message)
     }
   }
 
   const { isLoading, isError, data, error } = useQuery(
     ['fetchEndpoint', { apiUrl, path, method }],
     fetchEndpoint,
+    {
+      retry: false,
+    },
   )
 
   return (
     <div className="mt-4">
       <CustomDisclosure title={path} type="API" method={method}>
         {isLoading && (
-          <div className="flex items-center justify-center my-2">
+          <div className="flex flex-col items-center justify-center my-2 text-sm">
             <Loader />
+            <div className="mt-3 font-semibold">Retrieving parameters...</div>
           </div>
         )}
         {isError && (
-          <div className="flex items-center justify-center my-2">
-            <span className="text-sm font-semibold text-red-500">
-              Error fetching API : {error}
-            </span>
+          <div className="flex flex-col items-center justify-center my-2 text-sm text-red-500">
+            <div className="font-bold ">Error retrieving parameters: </div>
+            <div>{error.message}</div>
           </div>
         )}
         {data && (

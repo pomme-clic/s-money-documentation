@@ -18,11 +18,12 @@ const customThemeColors = {
 }
 
 const Rapidoc = ({ apiUrl }) => {
-  const { siteConfig } = useDocusaurusContext()
   const { isDarkTheme } = useThemeContext()
+  const { siteConfig } = useDocusaurusContext()
   const baseAPIUrl = siteConfig.themeConfig.baseAPIUrl
   const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
+  // Rapidoc rendering
   const rapidocRef = useRef()
   const [renderRapidoc, setRenderRapidoc] = useState(false)
 
