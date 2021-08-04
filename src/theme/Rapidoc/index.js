@@ -61,16 +61,18 @@ const Rapidoc = ({ apiUrl }) => {
       const stringifiedData = JSON.stringify(data)
 
       if (rapidocRef.current) {
-        loadRapidocSpec(JSON.parse(stringifiedData))
+        // loadRapidocSpec(JSON.parse(stringifiedData))
 
-        const handleRenderRapidoc = (e) => {
-          setRenderRapidoc(true)
-        }
+        // const handleRenderRapidoc = (e) => {
+        //   setRenderRapidoc(true)
+        // }
 
-        rapidocRef.current.addEventListener(
-          'before-render',
-          handleRenderRapidoc,
-        )
+        // rapidocRef.current.addEventListener(
+        //   'before-render',
+        //   handleRenderRapidoc,
+        // )
+
+        setRenderRapidoc(true)
 
         // Cleanup
         return () => {
@@ -99,6 +101,7 @@ const Rapidoc = ({ apiUrl }) => {
       )}
       <div style={{ visibility: !renderRapidoc ? 'hidden' : 'visible' }}>
         <rapi-doc
+          spec-url="https://mrin9.github.io/RapiDoc/specs/oauth.yaml"
           ref={rapidocRef}
           theme={isDarkTheme ? 'dark' : 'light'}
           bg-color={
@@ -115,6 +118,10 @@ const Rapidoc = ({ apiUrl }) => {
           layout="row"
           sort-tags="true"
           render-style="read"
+          // allow-authentication="false"
+          // api-key-name="api_key"
+          // api-key-location="header"
+          // api-key-value="-"
           load-fonts="false"
           regular-font="Poppins"
           primary-color="#63C2C7"
