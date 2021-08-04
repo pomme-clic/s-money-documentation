@@ -1,7 +1,6 @@
 ---
 title: v2
 sidebar_label: v2.0
-# hide_title: true
 hide_table_of_contents: true
 ---
 

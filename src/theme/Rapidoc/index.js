@@ -19,14 +19,20 @@ const customThemeColors = {
 
 const Rapidoc = ({ apiUrl }) => {
   const { siteConfig } = useDocusaurusContext()
-  const {
-    themeConfig: { baseAPIUrl },
-  } = siteConfig
+  const { isDarkTheme } = useThemeContext()
+  const baseAPIUrl = siteConfig.themeConfig.baseAPIUrl
   const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
-  const { isDarkTheme } = useThemeContext()
   const rapidocRef = useRef()
+  const [renderRapidoc, setRenderRapidoc] = useState(false)
 
+  useEffect(() => {
+    if (ExecutionEnvironment.canUseDOM) {
+      require('rapidoc')
+    }
+  }, [])
+
+  // React Query
   const fetchAPI = async () => {
     try {
       const response = await axios.get(fullAPIUrl)
@@ -39,19 +45,24 @@ const Rapidoc = ({ apiUrl }) => {
   const { isLoading, isError, data, error } = useQuery(
     ['fetchAPI', { apiUrl }],
     fetchAPI,
+    {
+      retry: false,
+    },
   )
-  const [state, setState] = React.useState(null)
-  const [renderRapidoc, setRenderRapidoc] = useState(false)
+
+  // Rapidoc parsing
+  const loadRapidocSpec = async (stringifiedData) => {
+    await rapidocRef.current.loadSpec(stringifiedData)
+  }
 
   useEffect(() => {
     if (data) {
       const stringifiedData = JSON.stringify(data)
-      setState(stringifiedData)
+
       if (rapidocRef.current) {
-        rapidocRef.current.loadSpec(JSON.parse(stringifiedData))
+        loadRapidocSpec(JSON.parse(stringifiedData))
 
         const handleRenderRapidoc = (e) => {
-          console.log('before-render')
           setRenderRapidoc(true)
         }
 
@@ -60,6 +71,7 @@ const Rapidoc = ({ apiUrl }) => {
           handleRenderRapidoc,
         )
 
+        // Cleanup
         return () => {
           rapidocRef.current.removeEventListener(
             'before-render',
@@ -70,22 +82,18 @@ const Rapidoc = ({ apiUrl }) => {
     }
   }, [data])
 
-  useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      require('rapidoc')
-    }
-  }, [])
-
   return (
     <div className="flex items-center justify-center p-5 lg:p-0">
-      {isLoading && !renderRapidoc && (
-        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
+      {(isLoading || (!renderRapidoc && !isError)) && (
+        <div className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           <Loader />
+          <div className="mt-4 font-semibold ">Fetching API...</div>
         </div>
       )}
       {isError && (
-        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
-          Error fetching API : {error.message}
+        <div className="absolute flex flex-col items-center text-red-500 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+          <div className="font-bold ">Error: </div>
+          <div>{error.message}</div>
         </div>
       )}
       <div style={{ visibility: !renderRapidoc ? 'hidden' : 'visible' }}>
@@ -95,7 +103,7 @@ const Rapidoc = ({ apiUrl }) => {
           bg-color={
             isDarkTheme ? customThemeColors['darkmode-background'] : '#fff'
           }
-          nav-bg-color={isDarkTheme ? '#081014' : '#F5F5F5'}
+          nav-bg-color={isDarkTheme ? '#081014' : '#f7f7f7'}
           nav-text-color={isDarkTheme ? '#ffffff' : '#000000'}
           nav-accent-color={
             isDarkTheme
