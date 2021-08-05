@@ -7,7 +7,6 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 import Loader from '@theme/Loaders'
 import './styles.module.css'
-import localApi from '/cardfactory.json'
 
 const customThemeColors = {
   'darkmode-background': '#121E24',
@@ -59,43 +58,19 @@ const Rapidoc = ({ apiUrl }) => {
 
   useEffect(() => {
     if (data) {
-      console.log('data: ', data)
-
-      // const oauth2 = {
-      //   components: {
-      //     securitySchemes: {
-      //       'Sts authentication': {
-      //         'x-client-id': 'Swagman',
-      //         'x-client-secret': 'Swagman',
-      //       },
-      //     },
-      //   },
-      // }
-
-      data.components.securitySchemes['Sts authentication']['x-client-id'] =
-        'Swagman'
-      data.components.securitySchemes['Sts authentication']['x-client-secret'] =
-        'Swagman'
-
-      // const authenticatedData = { ...data, ...oauth2 }
-      // console.log('authenticatedData: ', authenticatedData)
-      console.log('data: ', data)
-
       const stringifiedData = JSON.stringify(data)
-      // console.log('stringifiedData: ', stringifiedData)
-      // const stringifiedData = JSON.stringify(authenticatedData)
 
       if (rapidocRef.current) {
-        loadRapidocSpec(JSON.parse(stringifiedData))
+        // loadRapidocSpec(JSON.parse(stringifiedData))
 
-        const handleRenderRapidoc = (e) => {
-          setRenderRapidoc(true)
-        }
+        // const handleRenderRapidoc = (e) => {
+        //   setRenderRapidoc(true)
+        // }
 
-        rapidocRef.current.addEventListener(
-          'before-render',
-          handleRenderRapidoc,
-        )
+        // rapidocRef.current.addEventListener(
+        //   'before-render',
+        //   handleRenderRapidoc,
+        // )
 
         setRenderRapidoc(true)
 
@@ -125,15 +100,11 @@ const Rapidoc = ({ apiUrl }) => {
         </div>
       )}
       <div style={{ visibility: !renderRapidoc ? 'hidden' : 'visible' }}>
-        {/*
-         https://demo.identityserver.io/ */}
-        {/* spec-url="https://mrin9.github.io/RapiDoc/specs/oauth.yaml" */}
+        {/* https://demo.identityserver.io/ */}
         <rapi-doc
-          // spec-url="https://mrin9.github.io/RapiDoc/specs/oauth.yaml"
+          spec-url="https://mrin9.github.io/RapiDoc/specs/oauth.yaml"
           ref={rapidocRef}
           theme={isDarkTheme ? 'dark' : 'light'}
-          // server-url="https://ic-api.s-money.net/swagger/docs"
-          server-url="https://ic-connect.s-money.net/connect/token"
           bg-color={
             isDarkTheme ? customThemeColors['darkmode-background'] : '#fff'
           }
