@@ -108,4 +108,4 @@ Chaque fichier d'API utilise un composant enveloppant la solution Rapidoc. Il fa
 
 ## Problèmes rencontrés
 
-Les différents problèmes liés à la contribution peuvent être remontés dans la section "Issues" du repo, permettant d'avoir des threads organisés, plutôt que des échanges mail mais cela reste une suggestion.
+Les différents problèmes liés à la contribution peuvent être remontés dans la section [Issues](https://github.com/pomme-clic/s-money-documentation/issues) du repo, permettant d'avoir des threads organisés, plutôt que des échanges mail mais cela reste une suggestion.
