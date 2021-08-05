@@ -59,31 +59,12 @@ const Rapidoc = ({ apiUrl }) => {
 
   useEffect(() => {
     if (data) {
-      console.log('data: ', data)
-
-      // const oauth2 = {
-      //   components: {
-      //     securitySchemes: {
-      //       'Sts authentication': {
-      //         'x-client-id': 'Swagman',
-      //         'x-client-secret': 'Swagman',
-      //       },
-      //     },
-      //   },
-      // }
-
       data.components.securitySchemes['Sts authentication']['x-client-id'] =
         'Swagman'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Swagman'
 
-      // const authenticatedData = { ...data, ...oauth2 }
-      // console.log('authenticatedData: ', authenticatedData)
-      console.log('data: ', data)
-
       const stringifiedData = JSON.stringify(data)
-      // console.log('stringifiedData: ', stringifiedData)
-      // const stringifiedData = JSON.stringify(authenticatedData)
 
       if (rapidocRef.current) {
         loadRapidocSpec(JSON.parse(stringifiedData))
