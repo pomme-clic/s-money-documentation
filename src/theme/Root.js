@@ -9,8 +9,6 @@ import clsx from 'clsx'
 
 const Root = ({ children }) => {
   const { pathname } = useLocation()
-  const isApiEmbeddingPage =
-    pathname.includes('/api') && !pathname.includes('introduction')
 
   const isDocHomepage = pathname === '/'
   const isDocPage = pathname.includes('/docs')
@@ -21,7 +19,6 @@ const Root = ({ children }) => {
         <div
           className={clsx(
             'smoney selection:bg-xp-primary-500 selection:text-black',
-            isApiEmbeddingPage ? 'api' : '',
             {
               homepage: isDocHomepage,
               docpage: isDocPage,
