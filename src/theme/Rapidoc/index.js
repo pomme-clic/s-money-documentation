@@ -8,7 +8,6 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 import Loader from '@theme/Loaders'
 import './styles.module.css'
-import localApi from '/cardfactory.json'
 
 const customThemeColors = {
   'darkmode-background': '#121E24',
@@ -28,6 +27,7 @@ const Rapidoc = ({ apiUrl }) => {
   // Rapidoc rendering
   const rapidocRef = useRef()
   const [renderRapidoc, setRenderRapidoc] = useState(false)
+  const [authToken, setAuthToken] = useState('apikey')
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -53,6 +53,48 @@ const Rapidoc = ({ apiUrl }) => {
     },
   )
 
+  // Fetch oAuth2
+  const getOAuthToken = async () => {
+    try {
+      const username = 'Swagman'
+      const password = 'Swagman'
+
+      const Buffer = require('buffer').Buffer
+      const token = Buffer.from(`${username}:${password}`, 'utf8').toString(
+        'base64',
+      )
+
+      console.log('token: ', token)
+
+      const url = 'https://ic-connect.s-money.net/connect/token'
+      const urlFormParams = new URLSearchParams()
+      const grantType = 'client_credentials'
+      urlFormParams.append('grant_type', grantType)
+      const headers = new Headers()
+      headers.set('Authorization', `Basic ${btoa(`${username}:${password}`)}`)
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers,
+        body: urlFormParams,
+      })
+
+      const tokenResp = await response.json()
+      console.log('tokenResp: ', tokenResp.access_token)
+      setAuthToken(tokenResp.access_token)
+      if (rapidocRef.current) {
+        const getTokenBtn =
+          rapidocRef.current.shadowRoot.querySelector('#auth .m-btn')
+
+        getTokenBtn.click()
+        // console.log(rapidocRef.current.shadowRoot.querySelector('#auth .m-btn'))
+      }
+      return tokenResp.access_token
+    } catch (error) {
+      throw new Error(error.message)
+    }
+  }
+
   // Rapidoc parsing
   const loadRapidocSpec = async (stringifiedData) => {
     await rapidocRef.current.loadSpec(stringifiedData)
@@ -60,16 +102,20 @@ const Rapidoc = ({ apiUrl }) => {
 
   useEffect(() => {
     if (data) {
+      getOAuthToken()
+      // console.log('getOAuthToken(): ', getOAuthToken())
       data.components.securitySchemes['Sts authentication']['x-client-id'] =
         'Swagman'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Swagman'
       delete data.components.securitySchemes['Bearer token authorization']
 
-      console.log(data)
+      // console.log(data)
       const stringifiedData = JSON.stringify(data)
 
       if (rapidocRef.current) {
+        // .querySelector('#auth')
+        // .querySelector('#the-main-body')
         loadRapidocSpec(JSON.parse(stringifiedData))
 
         const handleRenderRapidoc = (e) => {
@@ -120,17 +166,9 @@ const Rapidoc = ({ apiUrl }) => {
               !renderRapidoc || isError || isLoading ? 'hidden' : 'visible',
           }}
         >
-          {/*
-         https://demo.identityserver.io/ */}
-          {/* spec-url="https://mrin9.github.io/RapiDoc/specs/oauth.yaml" */}
           <rapi-doc
-            // spec-url="https://mrin9.github.io/RapiDoc/specs/oauth.yaml"
             ref={rapidocRef}
             theme={isDarkTheme ? 'dark' : 'light'}
-            // server-url="https://ic-api.s-money.net/swagger/docs"
-            // server-url="https://ic-api.s-money.net"
-            // server-url="https://ic-connect.s-money.net"
-            // server-url="https://ic-connect.s-money.net/connect/token"
             bg-color={
               isDarkTheme ? customThemeColors['darkmode-background'] : '#fff'
             }
@@ -145,15 +183,14 @@ const Rapidoc = ({ apiUrl }) => {
             layout="row"
             sort-tags="true"
             render-style="read"
-            // allow-server-selection="false"
-            // allow-authentication="false"
-            // api-key-name="api_key"
-            // api-key-location="header"
-            // api-key-value="-"
-            // fetch-credentials="include"
             load-fonts="false"
             regular-font="Poppins"
             primary-color="#63C2C7"
+            // allow-authentication="false"
+            allow-server-selection="false"
+            // api-key-name="http-bearer"
+            // api-key-location="header"
+            // api-key-value={authToken}
             show-header="false"
             show-info="true"
             show-components="false"
