@@ -145,7 +145,7 @@ const Rapidoc = ({ apiUrl }) => {
             layout="row"
             sort-tags="true"
             render-style="read"
-            allow-server-selection="false"
+            // allow-server-selection="false"
             // allow-authentication="false"
             // api-key-name="api_key"
             // api-key-location="header"
