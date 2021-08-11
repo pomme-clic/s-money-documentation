@@ -164,11 +164,9 @@ body.api .pagination-nav {
 }
 
 /* Homepage */
-.smoney {
-  &.homepage {
-    .pagination-nav {
-      display: none;
-    }
+body.homepage {
+  .pagination-nav {
+    display: none;
   }
 }
 
