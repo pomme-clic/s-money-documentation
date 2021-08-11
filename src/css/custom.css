@@ -117,7 +117,7 @@ h2 {
 }
 
 /* API container */
-.smoney.api {
+body.api {
   footer {
     display: none;
   }
@@ -127,16 +127,16 @@ h2 {
   }
 }
 
-.api .padding-vert--lg {
+body.api .padding-vert--lg {
   padding: 0 !important;
 }
 
-.api .container {
+body.api .container {
   max-width: none;
 }
 
 /* API doc-page container */
-.api {
+body.api {
   .doc-page {
     .container {
       height: calc(100vh - 60px);
@@ -149,8 +149,12 @@ h2 {
   }
 }
 
+body.api .pagination-nav {
+  display: none;
+}
+
 @media (min-width: 1536px) {
-  .api {
+  body.api {
     .doc-page {
       .container {
         max-width: none !important;
@@ -168,10 +172,6 @@ h2 {
 
 #the-main-body .api .container .row .col > div {
   padding: 0 !important;
-}
-
-.api .pagination-nav {
-  display: none;
 }
 
 /* Homepage */
