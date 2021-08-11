@@ -118,7 +118,7 @@ h2 {
 
 /* API container */
 body.api {
-  footer {
+  footer.footer {
     display: none;
   }
 
@@ -163,23 +163,10 @@ body.api .pagination-nav {
   }
 }
 
-/* Rapidoc */
-#the-main-body.body {
-  background: purple !important;
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-#the-main-body .api .container .row .col > div {
-  padding: 0 !important;
-}
-
 /* Homepage */
-.smoney {
-  &.homepage {
-    .pagination-nav {
-      display: none;
-    }
+body.homepage {
+  .pagination-nav {
+    display: none;
   }
 }
 

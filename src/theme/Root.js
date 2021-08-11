@@ -10,7 +10,6 @@ import clsx from 'clsx'
 const Root = ({ children }) => {
   const { pathname } = useLocation()
 
-  const isDocHomepage = pathname === '/'
   const isDocPage = pathname.includes('/docs')
 
   return (
@@ -20,7 +19,6 @@ const Root = ({ children }) => {
           className={clsx(
             'smoney selection:bg-xp-primary-500 selection:text-black',
             {
-              homepage: isDocHomepage,
               docpage: isDocPage,
             },
           )}
