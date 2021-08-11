@@ -27,7 +27,6 @@ const Rapidoc = ({ apiUrl }) => {
   // Rapidoc rendering
   const rapidocRef = useRef()
   const [renderRapidoc, setRenderRapidoc] = useState(false)
-  const [authToken, setAuthToken] = useState('apikey')
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -53,69 +52,23 @@ const Rapidoc = ({ apiUrl }) => {
     },
   )
 
-  // Fetch oAuth2
-  const getOAuthToken = async () => {
-    try {
-      const username = 'Swagman'
-      const password = 'Swagman'
-
-      const Buffer = require('buffer').Buffer
-      const token = Buffer.from(`${username}:${password}`, 'utf8').toString(
-        'base64',
-      )
-
-      console.log('token: ', token)
-
-      const url = 'https://ic-connect.s-money.net/connect/token'
-      const urlFormParams = new URLSearchParams()
-      const grantType = 'client_credentials'
-      urlFormParams.append('grant_type', grantType)
-      const headers = new Headers()
-      headers.set('Authorization', `Basic ${btoa(`${username}:${password}`)}`)
-
-      const response = await fetch(url, {
-        method: 'POST',
-        headers,
-        body: urlFormParams,
-      })
-
-      const tokenResp = await response.json()
-      console.log('tokenResp: ', tokenResp.access_token)
-      setAuthToken(tokenResp.access_token)
-      if (rapidocRef.current) {
-        const getTokenBtn =
-          rapidocRef.current.shadowRoot.querySelector('#auth .m-btn')
-
-        getTokenBtn.click()
-        // console.log(rapidocRef.current.shadowRoot.querySelector('#auth .m-btn'))
-      }
-      return tokenResp.access_token
-    } catch (error) {
-      throw new Error(error.message)
-    }
-  }
-
   // Rapidoc parsing
   const loadRapidocSpec = async (stringifiedData) => {
     await rapidocRef.current.loadSpec(stringifiedData)
+    rapidocRef.current.shadowRoot.querySelector('#auth .m-btn').click()
   }
 
   useEffect(() => {
     if (data) {
-      getOAuthToken()
-      // console.log('getOAuthToken(): ', getOAuthToken())
       data.components.securitySchemes['Sts authentication']['x-client-id'] =
         'Swagman'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Swagman'
       delete data.components.securitySchemes['Bearer token authorization']
 
-      // console.log(data)
       const stringifiedData = JSON.stringify(data)
 
       if (rapidocRef.current) {
-        // .querySelector('#auth')
-        // .querySelector('#the-main-body')
         loadRapidocSpec(JSON.parse(stringifiedData))
 
         const handleRenderRapidoc = (e) => {
