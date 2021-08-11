@@ -100,7 +100,8 @@ const Rapidoc = ({ apiUrl }) => {
         <body className="api"></body>
       </Head>
 
-      <div className="flex items-center justify-center p-5 lg:p-0">
+      <div className="flex items-center justify-start p-5 lg:p-0">
+        {/* justify-center */}
         {(isLoading || (!renderRapidoc && !isError)) && (
           <div className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
             <Loader />
@@ -114,6 +115,7 @@ const Rapidoc = ({ apiUrl }) => {
           </div>
         )}
         <div
+          className="w-full"
           style={{
             visibility:
               !renderRapidoc || isError || isLoading ? 'hidden' : 'visible',
@@ -139,16 +141,16 @@ const Rapidoc = ({ apiUrl }) => {
             load-fonts="false"
             regular-font="Poppins"
             primary-color="#63C2C7"
-            // allow-authentication="false"
             allow-server-selection="false"
-            // api-key-name="http-bearer"
-            // api-key-location="header"
-            // api-key-value={authToken}
             show-header="false"
             show-info="true"
             show-components="false"
             allow-api-list-style-selection="false"
-            style={{ height: 'calc(100vh - 60px)', width: '100%' }}
+            style={{
+              height: 'calc(100vh - 60px)',
+              width: '100%',
+              maxWidth: '100%',
+            }}
           ></rapi-doc>
         </div>
       </div>
