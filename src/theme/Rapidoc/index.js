@@ -36,6 +36,7 @@ const Rapidoc = ({ apiUrl }) => {
 
   // React Query
   const fetchAPI = async () => {
+    console.log('react query fetchAPI')
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
@@ -49,11 +50,14 @@ const Rapidoc = ({ apiUrl }) => {
     fetchAPI,
     {
       retry: false,
+      retryOnMount: false,
+      refetchOnWindowFocus: false,
     },
   )
 
   // Rapidoc parsing
   const loadRapidocSpec = async (stringifiedData) => {
+    console.log('loadRapidocSpec')
     await rapidocRef.current.loadSpec(stringifiedData)
     rapidocRef.current.shadowRoot.querySelector('#auth .m-btn').click()
   }
