@@ -146,6 +146,8 @@ const Rapidoc = ({ apiUrl }) => {
             regular-font="Poppins"
             primary-color="#63C2C7"
             allow-server-selection="false"
+            server-url="https://ic-api.s-money.net/"
+            default-api-server="https://ic-api.s-money.net/"
             show-header="false"
             show-info="true"
             show-components="false"
