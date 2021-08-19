@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Head from '@docusaurus/Head'
+// import Head from '@docusaurus/Head'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -12,15 +12,29 @@ const Root = ({ children }) => {
   const { pathname } = useLocation()
   const isDocPage = pathname.includes('/docs')
 
+  //  useEffect(() => {
+  //    const script = document.createElement('script')
+
+  //    script.src = "https://consent.cookiebot.com/dcbc9948-770f-4b0b-971c-d564f7143040/cd.js"
+  //    script.async = true
+  // if (ExecutionEnvironment.canUseDOM) {}
+  //    document.body.appendChild(script)
+
+  //    return () => {
+  //      document.body.removeChild(script)
+  //    }
+  //  }, [url])
+
   return (
     <>
-      <Head>
+      {/* <Head>
         <script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="dcbc9948-770f-4b0b-971c-d564f7143040"
           data-blockingmode="auto"
           type="text/javascript"
+          async
         ></script>
         <script
           id="CookieDeclaration"
@@ -28,7 +42,7 @@ const Root = ({ children }) => {
           type="text/javascript"
           defer
         ></script>
-      </Head>
+      </Head> */}
       <QueryClientProvider client={queryClient}>
         <div
           className={clsx(
