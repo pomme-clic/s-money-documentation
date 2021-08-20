@@ -47,7 +47,7 @@ function AlternateLangHeaders() {
         })}
         hrefLang="x-default"
       />
-      <script
+      {/* <script
         id="Cookiebot"
         src="https://consent.cookiebot.com/uc.js"
         data-cbid="dcbc9948-770f-4b0b-971c-d564f7143040"
@@ -59,7 +59,7 @@ function AlternateLangHeaders() {
         src="https://consent.cookiebot.com/dcbc9948-770f-4b0b-971c-d564f7143040/cd.js"
         type="text/javascript"
         defer
-      ></script>
+      ></script> */}
     </Head>
   )
 } // Default canonical url inferred from current page location pathname
