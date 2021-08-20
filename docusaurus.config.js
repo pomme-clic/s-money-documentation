@@ -140,7 +140,7 @@ module.exports = {
       baseAPIURL: '',
     },
     googleAnalytics: {
-      trackingID: 'G-2382LSDSV2',
+      trackingID: 'UA-152270802-23',
     },
   },
   plugins: [
@@ -155,7 +155,7 @@ module.exports = {
         steps: 4,
       },
     ],
-    '@docusaurus/plugin-google-analytics',
+    // '@docusaurus/plugin-google-analytics',
     [
       path.resolve(__dirname, './plugins/@easyops-cn/docusaurus-search-local'),
       {
