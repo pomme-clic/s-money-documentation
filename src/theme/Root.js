@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-// import Head from '@docusaurus/Head'
+import React, { useEffect } from 'react'
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -12,37 +12,40 @@ const Root = ({ children }) => {
   const { pathname } = useLocation()
   const isDocPage = pathname.includes('/docs')
 
-  //  useEffect(() => {
-  //    const script = document.createElement('script')
+  useEffect(() => {
+    if (
+      ExecutionEnvironment.canUseDOM &&
+      !document.location.host.includes('localhost')
+    ) {
+      const cookiebotScript = document.createElement('script')
+      cookiebotScript.id = 'Cookiebot'
+      cookiebotScript.src = 'https://consent.cookiebot.com/uc.js'
+      // cookiebotScript.dataset.cbid = 'dcbc9948-770f-4b0b-971c-d564f7143040'
+      cookiebotScript.dataset.cbid = '3385193e-7719-436a-8aac-fce7d6007678'
+      cookiebotScript.dataset.blockingmode = 'auto'
+      cookiebotScript.type = 'text/javascript'
 
-  //    script.src = "https://consent.cookiebot.com/dcbc9948-770f-4b0b-971c-d564f7143040/cd.js"
-  //    script.async = true
-  // if (ExecutionEnvironment.canUseDOM) {}
-  //    document.body.appendChild(script)
+      const cookieDeclarationScript = document.createElement('script')
+      cookieDeclarationScript.id = 'CookieDeclaration'
+      // cookieDeclarationScript.src =
+      //   'https://consent.cookiebot.com/dcbc9948-770f-4b0b-971c-d564f7143040/cd.js'
+      cookieDeclarationScript.src =
+        'https://consent.cookiebot.com/3385193e-7719-436a-8aac-fce7d6007678/cd.js'
+      cookieDeclarationScript.async = true
+      cookieDeclarationScript.type = 'text/javascript'
 
-  //    return () => {
-  //      document.body.removeChild(script)
-  //    }
-  //  }, [url])
+      document.head.insertBefore(cookiebotScript, document.head.firstChild)
+      document.body.appendChild(cookieDeclarationScript)
+    }
+
+    return () => {
+      document.head.removeChild(cookiebotScript)
+      document.body.appendChild(cookieDeclarationScript)
+    }
+  }, [])
 
   return (
     <>
-      {/* <Head>
-        <script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="dcbc9948-770f-4b0b-971c-d564f7143040"
-          data-blockingmode="auto"
-          type="text/javascript"
-          async
-        ></script>
-        <script
-          id="CookieDeclaration"
-          src="https://consent.cookiebot.com/dcbc9948-770f-4b0b-971c-d564f7143040/cd.js"
-          type="text/javascript"
-          defer
-        ></script>
-      </Head> */}
       <QueryClientProvider client={queryClient}>
         <div
           className={clsx(
