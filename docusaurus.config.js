@@ -139,8 +139,8 @@ module.exports = {
       footerCustom: {},
       baseAPIURL: '',
     },
-    googleAnalytics: {
-      trackingID: 'UA-152270802-23',
+    gtag: {
+      trackingID: 'G-0HTZM60W0Z',
     },
   },
   plugins: [
