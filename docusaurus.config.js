@@ -139,6 +139,9 @@ module.exports = {
       footerCustom: {},
       baseAPIURL: '',
     },
+    gtag: {
+      trackingID: 'G-0HTZM60W0Z',
+    },
   },
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
@@ -152,6 +155,7 @@ module.exports = {
         steps: 4,
       },
     ],
+    // '@docusaurus/plugin-google-analytics',
     [
       path.resolve(__dirname, './plugins/@easyops-cn/docusaurus-search-local'),
       {
