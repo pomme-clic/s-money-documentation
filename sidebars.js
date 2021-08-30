@@ -3,8 +3,8 @@ module.exports = {
     'docs/home',
     {
       type: 'category',
-      label: 'Users',
-      items: ['docs/account-holders/doc1', 'docs/account-holders/doc2', 'docs/account-holders/doc3'],
+      label: 'Onboard new customers',
+      items: ['docs/kyc/retail-customer', 'docs/kyc/identification', 'docs/kyc/business'],
     },
     {
       type: 'category',
