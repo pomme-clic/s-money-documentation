@@ -3,7 +3,7 @@ module.exports = {
     'docs/home',
     {
       type: 'category',
-      label: 'Account Holders',
+      label: 'Users',
       items: ['docs/account-holders/doc1', 'docs/account-holders/doc2', 'docs/account-holders/doc3'],
     },
     {
