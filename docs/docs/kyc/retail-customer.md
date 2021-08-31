@@ -7,8 +7,6 @@ import Cta from '@theme/Cta'
 
 <Image src="docs/KYC-retail.png" alt="usecase 1"/>
 
-<Highlight>
-
 ## Choose how you want to make your best first impression
 
 Our onboarding API offers a modular approach where you can select which technological solution fits best your needs :
@@ -16,13 +14,13 @@ Our onboarding API offers a modular approach where you can select which technolo
 ### Facial Recognition
 Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
+<Highlight>
   ###### Data Protection
   Obvisouly, our biometry systems are compliant with all regulations. We are supervised on this specific feature by CNIL (GDPR) and by ANSSI (EIDAS).
+</Highlight>
 
 ## SEPA Transfer IN
 Should you or your customers
-
-</Highlight>
 
 <Highlight type="tip">
 
