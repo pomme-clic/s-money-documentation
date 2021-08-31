@@ -13,7 +13,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Make A Payment',
+      label: 'Payment',
       items: ['docs/make-a-payment/doc1', 'docs/make-a-payment/doc2', 'docs/make-a-payment/doc3', 'docs/make-a-payment/doc4'],
     },
   ],
