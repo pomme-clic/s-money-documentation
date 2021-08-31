@@ -9,7 +9,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Cards',
-      items: ['docs/cards/createcard', 'docs/cards/doc2','docs/cards/doc3'],
+      items: ['docs/cards/doc1', 'docs/cards/doc2','docs/cards/doc3'],
     },
     {
       type: 'category',
