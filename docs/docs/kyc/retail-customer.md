@@ -26,7 +26,7 @@ Using a simple parameter, you can activate our Facial Biometry webview. Your cus
   This option can only occur on a mobile phone, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
 </Highlight>
 
-## SEPA Instant Transfer IN
+### SEPA Instant Transfer IN
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required name-checks to ensure proper identity confirmation, and then automatically opens the account.
 
 <Highlight>
@@ -41,18 +41,18 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
   Accounts are setup with limits. Should incoming transfers be above or below limits, transfers will be rejected. Name-check will not be performed if transfer does not effectively reach the account.
 </Highlight>
 
-## SEPA Instant Transfer OUT
+### SEPA Instant Transfer OUT
 We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
 
 <Highlight type="danger">
   Destination accounts must be personnal accounts ; we perform a name-check on this external account, and payment will be unauthorized should names differ.
 </Highlight>
 
-## KYC Sharing
-We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
+### Account Agregation
+Your end-customer will be required to enter credentials of his other bank. Based on our name-check algorithm, this agregation will enable 
 
 <Highlight type="danger">
-  Destination accounts must be personnal accounts ; we perform a name-check on this external account, and payment will be unauthorized should names differ.
+  This option requires more integration work on your side, as an extra Agregation Service Provider needs to be integrated in your front-end. Should you be interested, please ask our Sales team.
 </Highlight>
 
 ---
