@@ -9,9 +9,18 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-##### Note neutre
+## Choose how you want to make your best first impression
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Our onboarding API offers a modular approach where you can select which technological solution fits best your needs :
+  
+### Facial Recognition
+Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
+
+  ###### Data Protection
+  Obvisouly, our biometry systems are compliant with all regulations. We are supervised on this specific feature by CNIL (GDPR) and by ANSSI (EIDAS).
+
+## SEPA Transfer IN
+Should you or your customers
 
 </Highlight>
 
