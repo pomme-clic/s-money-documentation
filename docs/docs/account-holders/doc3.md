@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Account Statement 
+# Manage Account 
 
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
