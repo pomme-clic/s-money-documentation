@@ -3,7 +3,9 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Create User 
+# Know Your Individual
+
+Use the <g>CreateUser</g> to start the onboarding process of your Retail Customers, and also for Key Employees of your Professional Customers.
 
 <Image src="docs/KYC-retail.png" alt="usecase 1"/>
 
