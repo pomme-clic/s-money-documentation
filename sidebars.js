@@ -9,8 +9,8 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Onboard new customers 2',
-      items: ['docs/kyc/retail-customer', 'docs/kyc/identification', 'docs/kyc/business'],
+      label: 'Accounts',
+      items: ['docs/accounts/iban', 'docs/accounts/account-management', 'docs/accounts/unpaid-operations', 'docs/accounts/banking-mobility'],
     },
     {
       type: 'category',
