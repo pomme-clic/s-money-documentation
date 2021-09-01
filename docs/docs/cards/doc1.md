@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# SEPA Credit Transfer (SCT) 
+# Create a Card 
 
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 ##### Tip
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
 
 </Highlight>
 
@@ -27,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 ##### Caution
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+To create a card the user (= cardholder) has to exist in the system
 
 </Highlight>
 
