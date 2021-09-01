@@ -88,12 +88,23 @@ We're working hard to find more options for you, always with the best Customer E
 
 ---
 
-Lorem ipsum je suis le manager de create a card
-## Transfert d'argent P2P
+## SDK Functions
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Here are the functions you need to integrate in our SDK to make the onboarding process work.
 
-## Endpoints
+### Scan QR Code
+
+
+
+### Get Webview URL
+
+
+
+### Electronic Signature
+
+Because we use Strong Authentication as a means of e-Signature, you must please refer to the Strong Authentication section in this documentation to finalize this integration. Signing the Terms & Conditions as well as the Tax Declaration Form will generate such SCA notifications.
+
+## API Endpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
@@ -105,6 +116,7 @@ More information regarding this endpoint in the [API reference](/api/api1)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
 
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v1.1#/User/post_api_v2_0_users__AppUserId__declarative -->
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
 
 <Cta
