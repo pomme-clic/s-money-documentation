@@ -69,7 +69,7 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
   Accounts are setup with limits. Should incoming transfers be above limits, transfers will be rejected. Name-check will not be performed if transfer is rejected.
 </Highlight>
 
-### SEPA Instant Transfer OUT
+### SEPA Instant Pay OUT
 We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
 
 <Highlight>
