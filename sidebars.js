@@ -1,6 +1,7 @@
 module.exports = {
   docsSidebar: [
     'docs/home',
+	'docs/introduction',
     {
       type: 'category',
       label: 'Onboard new customers',
