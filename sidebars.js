@@ -1,7 +1,7 @@
 module.exports = {
   docsSidebar: [
     'docs/home',
-    'docs/Introduction.md',
+    'docs/introduction.md',
     {
       type: 'category',
       label: 'Onboard new customers',
@@ -10,27 +10,27 @@ module.exports = {
     {
       type: 'category',
       label: 'Accounts',
-      items: ['docs/account/IBAN', 'docs/account/Account-Management','docs/account/Banking-Mobility','docs/account/Unpaid-Operations'],
+      items: ['docs/account/iban', 'docs/account/accountManagement','docs/account/bankingMobility','docs/account/unpaidOperations'],
     },
     {
       type: 'category',
       label: 'Cards',
-      items: ['docs/cards/Issuing', 'docs/cards/Card-Management','docs/cards/X-Pay'],
+      items: ['docs/cards/issuing', 'docs/cards/cardManagement','docs/cards/xPay'],
     },
     {
       type: 'category',
       label: 'Pay IN',
-      items: ['docs/PayIN/General', 'docs/cards/SDD','docs/cards/TopUp'],
+      items: ['docs/payIN/general', 'docs/payIN/sdd','docs/payIN/topUp'],
     },
     {
       type: 'category',
       label: 'Pay OUT',
-      items: ['docs/PayOUT/SCT', 'docs/cards/Beneficiaries','docs/cards/Card-Payment'],
+      items: ['docs/payOUT/sct', 'docs/payOUT/beneficiaries','docs/payOUT/cardPayment'],
     },
     {
       type: 'category',
       label: 'Customer Relationship',
-      items: ['docs/CustomerRelationship/Account-Statement', 'docs/CustomerRelationship/Billing','docs/CustomerRelationship/Reporting','docs/CustomerRelationship/Business-Portal'],
+      items: ['docs/customerRelationship/accountStatement', 'docs/customerRelationship/billing','docs/customerRelationship/reporting','docs/customerRelationship/businessPortal'],
     },
   ],
   apisSidebar: [
