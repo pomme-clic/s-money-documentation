@@ -9,6 +9,11 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Onboard new customers 2',
+      items: ['docs/kyc/retail-customer', 'docs/kyc/identification', 'docs/kyc/business'],
+    },
+    {
+      type: 'category',
       label: 'Cards',
       items: ['docs/cards/doc1', 'docs/cards/doc2','docs/cards/doc3'],
     },
