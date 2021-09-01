@@ -19,7 +19,7 @@ Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR re
 </Highlight>
 
 ### Technical Context
-To integrate our solution, you will need both our API and ou SDK : part of the onboarding process has to take place in a mobile application.
+To integrate our solution, you will need both our API and our SDK : part of the onboarding process has to take place in a mobile application.
 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
