@@ -44,14 +44,14 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 ### SEPA Instant Transfer OUT
 We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
 
-<Highlight type="danger">
+<Highlight type="caution">
   Destination accounts must be personnal accounts ; we perform a name-check on this external account, and payment will be unauthorized should names differ.
 </Highlight>
 
 ### Account Agregation
 Your end-customer will be required to enter credentials of his other bank. Based on our name-check algorithm, this agregation will enable 
 
-<Highlight type="danger">
+<Highlight>
   This option requires more integration work on your side, as an extra Agregation Service Provider needs to be integrated in your front-end. Should you be interested, please ask our Sales team.
 </Highlight>
 
