@@ -27,6 +27,10 @@ To integrate our solution, you will need both our API and ou SDK : part of the o
   Should you not have a mobile app : no problem, we have an app for you, **Xpollens Authenticator** integrates the SDK and can fit perfectly in your onboarding process.
 </Highlight>
 
+<Highlight type="tip">
+  You define the technical unique identifier of your prospect : the **appUserId** ; our call-backs will give you back this same identified.
+</Highlight>
+
 ## Straight Through Process
 
 We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
