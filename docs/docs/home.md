@@ -25,7 +25,7 @@ Découvrez toute l’étendue des cas d’usage.
 <Cta
   context="hero"
   ui="button"
-  link="docs/account-holders/doc1"
+  link="docs/accounts/account-management"
   label="Get started"
 />
 
@@ -44,7 +44,7 @@ Avec Xpollens, créez facilement des cartes de paiement aux couleurs de votre ma
 <Cta
   context="feature"
   ui="inline"
-  link="docs/cards/doc1"
+  link="docs/cards/issuing"
   label="Get started"
 />
 
@@ -59,7 +59,7 @@ Xpollens vous permet de mettre immédiatement à disposition de vos clients une 
 <Cta
   context="feature"
   ui="inline"
-  link="docs/cards/doc2"
+  link="docs/cards/x-pay"
   label="Get started"
 />
 
@@ -74,7 +74,7 @@ Xpollens vous permet d’ouvrir des comptes de paiement et de monnaie électroni
 <Cta
   context="feature"
   ui="inline"
-  link="docs/account-holders/doc1"
+  link="docs/accounts/account-management"
   label="Get started"
 />
 
