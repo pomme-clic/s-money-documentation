@@ -5,8 +5,6 @@ import Cta from '@theme/Cta'
 
 # Account Management 
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
-
 <Highlight>
 
 ##### Note neutre
