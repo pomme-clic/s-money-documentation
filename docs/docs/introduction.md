@@ -10,7 +10,7 @@ The Xpollens API is organized around REST. Our API has predictable resource-orie
 You can use the Xpollens API in a dedicated sandbox mode, which does not affect your live data or interact with the banking networks.
 See with your Xpollens representative to gain access to your dedicated Sandbox and API keys.
 
-## Step 1 : Service Blueprint
+## Service Blueprint
 
 
 
