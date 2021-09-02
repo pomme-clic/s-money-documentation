@@ -3,10 +3,18 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Introduction 
+# Documentation Overview
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
+The Xpollens API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
+You can use the Xpollens API in a dedicated sandbox mode, which does not affect your live data or interact with the banking networks.
+See with your Xpollens representative to gain access to your dedicated Sandbox and API keys.
+
+## Service Blueprint
+
+
+
+## Ressources
 <Highlight>
 
 ##### Note neutre
