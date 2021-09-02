@@ -5,6 +5,7 @@ import Cta from '@theme/Cta'
 
 # Introduction 
 
+<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
 <Highlight>
 
