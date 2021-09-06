@@ -50,5 +50,6 @@ More information regarding this endpoint in the [API reference](/api/api1)
   ui="button"
   link="/api/api1"
   label="Try it out"
+     
 />
 
