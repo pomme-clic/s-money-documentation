@@ -7,53 +7,37 @@ import Cta from '@theme/Cta'
 
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
+---
 <Highlight>
+<Highlight type="neutre">
 
 ##### Note neutre
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Any operation, per type, period,... on the user account can be retrieve within API.
 
+</Highlight>
+  
 </Highlight>
 
 <Highlight type="tip">
 
 ##### Tip
 
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
+All Payin operatiosn are screened by our LAB/FT solution and can be rejected.
 
 </Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-To create a card the user (= cardholder) has to exist in the system
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
+Any user getting a Payin can be informed of the operation through a specialized CallBack.
 
-## Transfert d'argent P2P
+## CallBack
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Each type of Payin has its own callback providing details on the operation and the user account update.
 
 ## Endpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
@@ -68,6 +52,3 @@ More information regarding this endpoint in the [API reference](/api/api1)
   label="Try it out"
 />
 
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
