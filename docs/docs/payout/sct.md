@@ -11,8 +11,7 @@ import Cta from '@theme/Cta'
 
 ##### Note neutre
 
-The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas.
-More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
+The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas. More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
 </Highlight>
 
@@ -20,7 +19,7 @@ More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/h
 
 ##### Tip
 
-If you want to define recurring transfer or plan a transfer you can just use the same API with additional informations
+If you want to define recurring transfer or plan a transfer you can just use the same API with additional informations.
 
 </Highlight>
 
@@ -28,7 +27,7 @@ If you want to define recurring transfer or plan a transfer you can just use the
 
 ##### Caution
 
-To make a tranfer, the beneficiary has to exist in the system
+To make a tranfer, the beneficiary has to exist in the system.
 
 </Highlight>
 
@@ -61,7 +60,3 @@ More information regarding this endpoint in the [API reference](/api/api1)
   link="/api/api1"
   label="Try it out"
 />
-
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
