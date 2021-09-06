@@ -11,15 +11,15 @@ import Cta from '@theme/Cta'
 
 ##### Note neutre
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+The SEPA instant payment can be used in EUR only. The transfer is done within seconds.
+  
 </Highlight>
 
 <Highlight type="tip">
 
 ##### Tip
 
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
+Up to 90% of french banks can receive instant payment. In EURO Zone, this proportion is lower.
 
 </Highlight>
 
@@ -27,39 +27,32 @@ If you want to provide a virtual card, temporary (emergency use case for example
 
 ##### Caution
 
-To create a card the user (= cardholder) has to exist in the system
+To make a transfer, the beneficiary has to exist in the system and must be elligible to Instant Payment.
 
 </Highlight>
 
 <Highlight type="danger">
 
 ##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Instant transfer can be refused due to the user thresholds.
 
 </Highlight>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
-
 ## SCT transfer
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Instant transfer is used to send money within seconds to a beneficiary defined by an IBAN and elligible. You can also ask for the list of instant transfer for a user on a period of time.
 
 ## Endpoints
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Instant payment transfer
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+You must use the Instant Payment API in including amount and beneficiary's ID
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/users​/{userid}​/sctinst" method="post"/>
 
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v2.0/users/{userid}/cards/{id}" method="delete"/> -->
 
 <Cta
   context="doc"
@@ -67,7 +60,3 @@ More information regarding this endpoint in the [API reference](/api/api1)
   link="/api/api1"
   label="Try it out"
 />
-
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
