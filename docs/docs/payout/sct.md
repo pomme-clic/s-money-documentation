@@ -11,7 +11,7 @@ import Cta from '@theme/Cta'
 
 ##### Note neutre
 
-The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all Frencj Overseas region.
+The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas.
 More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
 </Highlight>
@@ -40,8 +40,6 @@ SEPA tranfer can be refused due to the user thresholds.
 </Highlight>
 
 ---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
 
 ## SCT transfer
 
