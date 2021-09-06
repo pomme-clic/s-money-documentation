@@ -11,7 +11,8 @@ import Cta from '@theme/Cta'
 
 ##### Note neutre
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all Frencj Overseas region.
+More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
 </Highlight>
 
@@ -19,7 +20,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 ##### Tip
 
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
+If you want to define recurring transfer or plan a transfer you can just use the same API with additional informations
 
 </Highlight>
 
@@ -27,15 +28,14 @@ If you want to provide a virtual card, temporary (emergency use case for example
 
 ##### Caution
 
-To create a card the user (= cardholder) has to exist in the system
+To make a tranfer, the beneficiary has to exist in the system
 
 </Highlight>
 
 <Highlight type="danger">
 
 ##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+SEPA tranfer can be refused due to the user thresholds.
 
 </Highlight>
 
@@ -45,11 +45,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 ## SCT transfer
 
-SCT transfer is used to send money money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them, ask for refund.
+SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them, ask for refund.
 
 ## Endpoints
 
-You must use the SCT API in including amount and benefiary's ID
+You must use the SCT API in including amount and beneficiary's ID
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
