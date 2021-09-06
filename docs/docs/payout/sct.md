@@ -45,15 +45,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 ## SCT transfer
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+SCT transfer is used to send money money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them, ask for refund.
 
 ## Endpoints
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Instant payment transfer
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+You must use the SCT API in including amount and benefiary's ID
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
