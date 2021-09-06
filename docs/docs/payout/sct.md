@@ -27,14 +27,14 @@ If you want to define recurring transfer or plan a transfer you can just use the
 
 ##### Caution
 
-To make a tranfer, the beneficiary has to exist in the system.
+To make a transfer, the beneficiary has to exist in the system.
 
 </Highlight>
 
 <Highlight type="danger">
 
 ##### Danger
-SEPA tranfer can be refused due to the user thresholds.
+SEPA transfer can be refused due to the user thresholds.
 
 </Highlight>
 
