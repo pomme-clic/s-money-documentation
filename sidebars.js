@@ -25,7 +25,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Pay OUT',
-      items: ['docs/payout/sct', 'docs/payout/beneficiaries', 'docs/payout/card-payment'],
+      items: ['docs/payout/beneficiaries', 'docs/payout/sct', 'docs/payout/IP', 'docs/payout/card-payment'],
     },
     {
       type: 'category',
