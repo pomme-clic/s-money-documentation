@@ -40,7 +40,7 @@ Instant transfer can be refused due to the user thresholds.
 
 ---
 
-## SCT transfer
+## Instant transfer
 
 Instant transfer is used to send money within seconds to a beneficiary defined by an IBAN and elligible. You can also ask for the list of instant transfer for a user on a period of time.
 
@@ -50,7 +50,7 @@ You must use the Instant Payment API in including amount and beneficiary's ID
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/users​/{userid}​/sctinst" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/users​/sctinst" method="post"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v2.0/users/{userid}/cards/{id}" method="delete"/> -->
 
