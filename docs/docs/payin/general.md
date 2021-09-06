@@ -9,7 +9,6 @@ import Cta from '@theme/Cta'
 
 ---
 <Highlight>
-<Highlight type="neutre">
 
 ##### Note neutre
 
