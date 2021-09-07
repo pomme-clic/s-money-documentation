@@ -8,7 +8,7 @@ import Cta from '@theme/Cta'
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
 ---
-<Highlight>
+
 <Highlight type="neutre">
 
 ##### Note neutre
@@ -17,7 +17,6 @@ Any operation, per type, period,... on the user account can be retrieve within A
 
 </Highlight>
   
-</Highlight>
 
 <Highlight type="tip">
 
@@ -26,6 +25,7 @@ Any operation, per type, period,... on the user account can be retrieve within A
 All Payin operatiosn are screened by our LAB/FT solution and can be rejected.
 
 </Highlight>
+
 ---
 
 Any user getting a Payin can be informed of the operation through a specialized CallBack.
