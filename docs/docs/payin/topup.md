@@ -11,7 +11,7 @@ import Cta from '@theme/Cta'
 
 ##### Note neutre
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Money from Card Top Up will be available immediatly
 
 </Highlight>
 
@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 ##### Tip
 
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
+Card Top Up is avalable with VISA and Mastercard but other payment methods will be available soon
 
 </Highlight>
 
@@ -27,33 +27,13 @@ If you want to provide a virtual card, temporary (emergency use case for example
 
 ##### Caution
 
-To create a card the user (= cardholder) has to exist in the system
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Any Card Top Up will be secured within 3DS 
 
 </Highlight>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
-
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
 ## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
@@ -67,7 +47,3 @@ More information regarding this endpoint in the [API reference](/api/api1)
   link="/api/api1"
   label="Try it out"
 />
-
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
