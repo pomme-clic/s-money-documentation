@@ -38,6 +38,7 @@ Each type of Payin has its own callback providing details on the operation and t
 
 More information regarding this endpoint in the [API reference](/api/api1)
 
+
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
