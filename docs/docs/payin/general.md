@@ -5,7 +5,6 @@ import Cta from '@theme/Cta'
 
 # General
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
 ---
 <Highlight>
@@ -25,11 +24,11 @@ All Payin operatiosn are screened by our LAB/FT solution and can be rejected.
 </Highlight>
 ---
 
-Any user getting a Payin can be informed of the operation through a specialized CallBack.
 
 ## CallBack
 
 Each type of Payin has its own callback providing details on the operation and the user account update.
+Any user getting a Payin can be informed of the operation through a specialized CallBack.
 
 ## Endpoints
 
