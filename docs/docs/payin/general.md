@@ -15,13 +15,6 @@ Any operation, per type, period,... on the user account can be retrieve within A
   
 </Highlight>
 
-<Highlight type="tip">
-
-##### Tip
-
-All Payin operatiosn are screened by our LAB/FT solution and can be rejected.
-
-</Highlight>
 ---
 
 
