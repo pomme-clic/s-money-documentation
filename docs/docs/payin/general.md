@@ -2,12 +2,11 @@ import Image from '@theme/Image';
 import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
-
 # General
-
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
 ---
+
 <Highlight>
 
 ##### Note neutre
@@ -18,13 +17,9 @@ Any operation, per type, period,... on the user account can be retrieve within A
 
 
 <Highlight type="tip">
-
 ##### Tip
-
 All PayIn operations are screened by our LAB/FT solution and can be rejected.
-
 </Highlight>
----
 
 Any user getting a Payin can be informed of the operation through a specialized CallBack.
 
