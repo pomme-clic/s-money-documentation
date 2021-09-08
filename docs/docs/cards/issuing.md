@@ -16,7 +16,7 @@ And by a type of card: physical or virtual card, virtual card, token (xPay) or a
 ## Order some cards
 Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card:
 
-<Image src="docs/card_order.png.jpg" alt="usecase 1"/>
+<Image src="docs/card_order.png" alt="usecase 1"/>
 
 <Highlight>
 You can just order only a virtual card too or use a virtual card for emergency mode
