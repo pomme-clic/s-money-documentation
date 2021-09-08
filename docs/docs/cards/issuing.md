@@ -18,15 +18,12 @@ And by a type of card:
 - wearable
 
 ### Order some cards
-Ci-dessous un exemple d'UX suite à une première commande carte, avec la possibilité de commander une carte d'attente virtuelle
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
+Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card:
+
+<Image src="docs/card_order.png.jpg" alt="usecase 1"/>
 
 <Highlight>
-
-##### Note neutre
-
-totot
-
+You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
 
 <Highlight type="tip">
