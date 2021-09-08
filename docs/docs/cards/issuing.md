@@ -10,14 +10,15 @@ The card offer is defined by a product:
 - debit, prepaid
 - consumer, business
 - classic, gold
+
 And by a type of card:
 - physical card
 - virtual card
-- token
+- token (xPay)
 - wearable
 
 ### Order some cards
-
+Ci-dessous un exemple d'UX suite à une première commande carte, avec la possibilité de commander une carte d'attente virtuelle
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
 <Highlight>
