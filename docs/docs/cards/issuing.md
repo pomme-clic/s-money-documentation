@@ -7,17 +7,13 @@ import Cta from '@theme/Cta'
 Here, we are talking about product and card life cycle.
 ## Context
 The card offer is defined by a product:
-- debit, prepaid
-- consumer, business
-- classic, gold
+- funding source : debit, prepaid,...
+- for who : consumer, business
+- what : classic, gold
 
-And by a type of card:
-- physical card
-- virtual card
-- token (xPay)
-- wearable
+And by a type of card: physical or virtual card, virtual card, token (xPay) or a wearable
 
-### Order some cards
+## Order some cards
 Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card:
 
 <Image src="docs/card_order.png.jpg" alt="usecase 1"/>
@@ -25,6 +21,9 @@ Below is an example of UX following a first card order, with the possibility of 
 <Highlight>
 You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
+
+### Endpoint
+
 
 <Highlight type="tip">
 
@@ -50,15 +49,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 </Highlight>
 
----
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
+## Cancel a card
 
 ## Transfert d'argent P2P
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-## Endpoints
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
@@ -79,6 +76,3 @@ More information regarding this endpoint in the [API reference](/api/api1)
   label="Try it out"
 />
 
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
