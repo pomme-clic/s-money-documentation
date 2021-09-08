@@ -13,7 +13,7 @@ See with your Xpollens representative to gain access to your dedicated Sandbox a
 ## Service Blueprint
 
 Most of presented use cases are illustrated by a design blueprint. It gives an overview of what a feature does and illustrates the function of several APIs.
-The goal is to present developers and product teams to understand what the APIs can offer and how our platform can be integrated with your use cases.
+The goal is to present developers and product teams an understanding of what the APIs can offer and how our platform can be integrated with your use cases.
 
 <Image src="docs/Overview-example.png" alt="usecase 1"/>
 
