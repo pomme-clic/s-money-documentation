@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Documentation Overview
+# Overview
 
 The Xpollens API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
@@ -12,7 +12,10 @@ See with your Xpollens representative to gain access to your dedicated Sandbox a
 
 ## Service Blueprint
 
+Most of presented use cases are illustrated by a design blueprint. It gives an overview of what a feature does and illustrates the function of several APIs.
+The goal is to present developers and product teams an understanding of what the APIs can offer and how our platform can be integrated with your use cases.
 
+<Image src="docs/Overview-example.png" alt="usecase 1"/>
 
 ## Ressources
 
