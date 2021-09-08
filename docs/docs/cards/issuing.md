@@ -11,7 +11,7 @@ import Cta from '@theme/Cta'
 
 ##### Note neutre
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+totot
 
 </Highlight>
 
