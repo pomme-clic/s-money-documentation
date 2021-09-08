@@ -4,6 +4,19 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Issue a card
+Here, we are talking about product and card life cycle.
+## Context
+The card offer is defined by a product:
+- debit, prepaid
+- consumer, business
+- classic, gold
+And by a type of card:
+- physical card
+- virtual card
+- token
+- wearable
+
+### Order some cards
 
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
