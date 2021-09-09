@@ -8,13 +8,16 @@ Here, we are talking about product and card life cycle.
 ## Context
 The card offer is defined by a product:
 - funding source : debit, prepaid,...
-- for who : consumer, business
-- what : classic, gold
+- for who : consumer, business, ...
+- what : classic, gold, Infinite
 
-And by a type of card: physical or virtual card, virtual card, token (xPay) or a wearable
+And by a type of card : 
+- physical or virtual card, 
+- virtual card or token (xPay) 
+- wearable (keyring, bracelet..)
 
 ## Order some cards
-Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card:
+Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card :
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
