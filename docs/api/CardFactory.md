@@ -4,7 +4,7 @@ sidebar_label: Card Factory
 hide_table_of_contents: true
 ---
 
-# Core API
+# Card Factory
 
 import Rapidoc from "@theme/Rapidoc"
 
