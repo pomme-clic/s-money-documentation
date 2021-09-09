@@ -24,40 +24,7 @@ You can just order only a virtual card too or use a virtual card for emergency m
 
 ### Endpoint
 
-
-<Highlight type="tip">
-
-##### Tip
-
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
-
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-To create a card the user (= cardholder) has to exist in the system
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
 ## Cancel a card
-
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
 ### Hmac adapter 1
 
