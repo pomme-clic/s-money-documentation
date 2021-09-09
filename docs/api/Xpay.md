@@ -1,10 +1,10 @@
 ---
-title: v2
-sidebar_label: v2.0
+title: Xpay
+sidebar_label: Xpay
 hide_table_of_contents: true
 ---
 
-# API 2
+# Xpay
 
 import Rapidoc from "@theme/Rapidoc"
 
