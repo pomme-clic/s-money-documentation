@@ -48,7 +48,7 @@ Instant transfer is used to send money within seconds to a beneficiary defined b
 
 You must use the Instant Payment API in including amount and beneficiary's ID
 
-More information regarding this endpoint in the [API reference](/api/api4)
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/sctinst" method="post"/>
 
@@ -57,6 +57,6 @@ More information regarding this endpoint in the [API reference](/api/api4)
 <Cta
   context="doc"
   ui="button"
-  link="/api/api1"
+  link="/api/Core"
   label="Try it out"
 />

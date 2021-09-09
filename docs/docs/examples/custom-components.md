@@ -80,6 +80,6 @@ import Cta from '@theme/Cta'
 <Cta
   context="doc"
   ui="button"
-  link="/api/api1"
+  link="/api/Core"
   label="Try it out"
 />

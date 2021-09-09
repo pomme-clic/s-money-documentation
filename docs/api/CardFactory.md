@@ -1,15 +1,15 @@
 ---
-title: Core API
-sidebar_label: Core Api v1.0
+title: Card Factory
+sidebar_label: Card Factory 
 hide_table_of_contents: true
 ---
 
-# Core API
+# Card Factory
 
 import Rapidoc from "@theme/Rapidoc"
 
 <Rapidoc apiUrl="/v2.0/cardfactory">
 </Rapidoc>
 
-<!-- <Rapidoc apiUrl="/v1.0/migrationProxy">
+<!-- <Rapidoc apiUrl="/v2.0/migrationProxy">
 </Rapidoc> -->
