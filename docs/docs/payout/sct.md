@@ -47,7 +47,7 @@ SCT transfer is used to send money to a beneficiary defined by an IBAN. You can 
 
 You must use the SCT API in including amount and beneficiary's ID
 
-More information regarding this endpoint in the [API reference](/api/api1)
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
 

@@ -54,7 +54,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-More information regarding this endpoint in the [API reference](/api/api1)
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
 
