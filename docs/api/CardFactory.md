@@ -1,6 +1,6 @@
 ---
 title: Card Factory
-sidebar_label: Card Factory
+sidebar_label: Card Factory 
 hide_table_of_contents: true
 ---
 
