@@ -57,6 +57,6 @@ More information regarding this endpoint in the [API reference](/api/api4)
 <Cta
   context="doc"
   ui="button"
-  link="/api/api1"
+  link="/api/Core"
   label="Try it out"
 />

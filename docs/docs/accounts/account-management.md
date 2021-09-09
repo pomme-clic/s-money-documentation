@@ -64,10 +64,8 @@ More information regarding this endpoint in the [API reference](/api/api1)
 <Cta
   context="doc"
   ui="button"
-  link="/api/api1"
+  link="/api/Core"
   label="Try it out"
 />
 
-### Hmac adapter 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
