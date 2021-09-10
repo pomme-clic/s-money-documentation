@@ -23,6 +23,17 @@ Below is a use case to block your card temporarily :
 You can block or unblock in real time to secure your card if you don't find it
 </Highlight>
 
+<Highlight type="tip">
+
+##### Block/unblock card
+
+Below is a use case to block your card temporarily :
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+  
+</Highlight>
+
+
+
 ### Update limits
 Below is an example of use case to update limits of your card :
 
