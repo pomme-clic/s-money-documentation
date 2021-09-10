@@ -47,7 +47,7 @@ You can manage your card with a selfcare in order to update some specifications,
 ### Block foreign Payment and withdrawal
  
 <Highlight type="tip">
- `
+ 
  You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
  
 </Highlight>
@@ -61,17 +61,57 @@ You can manage your card to :
 - oppose your card 
 - add in Apple wallet by in-app provisionning (sdk)
 
-### Choose your PIN
-Below is a use case to define your own PIN code :
+### Choose or Random PIN
+
+<Highlight type="tip">
+ 
+ You have 2 choices : Random PIN (by default) or WishPIN in order to allow to your end user to define his own PIN code. 
+ 
+</Highlight>
+
+<Image src="docs/Card_PIN.png" alt="usecase 1"/>
+
+<Highlight type="caution">
+ 
+ WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
+ 
+</Highlight>
 
 ### Display your virtual card
-Below is a use case to display informations of your virtual card :
+
+<Highlight type="tip">
+ 
+ Once your virtual card is created, you need to get card informations to use in e-commerce for example
+ 
+</Highlight>
+
+<Image src="docs/Card_Display.png" alt="usecase 1"/>
+
+<Highlight type="caution">
+ 
+ To use API Card Display, for PCI compliance, we use a Secure Interface by a sdk
+ 
+</Highlight>
 
 ### Oppose your card
-Below is a use case to block your card definitively :
+
+<Highlight type="tip">
+ 
+ Oppose a card is block your card definitively. The next step is usually a refabricate or upgrade new card
+ 
+</Highlight>
+
+<Image src="docs/Card_Oppose.png" alt="usecase 1"/>
 
 ### Add your card in a Apple wallet since your mobile app
-Below is a use case to add your card in Apple Pay since your mobile app :
+
+<Highlight type="tip">
+ 
+ In your mobile app, you can add a card to Apple wallet
+ 
+</Highlight>
+
+<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
 ### Hmac adapter 1
 
