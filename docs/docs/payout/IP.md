@@ -5,7 +5,7 @@ import Cta from '@theme/Cta'
 
 # Instant transfer
 
-<Image src="IP OUT.png" alt="usecase 1"/>
+<Image src="docs/IP OUT.png" alt="usecase 1"/>
 
 <Highlight>
 
