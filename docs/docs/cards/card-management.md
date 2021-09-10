@@ -16,14 +16,6 @@ You can manage your card with a selfcare in order to update some specifications,
  
 <Highlight type="tip">
 
- ##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="tip">
-
  ##### Block card
  You can block or unblock in real time to secure your card if you don't find it
 
@@ -31,31 +23,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-### Update limits
-Below is an example of use case to update limits of your card :
+<Highlight type="tip">
+
+ ##### Update Limits
+ You can increase or decrease your limits of payment and/or withdrawal
 
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
-<Highlight>
-You can increase or decrease your limits of payment and/or withdrawal
 </Highlight>
 
-### Block/Unblock VAD
-Below is a use case to (un)block VAD :
+<Highlight type="tip">
+
+ ##### Block VAD
+ You can block or unblock in real time if you don't want authorize e-commerce payment
 
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
-<Highlight>
-You can block or unblock in real time if you don't want authorize e-commerce payment
 </Highlight>
+ 
+<Highlight type="tip">
 
-### Block/Unblock non-domectic country
-Below is a use case to (un)block non-domestic payments or withdrawal :
+ ##### Block foreign Payment and withdrawal
+ You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
 
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
-<Highlight>
-You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
 </Highlight>
 
 ## Context 'Actions in app'
