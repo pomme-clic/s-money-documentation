@@ -14,7 +14,7 @@ You can manage your card with a selfcare in order to update some specifications,
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
  
-#### Block card
+### Block card
  
 <Highlight type="tip">
  
@@ -24,7 +24,7 @@ You can manage your card with a selfcare in order to update some specifications,
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
- #### Update Limits
+### Update Limits
   
 <Highlight type="tip">
  
@@ -34,7 +34,7 @@ You can manage your card with a selfcare in order to update some specifications,
 
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
-#### Block VAD
+### Block VAD
   
 <Highlight type="tip">
  
@@ -44,7 +44,7 @@ You can manage your card with a selfcare in order to update some specifications,
 
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
- #### Block foreign Payment and withdrawal
+### Block foreign Payment and withdrawal
  
 <Highlight type="tip">
  `
