@@ -20,39 +20,39 @@ You can manage your card to :
 - add in Apple wallet by in-app provisionning (sdk)
 
 ## Block/Unblock card
-Below is an example of ......... :
+Below is a use case to block your card :
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
 <Highlight>
-You can just order only a virtual card too or use a virtual card for emergency mode
+You can block or unblock in real time to secure your card if you don't find it
 </Highlight>
 
-## Update limts
-Below is an example of ......... :
+## Update limits
+Below is an example of use case to update limits of your card :
 
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
 <Highlight>
-You can just order only a virtual card too or use a virtual card for emergency mode
+You can increase or decrease your limits of payment and/or withdrawal
 </Highlight>
 
 ## Block/Unblock VAD
-Below is an example of ......... :
+Below is a use case to (un)block VAD :
 
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
 <Highlight>
-You can just order only a virtual card too or use a virtual card for emergency mode
+You can block or unblock in real time if you don't want authorize e-commerce payment
 </Highlight>
 
 ## Block/Unblock non-domectic country
-Below is an example of ......... :
+Below is a use case to (un)block non-domestic payments or withdrawal :
 
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
 <Highlight>
-You can just order only a virtual card too or use a virtual card for emergency mode
+You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
 </Highlight>
 
 ### Hmac adapter 1
