@@ -14,7 +14,7 @@ You can manage your card with a selfcare in order to update some specifications,
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
  
- <Highlight type="tip">
+<Highlight type="tip">
 
 ##### Tip
 
