@@ -13,33 +13,11 @@ You can manage your card with a selfcare in order to update some specifications,
 - update limits for payment or withdrawal
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
-
-### Block/Unblock card
-Below is a use case to block your card temporarily :
-
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-
-#### Block/Unblock card
-
-<Highlight>
+ 
+</Highlight>
+<Highlight type="tip">
+##### Block/unblock card
 You can block or unblock in real time to secure your card if you don't find it
-</Highlight>
-
-<Highlight type="tip">
-
-##### Block/unblock card
-
-Below is a use case to block your card temporarily :
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-  
-</Highlight>
-
-<Highlight type="tip">
-
-##### Block/unblock card
-
-Below is a use case to block your card temporarily :
-  
 </Highlight>
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
