@@ -15,16 +15,17 @@ You can manage your card with a selfcare in order to update some specifications,
 - block or unblock non domestic payment or withdrawal
  
 <Highlight type="tip">
-##### Tip
+
+ ##### Tip
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
 
 </Highlight>
 
 <Highlight type="tip">
-##### (un)Block card
- 
-You can block or unblock in real time to secure your card if you don't find it
+
+ ##### Block card
+ You can block or unblock in real time to secure your card if you don't find it
 
 </Highlight>
 
