@@ -14,32 +14,28 @@ You can manage your card with a selfcare in order to update some specifications,
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
  
-<Highlight type="tip">
-
  ##### Block card
+<Highlight type="tip">
  You can block or unblock in real time to secure your card if you don't find it
-
 </Highlight>
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-<Highlight type="tip">
 
- ##### Update Limits
+  ##### Update Limits
+<Highlight type="tip">
  You can increase or decrease your limits of payment and/or withdrawal
 
 </Highlight>
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
+
+  ##### Block VAD
 <Highlight type="tip">
-
- ##### Block VAD
- You can block or unblock in real time if you don't want authorize e-commerce payment
-
+  You can block or unblock in real time if you don't want authorize e-commerce payment
 </Highlight>
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
-<Highlight type="tip">
 
  ##### Block foreign Payment and withdrawal
+<Highlight type="tip">
  You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
-
 </Highlight>
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
