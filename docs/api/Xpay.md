@@ -1,10 +1,12 @@
 ---
-title: Api 1
-sidebar_label: Kyc v.1.0
+title: Xpay
+sidebar_label: Xpay
 hide_table_of_contents: true
 ---
 
+# Xpay
+
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v1.0/kyc.usermanagment">
+<Rapidoc apiUrl="/v2.0/cardxpay">
 </Rapidoc>

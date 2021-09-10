@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Documentation Overview
+# Overview
 
 The Xpollens API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
@@ -12,7 +12,10 @@ See with your Xpollens representative to gain access to your dedicated Sandbox a
 
 ## Service Blueprint
 
+Most of presented use cases are illustrated by a design blueprint. It gives an overview of what a feature does and illustrates the function of several APIs.
+The goal is to present developers and product teams an understanding of what the APIs can offer and how our platform can be integrated with your use cases.
 
+<Image src="docs/Overview-example.png" alt="usecase 1"/>
 
 ## Ressources
 
@@ -60,23 +63,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-More information regarding this endpoint in the [API reference](/api/api1)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/api1"
-  label="Try it out"
-/>
-
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.

@@ -34,12 +34,19 @@ module.exports = {
     },
   ],
   apisSidebar: [
-    'api/api1',
-    'api/api3',
+    'api/Core',
     {
       type: 'category',
-      label: 'Card factory',
-      items: ['api/api2'],
+      label: 'Cards',
+      items: ['api/CardFactory','api/CardSecure','api/Xpay'],
     },
+    {
+      type: 'category',
+      label: 'Users',
+      items: ['api/KYC','api/Users','api/SCA'],
+    },
+	'api/SCTINST',
+	'api/Compliance',
+	'api/Webhooks',	
   ],
 }

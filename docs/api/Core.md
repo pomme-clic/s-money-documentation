@@ -1,12 +1,12 @@
 ---
-title: v2
-sidebar_label: v2.0
+title: Core
+sidebar_label: Core
 hide_table_of_contents: true
 ---
 
-# API 2
+# Core
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v2.0/cardfactory">
+<Rapidoc apiUrl="/v1.0/migrationProxy">
 </Rapidoc>
