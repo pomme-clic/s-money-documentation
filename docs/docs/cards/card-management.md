@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 Here, we are talking about how you can manage your cards.
 
-## Context Selfcare
+## Context 'Selfcare'
 You can manage your card with a selfcare in order to update some specifications, like : 
 - block and unblock your card
 - update limits for payment or withdrawal
@@ -23,7 +23,7 @@ Below is a use case to block your card temporarily :
 You can block or unblock in real time to secure your card if you don't find it
 </Highlight>
 
-## Update limits
+### Update limits
 Below is an example of use case to update limits of your card :
 
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
@@ -32,7 +32,7 @@ Below is an example of use case to update limits of your card :
 You can increase or decrease your limits of payment and/or withdrawal
 </Highlight>
 
-## Block/Unblock VAD
+### Block/Unblock VAD
 Below is a use case to (un)block VAD :
 
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
@@ -41,7 +41,7 @@ Below is a use case to (un)block VAD :
 You can block or unblock in real time if you don't want authorize e-commerce payment
 </Highlight>
 
-## Block/Unblock non-domectic country
+### Block/Unblock non-domectic country
 Below is a use case to (un)block non-domestic payments or withdrawal :
 
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
@@ -50,23 +50,23 @@ Below is a use case to (un)block non-domestic payments or withdrawal :
 You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
 </Highlight>
 
-## Context Actions in app
+## Context 'Actions in app'
 You can manage your card to : 
 - define your PIN code (sdk)
 - display your virtual card
 - oppose your card 
 - add in Apple wallet by in-app provisionning (sdk)
 
-## Choose your PIN
+### Choose your PIN
 Below is a use case to define your own PIN code :
 
-## Display your virtual card
-Below is a use case to define your own PIN code :
+### Display your virtual card
+Below is a use case to display informations of your virtual card :
 
-## Oppose your card
+### Oppose your card
 Below is a use case to block your card definitively :
 
-## Add your card in a Apple wallet since your mobile app
+### Add your card in a Apple wallet since your mobile app
 Below is a use case to add your card in Apple Pay since your mobile app :
 
 ### Hmac adapter 1
