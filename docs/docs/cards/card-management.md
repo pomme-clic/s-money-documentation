@@ -5,51 +5,55 @@ import Cta from '@theme/Cta'
 
 # Card Management 
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
+Here, we are talking about how you can manage your cards.
+
+## Context
+You can manage your card with a selfcare in order to update some specifications, like : 
+- block and unblock your card
+- update limits for payment or withdrawal
+- block or unblock VAD payment
+- block or unblock non domestic payment or withdrawal
+
+You can manage your card to : 
+- define your PIN code (sdk)
+- oppose your card 
+- add in Apple wallet by in-app provisionning (sdk)
+
+## Block/Unblock card
+Below is an example of ......... :
+
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
 <Highlight>
-
-##### Note neutre
-
-toto
-
+You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
 
-<Highlight type="tip">
+## Update limts
+Below is an example of ......... :
 
-##### Tip
+<Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+<Highlight>
+You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
 
-<Highlight type="caution">
+## Block/Unblock VAD
+Below is an example of ......... :
 
-##### Caution
+<Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+<Highlight>
+You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
 
-<Highlight type="danger">
+## Block/Unblock non-domectic country
+Below is an example of ......... :
 
-##### Danger
+<Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+<Highlight>
+You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
-
----
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
-
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
 ### Hmac adapter 1
 
