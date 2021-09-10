@@ -3,23 +3,18 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Card Management 
+# Card Management
 
 Here, we are talking about how you can manage your cards.
 
-## Context
+## Context Selfcare
 You can manage your card with a selfcare in order to update some specifications, like : 
 - block and unblock your card
 - update limits for payment or withdrawal
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
 
-You can manage your card to : 
-- define your PIN code (sdk)
-- oppose your card 
-- add in Apple wallet by in-app provisionning (sdk)
-
-## Block/Unblock card
+### Block/Unblock card
 Below is a use case to block your card temporarily :
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
@@ -55,7 +50,17 @@ Below is a use case to (un)block non-domestic payments or withdrawal :
 You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
 </Highlight>
 
+## Context Actions in app
+You can manage your card to : 
+- define your PIN code (sdk)
+- display your virtual card
+- oppose your card 
+- add in Apple wallet by in-app provisionning (sdk)
+
 ## Choose your PIN
+Below is a use case to define your own PIN code :
+
+## Display your virtual card
 Below is a use case to define your own PIN code :
 
 ## Oppose your card
