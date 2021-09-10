@@ -24,7 +24,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 
 <Highlight type="tip">
  
-##### Block/unblock card
+##### (un)Block card
  
 You can block or unblock in real time to secure your card if you don't find it
 
