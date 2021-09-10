@@ -20,7 +20,7 @@ You can manage your card to :
 - add in Apple wallet by in-app provisionning (sdk)
 
 ## Block/Unblock card
-Below is a use case to block your card :
+Below is a use case to block your card temporarily :
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
@@ -54,6 +54,15 @@ Below is a use case to (un)block non-domestic payments or withdrawal :
 <Highlight>
 You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
 </Highlight>
+
+## Choose your PIN
+Below is a use case to define your own PIN code :
+
+## Oppose your card
+Below is a use case to block your card definitively :
+
+## Add your card in a Apple wallet since your mobile app
+Below is a use case to add your card in Apple Pay since your mobile app :
 
 ### Hmac adapter 1
 
