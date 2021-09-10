@@ -5,7 +5,6 @@ import Cta from '@theme/Cta'
 
 # SEPA transfer
 
-
 <Highlight>
 
 ##### Note neutre
@@ -13,6 +12,8 @@ import Cta from '@theme/Cta'
 The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas. More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
 </Highlight>
+
+<Image src="docs/SEPA OUT_EN.png" alt="usecase 1"/>
 
 <Highlight type="tip">
 
