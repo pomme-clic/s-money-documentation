@@ -53,4 +53,4 @@ Only use if we're depreciating a particular use case/API
 
 ## API References
 
-You can see a consolidated viewpoint of all the API documentation here 
+You can see a consolidated viewpoint of all the API documentation [here](/api/Core/)
