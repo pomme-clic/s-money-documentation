@@ -13,12 +13,7 @@ If you do not have your own mobile applicaiton, we can provide one for you : Xpo
 
 </Highlight>
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" >
-    <source src="docs/xpollens-authenticator.mp4" type="video/mp4">
-    <source src="docs/xpollens-authenticator.ogg" type="video/ogg">
-  </video>
-</figure>
+<Image src="docs/xpollens-authenticator.gif" alt="usecase 1"/>
 
 ---
 
