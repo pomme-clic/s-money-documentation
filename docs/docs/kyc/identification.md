@@ -13,11 +13,12 @@ If you do not have your own mobile applicaiton, we can provide one for you : Xpo
 
 </Highlight>
 
-<video width="320" height="240" controls>
-  <source src="docs/xpollens-authenticator.mp4" type="video/mp4">
-  <source src="docs/xpollens-authenticator.ogg" type="video/ogg">
-  Your browser does not support the video tag.
-</video>
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" >
+    <source src="docs/xpollens-authenticator.mp4" type="video/mp4">
+    <source src="docs/xpollens-authenticator.ogg" type="video/ogg">
+  </video>
+</figure>
 
 ---
 
