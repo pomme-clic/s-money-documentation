@@ -13,7 +13,6 @@ If you do not have your own mobile applicaiton, we can provide one for you : Xpo
 
 </Highlight>
 
-<Image src="docs/xpollens-authenticator.gif" alt="usecase 1"/>
 
 ---
 
