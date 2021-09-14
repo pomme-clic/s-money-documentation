@@ -17,49 +17,40 @@ The goal is to present developers and product teams an understanding of what the
 
 <Image src="docs/Overview-example.png" alt="usecase 1"/>
 
-## Ressources
+## Informations boxes
 
 <Highlight>
 
-##### Note neutre
+##### Neutral note
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+You can find here some infos about API prerequisites and what you need to make this use case work.
+  
 </Highlight>
 
 <Highlight type="tip">
 
 ##### Tip
 
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
-
+Here you can commonly found some tips like how other use cases can apply to this feature or implementation best practices
+  
 </Highlight>
 
 <Highlight type="caution">
 
 ##### Caution
 
-To create a card the user (= cardholder) has to exist in the system
-
+Important informations will be here. Be sure to read it.
 </Highlight>
 
 <Highlight type="danger">
 
 ##### Danger
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+Only use if we're depreciating a particular use case/API
 </Highlight>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
+## API References
 
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
+You can see a consolidated viewpoint of all the API documentation here 
