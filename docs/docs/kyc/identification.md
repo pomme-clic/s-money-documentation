@@ -5,39 +5,19 @@ import Cta from '@theme/Cta'
 
 # Authentication 
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
-
-<Highlight>
-
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
+Authentication is required for your end-customers if you are on the Retail B2C market ; it is also required for all key individuals of your professional customers, if you are on the Corporates B2B market.
 
 <Highlight type="tip">
 
-##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+If you do not have your own mobile applicaiton, we can provide one for you : Xpollens Authenticator. This app will handle both the identification process during KYC, and the strong authentication of any sensitive operation or online purchase that will occur on your customer's account.
 
 </Highlight>
 
-<Highlight type="caution">
-
-##### Caution
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
+<video width="320" height="240" controls>
+  <source src="docs/xpollens-authenticator.mp4" type="video/mp4">
+  <source src="docs/xpollens-authenticator.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
