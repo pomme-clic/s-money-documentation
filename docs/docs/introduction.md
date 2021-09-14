@@ -55,7 +55,3 @@ Only use if we're depreciating a particular use case/API
 
 You can see a consolidated viewpoint of all the API documentation [here](/api/Core/)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=dQw4w9WgXcQ
-" target="_blank"><img src="http://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-
