@@ -13,6 +13,7 @@ If you do not have your own mobile application, we can provide one for you : Xpo
 
 </Highlight>
 
+#### Xpollens Authenticator app
 <figure class="video_container">
   <iframe src="https://youtu.be/pbnxhOlhNDg" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
