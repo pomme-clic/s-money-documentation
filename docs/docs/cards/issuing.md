@@ -4,52 +4,30 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Issue a card
+Here, we are talking about product and card life cycle.
+## Context
+The card offer is defined by a product:
+- funding source : debit, prepaid,...
+- for who : consumer, business, ...
+- what : classic, gold, Infinite
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
+And by a type of card : 
+- physical or virtual card, 
+- virtual card or token (xPay) 
+- wearable (keyring, bracelet..)
+
+## Order some cards
+Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card :
+
+<Image src="docs/Card_Order.png" alt="usecase 1"/>
 
 <Highlight>
-
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
+You can just order only a virtual card too or use a virtual card for emergency mode
 </Highlight>
 
-<Highlight type="tip">
+### Endpoint
 
-##### Tip
-
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
-
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-To create a card the user (= cardholder) has to exist in the system
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
----
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
-
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+## Cancel a card
 
 ### Hmac adapter 1
 
