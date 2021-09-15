@@ -15,5 +15,5 @@ If you do not have your own mobile application, we can provide one for you : ***
 
 #### Xpollens Authenticator app
 <figure class="video_container">
-  <iframe src="https://youtu.be/pbnxhOlhNDg" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe src="https://youtu.be/ovGkP9y40NY" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
