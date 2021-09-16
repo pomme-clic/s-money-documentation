@@ -56,7 +56,6 @@ You can manage your card with a selfcare in order to update some specifications,
 
 ## Context 'Actions in app'
 You can manage your card to : 
-- define your PIN code (sdk)
 - display your virtual card
 - oppose your card 
 - add in Apple wallet by in-app provisionning (sdk)
