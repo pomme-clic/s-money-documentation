@@ -4,65 +4,34 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Business Portal
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
-<Highlight>
+In addition to our API platform, we offer our client with a dedicated back office tool to manage your own accounts, your clients and their needs.
 
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="tip">
-
-##### Tip
-
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
-
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-To create a card the user (= cardholder) has to exist in the system
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
+<Image src="docs/PartnerPortal-Home.png" alt="usecase 1"/>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
 
-## Transfert d'argent P2P
+## Main Features
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Through your business dashboard, you will be able to handle all kind of client requests.
 
-## Endpoints
+### Manage your customer Card
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+<Image src="docs/PartnerPortal-Card.png" alt="usecase 1"/>
 
-### Hmac adapter 1
+You can here change and manage all options of your customer cards such as lifting limits, blocking withdrawals, opposing the card or refrabicate it.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+### Manage your customer onboarding
 
-More information regarding this endpoint in the [API reference](/api/Core)
+We also provide you the tools to monitor the onboarding status of your different client and see if deverything's alright.
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+### Manage your customer accounts
 
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+Same as the card module, we also provide a dedicated account module to monitor and manage your customer accounts.
 
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
+### Monitor you own activity
+
+<Image src="docs/PartnerPortal-Internal.png" alt="usecase 1"/>
+
+A special dedicated section exists only accessible for privilegied profiles to manage P&L accounts, accounts and customer debt management.

@@ -29,8 +29,8 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Customer Management',
-      items: ['docs/customer-relationship/account-statement', 'docs/customer-relationship/billing', 'docs/customer-relationship/reporting', 'docs/customer-relationship/business-portal'],
+      label: 'Xpollens and you',
+      items: ['docs/customer-relationship/your-card', 'docs/customer-relationship/billing', 'docs/customer-relationship/reporting', 'docs/customer-relationship/business-portal'],
     },
   ],
   apisSidebar: [
