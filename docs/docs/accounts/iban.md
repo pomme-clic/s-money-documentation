@@ -6,7 +6,7 @@ import Cta from '@theme/Cta'
 # IBAN
 
 The IBAN (International Bank Account Number) is the unique identifier of the User Account.  
-The IBAN uniquely identifies an individual account, at a specific financial institution, in a particular country.
+The IBAN uniquely identifies an individual account, at a specific financial institution, in a particular country. 
 
 Depending on your contract with us, you will be provided of a Xpollens IBAN or an IBAN based on your bank identification number.
 
