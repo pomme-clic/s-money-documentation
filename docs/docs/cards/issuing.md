@@ -16,13 +16,49 @@ And by a type of card :
 - virtual card or token (xPay) 
 - wearable (keyring, bracelet..)
 
-## Order some cards
-Below is an example of UX following a first card order, with the possibility of ordering a "waiting" virtual card :
+### Order a physical card
+
+<Highlight type="tip">
+ 
+ Below is an example of UX following a first physical card order with option random or wish PIN
+ 
+</Highlight>
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
+
+
+### Choose or Random PIN
+
+<Highlight type="tip">
+ 
+ You have 2 choices : Random PIN (by default) or WishPIN in order to allow to your end user to define his own PIN code. 
+ 
+</Highlight>
+
+<Image src="docs/Card_PIN.png" alt="usecase 1"/>
 <Highlight>
-You can just order only a virtual card too or use a virtual card for emergency mode
+ You have to choose by parameter if you propose a journey with random or wishPIN
+</Highlight>
+
+<Highlight type="caution">
+ 
+ WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
+ 
+</Highlight>
+
+### Order a virtual card
+
+<Highlight type="tip">
+ 
+ When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
+ 
+</Highlight>
+
+<Image src="docs/vCard_Order.png" alt="usecase 1"/>
+
+<Highlight>
+  There is not random or wish PIN with a vritual card obviously
 </Highlight>
 
 ### Endpoint
