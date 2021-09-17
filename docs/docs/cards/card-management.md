@@ -48,7 +48,7 @@ You can manage your card with a selfcare in order to update some specifications,
  
 <Highlight type="tip">
  
- You can block or unblock in real time if you don't want authorize no-domestic payment or wthdrawal
+ You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
  
 </Highlight>
 
@@ -60,21 +60,7 @@ You can manage your card to :
 - oppose your card 
 - add in Apple wallet by in-app provisionning (sdk)
 
-### Choose or Random PIN
 
-<Highlight type="tip">
- 
- You have 2 choices : Random PIN (by default) or WishPIN in order to allow to your end user to define his own PIN code. 
- 
-</Highlight>
-
-<Image src="docs/Card_PIN.png" alt="usecase 1"/>
-
-<Highlight type="caution">
- 
- WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
- 
-</Highlight>
 
 ### Display your virtual card
 
