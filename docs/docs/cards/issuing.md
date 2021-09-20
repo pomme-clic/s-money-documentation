@@ -27,6 +27,24 @@ And by a type of card :
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
+### Choose or Random PIN
+
+<Highlight type="tip">
+ 
+ You have 2 choices : Random PIN (by default) or WishPIN in order to allow to your end user to define his own PIN code. 
+ 
+</Highlight>
+
+<Image src="docs/Pin_Define.png" alt="usecase 1"/>
+
+<Highlight>
+ 
+ You have to choose by parameter if you propose a journey with random or wishPIN
+
+</Highlight>
+
+
+
 ### Endpoint
 
 ## Cancel a card
