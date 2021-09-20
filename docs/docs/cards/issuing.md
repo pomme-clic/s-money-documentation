@@ -35,8 +35,11 @@ And by a type of card :
 </Highlight>
 
 <Image src="docs/Pin_Define.png" alt="usecase 1"/>
+
 <Highlight>
+ 
  You have to choose by parameter if you propose a journey with random or wishPIN
+
 </Highlight>
 
 <Highlight type="caution">
@@ -56,7 +59,9 @@ And by a type of card :
 <Image src="docs/vCard_Order.png" alt="usecase 1"/>
 
 <Highlight>
-  Obviously there is not random or wish PIN with a virtual card
+  
+ Obviously there is not random or wish PIN with a virtual card
+
 </Highlight>
 
 ### Order a temporary vcard
@@ -70,7 +75,9 @@ And by a type of card :
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
 <Highlight>
-  Obviously there is not random or wish PIN with a virtual card
+  
+ Obviously there is not random or wish PIN with a virtual card
+
 </Highlight>
 
 
