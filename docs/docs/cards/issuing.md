@@ -17,6 +17,8 @@ And by a type of card :
 - virtual card or token (xPay) 
 - wearable (keyring, bracelet..)
 
+---
+
 ### Order a physical card
 
 <Highlight type="tip">
@@ -26,6 +28,8 @@ And by a type of card :
 </Highlight>
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
+
+---
 
 ### Wish or Random PIN
 
@@ -48,7 +52,9 @@ And by a type of card :
  WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
  
 </Highlight>
---
+
+---
+
 ### Order a virtual card
 
 <Highlight type="tip">
