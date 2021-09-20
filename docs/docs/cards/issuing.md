@@ -43,7 +43,43 @@ And by a type of card :
 
 </Highlight>
 
+<Highlight type="caution">
+ 
+ WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
+ 
+</Highlight>
 
+### Order a virtual card
+
+<Highlight type="tip">
+ 
+ When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
+ 
+</Highlight>
+
+<Image src="docs/vCard_Order.png" alt="usecase 1"/>
+
+<Highlight>
+  
+ Obviously there is not random or wish PIN with a virtual card
+
+</Highlight>
+
+### Order a temporary vcard
+
+<Highlight type="tip">
+ 
+ When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
+ 
+</Highlight>
+
+<Image src="docs/Card_Order.png" alt="usecase 1"/>
+
+<Highlight>
+  
+ Obviously there is not random or wish PIN with a virtual card
+
+</Highlight>
 
 ### Endpoint
 
