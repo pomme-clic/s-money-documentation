@@ -70,6 +70,10 @@ And by a type of card :
 <Highlight type="tip">
  
  You want a physical card but you don't want to wait. You order a temporary virtual card.
+ 
+</Highlight>
+<Highlight type="tip">
+ 
  You are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergencey virtual card waiting your new physical card.
  
 </Highlight>
