@@ -56,11 +56,31 @@ You can manage your card with a selfcare in order to update some specifications,
 
 ## Context 'Actions in app'
 You can manage your card to : 
+- display your PIN code
 - display your virtual card
 - oppose your card 
-- add in Apple wallet by in-app provisionning (sdk)
 
+<Highlight>
+ 
+ You can add in Apple wallet by in-app provisionning (sdk) - See how in xpay section
+ 
+</Highlight>
 
+### Display your PIN code
+
+<Highlight type="tip">
+ 
+ If you don't remember, you can display your PIN code
+ 
+</Highlight>
+
+<Image src="docs/Card_PIN.png" alt="usecase 1"/>
+
+<Highlight type="caution">
+ 
+ To use API Informations Display, for PCI compliance, we use a Secure Interface by a sdk
+ 
+</Highlight>
 
 ### Display your virtual card
 
