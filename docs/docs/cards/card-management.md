@@ -13,7 +13,9 @@ You can manage your card with a selfcare in order to update some specifications,
 - update limits for payment or withdrawal
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
- 
+
+---
+
 ### Block card
  
 <Highlight type="tip">
@@ -23,6 +25,14 @@ You can manage your card with a selfcare in order to update some specifications,
 </Highlight>
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+---
 
 ### Update Limits
   
@@ -34,6 +44,14 @@ You can manage your card with a selfcare in order to update some specifications,
 
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+---
+
 ### Block VAD
   
 <Highlight type="tip">
@@ -44,6 +62,14 @@ You can manage your card with a selfcare in order to update some specifications,
 
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+---
+
 ### Block foreign Payment and withdrawal
  
 <Highlight type="tip">
@@ -53,6 +79,14 @@ You can manage your card with a selfcare in order to update some specifications,
 </Highlight>
 
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
+
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+---
 
 ## Context 'Actions in app'
 You can manage your card to : 
@@ -65,6 +99,8 @@ You can manage your card to :
  You can add in Apple wallet by in-app provisionning (sdk) - See how in xpay section
  
 </Highlight>
+
+---
 
 ### Display your PIN code
 
@@ -82,6 +118,8 @@ You can manage your card to :
  
 </Highlight>
 
+---
+
 ### Display your virtual card
 
 <Highlight type="tip">
@@ -98,31 +136,33 @@ You can manage your card to :
  
 </Highlight>
 
+---
+
 ### Oppose your card
 
-<Highlight type="tip">
+<Highlight type="Danger">
  
- Oppose a card is block your card definitively. The next step is usually a refabricate or upgrade new card
+ Oppose a card is equal to block your card definitively.
  
 </Highlight>
 
 <Image src="docs/Card_Oppose.png" alt="usecase 1"/>
 
+<Highlight>
+ 
+ The next step is usually a refabricate or upgrade new card. See in Issue a card Section
+ 
+</Highlight>
 
+### Endpoint
 
-### Hmac adapter 1
+More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-More information regarding this endpoint in the [API reference](/api/Core)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/CardSecure"
   label="Try it out"
 />
