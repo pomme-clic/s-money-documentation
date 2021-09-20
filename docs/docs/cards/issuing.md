@@ -5,6 +5,7 @@ import Cta from '@theme/Cta'
 
 # Issue a card
 Here, we are talking about product and card life cycle.
+
 ## Context
 The card offer is defined by a product:
 - funding source : debit, prepaid,...
@@ -25,61 +26,6 @@ And by a type of card :
 </Highlight>
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
-
-### Choose or Random PIN
-
-<Highlight type="tip">
- 
- You have 2 choices : Random PIN (by default) or WishPIN in order to allow to your end user to define his own PIN code. 
- 
-</Highlight>
-
-<Image src="docs/Pin_Define.png" alt="usecase 1"/>
-
-<Highlight>
- 
- You have to choose by parameter if you propose a journey with random or wishPIN
-
-</Highlight>
-
-<Highlight type="caution">
- 
- WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
- 
-</Highlight>
-
-### Order a virtual card
-
-<Highlight type="tip">
- 
- When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
- 
-</Highlight>
-
-<Image src="docs/vCard_Order.png" alt="usecase 1"/>
-
-<Highlight>
-  
- Obviously there is not random or wish PIN with a virtual card
-
-</Highlight>
-
-### Order a temporary vcard
-
-<Highlight type="tip">
- 
- When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
- 
-</Highlight>
-
-<Image src="docs/Card_Order.png" alt="usecase 1"/>
-
-<Highlight>
-  
- Obviously there is not random or wish PIN with a virtual card
-
-</Highlight>
-
 
 ### Endpoint
 
