@@ -26,8 +26,6 @@ And by a type of card :
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
-
-
 ### Choose or Random PIN
 
 <Highlight type="tip">
@@ -36,7 +34,7 @@ And by a type of card :
  
 </Highlight>
 
-<Image src="docs/Card_PIN.png" alt="usecase 1"/>
+<Image src="docs/Pin_Define.png" alt="usecase 1"/>
 <Highlight>
  You have to choose by parameter if you propose a journey with random or wishPIN
 </Highlight>
@@ -58,8 +56,23 @@ And by a type of card :
 <Image src="docs/vCard_Order.png" alt="usecase 1"/>
 
 <Highlight>
-  There is not random or wish PIN with a vritual card obviously
+  Obviously there is not random or wish PIN with a virtual card
 </Highlight>
+
+### Order a temporary vcard
+
+<Highlight type="tip">
+ 
+ When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
+ 
+</Highlight>
+
+<Image src="docs/Card_Order.png" alt="usecase 1"/>
+
+<Highlight>
+  Obviously there is not random or wish PIN with a virtual card
+</Highlight>
+
 
 ### Endpoint
 
