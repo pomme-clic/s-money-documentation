@@ -76,7 +76,11 @@ And by a type of card :
 <Image src="docs/Card_2_Order.png" alt="usecase 1"/>
 <Highlight type="tip">
  
- 2 interesting usecase :  1- In subscription for waiting your physical card. 2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
+ 2 interesting usecase :  
+ 
+ 1- In subscription for waiting your physical card. 
+ 
+ 2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
  
 </Highlight>
 <Highlight>
