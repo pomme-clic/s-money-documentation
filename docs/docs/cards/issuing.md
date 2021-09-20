@@ -69,7 +69,7 @@ And by a type of card :
 
 <Highlight type="tip">
  
- You want a physical card but you don't want to wait. You order a temporary virtual card.
+ You want a physical card but you don't want or can't to wait. You order a temporary virtual card.
  
 </Highlight>
 
