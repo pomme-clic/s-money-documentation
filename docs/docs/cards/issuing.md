@@ -130,7 +130,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="patch"/>
 
 ---
 
