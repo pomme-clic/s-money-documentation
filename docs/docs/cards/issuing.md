@@ -71,6 +71,16 @@ And by a type of card :
 
 </Highlight>
 
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Cards)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/cards" method="post"/>
+
+<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+
+---
+
 ### Order a temporary virtual card
 
 <Highlight type="tip">
@@ -103,13 +113,15 @@ And by a type of card :
 
 ### Endpoint
 
+---
+
 ## Cancel a card
 
 ### Hmac adapter 1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
 
@@ -118,6 +130,6 @@ More information regarding this endpoint in the [API reference](/api/Core)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/CardFactory"
   label="Try it out"
 />
