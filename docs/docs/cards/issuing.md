@@ -35,7 +35,7 @@ And by a type of card :
  
 </Highlight>
 
-<Image src="docs/Pin_Define.png" alt="usecase 1"/>
+<Image src="docs/PIn_Define.png" alt="usecase 1"/>
 
 <Highlight>
  
