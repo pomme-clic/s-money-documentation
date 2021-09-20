@@ -29,6 +29,12 @@ And by a type of card :
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card" method="post"/>
+
 ---
 
 ### Wish or Random PIN
@@ -75,7 +81,7 @@ And by a type of card :
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/cards" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card" method="post"/>
 
 
 ---
@@ -112,16 +118,31 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ### Endpoint
 
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card" method="post"/>
+
 ---
 
 ## Cancel a card
 
 ### Endpoint
 
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="post"/>
+
+---
+
+## Refabricate a card
+
+### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/refabricate" method="post"/>
+
+--- 
 
 <Cta
   context="doc"
