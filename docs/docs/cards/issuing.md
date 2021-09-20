@@ -65,20 +65,27 @@ And by a type of card :
 
 </Highlight>
 
-### Order a temporary vcard
+### Order a temporary virtual card
 
 <Highlight type="tip">
  
- When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
+ You want a physical card but you don't want to wait. You order a temporary virtual card.
+ You are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergencey virtual card waiting your new physical card.
  
 </Highlight>
 
-<Image src="docs/Card_Order.png" alt="usecase 1"/>
+<Image src="docs/Card_2_Order.png" alt="usecase 1"/>
 
 <Highlight>
   
  Obviously there is not random or wish PIN with a virtual card
 
+</Highlight>
+
+<Highlight type="caution">
+ 
+ You have to order a virtual card first and then use a other endpoint to materialize your virtual with the same data cards
+ 
 </Highlight>
 
 ### Endpoint
