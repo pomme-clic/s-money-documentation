@@ -48,7 +48,7 @@ And by a type of card :
  WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
  
 </Highlight>
-
+--
 ### Order a virtual card
 
 <Highlight type="tip">
