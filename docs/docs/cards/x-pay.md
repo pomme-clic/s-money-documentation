@@ -5,7 +5,16 @@ import Cta from '@theme/Cta'
 
 # X-Pay 
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
+
+### Add your card in a Apple wallet since your mobile app
+
+<Highlight type="tip">
+ 
+ In your mobile app, you can add a card to Apple wallet
+ 
+</Highlight>
+
+<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
 <Highlight>
 
