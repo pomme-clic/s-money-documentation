@@ -108,15 +108,7 @@ You can manage your card to :
 
 <Image src="docs/Card_Oppose.png" alt="usecase 1"/>
 
-### Add your card in a Apple wallet since your mobile app
 
-<Highlight type="tip">
- 
- In your mobile app, you can add a card to Apple wallet
- 
-</Highlight>
-
-<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
 ### Hmac adapter 1
 
