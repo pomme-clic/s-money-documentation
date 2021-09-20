@@ -27,11 +27,11 @@ And by a type of card :
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
-### Choose or Random PIN
+### Wish or Random PIN
 
 <Highlight type="tip">
  
- You have 2 choices : Random PIN (by default) or WishPIN in order to allow to your end user to define his own PIN code. 
+ You have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code. 
  
 </Highlight>
 
