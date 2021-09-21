@@ -33,7 +33,7 @@ And by a type of card :
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/CardFactory​/card" method="post"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
 ---
 
@@ -81,7 +81,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card" method="post"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
 
 ---
@@ -120,7 +120,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card" method="post"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
 ---
 
