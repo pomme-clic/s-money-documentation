@@ -121,7 +121,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Order context
+## Manage context
 
 Here you are some examples of life cycle management
 
