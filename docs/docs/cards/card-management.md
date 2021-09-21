@@ -8,6 +8,7 @@ import Cta from '@theme/Cta'
 Here, we are talking about how you can manage your cards.
 
 ## Context 'Selfcare'
+
 You can manage your card with a selfcare in order to update some specifications, like : 
 - block and unblock your card
 - update limits for payment or withdrawal
@@ -31,6 +32,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  You can block or unblock in real time to secure your card if you don't find it
  
 </Highlight>
+
 ---
 
 ### Update Limits
@@ -48,6 +50,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  You can increase or decrease your limits of payment and/or withdrawal
 
 </Highlight>
+
 ---
 
 ### Block VAD
@@ -65,6 +68,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
   You can block or unblock in real time if you don't want authorize e-commerce payment
  
 </Highlight>
+
 ---
 
 ### Block foreign Payment and withdrawal
@@ -82,6 +86,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
  
 </Highlight>
+
 ---
 
 ## Context 'Actions in app'
