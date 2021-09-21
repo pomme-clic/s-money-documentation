@@ -83,7 +83,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
-
 ---
 
 ### Order a temporary virtual card
