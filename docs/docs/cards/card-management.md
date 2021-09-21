@@ -26,7 +26,7 @@ You can manage your card with a selfcare in order to update some specifications,
 
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-### Endpoint
+#### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
@@ -44,7 +44,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
-### Endpoint
+#### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
@@ -62,7 +62,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
-### Endpoint
+#### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
@@ -80,7 +80,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
-### Endpoint
+#### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
@@ -154,7 +154,7 @@ You can manage your card to :
  
 </Highlight>
 
-### Endpoint
+#### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
