@@ -155,7 +155,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- When your end user opposed hos card, you can just refabricate.
+ When your end user opposed his card, you can just refabricate.
  
 </Highlight>
 
