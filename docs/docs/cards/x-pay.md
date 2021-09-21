@@ -4,37 +4,6 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 
-# Card Management
-
-Here, we are talking about how you can manage your cards.
-
-## Context 'Selfcare'
-You can manage your card with a selfcare in order to update some specifications, like : 
-- block and unblock your card
-- update limits for payment or withdrawal
-- block or unblock VAD payment
-- block or unblock non domestic payment or withdrawal
-
----
-
-### Block card
- 
-<Highlight type="tip">
- 
- You can block or unblock in real time to secure your card if you don't find it
- 
-</Highlight>
-
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
----
-
 
 
 # X-Pay 
@@ -83,6 +52,39 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 </Highlight>
 
 ---
+
+# Card Management
+
+Here, we are talking about how you can manage your cards.
+
+## Context 'Selfcare'
+You can manage your card with a selfcare in order to update some specifications, like : 
+- block and unblock your card
+- update limits for payment or withdrawal
+- block or unblock VAD payment
+- block or unblock non domestic payment or withdrawal
+
+---
+
+### Block card
+ 
+<Highlight type="tip">
+ 
+ You can block or unblock in real time to secure your card if you don't find it
+ 
+</Highlight>
+
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+---
+
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
 
