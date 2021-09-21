@@ -33,7 +33,7 @@ And by a type of card :
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/CardFactory​/card" method="post"/>
 
 ---
 
