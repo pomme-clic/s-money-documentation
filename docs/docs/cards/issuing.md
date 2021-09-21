@@ -33,8 +33,8 @@ And by a type of card :
 
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
-More information regarding this endpoint in the [API reference](/api/CardFactory)
 
+More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 ---
 
@@ -81,6 +81,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 ### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
+
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 ---
@@ -119,6 +120,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 ### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
+
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 ---
@@ -136,6 +138,7 @@ For specific cases, you can use a cancellation card.
 ### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="patch"/>
+
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 ---
@@ -153,6 +156,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 ### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
+
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 --- 
