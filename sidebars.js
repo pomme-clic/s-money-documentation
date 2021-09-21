@@ -15,7 +15,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Cards',
-      items: ['docs/cards/issuing', 'docs/cards/card-management','docs/cards/x-pay'],
+      items: ['docs/customer-relationship/your-card', 'docs/cards/issuing', 'docs/cards/card-management','docs/cards/x-pay'],
     },
     {
       type: 'category',
@@ -30,7 +30,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Xpollens and you',
-      items: ['docs/customer-relationship/your-card', 'docs/customer-relationship/billing', 'docs/customer-relationship/reporting', 'docs/customer-relationship/business-portal'],
+      items: ['docs/customer-relationship/billing', 'docs/customer-relationship/reporting', 'docs/customer-relationship/business-portal'],
     },
   ],
   apisSidebar: [
