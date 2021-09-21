@@ -5,8 +5,6 @@ import Cta from '@theme/Cta'
 
 # Issue a card
 Here, we are talking about product and card life cycle.
-
-## Context
 The card offer is defined by a product:
 - funding source : debit, prepaid,...
 - for who : consumer, business, corporate ...
@@ -19,7 +17,7 @@ And by a type of card :
 
 ---
 
-### Order a physical card
+## Order a physical card
 
 <Highlight type="tip">
  
@@ -29,7 +27,7 @@ And by a type of card :
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
-##### endpoint
+#### endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
@@ -37,7 +35,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-### Wish or Random PIN
+## Wish or Random PIN
 
 <Highlight type="tip">
  
@@ -60,12 +58,11 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 </Highlight>
 
 #### sdk
-
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 
 ---
 
-### Order a virtual card
+## Order a virtual card
 
 <Highlight type="tip">
  
@@ -81,7 +78,7 @@ More information regarding this sdk in the [Card Companion SDK](./CardCompanion_
 
 </Highlight>
 
-### Endpoint
+#### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
@@ -89,7 +86,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-### Order a temporary virtual card
+## Order a temporary virtual card
 
 <Highlight type="tip">
  
@@ -120,7 +117,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-### Endpoint
+#### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
@@ -138,7 +135,7 @@ For specific cases, you can use a cancellation card.
  
 </Highlight>
 
-### Endpoint
+#### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="patch"/>
 
@@ -156,7 +153,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
 
-### Endpoint
+#### Endpoint
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
 
