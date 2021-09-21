@@ -15,7 +15,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Cards',
-      items: ['docs/customer-relationship/your-card', 'docs/cards/issuing', 'docs/cards/card-management','docs/cards/x-pay'],
+      items: ['docs/cards/your-card', 'docs/cards/issuing', 'docs/cards/card-management','docs/cards/x-pay'],
     },
     {
       type: 'category',
