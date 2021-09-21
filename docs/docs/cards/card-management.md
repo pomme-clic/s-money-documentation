@@ -18,12 +18,6 @@ You can manage your card with a selfcare in order to update some specifications,
 
 ### Block card
  
-<Highlight type="tip">
- 
- You can block or unblock in real time to secure your card if you don't find it
- 
-</Highlight>
-
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
 #### Endpoint
@@ -32,6 +26,11 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 
+<Highlight type="tip">
+ 
+ You can block or unblock in real time to secure your card if you don't find it
+ 
+</Highlight>
 ---
 
 ### Update Limits
