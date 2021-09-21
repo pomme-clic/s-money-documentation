@@ -43,16 +43,10 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 
-<Highlight type="tip">
+<Highlight>
  
  You have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code. 
  
-</Highlight>
-
-<Highlight>
- 
- You have to choose by parameter if you propose a journey with random or wishPIN
-
 </Highlight>
 
 <Highlight type="caution">
