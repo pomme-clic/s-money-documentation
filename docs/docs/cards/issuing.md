@@ -9,7 +9,7 @@ Here, we are talking about product and card life cycle.
 ## Context
 The card offer is defined by a product:
 - funding source : debit, prepaid,...
-- for who : consumer, business, ...
+- for who : consumer, business, corporate ...
 - what : classic, gold, Infinite
 
 And by a type of card : 
@@ -59,6 +59,10 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
  
 </Highlight>
+
+### sdk
+
+More information regarding this sdk in the [Card Companion SDK](/docs/PDF/CardCompanion_SDK.pdf)
 
 ---
 
