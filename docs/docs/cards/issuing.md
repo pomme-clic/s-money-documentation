@@ -126,6 +126,14 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ## Cancel a card
 
+For specific cases, you can use a cancellation card.
+
+<Highlight type="caution">
+ 
+ DO NOT USE for an account closure because cancellation card is embedded
+ 
+</Highlight>
+
 ### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
@@ -135,6 +143,14 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 ---
 
 ## Refabricate a card
+
+<Highlight type="tip">
+ 
+ When your end user opposed hos card, you can just refabricate.
+ 
+</Highlight>
+
+<Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
 
 ### Endpoint
 
