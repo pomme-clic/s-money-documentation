@@ -17,41 +17,22 @@ The goal is to present developers and product teams an understanding of what the
 
 <Image src="docs/Overview-example.png" alt="usecase 1"/>
 
-## Informations boxes
+## Powered by Azure, tailored for you
 
-<Highlight>
+Our system, hosted on the Azure platform, has on-demand scalability to support your growing business.
+That also means high availability and thus a ever ready API platform here for you and your customer.
 
-##### Neutral note
+As a provider of banking service, we're also extremely attentive to data security. All data stored on our platform is protected by an advanced encryption process to prevent data breach or data leak.
 
-You can find here some infos about API prerequisites and what you need to make this use case work.
-  
-</Highlight>
-
-<Highlight type="tip">
-
-##### Tip
-
-Here you can commonly found some tips like how other use cases can apply to this feature or implementation best practices
-  
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-Important informations will be here. Be sure to read it.
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Only use if we're depreciating a particular use case/API
-</Highlight>
+<Image src="docs/AzureLogo.png" alt="usecase 1"/>
 
 ---
+## Getting Started
+
+Eager to begin coding your new business ? Just get started with [creating an user](/docs/KYC/retail-customer) and find your unique way to banking !
+
 
 ## API References
 
-You can see a consolidated viewpoint of all the API documentation [here](/api/Core/)
+You can find a consolidated viewpoint of all the API documentation [here](/api/Core/)
 
