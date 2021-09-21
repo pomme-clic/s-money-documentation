@@ -30,7 +30,7 @@ You can manage your card with a selfcare in order to update some specifications,
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 
 ---
 
@@ -48,7 +48,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 
 ---
 
@@ -66,7 +66,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 
 ---
 
@@ -84,7 +84,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 
 ---
 
@@ -158,11 +158,11 @@ You can manage your card to :
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
+<Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/CardSecure"
+  link="/api/CardFactory"
   label="Try it out"
 />
