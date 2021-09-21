@@ -3,67 +3,19 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Reporting
+# Monitoring
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
-
-<Highlight>
-
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="tip">
-
-##### Tip
-
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
-
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-To create a card the user (= cardholder) has to exist in the system
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
+[<Image src="docs/DataMonitoring.png" alt="Monitoring"/>](https://p.datadoghq.eu/sb/ifdu311gqt8xprnk-cdf7ebccd905e38a063d9703cdf358aa?from_ts=1632210789512&to_ts=1632214389512&live=true)
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
+Our platform is monitored at all time to ensure everything's running smoothly. You can check if there is a problem or a downtime scheduled.
 
-## Transfert d'argent P2P
+## Customer service
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Our customer service team is here whenever 
 
 ## Endpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-More information regarding this endpoint in the [API reference](/api/Core)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
