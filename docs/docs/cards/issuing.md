@@ -104,6 +104,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
  
 </Highlight>
+
 <Highlight>
   
  Obviously there is not random or wish PIN with a virtual card
