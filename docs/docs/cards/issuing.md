@@ -62,7 +62,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ### sdk
 
-More information regarding this sdk in the [Card Companion SDK](/docs/docs/PDF/CardCompanion_SDK.pdf)
+More information regarding this sdk in the [Card Companion SDK](./docs/docs/PDF/CardCompanion_SDK.pdf)
 
 ---
 
