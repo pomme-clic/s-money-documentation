@@ -4,8 +4,10 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Issue a card
+
 Here, we are talking about product and card life cycle.
-The card offer is defined by a product:
+
+The card offer is defined by a product :
 - funding source : debit, prepaid,...
 - for who : consumer, business, corporate ...
 - what : classic, gold, Infinite
@@ -19,31 +21,29 @@ And by a type of card :
 
 ## Order a physical card
 
-<Highlight type="tip">
- 
- Below is an example of UX following a first physical card order with option random or wish PIN
- 
-</Highlight>
-
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
 #### endpoint
 
-<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
-
 More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
 ---
 
 ## Wish or Random PIN
+
+<Image src="docs/PIn_Define.png" alt="usecase 1"/>
+
+#### sdk
+
+More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 
 <Highlight type="tip">
  
  You have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code. 
  
 </Highlight>
-
-<Image src="docs/PIn_Define.png" alt="usecase 1"/>
 
 <Highlight>
  
@@ -57,12 +57,17 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-#### sdk
-More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
-
 ---
 
 ## Order a virtual card
+
+<Image src="docs/vCard_Order.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
 <Highlight type="tip">
  
@@ -70,23 +75,23 @@ More information regarding this sdk in the [Card Companion SDK](./CardCompanion_
  
 </Highlight>
 
-<Image src="docs/vCard_Order.png" alt="usecase 1"/>
-
 <Highlight>
   
  Obviously there is not random or wish PIN with a virtual card
 
 </Highlight>
 
-#### Endpoint
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 ---
 
 ## Order a temporary virtual card
+
+<Image src="docs/Card_2_Order.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 
 <Highlight type="tip">
  
@@ -94,7 +99,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-<Image src="docs/Card_2_Order.png" alt="usecase 1"/>
 <Highlight type="tip">
  
  2 interesting usecase :  
@@ -117,17 +121,17 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-#### Endpoint
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 ---
 
 ## Cancel a card
 
 For specific cases, you can use a cancellation card.
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="patch"/>
 
 <Highlight type="caution">
  
@@ -135,29 +139,23 @@ For specific cases, you can use a cancellation card.
  
 </Highlight>
 
-#### Endpoint
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="patch"/>
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 ---
 
 ## Refabricate a card
+
+<Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
 
 <Highlight type="tip">
  
  When your end user opposed hos card, you can just refabricate.
  
 </Highlight>
-
-<Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
-
-#### Endpoint
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 --- 
 
