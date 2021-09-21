@@ -13,9 +13,11 @@ Our platform is monitored at all time to ensure everything's running smoothly. Y
 
 ## Customer service
 
-Our customer service team is here whenever 
+Our customer service team is at your disposal whenever you need it. 
 
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
+<Cta
+  context="doc"
+  ui="button"
+  link="https://s-money.zendesk.com/"
+  label="Request help"
+/>
