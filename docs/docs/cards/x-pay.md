@@ -3,11 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-
-
-
 # X-Pay 
-
 
 ### Add your card in a Apple wallet since your mobile app
 
