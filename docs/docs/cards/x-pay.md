@@ -15,6 +15,31 @@ import Cta from '@theme/Cta'
 
 <Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
+### Confirm your card enrolment by wallet provider
+
+<Highlight type="tip">
+ 
+ You start your enrolment since wallet provider and you confirm into your app
+ 
+</Highlight>
+
+### token details
+
+<Highlight type="tip">
+ 
+ token in detail
+ 
+</Highlight>
+
+### tokens of card
+
+<Highlight type="tip">
+ 
+ all token by card
+ 
+</Highlight>
+
+
 <Highlight>
 
 ##### Note neutre
