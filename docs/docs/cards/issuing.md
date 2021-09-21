@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Issue a card
+# Card LifeCycle
 
 Here, we are talking about product and card life cycle.
 
@@ -19,7 +19,11 @@ And by a type of card :
 
 ---
 
-## Order a physical card
+## Order context
+
+Here you are some ordering examples
+
+### Order a physical card
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
@@ -31,7 +35,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Wish or Random PIN
+### Wish or Random PIN
 
 <Image src="docs/PIn_Define.png" alt="usecase 1"/>
 
@@ -59,7 +63,7 @@ More information regarding this sdk in the [Card Companion SDK](./CardCompanion_
 
 ---
 
-## Order a virtual card
+### Order a virtual card
 
 <Image src="docs/vCard_Order.png" alt="usecase 1"/>
 
@@ -83,7 +87,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Order a temporary virtual card
+### Order a temporary virtual card
 
 <Image src="docs/Card_2_Order.png" alt="usecase 1"/>
 
@@ -123,7 +127,11 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Cancel a card
+## Order context
+
+Here you are some examples of life cycle management
+
+### Cancel a card
 
 For specific cases, you can use a cancellation card.
 
@@ -141,7 +149,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Refabricate a card
+### Refabricate a card
 
 <Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
 
