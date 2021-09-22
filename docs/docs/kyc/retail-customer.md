@@ -3,12 +3,6 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
----
-title: KYC by Xpollens
-author: Cédric Coiquaud
-authorURL: https://www.linkedin.com/in/coiquaudcedric
----
-
 # Know Your Customer
 
 ## Context
@@ -92,8 +86,6 @@ Your end-customer will be required to enter credentials of his other bank. Based
 ### More to come
 We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
----
-
 ## SDK Features
 
 Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work.
@@ -176,4 +168,8 @@ More information regarding this endpoint in the [API reference](/api/Core)
   label="Try it out"
 />
 
+---
+title: KYC by Xpollens
+author: Cédric Coiquaud
+authorURL: https://www.linkedin.com/in/coiquaudcedric
 ---
