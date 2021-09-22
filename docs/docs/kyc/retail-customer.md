@@ -97,13 +97,19 @@ We're working hard to find more options for you, always with the best Customer E
 Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work. Please note that security features are managed using a security-wallet that is constructed specifically for your end-user, on his/her mobile phone, inside his/her mobile app.
 
 Here are the steps your mobile application should follow when it's launched by an end-user :
----
-setp 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
-step 1: Check if already binded. You must verify if the mobile application is associated securely with a security-wallet ; this is performed using the "Loading Block"
-step 2: Scan QR Code. If the mobile app is not yet binded with a security-wallet, then you must trigger it using the ActivationCode and the "Provisionning Block"
-step 3: Once the app is securly binded, the security-wallet is "Active", and you can proceed with the "Main Block" and display the property "getIssuerData"
-step 4: Truc.
----
+
+step 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
+step 1: Check binding. You must verify if the mobile application is associated securely with a security-wallet ; this is performed using the "Loading Block"
+
+If the app is not yet already binded :
+step 2.1: Scan QR Code. If the mobile app is not yet binded with a security-wallet, then you must trigger it using the Activation Code and the "Provisionning Block"
+step 2.2: Get Webview. Once the app is securly binded, the security-wallet is "Active", and you can proceed with the "Main Block" and display the property "getIssuerData"
+step 2.3: Open Webview. This property will give you an URL. This is a webview, that you must show to the end user. It will perform the necessary identification process on your end-user.
+step 2.4: Close Webview. Once the webview is finished, its URL will always end adding a "#SUCCESS", whatever may be the identification outcome.
+step 2.5: Finalize. You can then finalize your on-boarding process ; the identification process is finished.
+
+If the app is already binded:
+step 3: Jump to your Home Screen. You can use "Main Block" as you want.
 
 ### Scan QR Code
 
