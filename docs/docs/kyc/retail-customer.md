@@ -24,11 +24,11 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you, ****Xpollens Authenticator**** integrates the SDK and can fit perfectly in your onboarding process.
+  Should you not have a mobile app : no problem, we have an app for you, Xpollens Authenticator integrates the SDK and can fit perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
-  You define the technical unique identifier of your prospect : the ****appUserId**** ; our call-backs will give you back this same identified.
+  You define the technical unique identifier of your prospect : the <bold>appUserId</bold> ; our call-backs will give you back this same identified.
 </Highlight>
 
 ## Straight Through Process
