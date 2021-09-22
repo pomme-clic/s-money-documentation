@@ -94,7 +94,20 @@ Part of the on-boarding process happens on a mobile app. Here are the functions 
 
 ### Scan QR Code
 
+Once a new user downloads your mobile application, 
 
+<Highlight>
+  The Activation Code can displayed on a regular webpage so that it can be scanned from your mobile app.
+</Highlight>
+
+```
+"Payload": {
+        "type": "35",
+        "AppUserId": "e87bd13dJ",
+        "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
+        "ErrorMessage": null,
+        }
+```
 
 ### Get Webview URL
 
