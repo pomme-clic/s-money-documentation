@@ -10,7 +10,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Accounts',
-      items: ['docs/accounts/iban', 'docs/accounts/account-management', 'docs/accounts/unpaid-operations', 'docs/accounts/banking-mobility'],
+      items: ['docs/accounts/iban', 'docs/accounts/account-management', 'docs/accounts/unpaid-operations'],
     },
     {
       type: 'category',
