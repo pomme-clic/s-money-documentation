@@ -135,7 +135,7 @@ For specific cases, you can use a cancellation card.
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{CardExternalRef}/cancel" method="patch"/>
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/-CardExternalRef-/cancel" method="patch"/>
 
 <Highlight type="caution">
  
