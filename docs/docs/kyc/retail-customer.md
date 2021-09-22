@@ -133,7 +133,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
+ 
 <Cta
   context="doc"
   ui="button"
