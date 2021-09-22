@@ -14,7 +14,7 @@ The card offer is defined by a product :
 
 And by a type of card : 
 - physical or virtual card, 
-- virtual card or token (xPay) 
+- token (xPay) 
 - wearable (keyring, bracelet..)
 
 ---
