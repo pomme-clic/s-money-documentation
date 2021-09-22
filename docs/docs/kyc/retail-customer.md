@@ -94,7 +94,16 @@ We're working hard to find more options for you, always with the best Customer E
 
 ## SDK Features
 
-Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work.
+Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work. Please note that security features are managed using a security-wallet that is constructed specifically for your end-user, on his/her mobile phone, inside his/her mobile app.
+
+Here are the steps your mobile application should follow when it's launched by an end-user :
+---
+setp 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
+step 1: Check if already binded. You must verify if the mobile application is associated securely with a security-wallet ; this is performed using the "Loading Block"
+step 2: Scan QR Code. If the mobile app is not yet binded with a security-wallet, then you must trigger it using the ActivationCode and the "Provisionning Block"
+step 3: Once the app is securly binded, the security-wallet is "Active", and you can proceed with the "Main Block" and display the property "getIssuerData"
+step 4: Truc.
+---
 
 ### Scan QR Code
 
@@ -115,7 +124,16 @@ Here is the payload you'll get from our call-back type 35 :
         }
 ```
 
-Here is the  :
+#### Handling multichannel & scanning QR Code
+
+iOS
+```
+1. Loading Block: To connect to the Wallet
+2. Provisionning Block
+```
+
+#### Straigh-through activation in a 100% mobile onboarding
+
 ```
 "Payload": {
         "type": "35",
@@ -124,6 +142,7 @@ Here is the  :
         "ErrorMessage": null,
         }
 ```
+
 
 <Highlight type="tip">
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
