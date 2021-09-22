@@ -5,6 +5,9 @@ import Cta from '@theme/Cta'
 
 # Know Your Customer
 
+
+
+
 ## Context
 
 ### Regulatory Context
@@ -86,6 +89,9 @@ Your end-customer will be required to enter credentials of his other bank. Based
 ### More to come
 We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
+
+
+
 ## SDK Features
 
 Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work.
@@ -130,6 +136,9 @@ Here is the  :
 ### Electronic Signature
 
 Because we use Strong Authentication as a means of e-Signature, you must please refer to the Strong Authentication section in this documentation to finalize this integration. Signing the Terms & Conditions as well as the Tax Declaration Form will generate such SCA notifications.
+
+
+
 
 ## API Endpoints
 
