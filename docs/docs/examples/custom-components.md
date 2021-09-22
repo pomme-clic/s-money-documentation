@@ -42,7 +42,7 @@ import Highlight from '@theme/Highlight';
 
 ##### Neutral
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+<b class="term">Lorem Ipsum</b>sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
 
 </Highlight>
 
