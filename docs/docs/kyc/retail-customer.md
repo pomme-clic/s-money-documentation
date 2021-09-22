@@ -28,7 +28,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 </Highlight>
 
 <Highlight type="tip">
-  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will give you back this same identified.
+  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will use this same identifier.
 </Highlight>
 
 ## Straight Through Process
