@@ -88,9 +88,9 @@ We're working hard to find more options for you, always with the best Customer E
 
 ---
 
-## SDK Functions
+## SDK Features
 
-Here are the functions you need to integrate in our SDK to make the onboarding process work.
+Part of the on-boarding process happens on a mobile app. Here are the functions you need to integrate in our SDK to make the onboarding process work.
 
 ### Scan QR Code
 
