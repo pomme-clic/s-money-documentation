@@ -3,6 +3,12 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
+---
+title: KYC by Xpollens
+author: Cédric Coiquaud
+authorURL: https://www.linkedin.com/in/coiquaudcedric
+---
+
 # Know Your Customer
 
 ## Context
@@ -90,16 +96,18 @@ We're working hard to find more options for you, always with the best Customer E
 
 ## SDK Features
 
-Part of the on-boarding process happens on a mobile app. Here are the functions you need to integrate in our SDK to make the onboarding process work.
+Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work.
 
 ### Scan QR Code
 
-Once a new user downloads your mobile application, 
+Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
 <Highlight>
-  The Activation Code can displayed on a regular webpage so that it can be scanned from your mobile app.
+  - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
+  - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK.
 </Highlight>
 
+Here is the payload you'll get from our call-back type 35 :
 ```
 "Payload": {
         "type": "35",
@@ -108,6 +116,20 @@ Once a new user downloads your mobile application,
         "ErrorMessage": null,
         }
 ```
+
+Here is the  :
+```
+"Payload": {
+        "type": "35",
+        "AppUserId": "e87bd13dJ",
+        "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
+        "ErrorMessage": null,
+        }
+```
+
+<Highlight type="tip">
+  If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
+</Highlight>
 
 ### Get Webview URL
 
