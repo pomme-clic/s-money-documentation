@@ -97,15 +97,13 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-<Highlight type="tip">
- 
- 2 interesting usecase :  
+2 interesting usecase :  
  
  1- In subscription for waiting your physical card.  
-  
- 2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
  
-</Highlight>
+<br>
+
+ 2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
 
 <Highlight>
   
