@@ -8,6 +8,7 @@ import Cta from '@theme/Cta'
 Here, we are talking about how you can manage your cards.
 
 ## Context 'Selfcare'
+
 You can manage your card with a selfcare in order to update some specifications, like : 
 - block and unblock your card
 - update limits for payment or withdrawal
@@ -18,73 +19,73 @@ You can manage your card with a selfcare in order to update some specifications,
 
 ### Block card
  
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
 <Highlight type="tip">
  
  You can block or unblock in real time to secure your card if you don't find it
  
 </Highlight>
 
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 ---
 
 ### Update Limits
   
+<Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
 <Highlight type="tip">
  
  You can increase or decrease your limits of payment and/or withdrawal
 
 </Highlight>
 
-<Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 ---
 
 ### Block VAD
   
+<Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
 <Highlight type="tip">
  
   You can block or unblock in real time if you don't want authorize e-commerce payment
  
 </Highlight>
 
-<Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 ---
 
 ### Block foreign Payment and withdrawal
  
+<Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
 <Highlight type="tip">
  
  You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
  
 </Highlight>
-
-<Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 
 ---
 
@@ -104,13 +105,13 @@ You can manage your card to :
 
 ### Display your PIN code
 
+<Image src="docs/Card_PIN.png" alt="usecase 1"/>
+
 <Highlight type="tip">
  
  If you don't remember, you can display your PIN code
  
 </Highlight>
-
-<Image src="docs/Card_PIN.png" alt="usecase 1"/>
 
 <Highlight type="caution">
  
@@ -122,13 +123,13 @@ You can manage your card to :
 
 ### Display your virtual card
 
+<Image src="docs/Card_Display.png" alt="usecase 1"/>
+
 <Highlight type="tip">
  
  Once your virtual card is created, you need to get card informations to use in e-commerce for example
  
 </Highlight>
-
-<Image src="docs/Card_Display.png" alt="usecase 1"/>
 
 <Highlight type="caution">
  
@@ -140,13 +141,19 @@ You can manage your card to :
 
 ### Oppose your card
 
+<Image src="docs/Card_Oppose.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
+
 <Highlight type="Danger">
  
  Oppose a card is equal to block your card definitively.
  
 </Highlight>
-
-<Image src="docs/Card_Oppose.png" alt="usecase 1"/>
 
 <Highlight>
  
@@ -154,15 +161,9 @@ You can manage your card to :
  
 </Highlight>
 
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
-
 <Cta
   context="doc"
   ui="button"
-  link="/api/CardSecure"
+  link="/api/CardFactory"
   label="Try it out"
 />
