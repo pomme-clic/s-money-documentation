@@ -24,11 +24,11 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you, Xpollens Authenticator integrates the SDK and can fit perfectly in your onboarding process.
+  Should you not have a mobile app : no problem, we have an app for you, <b class="term">Xpollens Authenticator</b> integrates the SDK and can fit perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
-  You define the technical unique identifier of your prospect : the <bold>appUserId</bold> ; our call-backs will give you back this same identified.
+  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will give you back this same identified.
 </Highlight>
 
 ## Straight Through Process
@@ -43,7 +43,7 @@ Our onboarding API embeds an Identity Verification Service. We offer a modular a
 Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
-  Our biometry systems are compliant with all Data Protection Regulations. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
+  Our biometry systems are <b class="term">compliant with Data Protection Regulations</b>. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
 </Highlight>
 
 <Highlight type="tip">
@@ -51,7 +51,7 @@ Using a simple parameter, you can activate our Facial Biometry webview. Your cus
 </Highlight>
 
 <Highlight type="caution">
-  This option can only occur on a mobile phone, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
+  <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
 </Highlight>
 
 ### SEPA Instant Transfer IN
