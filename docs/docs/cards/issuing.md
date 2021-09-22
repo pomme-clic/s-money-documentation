@@ -81,46 +81,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-### Order a temporary virtual card
-
-<Image src="docs/Card_2_Order.png" alt="usecase 1"/>
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
-
-<Highlight type="tip">
- 
- You want a physical card but you don't want or can't to wait. You order a temporary virtual card.
- 
-</Highlight>
-
-<Highlight type="tip">
- 
- 2 interesting usecase :  
- 
- 1- In subscription for waiting your physical card.  
-  
- 2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
- 
-</Highlight>
-
-<Highlight>
-  
- Obviously there is not random or wish PIN with a virtual card
-
-</Highlight>
-
-<Highlight type="caution">
- 
- You have to order a virtual card first and then use a other endpoint to materialize your virtual with the same data cards
- 
-</Highlight>
-
----
-
 ## Manage context
 
 Here you are some examples of life cycle management
