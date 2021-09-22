@@ -98,6 +98,14 @@ Part of the on-boarding process happens on a mobile app ; our solution is **omni
 
 Here are the steps your mobile application should follow when it's launched by an end-user :
 
+<details>
+    <summary>Details 1</summary>
+    Something small enough to escape casual notice.
+
+    <summary>Details 2</summary>
+    Something small enough to escape casual notice 2.
+</details>
+
 step 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
 step 1: Check binding. You must verify if the mobile application is associated securely with a security-wallet ; this is performed using the "Loading Block"
 
