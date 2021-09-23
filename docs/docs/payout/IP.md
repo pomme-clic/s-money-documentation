@@ -9,15 +9,11 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-##### Note neutre
-
 The SEPA instant payment can be used in EUR only. The transfer is done within seconds.
   
 </Highlight>
 
 <Highlight type="tip">
-
-##### Tip
 
 Up to 90% of french banks can receive instant payment. In EURO Zone, this proportion is lower.
 
@@ -25,15 +21,12 @@ Up to 90% of french banks can receive instant payment. In EURO Zone, this propor
 
 <Highlight type="caution">
 
-##### Caution
-
 To make a transfer, the beneficiary has to exist in the system and must be elligible to Instant Payment.
 
 </Highlight>
 
 <Highlight type="danger">
 
-##### Danger
 Instant transfer can be refused due to the user thresholds.
 
 </Highlight>
