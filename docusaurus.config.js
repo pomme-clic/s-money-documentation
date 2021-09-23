@@ -128,8 +128,8 @@ module.exports = {
           href: 'https://twitter.com/xpollens',
         },
         {
-          title: 'test',
-          href: 'https://twitter.com/xpollens',
+          title: 'docusaurus',
+          href: 'https://docusaurus.io',
         },
       ],
       tagline:
