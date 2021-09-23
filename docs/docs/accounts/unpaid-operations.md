@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-In some case of transaction, the account blance might be not sufficiant, for example when an offline Card transaction or a Payin contestation (money might be spent..).
+In some case of transaction, the account balance might not be sufficiant, for example when an offline Card transaction or a Payin contestation (money might be spent..).
 We propose a unpaid mechanism to ensure payment of this kind of operation.
 
 </Highlight>
