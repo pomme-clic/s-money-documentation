@@ -55,7 +55,8 @@ With Xpollens, create your own payment cards experience and personalise your bra
 
 <Feature title="Set up your own accounts and payment methods" icon="payment">
 
-Manage all your outgoing payment flows, from selecting the Pay Out mode to configuring the payment frequency, and tailor your system to your business cycle to optimise your costs.
+Xpollens lets you choose your preferred payment methods, build your own accounts structure and automated flows.
+  
 <Cta
   context="feature"
   ui="inline"
