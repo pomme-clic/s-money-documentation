@@ -12,15 +12,12 @@ Depending on your contract with us, you will be provided of a Xpollens IBAN or a
 
 <Highlight>
 
-##### Note neutre
-
 Once a user is created, you will ask for an account creation and will recieve an IBAN .
 
 </Highlight>
 
 <Highlight type="tip">
 
-##### Tip
 IBAN is the ISO 13616 international standard for numbering bank accounts.
 Many information on IBAN from European Central Bank can be found here : 
 https://www.ecb.europa.eu/paym/integration/retail/sepa/iban/html/index.en.html
@@ -30,15 +27,11 @@ https://www.ecb.europa.eu/paym/integration/retail/sepa/iban/html/index.en.html
 
 <Highlight type="caution">
 
-##### Caution
-
 Carefull, IBAN length are depending on countries. For France, the IBAN is up to 27.
 
 </Highlight>
 
 <Highlight type="danger">
-
-##### Danger
 
 Also, french overseas territories have IBAN with FR but not all. You can have : GF, GP, MQ, RE, PF, TF, YT, NC, BL, MF 
 (French part), PM, WF

@@ -9,8 +9,6 @@ import Cta from '@theme/Cta'
 ---
 <Highlight>
 
-##### Note neutre
-
 Any operation, per type, period,... on the user account can be retrieve within API.
   
 </Highlight>

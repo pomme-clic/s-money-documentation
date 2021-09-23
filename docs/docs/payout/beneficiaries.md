@@ -9,23 +9,17 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-##### Note neutre
-
-Adding a beneficiary is necessary to ask for money transfer 
+Adding of a beneficiary is necessary to ask for money transfer 
 
 </Highlight>
 
 <Highlight type="tip">
-
-##### Tip
 
 Retrieving beneficiaries list of a user is available within API  
 
 </Highlight>
 
 <Highlight type="caution">
-
-##### Caution
 
 IBAN format is checked when adding beneficiary and tranfer to the beneficiary is avalaible with no delay
 

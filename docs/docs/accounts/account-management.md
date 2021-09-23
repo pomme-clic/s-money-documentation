@@ -5,55 +5,26 @@ import Cta from '@theme/Cta'
 
 # Account Management 
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
-
 <Highlight>
 
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+All the xpollens accounts have IBAN. It can be your own (if you have agreement) or an Xpollens one. For more information, contact our sales team.
 
 </Highlight>
 
 <Highlight type="tip">
 
-##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+We propose individual but also professional accounts.  All of the account we provide are in Euro but soon available in many other currencies.
 
 </Highlight>
 
-<Highlight type="caution">
+<Highlight type="tip">
 
-##### Caution
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+ Our API gives the ability to get the balance, transactions of an account and to set it up (limition of Payin, Pay out, per period,..)
 
 </Highlight>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
-
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
 More information regarding this endpoint in the [API reference](/api/Core)
 

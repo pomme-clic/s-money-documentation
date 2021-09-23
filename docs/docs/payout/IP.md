@@ -9,15 +9,11 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-##### Note neutre
-
 The SEPA instant payment can be used in EUR only. The transfer is done within seconds.
   
 </Highlight>
 
 <Highlight type="tip">
-
-##### Tip
 
 Up to 90% of french banks can receive instant payment. In EURO Zone, this proportion is lower.
 
@@ -25,15 +21,12 @@ Up to 90% of french banks can receive instant payment. In EURO Zone, this propor
 
 <Highlight type="caution">
 
-##### Caution
-
 To make a transfer, the beneficiary has to exist in the system and must be elligible to Instant Payment.
 
 </Highlight>
 
 <Highlight type="danger">
 
-##### Danger
 Instant transfer can be refused due to the user thresholds.
 
 </Highlight>
@@ -50,7 +43,7 @@ You must use the Instant Payment API in including amount and beneficiary's ID
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/sctinst" method="post"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{userid}/sctinst" method="post"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v2.0/users/{userid}/cards/{id}" method="delete"/> -->
 
