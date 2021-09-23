@@ -40,7 +40,7 @@ Combining banking know-how and native digital technology, Xpollens offers a comp
 
 <Feature title="Easy Card issuing" icon="cb">
 
-With Xpollens, easily create payment cards with your brand colours, and personalise the visuals and utilisation rules.
+With Xpollens, create your own payment cards experience and personalise your branding, acceptance network and authorization rules.
 
 <Cta
   context="feature"
@@ -53,7 +53,7 @@ With Xpollens, easily create payment cards with your brand colours, and personal
 
 <!-- Feature 2 -->
 
-<Feature title="Roll out your own accounts and payment methods" icon="payment">
+<Feature title="Set up your own accounts and payment methods" icon="payment">
 
 Xpollens lets you accept the most common and most innovative payment methods, which you can customise for seamless integration into your existing user experience.
   Manage all your outgoing payment flows, from selecting the Pay Out mode to configuring the payment frequency, and tailor your system to your business cycle to optimise your costs.
