@@ -5,55 +5,32 @@ import Cta from '@theme/Cta'
 
 # Unpaid Operations
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
-
 <Highlight>
 
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+In some case of transaction, the account blance might be not sufficiant, for example when an offline Card transaction or a Payin contestation (money might be spent..).
+We propose a unpaid mechanism to ensure payment of this kind of operation.
 
 </Highlight>
 
 <Highlight type="tip">
 
-##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+The mechanism is based on automated P2P that create debt on the customer account and  ability for Client to recover the money.
 
 </Highlight>
 
-<Highlight type="caution">
-
-##### Caution
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
 
 <Highlight type="danger">
 
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Even if it is rare case, you, as client, will have to cover and recover your client debt. But do not worry all the necessay API are available.
 
 </Highlight>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
-
-## Transfert d'argent P2P
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
 ## Endpoints
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Within our Debt API you will be able to manage your client debt follow-up and recovery.
 
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
