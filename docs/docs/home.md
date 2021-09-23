@@ -55,8 +55,7 @@ With Xpollens, create your own payment cards experience and personalise your bra
 
 <Feature title="Set up your own accounts and payment methods" icon="payment">
 
-Xpollens lets you accept the most common and most innovative payment methods, which you can customise for seamless integration into your existing user experience.
-  Manage all your outgoing payment flows, from selecting the Pay Out mode to configuring the payment frequency, and tailor your system to your business cycle to optimise your costs.
+Manage all your outgoing payment flows, from selecting the Pay Out mode to configuring the payment frequency, and tailor your system to your business cycle to optimise your costs.
 <Cta
   context="feature"
   ui="inline"
@@ -70,7 +69,7 @@ Xpollens lets you accept the most common and most innovative payment methods, wh
 
 <Feature title="Delegate your customer KYC" icon="kyc">
 
-As an ACPR-approved electronic money and payment institution, we guarantee secure account management systems and compliance with transaction security, banking compliance and ethics procedures.
+As an ACPR-approved payment institution, we guarantee secure account management systems and compliance with transaction security, banking compliance and ethics procedures.
 
 <Cta
   context="feature"
