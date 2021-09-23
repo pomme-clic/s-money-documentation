@@ -19,8 +19,9 @@ import Cta from '@theme/Cta'
 
 # A complete payment and Bank As A Service solution
 
-Xpollens met le paiement au service de la digitalisation de votre activité, en l’intégrant au cœur de votre offre de services, pour l’enrichir et développer sa valeur, et au cœur de vos process financiers, pour les optimiser et rationaliser leurs coûts.
-Découvrez toute l’étendue des cas d’usage.
+Xpollens is an innovative and modular Payment & Banking-as-a-Service technology platform that enables you to quickly add payment solutions to your ecosystem.
+
+Combining banking know-how and native digital technology, Xpollens offers a complete suite of payment solutions and services, which can be integrated into any business activity and tailored to your existing processes and tools.
 
 <Cta
   context="hero"
@@ -39,7 +40,7 @@ Découvrez toute l’étendue des cas d’usage.
 
 <Feature title="Easy Card issuing" icon="cb">
 
-Avec Xpollens, créez facilement des cartes de paiement aux couleurs de votre marque, avec une personnalisation du visuel et des règles d’utilisation.
+With Xpollens, create your own payment cards experience and personalise your branding, acceptance network and authorization rules.
 
 <Cta
   context="feature"
@@ -52,14 +53,14 @@ Avec Xpollens, créez facilement des cartes de paiement aux couleurs de votre ma
 
 <!-- Feature 2 -->
 
-<Feature title="Discover our payment solution" icon="payment">
+<Feature title="Set up your own accounts and payment methods" icon="payment">
 
-Xpollens vous permet de mettre immédiatement à disposition de vos clients une carte digitale, 24/7 possible d’intégrer aux wallets mobiles : Apple Pay, Samsung Pay…
-
+Xpollens lets you choose your preferred payment methods, build your own accounts structure and automated flows.
+  
 <Cta
   context="feature"
   ui="inline"
-  link="docs/cards/x-pay"
+  link="docs/payin/general"
   label="Get started"
 />
 
@@ -69,12 +70,12 @@ Xpollens vous permet de mettre immédiatement à disposition de vos clients une 
 
 <Feature title="Delegate your customer KYC" icon="kyc">
 
-Xpollens vous permet d’ouvrir des comptes de paiement et de monnaie électronique de façon totalement automatisée par API, adaptés à tous les profils d’utilisateur et sans contrainte de volume.
+As an ACPR-approved payment institution, we guarantee secure account management systems and compliance with transaction security, banking compliance and ethics procedures.
 
 <Cta
   context="feature"
   ui="inline"
-  link="docs/accounts/account-management"
+  link="docs/kyc/retail-customer"
   label="Get started"
 />
 

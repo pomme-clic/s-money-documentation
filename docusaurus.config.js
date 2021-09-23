@@ -72,28 +72,12 @@ module.exports = {
           title: 'Our company',
           items: [
             {
-              label: 'Guides',
-              href: 'https://xpollens.com',
+              label: 'About Us',
+              href: 'https://www.xpollens.com/en/enterprise/about-us/',
             },
             {
-              label: 'Tutorials',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Engineering',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Engineering',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Pricing',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Enterprise',
-              href: 'https://xpollens.com',
+              label: 'Careers',
+              href: 'https://www.xpollens.com/en/enterprise/careers/',
             },
           ],
         },
@@ -127,13 +111,9 @@ module.exports = {
           title: 'twitter',
           href: 'https://twitter.com/xpollens',
         },
-        {
-          title: 'test',
-          href: 'https://twitter.com/xpollens',
-        },
       ],
       tagline:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.',
+        'Build tailor-made & embedded payment for your business.',
     },
     customFields: {
       footerCustom: {},

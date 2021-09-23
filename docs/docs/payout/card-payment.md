@@ -3,6 +3,57 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
+
+# Card Payment
+
+Here, we are talking about how xxxxxxxxxxxxxxx
+
+## Context 'Selfcare'
+
+You can manage your card with a selfcare in order to update some specifications, like : 
+- block and unblock your card
+- update limits for payment or withdrawal
+- block or unblock VAD payment
+- block or unblock non domestic payment or withdrawal
+
+---
+
+### Block card
+ 
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+<Highlight type="tip">
+ 
+ You can block or unblock in real time to secure your card if you don't find it
+ 
+</Highlight>
+
+---
+
+### Update Limits
+  
+<Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+<Highlight type="tip">
+ 
+ You can increase or decrease your limits of payment and/or withdrawal
+
+</Highlight>
+
+
+
 # Card Payment
 
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
@@ -67,7 +118,3 @@ More information regarding this endpoint in the [API reference](/api/Core)
   link="/api/Core"
   label="Try it out"
 />
-
-### Hmac adapter 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
