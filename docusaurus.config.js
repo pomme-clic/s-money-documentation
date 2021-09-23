@@ -129,7 +129,7 @@ module.exports = {
         },
       ],
       tagline:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.',
+        'Build your own tailor-made & embedded payment for your business.',
     },
     customFields: {
       footerCustom: {},
