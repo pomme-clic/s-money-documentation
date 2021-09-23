@@ -47,7 +47,7 @@ Before display the button "Add to wallet", you have to verifiy if this card is n
 
 You start your enrolment since wallet provider and you confirm into your app
 
-<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
+<Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
 #### endpoint
 
