@@ -7,8 +7,6 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-##### Note neutre
-
 The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas. More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
 </Highlight>
@@ -17,15 +15,11 @@ The SEPA region consists of 36 European countries, including several countries w
 
 <Highlight type="tip">
 
-##### Tip
-
 If you want to define recurring transfer or plan a transfer you can just use the same API with additional informations.
 
 </Highlight>
 
 <Highlight type="caution">
-
-##### Caution
 
 To make a transfer, the beneficiary has to exist in the system.
 
@@ -33,7 +27,6 @@ To make a transfer, the beneficiary has to exist in the system.
 
 <Highlight type="danger">
 
-##### Danger
 SEPA transfer can be refused due to the user thresholds.
 
 </Highlight>
