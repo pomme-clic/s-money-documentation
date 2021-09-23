@@ -72,28 +72,12 @@ module.exports = {
           title: 'Our company',
           items: [
             {
-              label: 'Guides',
-              href: 'https://xpollens.com',
+              label: 'About Us',
+              href: 'https://www.xpollens.com/en/enterprise/about-us/',
             },
             {
-              label: 'Tutorials',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Engineering',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Engineering',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Pricing',
-              href: 'https://xpollens.com',
-            },
-            {
-              label: 'Enterprise',
-              href: 'https://xpollens.com',
+              label: 'Careers',
+              href: 'https://www.xpollens.com/en/enterprise/careers/',
             },
           ],
         },
