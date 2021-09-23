@@ -5,7 +5,7 @@ import Cta from '@theme/Cta'
 
 # X-Pay 
 
-## Context
+## Context Enrolment
 
 There are 2 methods to add your card to a wallet : 
 
@@ -25,25 +25,38 @@ The second is mandatory with Apple. It consists to start in you app (with SCA) a
 
 ### Add your card in a Apple wallet since your mobile app
 
-<Highlight type="tip">
- 
  In your mobile app, you can add a card to Apple wallet
- 
-</Highlight>
 
 <Image src="docs/Card_addWallet.png" alt="usecase 1"/>
+
+#### sdk
+
+More information regarding this sdk in the .....
+
+<Highlight type="caution">
+
+##### Caution
+
+Before display the button "Add to wallet", you have to verifiy if this card is not already present in wallet and if the phone or iOS is compatible
+
+</Highlight>
 
 ---
 
 ### Confirm your card enrolment by wallet provider
 
-<Highlight type="tip">
- 
- You start your enrolment since wallet provider and you confirm into your app
- 
-</Highlight>
+You start your enrolment since wallet provider and you confirm into your app
 
+<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
+
+#### endpoint
+
+More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
+
+<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/{tokenvalue}" method="get"/>
 ---
+
+## Context token
 
 ### token details
 
@@ -52,6 +65,8 @@ The second is mandatory with Apple. It consists to start in you app (with SCA) a
  token in detail
  
 </Highlight>
+
+#### endpoint
 
 More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
 
@@ -67,6 +82,7 @@ More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
  
 </Highlight>
 
+#### endpoint
 
 More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
 
@@ -85,14 +101,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 <Highlight type="tip">
 
 ##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
 
