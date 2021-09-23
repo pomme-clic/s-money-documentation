@@ -127,10 +127,6 @@ module.exports = {
           title: 'twitter',
           href: 'https://twitter.com/xpollens',
         },
-        {
-          title: 'docusaurus',
-          href: 'https://docusaurus.io',
-        },
       ],
       tagline:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.',
