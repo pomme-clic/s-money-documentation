@@ -9,20 +9,20 @@ import Cta from '@theme/Cta'
 
 There are 2 methods to add your card to a wallet : 
 
-- inapp verification method (update of SMS journey)
+- inapp verification method _(update of SMS journey)_
 - inapp provisioning method
 
 The first is the usual method which consists since  : 
 
 - iOS (for Apple Pay)
 - app Samsung Pay
-- app Garmin Pay (coming soon)
-- app Google Pay (coming soon)
+- app Garmin Pay _(coming soon)_
+- app Google Pay _(coming soon)_
 
 The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
 
-The second is mandatory with Apple (for the moment). 
-It's a method without entering your informations card. It consists to start in your app (with SCA) with only button click by provisioning data cards, then, to valid Terms and Conditions and to finish in your app.
+The second is mandatory with Apple (for the moment). It's a method without entering your informations card. 
+It consists to start in your app (with SCA) with only button click by provisioning data cards then to valid Terms and Conditions and to finish in your app.
 
 ---
 
@@ -42,19 +42,19 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 ### Add your card in a Apple wallet since your mobile app
 
- In your mobile app, you can add a card to Apple wallet
+In your mobile app, you can add a card to Apple wallet
 
 <Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
 #### sdk
 
-More information regarding this sdk in the .....
+More information regarding this sdk _coming soon_
 
 <Highlight type="caution">
 
 ##### Caution
 
-Before display the button "Add to wallet", you have to verifiy if this card is not already present in wallet and if the phone or iOS is compatible
+Before display the button "Add to wallet", you have to verify if this card **is not already present** in wallet and **if the phone or iOS is compatible**.
 
 </Highlight>
 
