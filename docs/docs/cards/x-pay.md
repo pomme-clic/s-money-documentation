@@ -5,131 +5,86 @@ import Cta from '@theme/Cta'
 
 # X-Pay 
 
-### Add your card in a Apple wallet since your mobile app
+## Context Enrolment
 
-<Highlight type="tip">
- 
- In your mobile app, you can add a card to Apple wallet
- 
-</Highlight>
+There are 2 methods to add your card to a wallet : 
 
-<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
+- inapp verification method _(update of SMS journey)_
+- inapp provisioning method
+
+The first is the usual method which consists since  : 
+
+- iOS (for Apple Pay)
+- app Samsung Pay
+- app Garmin Pay _(coming soon)_
+- app Google Pay _(coming soon)_
+
+The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
+
+The second is mandatory with Apple (for the moment). It's a method without entering your informations card. 
+It consists to start in your app (with SCA) with only button click by provisioning data cards then to valid Terms and Conditions and to finish in your app.
+
+---
 
 ### Confirm your card enrolment by wallet provider
 
-<Highlight type="tip">
- 
- You start your enrolment since wallet provider and you confirm into your app
- 
-</Highlight>
+You start your enrolment since wallet provider and you confirm into your app
 
-### token details
+<Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
-<Highlight type="tip">
- 
- token in detail
- 
-</Highlight>
+#### endpoint
 
-### tokens of card
+More information regarding this endpoint in the [API reference](/api/Xpay)
 
-<Highlight type="tip">
- 
- all token by card
- 
-</Highlight>
+<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}/inappverifactivation" method="post"/>
 
+---
 
-<Highlight>
+### Add your card in a Apple wallet since your mobile app
 
-##### Note neutre
+In your mobile app, you can add a card to Apple wallet
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+<Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
-</Highlight>
+#### sdk
 
-<Highlight type="tip">
-
-##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
+More information regarding this sdk _coming soon_
 
 <Highlight type="caution">
 
 ##### Caution
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+Before display the button "Add to wallet", you have to verify if this card **is not already present** in wallet and **if the phone or iOS is compatible**.
 
 </Highlight>
 
 ---
 
-# Card Management
+## Context token
 
-Here, we are talking about how you can manage your cards.
+### Token details
 
-## Context 'Selfcare'
-You can manage your card with a selfcare in order to update some specifications, like : 
-- block and unblock your card
-- update limits for payment or withdrawal
-- block or unblock VAD payment
-- block or unblock non domestic payment or withdrawal
+#### endpoint
 
----
+More information regarding this endpoint in the [API reference](/api/Xpay)
 
-### Block card
- 
-<Highlight type="tip">
- 
- You can block or unblock in real time to secure your card if you don't find it
- 
-</Highlight>
-
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/{tokenvalue}" method="get"/>
 
 ---
 
+### Token's List of card
 
+#### endpoint
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
+More information regarding this endpoint in the [API reference](/api/Xpay)
 
-## Transfert d'argent P2P
+<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}" method="get"/>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-More information regarding this endpoint in the [API reference](/api/Core)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+---
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Xpay"
   label="Try it out"
 />

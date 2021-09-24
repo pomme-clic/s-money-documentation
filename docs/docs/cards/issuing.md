@@ -51,7 +51,7 @@ More information regarding this sdk in the [Card Companion SDK](./CardCompanion_
 
 <Highlight type="caution">
  
- WishPIN is only possible for mobile app. You have to add our sdk in addition with a TokenCB signature API
+ WishPIN is **only possible for mobile app**. **You have to add our sdk in addition with a TokenCB signature API**
  
 </Highlight>
 
@@ -75,7 +75,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight>
   
- Obviously there is not random or wish PIN with a virtual card
+ Obviously there is **no PIN with a virtual card**
 
 </Highlight>
 
