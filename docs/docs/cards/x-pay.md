@@ -53,88 +53,32 @@ You start your enrolment since wallet provider and you confirm into your app
 
 #### endpoint
 
-More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
+More information regarding this endpoint in the [API reference](/api/Xpay)
 
-<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/{tokenvalue}" method="get"/>
+<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}/inappverifactivation" method="post"/>
 ---
 
 ## Context token
 
-### token details
-
-<Highlight type="tip">
- 
- token in detail
- 
-</Highlight>
+### Token details
 
 #### endpoint
 
-More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
+More information regarding this endpoint in the [API reference](/api/Xpay)
 
 <Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/{tokenvalue}" method="get"/>
 
 ---
 
-### tokens of card
-
-<Highlight type="tip">
- 
- all token by card
- 
-</Highlight>
+### Token's List of card
 
 #### endpoint
 
-More information regarding this endpoint in the [API reference XPAY](/api/Xpay)
+More information regarding this endpoint in the [API reference](/api/Xpay)
 
 <Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}" method="get"/>
 
 ---
-
-<Highlight>
-
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="tip">
-
-##### Tip
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="danger">
-
-##### Danger
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
----
-
-### Block card
- 
-<Highlight type="tip">
- 
- You can block or unblock in real time to secure your card if you don't find it
- 
-</Highlight>
-
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-
-### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
---- 
 
 <Cta
   context="doc"
