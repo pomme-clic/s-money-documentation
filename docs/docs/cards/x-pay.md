@@ -21,7 +21,8 @@ The first is the usual method which consists since  :
 
 The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
 
-The second is mandatory with Apple (for the moment). It's a method without entering your informations card. It consists to start in your app (with SCA) with only button click by provisioning data cards, then, to valid Terms and Conditions and to finish in your app.
+The second is mandatory with Apple (for the moment). 
+It's a method without entering your informations card. It consists to start in your app (with SCA) with only button click by provisioning data cards, then, to valid Terms and Conditions and to finish in your app.
 
 ---
 
