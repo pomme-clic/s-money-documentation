@@ -5,90 +5,87 @@ import Cta from '@theme/Cta'
 
 # Topup Card
 
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
 
-# Card Management
 
-Here, we are talking about how you can manage your cards.
+## Hosted Fields woth Dalenys
 
-## Context 'Selfcare'
+https://developer.dalenys.com/integration-modes/hosted-fields.html
 
-You can manage your card with a selfcare in order to update some specifications, like : 
-- block and unblock your card
-- update limits for payment or withdrawal
-- block or unblock VAD payment
-- block or unblock non domestic payment or withdrawal
 
 ---
 
-### Block card
- 
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+### Create a topup with 3DSv2
+
+**Create a top up with 3DSV2**
+
+This endpoint is used to create top up request with 3DSV2. The holder of the Xpollens account can add money to his Xpollens account using his bank card. Thus, he will debit his bank account and credit his Xpollens account with the topup.
+If fees must be attached to this transaction, you can fill in the "Fee" parameter in the body of the request with the amount of the fees. The bank card holder will be debited for the "Amount+Fee".
+
+**Card registration during payment**
+
+To register the bank card during payment, you must, in the body of the request, in the "Card" parameter, specify the "AppCardId" parameter. It will be this "AppCardId" which will be called later for the top up oneclik. If there is no need to register the bank card during payment, then you should not specify "AppCardId". This parameter is optional.
+
+**Top up Oneclick with 3DSV2**
+
+To create a top up oneclick, you must, in the body of the request, add and fill in the "AppCardId" parameter instead of the "HFToken" parameter". This will allow you to directly call the previously registered bank card.
 
 #### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
-<Highlight type="tip">
- 
- You can block or unblock in real time to secure your card if you don't find it
- 
-</Highlight>
-
----
-
-### Update Limits
-  
-<Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
-<Highlight type="tip">
- 
- You can increase or decrease your limits of payment and/or withdrawal
-
-</Highlight>
-
-
-<Highlight>
-
-##### Note neutre
-
-Money from Card Top Up will be available immediatly
-
-</Highlight>
-
-<Highlight type="tip">
-
-##### Tip
-
-Card Top Up is avalable with VISA and Mastercard but other payment methods will be available soon
-
-</Highlight>
-
-<Highlight type="caution">
-
-##### Caution
-
-Any Card Top Up will be secured within 3DS 
-
-</Highlight>
-
----
-
-## Endpoints
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/payins/cardpayments" method="post"/>
 
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+---
+
+### Get all registered banks cards
+  
+The service is used to retrieve all existing bank cards already registered for a dedicated user. All information associated to the card will be displayed
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/cards/registered" method="get"/>
+
+---
+
+### Get all top up
+  
+This endpoint is used by a dedicated user, to consult the list of top up operations, executed from his Xpollens account.
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/payins/cardpayments" method="get"/>
+
+---
+
+### Get top up by orderId
+  
+This endpoint is used by a dedicated user, to consult a specific top up operation, by the orderid.
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}" method="get"/>
+
+---
+
+### Refund a top up
+  
+This endpoint is used to refund a top up. It is possible to fully or partially refund an operation.
+By using this feature, the bank card holder will be refunded directly to his bank card, and the Xpollens account will be debited for the amount to be refunded. If there was a fee charged during the topup, then the fee will also be refunded to the bank card holder, and the Xpollens Partner's commission account will be debited with the amount of the commission to be refunded.
+The amount specified in the body of the request corresponds to the amount to be refund. The fee specified in the body of the request corresponds to the fee to be refund. Each amount must be less than or equal to the initial amount of the topup. The orderid specified in the body of the request corresponds to a new orderid designating the refund operation.
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds" method="post"/>
+
+---
 
 <Cta
   context="doc"
