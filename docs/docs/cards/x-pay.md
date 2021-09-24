@@ -25,6 +25,20 @@ The second is mandatory with Apple (for the moment). It's a method without enter
 
 ---
 
+### Confirm your card enrolment by wallet provider
+
+You start your enrolment since wallet provider and you confirm into your app
+
+<Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
+
+#### endpoint
+
+More information regarding this endpoint in the [API reference](/api/Xpay)
+
+<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}/inappverifactivation" method="post"/>
+
+---
+
 ### Add your card in a Apple wallet since your mobile app
 
  In your mobile app, you can add a card to Apple wallet
@@ -43,19 +57,6 @@ Before display the button "Add to wallet", you have to verifiy if this card is n
 
 </Highlight>
 
----
-
-### Confirm your card enrolment by wallet provider
-
-You start your enrolment since wallet provider and you confirm into your app
-
-<Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
-
-#### endpoint
-
-More information regarding this endpoint in the [API reference](/api/Xpay)
-
-<Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}/inappverifactivation" method="post"/>
 ---
 
 ## Context token
