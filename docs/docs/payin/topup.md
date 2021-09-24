@@ -6,11 +6,13 @@ import Cta from '@theme/Cta'
 # Topup Card
 
 
+## Introduction
 
-## Hosted Fields woth Dalenys
+First you have to integrate a Xpollens shop with our "company brother" Dalenys to provide some fieds in your app in order to customer can entry data cards.
 
-https://developer.dalenys.com/integration-modes/hosted-fields.html
+### Hosted Fields with Dalenys
 
+More information regarding this endpoint in the [Hosted Fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
 ---
 
