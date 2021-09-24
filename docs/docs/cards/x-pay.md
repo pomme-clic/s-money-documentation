@@ -9,17 +9,19 @@ import Cta from '@theme/Cta'
 
 There are 2 methods to add your card to a wallet : 
 
-- inapp verification method
+- inapp verification method (update of SMS journey)
 - inapp provisioning method
 
 The first is the usual method which consists since  : 
+
 - iOS (for Apple Pay)
 - app Samsung Pay
-- app Google Pay
+- app Garmin Pay (coming soon)
+- app Google Pay (coming soon)
 
-to start enrolment by enterinn your card informations and to valid/confirm into your mobile app with a SCA (Strong Customer Authentication).
+The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
 
-The second is mandatory with Apple. It consists to start in you app (with SCA) and finish in your app without entering your informations card.
+The second is mandatory with Apple (for the moment). It's a method without entering your informations card. It consists to start in your app (with SCA) with only button click by provisioning data cards, then, to valid Terms and Conditions and to finish in your app.
 
 ---
 
