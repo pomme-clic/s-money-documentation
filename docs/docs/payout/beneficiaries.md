@@ -5,8 +5,6 @@ import Cta from '@theme/Cta'
 
 # Beneficiaries
 
-<Image src="docs/beneficiarymanagement.png" alt="usecase 1"/>
-
 <Highlight>
 
 Adding of a beneficiary is necessary to ask for money transfer.
