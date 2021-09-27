@@ -5,6 +5,9 @@ import Cta from '@theme/Cta'
 
 # Know Your Customer
 
+
+
+
 ## Context
 
 ### Regulatory Context
@@ -24,11 +27,11 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you, **Xpollens Authenticator** integrates the SDK and can fit perfectly in your onboarding process.
+  Should you not have a mobile app : no problem, we have an app for you, <b class="term">Xpollens Authenticator</b> integrates the SDK and can fit perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
-  You define the technical unique identifier of your prospect : the **appUserId** ; our call-backs will give you back this same identified.
+  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will use this same identifier.
 </Highlight>
 
 ## Straight Through Process
@@ -43,7 +46,7 @@ Our onboarding API embeds an Identity Verification Service. We offer a modular a
 Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
-  Our biometry systems are compliant with all Data Protection Regulations. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
+  Our biometry systems are <b class="term">compliant with Data Protection Regulations</b>. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
 </Highlight>
 
 <Highlight type="tip">
@@ -51,7 +54,7 @@ Using a simple parameter, you can activate our Facial Biometry webview. Your cus
 </Highlight>
 
 <Highlight type="caution">
-  This option can only occur on a mobile phone, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
+  <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
 </Highlight>
 
 ### SEPA Instant Transfer IN
@@ -86,23 +89,92 @@ Your end-customer will be required to enter credentials of his other bank. Based
 ### More to come
 We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
----
 
-## SDK Functions
 
-Here are the functions you need to integrate in our SDK to make the onboarding process work.
+
+## SDK Features
+
+Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work. Please note that security features are managed using a security-wallet that is constructed specifically for your end-user, on his/her mobile phone, inside his/her mobile app.
+
+Here are the steps your mobile application should follow when it's launched by an end-user :
+<details>
+    <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
+        <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. **Please note that Xpollens has already created a security wallet for your end user. No need to create one.**</div>
+</details>
+<details>
+    <summary>2. PROVISIONNING BLOCK: If no security wallet is binded, check identity and bind one.</summary>
+        <div>This binding is performed by using the Activation Code and the Identification Webview URL.
+          - Scan QR Code
+          - Define Secret Code
+          - Check Identity using webview
+        </div>
+</details>
+<details>
+    <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
+        <div>Your main screen can open up.</div>
+</details>
+
+<Highlight type="tip">
+  If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
+</Highlight>
 
 ### Scan QR Code
 
+Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the PROVISIONNING BLOCK of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
+<Highlight>
+  - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.<br/>
+  - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
+</Highlight>
+
+Here is the payload you'll get from our call-back type 35 :
+```
+"Payload": {
+        "type": "35",
+        "AppUserId": "e87bd13dJ",
+        "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
+        "ErrorMessage": null,
+        }
+```
+
+Concerning the PROVISIONNING BLOCK
+```
+Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
+Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+```
+
+### Obtain Secret Code
+
+This screen is automatically prompted by our SDK whenever you trigger the binding of a new security-wallet on the device. It currently contains 5 digits, and it is not stored anywhere but the user's device.
 
 ### Get Webview URL
 
+This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the getIssuerData() feature of our SDK.
 
+Example:
+```
+https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p
+```
 
-### Electronic Signature
+### Close Webview URL
 
+You will know when to close the webview when the URL changes, adding a #SUCCESS at the end.
+
+Example:
+```
+https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p#SUCCESS
+```
+
+<Highlight>
+Even if the identification is not a success, you will still get the same outcome tag, for security purposes. However in case the identification process fails, Xpollens will automatically kill the security-wallet of your end-user, who will not be able to perform any strong authentication. Her/His KYC will be considered "incomplete", and her/his account will remain unusable until proper identification is performed.
+</Highlight>
+
+<Highlight type="tip">
 Because we use Strong Authentication as a means of e-Signature, you must please refer to the Strong Authentication section in this documentation to finalize this integration. Signing the Terms & Conditions as well as the Tax Declaration Form will generate such SCA notifications.
+</Highlight>
+
+
+
 
 ## API Endpoints
 
@@ -133,7 +205,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor 
 More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
+ 
 <Cta
   context="doc"
   ui="button"
@@ -141,4 +213,8 @@ More information regarding this endpoint in the [API reference](/api/Core)
   label="Try it out"
 />
 
+---
+title: KYC by Xpollens
+author: Cédric Coiquaud
+authorURL: https://www.linkedin.com/in/coiquaudcedric
 ---
