@@ -35,7 +35,7 @@ To create a top up oneclick, you must, in the body of the request, add and fill 
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/payins/cardpayments" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/payins/cardpayments" method="post"/>
 
 ---
 
