@@ -122,10 +122,12 @@ Here are the steps your mobile application should follow when it's launched by a
 
 Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the PROVISIONNING BLOCK of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
-<Highlight>
-  - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.<br/>
-  - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
-</Highlight>
+>
+> **Managing the multi-channel capability**
+>
+> - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
+> - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
+> 
 
 Here is the payload you'll get from our call-back type 35 :
 ```
@@ -137,9 +139,12 @@ Here is the payload you'll get from our call-back type 35 :
         }
 ```
 
-Concerning the PROVISIONNING BLOCK
-Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
-Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+> 
+> **Concerning the PROVISIONNING BLOCK**
+> 
+> - Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
+> - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+> 
 
 ### Obtain Secret Code
 
@@ -176,18 +181,25 @@ Because we use Strong Authentication as a means of e-Signature, you must please 
 
 ## API Endpoints
 
-Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.
+Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.*
 
-### POST User
+>
+> **Example of a straight-through onboarding process**
+> 
+> 1. POST api/v2.0/users/{appUserId}/declarative
+> 2. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
+> 3. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
+> 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+### POST User (Create)
 
+All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v1.1#/User/post_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/> -->
 
 <Cta
   context="doc"
@@ -196,14 +208,81 @@ More information regarding this endpoint in the [API reference](/api/Core)
   label="Try it out"
 />
 
-### PUT User
+### GET User (Read)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
+This endpoint allows you to read the data you have sent.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
- 
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/get_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="get"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
+
+### PUT User (Update)
+
+All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
+
+### DELETE User (Delete)
+
+This action is not possible.
+
+<Highlight>
+Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
+</Highlight>
+
+### PATCH FatcaEai
+
+Use this endpoint to transmit to Xpollens the required tax information from your end user.
+
+<Highlight>
+This will trigger a Strong Authentication notification to your end-user.
+</Highlight>
+
+<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/patch_api_v1_1_user__AppUserId__fatcaEai -->
+<!-- <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
+
+### POST CGU
+
+Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
+
+<Highlight>
+This will trigger a Strong Authentication notification to your end-user.
+</Highlight>
+
+<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__cgu -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/> -->
+
 <Cta
   context="doc"
   ui="button"
