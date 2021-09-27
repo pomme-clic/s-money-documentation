@@ -5,7 +5,7 @@ import Cta from '@theme/Cta'
 
 # Beneficiaries
 
-<Image src="docs/beneficiarymanagement.png" alt="usecase 1"/>
+<Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
 
 <Highlight>
 
