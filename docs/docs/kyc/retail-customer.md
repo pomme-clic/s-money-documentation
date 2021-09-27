@@ -99,11 +99,23 @@ Part of the on-boarding process happens on a mobile app ; our solution is **omni
 Here are the steps your mobile application should follow when it's launched by an end-user :
 
 <details>
-    <summary>Details 1</summary>
-    Something small enough to escape casual notice.
-
-    <summary>Details 2</summary>
-    Something small enough to escape casual notice 2.
+    <summary>1.LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
+        <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. **Please note that Xpollens has already created a security wallet for your end user. No need to create one.**
+        </div>
+    <summary>2 PROVISIONNING BLOCK: If no security wallet is binded to phone, bind one.</summary>
+        <div>This binding is performed by using the Activation Code, received either in the API Call-Back #35 or directly via the SDK.
+          <br/>
+          <details>
+            <summary>Customer Journey started on the web</summary>
+              <div>If the user's journey started on the web, this action should be performed by opening a **Scan QR Code** screen.<Image src="docs/kyc-qr-code.png" alt="usecase 1"/></div>
+            <summary>Customer Journeyis full in-app</summary>
+              <div> If onboarding is happening in-app, then you can perform this task without prompting the end-user.</div>
+          </details>
+          By performing this operation, your end-user will be requested to **choose a Secret Code**. This will bind his identity to
+        </div>
+    <summary>3 MAIN BLOCK: If security wallet is binded to phone, go to home screen.</summary>
+        <div>Your main screen can open up; your end-users phone is properly binded. From now on, your end-user may receive push notifications prompting him/her to perform a strong authentication process.
+        </div>
 </details>
 
 step 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
