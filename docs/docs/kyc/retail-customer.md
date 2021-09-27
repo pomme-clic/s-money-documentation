@@ -122,10 +122,12 @@ Here are the steps your mobile application should follow when it's launched by a
 
 Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the PROVISIONNING BLOCK of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
-> **Check what to do with the Activation Code**
 >
-> If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.<br/>
-> If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
+> **Managing the multi-channel capability**
+>
+> - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
+> - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
+> 
 
 Here is the payload you'll get from our call-back type 35 :
 ```
@@ -137,9 +139,12 @@ Here is the payload you'll get from our call-back type 35 :
         }
 ```
 
-Concerning the PROVISIONNING BLOCK
-Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
-Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+> 
+> **Concerning the PROVISIONNING BLOCK**
+> 
+> - Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
+> - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+> 
 
 ### Obtain Secret Code
 
@@ -180,14 +185,18 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 
 ### POST User
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+Send your prospect's personal data to Xpollens in order to create 
+
+<Highlight type="tip">
+You define the AppUserId of your customers. Please ensure their unicity.
+</Highlight>
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v1.1#/User/post_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api/v2.0/users/{AppUserId}/declarative" method="post"/> -->
 
 <Cta
   context="doc"
