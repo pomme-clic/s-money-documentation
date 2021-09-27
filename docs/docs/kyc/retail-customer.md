@@ -138,8 +138,8 @@ Here is the payload you'll get from our call-back type 35 :
 ```
 
 Concerning the PROVISIONNING BLOCK
-> Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
-> Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
+Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
 
 ### Obtain Secret Code
 
