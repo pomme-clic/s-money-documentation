@@ -100,16 +100,16 @@ Here are the steps your mobile application should follow when it's launched by a
 <details>
     <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
         <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. **Please note that Xpollens has already created a security wallet for your end user. No need to create one.**</div>
-<details>
 </details>
+<details>
     <summary>2. PROVISIONNING BLOCK: If no security wallet is binded to phone, check identity and bind one.</summary>
         <div>This binding is performed by using the Activation Code and the Identification Webview URL.
           - Scan QR Code
           - Define Secret Code
           - Check Identity using webview
         </div>
-<details>
 </details>
+<details>
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
         <div>Your main screen can open up.</div>
 </details>
