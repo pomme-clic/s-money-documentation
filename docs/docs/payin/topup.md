@@ -6,7 +6,7 @@ import Cta from '@theme/Cta'
 # Topup Card
 
 
-## Introduction
+## Shop Xpollens Integration
 
 First you have to integrate a Xpollens shop with our "company brother" Dalenys to provide some fieds in your app in order to customer can entry data cards.
 
@@ -15,6 +15,7 @@ First you have to integrate a Xpollens shop with our "company brother" Dalenys t
 More information regarding this endpoint in the [Hosted Fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
 ---
+## Features with Xpollens shop
 
 ### Create a topup with 3DSv2
 
