@@ -47,7 +47,7 @@ The service is used to retrieve all existing bank cards already registered for a
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/cards/registered" method="get"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cards/registered" method="get"/>
 
 ---
 
@@ -59,7 +59,7 @@ This endpoint is used by a dedicated user, to consult the list of top up operati
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/payins/cardpayments" method="get"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments" method="get"/>
 
 ---
 
@@ -71,7 +71,7 @@ This endpoint is used by a dedicated user, to consult a specific top up operatio
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}" method="get"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}" method="get"/>
 
 ---
 
@@ -85,7 +85,7 @@ The amount specified in the body of the request corresponds to the amount to be 
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/core" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds" method="post"/>
 
 ---
 
