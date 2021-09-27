@@ -77,6 +77,19 @@ Chaque élément (paragraphe, composant, titre..) doit obligatoirement être esp
 
 ---
 
+### Liens vers l'API Reference
+
+Vous pouvez utiliser le composant dédié pour illustrer un use case en invoquant la méthode suivante : 
+
+`markdown`
+`import Endpoint from "@theme/Endpoint"`
+
+`<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>`
+
+La liste des apiUrl est disponible [ici](/docs/api/0EndpointNames.txt)
+Le path est ensuite le endpoint spécifique que vous souhaitez montrer.
+
+---
 #### Docs markdown d'exemples
 
 - [syntaxe de base](docs/docs/examples/basics.md)
