@@ -5,17 +5,17 @@ import Cta from '@theme/Cta'
 
 # Beneficiaries
 
-<Image src="docs/beneficiary_management.png" alt="usecase 1"/>
+<Image src="docs/beneficiarymanagement.png" alt="usecase 1"/>
 
 <Highlight>
 
-Adding of a beneficiary is necessary to ask for money transfer 
+Adding of a beneficiary is necessary to ask for money transfer.
 
 </Highlight>
 
 <Highlight type="tip">
 
-Retrieving beneficiaries list of a user is available within API  
+Retrieving beneficiaries list of a user is available within API.
 
 </Highlight>
 
@@ -31,9 +31,6 @@ IBAN format is checked when adding beneficiary and tranfer to the beneficiary is
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
-
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
 
 <Cta
   context="doc"
