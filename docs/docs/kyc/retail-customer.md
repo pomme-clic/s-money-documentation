@@ -97,48 +97,14 @@ We're working hard to find more options for you, always with the best Customer E
 Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work. Please note that security features are managed using a security-wallet that is constructed specifically for your end-user, on his/her mobile phone, inside his/her mobile app.
 
 Here are the steps your mobile application should follow when it's launched by an end-user :
-
 <details>
-    <summary>1.LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
-        <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. **Please note that Xpollens has already created a security wallet for your end user. No need to create one.**
-        </div>
-    <summary>2 PROVISIONNING BLOCK: If no security wallet is binded to phone, bind one.</summary>
-        <div>This binding is performed by using the Activation Code, received either in the API Call-Back #35 or directly via the SDK.
-          <br/>
-          <details>
-            <summary>2-A. Use Activation Code</summary>
-              <div>
-                If the user's journey started on the web, this action should be performed by opening a **Scan QR Code** screen.
-                <Image src="docs/kyc-qr-code.png" alt="usecase 1"/></div>
-                If onboarding is happening in-app, then you can perform this task without prompting the end-user.
-                Either way, the activation code will enable Xpollens to recover the specific parameters for your end-users.
-              </div>
-            <summary>2-B. Get Secret Code</summary>
-              <div>
-                Automatically, the SDK will prompt your end-user to **choose a Secret Code** (5 digits). Hence you should do the graphic design of this screen to your liking. By choosing his secret code, your end-user will properly bind his security-wallet to his device.
-              </div>
-            <summary>2-C. Check Identity using webview URL</summary>
-              <div>
-                Now that your end-users context is binded to his device, it becomes possible to load some of her/his data. In particular, you need to upload the **Identification Webview**. This can be achieved using the getIssuerData() function of our SDK.
-              </div>
-          </details>
-        </div>
-    <summary>3 MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
+    <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
+        <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. **Please note that Xpollens has already created a security wallet for your end user. No need to create one.**</div>
+    <summary>2. PROVISIONNING BLOCK: If no security wallet is binded to phone, bind one.</summary>
+        <div>This binding is performed by using the Activation Code, received either in the API Call-Back #35 or directly via the SDK.</div>
+    <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
         <div>Your main screen can open up.</div>
 </details>
-
-step 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
-step 1: Check binding. You must verify if the mobile application is associated securely with a security-wallet ; this is performed using the "Loading Block"
-
-If the app is not yet already binded :
-step 2.1: Scan QR Code. If the mobile app is not yet binded with a security-wallet, then you must trigger it using the Activation Code and the "Provisionning Block"
-step 2.2: Get Webview. Once the app is securly binded, the security-wallet is "Active", and you can proceed with the "Main Block" and display the property "getIssuerData"
-step 2.3: Open Webview. This property will give you an URL. This is a webview, that you must show to the end user. It will perform the necessary identification process on your end-user.
-step 2.4: Close Webview. Once the webview is finished, its URL will always end adding a "#SUCCESS", whatever may be the identification outcome.
-step 2.5: Finalize. You can then finalize your on-boarding process ; the identification process is finished.
-
-If the app is already binded:
-step 3: Jump to your Home Screen. You can use "Main Block" as you want.
 
 ### Scan QR Code
 
