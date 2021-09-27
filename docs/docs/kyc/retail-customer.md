@@ -187,7 +187,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 > **Example of a straight-through onboarding process**
 > 
 > 1. POST api/v2.0/users/{appUserId}/declarative
-> 2. PATCH api/v1.1/users/{appUserId}/fatcaEai _(will trigger an SCA notification)_
+> 2. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
 > 3. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
 > 
 
@@ -250,19 +250,38 @@ This action is not possible.
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
 </Highlight>
 
-### PUT User (Update)
-
-All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Core)
-
 ### PATCH FatcaEai
 
 Use this endpoint to transmit to Xpollens the required tax information from your end user.
 
+<Highlight>
+This will trigger a Strong Authentication notification to your end-user.
+</Highlight>
+
 <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v1_1_user__AppUserId__fatcaEai -->
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/patch_api_v1_1_user__AppUserId__fatcaEai -->
 <!-- <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
+
+### POST CGU
+
+Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
+
+<Highlight>
+This will trigger a Strong Authentication notification to your end-user.
+</Highlight>
+
+<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__cgu -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/> -->
 
 <Cta
   context="doc"
