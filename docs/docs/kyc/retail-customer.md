@@ -122,10 +122,10 @@ Here are the steps your mobile application should follow when it's launched by a
 
 Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the PROVISIONNING BLOCK of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
-<Highlight>
-  - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.<br/>
-  - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
-</Highlight>
+> **Check what to do with the Activation Code**
+>
+> If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.<br/>
+> If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
 
 Here is the payload you'll get from our call-back type 35 :
 ```
