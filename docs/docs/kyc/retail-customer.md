@@ -185,7 +185,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 
 ### POST User
 
-Send your prospect's personal data to Xpollens in order to create 
+Send your prospect's personal data to Xpollens in order to create a User. Sent information will need to be consistent with documentation acquired later in the process. 
 
 <Highlight type="tip">
 You define the AppUserId of your customers. Please ensure their unicity.
@@ -194,9 +194,7 @@ You define the AppUserId of your customers. Please ensure their unicity.
 More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api/v2.0/users/{AppUserId}/declarative" method="post"/> -->
+<!-- https://api.xpollens.com/swagger/docs/v2.0/user.usermanagment -->
 
 <Cta
   context="doc"
