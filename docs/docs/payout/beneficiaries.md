@@ -9,13 +9,13 @@ import Cta from '@theme/Cta'
 
 <Highlight>
 
-Adding of a beneficiary is necessary to ask for money transfer 
+Adding of a beneficiary is necessary to ask for money transfer.
 
 </Highlight>
 
 <Highlight type="tip">
 
-Retrieving beneficiaries list of a user is available within API  
+Retrieving beneficiaries list of a user is available within API.
 
 </Highlight>
 
