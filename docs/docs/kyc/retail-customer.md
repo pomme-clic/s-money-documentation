@@ -212,9 +212,3 @@ More information regarding this endpoint in the [API reference](/api/Core)
   link="/api/Core"
   label="Try it out"
 />
-
----
-title: KYC by Xpollens
-author: Cédric Coiquaud
-authorURL: https://www.linkedin.com/in/coiquaudcedric
----
