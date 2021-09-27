@@ -106,16 +106,25 @@ Here are the steps your mobile application should follow when it's launched by a
         <div>This binding is performed by using the Activation Code, received either in the API Call-Back #35 or directly via the SDK.
           <br/>
           <details>
-            <summary>Customer Journey started on the web</summary>
-              <div>If the user's journey started on the web, this action should be performed by opening a **Scan QR Code** screen.<Image src="docs/kyc-qr-code.png" alt="usecase 1"/></div>
-            <summary>Customer Journeyis full in-app</summary>
-              <div> If onboarding is happening in-app, then you can perform this task without prompting the end-user.</div>
+            <summary>2-A. Use Activation Code</summary>
+              <div>
+                If the user's journey started on the web, this action should be performed by opening a **Scan QR Code** screen.
+                <Image src="docs/kyc-qr-code.png" alt="usecase 1"/></div>
+                If onboarding is happening in-app, then you can perform this task without prompting the end-user.
+                Either way, the activation code will enable Xpollens to recover the specific parameters for your end-users.
+              </div>
+            <summary>2-B. Get Secret Code</summary>
+              <div>
+                Automatically, the SDK will prompt your end-user to **choose a Secret Code** (5 digits). Hence you should do the graphic design of this screen to your liking. By choosing his secret code, your end-user will properly bind his security-wallet to his device.
+              </div>
+            <summary>2-C. Check Identity using webview URL</summary>
+              <div>
+                Now that your end-users context is binded to his device, it becomes possible to load some of her/his data. In particular, you need to upload the **Identification Webview**. This can be achieved using the getIssuerData() function of our SDK.
+              </div>
           </details>
-          By performing this operation, your end-user will be requested to **choose a Secret Code**. This will bind his identity to
         </div>
-    <summary>3 MAIN BLOCK: If security wallet is binded to phone, go to home screen.</summary>
-        <div>Your main screen can open up; your end-users phone is properly binded. From now on, your end-user may receive push notifications prompting him/her to perform a strong authentication process.
-        </div>
+    <summary>3 MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
+        <div>Your main screen can open up.</div>
 </details>
 
 step 0: We have already initialized a security-wallet for your end-user ; it's linked to the Activation Code you have received (Call-Back Type 35).
