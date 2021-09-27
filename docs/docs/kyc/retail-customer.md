@@ -237,7 +237,6 @@ More information regarding this endpoint in the [API reference](/api/Core)
   label="Try it out"
 />
 
-
 ### PUT User (Update)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
@@ -254,3 +253,12 @@ More information regarding this endpoint in the [API reference](/api/Core)
   link="/api/Core"
   label="Try it out"
 />
+
+### DELETE User
+
+This action is not possible.
+
+<Highlight type="tip">
+Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
+</Highlight>
+
