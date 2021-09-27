@@ -181,37 +181,25 @@ Because we use Strong Authentication as a means of e-Signature, you must please 
 
 ## API Endpoints
 
-Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.
+Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.*
 
-### POST User
-
-Send your prospect's personal data to Xpollens in order to create a User. Sent information will need to be consistent with documentation acquired later in the process. 
-
-<Highlight type="tip">
-You define the AppUserId of your customers. Please ensure their unicity.
-</Highlight>
-
-More information regarding this endpoint in the [API reference](/api/Core)
-
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/>
-<!-- https://api.xpollens.com/swagger/docs/v2.0/user.usermanagment -->
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
+>
+> **Example of a straight-through onboarding process**
+> 
+> 1. POST api/v2.0/users/{appUserId}/declarative
+> 2. PATCH api/v1.1/users/{appUserId}/fatcaEai _(will trigger an SCA notification)_
+> 3. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
+> 
 
 ### POST User (Create)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
 <!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/> -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/> -->
 
 <Cta
   context="doc"
@@ -225,7 +213,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 This endpoint allows you to read the data you have sent.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="get"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
 
 <!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/get_api_v2_0_users__AppUserId__declarative -->
 <!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="get"/> -->
@@ -242,10 +230,10 @@ More information regarding this endpoint in the [API reference](/api/Core)
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="put"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
 
 <!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="put"/> -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/> -->
 
 <Cta
   context="doc"
@@ -254,11 +242,31 @@ More information regarding this endpoint in the [API reference](/api/Core)
   label="Try it out"
 />
 
-### DELETE User
+### DELETE User (Delete)
 
 This action is not possible.
 
-<Highlight type="tip">
+<Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
 </Highlight>
 
+### PUT User (Update)
+
+All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
+More information regarding this endpoint in the [API reference](/api/Core)
+
+### PATCH FatcaEai
+
+Use this endpoint to transmit to Xpollens the required tax information from your end user.
+
+<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v1_1_user__AppUserId__fatcaEai -->
+<!-- <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
