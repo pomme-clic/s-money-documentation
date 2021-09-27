@@ -77,9 +77,15 @@ More information regarding this endpoint in the [API reference](/api/Core)
 
 ### Refund a top up
   
-This endpoint is used to refund a top up. It is possible to fully or partially refund an operation.
+A refund operation enables you to credit funds back to a end-user following a previous debit. A refund transaction **is always linked to a successsful payment or capture transaction which it requires the original TOP UP**.
+
+This endpoint is used to refund a top up. It is possible to fully or partially refund an operation. You can refund several times a same debit transaction, but the sum of all the refund operations can’t be higher that the original debit amount.
+
 By using this feature, the bank card holder will be refunded directly to his bank card, and the Xpollens account will be debited for the amount to be refunded. If there was a fee charged during the topup, then the fee will also be refunded to the bank card holder, and the Xpollens Partner's commission account will be debited with the amount of the commission to be refunded.
-The amount specified in the body of the request corresponds to the amount to be refund. The fee specified in the body of the request corresponds to the fee to be refund. Each amount must be less than or equal to the initial amount of the topup. The orderid specified in the body of the request corresponds to a new orderid designating the refund operation.
+
+The amount of a refund transaction can be different from the original debit transaction but can not be higher. So the amount specified in the body of the request corresponds to the amount to be refund. The fee specified in the body of the request corresponds to the fee to be refund. Each amount must be less than or equal to the initial amount of the topup. 
+
+The orderid specified in the body of the request corresponds to a new orderid designating the refund operation.
 
 #### Endpoint
 
