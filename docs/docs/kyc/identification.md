@@ -56,22 +56,15 @@ Just plug to our API and we ensure compliance with PSD2 : if the operation is se
 
 ### Sensitive Operations & SDK integration
 
-You may call the SCT Inst endpoint, for example. By triggering such a sensitive operation, you will generate a push notification onto your end user's smartphone : our back-end will find your end user's mobile application (if it has been securely binded during KYC), and trigger the **authentication request**.
+By triggering a sensitive operation endpoint, you will generate a push notification onto your end user's smartphone : our back-end will find your end user's mobile application and trigger the **authentication request**. You must therefore code the reception of such notifications using the SDK.
 
-Therefore, in your mobile application, you must code the reception of such notifications. Here is the ``` RAW_LIST ``` format you will receive:
-```json
-{
-  "notificationMessage": "Une opération sensible requiert votre validation",
-  "message": "Opération sensible à confirmer",
-  "format":"RAW_LIST",
-  "data":[
-      {"title": "Opération \n ", "value":"Virement"},
-      {"title": "Date \n ", "value": "13/01/2021"},
-      {"title": "Montant \n ", "value": "15,00 €"},
-      {"title": "Bénéficiaire \n ", "value": "Sylvie"}
-  ]
-}
-```
+<Highlight type="caution">
+Your customer's security-wallet must be active and properly binded for the authentication request to reach her/his mobile app.
+</Highlight>
+
+#### Initiate SEPA transfer OUT
+
+Your customer may initiate a pay-out, which will trigger an authentication request.
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/sctinst" method="post"/>
 
@@ -84,6 +77,52 @@ Therefore, in your mobile application, you must code the reception of such notif
   link="/api/Core"
   label="Try it out"
 />
+
+In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
+```json
+{
+  "notificationMessage": "Une opération sensible requiert votre validation",
+  "message": "Opération sensible à confirmer",
+  "format":"RAW_LIST",
+  "data":[
+      {"title": "Opération \n ", "value":"Virement"},
+      {"title": "Date \n ", "value": "17/01/2022"},
+      {"title": "Montant \n ", "value": "15,00 €"},
+      {"title": "Bénéficiaire \n ", "value": "Sylvie"}
+  ]
+}
+```
+
+#### Modify Personal Data
+
+Your customer may modify some of his personal data, which will trigger an authentication request.
+
+<Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
+
+In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
+```json
+{
+  "notificationMessage": "Une opération sensible requiert votre validation",
+  "message": "Opération sensible à confirmer",
+  "format":"RAW_LIST",
+  "data":[
+      {"title": "Opération \n ", "value":"Donnée Personnelle"},
+      {"title": "Rue \n ", "value": "28 rue de Pont l'Abbé"},
+      {"title": "Code Postal \n ", "value": "29 000"},
+      {"title": "Ville \n ", "value": "Quimper"}
+  ]
+}
+```
 
 ### Internet Payment  & SDK integration
 
@@ -99,6 +138,39 @@ You must code the reception of such notifications. Here is the ``` PURCHASE ``` 
   "merchant":"WWW.OUI.SNCF"
 }
 ```
+
+## Adding a new Device
+
+It is possible to add as many devices as your end-user wants. Each time, a securing process will occur, requiring a new ``` Activation Code ``` and the scanning of an Identity document.
+
+<Image src="docs/SCA-new-qr-code.png" alt="usecase 1"/>
+
+<Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/device" method="put"/>
+
+<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__device -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/device" method="put"/> -->
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core"
+  label="Try it out"
+/>
+
+Here is the payload you must watch out for from our call-back type 35 :
+```
+"Payload": {
+        "type": "35",
+        "AppUserId": "e87bd13dJ",
+        "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
+        "ErrorMessage": null,
+        }
+```
+
+This activation code must either be shown on screen and then flashed (web2app) or be handed in the background directly inside the app. You must then obtain a webview URL using the ``` getIssuerData() ``` feature of our SDK.
+
+
+
 
 ## Xpollens Authenticator app
 
