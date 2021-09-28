@@ -64,12 +64,12 @@ Therefore, in your mobile application, you must code the reception of such notif
   "notificationMessage": "Une opération sensible requiert votre validation",
   "message": "Opération sensible à confirmer",
    "format":"RAW_LIST"
-   "data":
+   "data":[
       {"title": "Opération \n ", "value":"Virement"},
       {"title": "Date \n ", "value": "13/01/2021"},
-      {"title": "Montant \n ", "value": "15,00 €"}
+      {"title": "Montant \n ", "value": "15,00 €"},
       {"title": "Bénéficiaire \n ", "value": "Sylvie"}
-  
+   ]
 }
 ```
 
@@ -94,9 +94,9 @@ You must code the reception of such notifications. Here is the ```PURCHASE``` fo
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
   "message": "Paiement en ligne à confirmer",
-   "format":"PURCHASE"
-   "amount":"74,12 €"
-   "merchant":"WWW.OUI.SNCF"
+  "format":"PURCHASE",
+  "amount":"74,12 €",
+  "merchant":"WWW.OUI.SNCF"
 }
 ```
 
