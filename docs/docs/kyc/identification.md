@@ -105,6 +105,9 @@ You must code the reception of such notifications. Here is the ```PURCHASE``` fo
 Should you need our on-the-shelf mobile application, it is ready for your end users, accessible in the **Apple Store** and **Google Play Store**.
 
 <Image src="docs/SCA-xpollens-authenticator.png" alt="usecase 1"/>
-</br>
-<iframe width="675" height="380" src="https://youtu.be/ovGkP9y40NY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+/*
+* iframe width="675" height="380" src="https://youtu.be/ovGkP9y40NY"
+* frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+* allowfullscreen></iframe>
+*/
