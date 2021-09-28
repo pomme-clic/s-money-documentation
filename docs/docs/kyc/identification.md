@@ -63,7 +63,7 @@ Therefore, in your mobile application, you must code the reception of such notif
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
   "message": "Opération sensible à confirmer",
-   "format":"RAW_LIST"
+   "format":"RAW_LIST",
    "data":[
       {"title": "Opération \n ", "value":"Virement"},
       {"title": "Date \n ", "value": "13/01/2021"},
