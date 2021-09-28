@@ -159,7 +159,7 @@ Here is the payload you'll get from our call-back type 35 :
 > - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
 > 
 <br/>
-<br/>
+
 ### Obtain Secret Code
 
 This screen is automatically prompted by our SDK whenever you trigger the binding of a new security-wallet on the device. It currently contains 5 digits, and it is not stored anywhere but the user's device.
