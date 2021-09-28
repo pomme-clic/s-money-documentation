@@ -106,8 +106,4 @@ Should you need our on-the-shelf mobile application, it is ready for your end us
 
 <Image src="docs/SCA-xpollens-authenticator.png" alt="usecase 1"/>
 
-/*
-* iframe width="675" height="380" src="https://youtu.be/ovGkP9y40NY"
-* frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-* allowfullscreen></iframe>
-*/
+<!-- iframe width="675" height="380" src="https://youtu.be/ovGkP9y40NY" -->
