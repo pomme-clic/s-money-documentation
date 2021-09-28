@@ -21,3 +21,10 @@ If you do not have your own mobile application, we can provide one for you : ***
 
 
 ​/api​/v2.0​/users​/{AppUserId}​/sctinst
+<Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
+
+Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within 48 hours. All intermediate steps will be visible to you in the call-backs.
+
+<Highlight type="tip">
+  Regularly check our webhooks & call-backs to ensure proper communication to your end-customers.
+</Highlight>
