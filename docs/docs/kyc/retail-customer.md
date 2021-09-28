@@ -26,7 +26,7 @@ Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR re
   Regularly check our webhooks & call-backs to ensure proper communication to your end-customers.
 </Highlight>
 
-### Technical Context
+### Technical Context & Customer Experience
 
 To integrate our solution, you will need both our API and our SDK : part of the onboarding process has to take place in a mobile application.
 
