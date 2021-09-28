@@ -33,7 +33,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you, <b class="term">Xpollens Authenticator</b> integrates the SDK and can fit perfectly in your onboarding process.
+  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
