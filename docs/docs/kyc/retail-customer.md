@@ -42,6 +42,8 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 
 We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
 
+> Use this feature to identify any relevant individual, from your prospects to your employees or mandated executives.
+
 <Image src="docs/KYC-retail.png" alt="usecase 1"/>
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
