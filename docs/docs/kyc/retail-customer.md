@@ -45,7 +45,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
 
 > Use this feature to identify any relevant individual, from your prospects to your employees or mandated executives.
-<br/>
+
 <Image src="docs/KYC-retail.png" alt="usecase 1"/>
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
@@ -126,7 +126,7 @@ Here are the steps your mobile application should follow when it's launched by a
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
         <div>Your main screen can open up.</div>
 </details>
-<br/>
+
 <Highlight type="tip">
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
 </Highlight>
@@ -141,7 +141,7 @@ Once a new user downloads your mobile application, you will need to match this u
 > - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
 > - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
 > 
-<br/>
+
 Here is the payload you'll get from our call-back type 35 :
 ```json
 "Payload": {
@@ -158,7 +158,7 @@ Here is the payload you'll get from our call-back type 35 :
 > - Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
 > - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
 > 
-<br/>
+
 
 ### Obtain Secret Code
 
@@ -204,7 +204,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 > 2. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
 > 3. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
 > 
-<br/>
+
 
 ### POST User (Create)
 
