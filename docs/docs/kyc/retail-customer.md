@@ -133,7 +133,7 @@ Here are the steps your mobile application should follow when it's launched by a
 
 ### Scan QR Code
 
-Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the PROVISIONNING BLOCK of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
+Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
 >
 > **Managing the multi-channel capability**
@@ -165,7 +165,7 @@ This screen is automatically prompted by our SDK whenever you trigger the bindin
 
 ### Get Webview URL
 
-This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the getIssuerData() feature of our SDK.
+This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the ``` getIssuerData() ``` feature of our SDK.
 
 Example:
 ```
@@ -194,7 +194,7 @@ Because we use Strong Authentication as a means of e-Signature, you must please 
 
 ## API Endpoints
 
-Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.*
+Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.
 
 >
 > **Example of a straight-through onboarding process**
