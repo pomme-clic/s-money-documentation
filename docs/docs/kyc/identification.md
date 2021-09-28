@@ -168,6 +168,17 @@ Here is the payload you must watch out for from our call-back type 35 :
 
 This activation code must either be shown on screen and then flashed (web2app) or be handed in the background directly inside the app. You must then obtain a webview URL using the ``` getIssuerData() ``` feature of our SDK.
 
+Example of webview URL you may obtain:
+```
+https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p
+```
+
+You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
+
+Example:
+```
+https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p#SUCCESS
+```
 
 
 
