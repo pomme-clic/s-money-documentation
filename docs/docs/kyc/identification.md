@@ -95,7 +95,7 @@ You must code the reception of such notifications. Here is the ```PURCHASE``` fo
   "notificationMessage": "Une opération sensible requiert votre validation",
   "message": "Paiement en ligne à confirmer",
    "format":"PURCHASE"
-   "data":[
+   "data": [
       {"title": "Amount", "value": "74,12 €"}
       {"title": "Merchant", "value": "WWW.OUI.SNCF"}
   ]
