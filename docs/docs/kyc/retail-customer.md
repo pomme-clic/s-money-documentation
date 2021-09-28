@@ -119,7 +119,7 @@ Here are the steps your mobile application should follow when it's launched by a
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
         <div>Your main screen can open up.</div>
 </details>
-
+<br/>
 <Highlight type="tip">
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
 </Highlight>
@@ -136,7 +136,7 @@ Once a new user downloads your mobile application, you will need to match this u
 > 
 
 Here is the payload you'll get from our call-back type 35 :
-```
+```json
 "Payload": {
         "type": "35",
         "AppUserId": "e87bd13dJ",
