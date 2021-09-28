@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 
 
-# Authentication 
+# Strong Customer Authentication 
 
 
 
