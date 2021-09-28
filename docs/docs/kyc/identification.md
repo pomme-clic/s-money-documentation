@@ -27,7 +27,7 @@ Authentication is required for your end-customers if you are on the Retail B2C m
 The Second Payment Services EU Directive (PSD2) requires that such a strong authentication happens, reuniting two criteras amongst three possible.
 </Highlight>
 
-<Image src="docs/SCA-regulatory-context.png" alt="usecase 1"/>
+<Image src="docs/SCA-regulatory-context.png" width="80%" alt="usecase 1"/>
 
 ### Technical Context
 
