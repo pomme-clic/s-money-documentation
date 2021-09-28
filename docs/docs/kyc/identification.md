@@ -17,3 +17,7 @@ If you do not have your own mobile application, we can provide one for you : ***
 <figure class="video_container">
   <iframe src="https://youtu.be/ovGkP9y40NY" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
+
+
+
+​/api​/v2.0​/users​/{AppUserId}​/sctinst
