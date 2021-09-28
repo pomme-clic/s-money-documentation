@@ -174,7 +174,7 @@ https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A982
 
 ### Close Webview URL
 
-You will know when to close the webview when the URL changes, adding a #SUCCESS at the end.
+You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
 
 Example:
 ```
