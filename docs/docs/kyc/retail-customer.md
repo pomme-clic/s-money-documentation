@@ -4,14 +4,7 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 
-  Salut <span style={{
-        backgroundColor: '#25c2a0',
-        borderRadius: '2px',
-        color: '#fff',
-        padding: '0.2rem',
-      }}>
-    truc
-  </span> comment ça va ?
+
 
 
 # Know Your Customer
