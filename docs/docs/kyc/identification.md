@@ -63,13 +63,13 @@ Therefore, in your mobile application, you must code the reception of such notif
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
   "message": "Opération sensible à confirmer",
-   "format":"RAW_LIST",
-   "data":[
+  "format":"RAW_LIST",
+  "data":[
       {"title": "Opération \n ", "value":"Virement"},
       {"title": "Date \n ", "value": "13/01/2021"},
       {"title": "Montant \n ", "value": "15,00 €"},
       {"title": "Bénéficiaire \n ", "value": "Sylvie"}
-   ]
+  ]
 }
 ```
 
@@ -106,8 +106,3 @@ Should you need our on-the-shelf mobile application, it is ready for your end us
 
 <Image src="docs/SCA-xpollens-authenticator.png" alt="usecase 1"/>
 
-/*
-* iframe width="675" height="380" src="https://youtu.be/ovGkP9y40NY"
-* frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-* allowfullscreen></iframe>
-*/
