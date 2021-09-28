@@ -15,6 +15,7 @@ import Cta from '@theme/Cta'
 ## Context
 
 ### Regulatory Context
+
 All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **CreateUser** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
 
 <Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
@@ -26,6 +27,7 @@ Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR re
 </Highlight>
 
 ### Technical Context
+
 To integrate our solution, you will need both our API and our SDK : part of the onboarding process has to take place in a mobile application.
 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
@@ -49,6 +51,7 @@ We offer a simple **plug'n'play** webservice giving multiple call-backs so you c
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
   
 ### Facial Recognition
+
 Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
@@ -64,6 +67,7 @@ Using a simple parameter, you can activate our Facial Biometry webview. Your cus
 </Highlight>
 
 ### SEPA Instant Transfer IN
+
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required name-checks to ensure proper identity confirmation, and then automatically opens the account.
 
 <Highlight>
@@ -79,6 +83,7 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 </Highlight>
 
 ### SEPA Instant Pay OUT
+
 We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
 
 <Highlight>
@@ -86,6 +91,7 @@ We will send money on your behalf to your end-customers (less than 1€). Amount
 </Highlight>
 
 ### Account Agregation
+
 Your end-customer will be required to enter credentials of his other bank. Based on our name-check algorithm, this agregation will enable 
 
 <Highlight>
@@ -93,6 +99,7 @@ Your end-customer will be required to enter credentials of his other bank. Based
 </Highlight>
 
 ### More to come
+
 We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
 
