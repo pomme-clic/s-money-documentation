@@ -33,19 +33,19 @@ To integrate our solution, you will  our SDK : strong authentication has to take
 
 <Image src="docs/SCA-screens.png" alt="usecase 1"/>
 
-<Highlight>
+<Highlight type="tip">
   Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can handles strong authentication notifications.
 </Highlight>
 
-<Highlight type="tip">
-  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will use this same identifier.
-</Highlight>
+### SCA compliant by Design
 
-## Straight Through Process
+Just plug to our API and we ensure compliance with PSD2 : if the operation is sensitive, your end user will receive a push notification in your mobile app. Execution of the sensitive operation will be conditionned by the proper strong authentication of your end user.
 
-We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
+> If more than one person has mandate over the payment account, by default only the person initiating the operation will be notified.
 
-> Use this feature to identify any relevant individual, from your prospects to your employees or mandated executives.
+
+
+## 
 
 <Image src="docs/KYC-retail.png" alt="usecase 1"/>
 
@@ -56,7 +56,10 @@ Our onboarding API embeds an Identity Verification Service. We offer a modular a
 If you do not have your own mobile application, we can provide one for you : <b class="term">Xpollens Authenticator</b>. This app will handle both the identification process during KYC, and the strong authentication of any sensitive operation or online purchase that will occur on your customer's account.
 </Highlight>
 
-#### Xpollens Authenticator app
+
+
+## Xpollens Authenticator app
+
 <figure class="video_container">
   <iframe src="https://youtu.be/ovGkP9y40NY" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
