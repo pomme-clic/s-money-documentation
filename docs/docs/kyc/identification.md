@@ -18,9 +18,11 @@ import Cta from '@theme/Cta'
 ### Regulatory Context
 
 Authentication is required for your end-customers if you are on the Retail B2C market ; it is also required for all key individuals of your professional customers, if you are on the Corporates B2B market. Strong Customer Authentication will occur in two situations :
+
 > - Online Card Payments
 > - Sensitive Operations
 
+<br/>
 <Highlight>
 The Second Payment Services EU Directive (PSD2) requires that such a strong authentication happens, reuniting two criteras amongst three possible.
 </Highlight>
@@ -37,17 +39,16 @@ To integrate our solution, you will  our SDK : strong authentication has to take
   Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can handles strong authentication notifications.
 </Highlight>
 
-### SCA compliant by Design
+
+
+
+## SCA compliant by Design
 
 Just plug to our API and we ensure compliance with PSD2 : if the operation is sensitive, your end user will receive a push notification in your mobile app. Execution of the sensitive operation will be conditionned by the proper strong authentication of your end user.
 
 > If more than one person has mandate over the payment account, by default only the person initiating the operation will be notified.
 
-
-
-## 
-
-<Image src="docs/KYC-retail.png" alt="usecase 1"/>
+<Image src="docs/SCA-flowchart-virement.png" alt="usecase 1"/>
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
 
@@ -55,6 +56,7 @@ Our onboarding API embeds an Identity Verification Service. We offer a modular a
 <Highlight type="tip">
 If you do not have your own mobile application, we can provide one for you : <b class="term">Xpollens Authenticator</b>. This app will handle both the identification process during KYC, and the strong authentication of any sensitive operation or online purchase that will occur on your customer's account.
 </Highlight>
+
 
 
 
