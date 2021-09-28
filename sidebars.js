@@ -5,7 +5,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Onboarding',
-      items: ['docs/kyc/retail-customer', 'docs/kyc/identification', 'docs/kyc/business'],
+      items: ['docs/kyc/retail-customer', 'docs/kyc/identification'],
     },
     {
       type: 'category',
