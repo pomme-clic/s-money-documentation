@@ -21,7 +21,7 @@ Authentication is required for your end-customers if you are on the Retail B2C m
 > - Online Card Payments
 > - Sensitive Operations
 
-<br/>
+
 <Highlight>
 The Second Payment Services EU Directive (PSD2) requires that such a strong authentication happens, reuniting two criteras amongst three possible.
 </Highlight>
@@ -50,7 +50,7 @@ Here is a list of main Sensitive Operations. This is list is not exhaustive and 
 Just plug to our API and we ensure compliance with PSD2 : if the operation is sensitive, your end user will receive a push notification in your mobile app. Execution of the sensitive operation will be conditionned by the proper strong authentication of your end user.
 
 > If more than one person has mandate over the payment account, by default only the person initiating the operation will be notified.
-<br/>
+
 <Image src="docs/SCA-flowchart-virement.png" alt="usecase 1"/>
 
 ### Sensitive Operations & SDK integration
