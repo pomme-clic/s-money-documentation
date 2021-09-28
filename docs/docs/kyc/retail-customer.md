@@ -3,6 +3,10 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
+
+
+
+
 # Know Your Customer
 
 
@@ -11,6 +15,7 @@ import Cta from '@theme/Cta'
 ## Context
 
 ### Regulatory Context
+
 All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **CreateUser** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
 
 <Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
@@ -21,13 +26,14 @@ Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR re
   Regularly check our webhooks & call-backs to ensure proper communication to your end-customers.
 </Highlight>
 
-### Technical Context
+### Technical Context & Customer Experience
+
 To integrate our solution, you will need both our API and our SDK : part of the onboarding process has to take place in a mobile application.
 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you, <b class="term">Xpollens Authenticator</b> integrates the SDK and can fit perfectly in your onboarding process.
+  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
@@ -38,11 +44,14 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 
 We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
 
+> Use this feature to identify any relevant individual, from your prospects to your employees or mandated executives.
+
 <Image src="docs/KYC-retail.png" alt="usecase 1"/>
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
   
 ### Facial Recognition
+
 Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
@@ -58,6 +67,7 @@ Using a simple parameter, you can activate our Facial Biometry webview. Your cus
 </Highlight>
 
 ### SEPA Instant Transfer IN
+
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required name-checks to ensure proper identity confirmation, and then automatically opens the account.
 
 <Highlight>
@@ -73,6 +83,7 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 </Highlight>
 
 ### SEPA Instant Pay OUT
+
 We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
 
 <Highlight>
@@ -80,6 +91,7 @@ We will send money on your behalf to your end-customers (less than 1€). Amount
 </Highlight>
 
 ### Account Agregation
+
 Your end-customer will be required to enter credentials of his other bank. Based on our name-check algorithm, this agregation will enable 
 
 <Highlight>
@@ -87,6 +99,7 @@ Your end-customer will be required to enter credentials of his other bank. Based
 </Highlight>
 
 ### More to come
+
 We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
 
@@ -120,7 +133,7 @@ Here are the steps your mobile application should follow when it's launched by a
 
 ### Scan QR Code
 
-Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the PROVISIONNING BLOCK of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
+Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
 >
 > **Managing the multi-channel capability**
@@ -130,7 +143,7 @@ Once a new user downloads your mobile application, you will need to match this u
 > 
 
 Here is the payload you'll get from our call-back type 35 :
-```
+```json
 "Payload": {
         "type": "35",
         "AppUserId": "e87bd13dJ",
@@ -146,13 +159,14 @@ Here is the payload you'll get from our call-back type 35 :
 > - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
 > 
 
+
 ### Obtain Secret Code
 
 This screen is automatically prompted by our SDK whenever you trigger the binding of a new security-wallet on the device. It currently contains 5 digits, and it is not stored anywhere but the user's device.
 
 ### Get Webview URL
 
-This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the getIssuerData() feature of our SDK.
+This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the ``` getIssuerData() ``` feature of our SDK.
 
 Example:
 ```
@@ -161,7 +175,7 @@ https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A982
 
 ### Close Webview URL
 
-You will know when to close the webview when the URL changes, adding a #SUCCESS at the end.
+You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
 
 Example:
 ```
@@ -181,7 +195,7 @@ Because we use Strong Authentication as a means of e-Signature, you must please 
 
 ## API Endpoints
 
-Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.*
+Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.
 
 >
 > **Example of a straight-through onboarding process**
@@ -190,6 +204,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 > 2. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
 > 3. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
 > 
+
 
 ### POST User (Create)
 
