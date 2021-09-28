@@ -58,7 +58,7 @@ Just plug to our API and we ensure compliance with PSD2 : if the operation is se
 
 You may call the SCT Inst endpoint, for example. By triggering such a sensitive operation, you will generate a push notification onto your end user's smartphone : our back-end will find your end user's mobile application (if it has been securely binded during KYC), and trigger the **authentication request**.
 
-Therefore, in your mobile application, you must code the reception of such notifications. Here is the ```RAW_LIST``` format you will receive:
+Therefore, in your mobile application, you must code the reception of such notifications. Here is the ``` RAW_LIST ``` format you will receive:
 ```json
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
@@ -89,7 +89,7 @@ Therefore, in your mobile application, you must code the reception of such notif
 
 This feature is already embeded in the Xpollens API plateform. Whenever your customer will use her/his card to pay online, a push notification will be sent onto her/his phone in the same manner as above.
 
-You must code the reception of such notifications. Here is the ```PURCHASE``` format you will receive:
+You must code the reception of such notifications. Here is the ``` PURCHASE ``` format you will receive:
 ```json
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
@@ -106,3 +106,8 @@ Should you need our on-the-shelf mobile application, it is ready for your end us
 
 <Image src="docs/SCA-xpollens-authenticator.png" alt="usecase 1"/>
 
+/*
+* iframe width="675" height="380" src="https://youtu.be/ovGkP9y40NY"
+* frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+* allowfullscreen></iframe>
+*/
