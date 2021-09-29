@@ -6,15 +6,16 @@ import Cta from '@theme/Cta'
 
 # Card Payment
 
-Here, we are talking about how xxxxxxxxxxxxxxx
+Here, we are talking about operations history
 
-## Context 'Selfcare'
 
-You can manage your card with a selfcare in order to update some specifications, like : 
-- block and unblock your card
-- update limits for payment or withdrawal
-- block or unblock VAD payment
-- block or unblock non domestic payment or withdrawal
+## Context Authorizations
+
+Depending on the card profile, you may have offline transactions....
+
+## Context Clearing
+
+Depending on the card profile, you may have offline transactions....
 
 ---
 
