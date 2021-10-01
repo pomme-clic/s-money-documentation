@@ -29,6 +29,44 @@ Here you are some ordering examples
 
 #### endpoint
 
+```json
+{
+  "notificationMessage": "Une opération sensible requiert votre validation",
+  "message": "Opération sensible à confirmer",
+  "format":"RAW_LIST",
+  "data":[
+      {"title": "Opération \n ", "value":"Donnée Personnelle"},
+      {"title": "Rue \n ", "value": "28 rue de Pont l'Abbé"},
+      {"title": "Code Postal \n ", "value": "29 000"},
+      {"title": "Ville \n ", "value": "Quimper"}
+  ]
+}
+```
+
+```json
+{
+   "offerPartnerCode": "string",
+  "holderExternalRef": "string",
+  "cardExternalRef": "string",
+  "visualCodeSelected": "string",
+  "label": "string",
+  "wishPin": true,
+  "isNfcActivated": true
+}
+```
+
+{
+  "offerPartnerCode": "string",
+  "holderExternalRef": "string",
+  "cardExternalRef": "string",
+  "visualCodeSelected": "string",
+  "label": "string",
+  "wishPin": true,
+  "isNfcActivated": true
+}
+
+
+
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
