@@ -31,20 +31,6 @@ Here you are some ordering examples
 
 ```json
 {
-  "notificationMessage": "Une opération sensible requiert votre validation",
-  "message": "Opération sensible à confirmer",
-  "format":"RAW_LIST",
-  "data":[
-      {"title": "Opération \n ", "value":"Donnée Personnelle"},
-      {"title": "Rue \n ", "value": "28 rue de Pont l'Abbé"},
-      {"title": "Code Postal \n ", "value": "29 000"},
-      {"title": "Ville \n ", "value": "Quimper"}
-  ]
-}
-```
-
-```json
-{
    "offerPartnerCode": "string",
   "holderExternalRef": "string",
   "cardExternalRef": "string",
@@ -55,17 +41,24 @@ Here you are some ordering examples
 }
 ```
 
+```json
+Create card data
 {
-  "offerPartnerCode": "string",
-  "holderExternalRef": "string",
-  "cardExternalRef": "string",
-  "visualCodeSelected": "string",
-  "label": "string",
-  "wishPin": true,
-  "isNfcActivated": true
+offerPartnerCode*: string, [Required] The Partner's offer code provided by Xpollens.
+holderExternalRef*: string, [Required] The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
+cardExternalRef*: string, Constraints: Max 50 chars [Required] The card's reference attributed by the partner.
+visualCodeSelected: string┃null, Constraints: Max 10 chars
+label: string┃null, Constraints: Max 50 chars The name or partner's reference of the card.
+wishPin: boolean┃null, 
+isNfcActivated: boolean┃null, 
+
 }
+```
 
-
+> The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
+> The Partner can choose to create the card with or without NFC (If its' by default deactivated in the offer, then the card will be created without NFC).
+> The Partner can choose to create the card with or without wishpin (If the partner 's offer doesn't support it, then the PIN will be randomly generated). If the attribute is not entered when ordering the card, and defined by default in the offer, then the card will be created with a pin chosen by the holder.
+> isNfcActivated : If the attribute is not entered when ordering the card, and activated by default in the offer, then the NFC will be activated for the card.
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
@@ -83,7 +76,7 @@ More information regarding this sdk in the [Card Companion SDK](./CardCompanion_
 
 <Highlight>
  
- You have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code. 
+ Remember you have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code. 
  
 </Highlight>
 
