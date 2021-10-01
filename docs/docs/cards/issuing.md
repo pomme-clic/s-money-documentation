@@ -27,7 +27,7 @@ Here you are some ordering examples
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
-#### endpoint
+#### endpoint ``` POST ``` /api/v2.0/card
 
 ```json
 Create card data
