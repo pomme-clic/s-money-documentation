@@ -32,11 +32,11 @@ Here you are some ordering examples
 ```json
 Create card data
 {
-"offerPartnerCode*": "string", [Required] 
+"offerPartnerCode*": "string",  [Required] 
 "holderExternalRef*": "string", [Required] 
-"cardExternalRef*": "string", Constraints: Max 50 chars [Required] The card's reference attributed by the partner.
-"visualCodeSelected": "string"┃null, Constraints: Max 10 chars
-"label": "string"┃null, Constraints: Max 50 chars The name or partner's reference of the card.
+"cardExternalRef*": "string",   [Required]  Constraints: Max 50 chars 
+"visualCodeSelected": "string"┃null,        Constraints: Max 10 chars
+"label": "string"┃null,                     Constraints: Max 50 chars 
 "wishPin": "boolean"┃null, 
 "isNfcActivated": "boolean"┃null, 
 
@@ -45,13 +45,16 @@ Create card data
 
 > - ``` offerPartnerCode ``` : The Partner's offer code provided by Xpollens. 
 > - ``` holderExternalRef ``` : The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
-> - ``` cardExternalRef ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
+> - ``` cardExternalRef ``` : The card's reference attributed by the partner
+> - ``` visualCodeSelected ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
+>  - ``` label ``` : The name or partner's reference of the card.
 >  - ``` wishPin ``` : The Partner can choose to create the card with or without wishpin (If the partner 's offer doesn't support it, then the PIN will be randomly generated). If the attribute is not entered when ordering the card, and defined by default in the offer, then the card will be created with a pin chosen by the holder.
 > - ``` isNfcActivated ```  : The Partner can choose to create the card with or without NFC (If its' by default deactivated in the offer, then the card will be created without NFC).If the attribute is not entered when ordering the card, and activated by default in the offer, then the NFC will be activated for the card.
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
+
 
 ---
 
