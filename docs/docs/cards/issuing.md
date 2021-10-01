@@ -30,35 +30,24 @@ Here you are some ordering examples
 #### endpoint
 
 ```json
-{
-   "offerPartnerCode": "string",
-  "holderExternalRef": "string",
-  "cardExternalRef": "string",
-  "visualCodeSelected": "string",
-  "label": "string",
-  "wishPin": true,
-  "isNfcActivated": true
-}
-```
-
-```json
 Create card data
 {
-offerPartnerCode*: string, [Required] The Partner's offer code provided by Xpollens.
-holderExternalRef*: string, [Required] The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
-cardExternalRef*: string, Constraints: Max 50 chars [Required] The card's reference attributed by the partner.
-visualCodeSelected: string┃null, Constraints: Max 10 chars
-label: string┃null, Constraints: Max 50 chars The name or partner's reference of the card.
-wishPin: boolean┃null, 
-isNfcActivated: boolean┃null, 
+"offerPartnerCode*": "string", [Required] 
+"holderExternalRef*": "string", [Required] 
+"cardExternalRef*": "string", Constraints: Max 50 chars [Required] The card's reference attributed by the partner.
+"visualCodeSelected": "string"┃null, Constraints: Max 10 chars
+"label": "string"┃null, Constraints: Max 50 chars The name or partner's reference of the card.
+"wishPin": "boolean"┃null, 
+"isNfcActivated": "boolean"┃null, 
 
 }
 ```
 
-> The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
-> The Partner can choose to create the card with or without NFC (If its' by default deactivated in the offer, then the card will be created without NFC).
-> The Partner can choose to create the card with or without wishpin (If the partner 's offer doesn't support it, then the PIN will be randomly generated). If the attribute is not entered when ordering the card, and defined by default in the offer, then the card will be created with a pin chosen by the holder.
-> isNfcActivated : If the attribute is not entered when ordering the card, and activated by default in the offer, then the NFC will be activated for the card.
+> - ``` offerPartnerCode ``` : The Partner's offer code provided by Xpollens. 
+> - ``` holderExternalRef ``` : The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
+> - ``` cardExternalRef ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
+>  - ``` wishPin ``` : The Partner can choose to create the card with or without wishpin (If the partner 's offer doesn't support it, then the PIN will be randomly generated). If the attribute is not entered when ordering the card, and defined by default in the offer, then the card will be created with a pin chosen by the holder.
+> - ``` isNfcActivated ```  : The Partner can choose to create the card with or without NFC (If its' by default deactivated in the offer, then the card will be created without NFC).If the attribute is not entered when ordering the card, and activated by default in the offer, then the NFC will be activated for the card.
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
