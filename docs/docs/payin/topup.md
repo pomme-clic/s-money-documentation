@@ -12,6 +12,8 @@ First you have to integrate a Xpollens shop with our "company brother" Dalenys t
 
 ### Hosted Fields with Dalenys
 
+<Image src="docs/Card_Order.png" alt="usecase 1"/>
+
 More information regarding this endpoint in the [Hosted Fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
 ---
