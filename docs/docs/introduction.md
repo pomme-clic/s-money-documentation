@@ -20,11 +20,13 @@ The goal is to present developers and product teams an understanding of what the
 ## Powered by Azure, tailored for you
 
 Our system, hosted on the Azure platform, has on-demand scalability to support your growing business.
-That also means high availability and thus a ever ready API platform here for you and your customer.
+That also means high availability and thus a ever ready API platform here for you and your customer. Thanks to our micro-services architecture and auto-scaling capabilities, we can ensure both horizontal and vertical scalability.  
 
 As a provider of banking service, we're also extremely attentive to data security. All data stored on our platform is protected by an advanced encryption process to prevent data breach or data leak.
+Moreover, all traffic is protected by a dedicated DMZ, network and application firewalls on top of an active/active infra architecture.
 
-<Image src="docs/AzureLogo.png" alt="usecase 1"/>
+<Image src="docs/Overview-Architecture.png" alt="usecase 1"/>
+
 
 ---
 ## Getting Started
