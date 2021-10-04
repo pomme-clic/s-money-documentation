@@ -219,7 +219,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/v2.0/users/{appUserId}/declarative"
   label="Try it out"
 />
 
