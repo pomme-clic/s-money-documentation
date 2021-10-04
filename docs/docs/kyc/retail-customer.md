@@ -209,7 +209,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 ### POST User (Create)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Users#overview)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
@@ -226,7 +226,7 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 ### GET User (Read)
 
 This endpoint allows you to read the data you have sent.
-More information regarding this endpoint in the [API reference](/api/Users#overview)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
 
@@ -243,7 +243,7 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 ### PUT User (Update)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Users#overview)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
 
@@ -260,7 +260,7 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 ### DELETE User (Delete)
 
 This action is not possible.
-More information regarding this endpoint in the [API reference](/api/Users#overview)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
@@ -269,6 +269,7 @@ Purge of all prospects is performed after 90 days. All webview links and QR Code
 ### PATCH FatcaEai
 
 Use this endpoint to transmit to Xpollens the required tax information from your end user.
+More information regarding this endpoint in the [API reference](/api/Compliance)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
@@ -289,7 +290,7 @@ This will trigger a Strong Authentication notification to your end-user.
 ### POST CGU
 
 Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
-More information regarding this endpoint in the [API reference](/aapi/Users#overview)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
