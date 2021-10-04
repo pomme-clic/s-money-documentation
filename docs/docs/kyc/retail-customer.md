@@ -236,7 +236,7 @@ More information regarding this endpoint in the [API reference](/api/Users)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#get-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
