@@ -260,6 +260,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 ### DELETE User (Delete)
 
 This action is not possible.
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
@@ -288,6 +289,7 @@ This will trigger a Strong Authentication notification to your end-user.
 ### POST CGU
 
 Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
