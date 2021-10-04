@@ -38,7 +38,7 @@ More information regarding this endpoint in the [Hosted Fields by Dalenys](https
 This endpoint is used to create top up request with 3DSV2. The holder of the Xpollens account can add money to his Xpollens account using his bank card. Thus, he will debit his bank account and credit his Xpollens account with the topup.
 If fees must be attached to this transaction, you can fill in the "Fee" parameter in the body of the request with the amount of the fees. The bank card holder will be debited for the "Amount+Fee".
 
-<Image src="docs/TopupCreate3DS.png" alt="usecase 1"/>
+<Image src="docs/Topup_Create3DS.png" alt="usecase 1"/>
 
 **Card registration during payment**
 
