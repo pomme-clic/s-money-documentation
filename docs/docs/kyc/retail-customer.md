@@ -283,7 +283,7 @@ This will trigger a Strong Authentication notification to your end-user.
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Compliance#patch-/api/v2.1/user/-appUserId-/fatcaEai"
   label="Try it out"
 />
 
