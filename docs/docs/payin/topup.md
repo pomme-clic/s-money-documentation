@@ -44,6 +44,8 @@ If fees must be attached to this transaction, you can fill in the "Fee" paramete
 
 To register the bank card during payment, you must, in the body of the request, in the "Card" parameter, specify the "AppCardId" parameter. It will be this "AppCardId" which will be called later for the top up oneclik. If there is no need to register the bank card during payment, then you should not specify "AppCardId". This parameter is optional.
 
+<Image src="docs/Topup_RegisterCard.png" alt="usecase 1"/>
+
 **Top up Oneclick with 3DSV2**
 
 To create a top up oneclick, you must, in the body of the request, add and fill in the "AppCardId" parameter instead of the "HFToken" parameter". This will allow you to directly call the previously registered bank card.
