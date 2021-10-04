@@ -209,7 +209,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 ### POST User (Create)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
@@ -219,14 +219,14 @@ More information regarding this endpoint in the [API reference](/api/Core)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#post-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
 ### GET User (Read)
 
 This endpoint allows you to read the data you have sent.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
 
@@ -236,14 +236,14 @@ More information regarding this endpoint in the [API reference](/api/Core)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#get-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
 ### PUT User (Update)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
 
@@ -253,13 +253,14 @@ More information regarding this endpoint in the [API reference](/api/Core)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#put-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
 ### DELETE User (Delete)
 
 This action is not possible.
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
@@ -268,6 +269,7 @@ Purge of all prospects is performed after 90 days. All webview links and QR Code
 ### PATCH FatcaEai
 
 Use this endpoint to transmit to Xpollens the required tax information from your end user.
+More information regarding this endpoint in the [API reference](/api/Compliance)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
@@ -281,13 +283,14 @@ This will trigger a Strong Authentication notification to your end-user.
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Compliance#patch-/api/v2.1/user/-appUserId-/fatcaEai"
   label="Try it out"
 />
 
 ### POST CGU
 
 Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
+More information regarding this endpoint in the [API reference](/api/Users)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
@@ -301,6 +304,6 @@ This will trigger a Strong Authentication notification to your end-user.
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#post-/api/v2.0/users/-AppUserId-/cgu"
   label="Try it out"
 />
