@@ -213,6 +213,9 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
+<!-- https://ic-api.s-money.net/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/get_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/> -->
+
 <Cta
   context="doc"
   ui="button"
@@ -226,6 +229,9 @@ This endpoint allows you to read the data you have sent.
 More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
+
+<!-- https://ic-api.s-money.net/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/get_api_v2_0_users__AppUserId__declarative -->
+<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="get"/> -->
 
 <Cta
   context="doc"
@@ -241,7 +247,7 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v2_0_users__AppUserId__declarative -->
+<!-- https://ic-api.s-money.net/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v2_0_users__AppUserId__declarative -->
 <!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/> -->
 
 <Cta
@@ -254,6 +260,7 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 ### DELETE User (Delete)
 
 This action is not possible.
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
@@ -268,7 +275,7 @@ More information regarding this endpoint in the [API reference](/api/Compliance#
 This will trigger a Strong Authentication notification to your end-user.
 </Highlight>
 
-<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
 
 <Cta
   context="doc"
