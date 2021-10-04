@@ -209,7 +209,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 ### POST User (Create)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
@@ -223,24 +223,21 @@ More information regarding this endpoint in the [API reference](/api/Core)
 ### GET User (Read)
 
 This endpoint allows you to read the data you have sent.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/get_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="get"/> -->
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#get-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
 ### PUT User (Update)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
 
@@ -265,6 +262,7 @@ Purge of all prospects is performed after 90 days. All webview links and QR Code
 ### PATCH FatcaEai
 
 Use this endpoint to transmit to Xpollens the required tax information from your end user.
+More information regarding this endpoint in the [API reference](/api/Compliance#overview)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
@@ -272,19 +270,17 @@ This will trigger a Strong Authentication notification to your end-user.
 
 <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/patch_api_v1_1_user__AppUserId__fatcaEai -->
-<!-- <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/> -->
-
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Compliance#patch-/api/v2.1/user/-appUserId-/fatcaEai
   label="Try it out"
 />
 
 ### POST CGU
 
 Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
@@ -292,12 +288,9 @@ This will trigger a Strong Authentication notification to your end-user.
 
 <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__cgu -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/> -->
-
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#post-/api/v2.0/users/-AppUserId-/cgu"
   label="Try it out"
 />
