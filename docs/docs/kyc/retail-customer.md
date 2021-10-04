@@ -226,7 +226,7 @@ More information regarding this endpoint in the [API reference](/api/Users#overv
 ### GET User (Read)
 
 This endpoint allows you to read the data you have sent.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
 
@@ -243,7 +243,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 ### PUT User (Update)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
 
@@ -260,7 +260,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 ### DELETE User (Delete)
 
 This action is not possible.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/api/Users#overview)
 
 <Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
@@ -289,7 +289,7 @@ This will trigger a Strong Authentication notification to your end-user.
 ### POST CGU
 
 Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference](/aapi/Users#overview)
 
 <Highlight>
 This will trigger a Strong Authentication notification to your end-user.
