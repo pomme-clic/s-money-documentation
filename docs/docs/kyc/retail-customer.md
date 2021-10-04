@@ -213,13 +213,10 @@ More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/> -->
-
 <Cta
   context="doc"
   ui="button"
-  link="/api/v2.0/users/{appUserId}/declarative"
+  link="/api/Users#put-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
