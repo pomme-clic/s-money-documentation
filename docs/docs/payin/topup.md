@@ -23,7 +23,9 @@ In this picture, Xpollens is your Shop.
 5. Xpollens sends a HTTPS POST request to our classical server to server endpoint: https://secure-test.dalenys.com/front/service/rest/process. The requests should contain the token instead of the cardholder data;
 6. The Dalenys platform sends a request to the bank network and waits for the result.
 7. Xpollens receives the result in the request response and answers you wtih callback.
-8. In parallel, the transaction result is confirmed by a notification request sent to the merchant’s NOTIFICATION_URL containing the transaction’s parameters (among which EXECCODE and TRANSACTIONID).
+8. In parallel, the transaction result is confirmed by a notification request sent to the merchant’s NOTIFICATION_URL containing the transaction’s parameters (among which EXECCODE and TRANSACTIONID).  
+  
+
 
 More information regarding this endpoint in the [Hosted Fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
