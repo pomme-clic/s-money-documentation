@@ -304,6 +304,6 @@ This will trigger a Strong Authentication notification to your end-user.
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Users#post-/api/v2.0/users/-AppUserId-/cgu"
   label="Try it out"
 />
