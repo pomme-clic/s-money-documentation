@@ -6,111 +6,110 @@ import Cta from '@theme/Cta'
 
 # Card Payment
 
-Here, we are talking about how xxxxxxxxxxxxxxx
+Here, we are talking about operations history
 
-## Context 'Selfcare'
 
-You can manage your card with a selfcare in order to update some specifications, like : 
-- block and unblock your card
-- update limits for payment or withdrawal
-- block or unblock VAD payment
-- block or unblock non domestic payment or withdrawal
+## Context Authorizations
+
+Depending on the card profile, you may have offline transactions....
+
+## Context Clearing
+
+Depending on the card profile, you may have offline transactions....
 
 ---
 
-### Block card
- 
+### Get Clearing Report
+
+Description
+The cardoperations/clearingreport API is generated each time the transaction file transmitted by Natixis is received and processed.
+
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
-<Highlight type="tip">
- 
- You can block or unblock in real time to secure your card if you don't find it
- 
-</Highlight>
-
----
-
-### Update Limits
-  
-<Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
-<Highlight type="tip">
- 
- You can increase or decrease your limits of payment and/or withdrawal
-
-</Highlight>
-
-
-
-# Card Payment
-
-<Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
-
-<Highlight>
-
-##### Note neutre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
-
-</Highlight>
-
-<Highlight type="tip">
-
-##### Tip
-
-If you want to provide a virtual card, temporary (emergency use case for example) or permanent, you can just use the same API with the virtual product card
-
-</Highlight>
 
 <Highlight type="caution">
 
 ##### Caution
 
-To create a card the user (= cardholder) has to exist in the system
+Partner must have the reference file he wants to retrieve (the reference is transmitted via callback 24)
 
 </Highlight>
 
-<Highlight type="danger">
+#### Endpoint
 
-##### Danger
+More information regarding this endpoint in the [API reference](/api/Core)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
+
+---
+
+### Get Card Limits
+
+Description
+The cards/{{AppCardId}}/limits API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
+
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
+
+---
+
+### Get Card Operations
+
+Description
+
+The users/{{appUserId}}/cardoperations API allows to retrieve a user's card transactions, with or without date criteria. The search period cannot exceed 7 days. Without date criteria, the api returns the complete list of operations.
+
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations" method="get"/>
+
+<Highlight type="caution">
+
+##### Caution
+
+Partner must have the reference of the file containing the operations
 
 </Highlight>
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue.
+### Get Card Operation Description
 
-## Transfert d'argent P2P
+Description
+This cardoperations/{{orderId}} API is used to retrieve the operation details.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-## Endpoints
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-
-### Hmac adapter 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+#### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}" method="get"/>
 
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+---
+
+### Get Card Operation Messages Description
+
+Description
+This api is used to retrieve the details of the authorization message
+
+<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}/messages" method="get"/>
+
+---
 
 <Cta
   context="doc"
