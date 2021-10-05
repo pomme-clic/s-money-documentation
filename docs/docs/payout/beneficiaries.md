@@ -29,6 +29,9 @@ IBAN format is checked when adding beneficiary and tranfer to the beneficiary is
 
 ## Endpoints
 
+To add a beneficiary ot a user :
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/bankaccounts" method="post"/>
+
 More information regarding this endpoint in the [API reference](/api/Core)
 
 
