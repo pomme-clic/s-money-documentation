@@ -43,7 +43,8 @@ You must use the SCT API in including amount and beneficiary's ID
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api​/v1.0​/users​/{userid}​/kyc​/identitycontrol" method="post"/>
+To ask for a SEPA Transfer :
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.0/users/{appuserid}/sct" method="post"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
 
