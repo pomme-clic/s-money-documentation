@@ -27,11 +27,6 @@ module.exports = {
       label: 'Pay OUT',
       items: ['docs/payout/beneficiaries', 'docs/payout/sct', 'docs/payout/IP', 'docs/payout/card-payment'],
     },
-	{
-      type: 'category',
-      label: 'Compliance',
-      items: ['docs/compliance/Compliance', 'docs/compliance/FATCA'],
-    },
     {
       type: 'category',
       label: 'Xpollens and you',
