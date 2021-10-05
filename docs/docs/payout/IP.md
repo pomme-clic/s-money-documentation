@@ -43,6 +43,12 @@ You must use the Instant Payment API in including amount and beneficiary's ID
 
 More information regarding this endpoint in the [API reference](/api/SCTinst)
 
+Check you customer eligibility :
+
+<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/refbip/getrefbip" method="get"/>
+
+Process an Instant Payment Tranfer :
+
 <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v2.0/users/{userid}/cards/{id}" method="delete"/> -->
