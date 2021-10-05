@@ -65,7 +65,7 @@ html[data-theme='dark'] {
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   src: local(''), url('../fonts/poppins-v15-latin-600.woff2') format('woff2'),
     url('../fonts/poppins-v15-latin-600.woff') format('woff');
 }
