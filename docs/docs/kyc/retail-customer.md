@@ -220,11 +220,7 @@ Once you create a ```User```, you should start looking up for the following call
     "type": "4",
     "status": "Incomplete",
     "appUserId": "559d7e85J",
-    "diligences": [{
-        "reason": "",
-        "diligenceType": "ID_CARD",
-        "status": "Validated"
-    }]
+    "diligences": ""
 }
 ```
 
