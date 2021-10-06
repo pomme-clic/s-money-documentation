@@ -96,7 +96,7 @@ Part of the on-boarding process happens on a mobile app ; our solution is **omni
 Here are the steps your mobile application should follow when it's launched by an end-user :
 <details>
     <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
-    <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it is a first download process or not. Please note that Xpollens has already created a security wallet for your end user. No need to create one.</div>
+    <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it is a first download process or not. Please note that Xpollens has already created a security wallet for your end user. No need to create one.</div><br/>
 </details>
 <details>
     <summary>2. PROVISIONNING BLOCK: If no security wallet is binded, check identity and bind one.</summary>
@@ -104,13 +104,13 @@ Here are the steps your mobile application should follow when it's launched by a
           - Scan QR Code
           - Define Secret Code
           - Check Identity using webview
-    </div>
+    </div><br/>
 </details>
 <details>
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
-    <div>Your main screen can open up.</div>
+    <div>Your main screen can open up.</div><br/>
 </details>
-
+<br>
 
 <Highlight type="tip">
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
@@ -133,7 +133,7 @@ Here is the payload you'll get from our **callback type 35**:
         "type": "35",
         "AppUserId": "e87bd13dJ",
         "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
-        "ErrorMessage": null
+        "ErrorMessage": null,
         }
 ```
 
@@ -214,7 +214,7 @@ Callbacks you will start getting at this point:
 {      "type": "34",
         "appUserid": "hfdx12344",
         "publicUserCode": "1234der14ft2",
-        "userRecordStatus": "InProgress"              
+        "userRecordStatus": "InProgress" ,             
 }
 ```
 <br>
@@ -226,13 +226,13 @@ The ```publicUserCode``` is an ID that will be required when you will use our **
 "type": "4",
 "status": "Incomplete",
 "appUserId": "559d7e85J",
-"diligences": [
+"diligences": 
  {
 "reason": "",
 "diligenceType": "ID_CARD",
-"status": "Validated"
+"status": "Validated",
  }
- ]
+ 
  }
 ```
 <br>
@@ -242,7 +242,7 @@ The ```publicUserCode``` is an ID that will be required when you will use our **
         "type": "35",
         "AppUserId": "e87bd13dJ",
         "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
-        "ErrorMessage": null
+        "ErrorMessage": null,
         }
 ```
 
