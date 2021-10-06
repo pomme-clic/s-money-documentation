@@ -20,11 +20,15 @@ import Cta from '@theme/Cta'
 Authentication is required for your end-customers if you are on the Retail B2C market ; it is also required for all key individuals of your professional customers, if you are on the Corporates B2B market. Strong Customer Authentication will occur in two situations :
 
 &nbsp;
+&NewLine;
+&NewLine;
 
 > - Online Card Payments
 > - Sensitive Operations
 
 &nbsp;
+&NewLine;
+&NewLine;
 
 
 <Highlight>
