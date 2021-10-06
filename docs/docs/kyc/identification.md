@@ -69,14 +69,6 @@ Your customer's security-wallet must be active and properly binded for the authe
 Your customer may initiate a pay-out, which will trigger an authentication request.
 More information regarding this endpoint in the [API reference](/api/SCTINST)
 
-<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/SCTINST#post-/api/v2.0/users/-AppUserId-/sctinst"
-  label="Try it out"
-/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
@@ -98,14 +90,7 @@ In your mobile application, the notification will be received in the following `
 Your customer may modify some of his personal data, which will trigger an authentication request.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}" method="put"/>
 
-<Cta
-  context="doc"
-  ui="button"
-  link="api/Core#put-/api/v1.1/users/-userid-"
-  label="Try it out"
-/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
@@ -125,6 +110,13 @@ In your mobile application, the notification will be received in the following `
 ### Internet Payment  & SDK integration
 
 This feature is already embeded in the Xpollens API plateform. Whenever your customer will use her/his card to pay online, a push notification will be sent onto her/his phone in the same manner as above.
+
+<Cta
+  context="doc"
+  ui="button"
+  link="https://ssl-liv-u6f-fo-acs-ve-nps.wlp-acs.com/acs-protocol-102-test-service/"
+  label="Try it out"
+/>
 
 You must code the reception of such notifications. Here is the ``` PURCHASE ``` format you will receive:
 ```json
