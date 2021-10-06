@@ -58,7 +58,7 @@ Just plug to our API and we ensure compliance with PSD2 : if the operation is se
 
 ### Sensitive Operations & SDK integration
 
-By triggering a sensitive operation endpoint, you will generate a push notification onto your end user's smartphone : our back-end will find your end user's mobile application and trigger the **authentication request**. You must therefore code the reception of such notifications using the SDK.
+By triggering a sensitive operation endpoint, a push notification will be generated, by our backend, onto your end user's smartphone : our back-end will find your end user's mobile application and trigger the **authentication request**. You must therefore code the reception of such notifications using the SDK.
 
 <Highlight type="caution">
 Your customer's security-wallet must be active and properly binded for the authentication request to reach her/his mobile app.
@@ -67,18 +67,17 @@ Your customer's security-wallet must be active and properly binded for the authe
 #### Initiate SEPA transfer OUT
 
 Your customer may initiate a pay-out, which will trigger an authentication request.
+More information regarding this endpoint in the [API reference](/api/SCTINST)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/sctinst" method="post"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__cgu -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/sctinst" method="post"/> -->
+<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/SCTINST#post-/api/v2.0/users/-AppUserId-/sctinst"
   label="Try it out"
 />
+<br/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
@@ -98,18 +97,17 @@ In your mobile application, the notification will be received in the following `
 #### Modify Personal Data
 
 Your customer may modify some of his personal data, which will trigger an authentication request.
+More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/declarative" method="post"/> -->
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}" method="put"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Core#put-/api/v1.1/users/-userid-"
   label="Try it out"
 />
+<br/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
@@ -130,7 +128,17 @@ In your mobile application, the notification will be received in the following `
 
 This feature is already embeded in the Xpollens API plateform. Whenever your customer will use her/his card to pay online, a push notification will be sent onto her/his phone in the same manner as above.
 
-You must code the reception of such notifications. Here is the ``` PURCHASE ``` format you will receive:
+You can test using our Test Merchant website, once you have created and activated a ```Card``` on a proper ```User``` whose device has been properly binded (mobileID check).
+
+<Cta
+  context="doc"
+  ui="button"
+  link="https://ssl-liv-u6f-fo-acs-ve-nps.wlp-acs.com/acs-protocol-102-test-service/"
+  label="Try it out"
+/>
+<br/>
+
+You must code the reception of such online card payments notifications. Here is the ``` PURCHASE ``` format you will receive:
 ```json
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
@@ -147,19 +155,9 @@ It is possible to add as many devices as your end-user wants. Each time, a secur
 
 <Image src="docs/SCA-new-qr-code.png" alt="usecase 1"/>
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/device" method="put"/>
+Coming Soon...
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__device -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/device" method="put"/> -->
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
-
-Here is the payload you must watch out for from our call-back type 35 :
+Here is the payload you must watch out for from our callback type 35 :
 ```
 "Payload": {
         "type": "35",
