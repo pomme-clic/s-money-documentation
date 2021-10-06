@@ -95,8 +95,8 @@ Part of the on-boarding process happens on a mobile app ; our solution is **omni
 
 Here are the steps your mobile application should follow when it's launched by an end-user :
 <details>
-    <summary>1. LOADING BLOCK: Check proper binding of the user\'s security-wallet.</summary>
-    <div>When your app opens, your code must check if a security-wallet is binded to the user\'s phone or not. This step is important to determine if it is a first download process or not. Please note that Xpollens has already created a security wallet for your end user. No need to create one.<br></div>
+    <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
+    <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it is a first download process or not. Please note that Xpollens has already created a security wallet for your end user. No need to create one.</div>
 </details>
 <details>
     <summary>2. PROVISIONNING BLOCK: If no security wallet is binded, check identity and bind one.</summary>
@@ -104,13 +104,13 @@ Here are the steps your mobile application should follow when it's launched by a
           - Scan QR Code
           - Define Secret Code
           - Check Identity using webview
-    <br></div>
+    </div>
 </details>
 <details>
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
-    <div>Your main screen can open up.<br></div>
+    <div>Your main screen can open up.</div>
 </details>
-<br>
+
 
 <Highlight type="tip">
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
