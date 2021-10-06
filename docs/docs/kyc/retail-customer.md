@@ -40,7 +40,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
   You define the unique identifier of your prospect : the <b class="term">appUserId</b> ; our callbacks will use this same identifier.
 </Highlight>
 
-## Plug'n'Play Onboarding
+## Plug and Play Onboarding
 
 We offer a simple **plug'n'play** webservice giving multiple callbacks so you can easily track your prospects statuses at every step of the way.
 
