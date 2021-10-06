@@ -211,10 +211,10 @@ More information regarding this endpoint in the [API reference](/api/Core)
 Callbacks you will start getting at this point:
 **Callback type 34** gives you highlevel information regarding the status of your prospect.
 ```json
-{      "type" : "34"      
-        "appUserid" : "hfdx12344"  
-        "publicUserCode" : "1234der14ft2"       
-        "userRecordStatus" : "InProgress" 
+{      "type": "34"      
+        "appUserid": "hfdx12344"  
+        "publicUserCode": "1234der14ft2"       
+        "userRecordStatus": "InProgress" 
                
 }
 ```
