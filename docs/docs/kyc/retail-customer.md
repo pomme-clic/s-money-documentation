@@ -20,7 +20,7 @@ All banks are subject to a number of regulations concerning customer onboarding 
 
 <Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
 
-Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within 48 hours. All intermediate steps will be visible to you in the callbacks.
+Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within a limited timeframe. All intermediate steps will be visible to you in the callbacks.
 
 <Highlight type="tip">
   Regularly check our webhooks & received callbacks to ensure proper communication to your end-customers.
@@ -33,7 +33,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
+If you do not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
@@ -52,7 +52,7 @@ Our onboarding API embeds an Identity Verification Service. We offer a modular a
   
 ### Facial Recognition
 
-Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
+Xpollens can easily parameterize our webview to include Facial Biometry for your customers. They will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 3 to 6 minutes ; our callback will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
   Our biometry systems are <b class="term">compliant with Data Protection Regulations</b>. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
@@ -63,12 +63,12 @@ Using a simple parameter, you can activate our Facial Biometry webview. Your cus
 </Highlight>
 
 <Highlight type="caution">
-  <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
+  <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our callback #35 gives you to move from the web to your mobile app.
 </Highlight>
 
 ### SEPA Instant Transfer IN
 
-In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required name-checks to ensure proper identity confirmation, and then automatically opens the account.
+In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required identity-checks to ensure proper identity confirmation, and then automatically opens the account.
 
 <Highlight>
   This option is compatible with tranditionnal 48 hours SEPA SCT IN as well.
@@ -79,7 +79,7 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 </Highlight>
 
 <Highlight type="caution">
-  Accounts are setup with limits. Should incoming transfers be above limits, transfers will be rejected. Name-check will not be performed if transfer is rejected.
+  Accounts are setup with limits. Should incoming transfers be above limits, transfers will be rejected. Identity-check will not be performed if transfer is rejected.
 </Highlight>
 
 ### SEPA Instant Pay OUT
@@ -148,7 +148,7 @@ Here is the payload you'll get from our call-back type 35 :
         "type": "35",
         "AppUserId": "e87bd13dJ",
         "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
-        "ErrorMessage": null,
+        "ErrorMessage": null
         }
 ```
 
