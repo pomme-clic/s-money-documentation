@@ -262,3 +262,17 @@ More information regarding this endpoint in the [API reference](/api/Core)
   link="/api/Core#get-/api/v1.1/users"
   label="Try it out"
 />
+
+### PUT User (Update)
+
+Some information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked. Identification data is locked once inputed, unless a specific update process is performed, involving some justification.
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v2.0/user.usermanagment" path="/api/v2.0/users/{AppUserId}/declarative" method="post"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Users#put-/api/v2.0/users/-AppUserId-/declarative"
+  label="Try it out"
+/>
