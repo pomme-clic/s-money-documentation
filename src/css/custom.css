@@ -315,6 +315,7 @@ main {
 /* /Markdow docs */
 .smoney.docpage {
   .markdown {
+    font-size: 14px;
     h2 {
       @apply flex items-center;
       &:before {
@@ -456,3 +457,5 @@ html[data-theme='dark'] {
     @apply text-xp-grey-400;
   }
 }
+
+
