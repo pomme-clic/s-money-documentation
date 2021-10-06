@@ -23,7 +23,7 @@ All banks are subject to a number of regulations concerning customer onboarding 
 Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within a few working hours. All intermediate steps will be visible to you in the callbacks.
 
 <Highlight type="tip">
-  Regularly check our webhooks & call-backs to ensure proper communication to your end-customers.
+  Regularly check our webhooks & received callbacks to ensure proper communication to your end-customers.
 </Highlight>
 
 ### Technical Context & Customer Experience
@@ -127,13 +127,13 @@ Once a new user downloads your mobile application, you will need to match this u
 > - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
 > 
 
-Here is the payload you'll get from our call-back type 35 :
+Here is the payload you'll get from our **callback type 35**:
 ```json
 "Payload": {
         "type": "35",
         "AppUserId": "e87bd13dJ",
         "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
-        "ErrorMessage": null,
+        "ErrorMessage": null
         }
 ```
 
@@ -207,6 +207,45 @@ More information regarding this endpoint in the [API reference](/api/Core)
   link="/api/Users#post-/api/v1.1/users/-AppUserId-"
   label="Try it out"
 />
+
+Callbacks you will start getting at this point:
+**Callback type 34** gives you highlevel information regarding the status of your prospect.
+```json
+{      "type" : "34"      
+        "appUserid" : "hfdx12344"  
+        "publicUserCode" : "1234der14ft2"       
+        "userRecordStatus" : "InProgress" 
+               
+}
+```
+<br>
+The ```publicUserCode``` is an ID that will be required when you will use our **Secure Interface** ; generating the appropriate security token via the provided SDK can be achieved using this ```publicUserCode```.
+
+**Callback type 4** gives you detailled information on the dilligences occuring during KYC of the submitted identity.
+```json
+{
+"type": "4",
+"status": "Incomplete",
+"appUserId": "559d7e85J",
+"diligences": [
+ {
+"reason": "",
+"diligenceType": "ID_CARD",
+"status": "Validated"
+ }
+ ]
+ }
+```
+<br>
+**Callback type 35** gives you the Activation Code you will need to secure you end-user's mobile device (using our SDK).
+```json
+"Payload": {
+        "type": "35",
+        "AppUserId": "e87bd13dJ",
+        "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
+        "ErrorMessage": null
+        }
+```
 
 ### GET User (Read)
 
