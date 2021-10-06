@@ -110,6 +110,7 @@ Here are the steps your mobile application should follow when it's launched by a
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
         <div>Your main screen can open up.</div>
 </details>
+<br>
 
 <Highlight type="tip">
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
