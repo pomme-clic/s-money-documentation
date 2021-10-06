@@ -187,7 +187,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 > 
 > 1. POST api/v1.1/users/{appUserId}  &nbsp;&nbsp;&nbsp; _this will create the prospect_
 > 2. POST api/v2.0/users/{appUserId}/declarative  &nbsp;&nbsp;&nbsp; _this update specific data of the prospect_
-> 3. PATCH api/v1.1/user/{appUserId}/fatcaEai  &nbsp;&nbsp;&nbsp; _this will update the required tax information of the prospect ; an SCA will be automatically triggred_
+> 3. PATCH api/v2.1/user/{appUserId}/fatcaEai  &nbsp;&nbsp;&nbsp; _this will update the required tax information of the prospect ; an SCA will be automatically triggred_
 > 4. POST api/v2.0/users/{appUserId}/cgu  &nbsp;&nbsp;&nbsp; _this will log the timestamp of user's acceptance of T&Cs ; an SCA will be automatically triggred_
 > 
 
@@ -252,26 +252,26 @@ Once you create a ```User```, you should start looking up for the following call
 This endpoint allows you to read the data you have sent.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users" method="get"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Users#get-/api/v2.0/users/-AppUserId-/declarative"
+  link="/api/Core#get-/api/v1.1/users"
   label="Try it out"
 />
 
 ### PUT User (Update)
 
-All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
+Some information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked. Identification data is locked once inputed, unless a specific update process is performed, involving some justification.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v1.1​/users​/{appUserId}" method="put"/>
+<Endpoint apiUrl="/v2.0/user.usermanagment" path="/api/v2.0/users/{AppUserId}/declarative" method="post"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Users#put-/api/v1.1/users/-AppUserId-"
+  link="/api/Users#put-/api/v2.0/users/-AppUserId-/declarative"
   label="Try it out"
 />
 
@@ -293,10 +293,7 @@ More information regarding this endpoint in the [API reference](/api/Compliance)
 This will trigger a Strong Authentication notification to your end-user.
 </Highlight>
 
-<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/patch_api_v1_1_user__AppUserId__fatcaEai -->
-<!-- <Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v1.1​/user​/{AppUserId}​/fatcaEai" method="patch"/> -->
+<Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
 
 <Cta
   context="doc"
@@ -314,10 +311,7 @@ More information regarding this endpoint in the [API reference](/api/Users)
 This will trigger a Strong Authentication notification to your end-user.
 </Highlight>
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__cgu -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/> -->
+<Endpoint apiUrl="/v2.0/user.usermanagment" path="/api/v2.0/users/{AppUserId}/cgu" method="post"/>
 
 <Cta
   context="doc"
