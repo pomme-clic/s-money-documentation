@@ -304,3 +304,20 @@ This will trigger a Strong Authentication notification to your end-user.
   label="Try it out"
 />
 
+### POST CGU
+
+Use this endpoint to inform Xpollens that your prospect has accepted Terms & Conditions of the Payment Services you are offering thanks to Xpollens.
+More information regarding this endpoint in the [API reference](/api/Users)
+
+<Highlight>
+This will trigger a Strong Authentication notification to your end-user.
+</Highlight>
+
+<Endpoint apiUrl="/v2.0/user.usermanagment" path="/api/v2.0/users/{AppUserId}/cgu" method="post"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Users#post-/api/v2.0/users/-AppUserId-/cgu"
+  label="Try it out"
+/>
