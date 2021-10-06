@@ -248,3 +248,17 @@ Once you create a ```User```, you should start looking up for the following call
   link="/api/Core#post-/api/v1.1/users"
   label="Try it out"
 />
+
+### GET User (Read)
+
+This endpoint allows you to read the data you have sent.
+More information regarding this endpoint in the [API reference](/api/Core)
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users" method="get"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Core#get-/api/v1.1/users"
+  label="Try it out"
+/>
