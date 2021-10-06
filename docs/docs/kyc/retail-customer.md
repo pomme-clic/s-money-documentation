@@ -200,7 +200,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 
 Once you create a ```User```, you should start looking up for the following callbacks:
 - **Callback type 34** will give you the overall status of the onboarding of your end user.
-```
+```json
 "Payload": {
       "type": "34",
       "appUserid": "z32er24f4",
@@ -215,23 +215,23 @@ Once you create a ```User```, you should start looking up for the following call
 
 <br/>
 - **Callback type 4** will give you detailed information on each diligence happening during he KYC of your end user.
-```
+```json
 "Payload": {
       "type": "4",
       "status": "Incomplete",
       "appUserId": "559d7e85J",
-      "diligences": [
+      "diligences": 
           {
           "reason": "",
           "diligenceType": "ID_CARD",
           "status": "Validated"
           }
-      ]
+      
  }
 ```
 
 - **Callback type 35** will give your the ```ActivationCode``` required to bind securely your end-user's device:
-```
+```json
 "Payload": {
         "type": "35",
         "AppUserId": "e87bd13dJ",
