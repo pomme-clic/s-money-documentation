@@ -67,11 +67,14 @@ Your customer's security-wallet must be active and properly binded for the authe
 #### Initiate SEPA transfer OUT
 
 Your customer may initiate a pay-out, which will trigger an authentication request.
+More information regarding this endpoint in the [API reference](/api/SCTINST)
+
+<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/SCTINST"
+  link="/api/SCTINST#post-/api/v2.0/users/-AppUserId-/sctinst"
   label="Try it out"
 />
 
@@ -140,19 +143,9 @@ It is possible to add as many devices as your end-user wants. Each time, a secur
 
 <Image src="docs/SCA-new-qr-code.png" alt="usecase 1"/>
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/device" method="put"/>
+Coming Soon...
 
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__device -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="​/api​/v2.0​/users​/{AppUserId}​/device" method="put"/> -->
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
-
-Here is the payload you must watch out for from our call-back type 35 :
+Here is the payload you must watch out for from our callback type 35 :
 ```
 "Payload": {
         "type": "35",
