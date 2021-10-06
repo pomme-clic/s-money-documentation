@@ -50,7 +50,7 @@ We offer a simple **plug'n'play** webservice giving multiple call-backs so you c
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
   
-### Facial Recognition
+### OPTION 1: Facial Recognition
 
 Xpollens can easily parameterize our webview to include Facial Biometry for your customers. They will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 3 to 6 minutes ; our callback will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
@@ -66,7 +66,7 @@ Xpollens can easily parameterize our webview to include Facial Biometry for your
   <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our callback #35 gives you to move from the web to your mobile app.
 </Highlight>
 
-### SEPA Instant Transfer IN
+### OPTION 2: SEPA Instant Transfer IN
 
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required identity-checks to ensure proper identity confirmation, and then automatically opens the account.
 
@@ -82,25 +82,9 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
   Accounts are setup with limits. Should incoming transfers be above limits, transfers will be rejected. Identity-check will not be performed if transfer is rejected.
 </Highlight>
 
-### SEPA Instant Pay OUT
+### OPTION 3: Coming soon...
 
-We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
-
-<Highlight>
-  Destination accounts must be personnal accounts ; we perform a name-check on this external account, and payment will be unauthorized should names differ.
-</Highlight>
-
-### Account Agregation
-
-Your end-customer will be required to enter credentials of his other bank. Based on our name-check algorithm, this agregation will enable 
-
-<Highlight>
-  An extra Agregation Service Provider needs to be integrated in your front-end. Should you be interested, please ask our Sales team.
-</Highlight>
-
-### More to come
-
-We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
+More to come : We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
 
 
