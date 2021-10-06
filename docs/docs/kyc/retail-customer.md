@@ -217,17 +217,15 @@ Once you create a ```User```, you should start looking up for the following call
 - **Callback type 4** will give you detailed information on each diligence happening during he KYC of your end user.
 ```json
 "Payload": {
-      "type": "4",
-      "status": "Incomplete",
-      "appUserId": "559d7e85J",
-      "diligences": 
-          {
-          "reason": "",
-          "diligenceType": "ID_CARD",
-          "status": "Validated"
-          }
-      
- }
+    "type": "4",
+    "status": "Incomplete",
+    "appUserId": "559d7e85J",
+    "diligences": [{
+        "reason": "",
+        "diligenceType": "ID_CARD",
+        "status": "Validated"
+    }]
+}
 ```
 
 - **Callback type 35** will give your the ```ActivationCode``` required to bind securely your end-user's device:
