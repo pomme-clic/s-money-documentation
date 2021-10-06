@@ -198,6 +198,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 Most information is updatable for as long as user is a **prospect**, except for critical indentification data. As soon as KYC is validated, some of her/his data will be locked or subject to adequate justification.
 More information regarding this endpoint in the [API reference](/api/Core)
 
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users" method="post"/>
 
 Once you create a ```User```, you should start looking up for the following call backs:
 - **Callback type 34** will give you the overall status of the onboarding of your end user.
@@ -241,10 +242,5 @@ Once you create a ```User```, you should start looking up for the following call
         }
 ```
 
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core#post-/api/v1.1/users"
-  label="Try it out"
-/>
+
 
