@@ -69,6 +69,15 @@ Your customer's security-wallet must be active and properly binded for the authe
 Your customer may initiate a pay-out, which will trigger an authentication request.
 More information regarding this endpoint in the [API reference](/api/SCTINST)
 
+<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/SCTINST#post-/api/v2.0/users/-AppUserId-/sctinst"
+  label="Try it out"
+/>
+<br/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
@@ -98,6 +107,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
   link="/api/Core#put-/api/v1.1/users/-userid-"
   label="Try it out"
 />
+<br/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
