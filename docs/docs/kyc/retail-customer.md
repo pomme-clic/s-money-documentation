@@ -42,7 +42,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 
 ## Plug'n'Play Onboarding
 
-We offer a simple **plug'n'play** webservice giving multiple callbacks so you can easily track your prospect's KYC at every step of the way.
+We offer a simple **plug'n'play** webservice giving multiple callbacks so you can easily track your prospects statuses at every step of the way.
 
 > Use this feature to identify any relevant individual, from your prospects to your employees or mandated executives.
 
