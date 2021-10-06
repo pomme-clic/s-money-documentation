@@ -108,7 +108,7 @@ Here are the steps your mobile application should follow when it's launched by a
 </details>
 <details>
     <summary>3. MAIN BLOCK: If security wallet is binded to phone, open home screen.</summary>
-        <div>Your main screen can open up.</div><br/>
+        <div>Your main screen can open up.</div>
 </details>
 <br/>
 
@@ -127,7 +127,7 @@ Once a new user downloads your mobile application, you will need to match this u
 > - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
 > 
 
-Here is the payload you'll get from our call-back type 35 :
+Here is the payload you'll get from our callback type 35 :
 ```json
 "Payload": {
         "type": "35",
@@ -185,18 +185,19 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 >
 > **Example of a straight-through onboarding process**
 > 
-> 1. POST api/v2.0/users/{appUserId}/declarative
-> 2. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
-> 3. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
+> 1. POST api/v1.1/users/{appUserId}
+> 2. POST api/v2.0/users/{appUserId}/declarative
+> 3. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
+> 4. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
 > 
 
 
 ### POST User (Create)
 
-All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Users)
+Most information is updatable for as long as user is a **prospect**, except for critical indentification data. As soon as KYC is validated, some of her/his data will be locked or subject to adequate justification.
+More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v1.1​/users​/{appUserId}" method="post"/>
 
 <!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__declarative -->
 <!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="post"/> -->
@@ -204,7 +205,7 @@ More information regarding this endpoint in the [API reference](/api/Users)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Users#post-/api/v2.0/users/-AppUserId-/declarative"
+  link="/api/Users#post-/api/v1.1/users/-AppUserId-"
   label="Try it out"
 />
 
