@@ -90,7 +90,7 @@ In your mobile application, the notification will be received in the following `
 Your customer may modify some of his personal data, which will trigger an authentication request.
 More information regarding this endpoint in the [API reference](/api/Core)
 
-
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}" method="put"/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
@@ -111,14 +111,17 @@ In your mobile application, the notification will be received in the following `
 
 This feature is already embeded in the Xpollens API plateform. Whenever your customer will use her/his card to pay online, a push notification will be sent onto her/his phone in the same manner as above.
 
+You can test using our Test Merchant website, once you have created and activated a ```Card``` on a proper ```User``` whose device has been properly binded (mobileID check).
+
 <Cta
   context="doc"
   ui="button"
   link="https://ssl-liv-u6f-fo-acs-ve-nps.wlp-acs.com/acs-protocol-102-test-service/"
   label="Try it out"
 />
+<br/>
 
-You must code the reception of such notifications. Here is the ``` PURCHASE ``` format you will receive:
+You must code the reception of such online card payments notifications. Here is the ``` PURCHASE ``` format you will receive:
 ```json
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
