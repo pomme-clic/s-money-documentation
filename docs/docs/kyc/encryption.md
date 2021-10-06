@@ -19,10 +19,10 @@ import Cta from '@theme/Cta'
 
 The payment industry is the favorite target of fraudsters, who try to obtain card numbers or identity documents and use it to pay without the real owner's knowledge. Hackers have creative tricks to reach their goal, and so must the payment industry continuously work to fight back.
 
-<Highlight>
-  Our technology is here to help you fight this situation, and give your end-customer the peace of mind your business requires.
-  To enable this, Xpollens uses encrypted payloads, and a specific SDK called ```Secure Interface```.
-</Highlight>
+> 
+> Our technology is here to help you fight this situation, and give your end-customer the peace of mind your business requires.
+> To enable this, Xpollens uses encrypted payloads, and a specific SDK called ```Secure Interface```.
+> 
 
 <Image src="docs/SCA-getPIN.png" alt="usecase 1"/>
 <Image src="docs/SCA-getPAN.png" alt="usecase 1"/>
