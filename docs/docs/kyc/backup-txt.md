@@ -1,4 +1,4 @@
-RETAIL
+# RETAIL
 
 ### POST User (Create)
 
@@ -125,5 +125,30 @@ This will trigger a Strong Authentication notification to your end-user.
   context="doc"
   ui="button"
   link="/api/Users#post-/api/v2.0/users/-AppUserId-/cgu"
+  label="Try it out"
+/>
+
+
+
+# SCA
+
+<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/SCTINST#post-/api/v2.0/users/-AppUserId-/sctinst"
+  label="Try it out"
+/>
+
+
+
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}" method="put"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="api/Core#put-/api/v1.1/users/-userid-"
   label="Try it out"
 />
