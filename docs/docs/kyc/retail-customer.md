@@ -10,20 +10,20 @@ import Cta from '@theme/Cta'
 # Know Your Customer
 
 
-**salut**
+
 
 ## Context
 
 ### Regulatory Context
 
-All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **CreateUser** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
+All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **Onboarding API** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
 
 <Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
 
-Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within 48 hours. All intermediate steps will be visible to you in the call-backs.
+Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within 48 hours. All intermediate steps will be visible to you in the callbacks.
 
 <Highlight type="tip">
-  Regularly check our webhooks & call-backs to ensure proper communication to your end-customers.
+  Regularly check our webhooks & received callbacks to ensure proper communication to your end-customers.
 </Highlight>
 
 ### Technical Context & Customer Experience
@@ -37,7 +37,7 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 </Highlight>
 
 <Highlight type="tip">
-  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will use this same identifier.
+  You define the unique identifier of your prospect : the <b class="term">appUserId</b> ; our callbacks will use this same identifier.
 </Highlight>
 
 ## Straight Through Process
