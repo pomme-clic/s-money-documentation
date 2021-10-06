@@ -91,7 +91,14 @@ In your mobile application, the notification will be received in the following `
 Your customer may modify some of his personal data, which will trigger an authentication request.
 More information regarding this endpoint in the [API reference](/api/Core)
 
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}" method="put"/>
 
+<Cta
+  context="doc"
+  ui="button"
+  link="api/Core#put-/api/v1.1/users/-userid-"
+  label="Try it out"
+/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
 ```json
