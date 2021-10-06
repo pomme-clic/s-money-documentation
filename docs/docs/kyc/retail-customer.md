@@ -16,14 +16,14 @@ import Cta from '@theme/Cta'
 
 ### Regulatory Context
 
-All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **CreateUser** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
+All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **Onboarding API** embeds the required Identity Verification service as well as all other regulatory requirements.
 
 <Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
 
-Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within 48 hours. All intermediate steps will be visible to you in the call-backs.
+Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within a limited timeframe. All intermediate steps will be visible to you in the callbacks.
 
 <Highlight type="tip">
-  Regularly check our webhooks & call-backs to ensure proper communication to your end-customers.
+  Regularly check our webhooks & received callbacks to ensure proper communication to your end-customers.
 </Highlight>
 
 ### Technical Context & Customer Experience
@@ -33,16 +33,16 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
+  If you do not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
-  You define the technical unique identifier of your prospect : the <b class="term">appUserId</b> ; our call-backs will use this same identifier.
+  You define the unique identifier of your prospect : the <b class="term">appUserId</b> ; our callbacks will use this same identifier.
 </Highlight>
 
-## Straight Through Process
+## Plug'n'Play Onboarding
 
-We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
+We offer a simple **plug'n'play** webservice giving multiple callbacks so you can easily track your prospect's KYC at every step of the way.
 
 > Use this feature to identify any relevant individual, from your prospects to your employees or mandated executives.
 
@@ -50,25 +50,25 @@ We offer a simple **plug'n'play** webservice giving multiple call-backs so you c
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
   
-### Facial Recognition
+### OPTION 1: Facial Recognition
 
-Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our call-back will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
+Using a simple parameter, you can activate our Facial Biometry webview. Your customers will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 2 minutes ; our callback will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
   Our biometry systems are <b class="term">compliant with Data Protection Regulations</b>. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
-</Highlight>
-
-<Highlight type="tip">
-  If your end-customer does not want to perform the facial scan, it does not matter : he/she can refuse, and we will automatically perform another option.
 </Highlight>
 
 <Highlight type="caution">
   <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our call-back #35 gives you to move from the web to your mobile app.
 </Highlight>
 
-### SEPA Instant Transfer IN
+<Highlight type="tip">
+  If your end-customer does not want to perform the facial scan, it does not matter : he/she can refuse, and we will automatically perform another option. Fall-back option is the SEPA Instant Transfer IN.
+</Highlight>
 
-In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required name-checks to ensure proper identity confirmation, and then automatically opens the account.
+### OPTION 2: SEPA Instant Transfer IN
+
+In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required identity-checks to ensure proper identity confirmation, and then automatically opens the account.
 
 <Highlight>
   This option is compatible with tranditionnal 48 hours SEPA SCT IN as well.
@@ -79,28 +79,12 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 </Highlight>
 
 <Highlight type="caution">
-  Accounts are setup with limits. Should incoming transfers be above limits, transfers will be rejected. Name-check will not be performed if transfer is rejected.
+  Accounts are setup with limits. Should incoming transfers be above limits, transfers will be rejected. Identity-check will not be performed if transfer is rejected.
 </Highlight>
 
-### SEPA Instant Pay OUT
+### OPTION 3: Coming soon... Stay tuned !
 
-We will send money on your behalf to your end-customers (less than 1€). Amount will be random, and your end-customer will be required to indicate the amount he/she has received. If the given amount is right, identity will be confirmed.
-
-<Highlight>
-  Destination accounts must be personnal accounts ; we perform a name-check on this external account, and payment will be unauthorized should names differ.
-</Highlight>
-
-### Account Agregation
-
-Your end-customer will be required to enter credentials of his other bank. Based on our name-check algorithm, this agregation will enable 
-
-<Highlight>
-  An extra Agregation Service Provider needs to be integrated in your front-end. Should you be interested, please ask our Sales team.
-</Highlight>
-
-### More to come
-
-We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
+We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Check it out later ;)
 
 
 
@@ -112,7 +96,7 @@ Part of the on-boarding process happens on a mobile app ; our solution is **omni
 Here are the steps your mobile application should follow when it's launched by an end-user :
 <details>
     <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
-        <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. **Please note that Xpollens has already created a security wallet for your end user. No need to create one.**</div>
+        <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. Please note that Xpollens has already created a security wallet for your end user. No need to create one.</div>
 </details>
 <details>
     <summary>2. PROVISIONNING BLOCK: If no security wallet is binded, check identity and bind one.</summary>
