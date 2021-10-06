@@ -185,10 +185,10 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 >
 > **Example of a straight-through onboarding process**
 > 
-> 1. POST api/v1.1/users/{appUserId}
-> 2. POST api/v2.0/users/{appUserId}/declarative
-> 3. PATCH api/v1.1/user/{appUserId}/fatcaEai _(will trigger an SCA notification)_
-> 4. POST api/v2.0/users/{appUserId}/cgu _(will trigger an SCA notification)_
+> 1. POST api/v1.1/users/{appUserId}  &nbsp;&nbsp;&nbsp; _this will create the prospect_
+> 2. POST api/v2.0/users/{appUserId}/declarative  &nbsp;&nbsp;&nbsp; _this update specific data of the prospect_
+> 3. PATCH api/v1.1/user/{appUserId}/fatcaEai  &nbsp;&nbsp;&nbsp; _this will update the required tax information of the prospect ; an SCA will be automatically triggred_
+> 4. POST api/v2.0/users/{appUserId}/cgu  &nbsp;&nbsp;&nbsp; _this will log the timestamp of user's acceptance of T&Cs ; an SCA will be automatically triggred_
 > 
 
 
@@ -198,6 +198,47 @@ Most information is updatable for as long as user is a **prospect**, except for 
 More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v1.1​/users​/{appUserId}" method="post"/>
+
+Once you create a ```User```, you should start looking up for the following call backs:
+- **Callback type 34** will give you the overall status of the onboarding of your end user.
+```json
+"Payload": {
+      "type": "34",
+      "appUserid": "z32er24f4",
+      "publicUserCode": "1234der14ft2",
+      "userRecordStatus": "InProgress"
+}
+```
+
+> 
+> The ```publicUserCode``` will be useful when you will need to manipulate encrypted payloads (such as PIN or PAN). Please refer to this section if you want to learn more.
+> 
+
+- **Callback type 4** will give you detailed information on each diligence happening during he KYC of your end user.
+```json
+"Payload": {
+      "type": "4",
+      "status": "Incomplete",
+      "appUserId": "559d7e85J",
+      "diligences": [
+          {
+          "reason": "",
+          "diligenceType": "ID_CARD",
+          "status": "Validated"
+          }
+      ]
+ }
+```
+
+- **Callback type 35** will give your the ```ActivationCode``` required to bind securely your end-user's device:
+```json
+"Payload": {
+        "type": "35",
+        "AppUserId": "e87bd13dJ",
+        "ActivationCode": "f825f1646665490aa7ef7942c6f2f159",
+        "ErrorMessage": null
+        }
+```
 
 <Cta
   context="doc"
@@ -209,12 +250,9 @@ More information regarding this endpoint in the [API reference](/api/Core)
 ### GET User (Read)
 
 This endpoint allows you to read the data you have sent.
-More information regarding this endpoint in the [API reference](/api/Users)
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="get"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/get_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/declarative" method="get"/> -->
 
 <Cta
   context="doc"
@@ -226,24 +264,21 @@ More information regarding this endpoint in the [API reference](/api/Users)
 ### PUT User (Update)
 
 All information is updatable without any constraint, for as long as user is a **prospect**. As soon as KYC is validated, some of her/his data will be locked.
-More information regarding this endpoint in the [API reference](/api/Users)
+More information regarding this endpoint in the [API reference](/api/Core)
 
-<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/>
-
-<!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/put_api_v2_0_users__AppUserId__declarative -->
-<!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{appUserId}​/declarative" method="put"/> -->
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v1.1​/users​/{appUserId}" method="put"/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Users#put-/api/v2.0/users/-AppUserId-/declarative"
+  link="/api/Users#put-/api/v1.1/users/-AppUserId-"
   label="Try it out"
 />
 
 ### DELETE User (Delete)
 
 This action is not possible.
-More information regarding this endpoint in the [API reference](/api/Users)
+More information regarding this endpoint in the [API reference](/api/Core)
 
 <Highlight>
 Purge of all prospects is performed after 90 days. All webview links and QR Codes will expire after this duration, and personal data will be removed.
@@ -266,7 +301,7 @@ This will trigger a Strong Authentication notification to your end-user.
 <Cta
   context="doc"
   ui="button"
-  link="/api/Compliance#patch-/api/v2.1/user/-appUserId-/fatcaEai"
+  link="/api/Compliance#patch-/api/v1.1/user/-appUserId-/fatcaEai"
   label="Try it out"
 />
 
@@ -279,7 +314,7 @@ More information regarding this endpoint in the [API reference](/api/Users)
 This will trigger a Strong Authentication notification to your end-user.
 </Highlight>
 
-<Endpoint apiUrl="/v1.1/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/>
+<Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/>
 
 <!-- https://api.xpollens.com/swagger/index.html?urls.primaryName=User%20%26%20Usermanagment%20API%20-%20v2.0#/User/post_api_v2_0_users__AppUserId__cgu -->
 <!-- <Endpoint apiUrl="/v2.0/migrationProxy" path="/api​/v2.0​/users​/{AppUserId}​/cgu" method="post"/> -->
