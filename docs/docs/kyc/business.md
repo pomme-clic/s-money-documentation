@@ -3,6 +3,8 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
+EN COURS
+
 # Know Your Business 
 
 <Image src="docs/usecase-exemple-00.jpg" alt="usecase 1"/>
