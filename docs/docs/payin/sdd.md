@@ -27,8 +27,6 @@ Do not forget to have an ICS ( ask for on to our Sales) and ...a mandate to ask 
 
 ---
 
-<Image src="docs/MANDATE.png" alt="usecase 1"/>
-
 
 ## Endpoints
 
