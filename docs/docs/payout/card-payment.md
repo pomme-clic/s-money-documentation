@@ -6,15 +6,32 @@ import Cta from '@theme/Cta'
 
 # Card Payment
 
-In real time
+The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash. 
+First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. 
+you have an exchange between cardholder and merchant. 
+After, in second time, one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
 
-<Image src="docs/CardOP_Author.png" alt="usecase 1"/>
+<Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
 ## Context Authorizations
 
-Depending on the card profile, you may have offline transactions....
-Dans cette section, l'utilisateur utilise sa carte ou son telephone pour payer en magasin ou en ligne, ou retirer des espèces. 
-Les points importants à connaître sont les suivants : 
+Toutes les cartes émises sont des cartes à autorisation systématique. Cela signifie qu'à l'usage, une demande d'autorisation est envoyée à Xpollens afin de savoir si le paiement peut être délivré ou non. Xpollens vérifie si le contexte du paiement est cohérent avec le profil de la carte : 
+- Est ce le bon code PIN, 
+- est ce que la carte est active, 
+- est ce que les plafonds ou le solde sont suffisants, 
+- est ce un pays, un type de paiement ou un marchand autorisé
+- ....
+
+Xpollens teste beaucoup de paramètres en temps réel et répond au marchand en signifiant la réponse qui a été émise à son partenaire
+
+All cards issued are systematic authorization cards. This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not. Xpollens checks if the payment context is consistent with the card profile:
+- Is this the correct PIN code,
+- is the card active,
+- are the ceilings or the balance sufficient,
+- is it a country, a payment type, a merchant authorized
+- ....
+
+Xpollens tests a lot of parameters in real time and responds to the merchant by indicating the response that was sent to his partner
 
 ## Context Clearing
 
