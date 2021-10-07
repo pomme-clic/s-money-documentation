@@ -3,9 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Beneficiaries
-
-<Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
+# Beneficiaries Management
 
 <Highlight>
 
