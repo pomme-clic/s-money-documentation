@@ -56,7 +56,7 @@ Debt could be created following many operation type : an Offline Card operation,
 
 Here is the example of an ATM withdrawal with FX Change : 
 
-<Image src="docs/ATMdebt.png" alt="usecase 1"/>
+<Image src="docs/ATMDEBT.png" alt="usecase 1"/>
 
 <Highlight type="danger">
 
