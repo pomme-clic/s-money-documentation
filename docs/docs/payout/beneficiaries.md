@@ -13,6 +13,8 @@ Adding of a beneficiary is necessary to ask for money transfer.
 
 </Highlight>
 
+<Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
+
 <Highlight type="tip">
 
 Retrieving beneficiaries list of a user is available within API.
@@ -21,7 +23,7 @@ Retrieving beneficiaries list of a user is available within API.
 
 <Highlight type="caution">
 
-IBAN format is checked when adding beneficiary and tranfer to the beneficiary is avalaible with no delay
+IBAN format is checked when adding beneficiary and tranfer to the beneficiary is avalaible with no delay. Only SEPA IBAN will be authorized (and French overseas).
 
 </Highlight>
 
