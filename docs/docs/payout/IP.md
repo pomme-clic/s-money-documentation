@@ -13,8 +13,6 @@ The SEPA region consists of 36 European countries, including several countries w
 
 </Highlight>
 
-<Image src="docs/SEPA OUT_EN.png" alt="usecase 1"/>
-
 <Highlight type="tip">
 
 If you want to define recurring transfer or plan a transfer you can just use the same API with additional informations.
@@ -38,6 +36,8 @@ SEPA transfer can be refused due to the user thresholds.
 ## SCT transfer
 
 SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them, ask for refund.
+
+<Image src="docs/SEPA OUT_EN.png" alt="usecase 1"/>
 
 ## Endpoints
 
