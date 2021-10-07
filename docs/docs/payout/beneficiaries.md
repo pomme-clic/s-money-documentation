@@ -29,6 +29,14 @@ IBAN format is checked when adding beneficiary and tranfer to the beneficiary is
 
 ## Endpoints
 
+You can add a beneficiary using this API :
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/sca/v1.1/users/{appuserid}/bankaccounts" method="post"/>
+
+You can retrieve the list of a user beneficiaries here :
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.0/beneficiaries?userId={userid}&beneficiaryId={id}" method="get"/>
+
 More information regarding this endpoint in the [API reference](/api/Core)
 
 
