@@ -8,7 +8,7 @@ import Cta from '@theme/Cta'
 
 In real time
 
-<Image src="docs/CardOP_Author.svg" alt="usecase 1"/>
+<Image src="docs/CardOP_Author.svg" alt="usecase 1" height="200"/>
 
 ## Context Authorizations
 
