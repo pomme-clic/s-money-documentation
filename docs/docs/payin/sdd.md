@@ -3,13 +3,15 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# MANDATE AND SDD
+# Mandate and SDD
 
 <Highlight>
 
 XPollens provides a complete solution to ask for mandate and Payin SDD. APi are soon available on this site. YOu will be able to follow your customers, mandate, plan recurring mandate and manage recoveries. We can also provide an ICS within 48 hours.
 
 </Highlight>
+
+<Image src="docs/MANDATE.png" alt="usecase 1"/>
 
 <Highlight type="caution">
 
