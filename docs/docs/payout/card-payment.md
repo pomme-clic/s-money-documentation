@@ -34,13 +34,30 @@ Xpollens tests a lot of parameters in real time and responds to the merchant by 
 
 --- 
 
+### Callback 24
+
+
+We have a unique callback for the hub in the Card Operations domain. This callback contains different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself, etc.
+
+--- 
+
 ### Endpoints
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
+#### Get Card Limits
+
+This API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
+
+<Image src="docs/CardOP_Limits.png" alt="usecase 1"/>
+
+<!--
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
+-->
+
 #### Get Card Operations
 
-This API allows to retrieve a user's card transactions, with or without date criteria. The search period cannot exceed 7 days. Without date criteria, the api returns the complete list of operations.
+This API allows to retrieve a user's card transactions, with or without date criteria. Without date criteria, the api returns the complete list of operations.
 
 <!-- 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations" method="get"/> 
@@ -62,15 +79,7 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
 -->
 
-#### Get Card Limits
 
-This API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
-
-<Image src="docs/CardOP_Limits.png" alt="usecase 1"/>
-
-<!--
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
--->
 
 #### Get Card Operation Description
 
