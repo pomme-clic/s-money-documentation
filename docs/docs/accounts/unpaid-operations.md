@@ -47,14 +47,16 @@ We propose a unpaid mechanism to ensure payment of this kind of operation.
 
 </Highlight>
 
-<Image src="docs/Debt.png" alt="usecase 1"/>
-
 <Highlight type="tip">
 
 The mechanism is based on automated P2P that create debt on the customer account and  ability for Client to recover the money.
+Debt could be created following many operation type : an Offline Card operation, a P2P billing, a contestation after a Card Top Up, after a SCT IN recall, an ATM withdrawal in currency.
 
 </Highlight>
 
+Here is the example of an ATM withdrawal with FX Change : 
+
+<Image src="docs/ATMdebt.png" alt="usecase 1"/>
 
 <Highlight type="danger">
 
