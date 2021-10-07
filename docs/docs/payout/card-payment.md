@@ -41,7 +41,10 @@ More information regarding this endpoint in the [API reference](/api/Core)
 #### Get Card Operations
 
 This API allows to retrieve a user's card transactions, with or without date criteria. The search period cannot exceed 7 days. Without date criteria, the api returns the complete list of operations.
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations" method="get"/>
+
+<!-- 
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations" method="get"/> 
+-->
 
 #### Get Clearing Report
 
@@ -55,8 +58,9 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 
 </Highlight>
 
-// <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
-
+<!--
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
+-->
 
 #### Get Card Limits
 
@@ -64,24 +68,25 @@ This API allows you to retrieve the payment and withdrawal limits for a card as 
 
 <Image src="docs/CardOP_Limits.png" alt="usecase 1"/>
 
-// <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
-
+<!--
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
+-->
 
 #### Get Card Operation Description
 
 This API is used to retrieve the operation details.
 
-// <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}" method="get"/>
-
----
+<!--
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}" method="get"/>
+-->
 
 #### Get Card Operation Messages Description
 
 This API is used to retrieve the details of the authorization message
 
-// <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}/messages" method="get"/>
-
----
+<!--
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}/messages" method="get"/>
+-->
 
 <Cta
   context="doc"
