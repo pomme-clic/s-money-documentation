@@ -6,12 +6,15 @@ import Cta from '@theme/Cta'
 
 # Card Payment
 
-Here, we are talking about operations history
+In real time
 
+<Image src="docs/CardOP_Author.svg" alt="usecase 1"/>
 
 ## Context Authorizations
 
 Depending on the card profile, you may have offline transactions....
+Dans cette section, l'utilisateur utilise sa carte ou son telephone pour payer en magasin ou en ligne, ou retirer des espèces. 
+Les points importants à connaître sont les suivants : 
 
 ## Context Clearing
 
@@ -44,10 +47,10 @@ More information regarding this endpoint in the [API reference](/api/Core)
 
 ### Get Card Limits
 
-Description
+
 The cards/{{AppCardId}}/limits API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
 
-<Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
+<Image src="docs/CardOP_Limits.png" alt="usecase 1"/>
 
 #### Endpoint
 
