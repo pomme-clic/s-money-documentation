@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# SDD
+# MANDATE AND SDD
 
 <Highlight>
 
@@ -25,10 +25,12 @@ Do not forget to have an ICS ( ask for on to our Sales) and ...a mandate to ask 
 
 ---
 
+<Image src="docs/MANDATE.png" alt="usecase 1"/>
+
 
 ## Endpoints
 
-Soon availble in january 2022.
+Ocmplete API is soon available before january 2022.
 
 <Cta
   context="doc"
