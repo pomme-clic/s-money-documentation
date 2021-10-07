@@ -40,7 +40,20 @@ If you do not have a mobile app : no problem, we have an app for you: <b class="
   You define the unique identifier of your prospect : the <b class="term">appUserId</b> ; our callbacks will use this same identifier.
 </Highlight>
 
-## Straight Through Process
+### Our modular KYC Process
+
+Creating a prospect requires one initial step followed by five to six verifications steps that can be set in whatever order you prefer. Arange your onboarding wireframe in the way that suits you best, and call our appropriate endpoints in whatever order you prefer : account will be opened only when all steps are clear.
+
+<Image src="docs/KYC-process.png" alt="usecase 1"/>
+
+<br/>
+Once you assemble the modules in the process you like best, you will want to track statuses of your onboarding. Here are the status diagrams that will help you communicate appropriately to your end customers :
+
+<Image src="docs/KYC-statuses-diagram.png" alt="usecase 1"/>
+
+<br/>
+
+## Simple Plug & Play endpoints
 
 We offer a simple **plug'n'play** webservice giving multiple call-backs so you can easily track your prospect every step of the way.
 
@@ -94,6 +107,7 @@ More to come : We're working hard to find more options for you, always with the 
 Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work. Please note that security features are managed using a security-wallet that is constructed specifically for your end-user, on his/her mobile phone, inside his/her mobile app.
 
 Here are the steps your mobile application should follow when it's launched by an end-user :
+
 <details>
     <summary>1. LOADING BLOCK: Check proper binding of the user's security-wallet.</summary>
         <div>When your app opens, your code must check if a security-wallet is binded to the user's phone or not. This step is important to determine if it's a first download process or not. Please note that Xpollens has already created a security wallet for your end user. No need to create one.</div><br/>
@@ -118,7 +132,7 @@ Here are the steps your mobile application should follow when it's launched by a
 
 ### Scan QR Code
 
-Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Call-Back Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
+Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Callback Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
 >
 > **Managing the multi-channel capability**
@@ -128,6 +142,7 @@ Once a new user downloads your mobile application, you will need to match this u
 > 
 
 Here is the payload you'll get from our callback type 35 :
+
 ```json
 "Payload": {
         "type": "35",
@@ -198,7 +213,9 @@ More information regarding this endpoint in the [API reference](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users" method="post"/>
 
+<br/>
 Once you create a ```User```, you should start looking up for the following callbacks:
+
 - **Callback type 34** will give you the overall status of the onboarding of your end user.
 
 ```json
@@ -215,6 +232,7 @@ Once you create a ```User```, you should start looking up for the following call
 > 
 
 <br/>
+
 - **Callback type 4** will give you detailed information on each diligence happening during he KYC of your end user.
 
 ```json
@@ -231,6 +249,7 @@ Once you create a ```User```, you should start looking up for the following call
 ```
 
 <br/>
+
 - **Callback type 35** will give your the ```ActivationCode``` required to bind securely your end-user's device:
 
 ```json

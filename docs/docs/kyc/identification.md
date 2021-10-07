@@ -80,6 +80,7 @@ More information regarding this endpoint in the [API reference](/api/SCTINST)
 <br/>
 
 In your mobile application, the notification will be received in the following ``` RAW_LIST ``` format:
+
 ```json
 {
   "notificationMessage": "Une opération sensible requiert votre validation",
@@ -149,15 +150,16 @@ You must code the reception of such online card payments notifications. Here is 
 }
 ```
 
-## Adding a new Device
+## Adding a new Device (soon to come)
 
 It is possible to add as many devices as your end-user wants. Each time, a securing process will occur, requiring a new ``` Activation Code ``` and the scanning of an Identity document.
 
 <Image src="docs/SCA-new-qr-code.png" alt="usecase 1"/>
 
-Coming Soon...
+<br/>
 
-Here is the payload you must watch out for from our callback type 35 :
+Here is the payload you must watch out for from our **callback type 35** :
+
 ```
 "Payload": {
         "type": "35",
