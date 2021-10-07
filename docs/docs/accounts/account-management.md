@@ -73,7 +73,24 @@ You can Set Up the account limitation here :
 
 You can retrieve the account balance here :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{appUserId}/balancel" method="get"/>
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{appUserId}/balance" method="get"/>
+
+---
+
+## Operations Management
+
+You can access to the user account operation whatever the type and per type.
+ 
+<Highlight type="caution">
+
+You can also access to youtr operation as a partner... 
+ 
+</Highlight>
+
+You can find the operation  here : 
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/historyitems" method="get"/>
+
 
 ---
 
@@ -81,7 +98,7 @@ You can retrieve the account balance here :
 
 <Highlight>
 
-Base on your customer risk management you can allow cutomer to spend more than its customer balance.
+Based on your customer risk management you can allow cutomer to spend more than its customer balance.
 
 </Highlight>
 
