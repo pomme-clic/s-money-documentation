@@ -32,20 +32,19 @@ And at the end, we uses our card design simulator [Card Design Simulator](https:
 
 <br/>
 
-#### Endpoint ``` POST ``` /api/v2.0/card
+#### ``` POST ``` /api/v2.0/card
 
 
 ```json
 Create card data
 {
-"offerPartnerCode*": "string",            [required] 
-"holderExternalRef*": "string",           [required] 
-"cardExternalRef*": "string",             [required]    constraints: Max 50 chars 
+"offerPartnerCode": "string",            [required] 
+"holderExternalRef": "string",           [required] 
+"cardExternalRef": "string",             [required]     constraints: Max 50 chars 
 "visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
 "label": "string"┃null,                                 constraints: Max 50 chars 
 "wishPin": "boolean"┃null,                              
 "isNfcActivated": "boolean"┃null,                        
-
 }
 ```
 
@@ -85,10 +84,12 @@ Because the signature generation requires the use of the RSA private key it must
 <br/>
 We also recommend to generate the token in the back-end computing the signature and not in the mobile application, to avoid timestamp issue due to mobile with incorrect time. 
 <br/>
+<br/>
 In addition, because Bank's Compliance doesn’t allow Smartphones to send the PIN (even ciphered) to the PINDefinition backend the PIN format send by the mobile must be the position in the keypad coordinates table shared by Manufacturer’s PINDefinition back-end.
 <br/>
 Example: keypad coordinates [9,5,1,3,5,7,4,0,8,6,2] shared by back-end and PIN selected by cardholder 1234.
 Coordinates provided to Card Companion SDK must be 2936 – index in the table -). 
+<br/>
 
 <br/>
 
@@ -100,6 +101,7 @@ Coordinates provided to Card Companion SDK must be 2936 – index in the table -
 <!--
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 -->
+
 More information regarding the specifications of our SDK
 
 <Highlight>
@@ -176,9 +178,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
 
-
-
-
 ---
 
 ## Manage your card
@@ -191,12 +190,9 @@ For specific cases, you can use a cancellation card.
 
 #### Endpoint
 
-<!--
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
--->
-
 
 <Highlight type="caution">
  
@@ -206,12 +202,14 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <br/>
 
+<!--
 <Cta
   context="doc"
   ui="button"
   link="/api/CardFactory#patch-/api/v2.0/card/-cardExternalRef-/cancel"
   label="Try it out"
 />
+-->
 
 ---
 
@@ -221,11 +219,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 #### Endpoint
 
-<!--
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
--->
 
 <Highlight type="tip">
  
