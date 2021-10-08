@@ -87,6 +87,8 @@ We also recommend to generate the token in the back-end computing the signature 
 <br/>
 In addition, because Bank's Compliance doesn’t allow Smartphones to send the PIN (even ciphered) to the PINDefinition backend the PIN format send by the mobile must be the position in the keypad coordinates table shared by Manufacturer’s PINDefinition back-end.
 <br/>
+<br/>
+
 Example: keypad coordinates [9,5,1,3,5,7,4,0,8,6,2] shared by back-end and PIN selected by cardholder 1234.
 Coordinates provided to Card Companion SDK must be 2936 – index in the table -). 
 <br/>
