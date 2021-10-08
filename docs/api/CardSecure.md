@@ -1,6 +1,6 @@
 ---
-title: Card Secure
-sidebar_label: Card Secure
+title: Secured endpoint
+sidebar_label: Sensitive operations
 hide_table_of_contents: true
 ---
 
