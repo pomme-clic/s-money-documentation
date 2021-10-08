@@ -7,14 +7,14 @@ import Cta from '@theme/Cta'
 
 
 
-# Know Your Customer
+# Know your customer
 
 
 
 
 ## Context
 
-### Regulatory Context
+### Regulatory context
 
 All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **Onboarding API** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
 
@@ -26,7 +26,7 @@ Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR re
   Regularly check our webhooks & received callbacks to ensure proper communication to your end-customers.
 </Highlight>
 
-### Technical Context & Customer Experience
+### Technical context & customer experience
 
 To integrate our solution, you will need both our API and our SDK : part of the onboarding process has to take place in a mobile application.
 
@@ -40,7 +40,7 @@ If you do not have a mobile app : no problem, we have an app for you: <b class="
   You define the unique identifier of your prospect : the <b class="term">appUserId</b> ; our callbacks will use this same identifier.
 </Highlight>
 
-### Our modular KYC Process
+### Our modular KYC process
 
 Creating a prospect requires one initial step followed by five to six verifications steps that can be set in whatever order you prefer. Arange your onboarding wireframe in the way that suits you best, and call our appropriate endpoints in whatever order you prefer : account will be opened only when all steps are clear.
 
@@ -63,7 +63,7 @@ We offer a simple **plug'n'play** webservice giving multiple call-backs so you c
 
 Our onboarding API embeds an Identity Verification Service. We offer a modular approach for verifying the identity of your prospects, where you can select which technological option fits best your needs :
   
-### OPTION 1: Facial Recognition
+### Option 1: facial recognition
 
 Xpollens can easily parameterize our webview to include Facial Biometry for your customers. They will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 3 to 6 minutes ; our callback will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
@@ -79,7 +79,7 @@ Xpollens can easily parameterize our webview to include Facial Biometry for your
   <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our callback #35 gives you to move from the web to your mobile app.
 </Highlight>
 
-### OPTION 2: SEPA Instant Transfer IN
+### Option 2: SEPA instant transfer IN
 
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required identity-checks to ensure proper identity confirmation, and then automatically opens the account.
 
@@ -102,7 +102,7 @@ More to come : We're working hard to find more options for you, always with the 
 
 
 
-## SDK Features
+## SDK features
 
 Part of the on-boarding process happens on a mobile app ; our solution is **omnichannel**, so don't worry. Here are the functions you need to integrate in our SDK to make the onboarding process work. Please note that security features are managed using a security-wallet that is constructed specifically for your end-user, on his/her mobile phone, inside his/her mobile app.
 
@@ -130,7 +130,7 @@ Here are the steps your mobile application should follow when it's launched by a
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
 </Highlight>
 
-### Scan QR Code
+### Scan QR code
 
 Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Callback Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
@@ -162,11 +162,11 @@ Here is the payload you'll get from our callback type 35 :
 > 
 
 
-### Obtain Secret Code
+### Obtain secret code
 
 This screen is automatically prompted by our SDK whenever you trigger the binding of a new security-wallet on the device. It currently contains 5 digits, and it is not stored anywhere but the user's device.
 
-### Get Webview URL
+### Get webview URL
 
 This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the ``` getIssuerData() ``` feature of our SDK.
 
@@ -175,7 +175,7 @@ Example:
 https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p
 ```
 
-### Close Webview URL
+### Close webview URL
 
 You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
 
@@ -195,7 +195,7 @@ Because we use Strong Authentication as a means of e-Signature, you must please 
 
 
 
-## API Endpoints
+## API endpoints
 
 Here are the webservices you need to integrate in our API Gateway to properly operate the onboarding process.
 

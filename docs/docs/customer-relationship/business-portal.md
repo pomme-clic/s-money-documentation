@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Business Portal
+# Business portal
 
 In addition to our API platform, we offer our client with a dedicated back office tool to manage your own accounts, your clients and their needs.
 
@@ -12,11 +12,11 @@ In addition to our API platform, we offer our client with a dedicated back offic
 ---
 
 
-## Main Features
+## Main features
 
 Through your business dashboard, you will be able to handle all kind of client requests.
 
-### Manage your customer Card
+### Manage your customer card
 
 <Image src="docs/PartnerPortal-Card.png" alt="usecase 1"/>
 

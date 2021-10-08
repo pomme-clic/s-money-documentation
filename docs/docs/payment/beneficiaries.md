@@ -3,13 +3,13 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Beneficiaries Management
+# Beneficiaries management
 
-<Highlight>
+## Adding a beneficiary
+
 
 Adding of a beneficiary is necessary to ask for money transfer.
 
-</Highlight>
 
 <Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
 

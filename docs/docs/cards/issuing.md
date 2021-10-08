@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Card LifeCycle
+# Card lifeCycle
 
 Welcome in the Card Program Management. 
 If you are here it is because you want to launch a card program. First of all, to create your card program management, we define your card product with a first filter:

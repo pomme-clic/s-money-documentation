@@ -4,7 +4,7 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 
-# Card Payment
+# Card payment
 
 The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash. 
 First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. 
@@ -13,7 +13,7 @@ After, in second time, one or more day after, merchant bank proceeds a clearing 
 
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
-## HUB Transactions
+## HUB transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
 In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition.
@@ -21,7 +21,7 @@ A posteriori, the HUB also receives the settlements resulting from clearing and 
 
 ---
 
-### Context Authorizations (IAS)
+### Context authorizations (IAS)
 
 All cards issued are systematic authorization cards. This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not. Xpollens checks if the payment context is consistent with the card profile:
 - Is this the correct PIN code,
@@ -45,7 +45,7 @@ We have a unique callback for the hub in the Card Operations domain. This callba
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
-#### Get Card Limits
+#### Get card limits
 
 This API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
 
@@ -55,7 +55,7 @@ This API allows you to retrieve the payment and withdrawal limits for a card as 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
 -->
 
-#### Get Card Operations
+#### Get card operations
 
 This API allows to retrieve a user's card transactions, with or without date criteria. Without date criteria, the api returns the complete list of operations.
 
@@ -63,7 +63,7 @@ This API allows to retrieve a user's card transactions, with or without date cri
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations" method="get"/> 
 -->
 
-#### Get Clearing Report
+#### Get clearing report
 
 The cardoperations/clearingreport API is generated each time the transaction file transmitted by our Core Banking is received and processed.
 
@@ -81,7 +81,7 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 
 
 
-#### Get Card Operation Description
+#### Get card operation description
 
 This API is used to retrieve the operation details.
 
@@ -89,7 +89,7 @@ This API is used to retrieve the operation details.
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}" method="get"/>
 -->
 
-#### Get Card Operation Messages Description
+#### Get card operation messages description
 
 This API is used to retrieve the details of the authorization message
 
