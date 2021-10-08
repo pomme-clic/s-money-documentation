@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Account Management 
+# Account management 
 
 ## What does IBAN means ?
 
@@ -27,7 +27,7 @@ You can also have these codes : GF, GP, MQ, RE, PF, TF, YT, NC, BL, MF(French pa
 
 ---
 
-## Account Management
+## Account management
 
 <Highlight>
 All the xpollens accounts comes with an IBAN. It can be your own (if you have a financial agreement) or a Xpollens one. For more information, please contact our sales team.
@@ -54,7 +54,7 @@ You can retrieve account balances here :
 
 ---
 
-## Operations Management
+## Operations management
 
 You can access all your customer account operations but also your own account operations. 
 
@@ -65,7 +65,7 @@ You can find more here :
 
 ---
 
-## Balance Management
+## Balance management
 
 
 Based on your customer risk management you can sometimes allow customer to spend more than its customer balance.

@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 
 
-# Strong Customer Authentication 
+# Strong customer authentication 
 
 
 
@@ -15,7 +15,7 @@ import Cta from '@theme/Cta'
 
 ## Context
 
-### Regulatory Context
+### Regulatory context
 
 Authentication is required for your end-customers if you are on the Retail B2C market ; it is also required for all key individuals of your professional customers, if you are on the Corporates B2B market. Strong Customer Authentication will occur in two situations : <br/><br/>
 
@@ -31,7 +31,7 @@ The Second Payment Services EU Directive (PSD2) requires that such a strong auth
 
 <Image src="docs/SCA-regulatory-context.png" alt="usecase 1"/>
 
-### Technical Context & Customer Experience
+### Technical context & customer experience
 
 To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application.
 
@@ -48,7 +48,7 @@ Here is a list of main Sensitive Operations. This is list is not exhaustive and 
 
 
 
-## SCA compliant by Design
+## SCA compliant by design
 
 Just plug to our API and we ensure compliance with PSD2 : if the operation is sensitive, your end user will receive a push notification in your mobile app. Execution of the sensitive operation will be conditionned by the proper strong authentication of your end user.
 
@@ -56,7 +56,7 @@ Just plug to our API and we ensure compliance with PSD2 : if the operation is se
 
 <Image src="docs/SCA-flowchart-virement.png" alt="usecase 1"/>
 
-### Sensitive Operations & SDK integration
+### Sensitive operations & SDK integration
 
 By triggering a sensitive operation endpoint, a push notification will be generated, by our backend, onto your end user's smartphone : our back-end will find your end user's mobile application and trigger the **authentication request**. You must therefore code the reception of such notifications using the SDK.
 
@@ -95,7 +95,7 @@ In your mobile application, the notification will be received in the following `
 }
 ```
 
-#### Modify Personal Data
+#### Modify personal data
 
 Your customer may modify some of his personal data, which will trigger an authentication request.
 More information regarding this endpoint in the [API reference](/api/Core)
@@ -125,7 +125,7 @@ In your mobile application, the notification will be received in the following `
 }
 ```
 
-### Internet Payment  & SDK integration
+### Internet payment  & SDK integration
 
 This feature is already embeded in the Xpollens API plateform. Whenever your customer will use her/his card to pay online, a push notification will be sent onto her/his phone in the same manner as above.
 
@@ -150,7 +150,7 @@ You must code the reception of such online card payments notifications. Here is 
 }
 ```
 
-## Adding a new Device (soon to come)
+## Adding a new device (soon to come)
 
 It is possible to add as many devices as your end-user wants. Each time, a securing process will occur, requiring a new ``` Activation Code ``` and the scanning of an Identity document.
 

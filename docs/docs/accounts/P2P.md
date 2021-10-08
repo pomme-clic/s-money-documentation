@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# P2P and Client Debt
+# P2P and client debt
 
 ## What is a P2P transfer ?
 
@@ -13,7 +13,7 @@ import Cta from '@theme/Cta'
 P2P transfer translates to "Peer to Peer transfer". It's a way to transfer money from one of your customer to another one of yours.
 This method of transfer exists to avoid processing by the banking network since both customer are hosted on the same platform.
 
-### Advantages of P2P
+### Advantages of P2P transfers 
 Making a P2P instead of a classic Sepa Credit Transfer (SCT) has several pros :
  - The transfer is made immediatly. No need to suffer the banking network delay.
  - The transfer is free. No banking network means no fee.
@@ -45,7 +45,7 @@ Within our P2P API you will be able to transfer money immediatly to another cust
 More information regarding this endpoint in the [API reference](/api/Core)
 
 ---
-## Client Debt
+## Client debt
 
 <Highlight>
 
