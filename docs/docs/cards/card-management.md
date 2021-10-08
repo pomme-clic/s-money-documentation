@@ -134,6 +134,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
 
+
 <Highlight type="Danger">
  
  Oppose a card is equal to block your card definitively.
