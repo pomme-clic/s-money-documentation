@@ -5,17 +5,17 @@ import Cta from '@theme/Cta'
 
 # Card LifeCycle
 
-Here, we are talking about product and card life cycle.
+Welcome, if you are here it is because you want to launch a card program. First of all, to create your card program management, we define your card product with a first filter:
+- funding source : Debit, Prepaid,...
+- for who : Consumer, Business, Corporate ...
+- what : Classic, Gold, Infinite
 
-The card offer is defined by a product :
-- funding source : debit, prepaid,...
-- for who : consumer, business, corporate ...
-- what : classic, gold, Infinite
-
-And by a type of card : 
+Then we decline it depending on the type of card you want : 
 - physical or virtual card, 
 - token (xPay) 
 - wearable (keyring, bracelet..)
+
+And at the end, we uses our card design simulator [Card Design Simulator](https://simulateur-carte.netlify.app/init/range), the packaging and the life cycle journey
 
 ---
 
@@ -65,7 +65,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
-
 
 ---
 
