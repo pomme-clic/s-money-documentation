@@ -193,12 +193,9 @@ For specific cases, you can use a cancellation card.
 
 #### Endpoint
 
-<!--
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
--->
-
 
 <Highlight type="caution">
  
@@ -207,13 +204,14 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 </Highlight>
 
 <br/>
-
+<!--
 <Cta
   context="doc"
   ui="button"
   link="/api/CardFactory#patch-/api/v2.0/card/-cardExternalRef-/cancel"
   label="Try it out"
 />
+-->
 
 ---
 
@@ -223,11 +221,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 #### Endpoint
 
-<!--
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
--->
 
 <Highlight type="tip">
  
