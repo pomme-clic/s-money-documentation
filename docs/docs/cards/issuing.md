@@ -32,7 +32,7 @@ And at the end, we uses our card design simulator [Card Design Simulator](https:
 
 <br/>
 
-#### Endpoint ``` POST ``` /api/v2.0/card
+#### ``` POST ``` /api/v2.0/card
 
 
 ```json
