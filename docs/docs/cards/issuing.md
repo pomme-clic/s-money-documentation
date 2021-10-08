@@ -38,13 +38,13 @@ And at the end, we uses our card design simulator [Card Design Simulator](https:
 ```json
 Create card data
 {
-"offerPartnerCode*": "string",  [Required] 
-"holderExternalRef*": "string", [Required] 
-"cardExternalRef*": "string",   [Required]  Constraints: Max 50 chars 
-"visualCodeSelected": "string"┃null,        Constraints: Max 10 chars
-"label": "string"┃null,                     Constraints: Max 50 chars 
-"wishPin": "boolean"┃null, 
-"isNfcActivated": "boolean"┃null, 
+"offerPartnerCode*": "string",            [required] 
+"holderExternalRef*": "string",           [required] 
+"cardExternalRef*": "string",             [required]    constraints: Max 50 chars 
+"visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
+"label": "string"┃null,                                 constraints: Max 50 chars 
+"wishPin": "boolean"┃null,                              
+"isNfcActivated": "boolean"┃null,                        
 
 }
 ```
@@ -115,19 +115,21 @@ Order a virtual uses the same API to create a card (physical or virtual). Change
 
 <Image src="docs/vCard_Order.png" alt="usecase 1"/>
 
+<br/>
+
 #### Endpoint ``` POST ``` /api/v2.0/card
 
 
 ```json
 Create card data
 {
-"offerPartnerCode*": "string",  [Required] 
-"holderExternalRef*": "string", [Required] 
-"cardExternalRef*": "string",   [Required]  Constraints: Max 50 chars 
-"visualCodeSelected": "string"┃null,        Constraints: Max 10 chars
-"label": "string"┃null,                     Constraints: Max 50 chars 
-"wishPin": "boolean"┃null, 
-"isNfcActivated": "boolean"┃null, 
+"offerPartnerCode*": "string",            [required] 
+"holderExternalRef*": "string",           [required] 
+"cardExternalRef*": "string",             [required]    constraints: Max 50 chars 
+"visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
+"label": "string"┃null,                                 constraints: Max 50 chars 
+"wishPin": "boolean"┃null,                              always false (not used)
+"isNfcActivated": "boolean"┃null,                       always false (not used)
 
 }
 ```
@@ -137,8 +139,8 @@ Create card data
 > - ``` cardExternalRef ``` : The card's reference attributed by the partner
 > - ``` visualCodeSelected ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
 >  - ``` label ``` : The name or partner's reference of the card.
->  - ``` wishPin ``` : The Partner can choose to create the card with or without wishpin (If the partner 's offer doesn't support it, then the PIN will be randomly generated). If the attribute is not entered when ordering the card, and defined by default in the offer, then the card will be created with a pin chosen by the holder.
-> - ``` isNfcActivated ```  : The Partner can choose to create the card with or without NFC (If its' by default deactivated in the offer, then the card will be created without NFC). If the attribute is not entered when ordering the card, and activated by default in the offer, then the NFC will be activated for the card.
+>  - ``` wishPin ``` : ***NOT USED***
+> - ``` isNfcActivated ```  : ***NOT USED***
 
 <br/>
 
