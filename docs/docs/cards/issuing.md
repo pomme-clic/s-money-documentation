@@ -89,6 +89,7 @@ In addition, because Bank's Compliance doesn’t allow Smartphones to send the P
 <br/>
 Example: keypad coordinates [9,5,1,3,5,7,4,0,8,6,2] shared by back-end and PIN selected by cardholder 1234.
 Coordinates provided to Card Companion SDK must be 2936 – index in the table -). 
+<br/>
 
 <br/>
 
