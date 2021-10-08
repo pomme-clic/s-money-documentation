@@ -1,10 +1,10 @@
 ---
-title: Core-Title
-sidebar_label: Core-Sidebar
+title: Core
+sidebar_label: Core Resources
 hide_table_of_contents: true
 ---
 
-# Core-H1
+# Core
 
 import Rapidoc from "@theme/Rapidoc"
 
