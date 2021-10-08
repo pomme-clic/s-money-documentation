@@ -33,7 +33,6 @@ And at the end, we uses our card design simulator [Card Design Simulator](https:
 
 #### Endpoint ``` POST ``` /api/v2.0/card
 
-<br/>
 
 ```json
 Create card data
@@ -142,6 +141,18 @@ Create card data
 
 <br/>
 
+<Highlight type="caution">
+ 
+ When your end user order a virtual card, obviously wishPIn and isNfcActivated is not used.
+  
+</Highlight>
+
+<Highlight type="tip">
+ 
+ When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
+ 
+</Highlight>
+
 <Cta
   context="doc"
   ui="button"
@@ -157,11 +168,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-<Highlight type="tip">
- 
- When your end user order a virtual card, he can use it instantly in e-commerce or add in a wallet xpay for point of sale.
- 
-</Highlight>
+
 
 
 <Highlight>
