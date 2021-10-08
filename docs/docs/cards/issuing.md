@@ -152,7 +152,7 @@ Create card data
 
 <Highlight type="caution">
  
- When your end user order a virtual card, obviously wishPIn and isNfcActivated is not used.
+ When your end user order a virtual card, obviously there is <b class="term">no PIN with a virtual card</b>. So, wishPIn and isNfcActivated is not used.
   
 </Highlight>
 
@@ -175,16 +175,8 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
 
----
 
 
-
-
-<Highlight>
-  
- Obviously there is <b class="term">no PIN with a virtual card</b>
-
-</Highlight>
 
 ---
 
