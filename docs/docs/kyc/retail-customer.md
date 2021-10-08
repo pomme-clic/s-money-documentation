@@ -134,14 +134,7 @@ Here are the steps your mobile application should follow when it's launched by a
 
 Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Callback Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
->
-> **Managing the multi-channel capability**
->
-> - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
-> - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
-> 
-
-Here is the payload you'll get from our callback type 35 :
+Here is the payload you'll get from our **callback type 35** :
 
 ```json
 "Payload": {
@@ -152,12 +145,20 @@ Here is the payload you'll get from our callback type 35 :
         }
 ```
 
+>
+> **Managing the multi-channel capability**
+>
+> - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
+> - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
 > 
-> **Concerning the PROVISIONNING BLOCK**
+> In both cases, you will need to use the SDK feature ``` walletProvisionning.launch( activationCode ) ```.
 > 
-> - Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
-> - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
-> 
+
+<br/>
+<Highlight type="tip">
+- Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
+- Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+</Highlight>
 
 
 ### Obtain Secret Code
@@ -169,6 +170,7 @@ This screen is automatically prompted by our SDK whenever you trigger the bindin
 This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the ``` getIssuerData() ``` feature of our SDK.
 
 Example:
+
 ```
 https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p
 ```
@@ -178,6 +180,7 @@ https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A982
 You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
 
 Example:
+
 ```
 https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p#SUCCESS
 ```
