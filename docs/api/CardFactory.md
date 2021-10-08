@@ -10,6 +10,7 @@ import Rapidoc from "@theme/Rapidoc"
 
 <Rapidoc apiUrl="/v2.0/cardfactory">
 </Rapidoc>
-
+<Rapidoc apiUrl="/v1.1/cardsecure">
+</Rapidoc>
 <!-- <Rapidoc apiUrl="/v2.0/migrationProxy">
 </Rapidoc> -->
