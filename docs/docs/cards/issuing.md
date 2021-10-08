@@ -16,7 +16,7 @@ Then we decline it depending on the type of card you want :
 - token (xPay) 
 - wearable (keyring, bracelet..)
 
-And at the end, we use our card design simulator [here](./your-card), the packaging and the life cycle journey
+And at the end, we use our [card design simulator](./your-card), the packaging and the life cycle journey
 
 ---
 
