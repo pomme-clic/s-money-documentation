@@ -126,7 +126,7 @@ Order a virtual uses the same API to create a card (physical or virtual). Change
 
 <br/>
 
-#### Endpoint ``` POST ``` /api/v2.0/card
+#### ``` POST ``` /api/v2.0/card
 
 
 ```json
