@@ -102,6 +102,7 @@ Coordinates provided to Card Companion SDK must be 2936 – index in the table -
 <!--
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 -->
+
 More information regarding the specifications of our SDK
 
 <Highlight>
@@ -178,9 +179,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
 
-
-
-
 ---
 
 ## Manage your card
@@ -204,6 +202,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 </Highlight>
 
 <br/>
+
 <!--
 <Cta
   context="doc"
