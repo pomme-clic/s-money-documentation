@@ -50,6 +50,8 @@ Screen mirroring, screenshots, malware, spyware, jailbreak, code change : our Se
 To ensure end-to-end encryption, some payloads will be fully encrypted. You will **not** have the keys to decrypt such payloads, and you will have to use our SDK to encrypt the payload directly on your end-user's device.
 
 > Note that you will not have access to your end-user's data ; only her/him will have the possibility to see the data.
+> 
+> ``` issuerClientId ``` is the SDK parameter that must receive the ``` puublicUserCode ``` given by the **callback type 34**.
 
 <Image src="docs/SCA-encryption-basics.png" alt="usecase 1"/>
 
