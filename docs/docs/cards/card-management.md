@@ -5,27 +5,22 @@ import Cta from '@theme/Cta'
 
 # Card Management
 
-Here, we are talking about how you can manage your cards.
 
-## Context 'Selfcare'
+## Selfcare
 
 You can manage your card with a selfcare in order to update some specifications, like : 
-- block and unblock your card
-- update limits for payment or withdrawal
-- block or unblock VAD payment
-- block or unblock non domestic payment or withdrawal
+> - block and unblock your card
+> - update limits for payment or withdrawal
+> - block or unblock VAD payment
+> - block or unblock non domestic payment or withdrawal
+> - oppose your card
 
----
 
 ### Block card
  
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+<br/>
 
 <Highlight type="tip">
  
@@ -39,11 +34,15 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
   
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
+<!--
+
 #### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+-->
 
 <Highlight type="tip">
  
@@ -53,15 +52,20 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
+
 ### Block VAD
   
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
+
+<!--
 
 #### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+-->
 
 <Highlight type="tip">
  
@@ -75,11 +79,15 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
+<!--
+
 #### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+-->
 
 <Highlight type="tip">
  
@@ -89,17 +97,62 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Context 'Actions in app'
-You can manage your card to : 
-- display your PIN code
-- display your virtual card
-- oppose your card 
+### Endpoints
+
+```json
+Update card data
+{
+"globalLimitAtmSelected*": integer┃null,         
+"globalLimitPaymentSelected*": integer┃null,          
+"cardBlocked*": boolean┃null,            
+"isVadBlocked": boolean┃null,                   
+"foreignPaymentBlocked": boolean┃null,                             
+
+}
+```
+
+> - ``` globalLimitAtmSelected ``` : It’s a card withdrawal limit on seven slippery days (card created with default limits defined in the offer). 
+> - ``` globalLimitPaymentSelected ``` : It’s a card payment limit on thirty slippery days (Value in euros).
+> - ``` cardBlocked ``` : Allow to block or unblock the card. If the card is blocked, no transaction is allowed.
+> - ``` isVadBlocked ``` : Allow to block or unblock the card's internet, MOTO payment transaction.
+>  - ``` foreignPaymentBlocked ``` : Allow to block or unblock the card's foreign payment.
+
+<br/>
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+### Oppose your card
+
+<Image src="docs/Card_Oppose.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
+
+<Highlight type="Danger">
+ 
+ Oppose a card is equal to block your card definitively.
+ 
+</Highlight>
 
 <Highlight>
  
- You can add in Apple wallet by in-app provisionning (sdk) - See how in xpay section
+ The next step is usually a refabricate or upgrade new card. See in Issue a card Section
  
 </Highlight>
+
+---
+
+## Display your card
+
+You can : 
+
+> - display your PIN code
+> - display your virtual card
 
 ---
 
@@ -139,25 +192,9 @@ You can manage your card to :
 
 ---
 
-### Oppose your card
-
-<Image src="docs/Card_Oppose.png" alt="usecase 1"/>
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
-
-<Highlight type="Danger">
- 
- Oppose a card is equal to block your card definitively.
- 
-</Highlight>
-
 <Highlight>
  
- The next step is usually a refabricate or upgrade new card. See in Issue a card Section
+ You can add in Apple wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
  
 </Highlight>
 
