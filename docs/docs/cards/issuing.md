@@ -93,7 +93,7 @@ More information regarding the specifications of our SDK
 
 <Highlight type="caution">
  
- WishPIN is <b class="term">only possible for mobile app</b>. <b class="term">You have to add our sdk in addition with a TokenCB signature API</b>
+ WishPIN is <b class="term">only possible for mobile app</b>. <b class="term">You have to add our sdk in addition with a Token signature API</b>
  
 </Highlight>
 
@@ -162,7 +162,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-## Manage context
+## Manage your card
 
 Here you are some examples of life cycle management
 
@@ -172,15 +172,27 @@ For specific cases, you can use a cancellation card.
 
 #### Endpoint
 
+<!--
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
+-->
+
 
 <Highlight type="caution">
  
  DO NOT USE for an account closure because cancellation card is embedded
  
 </Highlight>
+
+<br/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/CardFactory#patch-/api/v2.0/card/-cardExternalRef-/cancel"
+  label="Try it out"
+/>
 
 ---
 
@@ -190,9 +202,11 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 #### Endpoint
 
+<!--
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
+-->
 
 <Highlight type="tip">
  
@@ -200,11 +214,13 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
---- 
+<br/>
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/CardFactory"
+  link="/api/CardFactory#post-/api/v2.0/card/refabricate"
   label="Try it out"
 />
+
+
