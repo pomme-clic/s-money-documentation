@@ -38,14 +38,13 @@ And at the end, we uses our card design simulator [Card Design Simulator](https:
 ```json
 Create card data
 {
-"offerPartnerCode*": "string",            [required] 
-"holderExternalRef*": "string",           [required] 
-"cardExternalRef*": "string",             [required]    constraints: Max 50 chars 
+"offerPartnerCode": "string",            [required] 
+"holderExternalRef": "string",           [required] 
+"cardExternalRef": "string",             [required]     constraints: Max 50 chars 
 "visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
 "label": "string"┃null,                                 constraints: Max 50 chars 
 "wishPin": "boolean"┃null,                              
 "isNfcActivated": "boolean"┃null,                        
-
 }
 ```
 
