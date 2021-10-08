@@ -1,6 +1,6 @@
 ---
-title: Instant Payment
-sidebar_label: Instant Payment
+title: Instant payment
+sidebar_label: Instant payment
 hide_table_of_contents: true
 ---
 
