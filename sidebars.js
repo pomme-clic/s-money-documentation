@@ -10,7 +10,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Accounts',
-      items: ['docs/accounts/account-management', 'docs/accounts/unpaid-operations'],
+      items: ['docs/accounts/account-management', 'docs/accounts/P2P'],
     },
     {
       type: 'category',

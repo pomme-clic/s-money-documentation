@@ -5,15 +5,22 @@ import Cta from '@theme/Cta'
 
 # P2P and Client Debt
 
-## P2P
+## What is a P2P transfer ?
 
 
 
-<Highlight>
 
-P2P is a way to transfer money from a customer to another. The transfer is made immediatly
+P2P transfer translates to "Peer to Peer transfer". It's a way to transfer money from one of your customer to another one of yours.
+This method of transfer exists to avoid processing by the banking network since both customer are hosted on the same platform.
 
-</Highlight>
+### Advantages of P2P
+Making a P2P instead of a classic Sepa Credit Transfer (SCT) has several pros :
+ - The transfer is made immediatly. No need to suffer the banking network delay.
+ - The transfer is free. No banking network means no fee.
+
+
+The only condition is to have both the payer and the payee registered on your platform.
+
 
 <Image src="docs/P2P.png" alt="usecase 1"/>
 
@@ -25,7 +32,7 @@ Specialized P2P are also available for customer billing. Billing can be done one
 
 <Highlight type="caution">
 
-Different option of the P2P can be used when issued by the partner for example in case if billing : no account limitation verification, this option may create a cutomer debt if the balance is not sufficiant.
+Different option of P2P can be used when issued by the partner for example in case of billing : no account limitation verification, this option may create a customer debt if the balance is not sufficient.
 
 </Highlight>
 
@@ -42,7 +49,7 @@ More information regarding this endpoint in the [API reference](/api/Core)
 
 <Highlight>
 
-In some case of transaction, the account balance might not be sufficiant, for example when an offline Card transaction or a Payin contestation (money might be spent..).
+In some case of transaction, the account balance might not be sufficient, for example when an offline Card transaction or a payin contestation (money might be spent..).
 We propose a unpaid mechanism to ensure payment of this kind of operation.
 
 </Highlight>
@@ -68,7 +75,7 @@ Even if it is rare case, you, as client, will have to cover and recover your cli
 
 ## Endpoints
 
-Within our Debt API you will be able to manage your client debt follow-up and recovery.
+Within our debt API you will be able to manage your client debt follow-up and recovery.
 
 To retrieve the customer debt :
 
