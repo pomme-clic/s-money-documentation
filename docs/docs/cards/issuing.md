@@ -16,7 +16,7 @@ Then we decline it depending on the type of card you want :
 - token (xPay) 
 - wearable (keyring, bracelet..)
 
-And at the end, we uses our card design simulator [Card Design Simulator](https://simulateur-carte.netlify.app/init/range), the packaging and the life cycle journey
+And at the end, we uses our card design simulator [Card Design Simulator](./yourcard), the packaging and the life cycle journey
 
 ---
 
