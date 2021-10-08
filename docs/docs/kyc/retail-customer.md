@@ -158,8 +158,7 @@ Here is the payload you'll get from our **callback type 35** :
 
 <br/>
 <Highlight type="tip">
-- Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
-- Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
+Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera; adapt for each OS. Full SDK documentation is subject to NDA.
 </Highlight>
 
 
