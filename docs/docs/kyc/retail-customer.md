@@ -134,6 +134,8 @@ Here are the steps your mobile application should follow when it's launched by a
 
 Once a new user downloads your mobile application, you will need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Callback Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
+The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletProvisioning.launch( activationCode ) ```.
+
 >
 > **Managing the multi-channel capability**
 >
