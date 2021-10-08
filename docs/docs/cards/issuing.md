@@ -102,7 +102,7 @@ Coordinates provided to Card Companion SDK must be 2936 – index in the table -
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 -->
 
-More information regarding the specifications of our SDK
+More information regarding the specifications in our SDK
 
 <Highlight>
  
