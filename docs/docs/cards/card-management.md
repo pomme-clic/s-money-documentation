@@ -97,7 +97,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-### Endpoints
+#### ``` PUT ``` /api/v2.0/card/{cardExternalRef}
 
 ```json
 Update card data
@@ -121,6 +121,8 @@ Update card data
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+
+---
 
 ### Oppose your card
 
