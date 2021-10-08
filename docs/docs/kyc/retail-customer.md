@@ -150,6 +150,7 @@ Here is the payload you'll get from our **callback type 35** :
 >
 > - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
 > - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
+
 </br>
 
 > 
