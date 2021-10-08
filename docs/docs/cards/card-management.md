@@ -102,12 +102,11 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 ```json
 Update card data
 {
-"globalLimitAtmSelected*": integer┃null,         
-"globalLimitPaymentSelected*": integer┃null,          
-"cardBlocked*": boolean┃null,            
-"isVadBlocked": boolean┃null,                   
-"foreignPaymentBlocked": boolean┃null,                             
-
+"globalLimitAtmSelected": "integer"┃null,         constraints: Max 32 chars
+"globalLimitPaymentSelected": "integer"┃null,     constraints: Max 32 chars    
+"cardBlocked": "boolean"┃null,            
+"isVadBlocked": "boolean"┃null,                   
+"foreignPaymentBlocked": "boolean"┃null,                             
 }
 ```
 
