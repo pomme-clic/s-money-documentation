@@ -5,11 +5,11 @@ import Cta from '@theme/Cta'
 
 # Beneficiaries management
 
-<Highlight>
+## Adding a beneficiary
+
 
 Adding of a beneficiary is necessary to ask for money transfer.
 
-</Highlight>
 
 <Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
 
