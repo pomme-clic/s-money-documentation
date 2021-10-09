@@ -1,6 +1,6 @@
 ---
-title: SCT
-sidebar_label: SCT
+title: Instant payment
+sidebar_label: Instant payment
 hide_table_of_contents: true
 ---
 

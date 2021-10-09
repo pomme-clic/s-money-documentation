@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# SEPA and Instant payment
+# SEPA and instant payment
 
 ## SEPA zone
 

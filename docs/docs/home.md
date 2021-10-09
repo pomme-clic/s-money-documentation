@@ -60,7 +60,7 @@ Xpollens lets you choose your preferred payment methods, build your own accounts
 <Cta
   context="feature"
   ui="inline"
-  link="docs/payin/general"
+  link="docs/accounts/account-management"
   label="Get started"
 />
 

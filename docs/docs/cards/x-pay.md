@@ -5,6 +5,7 @@ import Cta from '@theme/Cta'
 
 # X-Pay 
 
+
 ## Wallet Enrolment
 
 There are 2 methods to add your card to a wallet : 
@@ -32,8 +33,8 @@ You start your enrolment since wallet provider and you confirm into your app
 
 <Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
+
 <!--
-#### endpoint
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
 
@@ -57,6 +58,7 @@ In your mobile app, you can add a card to Apple wallet
 
 <Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
+
 #### SDK for provisioning
 
 More information regarding the specifications in our SDK
@@ -76,6 +78,7 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 ### TOKEN DETAILS
 
 In order to obtain the token details for a specific token.
+
 
 <!--
 #### endpoint
@@ -129,6 +132,10 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 In order to retrieve the list of tokens for a specific card. data in response are the same of token's details
 <!--
 #### endpoint
+=======
+---
+
+### Token's list of card
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
 

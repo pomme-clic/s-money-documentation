@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Card Management
+# Card management
 
 
 ## Selfcare
@@ -30,7 +30,7 @@ You can manage your card with a selfcare in order to update some specifications,
 
 ---
 
-### Update Limits
+### Update limits
   
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
@@ -75,7 +75,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-### Block foreign Payment and withdrawal
+### Block foreign payments and withdrawal
  
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 

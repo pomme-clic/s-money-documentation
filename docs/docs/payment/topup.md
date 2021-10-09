@@ -3,14 +3,14 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Topup Card
+# Topup card
 
 
-## Shop Xpollens Integration
+## Xpollens shop integration
 
 First you have to integrate a Xpollens shop with our "company brother" Dalenys to provide some fieds in your app in order to customer can entry data cards.
 
-### Hosted Fields with Dalenys
+### Hosted fields with Dalenys
 
 <Image src="docs/PayOUT_HostedFields.png" alt="usecase 1"/>
 

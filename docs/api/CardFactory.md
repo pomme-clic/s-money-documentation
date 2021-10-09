@@ -1,6 +1,6 @@
 ---
-title: Card Factory
-sidebar_label: Card Factory 
+title: Card issuing
+sidebar_label: Card issuing 
 hide_table_of_contents: true
 ---
 
@@ -9,6 +9,4 @@ hide_table_of_contents: true
 import Rapidoc from "@theme/Rapidoc"
 
 <Rapidoc apiUrl="/v2.0/cardfactory">
-</Rapidoc>
-<Rapidoc apiUrl="/v1.1/cardsecure">
 </Rapidoc>

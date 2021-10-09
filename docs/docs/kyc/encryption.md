@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 
 
-# Sensitive Data Encryption
+# Sensitive data encryption
 
 
 
@@ -15,7 +15,7 @@ import Cta from '@theme/Cta'
 
 ## Context
 
-### Identity Theft & Fraudulous Payments
+### Identity theft & fraudulous payments
 
 The payment industry is the favorite target of fraudsters, who try to obtain card numbers or identity documents and use it to pay without the real owner's knowledge. Hackers have creative tricks to reach their goal, and so must the payment industry continuously work to fight back.
 
@@ -27,7 +27,7 @@ The payment industry is the favorite target of fraudsters, who try to obtain car
 <Image src="docs/SCA-getPIN.png" alt="usecase 1"/>
 <Image src="docs/SCA-getPAN.png" alt="usecase 1"/>
 
-### Customer Experience -vs- Security PCI-DSS
+### Customer experience -vs- security PCI-DSS
 
 Your end-customer will want to access some of his very sensitive data directly on his selfcare :
 - his card PIN

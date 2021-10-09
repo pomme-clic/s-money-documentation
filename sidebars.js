@@ -10,7 +10,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Accounts',
-      items: ['docs/accounts/account-management', 'docs/accounts/unpaid-operations'],
+      items: ['docs/accounts/account-management', 'docs/accounts/P2P'],
     },
     {
       type: 'category',
@@ -20,7 +20,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Payment',
-      items: ['docs/payout/beneficiaries', 'docs/payout/IP', 'docs/payin/topup', 'docs/payout/card-payment' , 'docs/payin/sdd'],
+      items: ['docs/payment/beneficiaries', 'docs/payment/IP', 'docs/payment/topup', 'docs/payment/card-payment' , 'docs/payment/sdd'],
     },
     {
       type: 'category',
