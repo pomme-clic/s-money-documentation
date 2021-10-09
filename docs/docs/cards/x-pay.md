@@ -56,7 +56,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 ```json
 "id" : internal Id,                         "long", 	example "637588383208269600"
-"reference : cardExternalRef (appCardId)	"String",	example "QA_qual29_CP"	
+"reference" : cardExternalRef (appCardId)	"String",	example "QA_qual29_CP"	
 "secureElementId" : deviceID	            "String",	example "44125A3342A80014272043036932204E3F73BB08847E90B"
 "type" : Callbacks card = 25	            "Integer",	value   "25" 	
 "tokenValue" :                              "String",   example	"4642353030549437"	
