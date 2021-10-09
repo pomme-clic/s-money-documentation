@@ -52,6 +52,20 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 ```
 **RESPONSE OK/KO**
 
+#### CALLBACK type 25
+
+```json
+"id" : internal Id,                         "long", 	example "637588383208269600"
+"reference : cardExternalRef (appCardId)	"String",	example "QA_qual29_CP"	
+"secureElementId" : deviceID	            "String",	example "44125A3342A80014272043036932204E3F73BB08847E90B"
+"type" : Callbacks card = 25	            "Integer",	value   "25" 	
+"tokenValue" :                              "String",   example	"4642353030549437"	
+"tokenReferenceID" : Unique ID for token	"String",	example "DNITHE382003555876588856" 	
+"tokenRequestorID" : ID assigned 	        "String",   example "40010030273" 	
+"status" : token's status                   "String",   example "A"	
+"messageReasonCode" : steps of TLCM	        "String",	example "1400"
+```
+
 ---
 
 ### Add your card in a wallet since your mobile app
@@ -76,6 +90,8 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 ---
 
 ## About Token
+
+<Image src="docs/Xpay_TokenStatus.png" alt="usecase 1"/>
 
 ### Token Details
 
