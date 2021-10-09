@@ -17,7 +17,9 @@ The first is the usual method which consists since  :
 > - app Samsung Pay
 > - app Google Pay _(coming soon)_
 > - app Garmin Pay _(coming soon)_
+
 <br/>
+
 The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
 
 The second, mandatory for any wallet provider, it's a method without entering your informations card. It's strongly recommended for virtual cards. 
@@ -30,12 +32,15 @@ You start your enrolment since wallet provider
 <Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
 and you confirm into your app
+
 <br/>
+
 <!--
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
 
 <Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/card/{cardExternalRef}/inappverifactivation" method="post"/>
+
 -->
 
 ``` POST ```/api/v2.0/token/{cardExternalRef}/xpayinappverifactivation
@@ -72,7 +77,7 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 ## About Token
 
-### TOKEN DETAILS
+### Token Details
 
 In order to obtain the token details for a specific token.
 
@@ -127,15 +132,12 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 
 
-### TOKENS' LIST of a CARD
+### Token's List of a card
 
 In order to retrieve the list of tokens for a specific card. data in response are the same of token's details
+
 <!--
 #### endpoint
-=======
----
-
-### Token's list of card
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
 
