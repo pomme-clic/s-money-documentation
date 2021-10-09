@@ -193,11 +193,9 @@ You can :
 
 ---
 
-<Highlight>
- 
+
  You can add in Apple wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
- 
-</Highlight>
+
 
 <Cta
   context="doc"

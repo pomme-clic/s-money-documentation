@@ -16,7 +16,7 @@ Then we decline it depending on the type of card you want :
 - token (xPay) 
 - wearable (keyring, bracelet..)
 
-And at the end, we uses our card design simulator [Card Design Simulator](https://simulateur-carte.netlify.app/init/range), the packaging and the life cycle journey
+And at the end, we use our [card design simulator](./your-card), the packaging and the life cycle journey
 
 ---
 
@@ -102,7 +102,7 @@ Coordinates provided to Card Companion SDK must be 2936 – index in the table -
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 -->
 
-More information regarding the specifications of our SDK
+More information regarding the specifications in our SDK
 
 <Highlight>
  
@@ -126,7 +126,7 @@ Order a virtual uses the same API to create a card (physical or virtual). Change
 
 <br/>
 
-#### Endpoint ``` POST ``` /api/v2.0/card
+#### ``` POST ``` /api/v2.0/card
 
 
 ```json
@@ -176,6 +176,41 @@ Create card data
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
+
+
+### Order a temporary virtual card
+
+<Image src="docs/Card_2_Order.png" alt="usecase 1"/>
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
+
+<Highlight type="tip">
+ 
+ You want a physical card but you don't want or can't to wait. You order a temporary virtual card.
+ 
+</Highlight>
+
+2 interesting usecase :  
+ 
+ 1- In subscription for waiting your physical card.  
+ 2- In emergency, you are not in your country but in holidays, you blocked your card (for stolen or lost reason) and you can order an emergency virtual card waiting your new physical card.
+
+<Highlight>
+  
+ Obviously there is not random or wish PIN with a virtual card
+
+</Highlight>
+
+<Highlight type="caution">
+ 
+ You have to order a virtual card first and then use a other endpoint to materialize your virtual with the same data cards
+ 
+</Highlight>
+
 -->
 
 ---
