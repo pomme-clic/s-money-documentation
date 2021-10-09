@@ -9,31 +9,28 @@ import Cta from '@theme/Cta'
 ## Wallet Enrolment
 
 There are 2 methods to add your card to a wallet : 
-
 - inapp verification method _(update of SMS OTP journey)_
 - inapp provisioning method
 
 The first is the usual method which consists since  : 
-
 > - iOS (for Apple Pay)
 > - app Samsung Pay
 > - app Google Pay _(coming soon)_
 > - app Garmin Pay _(coming soon)_
-
+<br/>
 The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
 
 The second, mandatory for any wallet provider, it's a method without entering your informations card. It's strongly recommended for virtual cards. 
 It consists to start in your app (with SCA) with only button click by provisioning data cards then to valid Terms and Conditions and to finish in your app.
 
----
-
 ### Confirm your card enrolment by wallet provider
 
-You start your enrolment since wallet provider and you confirm into your app
+You start your enrolment since wallet provider
 
 <Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
-
+and you confirm into your app
+<br/>
 <!--
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
@@ -52,9 +49,9 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 ---
 
-### Add your card in a Apple wallet since your mobile app
+### Add your card in a wallet since your mobile app
 
-In your mobile app, you can add a card to Apple wallet
+In your mobile app, you can add a card to wallet
 
 <Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
@@ -67,7 +64,7 @@ More information regarding the specifications in our SDK
 
 ##### Caution
 
-Before display the button "Add to wallet", you have to verify if this card **is not already present** in wallet and **if the phone or iOS is compatible**.
+Before display the button "Add to wallet", you have to verify if this card **is not already present** in wallet and **if the phone or OS is compatible**.
 
 </Highlight>
 
@@ -79,7 +76,6 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 In order to obtain the token details for a specific token.
 
-
 <!--
 #### endpoint
 
@@ -90,10 +86,14 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 -->
 
 ``` GET ```/api/v2.0/token/{tokenValue}
-
+```json
+{
+"tokenValue": "string",                     Max 32 char value "4642353030722754",
+}
+```
 ``` RESPONSE ```
 ```json
-{"cardExternalRef": "string",         Max 50 char example "GOLDCARDCONSUMER", [=appCardId]
+{"cardExternalRef": "string",               Max 50 char example "GOLDCARDCONSUMER", [=appCardId]
     "tokens": 
      {
       "tokenValue": "string",               Max 32 char value "4642353030722754",
@@ -106,9 +106,9 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
       "tokenUpdateDate": "DateTime",                    example "2020-12-28T16:54:50.6544932",
       "deviceInformation": 
       {
-        "secureElementId": "string",          Max 50 char example "044125A3342A80014272043036932204E3F73BB08847E90B",
-        "deviceType": "string",               Max 50 char example "02",
-        "deviceNumber": "string",             Max 50 char example "33660710408",
+        "secureElementId": "string",        Max 50 char example "044125A3342A80014272043036932204E3F73BB08847E90B",
+        "deviceType": "string",             Max 50 char example "02",
+        "deviceNumber": "string",           Max 50 char example "33660710408",
       }
      }
 }
@@ -144,7 +144,11 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 
 ``` GET ```/api/v2.0/token/card/{cardExternalRef}
-
+```json
+{
+"cardExternalRef": "string",         Max 50 char example "GOLDCARDCONSUMER", [=appCardId]
+}
+```
 ``` RESPONSE ```
 ```json
 [
