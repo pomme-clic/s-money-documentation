@@ -8,9 +8,10 @@ import Cta from '@theme/Cta'
 
 The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash.
 First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. You have an exchange between cardholder and merchant.
-<br/>
 After, in second time, one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
 <br/>
+<br/>
+
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
 ## Payment transactions
