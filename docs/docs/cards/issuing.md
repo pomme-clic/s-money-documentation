@@ -190,7 +190,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- You want a physical card but you don't want or can't to wait. You order a temporary virtual card.
+You want a physical card but you don't want or can't to wait. You order a temporary virtual card.
  
 </Highlight>
 
