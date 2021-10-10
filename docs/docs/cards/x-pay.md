@@ -27,11 +27,25 @@ It consists to start in your app (with SCA) with only button click by provisioni
 
 ### Confirm your card enrolment by wallet provider
 
-You start your enrolment since wallet provider
+You start your enrolment since wallet provider...
 
 <Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
-and you confirm into your app
+... and you confirm into your app
+
+#### CALLBACK type 25
+
+```json
+"id" : internal Id,                         "long", 	example "637588383208269600"
+"reference" : cardExternalRef (appCardId)	"String",	example "QA_qual29_CP"	
+"secureElementId" : deviceID	            "String",	example "44125A3342A80014272043036932204E3F73BB08847E90B"
+"type" : Callbacks card = 25	            "Integer",	value   "25" 	
+"tokenValue" :                              "String",   example	"4642353030549437"	
+"tokenReferenceID" : Unique ID for token	"String",	example "DNITHE382003555876588856" 	
+"tokenRequestorID" : ID assigned 	        "String",   example "40010030273" 	
+"status" : token's status                   "String",   example "A"	
+"messageReasonCode" : steps of TLCM	        "String",	example "1400"
+```
 
 <br/>
 
@@ -77,6 +91,8 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 ## About Token
 
+<Image src="docs/Xpay_TokenStatus.png" alt="usecase 1"/>
+
 ### Token Details
 
 In order to obtain the token details for a specific token.
@@ -93,7 +109,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 ``` GET ```/api/v2.0/token/{tokenValue}
 ```json
 {
-"tokenValue": "string",                     Max 32 char value "4642353030722754",
+"tokenValue": "string",                     Max 32 char example "4642353030722754",
 }
 ```
 ``` RESPONSE ```
@@ -101,7 +117,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 {"cardExternalRef": "string",               Max 50 char example "GOLDCARDCONSUMER", [=appCardId]
     "tokens": 
      {
-      "tokenValue": "string",               Max 32 char value "4642353030722754",
+      "tokenValue": "string",               Max 32 char example "4642353030722754",
       "tokenReferenceId": "string",         Max 50 char example "DNITHE382003555876588856",
       "tokenRequestorId": "string",         Max 11 char example "40010030273",
       "tokenExpiryDate": "string",          Max 07 char example "11-2023",
@@ -119,16 +135,16 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 }
 ```
 > - ``` tokenValue ``` : Value of a token. 
-> - ``` tokenReferenceId ``` : Unique ID for the token associated with the PAN. Visa will always return this value
-> - ``` tokenRequestorId ``` : ID assigned to the Initiator of the token Request. Visa will always return this value
+> - ``` tokenReferenceId ``` : Unique ID for the token associated with the PAN.
+> - ``` tokenRequestorId ``` : ID assigned to the Initiator of the token Request.
 > - ``` tokenExpiryDate ``` : Expiration date assigned for the token
-> - ``` tokenState ``` : Valid values are : ACTIVATED SUSPENDED DEACTIVATED INACTIVE
-> - ``` tokenType ``` : Valid Token Types are : UNKNOWN CARD_ON_FILE SECURE_ELEMENT HCE QUICK_READ 
+> - ``` tokenState ``` : state example ACTIVATED or SUSPENDED 
+> - ``` tokenType ``` : Valid Token Types like SECURE_ELEMENT
 > - ``` tokenDeactivationDate ``` : Token deactivation date
 > - ``` tokenUpdateDate ``` : Date of token update
 > - ``` secureElementId ``` : Represents the device ID
-> - ``` deviceType ``` : Type of device are : 00 = Unknown 01 = Mobile Phone 02 = Tablet 03= Watch 04= Mobile Phone or Tablet 05 through 99 are undefined
-> - ``` deviceNumber ``` : This will be the full mobile number; in other cases, only the last 4 digits of the mobile number will be provided.
+> - ``` deviceType ``` : Type of device like : MobilePhone or Tablet or Watch
+> - ``` deviceNumber ``` : This will be the full mobile number
 
 
 
