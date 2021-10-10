@@ -142,7 +142,6 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
 -->
 
-
 --- 
 
 ### Card limits
@@ -175,8 +174,6 @@ This API allows you to retrieve the payment and withdrawal limits for a card as 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
 -->
 
---- 
-
 ### Endpoints Details
 
 #### Get card operations
@@ -202,6 +199,8 @@ This API is used to retrieve the details of the authorization message
 <!--
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}/messages" method="get"/>
 -->
+
+--- 
 
 <Cta
   context="doc"
