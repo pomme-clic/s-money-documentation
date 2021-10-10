@@ -9,6 +9,7 @@ import Cta from '@theme/Cta'
 ## Selfcare
 
 You can manage your card with a selfcare in order to update some specifications, like : 
+
 > - block and unblock your card
 > - update limits for payment or withdrawal
 > - block or unblock VAD payment
@@ -70,7 +71,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
+You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
  
 </Highlight>
 
@@ -79,7 +80,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 -->
-
 
 #### Endpoint
 
@@ -104,15 +104,13 @@ Update card data
 
 <br/>
 
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 ---
 
 ### Oppose your card
 
 <Image src="docs/Card_Oppose.png" alt="usecase 1"/>
+
+<br/>
 
 #### Endpoint
 
@@ -121,7 +119,8 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
 
 <Highlight type="Danger">
- 
+
+##### Danger
 Oppose a card is equal to block your card definitively.
  
 </Highlight>
@@ -169,7 +168,7 @@ To use API Informations Display, for PCI compliance, we use a Secure Interface b
 
 <Highlight type="tip">
  
- Once your virtual card is created, you need to get card informations to use in e-commerce for example
+Once your virtual card is created, you need to get card informations to use in e-commerce for example
  
 </Highlight>
 
