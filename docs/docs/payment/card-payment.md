@@ -15,7 +15,7 @@ After, in second time, one or more day after, merchant bank proceeds a clearing 
 <br/>
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
-## HUB transactions
+## Payment transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
 In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition.
@@ -24,7 +24,7 @@ A posteriori, the HUB also receives the settlements resulting from clearing and 
 
 ---
 
-### Context authorizations (IAS)
+### Authorization (IAS)
 
 All cards issued are systematic authorization cards.
 This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
@@ -38,7 +38,15 @@ Xpollens checks if the payment context is consistent with the card profile :
 
 Xpollens tests a lot of parameters in real time and responds to the merchant by indicating the response that was sent to his partner
 
+### Clearing 
+
+We merge the set of authorizations with the corresponding settlements. The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). An more, sometimes there were certain conditions to be offline transactions.
+
+<br/>
+
 --- 
+
+## API & callbacks
 
 ### Callback
 
