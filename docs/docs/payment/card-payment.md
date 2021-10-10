@@ -7,19 +7,17 @@ import Cta from '@theme/Cta'
 # Card payment
 
 The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash.
-<br/>
 First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment.
 <br/>
 You have an exchange between cardholder and merchant.
 <br/>
 After, in second time, one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
-
+<br/>
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
 ## HUB transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
-<br/>
 In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition.
 <br/>
 A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
@@ -29,7 +27,6 @@ A posteriori, the HUB also receives the settlements resulting from clearing and 
 ### Context authorizations (IAS)
 
 All cards issued are systematic authorization cards.
-<br/>
 This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
 <br/>
 Xpollens checks if the payment context is consistent with the card profile :
@@ -50,7 +47,7 @@ These callback contain different types of events corresponding to the operation.
 
 #### type 20 _(authorization)_
 
-This callback is sent in the following cases =
+This callback is sent in the following cases :
 - processing an authorization message _(agreement or refusal)_
 - expiry of authorization after 7 or 31 days
 - total or partial adjustment of an authorization
@@ -59,25 +56,25 @@ It is the most important for you. You can follow activity and exchange with your
 
 ```json
  {  
-  "Id"	                                "long"	    internal Id
+  "Id"	                                 "long"	    internal Id
   "reference"	                          "String"	  Operation OrderID
-  "type"		                            "int"       Callback Type = 20
+  "type"		                              "int"      Callback Type = 20
   "appCardId"	                          "String"	  reference of the card given by the partner
-  "transactionAmount"	                  "decimal"	  amount in local currency
+  "transactionAmount"	                  "decimal"	 amount in local currency
   "currencyCodeTransaction"	            "string"	  currency transaction
-  "cardHolderBillingAmount"	            "decimal"	  Amount in euro
-  "cardHolderBillingConversionRate"   	"decimal"	  Exchange rate
-  "availableBalance"	                  "decimal"	  balance after authorization
-  "actionCode"	                        "int"	      response codes
-  "merchantType"	                      "int"	      merchant category code
-  "cardAcceptorIdentificationCodeName"	"string"	  merchant information
-  "status"	                            "int"	      Operations status
-  "ert"		                              "int"       transaction context 
-  "cardDataInputMode"		                "int"       how to use the card
-  "tokenRequestorID"		                "int"       determines a payment that uses a token
-  "terminalCountryCode"		              "int"       country reference where payment took place
-  "userid"	                            "string"	  reference of the user given by the partner
-  "executedDate"	                      "DateTime"  Executed date of the operation
+  "cardHolderBillingAmount"	            "decimal"	 Amount in euro
+  "cardHolderBillingConversionRate"   	 "decimal"	 Exchange rate
+  "availableBalance"	                   "decimal"	 balance after authorization
+  "actionCode"	                         "int"	     response codes
+  "merchantType"	                       "int"	     merchant category code
+  "cardAcceptorIdentificationCodeName"	 "string"	  merchant information
+  "status"	                             "int"	     Operations status
+  "ert"		                               "int"      transaction context 
+  "cardDataInputMode"		                 "int"      how to use the card
+  "tokenRequestorID"		                  "int"      determines a payment that uses a token
+  "terminalCountryCode"		               "int"      country reference where payment took place
+  "userid"	                             "string"	  reference of the user given by the partner
+  "executedDate"	                       "DateTime" Executed date of the operation
  }
 }
 ```
@@ -94,10 +91,13 @@ This callback is sent when clearing process is finished for you. You receive a r
 
 --- 
 
-#### Get clearing report
+### Get clearing report
 
 The cardoperations/clearingreport API is generated each time the transaction file transmitted by our Core Banking is received and processed.
 
+``` GET ```/api/v1.1/cardoperations/clearingreport/{clearingfileid}
+
+``` RESPONSE ```
 ```json
  { 
 "authorization_reference" : "string"     Authorization unique reference
