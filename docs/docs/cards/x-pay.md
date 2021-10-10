@@ -135,16 +135,16 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 }
 ```
 > - ``` tokenValue ``` : Value of a token. 
-> - ``` tokenReferenceId ``` : Unique ID for the token associated with the PAN. Visa will always return this value
-> - ``` tokenRequestorId ``` : ID assigned to the Initiator of the token Request. Visa will always return this value
+> - ``` tokenReferenceId ``` : Unique ID for the token associated with the PAN.
+> - ``` tokenRequestorId ``` : ID assigned to the Initiator of the token Request.
 > - ``` tokenExpiryDate ``` : Expiration date assigned for the token
-> - ``` tokenState ``` : Valid values are : ACTIVATED SUSPENDED DEACTIVATED INACTIVE
-> - ``` tokenType ``` : Valid Token Types are : UNKNOWN CARD_ON_FILE SECURE_ELEMENT HCE QUICK_READ 
+> - ``` tokenState ``` : state example ACTIVATED or SUSPENDED 
+> - ``` tokenType ``` : Valid Token Types like SECURE_ELEMENT
 > - ``` tokenDeactivationDate ``` : Token deactivation date
 > - ``` tokenUpdateDate ``` : Date of token update
 > - ``` secureElementId ``` : Represents the device ID
-> - ``` deviceType ``` : Type of device are : 00 = Unknown 01 = Mobile Phone 02 = Tablet 03= Watch 04= Mobile Phone or Tablet 05 through 99 are undefined
-> - ``` deviceNumber ``` : This will be the full mobile number; in other cases, only the last 4 digits of the mobile number will be provided.
+> - ``` deviceType ``` : Type of device like : MobilePhone or Tablet or Watch
+> - ``` deviceNumber ``` : This will be the full mobile number
 
 
 
