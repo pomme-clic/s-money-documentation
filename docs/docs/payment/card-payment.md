@@ -68,10 +68,10 @@ It is the most important for you. You can follow activity and exchange with your
   "appCardId" :                             "String"   reference of the card given by the partner
   "transactionAmount" :                     "decimal"  amount in local currency
   "currencyCodeTransaction" :               "string"   currency transaction
-  "cardHolderBillingAmount" : 	             "decimal"  Amount in euro
+  "cardHolderBillingAmount" :               "decimal"  Amount in euro
   "cardHolderBillingConversionRate" :       "decimal"  Exchange rate
   "availableBalance" :                      "decimal"  balance after authorization
-  "actionCode" : 	                          "int"      response codes
+  "actionCode" :                            "int"      response codes
   "merchantType" :                          "int"      merchant category code
   "cardAcceptorIdentificationCodeName" :    "string"   merchant information
   "status" :                                "int"	     Operations status
