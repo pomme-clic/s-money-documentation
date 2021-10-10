@@ -28,7 +28,7 @@ You can manage your card with a selfcare in order to update some specifications,
  
 </Highlight>
 
----
+
 
 ### Update limits
   
@@ -50,7 +50,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 </Highlight>
 
----
+
 
 
 ### Block VAD
@@ -73,7 +73,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
+
 
 ### Block foreign payments and withdrawal
  
@@ -146,7 +146,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
+
 
 ## Display your card
 
@@ -155,7 +155,7 @@ You can :
 > - display your PIN code
 > - display your virtual card
 
----
+
 
 ### Display your PIN code
 
