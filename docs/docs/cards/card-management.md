@@ -15,12 +15,12 @@ You can manage your card with a selfcare in order to update some specifications,
 > - block or unblock non domestic payment or withdrawal
 > - oppose your card
 
+You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
 
 ### Block card
  
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-<br/>
 
 <Highlight type="tip">
  
@@ -28,20 +28,16 @@ You can manage your card with a selfcare in order to update some specifications,
  
 </Highlight>
 
----
+
 
 ### Update limits
   
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
 <!--
-
 #### Endpoint
-
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 -->
 
 <Highlight type="tip">
@@ -50,7 +46,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 </Highlight>
 
----
+
 
 
 ### Block VAD
@@ -58,13 +54,9 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
 <!--
-
 #### Endpoint
-
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 -->
 
 <Highlight type="tip">
@@ -73,20 +65,16 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
+
 
 ### Block foreign payments and withdrawal
  
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
 <!--
-
 #### Endpoint
-
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
 -->
 
 <Highlight type="tip">
@@ -118,9 +106,10 @@ Update card data
 
 <br/>
 
+<!--
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+-->
 
 ---
 
@@ -146,7 +135,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
+
 
 ## Display your card
 
@@ -155,7 +144,7 @@ You can :
 > - display your PIN code
 > - display your virtual card
 
----
+
 
 ### Display your PIN code
 
@@ -193,8 +182,6 @@ You can :
 
 ---
 
-
- You can add in Apple wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
 
 
 <Cta
