@@ -117,7 +117,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 {"cardExternalRef": "string",               Max 50 char example "GOLDCARDCONSUMER", [=appCardId]
     "tokens": 
      {
-      "tokenValue": "string",               Max 32 char value "4642353030722754",
+      "tokenValue": "string",               Max 32 char example "4642353030722754",
       "tokenReferenceId": "string",         Max 50 char example "DNITHE382003555876588856",
       "tokenRequestorId": "string",         Max 11 char example "40010030273",
       "tokenExpiryDate": "string",          Max 07 char example "11-2023",
