@@ -18,11 +18,9 @@ Then we decline it depending on the type of card you want :
 
 And at the end, we use our [card design simulator](./your-card), the packaging and the life cycle journey
 
----
 
 ## Order a card
 
-<br/>
 
 ### Order a physical card
 
@@ -58,20 +56,16 @@ Create card data
 
 <br/>
 
+<!--
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 <Cta
   context="doc"
   ui="button"
   link="/api/CardFactory#post-/api/v2.0/card"
   label="Try it out"
 />
-
-<!--
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
-
----
 
 ### Choose your PIN
 
@@ -116,7 +110,6 @@ More information regarding the specifications in our SDK
  
 </Highlight>
 
----
 
 ### Order a virtual card
 
@@ -165,13 +158,6 @@ Create card data
  
 </Highlight>
 
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/CardFactory#post-/api/v2.0/card"
-  label="Try it out"
-/>
-
 
 ### Order a temporary virtual card
 
@@ -202,16 +188,46 @@ You want a physical card but you don't want or can't to wait. You order a tempor
 
 <!--
 #### Endpoint
-
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
-
 
 ---
 
 ## Manage your card
+
+<br/>
+
+### Refabricate a card
+
+<Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
+
+#### ``` POST ``` /api/v2.0/card
+
+```json
+Refabricate a card from an existing card
+{
+"cardExternalRef*": "string",              [required]    
+"oldCardExternalRef*": "string",           [required] 
+"visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
+"label": "string"┃null,                                 constraints: Max 50 chars 
+}
+```
+> - ``` oldCardExternalRef ```: It’s the reference of the previous card in the refabrication process (Card mother).
+_(Others are the same)_
+
+**RESPONSE OK/KO**
+
+<!--
+#### Endpoint
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
+-->
+
+<Highlight type="tip">
+ 
+ When your end user opposed his card, you can just refabricate.
+ 
+</Highlight>
 
 <br/>
 
@@ -223,7 +239,9 @@ For specific cases, you can use a cancellation card.
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
 
+<!--
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
+-->
 
 <Highlight type="caution">
  
@@ -233,37 +251,12 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <br/>
 
-<!--
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/CardFactory#patch-/api/v2.0/card/-cardExternalRef-/cancel"
-  label="Try it out"
-/>
--->
-
 ---
 
-### Refabricate a card
-
-<Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
-
-#### Endpoint
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
-
-<Highlight type="tip">
- 
- When your end user opposed his card, you can just refabricate.
- 
-</Highlight>
-
-<br/>
-
 <Cta
   context="doc"
   ui="button"
-  link="/api/CardFactory#post-/api/v2.0/card/refabricate"
+  link="/api/CardFactory"
   label="Try it out"
 />
 

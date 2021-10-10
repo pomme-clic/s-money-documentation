@@ -111,8 +111,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 -->
 
----
-
 ### Oppose your card
 
 <Image src="docs/Card_Oppose.png" alt="usecase 1"/>
@@ -120,12 +118,15 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 #### Endpoint
 
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
+<!--
 <Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
+-->
 
-<Highlight type="Danger">
+<Highlight type="danger">
  
- Oppose a card is equal to block your card definitively.
+##### Danger
+ 
+Oppose a card is equal to block your card definitively.
  
 </Highlight>
 
@@ -135,7 +136,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-
+---
 
 ## Display your card
 
@@ -143,7 +144,6 @@ You can :
 
 > - display your PIN code
 > - display your virtual card
-
 
 
 ### Display your PIN code
@@ -162,9 +162,10 @@ You can :
  
 </Highlight>
 
----
 
 ### Display your virtual card
+
+This feature is important to use your card to pay online. 
 
 <Image src="docs/Card_Display.png" alt="usecase 1"/>
 
@@ -181,7 +182,6 @@ You can :
 </Highlight>
 
 ---
-
 
 
 <Cta

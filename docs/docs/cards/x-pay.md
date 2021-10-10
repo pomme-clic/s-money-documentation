@@ -25,7 +25,7 @@ The cardholder starts enrolment by entering his card informations and then he va
 The second, mandatory for any wallet provider, it's a method without entering your informations card. It's strongly recommended for virtual cards. 
 It consists to start in your app (with SCA) with only button click by provisioning data cards then to valid Terms and Conditions and to finish in your app.
 
-### Confirm your card enrolment by wallet provider
+### Confirm your card
 
 You start your enrolment since wallet provider...
 
@@ -68,7 +68,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 ---
 
-### Add your card in a wallet since your mobile app
+### Add your card in-app
 
 In your mobile app, you can add a card to wallet
 
@@ -91,6 +91,8 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 ## About Token
 
+This is token life cycle (TLC). Your token has a own life but it is linked to his card too. So Card Life Cycle (CLC) act on the TLC.
+
 <Image src="docs/Xpay_TokenStatus.png" alt="usecase 1"/>
 
 ### Token Details
@@ -99,11 +101,8 @@ In order to obtain the token details for a specific token.
 
 <!--
 #### endpoint
-
 More information regarding this endpoint in the [API reference](/api/Xpay)
-
 <Endpoint apiUrl="/v2.0/Xpay" path="/api/v2.0/token/{tokenvalue}" method="get"/>
-
 -->
 
 ``` GET ```/api/v2.0/token/{tokenValue}

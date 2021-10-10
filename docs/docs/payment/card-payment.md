@@ -7,28 +7,25 @@ import Cta from '@theme/Cta'
 # Card payment
 
 The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash.
-First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment.
-<br/>
-You have an exchange between cardholder and merchant.
-<br/>
+First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. You have an exchange between cardholder and merchant.
 After, in second time, one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
-<br/>
+
+
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
 ## Payment transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
-In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition.
-<br/>
-A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
+In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition. 
 
+A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
 
 ### Authorization (IAS)
 
 All cards issued are systematic authorization cards.
 This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
-<br/>
 Xpollens checks if the payment context is consistent with the card profile :
+
 - Is this the correct PIN code,
 - is the card active,
 - are the ceilings or the balance sufficient,
@@ -39,9 +36,9 @@ Xpollens tests a lot of parameters in real time and responds to the merchant by 
 
 ### Clearing 
 
-We merge the set of authorizations with the corresponding settlements. The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). An more, sometimes there were certain conditions to be offline transactions.
-
-<br/>
+We merge the set of authorizations with the corresponding settlements. 
+The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). 
+And more, sometimes there were certain conditions to be offline transactions.
 
 --- 
 
@@ -49,7 +46,9 @@ We merge the set of authorizations with the corresponding settlements. The trans
 
 ### Callback
 
-We provide you with 2 callbacks allowing you to retrieve the processing information of authorization requests made in real time as well as the processing of settlements carried out a posteriori by sending from fellow banks
+We provide you with 2 callbacks allowing you to retrieve the processing information of authorization requests made in real time as well as the processing of settlements carried out a posteriori by sending from fellow banks.
+
+
 These callback contain different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself, etc.
 
 #### type 20 _(authorization)_
@@ -63,25 +62,25 @@ It is the most important for you. You can follow activity and exchange with your
 
 ```json
  {  
-  "Id"	                                 "long"	    internal Id
-  "reference"	                          "String"	  Operation OrderID
-  "type"		                              "int"      Callback Type = 20
-  "appCardId"	                          "String"	  reference of the card given by the partner
-  "transactionAmount"	                  "decimal"	 amount in local currency
-  "currencyCodeTransaction"	            "string"	  currency transaction
-  "cardHolderBillingAmount"	            "decimal"	 Amount in euro
-  "cardHolderBillingConversionRate"   	 "decimal"	 Exchange rate
-  "availableBalance"	                   "decimal"	 balance after authorization
-  "actionCode"	                         "int"	     response codes
-  "merchantType"	                       "int"	     merchant category code
-  "cardAcceptorIdentificationCodeName"	 "string"	  merchant information
-  "status"	                             "int"	     Operations status
-  "ert"		                               "int"      transaction context 
-  "cardDataInputMode"		                 "int"      how to use the card
-  "tokenRequestorID"		                  "int"      determines a payment that uses a token
-  "terminalCountryCode"		               "int"      country reference where payment took place
-  "userid"	                             "string"	  reference of the user given by the partner
-  "executedDate"	                       "DateTime" Executed date of the operation
+  "Id":                                     "long"     internal Id
+  "reference" :                             "String"   Operation OrderID
+  "type" :                                  "int"      Callback Type = 20
+  "appCardId" :                             "String"   reference of the card given by the partner
+  "transactionAmount" :                     "decimal"  amount in local currency
+  "currencyCodeTransaction" :               "string"   currency transaction
+  "cardHolderBillingAmount" :               "decimal"  Amount in euro
+  "cardHolderBillingConversionRate" :       "decimal"  Exchange rate
+  "availableBalance" :                      "decimal"  balance after authorization
+  "actionCode" :                            "int"      response codes
+  "merchantType" :                          "int"      merchant category code
+  "cardAcceptorIdentificationCodeName" :    "string"   merchant information
+  "status" :                                "int"	     Operations status
+  "ert" :                                   "int"      transaction context 
+  "cardDataInputMode" :                     "int"      how to use the card
+  "tokenRequestorID" :                      "int"      determines a payment that uses a token
+  "terminalCountryCode" :                   "int"      country reference where payment took place
+  "userid" :                                "string"	  reference of the user given by the partner
+  "executedDate" :                          "DateTime" Executed date of the operation
  }
 }
 ```
@@ -90,13 +89,13 @@ It is the most important for you. You can follow activity and exchange with your
 
 This callback is sent when clearing process is finished for you. You receive a reference and you can retrieve your settlement in clearing report.
 
+```json
 {
-"id	        "long"	  internal Id
-"reference	"String"	Batch file reference to retrieve the operations of the clearing report with the API
+"id	        "long"	   internal Id
+"reference	 "String"	 Batch file reference to retrieve the operations of the clearing report with the API
 "type	      "Int"	    Callbacks card clearing = 24
 }
-
---- 
+```
 
 ### Get clearing report
 
@@ -142,9 +141,6 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
 -->
 
-
---- 
-
 ### Card limits
 
 This API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
@@ -175,8 +171,6 @@ This API allows you to retrieve the payment and withdrawal limits for a card as 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
 -->
 
---- 
-
 ### Endpoints Details
 
 #### Get card operations
@@ -202,6 +196,8 @@ This API is used to retrieve the details of the authorization message
 <!--
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}/messages" method="get"/>
 -->
+
+--- 
 
 <Cta
   context="doc"
