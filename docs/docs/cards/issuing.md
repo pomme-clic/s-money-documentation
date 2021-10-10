@@ -18,11 +18,9 @@ Then we decline it depending on the type of card you want :
 
 And at the end, we use our [card design simulator](./your-card), the packaging and the life cycle journey
 
----
 
 ## Order a card
 
-<br/>
 
 ### Order a physical card
 
@@ -58,20 +56,16 @@ Create card data
 
 <br/>
 
+<!--
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 <Cta
   context="doc"
   ui="button"
   link="/api/CardFactory#post-/api/v2.0/card"
   label="Try it out"
 />
-
-<!--
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
-
----
 
 ### Choose your PIN
 
@@ -116,7 +110,6 @@ More information regarding the specifications in our SDK
  
 </Highlight>
 
----
 
 ### Order a virtual card
 
@@ -165,13 +158,6 @@ Create card data
  
 </Highlight>
 
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/CardFactory#post-/api/v2.0/card"
-  label="Try it out"
-/>
-
 
 ### Order a temporary virtual card
 
@@ -202,47 +188,15 @@ You want a physical card but you don't want or can't to wait. You order a tempor
 
 <!--
 #### Endpoint
-
 More information regarding this endpoint in the [API reference](/api/CardFactory)
-
 <Endpoint apiUrl="/v2.0/cardfactory" path="​/api​/v2.0​/card" method="post"/>
 -->
-
 
 ---
 
 ## Manage your card
 
 <br/>
-
-### Cancel a card
-
-For specific cases, you can use a cancellation card.
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
-
-<Highlight type="caution">
- 
- DO NOT USE for an account closure because cancellation card is embedded
- 
-</Highlight>
-
-<br/>
-
-<!--
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/CardFactory#patch-/api/v2.0/card/-cardExternalRef-/cancel"
-  label="Try it out"
-/>
--->
-
----
 
 ### Refabricate a card
 
@@ -272,6 +226,24 @@ _(Others are the same)_
 <Highlight type="tip">
  
  When your end user opposed his card, you can just refabricate.
+ 
+</Highlight>
+
+<br/>
+
+### Cancel a card
+
+For specific cases, you can use a cancellation card.
+
+#### Endpoint
+
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
+
+<Highlight type="caution">
+ 
+ DO NOT USE for an account closure because cancellation card is embedded
  
 </Highlight>
 
