@@ -20,7 +20,6 @@ You can manage your card with a selfcare in order to update some specifications,
  
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-<br/>
 
 <Highlight type="tip">
  
