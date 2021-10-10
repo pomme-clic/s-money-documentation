@@ -22,7 +22,6 @@ In real time, the IAS (Issuer Authorization Server) part manages authorization o
 <br/>
 A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
 
----
 
 ### Authorization (IAS)
 
