@@ -15,7 +15,7 @@ You can manage your card with a selfcare in order to update some specifications,
 > - block or unblock non domestic payment or withdrawal
 > - oppose your card
 
-You can add in Apple wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
+You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
 
 ### Block card
  
