@@ -91,8 +91,8 @@ This callback is sent when clearing process is finished for you. You receive a r
 
 ```json
 {
-"id	        "long"	  internal Id
-"reference	"String"	Batch file reference to retrieve the operations of the clearing report with the API
+"id	        "long"	   internal Id
+"reference	 "String"	 Batch file reference to retrieve the operations of the clearing report with the API
 "type	      "Int"	    Callbacks card clearing = 24
 }
 ```
