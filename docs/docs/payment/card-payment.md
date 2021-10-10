@@ -175,6 +175,7 @@ This API allows you to retrieve the payment and withdrawal limits for a card as 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cards/{appcardid}/limits" method="get"/>
 -->
 
+--- 
 
 ### Endpoints Details
 
