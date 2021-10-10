@@ -32,44 +32,35 @@ You can manage your card with a selfcare in order to update some specifications,
   
 <Image src="docs/Card_Self_UpdateLimits.png" alt="usecase 1"/>
 
-<!--
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
--->
-
 <Highlight type="tip">
  
  You can increase or decrease your limits of payment and/or withdrawal
 
 </Highlight>
 
----
+<!--
+#### Endpoint
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+-->
 
+---
 
 ### Block VAD
   
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
-<!--
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
--->
-
 <Highlight type="tip">
  
-  You can block or unblock in real time if you don't want authorize e-commerce payment
+You can block or unblock in real time if you don't want authorize e-commerce payment
  
 </Highlight>
+
+<!--
+#### Endpoint
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+-->
 
 ---
 
@@ -77,21 +68,17 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
 
-<!--
-
-#### Endpoint
-
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
-
--->
-
 <Highlight type="tip">
  
  You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
  
 </Highlight>
+
+<!--
+#### Endpoint
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+-->
 
 
 #### Endpoint
@@ -135,13 +122,13 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="Danger">
  
- Oppose a card is equal to block your card definitively.
+Oppose a card is equal to block your card definitively.
  
 </Highlight>
 
 <Highlight>
  
- The next step is usually a refabricate or upgrade new card. See in Issue a card Section
+The next step is usually a refabricate or upgrade new card. See in Issue a card Section
  
 </Highlight>
 
@@ -164,13 +151,13 @@ You can :
 
 <Highlight type="tip">
  
- If you don't remember, you can display your PIN code
+If you don't remember, you can display your PIN code
  
 </Highlight>
 
 <Highlight type="caution">
  
- To use API Informations Display, for PCI compliance, we use a Secure Interface by a sdk
+To use API Informations Display, for PCI compliance, we use a Secure Interface by a sdk
  
 </Highlight>
 
@@ -188,7 +175,7 @@ You can :
 
 <Highlight type="caution">
  
- To use API Card Display, for PCI compliance, we use a Secure Interface by a sdk
+To use API Card Display, for PCI compliance, we use a Secure Interface by a sdk
  
 </Highlight>
 
