@@ -109,7 +109,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 ``` GET ```/api/v2.0/token/{tokenValue}
 ```json
 {
-"tokenValue": "string",                     Max 32 char value "4642353030722754",
+"tokenValue": "string",                     Max 32 char example "4642353030722754",
 }
 ```
 ``` RESPONSE ```
