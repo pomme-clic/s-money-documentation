@@ -152,6 +152,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 ## Display your card
 
 You can : 
+
 > - display your PIN code
 > - display your virtual card
 
