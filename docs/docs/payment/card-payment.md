@@ -62,25 +62,25 @@ It is the most important for you. You can follow activity and exchange with your
 
 ```json
  {  
-  "Id"	                                 "long"	    internal Id
-  "reference"	                          "String"	  Operation OrderID
-  "type"		                              "int"      Callback Type = 20
-  "appCardId"	                          "String"	  reference of the card given by the partner
-  "transactionAmount"	                  "decimal"	 amount in local currency
-  "currencyCodeTransaction"	            "string"	  currency transaction
-  "cardHolderBillingAmount"	            "decimal"	 Amount in euro
-  "cardHolderBillingConversionRate"   	 "decimal"	 Exchange rate
-  "availableBalance"	                   "decimal"	 balance after authorization
-  "actionCode"	                         "int"	     response codes
-  "merchantType"	                       "int"	     merchant category code
-  "cardAcceptorIdentificationCodeName"	 "string"	  merchant information
-  "status"	                             "int"	     Operations status
-  "ert"		                               "int"      transaction context 
-  "cardDataInputMode"		                 "int"      how to use the card
-  "tokenRequestorID"		                  "int"      determines a payment that uses a token
-  "terminalCountryCode"		               "int"      country reference where payment took place
-  "userid"	                             "string"	  reference of the user given by the partner
-  "executedDate"	                       "DateTime" Executed date of the operation
+  "Id":                                     "long"     internal Id
+  "reference" :                             "String"   Operation OrderID
+  "type" :                                  "int"      Callback Type = 20
+  "appCardId" :                             "String"   reference of the card given by the partner
+  "transactionAmount" :                     "decimal"  amount in local currency
+  "currencyCodeTransaction" :               "string"   currency transaction
+  "cardHolderBillingAmount" : 	             "decimal"  Amount in euro
+  "cardHolderBillingConversionRate" :       "decimal"  Exchange rate
+  "availableBalance" :                      "decimal"  balance after authorization
+  "actionCode" : 	                          "int"      response codes
+  "merchantType" :                          "int"      merchant category code
+  "cardAcceptorIdentificationCodeName" :    "string"   merchant information
+  "status" :                                "int"	     Operations status
+  "ert" :                                   "int"      transaction context 
+  "cardDataInputMode" :                     "int"      how to use the card
+  "tokenRequestorID" :                      "int"      determines a payment that uses a token
+  "terminalCountryCode" :                   "int"      country reference where payment took place
+  "userid" :                                "string"	  reference of the user given by the partner
+  "executedDate" :                          "DateTime" Executed date of the operation
  }
 }
 ```
