@@ -20,8 +20,6 @@ You can manage your card with a selfcare in order to update some specifications,
  
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
 
-<br/>
-
 <Highlight type="tip">
  
  You can block or unblock in real time to secure your card if you don't find it
@@ -95,9 +93,10 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
 
-#### ``` PUT ``` /api/v2.0/card/{cardExternalRef}
+#### Endpoint
+
+``` PUT ``` /api/v2.0/card/{cardExternalRef}
 
 ```json
 Update card data
@@ -146,12 +145,13 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
+<br/>
+
 ---
 
 ## Display your card
 
 You can : 
-
 > - display your PIN code
 > - display your virtual card
 
@@ -173,7 +173,7 @@ You can :
  
 </Highlight>
 
----
+<br/>
 
 ### Display your virtual card
 
