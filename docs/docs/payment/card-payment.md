@@ -89,11 +89,13 @@ It is the most important for you. You can follow activity and exchange with your
 
 This callback is sent when clearing process is finished for you. You receive a reference and you can retrieve your settlement in clearing report.
 
+```json
 {
 "id	        "long"	  internal Id
 "reference	"String"	Batch file reference to retrieve the operations of the clearing report with the API
 "type	      "Int"	    Callbacks card clearing = 24
 }
+```
 
 --- 
 
