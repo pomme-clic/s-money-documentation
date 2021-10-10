@@ -17,7 +17,9 @@ After, in second time, one or more day after, merchant bank proceeds a clearing 
 ## Payment transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
-In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition. A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
+In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition. 
+
+A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
 
 ### Authorization (IAS)
 
@@ -35,7 +37,9 @@ Xpollens tests a lot of parameters in real time and responds to the merchant by 
 
 ### Clearing 
 
-We merge the set of authorizations with the corresponding settlements. The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). An more, sometimes there were certain conditions to be offline transactions.
+We merge the set of authorizations with the corresponding settlements. 
+The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). 
+And more, sometimes there were certain conditions to be offline transactions.
 
 --- 
 
@@ -44,7 +48,8 @@ We merge the set of authorizations with the corresponding settlements. The trans
 ### Callback
 
 We provide you with 2 callbacks allowing you to retrieve the processing information of authorization requests made in real time as well as the processing of settlements carried out a posteriori by sending from fellow banks.
-<br/>
+
+
 These callback contain different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself, etc.
 
 #### type 20 _(authorization)_
