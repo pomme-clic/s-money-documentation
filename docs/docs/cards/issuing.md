@@ -248,9 +248,26 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
 
-#### Endpoint
+#### ``` POST ``` /api/v2.0/card
 
+```json
+Refabricate a card from an existing card
+{
+"cardExternalRef*": "string",              [required]    
+"oldCardExternalRef*": "string",           [required] 
+"visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
+"label": "string"┃null,                                 constraints: Max 50 chars 
+}
+```
+> - ``` oldCardExternalRef ```: It’s the reference of the previous card in the refabrication process (Card mother).
+_(Others are the same)_
+
+**RESPONSE OK/KO**
+
+<!--
+#### Endpoint
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/refabricate" method="post"/>
+-->
 
 <Highlight type="tip">
  
@@ -260,10 +277,12 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <br/>
 
+---
+
 <Cta
   context="doc"
   ui="button"
-  link="/api/CardFactory#post-/api/v2.0/card/refabricate"
+  link="/api/CardFactory"
   label="Try it out"
 />
 
