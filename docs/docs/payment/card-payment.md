@@ -97,8 +97,6 @@ This callback is sent when clearing process is finished for you. You receive a r
 }
 ```
 
---- 
-
 ### Get clearing report
 
 The cardoperations/clearingreport API is generated each time the transaction file transmitted by our Core Banking is received and processed.
@@ -142,8 +140,6 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 <!--
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/cardoperations/clearingreport/{clearingfileid}" method="get"/>
 -->
-
---- 
 
 ### Card limits
 
