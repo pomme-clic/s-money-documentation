@@ -14,6 +14,7 @@ See with your Xpollens representative to gain access to your dedicated Sandbox a
 
 Most of presented use cases are illustrated by a service blueprint. It gives an overview of what a feature does and illustrates the function of several APIs.
 The goal is to present developers and product teams an understanding of what the APIs can offer and how our platform can be integrated with your use cases.
+The customer represents the final user of the service whereas the client is the person who has integrated Xpollens APIs.
 
 <Image src="docs/Overview-example.png" alt="usecase 1"/>
 
