@@ -1,0 +1,11 @@
+.playerWrapper {
+  position: relative;
+
+  @apply bg-xp-primary-500 mb-8;
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

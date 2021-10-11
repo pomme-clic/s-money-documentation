@@ -39,7 +39,13 @@ module.exports = {
         },
       ],
     },
-    baseAPIUrl: 'https://ic-api.s-money.net/swagger/docs',
+    prodDomains: [
+      ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
+    ],
+    baseAPIUrls: {
+      sandbox: 'https://ic-api.s-money.net/swagger/docs',
+      production: 'https://sb-api.xpollens.com/swagger/docs',
+    },
     footer: {
       style: 'dark',
       links: [
@@ -112,8 +118,7 @@ module.exports = {
           href: 'https://twitter.com/xpollens',
         },
       ],
-      tagline:
-        'Build tailor-made & embedded payment for your business.',
+      tagline: 'Build tailor-made & embedded payment for your business.',
     },
     customFields: {
       footerCustom: {},

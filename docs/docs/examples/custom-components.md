@@ -42,7 +42,7 @@ import Highlight from '@theme/Highlight';
 
 ##### Neutral
 
-<b class="term">Lorem Ipsum</b>sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
+<b>Lorem Ipsum</b> sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et
 
 </Highlight>
 
@@ -83,3 +83,23 @@ import Cta from '@theme/Cta'
   link="/api/Core"
   label="Try it out"
 />
+
+---
+
+## Local Video player
+
+```markdown
+import VideoPlayer from '@theme/VideoPlayer'
+
+<!-- Remote -->
+<VideoPlayer type="remote" src="https://www.youtube.com/watch?v=XQxk7SE_apQ" width="1280" height="720"/>
+
+<!-- Local -->
+<VideoPlayer type="local" src="docs/xpollens-authenticator.mp4" width="496" height="1080"/>
+```
+
+import VideoPlayer from '@theme/VideoPlayer'
+
+<VideoPlayer type="remote" src="https://www.youtube.com/watch?v=XQxk7SE_apQ" width="1280" height="720"/>
+
+<VideoPlayer type="local" src="docs/xpollens-authenticator.mp4" width="496" height="1080"/>

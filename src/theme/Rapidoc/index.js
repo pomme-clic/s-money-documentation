@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import Head from '@docusaurus/Head'
 
 import useThemeContext from '@theme/hooks/useThemeContext'
+
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import { useQuery } from 'react-query'
@@ -21,8 +22,8 @@ const customThemeColors = {
 const Rapidoc = ({ apiUrl }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
-  const baseAPIUrl = siteConfig.themeConfig.baseAPIUrl
-  const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+  const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
+  const prodDomains = siteConfig.themeConfig.prodDomains
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -37,6 +38,10 @@ const Rapidoc = ({ apiUrl }) => {
   // React Query
   const fetchAPI = async () => {
     console.log('react query fetchAPI')
+    const isProd = prodDomains.includes(window.location.host)
+    const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
+    const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data

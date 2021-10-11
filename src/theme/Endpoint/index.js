@@ -49,11 +49,15 @@ const getApiColor = (type) => {
 
 const Endpoint = ({ apiUrl, path, method }) => {
   const { siteConfig } = useDocusaurusContext()
-  const baseAPIUrl = siteConfig.themeConfig.baseAPIUrl
-  const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+  const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
+  const prodDomains = siteConfig.themeConfig.prodDomains
 
   // React Query
   const fetchEndpoint = async () => {
+    const isProd = prodDomains.includes(window.location.host)
+    const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
+    const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+
     try {
       const response = await axios.get(fullAPIUrl)
       const apiParameters = getApiParameters(response, path, method)
