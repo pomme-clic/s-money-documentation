@@ -315,7 +315,7 @@ main {
 /* /Markdow docs */
 .smoney.docpage {
   .markdown {
-    font-size: 14px;
+    font-size: 13px;
     h2 {
       @apply flex items-center;
       &:before {
