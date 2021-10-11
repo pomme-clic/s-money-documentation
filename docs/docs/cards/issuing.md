@@ -3,9 +3,9 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Card lifeCycle
+# Card lifecycle
 
-Welcome in the Card Program Management. 
+Welcome in the Card program management. 
 If you are here it is because you want to launch a card program. First of all, to create your card program management, we define your card product with a first filter:
 - funding source : Debit, Prepaid,...
 - for who : Consumer, Business, Corporate ...
