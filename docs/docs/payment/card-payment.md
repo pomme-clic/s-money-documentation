@@ -74,7 +74,7 @@ It is the most important for you. You can follow activity and exchange with your
   "actionCode" :                            "int"      response codes
   "merchantType" :                          "int"      merchant category code
   "cardAcceptorIdentificationCodeName" :    "string"   merchant information
-  "status" :                                "int"	     Operations status
+  "status" :                                "int"      Operations status
   "ert" :                                   "int"      transaction context 
   "cardDataInputMode" :                     "int"      how to use the card
   "tokenRequestorID" :                      "int"      determines a payment that uses a token
