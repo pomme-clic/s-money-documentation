@@ -124,8 +124,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="danger">
  
-##### Danger
- 
 Oppose a card is equal to block your card definitively.
  
 </Highlight>
