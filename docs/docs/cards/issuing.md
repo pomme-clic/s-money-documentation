@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Card lifeCycle
+# Card lifecycle
 
 Welcome in the Card Program Management. 
 If you are here it is because you want to launch a card program. First of all, to create your card program management, we define your card product with a first filter:
@@ -136,13 +136,13 @@ Create card data
 }
 ```
 
-> - ``` offerPartnerCode ``` : The Partner's offer code provided by Xpollens. 
-> - ``` holderExternalRef ``` : The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
-> - ``` cardExternalRef ``` : The card's reference attributed by the partner
-> - ``` visualCodeSelected ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
->  - ``` label ``` : The name or partner's reference of the card.
->  - ``` wishPin ``` : ***NOT USED***
-> - ``` isNfcActivated ```  : ***NOT USED***
+> ``` offerPartnerCode ``` : The Partner's offer code provided by Xpollens. 
+> ``` holderExternalRef ``` : The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
+> ``` cardExternalRef ``` : The card's reference attributed by the partner
+> ``` visualCodeSelected ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
+> ``` label ``` : The name or partner's reference of the card.
+> ``` wishPin ``` : ***NOT USED***
+> ``` isNfcActivated ```  : ***NOT USED***
 
 <br/>
 
