@@ -39,6 +39,5 @@ Eager to begin coding your new business ? Just get started with [creating an use
 
 You can find a consolidated viewpoint of all the API documentation [here](/api/Core/)
 
-You can also download and use our dedicated postman collection to ease your integration.
-<a href="./Demo.postman_collection.json" download>Click here to download.</a>
+You can also use our dedicated postman collection to ease your integration. You can download it [here](docs/Demo.postman_collection.json)
 
