@@ -9,11 +9,12 @@ import Cta from '@theme/Cta'
 ## Selfcare
 
 You can manage your card with a selfcare in order to update some specifications, like : 
-> - block and unblock your card
-> - update limits for payment or withdrawal
-> - block or unblock VAD payment
-> - block or unblock non domestic payment or withdrawal
-> - oppose your card
+
+- block and unblock your card
+-  update limits for payment or withdrawal
+- block or unblock VAD payment
+- block or unblock non domestic payment or withdrawal
+- oppose your card
 
 You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
 
@@ -98,11 +99,11 @@ Update card data
 }
 ```
 
-> - ``` globalLimitAtmSelected ``` : It’s a card withdrawal limit on seven slippery days (card created with default limits defined in the offer). 
-> - ``` globalLimitPaymentSelected ``` : It’s a card payment limit on thirty slippery days (Value in euros).
-> - ``` cardBlocked ``` : Allow to block or unblock the card. If the card is blocked, no transaction is allowed.
-> - ``` isVadBlocked ``` : Allow to block or unblock the card's internet, MOTO payment transaction.
->  - ``` foreignPaymentBlocked ``` : Allow to block or unblock the card's foreign payment.
+> ``` globalLimitAtmSelected ``` : It’s a card withdrawal limit on seven slippery days (card created with default limits defined in the offer). 
+> ``` globalLimitPaymentSelected ``` : It’s a card payment limit on thirty slippery days (Value in euros).
+> ``` cardBlocked ``` : Allow to block or unblock the card. If the card is blocked, no transaction is allowed.
+> ``` isVadBlocked ``` : Allow to block or unblock the card's internet, MOTO payment transaction.
+> ``` foreignPaymentBlocked ``` : Allow to block or unblock the card's foreign payment.
 
 <br/>
 
@@ -140,8 +141,8 @@ Oppose a card is equal to block your card definitively.
 
 You can : 
 
-> - display your PIN code
-> - display your virtual card
+- display your PIN code
+- display your virtual card
 
 
 ### Display your PIN code
