@@ -50,7 +50,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 
 
-### Block VAD
+### Block online/moto payments
   
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
