@@ -92,7 +92,7 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 ## About token
 
-This is token life cycle (TLC). Your token has a own life but it is linked to his card too. So Card Life Cycle (CLC) act on the TLC.
+Here is token life cycle (TLC). Your token has a own life but it is linked to his card too. So Card Life Cycle (CLC) act on the TLC.
 
 <Image src="docs/Xpay_TokenStatus.png" alt="usecase 1"/>
 
