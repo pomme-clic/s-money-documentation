@@ -11,7 +11,7 @@ import Cta from '@theme/Cta'
 You can manage your card with a selfcare in order to update some specifications, like : 
 
 - block and unblock your card
--  update limits for payment or withdrawal
+- update limits for payment or withdrawal
 - block or unblock VAD payment
 - block or unblock non domestic payment or withdrawal
 - oppose your card
