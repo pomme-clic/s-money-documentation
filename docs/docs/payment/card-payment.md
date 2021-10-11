@@ -7,8 +7,12 @@ import Cta from '@theme/Cta'
 # Card payment
 
 The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash.
-First, in real time, Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. You have an exchange between cardholder and merchant.
-After, in second time, one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
+
+
+First, in real time (Step 1 authorization), Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. You have an exchange between cardholder and merchant. When requesting authorization (step 1), this amount (the money) is simply "reserved" on the user's account so that this amount cannot be used elsewhere and that it is actually debited once the merchant sends his request for clearing. (Step 2 Settlement).
+
+
+After, in second time (step 2), one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
 
 
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
@@ -16,17 +20,18 @@ After, in second time, one or more day after, merchant bank proceeds a clearing 
 ## Payment transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
-In real time, the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition. 
+In real time (step 1), the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition. 
 
-A posteriori, the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
+A posteriori (step 2), the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
 
 ### Authorization (IAS)
 
+**Step 1**
 All cards issued are systematic authorization cards.
 This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
 Xpollens checks if the payment context is consistent with the card profile :
 
-- Is this the correct PIN code,
+- is this the correct PIN code,
 - is the card active,
 - are the ceilings or the balance sufficient,
 - is it a country, a payment type, or a merchant authorized _(list, exception, selfcare, ...)_
@@ -36,9 +41,12 @@ Xpollens tests a lot of parameters in real time and responds to the merchant by 
 
 ### Clearing 
 
+**Step 2** 
 We merge the set of authorizations with the corresponding settlements. 
 The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). 
 And more, sometimes there were certain conditions to be offline transactions.
+
+<Image src="docs/CardOP_clearing.png" alt="usecase 1"/>
 
 --- 
 
