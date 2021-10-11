@@ -54,7 +54,7 @@ const Endpoint = ({ apiUrl, path, method }) => {
 
   // React Query
   const fetchEndpoint = async () => {
-    const isProd = prodDomains.includes(window.location.host)
+    const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
 
