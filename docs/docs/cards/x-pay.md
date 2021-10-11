@@ -6,7 +6,7 @@ import Cta from '@theme/Cta'
 # X-Pay 
 
 
-## Wallet Enrolment
+## Wallet enrolment
 
 There are 2 methods to add your card to a wallet : 
 - inapp verification method _(update of SMS OTP journey)_
@@ -90,13 +90,13 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 ---
 
-## About Token
+## About token
 
 This is token life cycle (TLC). Your token has a own life but it is linked to his card too. So Card Life Cycle (CLC) act on the TLC.
 
 <Image src="docs/Xpay_TokenStatus.png" alt="usecase 1"/>
 
-### Token Details
+### Token details
 
 In order to obtain the token details for a specific token.
 
@@ -148,7 +148,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 
 
-### Token's List of a card
+### Token's list of a card
 
 In order to retrieve the list of tokens for a specific card. data in response are the same of token's details
 
