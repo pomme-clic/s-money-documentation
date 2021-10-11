@@ -99,11 +99,11 @@ Update card data
 }
 ```
 
-> ``` globalLimitAtmSelected ``` : It’s a card withdrawal limit on seven slippery days (card created with default limits defined in the offer). 
-> ``` globalLimitPaymentSelected ``` : It’s a card payment limit on thirty slippery days (Value in euros).
-> ``` cardBlocked ``` : Allow to block or unblock the card. If the card is blocked, no transaction is allowed.
-> ``` isVadBlocked ``` : Allow to block or unblock the card's internet, MOTO payment transaction.
-> ``` foreignPaymentBlocked ``` : Allow to block or unblock the card's foreign payment.
+> - ``` globalLimitAtmSelected ``` : It’s a card withdrawal limit on seven slippery days (card created with default limits defined in the offer). 
+> - ``` globalLimitPaymentSelected ``` : It’s a card payment limit on thirty slippery days (Value in euros).
+> - ``` cardBlocked ``` : Allow to block or unblock the card. If the card is blocked, no transaction is allowed.
+> - ``` isVadBlocked ``` : Allow to block or unblock the card's internet, MOTO payment transaction.
+> - ``` foreignPaymentBlocked ``` : Allow to block or unblock the card's foreign payment.
 
 <br/>
 
