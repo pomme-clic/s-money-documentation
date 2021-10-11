@@ -13,10 +13,11 @@ There are 2 methods to add your card to a wallet :
 - inapp provisioning method
 
 The first is the usual method which consists since  : 
-> - iOS (for Apple Pay)
-> - app Samsung Pay
-> - app Google Pay _(coming soon)_
-> - app Garmin Pay _(coming soon)_
+
+- iOS (for Apple Pay)
+- app Samsung Pay
+- app Google Pay _(coming soon)_
+- app Garmin Pay _(coming soon)_
 
 <br/>
 
