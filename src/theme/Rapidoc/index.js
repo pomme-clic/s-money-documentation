@@ -24,6 +24,7 @@ const Rapidoc = ({ apiUrl }) => {
   const { siteConfig } = useDocusaurusContext()
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
   const prodDomains = siteConfig.themeConfig.prodDomains
+  let serverUrl = ''
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -41,6 +42,9 @@ const Rapidoc = ({ apiUrl }) => {
     const isProd = prodDomains.includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+    serverUrl = isProd
+      ? 'https://sb-api.xpollens.com'
+      : 'https://ic-api.s-money.net/'
 
     try {
       const response = await axios.get(fullAPIUrl)
@@ -151,8 +155,8 @@ const Rapidoc = ({ apiUrl }) => {
             regular-font="Poppins"
             primary-color="#63C2C7"
             allow-server-selection="false"
-            server-url="https://ic-api.s-money.net/"
-            default-api-server="https://ic-api.s-money.net/"
+            server-url={serverUrl}
+            default-api-server={serverUrl}
             show-header="false"
             show-info="true"
             show-components="false"
