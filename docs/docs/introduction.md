@@ -37,7 +37,7 @@ Eager to begin coding your new business ? Just get started with [creating an use
 
 ## API References
 
-You can find a consolidated viewpoint of all the API documentation [here](/api/Core/)
+You can find a consolidated viewpoint of all the API documentation [here.](/api/Core/)
 
-You can also use our dedicated postman collection to ease your integration. You can download it [here](./postman_collection.zip)
+You can also use our dedicated postman collection to ease your integration. You can download it [here.](./postman_collection.zip)
 
