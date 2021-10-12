@@ -1,0 +1,1208 @@
+{
+	"info": {
+		"_postman_id": "8c3e7678-b2df-4ce5-b959-7b728e7988f2",
+		"name": "Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Création de user",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "BETA",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"appuserid\":\"Xpollens5\", \r\n    \"CountryCode\": \"FR\",    \r\n    \"profile\": \r\n                { \r\n                               \"civility\":\"1\", \r\n                               \"firstname\":\"SQUAD\", \r\n                               \"lastname\":\"WEBI\", \r\n                               \"birthdate\":\"1993-05-28T00:00:00\", \r\n                               \"BirthCity\": \"PARIS\", \r\n                               \"BirthCountry\": \"FR\", \r\n                               \"EconomicActivity\": 38, \r\n                               \"address\": \r\n                               { \r\n                                               \"street\":\"110 avenue France\", \r\n                                               \"zipcode\":\"75013\", \r\n                                               \"city\":\"Paris\", \r\n                                               \"country\":\"FR\"                                     \r\n                               }, \r\n                                \"Phonenumber\":\"+33672963677\", \r\n                               \"Email\":\"SQUADWEBI@gmail.fr\", \r\n                               \"Alias\":\"Xpollens_005\" \r\n                } \r\n\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/users",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vérification de la création de user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Beta",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4Q0QwNDc2MDM2RUQxMDAwMEQzNjRFNEJCQzQ2RjE2NzFFNkIzNDJSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6ImVNMEVkZ051MFFBQTAyVGt1OFJ2Rm5IbXMwSSJ9.eyJuYmYiOjE2MDMxMDgyOTQsImV4cCI6MTYwMzExMTg5NCwiaXNzIjoiaHR0cHM6Ly9zYi1jb25uZWN0Lnhwb2xsZW5zLmNvbSIsImF1ZCI6IkFQSS5HYXRld2F5IiwiY2xpZW50X2lkIjoiT25leS5UZXN0IiwicGFydG5lcl9jb2RlIjoib25leSIsImp0aSI6IkU1QjlCMUU2NkI4OTYzRTM1OTQxQTM1NDAyNTNBQkFCIiwiaWF0IjoxNjAzMTA4Mjk0LCJzY29wZSI6WyJwYXJ0bmVyIl19.dVTgkr3UTCmPEHUtL3Kl13gEO_gfTk2qBEkYYbUWkYw0tzMJNle8pXPF-vDNFzxUFkCyeJj9VT3sJY_X6R0mwb3fIsJzaEfSKVWUlnXVKilA2ljcu3jvbW1Pfxk4mUay0z_kVOMvd3P9jn0JEHLjUQzlOzDCnQ1knfpW_azi7sIoJfB0tCbySgSAyUXMtrCC6xczml5VwB32IRKXno8mAkWRpL09TA5eBV9wfhi9W3mhzt733xn5mrVdZD5q9RJoRl01gCOXXbNNVO60ssenqsmp7L8gN9aD7evQhF6JLnWwqAYTUil87RBGw3zE1Ib8GfZc_ec4xnXGwQrs7WDd4A",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/v1.1/users/[appuserid]",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.1",
+						"users",
+						"[appuserid]"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Création virement entrant (SCT_IN)",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Amount\":100,\r\n\"ExecutionDate\": \"2020-08-07T22:00:00.000Z\",\r\n\"UserId\": 233,\r\n\"ThirdPartyBIC\": \"SOGEFRPP\",\r\n\"ThirdPartyIban\": \"FR7630004015870002601171221\",\r\n\"ThirdPartyFullName\": \"Staging Smoke\",\r\n\"Type\":506,\r\n\"OrderId\": \"sct-{{appuserid}}\",\r\n\"Message\": \"transfer S-money\",\r\n\"Reference\": \"ref04511\",\r\n\"UniqueIdentification\": \"Identif SCT_IN_306\",\r\n\"Motif\": \"Virement entrant pour cet utilisateur\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/api/sct/in/registration",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"api",
+						"sct",
+						"in",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vérification création virement entrant (SCT_IN)",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/users/[appuserid]/sct",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"users",
+						"[appuserid]",
+						"sct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Création carte",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"offerPartnerCode\": \"DemoClassicPhysicalDebitVISA\",\r\n  \"holderExternalRef\": \"xxx\",\r\n  \"cardExternalRef\": \"card-00002\",\r\n  \"visualCodeSelected\": \"NSP1\",\r\n  \"label\": \"ma carte\",\r\n  \"wishPin\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/v2.0/card",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2.0",
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vérification création carte",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/users/ACU-00003/cards/issued",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"users",
+						"ACU-00003",
+						"cards",
+						"issued"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Opération carte : création autorisation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9150c79c-c427-499e-ac8d-30b44538ed4e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9320d935-7d5d-4097-a617-ff1d0a09d312",
+						"exec": [
+							"// GET userId\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"userId\", jsonData.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n        \"authorisation_type\" : 1, \r\n        \"appcardid\" : \"ROBERT_CP1\",           \r\n        \"Amount\" : 10\r\n} "
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/v1.1/simulator/CardAuthorization",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.1",
+						"simulator",
+						"CardAuthorization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vérifier autorisation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a4067f69-8fe0-4641-b175-70c64fbce7ae",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "eabc4a81-4440-478f-a3ea-b6085f217dbd",
+						"exec": [
+							"// GET userId\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"userId\", jsonData.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/v1.1/users/[appuserid]/cardoperations",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.1",
+						"users",
+						"[appuserid]",
+						"cardoperations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Opération carte : compensation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "97303fe0-e96b-49d3-bc4b-35051dc3d44e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3a573d2-26a7-4be0-81af-10536cbcb236",
+						"exec": [
+							"// GET userId\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"userId\", jsonData.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"idTransaction\": 8381, \r\n    \"operation\": 1     \r\n} "
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/v1.1/simulator/CardAuthorization/ProcessFestopeme",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.1",
+						"simulator",
+						"CardAuthorization",
+						"ProcessFestopeme"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Créer un bénéficiaire",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ebfe1014-07da-45f6-822a-1f921ed7872c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "46bf2148-733e-4aba-9a90-606bbeeb6363",
+						"exec": [
+							"// GET userId\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"userId\", jsonData.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "BETA",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DisplayName\":\"compte bancaire 2\",      \r\n    \"Bic\":\"BACCFR23\",                   \r\n    \"Iban\":\"FR0812869000020P00000005F93\",       \r\n    \"IsMine\":true,\r\n    \"FirstName\":\"Xpollens\",                 //optional\r\n    \"LastName\":\"Listes\",                   //optional\r\n    \"CompanyName\":\"company john\",      //optional\r\n    \"ZipCode\":\"75013\",                 //optional\r\n    \"Email\":\"johdoe@gmail.com\",        //optional\r\n    \"PhoneNumber\":\"+33504715888\"                    \r\n}"
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/users/xpollens1/bankaccounts",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"users",
+						"xpollens1",
+						"bankaccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "création virement sortant (SCT_OUT)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ca4ec438-9580-4214-96e5-0c8882c8601b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "01a39f75-abfb-442e-9f34-4d43bc834e35",
+						"exec": [
+							"// GET userId\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"userId\", jsonData.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "challengeAlgorithm",
+							"value": "S256",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4Q0QwNDc2MDM2RUQxMDAwMEQzNjRFNEJCQzQ2RjE2NzFFNkIzNDJSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6ImVNMEVkZ051MFFBQTAyVGt1OFJ2Rm5IbXMwSSJ9.eyJuYmYiOjE2MDMxMDY4MTMsImV4cCI6MTYwMzExMDQxMywiaXNzIjoiaHR0cHM6Ly9zYi1jb25uZWN0Lnhwb2xsZW5zLmNvbSIsImF1ZCI6IkFQSS5HYXRld2F5IiwiY2xpZW50X2lkIjoiT25leS5UZXN0IiwicGFydG5lcl9jb2RlIjoib25leSIsImp0aSI6IkE2Rjg5RkY5RUFGQzQxRjExNDhFMkU1NDRFNTlENjdBIiwiaWF0IjoxNjAzMTA2ODEzLCJzY29wZSI6WyJwYXJ0bmVyIl19.pMSEj67RZUpaTWf_3puEcAM8Kh6v3doHLSVfjABHK-5ddOu35DWijbQ8xQbPna9ch7MGYBbGZWOT73PInOQ43A6EEUjD1Q6khEVso9tSy7bKPc00Hh4jqPaMAy4gatgXjeDeiS3q15snM7SBb5JI2iTVncO-r-DyKsqiz-f9J8gqEEsStQDQO2--UuwHXS86oiIzkr4KDwjkNp5izumv455WKHvgGIFAYne_uRR5A2oWeqzY8LmqH4EsrtIdd2cTqryDisiYo5xOkziptRVzWXWtYh5wdqG2zz5OF-JRL1eKqVQNMJduAIlGck3Ff9mO9KChcf4cVPvxGS0zBByTPg",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"OrderId\":\"sctOUT-21\",               \r\n    \"Amount\":6000,                      \r\n    \"ExecutionDate\" : \"2020-10-01T22:00:00.000Z\",        \r\n    \"Accountid\":                         \r\n    { \r\n        \"AppAccountId\":\"Xpollens2\"           \r\n    }, \r\n    \"BankAccount\":                       \r\n    { \r\n        \"id\":\"1201\" \r\n    }, \r\n    \"Fee\":                           \r\n    { \r\n        \"AmountWithVAT\":0,               \r\n        \"VAT\":0                  \r\n    }, \r\n    \"Message\": \"virement S-money du 01/10/2020\",     \r\n    \"Reference\" : \"ref-1156\",                \r\n    \"Motif\" : \"virement S-money du 01/10/2020\"  \r\n} "
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/users/Xpollens2/sct",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"users",
+						"Xpollens2",
+						"sct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vérification virement sortant",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b7017a50-abf8-4c66-975c-dd118aca22c4",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f436fdc-98a5-44c0-808a-92f1ef65555b",
+						"exec": [
+							"// GET userId\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"userId\", jsonData.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "beta",
+							"type": "string"
+						},
+						{
+							"key": "challengeAlgorithm",
+							"value": "S256",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "partner",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Demo",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://sb-connect.xpollens.com/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4Q0QwNDc2MDM2RUQxMDAwMEQzNjRFNEJCQzQ2RjE2NzFFNkIzNDJSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6ImVNMEVkZ051MFFBQTAyVGt1OFJ2Rm5IbXMwSSJ9.eyJuYmYiOjE2MDMxMDY4MTMsImV4cCI6MTYwMzExMDQxMywiaXNzIjoiaHR0cHM6Ly9zYi1jb25uZWN0Lnhwb2xsZW5zLmNvbSIsImF1ZCI6IkFQSS5HYXRld2F5IiwiY2xpZW50X2lkIjoiT25leS5UZXN0IiwicGFydG5lcl9jb2RlIjoib25leSIsImp0aSI6IkE2Rjg5RkY5RUFGQzQxRjExNDhFMkU1NDRFNTlENjdBIiwiaWF0IjoxNjAzMTA2ODEzLCJzY29wZSI6WyJwYXJ0bmVyIl19.pMSEj67RZUpaTWf_3puEcAM8Kh6v3doHLSVfjABHK-5ddOu35DWijbQ8xQbPna9ch7MGYBbGZWOT73PInOQ43A6EEUjD1Q6khEVso9tSy7bKPc00Hh4jqPaMAy4gatgXjeDeiS3q15snM7SBb5JI2iTVncO-r-DyKsqiz-f9J8gqEEsStQDQO2--UuwHXS86oiIzkr4KDwjkNp5izumv455WKHvgGIFAYne_uRR5A2oWeqzY8LmqH4EsrtIdd2cTqryDisiYo5xOkziptRVzWXWtYh5wdqG2zz5OF-JRL1eKqVQNMJduAIlGck3Ff9mO9KChcf4cVPvxGS0zBByTPg",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{TOKEN}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.s-money.v1+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.s-money.v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://sb-api.xpollens.com/api/V1.1/users/Xpollens2/sct?perPage=1000",
+					"protocol": "https",
+					"host": [
+						"sb-api",
+						"xpollens",
+						"com"
+					],
+					"path": [
+						"api",
+						"V1.1",
+						"users",
+						"Xpollens2",
+						"sct"
+					],
+					"query": [
+						{
+							"key": "perPage",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
