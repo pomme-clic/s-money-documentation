@@ -125,7 +125,7 @@ module.exports = {
       baseAPIURL: '',
     },
     gtag: {
-      trackingID: 'G-0HTZM60W0Z',
+      trackingID: 'G-1WKNGB5DKZ',
     },
   },
   plugins: [
