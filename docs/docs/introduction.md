@@ -41,5 +41,5 @@ You can find a consolidated viewpoint of all the API documentation [here](/api/C
 
 You can also use our dedicated postman collection to ease your integration. You can download it here.
 
-<p>Check out <a href="https://github.com/pomme-clic/s-money-documentation/blob/develop/docs/docs/PDF/postman_collection.json">freeCodeCamp</a>.</p>
+<p>Check out <a href="/PDF/postman_collection.json">freeCodeCamp</a>.</p>
 
