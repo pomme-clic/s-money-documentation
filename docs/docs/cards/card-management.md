@@ -8,15 +8,15 @@ import Cta from '@theme/Cta'
 
 ## Selfcare
 
-You can manage your card with a selfcare in order to update some specifications, like : 
+You can manage your card with a selfcare in order to update some specifications like : 
 
 - block and unblock your card
 - update limits for payment or withdrawal
-- block or unblock VAD payment
+- block or unblock online payment
 - block or unblock non domestic payment or withdrawal
 - oppose your card
 
-You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section
+You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section.
 
 ### Block card
  
@@ -25,7 +25,7 @@ You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.
 
 <Highlight type="tip">
  
- You can block or unblock in real time to secure your card if you don't find it
+ You can block or unblock in real time to secure your card if you don't find it.
  
 </Highlight>
 
@@ -43,17 +43,19 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- You can increase or decrease your limits of payment and/or withdrawal
+ You can increase or decrease your limits of payment and/or withdrawal.
 
 </Highlight>
 
 
 
 
-### Block online/moto payments
+### Block online/MOTO payments
+
   
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
+MOTO : Mail Order Telephone Order
 <!--
 #### Endpoint
 More information regarding this endpoint in the [API reference](/api/CardFactory)
@@ -62,7 +64,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
-  You can block or unblock in real time if you don't want authorize e-commerce payment
+  You can block or unblock in real time if you don't want authorize e-commerce payment.
  
 </Highlight>
 
@@ -80,7 +82,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- You can block or unblock in real time if you don't want authorize foreigner payment or wthdrawal
+ You can block or unblock in real time if you don't want to authorize foreigner payments or withdrawal.
  
 </Highlight>
 
@@ -118,7 +120,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/CardFactory)
+More information regarding this endpoint in the [API reference.](/api/CardFactory)
 <!--
 <Endpoint apiUrl="v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}/oppose" method="patch"/>
 -->
@@ -151,13 +153,13 @@ You can :
 
 <Highlight type="tip">
  
- If you don't remember, you can display your PIN code
+ If you don't remember, you can display your PIN code.
  
 </Highlight>
 
 <Highlight type="caution">
  
- To use API Informations Display, for PCI compliance, we use a Secure Interface by a sdk
+ To use API Informations Display, for PCI compliance, we use a secure interface by a SDK.
  
 </Highlight>
 
@@ -170,13 +172,13 @@ This feature is important to use your card to pay online.
 
 <Highlight type="tip">
  
- Once your virtual card is created, you need to get card informations to use in e-commerce for example
+ Once your virtual card is created, you need to get card informations to use in e-commerce for example.
  
 </Highlight>
 
 <Highlight type="caution">
  
- To use API Card Display, for PCI compliance, we use a Secure Interface by a sdk
+ To use API Card Display, for PCI compliance, we use a Secure Interface by a SDK.
  
 </Highlight>
 
