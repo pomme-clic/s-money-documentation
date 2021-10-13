@@ -8,7 +8,7 @@ import Cta from '@theme/Cta'
 ## Sepa Direct Debit (SDD)
 
 
-XPollens provides a complete solution to ask for mandate and Payin SDD. APIs will be soon available on the platform. You will be able to monitor your customers, plan recurring mandates and manage recoveries. We can also provide if necessary an SCI (Sepa Creditor Id) within 48 hours.
+Xpollens provides a complete solution to ask for mandate and Payin SDD. APIs will be soon available on the platform. You will be able to monitor your customers, plan recurring mandates and manage recoveries. We can also provide if necessary an SCI (Sepa Creditor Id) within 48 hours.
 
 
 <Image src="docs/MANDATE.png" alt="usecase 1"/>
