@@ -122,3 +122,12 @@ Chaque fichier d'API utilise un composant enveloppant la solution Rapidoc. Il fa
 ## Problèmes rencontrés
 
 Les différents problèmes liés à la contribution peuvent être remontés dans la section [Issues](https://github.com/pomme-clic/s-money-documentation/issues) du repo, permettant d'avoir des threads organisés, plutôt que des échanges mail mais cela reste une suggestion.
+
+
+# Mise en production
+La mise en production se fait bia un publish de la dernière develop via netlify.
+Maxime NOININ a les accès pour le faire.
+
+Avant de publier, checklist des choses à vérifier : 
+- La branche develop à publier est stable et a compilé sans erreur
+- Les secrets d'authentification ont été changé de "Swagman" à "Demo"
