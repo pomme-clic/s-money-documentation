@@ -84,11 +84,11 @@ Xpollens can easily parameterize our webview to include Facial Biometry for your
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required identity-checks to ensure proper identity confirmation, and then automatically opens the account.
 
 <Highlight>
-  This option is compatible with tranditionnal 48 hours SEPA SCT IN as well.
+  This option is compatible with traditionnal 48 hours SEPA SCT IN as well.
 </Highlight>
 
 <Highlight type="tip">
-  We can also provide a Payment Initiation Service, which can significantly reduce onboarding TLT as well as create a wow-effect. Should you be interested, ask our Sales team.
+  We can also provide a Payment Initiation Service Provider (PISP), which can significantly reduce onboarding TLT as well as create a wow-effect. Should you be interested, ask our Sales team.
 </Highlight>
 
 <Highlight type="caution">
@@ -99,8 +99,7 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 
 More to come : We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
-
-
+[//]: <> (Ajouter le lien vers les APPS Ios et Google)
 
 ## SDK features
 
