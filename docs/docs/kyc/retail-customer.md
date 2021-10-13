@@ -210,7 +210,7 @@ Here are the webservices you need to integrate in our API Gateway to properly op
 ### POST User (Create)
 
 Most information is updatable for as long as user is a **prospect**, except for critical indentification data. As soon as KYC is validated, some of her/his data will be locked or subject to adequate justification.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users" method="post"/>
 
