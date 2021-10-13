@@ -232,11 +232,11 @@ _(Others are the same)_
 
 ### Cancel a card
 
-For specific cases, you can use a cancellation card.
+For specific cases, you can use a card cancellation.
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/CardFactory)
+More information regarding this endpoint in the [API reference.](/api/CardFactory)
 
 <!--
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
@@ -244,19 +244,8 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="caution">
  
- DO NOT USE for an account closure because cancellation card is embedded
+ DO NOT USE for an account closure because card cancellation is included in a account closure.
  
 </Highlight>
-
-<br/>
-
----
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/CardFactory"
-  label="Try it out"
-/>
 
 
