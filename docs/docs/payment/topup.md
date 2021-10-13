@@ -53,7 +53,7 @@ To create a top up oneclick, you must, in the body of the request, add and fill 
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/payins/cardpayments" method="post"/>
 
@@ -65,7 +65,7 @@ The service is used to retrieve all existing bank cards already registered for a
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cards/registered" method="get"/>
 
@@ -77,7 +77,7 @@ This endpoint is used by a dedicated user, to consult the list of top up operati
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments" method="get"/>
 
@@ -89,7 +89,7 @@ This endpoint is used by a dedicated user, to consult a specific top up operatio
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}" method="get"/>
 
@@ -109,7 +109,7 @@ The orderid specified in the body of the request corresponds to a new orderid de
 
 #### Endpoint
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds" method="post"/>
 
