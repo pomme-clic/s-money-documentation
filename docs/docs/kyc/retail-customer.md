@@ -79,7 +79,7 @@ Xpollens can easily parameterize our webview to include Facial Biometry for your
   <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our callback #35 gives you to move from the web to your mobile app.
 </Highlight>
 
-### Option 2: SEPA instant transfer IN
+### Option 2: SEPA Instant Credit Transfer IN (SCT Inst)
 
 In this option, an IBAN is booked for your end-customer, onto which he/she can send money. Our algorithm performs the required identity-checks to ensure proper identity confirmation, and then automatically opens the account.
 
