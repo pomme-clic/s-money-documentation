@@ -99,7 +99,6 @@ In this option, an IBAN is booked for your end-customer, onto which he/she can s
 
 More to come : We're working hard to find more options for you, always with the best Customer Experience in mind and Straight Through processing. Stay tuned !
 
-[//]: <> (Ajouter le lien vers les APPS Ios et Google)
 
 ## SDK features
 
