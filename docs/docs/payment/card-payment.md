@@ -151,7 +151,7 @@ Partner must have the reference file he wants to retrieve (the reference is tran
 
 ### Card limits
 
-This API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts
+This API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts.
 
 <Image src="docs/CardOP_Limits.png" alt="usecase 1"/>
 
