@@ -98,7 +98,7 @@ For both Payment and instant payment, all the recall operation are available :
 - RFRO SCT OUT et IP OUT : in case a user would like to recall SCT or IP out (wrong amount, wrong beneficiary,..) (the user has 13 months).
 - Recall/RFRO SCT IN / IP : the user might have receive a payment but the sender can contest the sending up to 13 months after.
 
-These recall features are not available through API but soon. Bevertheless you will be informed of recall operations through CallBacks.
+These recall features are not available through API but soon. Nevertheless you will be informed of recall operations through callbacks.
 
 <Highlight type="danger">
 
