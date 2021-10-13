@@ -43,13 +43,13 @@ SCT transfer is used to send money to a beneficiary defined by an IBAN. You can 
 
 You must use the SCT API in including amount and beneficiary's ID
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/sct" method="post"/>
 
 ## Instant payment
 
-Instant transfer is used to send money within seconds to a beneficiary defined by an IBAN and elligible. You can also ask for the list of instant transfer for a user on a period of time.
+Instant transfer is used to send money within seconds to a beneficiary defined by an IBAN and eligible. You can also ask for the list of instant transfer for a user on a period of time.
 
 <Image src="docs/IP OUT_EN.png" alt="usecase 1"/>
 
@@ -83,7 +83,7 @@ Instant transfer can be refused due to the user thresholds.
 
 You must use the Instant Payment API in including amount and beneficiary's ID
 
-More information regarding this endpoint in the [API reference](/api/SCTinst)
+More information regarding this endpoint in the [API reference.](/api/SCTinst)
 
 <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
 

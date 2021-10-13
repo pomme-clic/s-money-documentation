@@ -37,7 +37,7 @@ You can retrieve the list of a user beneficiaries here :
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.0/beneficiaries?userId={userid}&beneficiaryId={id}" method="get"/>
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 
 <Cta
