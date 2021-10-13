@@ -7,11 +7,9 @@ import Cta from '@theme/Cta'
 
 ## Sepa Direct Debit (SDD)
 
-<Highlight>
 
-XPollens provides a complete solution to ask for mandate and Payin SDD. APi are soon available on this site. YOu will be able to follow your customers, mandate, plan recurring mandate and manage recoveries. We can also provide an ICS within 48 hours.
+XPollens provides a complete solution to ask for mandate and Payin SDD. APIs will be soon available on the platform. You will be able to monitor your customers, plan recurring mandates and manage recoveries. We can also provide if necessary an SCI (Sepa Creditor Id) within 48 hours.
 
-</Highlight>
 
 <Image src="docs/MANDATE.png" alt="usecase 1"/>
 
@@ -23,7 +21,7 @@ SDD Payin are only available in EUR.
 
 <Highlight type="danger">
 
-Do not forget to have an SCI (Sepa Creditor Id) ( ask for on to our Sales) and ...a mandate to ask us a SDD Payin..
+Do not forget to have an SCI since it's required and a mandate to ask us a for SDD Payin.
 
 </Highlight>
 
