@@ -23,7 +23,7 @@ SDD Payin are only available in EUR.
 
 <Highlight type="danger">
 
-Do not forget to have an ICS ( ask for on to our Sales) and ...a mandate to ask us a SDD Payin..
+Do not forget to have an SCI (Sepa Creditor Id) ( ask for on to our Sales) and ...a mandate to ask us a SDD Payin..
 
 </Highlight>
 

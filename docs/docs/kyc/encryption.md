@@ -51,7 +51,7 @@ To ensure end-to-end encryption, some payloads will be fully encrypted. You will
 
 > Note that you will not have access to your end-user's data ; only her/him will have the possibility to see the data.
 > 
-> ``` issuerClientId ``` is the SDK parameter that must receive the ``` puublicUserCode ``` given by the **callback type 34**.
+> ``` issuerClientId ``` is the SDK parameter that must receive the ``` publicUserCode ``` given by the **callback type 34**.
 
 <Image src="docs/SCA-encryption-basics.png" alt="usecase 1"/>
 

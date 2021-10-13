@@ -64,10 +64,10 @@ By triggering a sensitive operation endpoint, a push notification will be genera
 Your customer's security-wallet must be active and properly binded for the authentication request to reach her/his mobile app.
 </Highlight>
 
-#### Initiate SEPA transfer OUT
+#### Initiate SEPA Instant Credit Transfer OUT
 
 Your customer may initiate a pay-out, which will trigger an authentication request.
-More information regarding this endpoint in the [API reference](/api/SCTINST)
+More information regarding this endpoint in the [API reference.](/api/SCTINST)
 
 <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
 
@@ -98,7 +98,7 @@ In your mobile application, the notification will be received in the following `
 #### Modify personal data
 
 Your customer may modify some of his personal data, which will trigger an authentication request.
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}" method="put"/>
 

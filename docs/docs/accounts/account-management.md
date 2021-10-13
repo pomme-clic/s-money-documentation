@@ -42,7 +42,7 @@ All the accounts we provide are currently in Euro only.
  Our API offers the ability to manage all aspects of the account.
  From getting the balance of the account to set the different limits of transactions, the API adapts to your use cases.
  
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 You can setup account limitations here : 
 
@@ -68,7 +68,7 @@ You can find more here :
 ## Balance management
 
 
-Based on your customer risk management you can sometimes allow customer to spend more than its customer balance.
+Based on your customer risk management you can sometimes allow customers to spend more than its customer balance.
 
 
 <Highlight type="caution">

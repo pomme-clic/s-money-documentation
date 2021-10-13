@@ -16,7 +16,7 @@ This method of transfer exists to avoid processing by the banking network since 
 ### Advantages of P2P transfers 
 Making a P2P instead of a classic Sepa Credit Transfer (SCT) has several pros :
  - The transfer is made immediatly. No need to suffer the banking network delay.
- - The transfer is free. No banking network means no fee.
+ - The transfer is free. No banking network means no fees.
 
 
 The only condition is to have both the payer and the payee registered on your platform.
@@ -24,15 +24,18 @@ The only condition is to have both the payer and the payee registered on your pl
 
 <Image src="docs/P2P.png" alt="usecase 1"/>
 
+
+<!---  
+
 <Highlight type="tip">
 
 Specialized P2P are also available for customer billing. Billing can be done one by one or a mass P2P can be done also (ask our commercial team)
 
 </Highlight>
-
+--->
 <Highlight type="caution">
 
-Different option of P2P can be used when issued by the partner for example in case of billing : no account limitation verification, this option may create a customer debt if the balance is not sufficient.
+Different options of P2P can be used when issued by the partner for example in case of billing : no account limitation verification, this option may create a customer debt if the balance is not sufficient.
 
 </Highlight>
 
@@ -42,7 +45,7 @@ Within our P2P API you will be able to transfer money immediatly to another cust
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/payments" method="post"/>
 
-More information regarding this endpoint in the [API reference](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Core)
 
 ---
 ## Client debt
@@ -67,7 +70,7 @@ Here is the example of an ATM withdrawal with FX Change :
 
 <Highlight type="danger">
 
-Even if it is rare case, you, as client, will have to cover and recover your client debt. But do not worry all the necessay API are available.
+Even if it is rare case, you, as client, will have to cover and recover your client debt. But do not worry all the necessary APIs are available.
 
 </Highlight>
 
