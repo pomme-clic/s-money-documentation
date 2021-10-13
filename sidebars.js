@@ -38,7 +38,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Users',
-      items: ['api/KYC','api/Users','api/SCA'],
+      items: ['api/KYC','api/Users'],
     },
 	'api/SCTINST',
 	'api/Compliance',
