@@ -7,11 +7,33 @@ import Cta from '@theme/Cta'
 
 ## SEPA zone
 
-<Highlight>
 
 The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas. More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
-</Highlight>
+
+Two protocols are being used on this system to wire money : SCT and instant SCT.
+SCT stands for Sepa Credit Transfer and exists since the creation of the Euro.
+
+
+Instant SCT is an improved version of the existing SCT that has been launched in 2018.
+It comes with a few limitations : 
+- Euro only
+- Maximal amount for the wire transfer : 15 000 €
+- Execution delay : 10 seconds maximum
+- Immediate credit 
+- Irrevocable
+- No service interruption (operations can be processed all week)
+
+
+
+---
+
+## SCT transfer
+
+SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them and ask for a its refund.
+
+<Image src="docs/SEPA OUT_EN.png" alt="usecase 1"/>
+
 
 <Highlight type="tip">
 
@@ -27,21 +49,12 @@ To make a transfer, the beneficiary has to exist in the system.
 
 <Highlight type="danger">
 
-SEPA transfer can be refused due to the user thresholds.
+SEPA transfer can be refused due to user account thresholds.
 
 </Highlight>
-
----
-
-## SCT transfer
-
-SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them, ask for refund.
-
-<Image src="docs/SEPA OUT_EN.png" alt="usecase 1"/>
-
 ## Endpoints
 
-You must use the SCT API in including amount and beneficiary's ID
+You must use the SCT API that includes amount and beneficiary ID.
 
 More information regarding this endpoint in the [API reference.](/api/Core)
 
@@ -49,7 +62,7 @@ More information regarding this endpoint in the [API reference.](/api/Core)
 
 ## Instant payment
 
-Instant transfer is used to send money within seconds to a beneficiary defined by an IBAN and eligible. You can also ask for the list of instant transfer for a user on a period of time.
+Instant transfer is used to send money within seconds to a beneficiary with an eligible IBAN. You can also ask for the list of instant transfer for a user on a period of time.
 
 <Image src="docs/IP OUT_EN.png" alt="usecase 1"/>
 
@@ -67,7 +80,7 @@ Up to 90% of french banks can receive instant payments. In EURO Zone, this propo
 
 <Highlight type="caution">
 
-To make a transfer, the beneficiary has to exist in the system and must be elligible to Instant Payment.
+To make a transfer, the beneficiary has to exist in the system and must be eligible to the SEPA Instant Credit Transfer method.
 
 </Highlight>
 
@@ -81,7 +94,7 @@ Instant transfer can be refused due to the user thresholds.
 
 ## Endpoints
 
-You must use the Instant Payment API in including amount and beneficiary's ID
+You must use the Instant Payment API that includes amount and the beneficiary ID.
 
 More information regarding this endpoint in the [API reference.](/api/SCTinst)
 
@@ -92,7 +105,7 @@ More information regarding this endpoint in the [API reference.](/api/SCTinst)
 ---
 ## Recall
 
-For both Payment and instant payment, all the recall operation are available :
+For both SCT and instant SCT, all the recall operation are available :
 
 - Recall SCT OUT et IP OUT : in case you as partner would like to recall SCT or IP out (you have 10 days..).
 - RFRO SCT OUT et IP OUT : in case a user would like to recall SCT or IP out (wrong amount, wrong beneficiary,..) (the user has 13 months).
