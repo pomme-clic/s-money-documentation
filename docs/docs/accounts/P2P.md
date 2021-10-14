@@ -10,7 +10,7 @@ import Cta from '@theme/Cta'
 
 
 
-P2P transfer translates to "Peer to Peer transfer". It's a way to transfer money from one of your customer to another one of yours.
+P2P transfer translates to "Peer to Peer transfer". It's a way to transfer money from one of your customer to another one.
 This method of transfer exists to avoid processing by the banking network since both customer are hosted on the same platform.
 
 ### Advantages of P2P transfers 
@@ -52,15 +52,15 @@ More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Highlight>
 
-In some case of transaction, the account balance might not be sufficient, for example when an offline Card transaction or a payin contestation (money might be spent..).
-We propose a unpaid mechanism to ensure payment of this kind of operation.
+In some cases of transaction, the account balance might not be sufficient, for example when an offline Card transaction or a payin contestation (money might be spent..).
+We propose a dbet management mechanism to ensure payment of this kind of operation.
 
 </Highlight>
 
 <Highlight type="tip">
 
-The mechanism is based on automated P2P that create debt on the customer account and  ability for Client to recover the money.
-Debt could be created following many operation type : an Offline Card operation, a P2P billing, a contestation after a Card Top Up, after a SCT IN recall, an ATM withdrawal in currency.
+The mechanism is based on automated P2P that creates debt on the customer account and the ability for the Client to recover the missing amount.
+Debt could be created following many operation types : an Offline Card operation, a P2P billing, a contestation after a Card Top Up, after a SCT IN recall, an ATM withdrawal in currency.
 
 </Highlight>
 
