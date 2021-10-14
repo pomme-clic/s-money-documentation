@@ -19,15 +19,15 @@ Next (step 2), one or more days after, the merchant bank do the clearing and sen
 ## Payment transactions
 
 Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
-In real time (step 1), the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and also types of events such as card opposition. 
+In real time (step 1), the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and types of events such as card opposition. 
 
-A posteriori (step 2), the HUB also receives the settlements resulting from clearing and other types of operations linked to the life cycle of the operation following a cardholder dispute.
+Then (step 2), the HUB also receives settlements resulting from clearing and other types of operations linked to the lifecycle of operations following a cardholder dispute.
 
 ### Authorization (IAS)
 
 **Step 1**
 All cards issued are systematic authorization cards.
-This means that in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
+This means that, when in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
 Xpollens checks if the payment context is consistent with the card profile :
 
 - is this the correct PIN code,
@@ -36,7 +36,7 @@ Xpollens checks if the payment context is consistent with the card profile :
 - is it a country, a payment type, or a merchant authorized _(list, exception, selfcare, ...)_
 - ....
 
-Xpollens tests a lot of parameters in real time and responds to the merchant by indicating the response that was sent to his partner
+Xpollens tests a lot of parameters in real time and responds to the merchant by indicating the response that was sent to his partner.
 
 ### Clearing 
 
