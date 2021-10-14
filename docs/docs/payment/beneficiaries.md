@@ -22,7 +22,7 @@ Retrieving a user beneficiaries list of a user is possible with the dedicated AP
 
 <Highlight type="caution">
 
-When a beneficiary is created, their IBAN is automatically checked and transfers to it unlocked immediatly. Only SEPA and French overseas IBAN and will be authorized.
+When a beneficiary is created, its IBAN is automatically checked and a transfer to it unlocked immediatly. Only SEPA and French overseas IBAN will be authorized.
 
 </Highlight>
 
