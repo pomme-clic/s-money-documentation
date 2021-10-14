@@ -5,10 +5,11 @@ import Cta from '@theme/Cta'
 
 
 # Card payment
-
+## Card payment lifecycle
 A cardholder uses his card or his mobile to pay a merchant (shop, online or automate) or to withdraw cash.
 
-First, in real time (Step 1-Authorization), the merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. Occurs then an exchange between cardholder and merchant. When requesting authorization (step 1), this amount (the money) is simply withheld on the user's account so that this amount cannot be used elsewhere and it is actually debited once the merchant sends his request for clearing. (Step 2-Settlement).
+First, in real time (Step 1-Authorization), the merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. Occurs then an exchange between cardholder and merchant.
+When requesting authorization (step 1), this amount (the money) is simply withheld on the user's account so that this amount cannot be used elsewhere and it is actually debited once the merchant sends his request for clearing. (Step 2-Settlement).
 
 
 Next (step 2), one or more days after, the merchant bank do the clearing and send an order of settlement to Xpollens.
@@ -26,6 +27,7 @@ Then (step 2), the HUB also receives settlements resulting from clearing and oth
 ### Authorization (IAS)
 
 **Step 1**
+
 All cards issued are systematic authorization cards.
 This means that, when in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
 Xpollens checks if the payment context is consistent with the card profile :
@@ -41,6 +43,7 @@ Xpollens tests a lot of parameters in real time and responds to the merchant by 
 ### Clearing 
 
 **Step 2** 
+
 We merge the set of authorizations with the corresponding settlements. 
 The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized; example : fuel pumps). 
 If several conditions are met, some transactions can be processed offline (so with no authorization process).
