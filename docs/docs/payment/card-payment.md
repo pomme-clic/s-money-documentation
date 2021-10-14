@@ -94,7 +94,7 @@ It is the most important for you. You can follow activity and exchange with your
 
 #### type 24 _(clearing)_
 
-This callback is sent when clearing process is finished for you. You receive a reference and you can retrieve your settlement in clearing report.
+This callback is sent when clearing process is finished for you. You receive a reference and you can retrieve your settlement in the clearing report.
 
 ```json
 {
@@ -203,12 +203,3 @@ This API is used to retrieve the details of the authorization message
 <!--
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations/{orderid}/messages" method="get"/>
 -->
-
---- 
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
