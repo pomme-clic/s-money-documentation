@@ -118,8 +118,6 @@ More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds" method="post"/>
 
----
-
 <Cta
   context="doc"
   ui="button"
