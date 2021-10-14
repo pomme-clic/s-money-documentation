@@ -5,23 +5,24 @@ import Cta from '@theme/Cta'
 
 # Beneficiaries management
 
+A beneficiary is a recipient of money transfer you want to make. It can be a person, a firm or even the state. 
+All beneficiaries are constituted with a bank account reference and their name.
+
 ## Adding a beneficiary
 
 
-Adding of a beneficiary is necessary to ask for money transfer.
+Adding a beneficiary is necessary to make a money transfer.
 
 
 <Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
 
-<Highlight type="tip">
 
-Retrieving beneficiaries list of a user is available within API.
+Retrieving a user beneficiaries list of a user is possible with the dedicated API.
 
-</Highlight>
 
 <Highlight type="caution">
 
-IBAN format is checked when adding beneficiary and tranfer to the beneficiary is avalaible with no delay. Only SEPA IBAN will be authorized (and French overseas).
+When a beneficiary is created, their IBAN is automatically checked and transfers to it unlocked immediatly. Only SEPA and French overseas IBAN and will be authorized.
 
 </Highlight>
 
@@ -39,10 +40,3 @@ You can retrieve the list of a user beneficiaries here :
 
 More information regarding this endpoint in the [API reference.](/api/Core)
 
-
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Core"
-  label="Try it out"
-/>
