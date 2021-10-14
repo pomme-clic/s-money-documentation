@@ -61,7 +61,7 @@ The SEPA instant payment can be used in EUR only. The transfer is done within se
 
 <Highlight type="tip">
 
-Up to 90% of french banks can receive instant payment. In EURO Zone, this proportion is lower.
+Up to 90% of french banks can receive instant payments. In EURO Zone, this proportion is lower.
 
 </Highlight>
 
