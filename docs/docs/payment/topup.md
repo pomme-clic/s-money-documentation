@@ -6,27 +6,32 @@ import Cta from '@theme/Cta'
 # Topup card
 
 
+A topup card is a way for your customer to credit money on their account directly from a bank card.
+
+
 ## Xpollens shop integration
 
-First you have to integrate a Xpollens shop with our "company brother" Dalenys to provide some fieds in your app in order to customer can entry data cards.
+First you have to integrate a Xpollens shop with our sister company Dalenys to provide some fields in your app to make the customer enter its card datas.
 
 ### Hosted fields with Dalenys
 
 <Image src="docs/PayOUT_HostedFields.png" alt="usecase 1"/>
 
-In this picture, Xpollens is your Shop.
+In this picture, Xpollens is your shop.
 
 > 1. You display a payment page including a payment form, except that the bankcard input fields are replaced by hosted-fields containers. These containers could be any HTML tag: div, p, span… the hosted-fields JavaScript library injects Dalenys-hosted iframes in these containers, each containing the card data input fields;
 > 2. At the submit process, you should call the createToken method of the hosted-fields library which will trigger the tokenization of the cardholder data (card number, expiry date and cryptogram);
 > 3. If the tokenization is successful, you must add the received token to your form submission request (e.g. by adding a hidden input);
 > 4. You can submit the payment form to your own server by calling API Xpollens **Create a topup with 3DSv2**
 > 5. Xpollens sends a HTTPS POST request to our classical server to server endpoint: https://secure-test.dalenys.com/front/service/rest/process. The requests should contain the token instead of the cardholder data;
-> 6. The Dalenys platform sends a request to the bank network and waits for the result.
-> 7. Xpollens receives the result in the request response and answers you wtih callback.
+> 6. The Dalenys platform sends a request to the bank network and waits for the results.
+> 7. Xpollens receives the results in the request response and answers you with callbacks.
 > 8. In parallel, the transaction result is confirmed by a notification request sent to the merchant’s NOTIFICATION_URL containing the transaction’s parameters (among which EXECCODE and TRANSACTIONID).  
 
 
-More information regarding this endpoint in the [Hosted Fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)
+
+
+More information regarding this endpoint in the [hosted fields by Dalenys.](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
 ---
 
@@ -112,8 +117,6 @@ The orderid specified in the body of the request corresponds to a new orderid de
 More information regarding this endpoint in the [API reference.](/api/Core)
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds" method="post"/>
-
----
 
 <Cta
   context="doc"
