@@ -8,7 +8,7 @@ import Cta from '@theme/Cta'
 
 ## Xpollens shop integration
 
-First you have to integrate a Xpollens shop with our "company brother" Dalenys to provide some fieds in your app in order to customer can entry data cards.
+First you have to integrate a Xpollens shop with our sister company Dalenys to provide some fields in your app to make the customer enter its card datas.
 
 ### Hosted fields with Dalenys
 
