@@ -42,8 +42,8 @@ Xpollens tests a lot of parameters in real time and responds to the merchant by 
 
 **Step 2** 
 We merge the set of authorizations with the corresponding settlements. 
-The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized). 
-And more, sometimes there were certain conditions to be offline transactions.
+The transactions received in the clearing allow you to obtain the real exchange value of the transaction (which is not necessarily the same that was authorized; example : fuel pumps). 
+If several conditions are met, some transactions can be processed offline (so with no authorization process).
 
 <Image src="docs/CardOP_clearing.png" alt="usecase 1"/>
 
@@ -51,12 +51,12 @@ And more, sometimes there were certain conditions to be offline transactions.
 
 ## API & callbacks
 
-### Callback
+### Callbacks
 
 We provide you with 2 callbacks allowing you to retrieve the processing information of authorization requests made in real time as well as the processing of settlements carried out a posteriori by sending from fellow banks.
 
 
-These callback contain different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself, etc.
+These callback contain different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself.
 
 #### type 20 _(authorization)_
 
