@@ -22,7 +22,7 @@ Making a P2P instead of a classic Sepa Credit Transfer (SCT) has several pros :
 The only condition is to have both the payer and the payee registered on your platform.
 
 
-<Image src="docs/P2P.png" alt="usecase 1"/>
+<Image src="docs/P2P_EN.png" alt="usecase 1"/>
 
 
 <!---  
