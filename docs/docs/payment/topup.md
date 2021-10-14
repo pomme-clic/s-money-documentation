@@ -14,7 +14,7 @@ First you have to integrate a Xpollens shop with our sister company Dalenys to p
 
 <Image src="docs/PayOUT_HostedFields.png" alt="usecase 1"/>
 
-In this picture, Xpollens is your Shop.
+In this picture, Xpollens is your shop.
 
 > 1. You display a payment page including a payment form, except that the bankcard input fields are replaced by hosted-fields containers. These containers could be any HTML tag: div, p, span… the hosted-fields JavaScript library injects Dalenys-hosted iframes in these containers, each containing the card data input fields;
 > 2. At the submit process, you should call the createToken method of the hosted-fields library which will trigger the tokenization of the cardholder data (card number, expiry date and cryptogram);
@@ -24,6 +24,8 @@ In this picture, Xpollens is your Shop.
 > 6. The Dalenys platform sends a request to the bank network and waits for the result.
 > 7. Xpollens receives the result in the request response and answers you wtih callback.
 > 8. In parallel, the transaction result is confirmed by a notification request sent to the merchant’s NOTIFICATION_URL containing the transaction’s parameters (among which EXECCODE and TRANSACTIONID).  
+
+
 
 
 More information regarding this endpoint in the [Hosted Fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)

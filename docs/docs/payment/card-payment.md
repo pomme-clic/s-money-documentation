@@ -36,7 +36,7 @@ Xpollens checks if the payment context is consistent with the card profile :
 - is the card active,
 - are the ceilings or the balance sufficient,
 - is it a country, a payment type, or a merchant authorized _(list, exception, selfcare, ...)_
-- ....
+- and more
 
 Xpollens tests a lot of parameters in real time and responds to the merchant by indicating the response that was sent to his partner.
 
