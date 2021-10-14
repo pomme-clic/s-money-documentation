@@ -88,11 +88,11 @@ Once you recover modify the customer debt :
   
 - The remaining amount :
  
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts/{orderid}/remainingdebtamount" method="get"/> 
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts/{orderid}/remainingdebtamount" method="put"/> 
 
 - The remaining status :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts/{orderid}/status" method="get"/> 
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts/{orderid}/status" method="put"/> 
 
 
 More information regarding this endpoint in the [API reference](/api/Core)
