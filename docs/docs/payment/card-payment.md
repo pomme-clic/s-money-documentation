@@ -6,13 +6,12 @@ import Cta from '@theme/Cta'
 
 # Card payment
 
-The cardholder use his card or his mobile to pay in merchant (shop, online or automate) or to withdraw cash.
+A cardholder uses his card or his mobile to pay a merchant (shop, online or automate) or to withdraw cash.
+
+First, in real time (Step 1-Authorization), the merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. Occurs then an exchange between cardholder and merchant. When requesting authorization (step 1), this amount (the money) is simply withheld on the user's account so that this amount cannot be used elsewhere and it is actually debited once the merchant sends his request for clearing. (Step 2-Settlement).
 
 
-First, in real time (Step 1 authorization), Merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. You have an exchange between cardholder and merchant. When requesting authorization (step 1), this amount (the money) is simply "reserved" on the user's account so that this amount cannot be used elsewhere and that it is actually debited once the merchant sends his request for clearing. (Step 2 Settlement).
-
-
-After, in second time (step 2), one or more day after, merchant bank proceeds a clearing and send an order of settlement to Xpollens.
+Next (step 2), one or more days after, the merchant bank do the clearing and send an order of settlement to Xpollens.
 
 
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
