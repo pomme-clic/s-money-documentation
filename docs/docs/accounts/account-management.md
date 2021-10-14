@@ -30,7 +30,7 @@ You can also have these codes : GF, GP, MQ, RE, PF, TF, YT, NC, BL, MF(French pa
 ## Account management
 
 <Highlight>
-All the xpollens accounts comes with an IBAN. It can be your own (if you have a financial agreement) or a Xpollens one. For more information, please contact our sales team.
+All the xpollens accounts come with an IBAN. It can be your own (if you have a financial agreement) or a Xpollens one. For more information, please contact our sales team.
 </Highlight>
 
 <Highlight type="tip">
@@ -40,7 +40,7 @@ All the accounts we provide are currently in Euro only.
 
 
  Our API offers the ability to manage all aspects of the account.
- From getting the balance of the account to set the different limits of transactions, the API adapts to your use cases.
+ From getting the balance of the account to set the different limits of transactions : you can adapt the account to your use cases.
  
 More information regarding this endpoint in the [API reference.](/api/Core)
 
@@ -77,7 +77,7 @@ Please note that any additional balance will be automatically covered by you as 
  
 </Highlight>
 
-You can setup an addtional balance here : 
+You can setup an additional balance here : 
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/additionalBalance" method="put"/>
 
