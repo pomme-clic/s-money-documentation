@@ -25,13 +25,13 @@ In this picture, Xpollens is your shop.
 > 4. You can submit the payment form to your own server by calling API Xpollens **Create a topup with 3DSv2**
 > 5. Xpollens sends a HTTPS POST request to our classical server to server endpoint: https://secure-test.dalenys.com/front/service/rest/process. The requests should contain the token instead of the cardholder data;
 > 6. The Dalenys platform sends a request to the bank network and waits for the results.
-> 7. Xpollens receives the result in the request response and answers you wtih callback.
+> 7. Xpollens receives the results in the request response and answers you with callbacks.
 > 8. In parallel, the transaction result is confirmed by a notification request sent to the merchant’s NOTIFICATION_URL containing the transaction’s parameters (among which EXECCODE and TRANSACTIONID).  
 
 
 
 
-More information regarding this endpoint in the [hosted fields by Dalenys](https://developer.dalenys.com/integration-modes/hosted-fields.html)
+More information regarding this endpoint in the [hosted fields by Dalenys.](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
 ---
 
