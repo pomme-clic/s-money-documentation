@@ -54,7 +54,7 @@ module.exports = {
           items: [
             {
               label: 'Get started',
-              href: '/docs/kyc/introduction',
+              href: '/docs/introduction',
             },
             {
               label: 'SEPA transactions',
