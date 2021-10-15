@@ -111,7 +111,7 @@ module.exports = {
       socialIcons: [
         {
           title: 'linkedin',
-          href: 'https://fr.linkedin.com/showcase/xpollens',
+          href: 'https://www.linkedin.com/company/xpollens',
         },
         {
           title: 'twitter',
