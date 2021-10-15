@@ -54,7 +54,7 @@ module.exports = {
           items: [
             {
               label: 'Get started',
-              href: '/docs/kyc/retail-customer',
+              href: '/docs/kyc/introduction',
             },
             {
               label: 'SEPA transactions',
@@ -70,7 +70,7 @@ module.exports = {
             },
             {
               label: 'KYC',
-              href: '/kyc/retail-customer',
+              href: 'docs/kyc/retail-customer',
             },
           ],
         },
