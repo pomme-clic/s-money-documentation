@@ -54,23 +54,23 @@ module.exports = {
           items: [
             {
               label: 'Get started',
-              href: '/',
+              href: '/docs/kyc/retail-customer',
             },
             {
               label: 'SEPA transactions',
-              href: '/',
+              href: '/docs/payment/IP',
             },
             {
               label: 'Credit card',
-              href: '/',
+              href: '/docs/cards/issuing',
             },
             {
               label: 'Payment',
-              href: '/',
+              href: '/docs/payment/beneficiaries',
             },
             {
               label: 'KYC',
-              href: '/',
+              href: '/kyc/retail-customer',
             },
           ],
         },
@@ -92,15 +92,15 @@ module.exports = {
           items: [
             {
               label: 'Terms and policies',
-              href: 'https://xpollens.com',
+              href: 'https://www.xpollens.com/en/legal-statement/',
             },
             {
               label: 'Cookies policies',
-              href: 'https://xpollens.com',
+              href: 'https://www.xpollens.com/en/cookie-policy/',
             },
             {
-              label: 'Copyrights',
-              href: 'https://xpollens.com',
+              label: 'Data protection',
+              href: 'https://www.xpollens.com/en/data-protection/',
             },
           ],
         },
@@ -111,7 +111,7 @@ module.exports = {
       socialIcons: [
         {
           title: 'linkedin',
-          href: 'https://fr.linkedin.com/showcase/xpollens',
+          href: 'https://www.linkedin.com/company/xpollens',
         },
         {
           title: 'twitter',
