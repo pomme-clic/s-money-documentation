@@ -1,0 +1,9 @@
+.idealImageContainer {
+  @apply mb-8 rounded-xl overflow-hidden border border-xp-grey-400;
+}
+
+html[data-theme='dark'] {
+  .idealImageContainer {
+    @apply border-transparent !important;
+  }
+}

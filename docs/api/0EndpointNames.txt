@@ -1,0 +1,12 @@
+Listes des endpoints par nom 
+
+Card Factory : apiUrl="/v2.0/cardfactory"
+Card Secure : apiUrl="/v1.1/cardsecure"
+Compliance : apiUrl="/v2.1/compliance"
+Core : apiUrl="/v1.0/migrationProxy"
+KYC : apiUrl="/v2.0/kyc.usermanagment"
+SCA : apiUrl="/v1.0/sca"
+SCT INST : apiUrl="/v2.0/Transfers.InstantPayment"
+Users : apiUrl="/v2.0/user.usermanagment"
+WebHooks : apiUrl="/v2.0/webhook"
+Xpay : apiUrl="/v2.0/cardxpay"

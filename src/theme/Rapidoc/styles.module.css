@@ -1,0 +1,9 @@
+rapi-doc::part(label-overview-title) {
+  @apply font-bold;
+}
+
+html[data-theme='dark'] {
+  rapi-doc::part(label-overview-title) {
+    @apply text-white;
+  }
+}

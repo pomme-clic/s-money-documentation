@@ -1,25 +1,40 @@
-/* stylelint-disable docusaurus/copyright-header */
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #006d8c;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
   --ifm-color-primary-light: rgb(70, 203, 174);
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
-  /* --aa-text-color-rgb: #ff0000;
-  --aa-background-color-rgb: #ff0000;
-  --aa-muted-color-rgb: #ff0000 !important; */
+  --ifm-code-font-size: 60%;
+  --ifm-font-weight-semibold: 600;
+  --ifm-navbar-link-color: #757575;
+  --ifm-font-family-base: 'Poppins';
+  --ifm-footer-link-hover-color: #63c2c7;
+  --ifm-heading-color: #000;
 }
 
+/* Darkmode overrides */
+html[data-theme='dark'] {
+  --ifm-color-primary: #349bb8;
+  --ifm-color-primary-dark: #5a91ea;
+  --ifm-navbar-link-color: #bdbdbd;
+  --ifm-navbar-link-hover-color: #63c2c7;
+  --ifm-menu-color-active: #63c2c7;
+  --ifm-background-color: #121e24;
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-background-surface-color: var(--ifm-background-color);
+  --ifm-footer-link-hover-color: #63c2c7;
+  --ifm-heading-color: #ffffff;
+  --ifm-toc-border-color: #2a3845;
+}
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globals */
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
@@ -27,25 +42,420 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* FONTS */
 
-.api .padding-vert--lg {
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-regular.woff') format('woff');
+}
+/* poppins-italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''), url('../fonts/poppins-v15-latin-italic.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-italic.woff') format('woff');
+}
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''), url('../fonts/poppins-v15-latin-600.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-600.woff') format('woff');
+}
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''), url('../fonts/poppins-v15-latin-700.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-700.woff') format('woff');
+}
+
+html {
+  font-family: 'Poppins';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  @apply !text-3xl;
+}
+
+h2 {
+  @apply !text-xl;
+}
+
+@screen md {
+  h1 {
+    @apply !text-4xl;
+  }
+
+  h2 {
+    @apply !text-2xl;
+  }
+}
+
+/* Container */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1100px !important;
+  }
+}
+
+/* API container */
+body.api {
+  footer.footer {
+    display: none;
+  }
+
+  header {
+    display: none;
+  }
+}
+
+body.api .padding-vert--lg {
   padding: 0 !important;
 }
 
-.api .container {
+body.api .container {
   max-width: none;
 }
 
-.api .container .row .col > div {
-  padding: 0 !important;
+/* API doc-page container */
+body.api {
+  .doc-page {
+    .container {
+      height: calc(100vh - 60px);
+      padding: 0 !important;
+      .row {
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
 }
 
+body.api .pagination-nav {
+  display: none;
+}
+
+@media (min-width: 1536px) {
+  body.api {
+    .doc-page {
+      .container {
+        max-width: none !important;
+      }
+    }
+  }
+}
+
+/* Homepage */
+body.homepage {
+  .pagination-nav {
+    display: none;
+  }
+}
+
+/* Search */
 .smoney {
   .aa-DetachedSearchButton {
     border-radius: 30px;
     color: white;
   }
 }
+
+/* Sidebar */
+.main-wrapper {
+  aside {
+    width: 0px !important;
+  }
+}
+
+@screen lg {
+  .main-wrapper {
+    aside {
+      display: block;
+      width: auto !important;
+    }
+  }
+}
+
+@screen md {
+  .menu {
+    @apply py-9 pl-8 pr-6 !important;
+  }
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  @apply bg-transparent;
+}
+
+aside > div > nav > ul > li:nth-child(2) > ul > li {
+  &:not(:first-child) {
+    @apply mt-0;
+  }
+}
+
+.menu {
+  .menu__link {
+    @apply font-normal text-sm;
+    &--active {
+      @apply font-semibold;
+    }
+  }
+
+  > .menu__list {
+    > .menu__list-item--collapsed {
+      .menu__list {
+        @apply transition duration-100 ease-out pt-0 !important;
+      }
+    }
+
+    > .menu__list-item {
+      .menu__list {
+        @apply pt-2;
+      }
+
+      .menu__list-item {
+        &:not(:first-child) {
+          @apply mt-0;
+        }
+      }
+
+      &:not(:first-child) {
+        @apply mt-3;
+      }
+
+      > .menu__link {
+        @apply relative pl-8 pr-0 font-semibold text-[15px];
+        @apply before:absolute before:top-1/2 before:left-2 before:-translate-y-1/2 before:bg-xp-primary-500 before:w-2 before:h-2 before:rounded-full;
+      }
+    }
+  }
+}
+
+.menu__link--sublist:after {
+  background: url('/img/ui/icons/arrow.svg');
+  height: 24px;
+  width: 24px;
+  @apply absolute right-0 top-[4px];
+}
+
+.navbar-sidebar__items {
+  .menu__link {
+    @apply !pl-4;
+    &:before {
+      @apply hidden;
+    }
+  }
+}
+
+/* Responsive doc navigation */
+.menu--responsive {
+  button {
+    @apply bg-xp-primary-500 text-black border-none;
+  }
+}
+
+/* Main */
+main {
+  .container {
+    @apply !pt-8 !pb-5 !px-5;
+  }
+}
+
+@screen md {
+  main {
+    .container {
+      @apply !py-10 !px-10;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  @apply bg-xp-tertiaries-secondary-marine;
+
+  .container {
+    @apply max-w-[1336px];
+
+    @media (min-width: 1536px) {
+      max-width: 1336px !important;
+    }
+  }
+}
+
+/* TOC */
+.table-of-contents {
+  @apply !text-sm pl-[15px];
+
+  &__link--active {
+    @apply font-bold;
+  }
+
+  ul > li {
+    @apply font-normal;
+  }
+}
+
+/* /Markdow docs */
+.smoney.docpage {
+  .markdown {
+    font-size: 13px;
+    h2 {
+      @apply flex items-center;
+      &:before {
+        content: '';
+        background: url('/img/ui/icons/arrow_x_xpollens.svg');
+        background-size: cover;
+        @apply block w-[19px] h-[22px] mr-3;
+      }
+    }
+
+    h3 {
+      @apply text-xl;
+    }
+
+    hr {
+      @apply border-none h-[3px] mt-12 mb-10;
+      background: url('/img/ui/doc_divider.svg') repeat-x;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    .hash-link {
+      @apply hidden;
+    }
+
+    .copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+      @apply text-sm !important;
+    }
+
+    ol,
+    ul {
+      @apply mt-6 ml-3 space-y-2;
+
+      li {
+        @apply relative block pl-2 !important;
+      }
+    }
+
+    ul {
+      &.table-of-contents {
+        @apply mt-0 !important;
+        ul {
+          @apply mt-0 !important;
+        }
+      }
+
+      li {
+        &:before {
+          content: '';
+          @apply absolute rounded-full w-[5px] h-[5px] left-[-10px] top-[10px] bg-black;
+        }
+      }
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: counter;
+
+      li {
+        counter-increment: counter;
+        &:before {
+          content: counter(counter) '. ';
+          @apply absolute left-[-10px] top-[0px];
+        }
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .smoney.docpage {
+    .markdown {
+      ul {
+        li {
+          &:before {
+            @apply bg-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Pagination */
+.pagination-nav__item {
+  .pagination-nav__link {
+    .pagination-nav__sublabel {
+      @apply font-normal;
+    }
+
+    @apply border-xp-grey-300;
+
+    &:hover {
+      @apply border-xp-grey-400;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .pagination-nav__item {
+    .pagination-nav__link {
+      @apply border-xp-grey-700;
+
+      &:hover {
+        @apply border-xp-grey-500;
+      }
+    }
+  }
+}
+
+/* Searchbar */
+.navbar__search-input {
+  @apply bg-white border border-solid border-xp-grey-400 rounded-xl h-[36px] text-black text-sm bg-no-repeat;
+  @apply focus:border-xp-primary-500 focus:outline-none;
+  &:focus {
+    box-shadow: 0px 0px 0px 1px #ffcc00;
+  }
+  padding: 17px 10px 15px 40px;
+  background-image: url('/img/ui/icons/search--searchbar.svg');
+  background-size: 20px 20px;
+
+  &::placeholder {
+    @apply text-xp-grey-600 text-sm;
+  }
+}
+
+.apiSubtreeSuggestion {
+  display: none !important;
+}
+
+html[data-theme='dark'] {
+  .navbar__search-input {
+    @apply bg-transparent text-white border-xp-grey-700;
+  }
+
+  &::placeholder {
+    @apply text-xp-grey-400;
+  }
+}
+
+
