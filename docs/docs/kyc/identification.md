@@ -60,6 +60,8 @@ Just plug to our API and we ensure compliance with PSD2 : if the operation is se
 
 By triggering a sensitive operation endpoint, a push notification will be generated, by our backend, onto your end user's smartphone : our back-end will find your end user's mobile application and trigger the **authentication request**. You must therefore code the reception of such notifications using the SDK.
 
+Here is a list of all ``` RAW_LIST ``` messages you can receive:
+
 <Image src="docs/SCA-format-rawlist.png" alt="usecase 1"/>
 
 <Highlight type="caution">
