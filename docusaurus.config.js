@@ -5,7 +5,7 @@ module.exports = {
   title: 'Xpollens API docs',
   url: 'https://s-money-documentation-site.netlify.app/',
   baseUrl: '/',
-  noIndex: true,
+  noIndex: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',

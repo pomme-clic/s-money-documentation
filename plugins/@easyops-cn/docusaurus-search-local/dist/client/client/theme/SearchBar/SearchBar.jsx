@@ -153,7 +153,7 @@ export default function SearchBar({ handleSearchBarToggle, }) {
         if (event.target.value) {
             const apiSubtreeElements = Array.from(document.querySelectorAll(".isApiSubtree"))
                 apiSubtreeElements.forEach((element)=>{
-                    console.log(element.parentNode);
+                    
                     element.parentNode.classList.add('apiSubtreeSuggestion')
                 })
             setInputChanged(true);
