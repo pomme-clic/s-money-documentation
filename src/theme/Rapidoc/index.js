@@ -38,14 +38,8 @@ const Rapidoc = ({ apiUrl }) => {
 
   // React Query
   const fetchAPI = async () => {
-    console.log('react query fetchAPI')
-
     const isProd = prodDomains[0].includes(window.location.host)
-    console.log('prodDomains: ', prodDomains)
-    console.log('window.location.host: ', window.location.host)
-    console.log('isProd: ', isProd)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
-    console.log('baseAPIUrl: ', baseAPIUrl)
     const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
     serverUrl = isProd
       ? 'https://sb-api.xpollens.com'
@@ -71,7 +65,6 @@ const Rapidoc = ({ apiUrl }) => {
 
   // Rapidoc parsing
   const loadRapidocSpec = async (stringifiedData) => {
-    console.log('loadRapidocSpec')
     await rapidocRef.current.loadSpec(stringifiedData)
     rapidocRef.current.shadowRoot.querySelector('#auth .m-btn').click()
   }

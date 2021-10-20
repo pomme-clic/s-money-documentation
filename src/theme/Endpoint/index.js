@@ -93,7 +93,6 @@ const Endpoint = ({ apiUrl, path, method }) => {
         {data && (
           <div className="parameters">
             {data.map((param, i) => {
-              console.log(param)
               const paramName = param.name
               const paramType = param.schema['type']
               const paramDescription = param.description || null
