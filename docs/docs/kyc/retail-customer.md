@@ -130,7 +130,7 @@ Here are the steps your mobile application should follow when it's launched by a
 
 ### 1.1 Security-Wallet State
 
-Once a new user downloads your mobile application, you will need to check if his/her app is already securely binded or not. This can be achieved by looking at the ```state ``` property of the security wallet. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/sdk/wallet_management.html).
+Once a new user downloads your mobile application, you will need to check if his/her app is already securely binded or not. This can be achieved by looking at the ```state```  property of the security wallet. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/sdk/wallet_management.html).
 
 The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletManager.connect() ```.
 
