@@ -150,13 +150,6 @@ You will then need to match this user with the user you already know. This can b
 
 The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletProvisioning.launch( activationCode ) ```.
 
->
-> **Managing the multi-channel capability**
->
-> - If the on-boarding process started on the web, the Activation Code can be displayed on a regular webpage so that it can be scanned from your mobile app.
-> - If the on-boarding process started on your mobile app, the Activation Code does not need to be shown to your prospect : you can feed it directly to our SDK in the background.
-> 
-
 Here is the payload you'll get from our callback type 35 :
 
 ```json
@@ -168,8 +161,6 @@ Here is the payload you'll get from our callback type 35 :
         }
 ```
 
-> 
-> **Concerning the PROVISIONNING BLOCK**
 > 
 > - Make sure you request proper access to both front & back cameras : Scanning QR Code requires camera, and Identification Webview requires selfie camera.
 > - Code depends on OS. Please refer to full documentation (requires an NDA to be signed), thank you for your understanding.
