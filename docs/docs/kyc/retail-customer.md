@@ -128,25 +128,25 @@ Here are the steps your mobile application should follow when it's launched by a
   If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
 </Highlight>
 
-### 1. Loading: Check security-wallet's state
+### Loading: Check security-wallet's state
 
 Once a new user downloads your mobile application, you will need to check if his/her app is already securely binded or not. This can be achieved by looking at the ```state```  property of the security wallet. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/sdk/wallet_management.html).
 
 The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletManager.connect() ```.
 
-### 1. Loading: Check device elligibility
+### Loading: Check device elligibility
 
 If the wallet is ``` onProvisioningRequired ``` then an initializing is required. If not, then you can skip very step and go directly to your Home Page. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/general/getting-started.html).
 
 The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletProvisioning.initialize() ```.
 
-### 1. Loading: Obtain access to both webcams of the smartphone
+### Loading: Obtain access to both webcams of the smartphone
 
 The app will require accessing both webcams, for scanning QR Code and Identity documentation, and possibly for performing a selfie. Please refer to Apple & Google Coding Rulebooks.
 
-### 2. Provisionning: Scan QR code
+### Provisionning: Input Activation Code
 
-You will then need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Callback Type 35**. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
+You will then need to match this user with the user you already know. This can be done via the ``` PROVISIONNING BLOCK ``` of our SDK, using our **Activation Code**, handed to you in our **Callback Type 35**. If your customer is moving from laptop to smartphone, the **Activation Code** obtained on the laptop can be transformed into a QR Code, which can then be scanned from the smartphone. This should happen quite early in your process, as it will secure your mobile app and ensure we can contact your customer by push-notifications.
 
 The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletProvisioning.launch( activationCode ) ```.
 
@@ -176,11 +176,11 @@ Here is the payload you'll get from our callback type 35 :
 > 
 
 
-### 2. Provisionning: Secret code
+### Provisionning: Secret code
 
 This screen is automatically prompted by our SDK whenever you trigger the binding of a new security-wallet on the device. It currently contains 5 digits, and it is not stored anywhere but the user's device.
 
-### 2. Provisionning: Get webview URL
+### Provisionning: Get webview URL
 
 This step is performed by prompting the webview inside your screen. This webview's URL can be obtained using the ``` getIssuerData() ``` feature of our SDK.
 
@@ -189,7 +189,7 @@ Example:
 https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p
 ```
 
-### 3. Main: Close webview URL
+### Main: Close webview URL
 
 You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
 
@@ -206,9 +206,9 @@ Even if the identification is not a success, you will still get the same outcome
 Because we use Strong Authentication as a means of e-Signature, you must please refer to the Strong Authentication section in this documentation to finalize this integration. Signing the Terms & Conditions as well as the Tax Declaration Form will generate such SCA notifications.
 </Highlight>
 
-### 3. Main: Home Page
+### Main: Home Page
 
-You can now navigate to your app's Home Page.
+You can finally navigate to your app's Home Page.
 
 
 ## API endpoints
