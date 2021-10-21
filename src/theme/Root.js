@@ -39,7 +39,7 @@ const Root = ({ children }) => {
 
     return () => {
       document.head.removeChild(cookiebotScript)
-      document.body.appendChild(cookieDeclarationScript)
+      document.body.removeChild(cookieDeclarationScript)
     }
   }, [])
 

@@ -458,4 +458,6 @@ html[data-theme='dark'] {
   }
 }
 
-
+.CookieDeclaration {
+  display: none !important;
+}
