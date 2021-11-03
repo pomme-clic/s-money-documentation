@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Head from '@docusaurus/Head'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
@@ -45,6 +46,9 @@ const Root = ({ children }) => {
 
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://docs.xpollens.com/" />
+      </Head>
       <QueryClientProvider client={queryClient}>
         <div
           className={clsx(
