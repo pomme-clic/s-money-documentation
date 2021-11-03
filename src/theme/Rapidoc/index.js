@@ -107,6 +107,7 @@ const Rapidoc = ({ apiUrl }) => {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://docs.xpollens.com/" />
         <style>{'body { overflow: visible; }'}</style>
         <body className="api"></body>
       </Head>

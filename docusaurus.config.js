@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   title: 'Xpollens API docs',
-  url: 'https://s-money-documentation-site.netlify.app/',
+  url: 'https://docs.xpollens.com/',
   baseUrl: '/',
   noIndex: false,
   onBrokenLinks: 'throw',
