@@ -7,6 +7,10 @@ import Cta from '@theme/Cta'
 
 
 
+
+<Image src="docs/XPO-AUTH-logo.png" alt="usecase 1"/>
+
+
 # Strong customer authentication 
 
 
