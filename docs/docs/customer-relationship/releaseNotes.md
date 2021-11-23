@@ -66,5 +66,5 @@ Automatized the reject of blocked SCT IN when time limit is reached
 ### Partner Portal :
 Extended the debt management capabilities by adding ATM withdrawals debt management  
 
-### December 2021
+## December 2021
 Incoming
