@@ -28,11 +28,11 @@ Added the coma (,) in the list of forbidden character for the names search field
 Added “Clear all filters" button in the operations page  
 
 ## October 2021
-## Transfers :
+### Transfers :
 Added the French overseas transfer protocol. You can now transfer fund from/to overseas department
-## Cards :
+### Cards :
 Improved virtual cards API stability. No impact on existing APIs
-## Partner Portal :
+### Partner Portal :
 Added the display of Instant Payment Diligence  
 Improved display of transactions. You can now view 150 transactions instead of 50  
 Corrected cards action buttons display when one was not authorised to see it  
@@ -41,11 +41,11 @@ Corrected some error messages
 Aesthetics changes to improve user comfort  
 
 ## November 2021
-## Onboarding :
+### Onboarding :
 Added the EAI/CRS autocertification pdf generation. You can now have your own logo and disclaimer for this document  
 Excluded the complete KYC demands from the SCT diligence cancelation process  
 
-## Cards :
+### Cards :
 Created two new endpoints to display sensitive card infos :  
 GET PIN endpoint  
 GET CVV + PAN endpoint  
@@ -59,11 +59,11 @@ GET/api/sca/normal/v2.0/{appUserId}/pin/{cardExternalRef}?channelCode={channelCo
 For PAN and expiry date :  
 GET/api/sca/normal/v2.0/{appUserId}/carddisplay/{cardExternalRef} ?channelCode={channelCode}  
 
-## Transfers :
+### Transfers :
 Significantly improved mass P2P calls efficiency  
 Automatized the reject of blocked SCT IN when time limit is reached  
 
-## Partner Portal :
+### Partner Portal :
 Extended the debt management capabilities by adding ATM withdrawals debt management  
 
 ### December 2021
