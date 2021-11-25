@@ -5,7 +5,7 @@ import Cta from '@theme/Cta'
 
 # Account management 
 
-## What does IBAN means ?
+## What does IBAN mean ?
 
 The IBAN (International Bank Account Number) is the unique identifier of the User Account.  
 The IBAN uniquely identifies an individual account, at a specific financial institution, in a particular country. 
