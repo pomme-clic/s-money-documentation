@@ -10,3 +10,4 @@ SCT INST : apiUrl="/v2.0/Transfers.InstantPayment"
 Users : apiUrl="/v2.0/user.usermanagment"
 WebHooks : apiUrl="/v2.0/webhook"
 Xpay : apiUrl="/v2.0/cardxpay"
+Transfers (SDD et P2P) : /v1.1/Transfers.Bib
