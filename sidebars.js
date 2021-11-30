@@ -42,6 +42,7 @@ module.exports = {
     },
 	'api/SCTINST',
 	'api/Compliance',
-	'api/Webhooks',	
+	'api/Webhooks',
+	'api/SDD',
   ],
 }
