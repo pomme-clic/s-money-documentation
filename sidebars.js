@@ -47,6 +47,5 @@ module.exports = {
     },
 	'api/Compliance',
 	'api/Webhooks',
-	'api/SDD',
   ],
 }
