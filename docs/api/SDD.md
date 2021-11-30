@@ -4,7 +4,7 @@ sidebar_label: Xpay
 hide_table_of_contents: true
 ---
 
-# SDD and P2P transfers
+# Sepa Direct Debits and P2P transfers
 
 import Rapidoc from "@theme/Rapidoc"
 
