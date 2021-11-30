@@ -1,6 +1,6 @@
 ---
-title: Xpay
-sidebar_label: Xpay
+title: Sepa Direct Debit & P2P
+sidebar_label: Sepa Direct Debit & P2P
 hide_table_of_contents: true
 ---
 
