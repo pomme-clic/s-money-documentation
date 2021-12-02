@@ -68,8 +68,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
-
-
 ### Block foreign payments and withdrawal
  
 <Image src="docs/Card_Self_ETR.png" alt="usecase 1"/>
@@ -98,6 +96,34 @@ Update card data
 "cardBlocked": "boolean"┃null,            
 "isVadBlocked": "boolean"┃null,                   
 "foreignPaymentBlocked": "boolean"┃null,                             
+}
+```
+
+> - ``` globalLimitAtmSelected ``` : It’s a card withdrawal limit on seven slippery days (card created with default limits defined in the offer). 
+> - ``` globalLimitPaymentSelected ``` : It’s a card payment limit on thirty slippery days (Value in euros).
+> - ``` cardBlocked ``` : Allow to block or unblock the card. If the card is blocked, no transaction is allowed.
+> - ``` isVadBlocked ``` : Allow to block or unblock the card's internet, MOTO payment transaction.
+> - ``` foreignPaymentBlocked ``` : Allow to block or unblock the card's foreign payment.
+
+<br/>
+
+<!--
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+-->
+
+
+---
+
+#### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
+
+```json
+retrieve card pin code
+{
+"partnerCode": "string"┃null,     [required]; the partner code
+"ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
+"ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
+                            
 }
 ```
 
