@@ -40,8 +40,12 @@ module.exports = {
       label: 'Users',
       items: ['api/KYC','api/Users'],
     },
-	'api/SCTINST',
+    {
+      type: 'category',
+      label: 'SEPA Transfers and P2P',
+      items: ['api/SCTINST','api/SDD'],
+    },
 	'api/Compliance',
-	'api/Webhooks',	
+	'api/Webhooks',
   ],
 }
