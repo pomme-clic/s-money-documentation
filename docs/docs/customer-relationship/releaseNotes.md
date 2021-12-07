@@ -8,6 +8,14 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## December 2021
+**Transfers** :
+- Added the Outgoing Sepa Direct Debit feature to our platform. We can now operate SDD both ways (incoming (already existing) and outgoing (new)).  
+You can now present and manage SDDs, mandates dynamically via our APIs.  
+More here : [SDD API](/api/SDD)
+
+**Cards** :
+- New validity date for Xpay token. The token is now deleted if not activated for the last 30 days.  
 
 ## November 2021
 **Onboarding** :  
