@@ -1,7 +1,5 @@
 import Image from '@theme/Image';
 import Highlight from '@theme/Highlight';
-import Endpoint from "@theme/Endpoint"
-import Cta from '@theme/Cta'
 
 <Image src="docs/XAUTH-logo.png" alt="usecase 1"/>
 
