@@ -48,7 +48,7 @@ You must use the Mandate and SDD API that includes amount and the beneficiary ID
 
 More information regarding this endpoint in the [API reference.](/api/SDD)
 
-To create a Mandate you hace the nto activate :
+To create a Mandate you have in a second step to make it being signed and activate :
 
 <Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{appuserId}/mandates" method="post"/>
 
