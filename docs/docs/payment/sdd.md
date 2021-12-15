@@ -13,7 +13,7 @@ Xpollens provides a complete solution to create mandates and to ask for payin Se
 
 <Image src="docs/MANDATE.png" alt="usecase 1"/>
 
-</Highlight>
+
 
 <Highlight type="tip">
 
