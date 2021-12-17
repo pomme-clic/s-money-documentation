@@ -1,6 +1,6 @@
 ---
-title: Xpay
-sidebar_label: Xpay
+title: Callbacks
+sidebar_label: Callbacks
 hide_table_of_contents: true
 ---
 
