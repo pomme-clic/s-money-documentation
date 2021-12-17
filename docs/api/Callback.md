@@ -4,7 +4,7 @@ sidebar_label: Callbacks
 hide_table_of_contents: true
 ---
 
-# Xpay
+# Callbacks
 
 import Rapidoc from "@theme/Rapidoc"
 
