@@ -42,10 +42,14 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'SEPA Transfers and P2P',
+      label: 'SEPA transfers and P2P',
       items: ['api/SCTINST','api/SDD'],
     },
 	'api/Compliance',
-	'api/Webhooks',
+    {
+      type: 'category',
+      label: 'Callback management',
+      items: ['api/Webhooks','api/Callback'],
+    },
   ],
 }
