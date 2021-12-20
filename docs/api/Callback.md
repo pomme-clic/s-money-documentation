@@ -13,32 +13,32 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-| Callback                                                  | Squad              | Domaine            |
-|-----------------------------------------------------------|--------------------|--------------------|
-| Type 32 - RiskLevelChanged                                | AFC                | Compliance         |
-| Type 21 - CardIssuing                                     | Card Issuing       | Card management    |
-| Type 25 - Token x-Pay                                     | Card issuing       | Card Xpay          |
-| Type 20 - CardOperation                                   | Card Operation     | Host               |
-| Type 24 - Clearing Report                                 | Card Operation     | Matching           |
-| Type 33 - Dettes                                          | FBO                | Account            |
-| Type 35 - Strong authentication - wallet Creation         | Foundation         |                    |
-| Type 36 - Strong authentication - Authentication callback | Foundation         |                    |
-| Type 16 - SCTOut                                          | Payment Operations | Transfer           |
-| Type 17 - SCTIn                                           | Payment Operations | Transfer           |
-| Type 18 - SDDOut                                          | Payment Operations | Transfer           |
-| Type 29 - P2P                                             | Payment Operations | Transfer           |
-| Type 37 - TopUp Refund                                    | Payment Operations | Acquisition        |
-| Type 38 - InstantPaymentIn                                | Payment Operations | Transfer           |
-| Type 39 - InstantPaymentOut                               | Payment Operations | Transfer           |
-| Type 40 - FundReservation                                 | Payment Operations | Transfer           |
-| Type 41 - Account                                         | ATM                | Account Management |
-| Type 10 - CreateRIB                                       | QUID pour Oney ?   |                    |
-| Type 31 - Diligence SCT IN                                | User & KYC         | KYC                |
-| Type 4 - KYC Target (eKYC)                                | User & KYC         | KYC                |
-| Type 34 - dossier Client (USer Record)                    | User & KYC         | KYC                |
-| Type 42 - RecallInstantPaymentOut                         | Payment Operations | Transfer           |
-| Type 1 - Chargement par carte bancaire                    | Payment Operations | Acquisition        |
-| Type 7 - Chargement par prélèvement                       | Payment Operations | Transfer           |
-| Type 8 - Chargement par virement bancaire                 | Payment Operations | Transfer           |
-| Type 9 - Mandat                                           | Payment Operations | Transfer           |
-| Type 11 - Retour de fonds pour les virements              | Payment Operations | Transfer           |
+| Context           | Value | field                                           | Example                                                                                                                                                                                                                                                        |
+| ----------------- | ----- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Topup CB          | 1     |                                                 |                                                                                                                                                                                                                                                                |
+| Kyc               | 4     | KYC result                                      |                                                                                                                                                                                                                                                                |
+| SDD IN            | 7     |                                                 |                                                                                                                                                                                                                                                                |
+| SCT IN            | 8     |                                                 |                                                                                                                                                                                                                                                                |
+| SDD               | 9     |                                                 |                                                                                                                                                                                                                                                                |
+| CreateRib         | 10    |                                                 |                                                                                                                                                                                                                                                                |
+| Money return      | 11    |                                                 |                                                                                                                                                                                                                                                                |
+| ?                 | 14    |                                                 |                                                                                                                                                                                                                                                                |
+| FreezeUser        | 15    | Frozen account                                  |                                                                                                                                                                                                                                                                |
+| SCTIn             | 16    | SCT IN                                          |                                                                                                                                                                                                                                                                |
+| SCTOut            | 17    | SCT OUT                                         |                                                                                                                                                                                                                                                                |
+| SDDIn             | 18    | SDD IN                                          |                                                                                                                                                                                                                                                                |
+| CardOperations    | 20    | Card operations                                 |                                                                                                                                                                                                                                                                |
+| Card              | 21    | Card status                                     |                                                                                                                                                                                                                                                                |
+| CardClearingReady | 24    | Card clearing                                   |                                                                                                                                                                                                                                                                |
+| TokenCallback     | 25    | VISA token status                               |                                                                                                                                                                                                                                                                |
+| Risk Level        | 32    | Risklevel                                       |                                                                                                                                                                                                                                                                |
+| Client debt       | 33    | Client debt created                             | {        "type": 29,<br>"date": "2020-10-14T21:25:36.6789579+00:00",<br>"id": "P2PE2E5ARh4ERfR-VL-wF2J",<br>"userId": "75c03e11J",<br>"amount": 110,<br>"status": 0,<br>"remainingAmount": 10,<br>"debtReason": "P2P",<br>"lossAndProfitBalance": 674.24<br>}, |
+| User              | 34    | dossier Client (USer Record)                    |
+| SCA               | 35    | Strong authentication - wallet Creation         |
+| SCA               | 36    | Strong authentication - Authentication callback |
+| TopUp Refund      | 37    | TopUp Refund                                    |
+| SCT IN            | 38    |  InstantPaymentIn                               |
+| SCT OUT           | 39    | InstantPaymentOut                               |
+| ?                 | 40    | FundReservation                                 |
+| ?                 | 41    |  Account                                        |                                                                                                                                                                                                                                                                |
+| Money return      | 42    | RecallInstantPaymentOut                         |
