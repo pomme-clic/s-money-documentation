@@ -48,14 +48,12 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 </Highlight>
 
 
-
-
 ### Block online/MOTO payments
 
   
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
-MOTO : Mail Order Telephone Order
+online : e-commerce and MOTO : Mail Order Telephone Order
 <!--
 #### Endpoint
 More information regarding this endpoint in the [API reference](/api/CardFactory)
@@ -115,23 +113,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ---
 
-#### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
-
-```json
-retrieve card pin code
-{
-"partnerCode": "string"┃null,     [required]; the partner code
-"ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
-"ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
-}
-```
-
-<br/>
-
-<!--
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
--->
 
 ### Oppose your card
 
@@ -175,6 +156,24 @@ You can :
  If you don't remember, you can display your PIN code.
  
 </Highlight>
+
+#### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
+
+```json
+retrieve card pin code
+{
+"partnerCode": "string"┃null,     [required]; the partner code
+"ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
+"ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
+}
+```
+
+<br/>
+
+<!--
+More information regarding this endpoint in the [API reference](/api/CardFactory)
+<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
+-->
 
 <Highlight type="caution">
  
