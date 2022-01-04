@@ -123,9 +123,9 @@ retrieve card pin code
 "partnerCode": "string"┃null,     [required]; the partner code
 "ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
 "ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
-                            
 }
 ```
+
 <br/>
 
 <!--
