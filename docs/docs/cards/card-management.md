@@ -149,7 +149,7 @@ You can :
 
 ### Display your PIN code
 
-<Image src="docs/Card_PIN.png" alt="usecase 1"/>
+<Image src="docs/Card_PIN_Display.png" alt="usecase 1"/>
 
 <Highlight type="tip">
  
