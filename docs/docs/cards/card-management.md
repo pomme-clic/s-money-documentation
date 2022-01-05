@@ -146,16 +146,22 @@ You can :
 - display your PIN code
 - display your virtual card
 
+<Image src="docs/Card_Display_SCA.png" alt="usecase 1"/>
+
+<br/>
+
+<Highlight type="caution">
+ 
+ To use API Informations Display, for PCI compliance, we use a secure interface by a SDK.
+ 
+</Highlight>
+
+<br/>
 
 ### Display your PIN code
 
-<Image src="docs/Card_PIN_Display.png" alt="usecase 1"/>
-
-<Highlight type="tip">
  
- If you don't remember, you can display your PIN code.
- 
-</Highlight>
+If you don't remember, you can display your PIN code.
 
 #### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
 
@@ -170,35 +176,21 @@ retrieve card pin code
 
 <br/>
 
-<!--
-More information regarding this endpoint in the [API reference](/api/CardFactory)
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
--->
-
-<Highlight type="caution">
- 
- To use API Informations Display, for PCI compliance, we use a secure interface by a SDK.
- 
-</Highlight>
-
 
 ### Display your virtual card
 
-This feature is important to use your card to pay online. 
+This feature is important to use your card to pay online. Once your virtual card is created, you need to get card informations to use in e-commerce for example.
 
-<Image src="docs/Card_Display.png" alt="usecase 1"/>
+#### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
 
-<Highlight type="tip">
- 
- Once your virtual card is created, you need to get card informations to use in e-commerce for example.
- 
-</Highlight>
-
-<Highlight type="caution">
- 
- To use API Card Display, for PCI compliance, we use a Secure Interface by a SDK.
- 
-</Highlight>
+```json
+retrieve card pin code
+{
+"partnerCode": "string"┃null,     [required]; the partner code
+"ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
+"ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
+}
+```
 
 ---
 
