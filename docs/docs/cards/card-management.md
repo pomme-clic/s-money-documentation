@@ -6,6 +6,82 @@ import Cta from '@theme/Cta'
 # Card management
 
 
+## List of cards
+
+You can retrieve all cards by holder. For example, in your journey, you can provide all cards to your holder in order he manages each one.
+
+#### ``` GET ``` /api/v2.0/holder/{holderExternalRef}
+
+```json
+allows a specific holder to retrieve the list of his cards
+{
+"holderExternalRef": "string"┃null,     [required]; Partner's holder reference 
+}
+```
+Response is an array with label, card reference and other informations to identify each card and some details below
+
+``` RESPONSE ```
+```json
+ { 
+"creationDate" :                   "datetime"  Creation date
+"expiryDate":                      "string"    Expiration date.
+"visualCodeSelected":              "string"    Visual code selected.
+"isBlocked":                       "boolean"   Is card blocked
+"globalLimitAtmSelected":          "integer"   Global Atm limit
+"globalLimitPaymentSelected":      "integer"   Global Payment limit
+"uniqueId":                        "string"    Unique Id.
+"bankId":                          "integer"   Bank Id value.
+"hint":                            "string"    The pan hint value of the card.
+"partnerCode":                     "string"    Gets or sets the partner code.
+"offerPartnerCode":                "string"    Gets or sets the offer partner code.
+"wishPin":                         "boolean"   Gets or sets a value indicating whether [wish pin].
+"oldExternalRef":                  "string"    Gets or sets the old external reference.
+"isVadBlocked":                    "boolean"   Gets or sets a value indicating whether this instance is vad blocked.
+"isGeoBlocked":                    "boolean"   Gets or sets a value indicating whether this instance is geo blocked.
+"holderExternalRef":               "string"    Gets or sets the holder external reference.
+"oppositionReasonCode":            "string"    Restricted values of opposition reason code are:
+"cancellationReasonCode":          "string"    Restricted values of cancellation reason code are:
+"isNfcActivated":                  "boolean"   Is Nfc activated.
+"isPaymentAllowed":                "boolean"   Is Payment allowed.
+"isAtmWithdrawalAllowed":          "boolean"   Is Atm Withdrawal allowed.
+"isQuasiCashAllowed":              "boolean"   Is Quasi cash allowed.
+"isWithdrawalAtTheCounterAllowed": "boolean"   Is Withdrawal at the counter allowed.
+
+}
+```
+<br/>
+
+<!--
+
+"expiryDate": "string"┃null Expiration date.
+"visualCodeSelected": "string"┃null Visual code selected.
+"isBlocked": "boolean" Is card blocked
+"globalLimitAtmSelected": "integer"┃null Global Atm limit Must not exceed the offer partner value If not set, the default limit specified in the offer will be used
+"globalLimitPaymentSelected": "integer"┃null Global Payment limit Must not exceed the offer partner value If not set, the default limit specified in the offer will be used
+"uniqueId": "string"┃null Unique Id.
+"bankId": "integer" Bank Id value.
+"hint": "string"┃null The pan hint value of the card.
+"partnerCode": "string"┃null Gets or sets the partner code.
+"offerPartnerCode": "string"┃null Gets or sets the offer partner code.
+"wishPin": "boolean" Gets or sets a value indicating whether [wish pin].
+"oldExternalRef": "string"┃null Gets or sets the old external reference.
+"isVadBlocked": "boolean" Gets or sets a value indicating whether this instance is vad blocked.
+"isGeoBlocked": "boolean" Gets or sets a value indicating whether this instance is geo blocked.
+"holderExternalRef": "string"┃null Gets or sets the holder external reference.
+"oppositionReasonCode": "string"┃null Restricted values of opposition reason code are:
+"cancellationReasonCode": "string"┃null Restricted values of cancellation reason code are:
+"isNfcActivated": "boolean"┃null Is Nfc activated.
+"isPaymentAllowed": "boolean"┃null Is Payment allowed.
+"isAtmWithdrawalAllowed": "boolean"┃null Is Atm Withdrawal allowed.
+"isQuasiCashAllowed": "boolean"┃null Is Quasi cash allowed.
+"isWithdrawalAtTheCounterAllowed": "boolean"┃null Is Withdrawal at the counter allowed.
+"}]
+
+-->
+
+
+
+
 ## Selfcare
 
 You can manage your card with a selfcare in order to update some specifications like : 
@@ -17,6 +93,8 @@ You can manage your card with a selfcare in order to update some specifications 
 - oppose your card
 
 You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section.
+
+---
 
 ### Block card
  
@@ -137,6 +215,7 @@ Oppose a card is equal to block your card definitively.
  
 </Highlight>
 
+
 ---
 
 ## Display your card
@@ -169,7 +248,7 @@ If you don't remember, you can display your PIN code.
 retrieve card pin code
 {
 "partnerCode": "string"┃null,     [required]; the partner code
-"ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
+"ExternalRef": "string"┃null,     [required]; unique card reference 
 "ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
 }
 ```
