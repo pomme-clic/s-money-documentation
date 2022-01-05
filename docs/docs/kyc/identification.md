@@ -10,20 +10,15 @@ import Cta from '@theme/Cta'
 # Strong customer authentication 
 
 
-
-
-
 ## Context
 
 ### Regulatory context
 
-Authentication is required for your end-customers if you are on the Retail B2C market ; it is also required for all key individuals of your professional customers, if you are on the Corporates B2B market. Strong Customer Authentication will occur in two situations : <br/><br/>
+Authentication is required for your end-customers if you are on the Retail B2C market ; it is also required for all key individuals of your professional customers, if you are on the Corporates B2B market. Strong Customer Authentication will occur in two situations :  
 
 
 > - Online Card Payments
 > - Sensitive Operations
-
-<br/>
 
 <Highlight>
 The Second Payment Services EU Directive (PSD2) requires that such a strong authentication happens, reuniting two criteras amongst three possible.
@@ -33,7 +28,7 @@ The Second Payment Services EU Directive (PSD2) requires that such a strong auth
 
 ### Technical context & customer experience
 
-To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application.
+To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application. You can find more infos on our sdk **[here](./StrongAuthentication.pdf)**.
 
 <Image src="docs/SCA-screens.png" alt="usecase 1"/>
 
