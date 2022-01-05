@@ -13,16 +13,16 @@ You can retrieve all cards by holder. For example, in your journey, you can prov
 <Image src="docs/Card_List.png" alt="usecase 1"/>
 
 #### ``` GET ``` /api/v2.0/holder/{holderExternalRef}
-allows a specific holder to retrieve the list of his cards
+
+This API allows to retrieve the list of his cards for a specific holder
 
 ```json
-{
-"holderExternalRef": "string"     [required]; Partner's holder reference 
-}
+ {
+  "holderExternalRef": "string"     [required]; Partner's holder reference 
+ }
 ```
-Response is an array with label, card reference and other informations to identify each card and some details below
 
-``` RESPONSE ```
+``` RESPONSE ``` is an array with label, card reference and other informations to identify each card and some details below
 ```json
  { 
   "creationDate" :                   "datetime"  Creation date
@@ -55,22 +55,51 @@ Response is an array with label, card reference and other informations to identi
 
 ## Card Details
 
-You can retrieve all cards by holder. For example, in your journey, you can provide all cards to your holder in order he manages each one.
+#### ``` GET ``` /api/v2.0/card/{cardExternalRef}
 
-#### ``` GET ``` /api/v2.0/holder/{holderExternalRef}
-
-allows a specific holder to retrieve the list of his cards
+This API allows to retrieve the list of his cards for a specific holder
 
 ```json
  {
- "holderExternalRef": "string"┃null,     [required]; Partner's holder reference 
+  "cardExternalRef": "string"     [required]; Partner's holder reference 
  }
 ```
-Response is an array with label, card reference and other informations to identify each card and some details below
 
-``` RESPONSE ```
-
+``` RESPONSE ``` is an array with label, card reference and other informations to identify the card and provide some details below
+```json
+ { 
+  "oppositionReasonCode":            "string"    Restricted values of opposition reason code are:
+  "creationDate" :                   "datetime"  Creation date
+  "expiryDate":                      "string"    Expiration date.
+  "visualCodeSelected":              "string"    Visual code selected.
+  "isBlocked":                       "boolean"   Is card blocked
+  "globalLimitAtmSelected":          "integer"   Global Atm limit
+  "globalLimitPaymentSelected":      "integer"   Global Payment limit
+  "holderExternalRef":               "string"    Holder code
+  "holderFirstName":                 "string"    Holder first name
+  "holderLastName":                  "string"    Holder last name
+  "holderEmail":                     "string"    Holder email
+  "holderPhoneNumber":               "string"    Holder phone number
+  "offerPartnerCode":                "string"    Offer partner code
+  "partnerCode":                     "string"    Partner code
+  "uniqueId":                        "string"    Unique Id.
+  "bankId":                          "integer"   Bank Id value.
+  "hint":                            "string"    The pan hint value of the card.
+  "isGeoBlocked":                    "boolean"   is geo blocked.
+  "isVadBlocked":                    "boolean"   is vad blocked.
+  "wishPin":                         "boolean"   use random PIN.
+  "oldExternalRef":                  "string"    Gets or sets the old external reference.
+  "cancellationReasonCode":          "string"    Restricted values of cancellation reason code are:
+  "isNfcActivated":                  "boolean"   Is Nfc activated.
+  "isPaymentAllowed":                "boolean"   Is Payment allowed.
+  "isAtmWithdrawalAllowed":          "boolean"   Is Atm Withdrawal allowed.
+  "isQuasiCashAllowed":              "boolean"   Is Quasi cash allowed.
+  "isWithdrawalAtTheCounterAllowed": "boolean"   Is Withdrawal at the counter allowed.
+ }
+```
 <br/>
+
+---
 
 ## Selfcare
 
@@ -84,7 +113,6 @@ You can manage your card with a selfcare in order to update some specifications 
 
 You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section.
 
----
 
 ### Block card
  
@@ -96,7 +124,6 @@ You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.
  You can block or unblock in real time to secure your card if you don't find it.
  
 </Highlight>
-
 
 
 ### Update limits
