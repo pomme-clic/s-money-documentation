@@ -57,7 +57,7 @@ This API allows to retrieve the list of his cards for a specific holder
 
 #### ``` GET ``` /api/v2.0/card/{cardExternalRef}
 
-This API allows to retrieve the list of his cards for a specific holder
+This API allows to retrieve all details for a specific card
 
 ```json
  {
