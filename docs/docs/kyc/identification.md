@@ -28,7 +28,7 @@ The Second Payment Services EU Directive (PSD2) requires that such a strong auth
 
 ### Technical context & customer experience
 
-To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application. You can find more infos on our sdk **[here](/docs/docs/kyc/StrongAuthentication-v1.2.pdf)**
+To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application. You can find more infos on our sdk **[here](/docs/kyc/StrongAuthentication-v1.2.pdf)**
 
 <Image src="docs/SCA-screens.png" alt="usecase 1"/>
 
