@@ -28,12 +28,12 @@ The Second Payment Services EU Directive (PSD2) requires that such a strong auth
 
 ### Technical context & customer experience
 
-To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application.
+To integrate our solution, you will require our SDK : strong authentication has to take place in a mobile application. You can find more infos on our sdk **[here](/docs/docs/kyc/StrongAuthentication-v1.2.pdf)**
 
 <Image src="docs/SCA-screens.png" alt="usecase 1"/>
 
 <Highlight type="tip">
-  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can handles strong authentication notifications. Otherwise, you can find infos on the sdk integration **[here](/docs/docs/kyc/StrongAuthentication-v1.2.pdf)**
+  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can handles strong authentication notifications.
 </Highlight>
 
 Here is a list of main Sensitive Operations. This is list is not exhaustive and may be subject to change.
