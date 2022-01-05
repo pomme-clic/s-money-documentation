@@ -177,7 +177,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
 
 #### ``` PUT ``` /api/v2.0/card/{cardExternalRef}
 
@@ -205,8 +204,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 -->
 
-
----
 
 
 ### Oppose your card
