@@ -20,8 +20,6 @@ Authentication is required for your end-customers if you are on the Retail B2C m
 > - Online Card Payments
 > - Sensitive Operations
 
-<br/>
-
 <Highlight>
 The Second Payment Services EU Directive (PSD2) requires that such a strong authentication happens, reuniting two criteras amongst three possible.
 </Highlight>
@@ -35,7 +33,7 @@ To integrate our solution, you will require our SDK : strong authentication has 
 <Image src="docs/SCA-screens.png" alt="usecase 1"/>
 
 <Highlight type="tip">
-  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can handles strong authentication notifications.
+  Should you not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can handles strong authentication notifications. Otherwise, you can find infos on the sdk integration **[here](/docs/docs/kyc/StrongAuthentication-v1.2.pdf)**
 </Highlight>
 
 Here is a list of main Sensitive Operations. This is list is not exhaustive and may be subject to change.
