@@ -10,6 +10,8 @@ import Cta from '@theme/Cta'
 
 You can retrieve all cards by holder. For example, in your journey, you can provide all cards to your holder in order he manages each one.
 
+<Image src="docs/Card_List.png" alt="usecase 1"/>
+
 #### ``` GET ``` /api/v2.0/holder/{holderExternalRef}
 allows a specific holder to retrieve the list of his cards
 
