@@ -6,6 +6,101 @@ import Cta from '@theme/Cta'
 # Card management
 
 
+## List of cards
+
+You can retrieve all cards by holder. For example, in your journey, you can provide all cards to your holder in order he manages each one.
+
+<Image src="docs/Card_List.png" alt="usecase 1"/>
+
+#### ``` GET ``` /api/v2.0/holder/{holderExternalRef}
+
+This API allows to retrieve the list of his cards for a specific holder
+
+```json
+ {
+  "holderExternalRef": "string"     [required]; Partner's holder reference 
+ }
+```
+
+``` RESPONSE ``` is an array with label, card reference and other informations to identify each card and some details below
+```json
+ { 
+  "creationDate" :                   "datetime"  Creation date
+  "expiryDate":                      "string"    Expiration date.
+  "visualCodeSelected":              "string"    Visual code selected.
+  "isBlocked":                       "boolean"   Is card blocked
+  "globalLimitAtmSelected":          "integer"   Global Atm limit
+  "globalLimitPaymentSelected":      "integer"   Global Payment limit
+  "uniqueId":                        "string"    Unique Id.
+  "bankId":                          "integer"   Bank Id value.
+  "hint":                            "string"    The pan hint value of the card.
+  "partnerCode":                     "string"    Gets or sets the partner code.
+  "offerPartnerCode":                "string"    Gets or sets the offer partner code.
+  "wishPin":                         "boolean"   Gets or sets a value indicating whether [wish pin].
+  "oldExternalRef":                  "string"    Gets or sets the old external reference.
+  "isVadBlocked":                    "boolean"   Gets or sets a value indicating whether this instance is vad blocked.
+  "isGeoBlocked":                    "boolean"   Gets or sets a value indicating whether this instance is geo blocked.
+  "holderExternalRef":               "string"    Gets or sets the holder external reference.
+  "oppositionReasonCode":            "string"    Restricted values of opposition reason code are:
+  "cancellationReasonCode":          "string"    Restricted values of cancellation reason code are:
+  "isNfcActivated":                  "boolean"   Is Nfc activated.
+  "isPaymentAllowed":                "boolean"   Is Payment allowed.
+  "isAtmWithdrawalAllowed":          "boolean"   Is Atm Withdrawal allowed.
+  "isQuasiCashAllowed":              "boolean"   Is Quasi cash allowed.
+  "isWithdrawalAtTheCounterAllowed": "boolean"   Is Withdrawal at the counter allowed.
+ }
+```
+<br/>
+
+
+## Card Details
+
+#### ``` GET ``` /api/v2.0/card/{cardExternalRef}
+
+This API allows to retrieve all details for a specific card
+
+```json
+ {
+  "cardExternalRef": "string"     [required]; Partner's holder reference 
+ }
+```
+
+``` RESPONSE ``` is an array with label, card reference and other informations to identify the card and provide some details below
+```json
+ { 
+  "oppositionReasonCode":            "string"    Restricted values of opposition reason code are:
+  "creationDate" :                   "datetime"  Creation date
+  "expiryDate":                      "string"    Expiration date.
+  "visualCodeSelected":              "string"    Visual code selected.
+  "isBlocked":                       "boolean"   Is card blocked
+  "globalLimitAtmSelected":          "integer"   Global Atm limit
+  "globalLimitPaymentSelected":      "integer"   Global Payment limit
+  "holderExternalRef":               "string"    Holder code
+  "holderFirstName":                 "string"    Holder first name
+  "holderLastName":                  "string"    Holder last name
+  "holderEmail":                     "string"    Holder email
+  "holderPhoneNumber":               "string"    Holder phone number
+  "offerPartnerCode":                "string"    Offer partner code
+  "partnerCode":                     "string"    Partner code
+  "uniqueId":                        "string"    Unique Id.
+  "bankId":                          "integer"   Bank Id value.
+  "hint":                            "string"    The pan hint value of the card.
+  "isGeoBlocked":                    "boolean"   is geo blocked.
+  "isVadBlocked":                    "boolean"   is vad blocked.
+  "wishPin":                         "boolean"   use random PIN.
+  "oldExternalRef":                  "string"    Gets or sets the old external reference.
+  "cancellationReasonCode":          "string"    Restricted values of cancellation reason code are:
+  "isNfcActivated":                  "boolean"   Is Nfc activated.
+  "isPaymentAllowed":                "boolean"   Is Payment allowed.
+  "isAtmWithdrawalAllowed":          "boolean"   Is Atm Withdrawal allowed.
+  "isQuasiCashAllowed":              "boolean"   Is Quasi cash allowed.
+  "isWithdrawalAtTheCounterAllowed": "boolean"   Is Withdrawal at the counter allowed.
+ }
+```
+<br/>
+
+---
+
 ## Selfcare
 
 You can manage your card with a selfcare in order to update some specifications like : 
@@ -18,6 +113,7 @@ You can manage your card with a selfcare in order to update some specifications 
 
 You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section.
 
+
 ### Block card
  
 <Image src="docs/Card_Self_Verrou.png" alt="usecase 1"/>
@@ -28,7 +124,6 @@ You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.
  You can block or unblock in real time to secure your card if you don't find it.
  
 </Highlight>
-
 
 
 ### Update limits
@@ -48,14 +143,12 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 </Highlight>
 
 
-
-
 ### Block online/MOTO payments
 
   
 <Image src="docs/Card_Self_VAD.png" alt="usecase 1"/>
 
-MOTO : Mail Order Telephone Order
+online : e-commerce and MOTO : Mail Order Telephone Order
 <!--
 #### Endpoint
 More information regarding this endpoint in the [API reference](/api/CardFactory)
@@ -67,8 +160,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
   You can block or unblock in real time if you don't want authorize e-commerce payment.
  
 </Highlight>
-
-
 
 ### Block foreign payments and withdrawal
  
@@ -86,7 +177,6 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
  
 </Highlight>
 
----
 
 #### ``` PUT ``` /api/v2.0/card/{cardExternalRef}
 
@@ -114,6 +204,8 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 <Endpoint apiUrl="/v2.0/cardfactory" path="/api​/v2.0​/card/{cardExternalRef}" method="put"/>
 -->
 
+
+
 ### Oppose your card
 
 <Image src="docs/Card_Oppose.png" alt="usecase 1"/>
@@ -137,6 +229,7 @@ Oppose a card is equal to block your card definitively.
  
 </Highlight>
 
+
 ---
 
 ## Display your card
@@ -146,16 +239,9 @@ You can :
 - display your PIN code
 - display your virtual card
 
+<Image src="docs/Card_Display_SCA.png" alt="usecase 1"/>
 
-### Display your PIN code
-
-<Image src="docs/Card_PIN.png" alt="usecase 1"/>
-
-<Highlight type="tip">
- 
- If you don't remember, you can display your PIN code.
- 
-</Highlight>
+<br/>
 
 <Highlight type="caution">
  
@@ -163,24 +249,39 @@ You can :
  
 </Highlight>
 
+<br/>
+
+### Display your PIN code
+
+ 
+If you don't remember, you can display your PIN code.
+
+#### ``` GET ``` /api/sca/normal/v2.0/{appUserId}/pin/
+
+```json
+{
+"AppUserId":       "string",  [required]; UserID in the third-party application. 9 characters exactly
+"cardExternalRef": "string",  [required]; unique card reference 
+"ChannelCode":     "string",  [required]; defines a device type like a mobile(66), internet(04)  
+}
+```
+
+<br/>
+
 
 ### Display your virtual card
 
-This feature is important to use your card to pay online. 
+This feature is important to use your card to pay online. Once your virtual card is created, you need to get card informations to use in e-commerce for example.
 
-<Image src="docs/Card_Display.png" alt="usecase 1"/>
+#### ``` POST ``` /api/sca/normal/v2.0/{appUserId}/carddisplay/
 
-<Highlight type="tip">
- 
- Once your virtual card is created, you need to get card informations to use in e-commerce for example.
- 
-</Highlight>
-
-<Highlight type="caution">
- 
- To use API Card Display, for PCI compliance, we use a Secure Interface by a SDK.
- 
-</Highlight>
+```json
+{
+"AppUserId":       "string",  [required]; UserID in the third-party application. 9 characters exactly
+"cardExternalRef": "string",  [required]; unique card reference 
+"ChannelCode":     "string",  [required]; defines a device type like a mobile(66), internet(04)  
+}
+```
 
 ---
 
