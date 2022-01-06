@@ -24,9 +24,11 @@ And at the end, we use our [card design simulator](./your-card), the packaging a
 
 ## Order a card
 
+First, your customer order a card. You can purpose him a standard journey with a sample order of card. But you can purpose him some different journey like wish PIN or temporary virtual card....
 
 ### Order a physical card
-An example of order journey
+
+You can order a card using this journey by example.
 
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
@@ -36,20 +38,19 @@ An example of order journey
 
 
 ```json
-Create card data
 {
-"offerPartnerCode": "string",            [required] 
-"holderExternalRef": "string",           [required] 
-"cardExternalRef": "string",             [required]     constraints: Max 50 chars 
-"visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
-"label": "string"┃null,                                 constraints: Max 50 chars 
-"wishPin": "boolean"┃null,                              
-"isNfcActivated": "boolean"┃null,                        
+"offerPartnerCode":       "string",   [required] 
+"holderExternalRef":      "string",   [required] 
+"cardExternalRef":        "string",   [required]  constraints: Max 50 chars 
+"visualCodeSelected":     "string",               constraints: Max 10 chars
+"label":                  "string",               constraints: Max 50 chars 
+"wishPin":                "boolean",                              
+"isNfcActivated":         "boolean",                        
 }
 ```
 
 > - ``` offerPartnerCode ``` : The Partner's offer code provided by Xpollens. 
-> - ``` holderExternalRef ``` : The user/holder's reference attributed by the partner (holderExternalRef = appUserId).
+> - ``` holderExternalRef ``` : The user/holder's reference attributed by the partner.
 > - ``` cardExternalRef ``` : The card's reference attributed by the partner
 > - ``` visualCodeSelected ``` : The partner can define one or several visual codes for the same offer (same product). If the attribute is not entered when ordering the card, then the visual code defined by default in the offer will be selected for the card.
 >  - ``` label ``` : The name or partner's reference of the card.
@@ -80,7 +81,7 @@ Because the signature generation requires the use of the RSA private key it must
 We also recommend to generate the token in the back-end computing the signature and not in the mobile application, to avoid timestamp issue due to mobile with incorrect time. 
 <br/>
 <br/>
-In addition, because Bank's Compliance doesn’t allow Smartphones to send the PIN (even ciphered) to the PINDefinition backend the PIN format send by the mobile must be the position in the keypad coordinates table shared by Manufacturer’s PINDefinition back-end.
+In addition (recommended but it's no mandatory), because Bank's compliance doesn’t allow Smartphones to send the PIN (even ciphered) to the PINDefinition backend the PIN format send by the mobile must be the position in the keypad coordinates table shared by Manufacturer’s PINDefinition back-end.
 <br/>
 Example: keypad coordinates [9,5,1,3,5,7,4,0,8,6,2] shared by back-end and PIN selected by cardholder 1234.
 Coordinates provided to Card Companion SDK must be 2936 – index in the table -). 
@@ -97,11 +98,12 @@ Coordinates provided to Card Companion SDK must be 2936 – index in the table -
 More information regarding this sdk in the [Card Companion SDK](./CardCompanion_SDK.pdf)
 -->
 
-More information regarding the specifications in our SDK
+More information regarding the specifications in our SDK PIN Definition.
 
 <Highlight>
  
- Remember you have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code. 
+ Remember you have 2 choices : Random PIN (by default, no need to implement anything) or Wish PIN in order to allow to your end user to define his own PIN code.
+ Obviously, you always have possibility to display PIN in addition.
  
 </Highlight>
 
@@ -122,18 +124,16 @@ Order a virtual uses the same API to create a card (physical or virtual). Change
 
 #### ``` POST ``` /api/v2.0/card
 
-
 ```json
-Create card data
-{
-"offerPartnerCode*": "string",            [required] 
-"holderExternalRef*": "string",           [required] 
-"cardExternalRef*": "string",             [required]    constraints: Max 50 chars 
-"visualCodeSelected": "string"┃null,                    constraints: Max 10 chars
-"label": "string"┃null,                                 constraints: Max 50 chars 
-"wishPin": "boolean"┃null,                              always false (not used)
-"isNfcActivated": "boolean"┃null,                       always false (not used)
 
+{
+"offerPartnerCode*":    "string",     [required] 
+"holderExternalRef*":   "string",     [required] 
+"cardExternalRef*":     "string",     [required]    constraints: Max 50 chars 
+"visualCodeSelected":   "string",                   constraints: Max 10 chars
+"label":                "string",                   constraints: Max 50 chars 
+"wishPin":              "boolean",                  always false (not used)
+"isNfcActivated":       "boolean",                  always false (not used)
 }
 ```
 
@@ -201,12 +201,14 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 ### Refabricate a card
 
+You can refabricate a card from an existing card when you cardholder has a technical problem with his card (rarely). 
+Using this feature like an ordering card but more simply.
+
 <Image src="docs/Card_Refabricate.png" alt="usecase 1"/>
 
 #### ``` POST ``` /api/v2.0/card
 
 ```json
-Refabricate a card from an existing card
 {
 "cardExternalRef*": "string",              [required]    
 "oldCardExternalRef*": "string",           [required] 
@@ -236,13 +238,20 @@ _(Others are the same)_
 
 For specific cases, you can use a card cancellation.
 
-#### Endpoint
+#### ``` PATCH ``` /api/v2.0/card/{cardExternalRef}/cancel
 
-More information regarding this endpoint in the [API reference.](/api/CardFactory)
+```json
+{
+"cardExternalRef*":   "string",  [required]    
+"cancellationReason": "string",  Restricted values of cancellation reason code are  : 
+                                  1	The customer no longer wants his card
+                                  2	The customer left the bank
+                                  3	Deceased customer
+                                  4	Partner request
+                                  6	Other reason (default value if not provided in the input parameters)
 
-<!--
-<Endpoint apiUrl="/v2.0/cardfactory" path="/api/v2.0/card/{cardExternalRef}/cancel" method="patch"/>
--->
+}
+```
 
 <Highlight type="caution">
  
