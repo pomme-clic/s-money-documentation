@@ -6,12 +6,15 @@ import Cta from '@theme/Cta'
 # Card lifecycle
 
 Welcome in the Card program management. 
-If you are here it is because you want to launch a card program. First of all, to create your card program management, we define your card product with a first filter:
-- funding source : Debit, Prepaid,...
+
+If you are here it is because you want to launch a card program. First of all, to create your card program management, we define your card product with a first filter :
+
+- funding source : Immediate Debit, Prepaid, Deffered Debit
 - for who : Consumer, Business, Corporate ...
-- what : Classic, Gold, Infinite
+- which product : Classic, Gold, Infinite
 
 Then we adapt it depending on the type of card you want : 
+
 - physical or virtual card, 
 - token (xPay) 
 - wearable (keyring, bracelet..)
@@ -23,12 +26,11 @@ And at the end, we use our [card design simulator](./your-card), the packaging a
 
 
 ### Order a physical card
+An example of order journey
 
-<br/>
 
 <Image src="docs/Card_Order.png" alt="usecase 1"/>
 
-<br/>
 
 #### ``` POST ``` /api/v2.0/card
 
