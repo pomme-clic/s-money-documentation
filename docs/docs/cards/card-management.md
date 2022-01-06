@@ -259,7 +259,6 @@ If you don't remember, you can display your PIN code.
 #### ``` GET ``` /api/sca/normal/v2.0/{appUserId}/pin/
 
 ```json
-retrieve card pin code
 {
 "AppUserId":       "string",  [required]; UserID in the third-party application. 9 characters exactly
 "cardExternalRef": "string",  [required]; unique card reference 
@@ -277,7 +276,6 @@ This feature is important to use your card to pay online. Once your virtual card
 #### ``` POST ``` /api/sca/normal/v2.0/{appUserId}/carddisplay/
 
 ```json
-retrieve card pin code
 {
 "AppUserId":       "string",  [required]; UserID in the third-party application. 9 characters exactly
 "cardExternalRef": "string",  [required]; unique card reference 
