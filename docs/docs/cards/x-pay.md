@@ -40,7 +40,7 @@ You start your enrolment since wallet provider...
 "id" :                  "long", 	internal Id,                    example "637588383208269600"
 "reference" : 	        "String",	cardExternalRef (appCardId),    example "QA_qual29_CP"	
 "secureElementId" : 	"String",	deviceID,                       example "44125A3342A80014272043036932204E3F73BB08847E90B"
-"type" : 	            "Integer",	value   "25" 	
+"type" : 	            "Integer",	                                value   "25" 	
 "tokenValue" :          "String",   token,                          example	"4642353030549437"	
 "tokenReferenceID" : 	"String",	Unique ID for token,            example "DNITHE382003555876588856" 	
 "tokenRequestorID" :  	"String",   ID assigned,                    example "40010030273" 	
