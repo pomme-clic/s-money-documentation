@@ -256,14 +256,14 @@ You can :
  
 If you don't remember, you can display your PIN code.
 
-#### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
+#### ``` GET ``` /api/sca/normal/v2.0/{appUserId}/pin/
 
 ```json
 retrieve card pin code
 {
-"partnerCode": "string"┃null,     [required]; the partner code
-"ExternalRef": "string"┃null,     [required]; unique card reference 
-"ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
+"AppUserId":          "string",     [required]; User identifier in the third-party application. 9 characters exactly
+"cardExternalRef":    "string",     [required]; unique card reference 
+"ChannelCode":        "string",     [required]; defines a device type like a mobile(66), internet(04)  
 }
 ```
 
@@ -274,14 +274,14 @@ retrieve card pin code
 
 This feature is important to use your card to pay online. Once your virtual card is created, you need to get card informations to use in e-commerce for example.
 
-#### ``` GET ``` /api/v2.0/secure/{cardExternalRef}/pin
+#### ``` POST ``` /api/sca/normal/v2.0/{appUserId}/carddisplay/{cardExternalRef}
 
 ```json
 retrieve card pin code
 {
-"partnerCode": "string"┃null,     [required]; the partner code
-"ExternalRef": "string"┃null,     [required]; unique card reference  -(PAN Privatif par exemple)
-"ChannelCode": "string"┃null,     [required]; defines a device type like a mobile(66), internet(04)  
+"AppUserId":          "string",     [required]; User identifier in the third-party application. 9 characters exactly
+"cardExternalRef":    "string",     [required]; unique card reference  -(PAN Privatif par exemple)
+"ChannelCode":        "string",     [required]; defines a device type like a mobile(66), internet(04)  
 }
 ```
 
