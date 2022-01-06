@@ -261,7 +261,7 @@ If you don't remember, you can display your PIN code.
 ```json
 retrieve card pin code
 {
-"AppUserId":          "string",     [required]; User identifier in the third-party application. 9 characters exactly
+"AppUserId":          "string",     [required]; User identifier in the third-party application. 9 characters **exactly**
 "cardExternalRef":    "string",     [required]; unique card reference 
 "ChannelCode":        "string",     [required]; defines a device type like a mobile(66), internet(04)  
 }
@@ -279,7 +279,7 @@ This feature is important to use your card to pay online. Once your virtual card
 ```json
 retrieve card pin code
 {
-"AppUserId":          "string",     [required]; User identifier in the third-party application. 9 characters exactly
+"AppUserId":          "string",     [required]; User identifier in the third-party application. 9 characters **exactly**
 "cardExternalRef":    "string",     [required]; unique card reference  -(PAN Privatif par exemple)
 "ChannelCode":        "string",     [required]; defines a device type like a mobile(66), internet(04)  
 }
