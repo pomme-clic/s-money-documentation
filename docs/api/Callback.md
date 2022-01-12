@@ -13,1492 +13,176 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-<div id="Callbacks Webhook_3433" align=center x:publishsource="Excel">
+|Callback type|Callback context                                                 |Parameters (Payload Details)      |Type    |Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-------------|-----------------------------------------------------------------|----------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|1            |TopUp                                                            |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |error                             |String  |Code d’erreur pour les paiements échoués, 0 si aucune erreur. Référentiels des statuts :  0 = 0XXX operation succeeded or still processing 10 = 1XXX operation rejected because of bad request configuration 11 = 2XXX operation rejected because of bad reference usage 12 = 3XXX operation rejected because of bad account configuration 13 = 4XXX operation rejected because of the bank or the supplier 14 = 5XXX operation rejected because of a system error 15 = 6XXX operation rejected because of anti-fraud engine|
+|             |                                                                 |status                            |String  |Statut de la transaction Référentiels des statuts :  -1 = unknow 0 = waiting 1 = completed 2 = refunded 3 = refused 4 = Waiting for validation 5 = Cancelled 6 = Waiting to be sent                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |initialOrderID                    |String  |Orderid de la transaction initiale                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |amount                            |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|4            |KYC demand Sent everytime the status of the KYC demand is updated|type                              |String  |Callback type = 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |status                            |String  |status of the KYC demand : Initialized Incomplete Complete Pending                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |appUserId                         |String  |The user's unique identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |diligences -> reason              |String  |The reason of acceptance or rejection of the diligence :                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |diligences -> diligenceType       |String  |type of the diligence : ID_CARD PASSPORT VETERAN_CARD MILITARY_ID RES_CARD EMPL_CONTRACT PAYSLIP CESU PENSION_RET STUDENT_ID TAX_NOTICE INCOME_TAX ASDIR RSA RMI DIS_CERTIF PROOF_FAM_ALLOW ACC_STAT SCTIN ACC_AGG SELFIE                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |diligences -> Status              |String  |status of the diligence : Validated Refused To_Review_Manually                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|5            |Enregistrement de carte bancaire                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |id                                |String  |Appcardid de la carte enregistrée                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur qui a enregistré la carte                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|16           |SCTIn                                                            |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |reference                         |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|17           |SCTOut                                                           |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |reference                         |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|18           |SDDOut                                                           |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |reference                         |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|19           |SDDIn                                                            |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |reference                         |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|20           |Card Operation Status change                                     |Id                                |long    |S-money internal Id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |reference                         |String  |Operation OrderID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |type                              |        |Callback Type = 20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |appCardId                         |String  |reference of the card given by the partner                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |transactionAmount                 |decimal |amount in local currency (euro or foreign currency)                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |currencyCodeTransaction           |string  |currency transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|             |                                                                 |cardHolderBillingAmount           |decimal |Amount in euro (used for foreign currency transactions)                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|             |                                                                 |cardHolderBillingConversionRate   |decimal |Exchange rate (used for foreign currency transactions)                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |availableBalance                  |decimal |balance after authorization                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|             |                                                                 |actionCode                        |int     |response codes (authorization and reasons for refusal)                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |merchantType                      |int     |merchant category code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |cardAcceptorIdentificationCodeName|string  |merchant information = name, adress                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |status                            |Int     |Operations status 0 = Waiting 1 = Completed 2 = Refunded 3 = Failed 5 = Cancelled 7 = Expired                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |ert                               |        |transaction context  (more details on the codification in Chapter 2.5)                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |cardDataInputMode                 |        |how to use the card (more details on the codification in Chapter 2.5)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|             |                                                                 |tokenRequestorID                  |        |determines a payment that uses a token (such as XPAY) (more details on the codification in Chapter 2.5)                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|             |                                                                 |terminalCountryCode               |        |country reference where payment took place                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |userid                            |string  |reference of the user given by the partner                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |executedDate                      |DateTime|Executed date of the operation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|21           |Card creation (or card change status)                            |id                                |Int     |Xpollens' internal and technical card identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |reference                         |String  |Reference or Alias of the card (Called also AppCardId)                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |type                              |Int     |21' is the callback type when the card is ordered or it's status has changed                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |cardType                          |Int     |Type of the card ordered.  Here are the different types that the card can have: 1 = Classic virtual 2 = Classic physical 3 = Premium virtual 4 = Premium physical                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |action                            |Int     |Actions done on the card. Here are the different values of actions. 0 = Creation 1 = Cancellation  2 = Refabrication 3 = Renewal ( Not used yet) 4 = Update                                                                                                                                                                                                                                                                                                                                                                 |
+|             |                                                                 |status                            |Int     |Status of the card. Here are the different stauts that the card can have: 0 = Ordered 1 = Sent 2 = Activated 3 = Expired (Not used yet) 4 = Opposed 5= Failed 6=Deactivated 7=Cancelled                                                                                                                                                                                                                                                                                                                                     |
+|             |                                                                 |opposedReason                     |Int     |Reason on card's opposition, this field is different than '0' only when the card is opposed. Here are the different reasons for card's opposition:  07 = special conditions 34 = Suspected fraud 41 = Lost 43 = Stolen                                                                                                                                                                                                                                                                                                      |
+|24           |Card Operation Clearing processing Id                            |id                                |long    |S-money internal Id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |reference                         |String  |Batch file reference to retrieve the operations of the clearing report with the API                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |type                              |Int     |Callbacks card clearing = 24                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|25           |Token life cycle management (or token status change )            | id                               |int     |Xpollens' internal and technical card identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |reference                         |String  |Reference or Alias of the card (Called also AppCardId)                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |type                              |int     |25' is the callback type sent when the Token is created or changes it's status                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|             |                                                                 |tokenValue                        |int     |Value of the token                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |tokenReferenceID                  |String  |Value returned by VISA, it's an unique ID for the Token associated with the PAN (Card)                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |tokenRequestorID                  |int     |Value returned by VISA, it's anID assigned to the Initiator of the Token Request                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |panReferenceId                    |String  |Value returned by VISA refers to the pan                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |status                            |String  |Status of the token. Here are the different values that the token can have: A = Active for payment I = Inactive (not active yet) for payment S = Temporaly Suspended for payment D = Permanently Deactivated for Payment                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |messageReasonCode                 |String  |Reason of the reception of this callback. it will be equal to 1400 (Token creation) or null                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|29           |P2P                                                              |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |receiver                          |String  |appaccountid du bénéficiaire de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|             |                                                                 |sender                            |String  |appaccountid de l'emetteur de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|31           |KYC complementary diligence SCT_IN / InstanPayment               |type                              |String  |Callback type = 31                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |status                            |String  |The status of the diligence : Validated Refused To_Review_Manually                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |appUserId                         |String  |The user's unique identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |diligenceType                     |String  |The type of the diligence : SCT_In InstantPayment_In                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|             |                                                                 |reason                            |String  |The reason of acceptance or rejection of the diligence                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |amount                            |Int     |The amount of the money in                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |transferDate                      |Date    |The date of the money in transfer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |transmitterFullName               |String  |The firstname and lastname (and birthname if existing) of the transmitter                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |operationType                     |String  |The type of the operation : SCT_In InstantPayment_In                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|             |                                                                 |orderId                           |String  |The operation's unique identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |score -> name                     |Int     |The result of the identity matching algorithm (between 0 and 1)                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|             |                                                                 |score -> firstname                |Int     |The result of the identity matching algorithm (between 0 and 1)                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|32           |Risk Level change                                                | eventDate                        |Date    |Date of the risk level event change                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |appUserId                         |String  |Xpollens Customer Identifier given by the partner                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |riskLevel                         |String  |Level of customer risk based on several criteria. Can be Low, Medium or high                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |type                              |String  |Callback Type=32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|33           |Client debt created                                              |type                              |string  |33 : is the code of the callback dedicated to a debt creation                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |Date                              |datetime|Date of origin operation creation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |id                                |string  |Id of the origin operation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |userid                            |char    |The user technical identification                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |originAmount                      |long    |The amount of principal operation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |status                            |int     |Status of the debt (In progress,closed with recovery or closed without recovery)                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |debtAmount                        |long    |The principal amount of a debt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|             |                                                                 |debtReason                        |string  |Functional cases leading to a debt creation ( P2P, CardOperation ,JRI)                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             |                                                                 |lossAndProfitBalance              |long    |The amount of loss and profit account after the debt creation.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|34           |User's onboarding state (called user record)                     |type                              |String  |Callback type = 34                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |userRecordStatus                  |String  |The status of the user record : 1	Initialized  2	InProgress 4	Validated 5	Refused                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |appUserId                         |String  |The user's unique identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |publicUserCode                    |String  |Corresponds to issuerClientID at Antelop. It is used to create the wallet at Antelop                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|37           |Refund TopUp                                                     |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |error                             |String  |Code d’erreur pour les paiements échoués, 0 si aucune erreur. Référentiels des statuts :  0 = 0XXX operation succeeded or still processing 10 = 1XXX operation rejected because of bad request configuration 11 = 2XXX operation rejected because of bad reference usage 12 = 3XXX operation rejected because of bad account configuration 13 = 4XXX operation rejected because of the bank or the supplier 14 = 5XXX operation rejected because of a system error 15 = 6XXX operation rejected because of anti-fraud engine|
+|             |                                                                 |status                            |String  |Statut de la transaction Référentiels des statuts :  -1 = unknow 0 = waiting 1 = completed 2 = refunded 3 = refused 4 = Waiting for validation 5 = Cancelled 6 = Waiting to be sent                                                                                                                                                                                                                                                                                                                                         |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |initialOrderID                    |String  |Orderid de la transaction initiale                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |amount                            |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|38           | InstantPaymentIn                                                |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |orderId                           |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |operationAmount                   |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |rejectReason                      |String  |Motif du rejet, en cas de rejet de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|39           |InstantPaymentOut                                                |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |orderId                           |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |operationAmount                   |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |rejectReason                      |String  |Motif du rejet, en cas de rejet de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|40           |FundReservation                                                  |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |operationId                       |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |orderId                           |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |userId                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |operationAmount                   |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |authorizationBalanceAmount        |String  |Solde d'autorisation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|             |                                                                 |dispositionCheckStatusId          |String  |Statut du DispositionCheck. Référentiel des status :       NotReceived = 1,      Requested = 2,      Authorized = 3,      Refused = 10,      Canceled = 11                                                                                                                                                                                                                                                                                                                                                                  |
+|41           |RecallInstantPaymentIn                                           |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |orderId                           |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |operationAmount                   |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |rejectReason                      |String  |Motif du rejet, en cas de rejet de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|42           |RecallInstantPaymentOut                                          |id                                |String  |Identifiant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |orderId                           |String  |Orderid de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |userid                            |String  |Appuserid de l'utilisateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |operationAmount                   |String  |Montant de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |status                            |String  |Statut de la transaction.  Référentiel des statuts :          Pending = 0,         Succeeded = 1,         Refund = 2,         Failed = 3                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                                 |rejectReason                      |String  |Motif du rejet, en cas de rejet de la transaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|             |                                                                 |type                              |String  |Type du callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|43           |legalEntity                                                      |type                              |String  |Callback type = 43                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |legalEntityId                     |String  |The legal entity's unique identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|             |                                                                 |RegistrationNumber                |String  |Identification number of the legal entity It's the Sirène if the legal Entity is registered in France                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|             |                                                                 |RegistrationCountry               |String  |The registration country of the legal entity (Code ISO 3166-1)                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|             |                                                                 |LegalEntityCreationStatus         |String  |The legal entity's creation status : Succeeded Failed                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|             |                                                                 |RegistrationCity                  |String  |The legal entity's registration city                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|             |                                                                 |CompanyName                       |String  |The name of the legal entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |TradeName                         |String  |The commercial name of the legal entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|             |                                                                 |NaceCode                          |String  |Legal entity's type of economical activity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|             |                                                                 |LegalForm                         |String  |Legal entity's legal form                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |CreationDate                      |Date    |The creation date of the legal entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|             |                                                                 |legalEntityRecordStatus           |String  |The onboarding status of the legal entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|             |                                                                 |TurnOver                          |String  |Turn Over N-1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |HighFinancialIncome               |String  |High Financial Income Value: "True" , "False"                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             |                                                                 |ListedInStockMarkets              |String  |Listed In Stock Markets  Value: "True" , "False"                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |Regulated                         |String  |Regulated  Value: "True" , "False"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             |                                                                 |Address -> Street                 |String  |The address informations of the legal entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             |                                                                 |Address -> SupplementIn           |String  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |Address -> SupplementOut          |String  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |Address -> Area                   |String  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |Address -> ZipCode                |String  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |Address -> City                   |String  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|             |                                                                 |Address -> Country                |String  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-<table border=0 cellpadding=0 cellspacing=0 width=1033 class=xl653433
- style='border-collapse:collapse;table-layout:fixed;width:774pt'>
- <col class=xl653433 width=109 style='mso-width-source:userset;mso-width-alt:
- 3868;width:82pt'>
- <col class=xl653433 width=234 style='mso-width-source:userset;mso-width-alt:
- 8305;width:175pt'>
- <col class=xl653433 width=228 style='mso-width-source:userset;mso-width-alt:
- 8106;width:171pt'>
- <col class=xl653433 width=43 style='mso-width-source:userset;mso-width-alt:
- 1536;width:32pt'>
- <col class=xl653433 width=419 style='mso-width-source:userset;mso-width-alt:
- 14904;width:314pt'>
- <tr height=28 style='height:21.0pt'>
-  <td height=28 class=xl633433 width=109 style='height:21.0pt;width:82pt'>Callback
-  type</td>
-  <td class=xl643433 width=234 style='width:175pt'>Callback context</td>
-  <td class=xl633433 width=228 style='width:171pt'>Parameters (Payload Details)</td>
-  <td class=xl633433 width=43 style='width:32pt'>Type</td>
-  <td class=xl643433 width=419 style='width:314pt'>Description</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=6 height=442 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:331.8pt'>1</td>
-  <td rowspan=6 class=xl773433 style='border-bottom:1.0pt solid black'>TopUp</td>
-  <td class=xl663433 style='border-left:none'>id</td>
-  <td class=xl663433 style='border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-left:none;width:314pt'>Identifiant
-  de la transaction</td>
- </tr>
- <tr height=173 style='height:129.6pt'>
-  <td height=173 class=xl683433 style='height:129.6pt;border-top:none;
-  border-left:none'>error</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Code d’erreur pour les paiements échoués, 0 si aucune
-  erreur.<br></br>
-    Référentiels des statuts : <br></br>
-    0 = 0XXX operation succeeded or still processing<br></br>
-    10 = 1XXX operation rejected because of bad request configuration<br></br>
-    11 = 2XXX operation rejected because of bad reference usage<br></br>
-    12 = 3XXX operation rejected because of bad account configuration<br></br>
-    13 = 4XXX operation rejected because of the bank or the supplier<br></br>
-    14 = 5XXX operation rejected because of a system error<br></br>
-    15 = 6XXX operation rejected because of anti-fraud engine</td>
- </tr>
- <tr height=192 style='height:144.0pt'>
-  <td height=192 class=xl683433 style='height:144.0pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction<br></br>
-    Référentiels des statuts : <br></br>
-    -1 = unknow<br></br>
-    0 = waiting<br></br>
-    1 = completed<br></br>
-    2 = refunded<br></br>
-    3 = refused<br></br>
-    4 = Waiting for validation<br></br>
-    5 = Cancelled<br></br>
-    6 = Waiting to be sent</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>initialOrderID</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction initiale</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>amount</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=19 style='mso-height-source:userset;height:14.4pt'>
-  <td rowspan=6 height=653 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:490.2pt;border-top:none'>4</td>
-  <td rowspan=6 class=xl823433 width=234 style='border-bottom:1.0pt solid black;
-  border-top:none;width:175pt'><font class="font73433">KYC demand</font><font
-  class="font63433"><br></br>
-    Sent everytime the status of the KYC demand is updated</font></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callback type = 4</td>
- </tr>
- <tr height=96 style='height:72.0pt'>
-  <td height=96 class=xl683433 style='height:72.0pt;border-top:none;border-left:
-  none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'><font class="font53433">status of the KYC demand :</font><font
-  class="font03433"><br></br>
-    Initialized<br></br>
-    Incomplete<br></br>
-    Complete<br></br>
-    Pending</font></td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>appUserId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The user's unique identifier</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>diligences -&gt; reason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The reason of acceptance or rejection of the diligence :</td>
- </tr>
- <tr height=422 style='height:316.8pt'>
-  <td height=422 class=xl683433 style='height:316.8pt;border-top:none;
-  border-left:none'>diligences -&gt; diligenceType</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'><font class="font53433">type of the diligence :</font><font
-  class="font03433"><br></br>
-    ID_CARD<br></br>
-    PASSPORT<br></br>
-    VETERAN_CARD<br></br>
-    MILITARY_ID<br></br>
-    RES_CARD<br></br>
-    EMPL_CONTRACT<br></br>
-    PAYSLIP<br></br>
-    CESU<br></br>
-    PENSION_RET<br></br>
-    STUDENT_ID<br></br>
-    TAX_NOTICE<br></br>
-    INCOME_TAX<br></br>
-    ASDIR<br></br>
-    RSA<br></br>
-    RMI<br></br>
-    DIS_CERTIF<br></br>
-    PROOF_FAM_ALLOW<br></br>
-    ACC_STAT<br></br>
-    SCTIN<br></br>
-    ACC_AGG<br></br>
-    SELFIE</font></td>
- </tr>
- <tr height=78 style='height:58.2pt'>
-  <td height=78 class=xl703433 style='height:58.2pt;border-top:none;border-left:
-  none'>diligences -&gt; Status</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'><font class="font53433">status of the diligence</font><font
-  class="font03433"> :<br></br>
-    Validated<br></br>
-    Refused<br></br>
-    To_Review_Manually</font></td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=3 height=58 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:43.8pt;border-top:none'>5</td>
-  <td rowspan=3 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>Enregistrement de carte bancaire</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>id</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appcardid de la carte enregistrée</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur qui a enregistré la carte</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=5 height=192 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:144.6pt;border-top:none'>16</td>
-  <td rowspan=5 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>SCTIn</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=5 height=192 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:144.6pt;border-top:none'>17</td>
-  <td rowspan=5 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>SCTOut</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=5 height=192 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:144.6pt;border-top:none'>18</td>
-  <td rowspan=5 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>SDDOut</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=5 height=192 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:144.6pt;border-top:none'>19</td>
-  <td rowspan=5 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>SDDIn</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=19 height=534 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:403.8pt;border-top:none'>20</td>
-  <td rowspan=19 class=xl823433 width=234 style='border-bottom:1.0pt solid black;
-  border-top:none;width:175pt'><font class="font73433">Card Operation</font><font
-  class="font63433"> Status change</font></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>Id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>long</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>S-money internal Id</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Operation OrderID</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>&nbsp;</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callback Type = 20</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>appCardId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>reference of the card given by the partner</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>transactionAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>decima<span
-  style='display:none'>l</span></td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>amount in local currency (euro or foreign currency)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>currencyCodeTransaction</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>string</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>currency transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>cardHolderBillingAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>decima<span
-  style='display:none'>l</span></td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Amount in euro (used for foreign currency transactions)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>cardHolderBillingConversionRate</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>decima<span
-  style='display:none'>l</span></td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Exchange rate (used for foreign currency transactions)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>availableBalance</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>decima<span
-  style='display:none'>l</span></td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>balance after authorization</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>actionCode</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>response codes (authorization and reasons for refusal)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>merchantType</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>merchant category code</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>cardAcceptorIdentificationCodeName</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>string</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>merchant information = name, adress</td>
- </tr>
- <tr height=134 style='height:100.8pt'>
-  <td height=134 class=xl683433 style='height:100.8pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Operations status<br></br>
-    0 = Waiting<br></br>
-    1 = Completed<br></br>
-    2 = Refunded<br></br>
-    3 = Failed<br></br>
-    5 = Cancelled<br></br>
-    7 = Expired</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>ert</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>&nbsp;</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>transaction context <br></br>
-    (more details on the codification in Chapter 2.5)</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>cardDataInputMode</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>&nbsp;</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>how to use the card<br></br>
-    (more details on the codification in Chapter 2.5)</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>tokenRequestorID</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>&nbsp;</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>determines a payment that uses a token (such as XPAY)<br></br>
-    (more details on the codification in Chapter 2.5)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>terminalCountryCode</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>&nbsp;</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>country reference where payment took place</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>string</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>reference of the user given by the partner</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>executedDate</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>DateTi<span
-  style='display:none'>me</span></td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Executed date of the operation</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=7 height=709 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:533.4pt;border-top:none'>21</td>
-  <td rowspan=7 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>Card creation (or card change status)<span
-  style='mso-spacerun:yes'> </span></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Xpollens' internal and technical card identifier</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Reference or Alias of the card (Called also AppCardId)</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>21' is the callback type when the card is ordered or it's status
-  has changed<span style='mso-spacerun:yes'> </span></td>
- </tr>
- <tr height=134 style='height:100.8pt'>
-  <td height=134 class=xl683433 style='height:100.8pt;border-top:none;
-  border-left:none'>cardType</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type of the card ordered. <br></br>
-    Here are the different types that the card can have:<br></br>
-    1 = Classic virtual<br></br>
-    2 = Classic physical<br></br>
-    3 = Premium virtual<br></br>
-    4 = Premium physical<br></br>
-    </td>
- </tr>
- <tr height=134 style='height:100.8pt'>
-  <td height=134 class=xl683433 style='height:100.8pt;border-top:none;
-  border-left:none'>action</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Actions done on the card.<br></br>
-    Here are the different values of actions.<br></br>
-    0 = Creation<br></br>
-    1 = Cancellation <br></br>
-    2 = Refabrication<br></br>
-    3 = Renewal ( Not used yet)<br></br>
-    4 = Update<span style='mso-spacerun:yes'> </span></td>
- </tr>
- <tr height=211 style='height:158.4pt'>
-  <td height=211 class=xl683433 style='height:158.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Status of the card.<br></br>
-    Here are the different stauts that the card can have:<br></br>
-    0 = Ordered<br></br>
-    1 = Sent<br></br>
-    2 = Activated<br></br>
-    3 = Expired (Not used yet)<br></br>
-    4 = Opposed<br></br>
-    5= Failed<br></br>
-    6=Deactivated<br></br>
-    7=Cancelled<br></br>
-    </td>
- </tr>
- <tr height=154 style='height:115.8pt'>
-  <td height=154 class=xl703433 style='height:115.8pt;border-top:none;
-  border-left:none'>opposedReason</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Reason on card's opposition, this field is different than '0'
-  only when the card is opposed.<br></br>
-    Here are the different reasons for card's opposition: <br></br>
-    07 = special conditions<br></br>
-    34 = Suspected fraud<br></br>
-    41 = Lost<br></br>
-    43 = Stolen<br></br>
-    </td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=3 height=77 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:58.2pt;border-top:none'>24</td>
-  <td rowspan=3 class=xl823433 width=234 style='border-bottom:1.0pt solid black;
-  border-top:none;width:175pt'><font class="font73433">Card Operation Clearing</font><font
-  class="font63433"> processing Id</font></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>long</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>S-money internal Id</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Batch file reference to retrieve the operations of the clearing
-  report with the API</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callbacks card clearing = 24</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=9 height=537 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:403.8pt;border-top:none'>25</td>
-  <td rowspan=9 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>Token life cycle management (or token status change )<span
-  style='mso-spacerun:yes'> </span></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>&nbsp;id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Xpollens' internal and technical card identifier</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reference</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Reference or Alias of the card (Called also AppCardId)</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>25' is the callback type sent when the Token is created or
-  changes it's status</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>tokenValue</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Value of the token</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>tokenReferenceID</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Value returned by VISA, it's an unique ID for the Token
-  associated with the PAN (Card)</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>tokenRequestorID</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Value returned by VISA, it's anID assigned to the Initiator of
-  the Token Request</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>panReferenceId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Value returned by VISA refers to the pan</td>
- </tr>
- <tr height=154 style='height:115.2pt'>
-  <td height=154 class=xl683433 style='height:115.2pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Status of the token.<br></br>
-    Here are the different values that the token can have:<br></br>
-    A = Active for payment<br></br>
-    I = Inactive (not active yet) for payment<br></br>
-    S = Temporaly Suspended for payment<br></br>
-    D = Permanently Deactivated for Payment<br></br>
-    <br></br>
-    </td>
- </tr>
- <tr height=193 style='height:144.6pt'>
-  <td height=193 class=xl703433 style='height:144.6pt;border-top:none;
-  border-left:none'>messageReasonCode</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl723433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Reason of the reception of this callback. it will be equal to
-  1400 (Token creation) or null<br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    </td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=4 height=77 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:58.2pt;border-top:none'>29</td>
-  <td rowspan=4 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>P2P</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>receiver</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>appaccountid du bénéficiaire de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>sender</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>appaccountid de l'emetteur de la transaction</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='mso-height-source:userset;height:14.4pt'>
-  <td rowspan=12 height=384 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:288.6pt;border-top:none'>31</td>
-  <td rowspan=12 class=xl853433 width=234 style='border-bottom:1.0pt solid black;
-  border-top:none;width:175pt'>KYC complementary diligence SCT_IN /
-  InstanPayment</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callback type = 31</td>
- </tr>
- <tr height=77 style='height:57.6pt'>
-  <td height=77 class=xl683433 style='height:57.6pt;border-top:none;border-left:
-  none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The status of the diligence :<br></br>
-    Validated<br></br>
-    Refused<br></br>
-    To_Review_Manually</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>appUserId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The user's unique identifier</td>
- </tr>
- <tr height=58 style='height:43.2pt'>
-  <td height=58 class=xl683433 style='height:43.2pt;border-top:none;border-left:
-  none'>diligenceType</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The type of the diligence :<br></br>
-    SCT_In<br></br>
-    InstantPayment_In</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>reason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The reason of acceptance or rejection of the diligence</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>amount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The amount of the money in</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>transferDate</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Date</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The date of the money in transfer</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>transmitterFullName</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The firstname and lastname (and birthname if existing) of the
-  transmitter</td>
- </tr>
- <tr height=58 style='height:43.2pt'>
-  <td height=58 class=xl683433 style='height:43.2pt;border-top:none;border-left:
-  none'>operationType</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The type of the operation :<br></br>
-    SCT_In<br></br>
-    InstantPayment_In</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>orderId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The operation's unique identifier</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>score -&gt; name</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The result of the identity matching algorithm (between 0 and 1)</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>score -&gt; firstname</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>Int</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The result of the identity matching algorithm (between 0 and 1)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=4 height=96 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:72.6pt;border-top:none'>32</td>
-  <td rowspan=4 class=xl823433 width=234 style='border-bottom:1.0pt solid black;
-  border-top:none;width:175pt'><font class="font73433">Risk Level</font><font
-  class="font63433"> change</font></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>&nbsp;eventDate</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>Date</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Date of the risk level event change</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>appUserId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Xpollens Customer Identifier given by the partner</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>riskLevel</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Level of customer risk based on several criteria. Can be Low,
-  Medium or high</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callback Type=32</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=9 height=191 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:144.6pt;border-top:none'>33</td>
-  <td rowspan=9 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>Client debt created<span style='mso-spacerun:yes'> </span></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>string</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>33 : is the code of the callback dedicated to a debt creation</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Date</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>dateti<span
-  style='display:none'>me</span></td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Date of origin operation creation</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>id</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>string</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Id of the origin operation</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>char</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The user technical identification</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>originAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>long</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The amount of principal operation</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>int</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Status of the debt (In progress,closed with recovery or closed
-  without recovery)</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>debtAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>long</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The principal amount of a debt</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>debtReason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>string</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Functional cases leading to a debt creation ( P2P, CardOperation
-  ,JRI)</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>lossAndProfitBalance</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>long</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The amount of loss and profit account after the debt creation.</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=4 height=173 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:130.2pt;border-top:none'>34</td>
-  <td rowspan=4 class=xl883433 style='border-bottom:1.0pt solid black;
-  border-top:none'>User's onboarding state (called <font class="font73433">user
-  record</font><font class="font63433">)</font></td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callback type = 34</td>
- </tr>
- <tr height=96 style='height:72.0pt'>
-  <td height=96 class=xl683433 style='height:72.0pt;border-top:none;border-left:
-  none'>userRecordStatus</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The status of the user record :<br></br>
-    1	Initialized <br></br>
-    2	InProgress<br></br>
-    4	Validated<br></br>
-    5	Refused</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>appUserId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The user's unique identifier</td>
- </tr>
- <tr height=39 style='height:29.4pt'>
-  <td height=39 class=xl703433 style='height:29.4pt;border-top:none;border-left:
-  none'>publicUserCode</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Corresponds to issuerClientID at Antelop. It is used to create
-  the wallet at Antelop</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=6 height=442 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:331.8pt;border-top:none'>37</td>
-  <td rowspan=6 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>Refund TopUp</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=173 style='height:129.6pt'>
-  <td height=173 class=xl683433 style='height:129.6pt;border-top:none;
-  border-left:none'>error</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Code d’erreur pour les paiements échoués, 0 si aucune
-  erreur.<br></br>
-    Référentiels des statuts : <br></br>
-    0 = 0XXX operation succeeded or still processing<br></br>
-    10 = 1XXX operation rejected because of bad request configuration<br></br>
-    11 = 2XXX operation rejected because of bad reference usage<br></br>
-    12 = 3XXX operation rejected because of bad account configuration<br></br>
-    13 = 4XXX operation rejected because of the bank or the supplier<br></br>
-    14 = 5XXX operation rejected because of a system error<br></br>
-    15 = 6XXX operation rejected because of anti-fraud engine</td>
- </tr>
- <tr height=192 style='height:144.0pt'>
-  <td height=192 class=xl683433 style='height:144.0pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction<br></br>
-    Référentiels des statuts : <br></br>
-    -1 = unknow<br></br>
-    0 = waiting<br></br>
-    1 = completed<br></br>
-    2 = refunded<br></br>
-    3 = refused<br></br>
-    4 = Waiting for validation<br></br>
-    5 = Cancelled<br></br>
-    6 = Waiting to be sent</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>initialOrderID</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction initiale</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>amount</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=7 height=230 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:173.4pt;border-top:none'>38</td>
-  <td rowspan=7 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'><span style='mso-spacerun:yes'> </span>InstantPaymentIn</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>orderId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>operationAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>rejectReason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Motif du rejet, en cas de rejet de la transaction</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=7 height=230 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:173.4pt;border-top:none'>39</td>
-  <td rowspan=7 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>InstantPaymentOut</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>orderId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>operationAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>rejectReason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Motif du rejet, en cas de rejet de la transaction</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=7 height=249 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:187.8pt;border-top:none'>40</td>
-  <td rowspan=7 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>FundReservation</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>operationId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>orderId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>operationAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>authorizationBalanceAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Solde d'autorisation</td>
- </tr>
- <tr height=135 style='height:101.4pt'>
-  <td height=135 class=xl703433 style='height:101.4pt;border-top:none;
-  border-left:none'>dispositionCheckStatusId</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut du DispositionCheck.<br></br>
-    Référentiel des status : <br></br>
-    <span style='mso-spacerun:yes'>     </span>NotReceived = 1,<br></br>
-    <span style='mso-spacerun:yes'>     </span>Requested = 2,<br></br>
-    <span style='mso-spacerun:yes'>     </span>Authorized = 3,<br></br>
-    <span style='mso-spacerun:yes'>     </span>Refused = 10,<br></br>
-    <span style='mso-spacerun:yes'>     </span>Canceled = 11</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=7 height=230 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:173.4pt;border-top:none'>41</td>
-  <td rowspan=7 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>RecallInstantPaymentIn</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>orderId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>operationAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>rejectReason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Motif du rejet, en cas de rejet de la transaction</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=7 height=230 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:173.4pt;border-top:none'>42</td>
-  <td rowspan=7 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>RecallInstantPaymentOut</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>id</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identifiant de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>orderId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Orderid de la transaction</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>userid</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Appuserid de l'utilisateur</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>operationAmount</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Montant de la transaction</td>
- </tr>
- <tr height=115 style='height:86.4pt'>
-  <td height=115 class=xl683433 style='height:86.4pt;border-top:none;
-  border-left:none'>status</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Statut de la transaction. <br></br>
-    Référentiel des statuts : <br></br>
-    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br></br>
-    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>rejectReason</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Motif du rejet, en cas de rejet de la transaction</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>type</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl713433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Type du callback</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td rowspan=23 height=553 class=xl763433 style='border-bottom:1.0pt solid black;
-  height:418.2pt;border-top:none'>43</td>
-  <td rowspan=23 class=xl773433 style='border-bottom:1.0pt solid black;
-  border-top:none'>legalEntity</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>type</td>
-  <td class=xl663433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl673433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Callback type = 43</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>legalEntityId</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The legal entity's unique identifier</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>RegistrationNumber</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Identification number of the legal entity<br></br>
-    It's the Sirène if the legal Entity is registered in France</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>RegistrationCountry</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The registration country of the legal entity (Code ISO 3166-1)</td>
- </tr>
- <tr height=58 style='height:43.2pt'>
-  <td height=58 class=xl683433 style='height:43.2pt;border-top:none;border-left:
-  none'>LegalEntityCreationStatus</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The legal entity's creation status :<br></br>
-    Succeeded<br></br>
-    Failed</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>RegistrationCity</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The legal entity's registration city</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>CompanyName</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The name of the legal entity</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>TradeName</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The commercial name of the legal entity</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>NaceCode</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Legal entity's type of economical activity</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>LegalForm</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Legal entity's legal form</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>CreationDate</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>Date</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The creation date of the legal entity</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>legalEntityRecordStatus</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>The onboarding status of the legal entity</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>TurnOver</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Turn Over N-1</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>HighFinancialIncome</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>High Financial Income<br></br>
-    Value: &quot;True&quot; , &quot;False&quot;</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>ListedInStockMarkets</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Listed In Stock Markets <br></br>
-    Value: &quot;True&quot; , &quot;False&quot;</td>
- </tr>
- <tr height=38 style='height:28.8pt'>
-  <td height=38 class=xl683433 style='height:28.8pt;border-top:none;border-left:
-  none'>Regulated</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td class=xl693433 width=419 style='border-top:none;border-left:none;
-  width:314pt'>Regulated <br></br>
-    Value: &quot;True&quot; , &quot;False&quot;</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Address -&gt; Street</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
-  <td rowspan=7 class=xl733433 width=419 style='border-bottom:1.0pt solid black;
-  border-top:none;width:314pt'>The address informations of the legal entity</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Address -&gt; SupplementIn</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Address -&gt; SupplementOut</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Address -&gt; Area</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Address -&gt; ZipCode</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
- </tr>
- <tr height=19 style='height:14.4pt'>
-  <td height=19 class=xl683433 style='height:14.4pt;border-top:none;border-left:
-  none'>Address -&gt; City</td>
-  <td class=xl683433 style='border-top:none;border-left:none'>String</td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl703433 style='height:15.0pt;border-top:none;border-left:
-  none'>Address -&gt; Country</td>
-  <td class=xl703433 style='border-top:none;border-left:none'>String</td>
- </tr>
- <![if supportMisalignedColumns]>
- <tr height=0 style='display:none'>
-  <td width=109 style='width:82pt'></td>
-  <td width=234 style='width:175pt'></td>
-  <td width=228 style='width:171pt'></td>
-  <td width=43 style='width:32pt'></td>
-  <td width=419 style='width:314pt'></td>
- </tr>
- <![endif]>
-</table>
-
-</div>
