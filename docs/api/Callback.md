@@ -17,17 +17,7 @@ import Cta from '@theme/Cta'
 <div id="Callbacks Webhook_3433" align="center" x:publishsource="Excel">
 
 <table border="0" cellpadding="0" cellspacing="0" width="1033" class="xl653433" style="border-collapse:collapse;table-layout:fixed;width:774pt">
- <colgroup><col class="xl653433" width="109" style="mso-width-source:userset;mso-width-alt:
- 3868;width:82pt">
- <col class="xl653433" width="234" style="mso-width-source:userset;mso-width-alt:
- 8305;width:175pt">
- <col class="xl653433" width="228" style="mso-width-source:userset;mso-width-alt:
- 8106;width:171pt">
- <col class="xl653433" width="43" style="mso-width-source:userset;mso-width-alt:
- 1536;width:32pt">
- <col class="xl653433" width="419" style="mso-width-source:userset;mso-width-alt:
- 14904;width:314pt">
- </colgroup><tbody><tr height="28" style="height:21.0pt">
+ <tbody><tr height="28" style="height:21.0pt">
   <td height="28" class="xl633433" width="109" style="height:21.0pt;width:82pt">Callback
   type</td>
   <td class="xl643433" width="234" style="width:175pt">Callback context</td>
