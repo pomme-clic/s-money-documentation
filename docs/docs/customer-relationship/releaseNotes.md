@@ -12,7 +12,7 @@ Xpollens changelog since September 2021
 **Partner portal** :
 - A new profile management module has been added to our Webportal. Partners can now create their own profile with associated rights to tailor access to their own needs.  
 - Lifted the limit of displayed transactions to 300 (instead of the previous 150)  
-- Corrected some labels to be clearer  
+- Improved some labels to be clearer  
 
 **Users** :
 - Added the GET method to fetch legal entities  
