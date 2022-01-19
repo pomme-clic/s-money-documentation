@@ -72,9 +72,9 @@ const Rapidoc = ({ apiUrl }) => {
   useEffect(() => {
     if (data) {
       data.components.securitySchemes['Sts authentication']['x-client-id'] =
-        'Swagman'
+        'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
-        'Swagman'
+        'Demo'
       delete data.components.securitySchemes['Bearer token authorization']
 
       const stringifiedData = JSON.stringify(data)
