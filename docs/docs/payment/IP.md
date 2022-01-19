@@ -32,7 +32,7 @@ It comes with a few limitations :
 
 SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them and ask for a its refund.
 
-<Image src="docs/SEPA_OUT_EN.png" alt="usecase 1"/>
+<Image src="docs/SCA-SCTOUT.png" alt="usecase 1"/>
 
 
 <Highlight type="tip">

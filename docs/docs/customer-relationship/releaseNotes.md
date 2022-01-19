@@ -8,6 +8,16 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## January 2022
+**Partner portal** :
+- A new profile management module has been added to our Webportal. Partners can now create their own profile with associated rights to tailor access to their own needs.  
+- Lifted the limit of displayed transactions to 300 (instead of the previous 150)  
+- Improved some labels to be clearer  
+
+**Users** :
+- Added the GET method to fetch legal entities  
+- Implemented the FATCA process and exposed dedicated endpoints. You can find more [here](/api/kyc)  
+
 ## December 2021
 **Transfers** :
 - Added the Outgoing Sepa Direct Debit feature to our platform. We can now operate SDD both ways (incoming (already existing) and outgoing (new)).  
