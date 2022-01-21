@@ -46,12 +46,15 @@ Here after are tho examples :
 	First a non US customer providing its taxation information correctly in coherency with its personal informations.
 	Second an american customer providing its taxation information correctly in coherency with its personal informations.
 	
-	
+<Image src="docs/PPTAXINFONONUS.png" alt="usecase 1"/>
+
+<Image src="docs/PPTAXINFOUS.png" alt="usecase 2"/>
 
 ### Businesses detailled process
-Under construction
+Under construction and soon available
 
-## LAB/FT control
-
+## AML/FT control
+XPollens is processing operation screening and monitoring to secure the customers and fight against Money Laundering and terrorism Financing..
+For example, operations IN coming from sensible geographies will be blocked or operation out to sensitive people..
 
 
