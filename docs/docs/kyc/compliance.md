@@ -51,7 +51,7 @@ Here after are tho examples :
 <Image src="docs/Compliance-Tax-Info-US.png" alt="usecase 2"/>
 
 ### Businesses detailled process
-Under construction and soon available
+Under construction and available soon
 
 ## AML/FT control
 XPollens is processing operation screening and monitoring to secure the customers and fight against Money Laundering and terrorism Financing..
