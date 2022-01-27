@@ -6,55 +6,85 @@ import Cta from '@theme/Cta'
 
 
 
-
-# Sensitive data encryption
-
-
-
-
+# Compliance
 
 ## Context
 
-### Identity theft & fraudulous payments
+As a part of BPCE group, Xpollens is following the BPCE compliance group directives. 
+Here after is an introduction of the different processes involved.
 
-The payment industry is the favorite target of fraudsters, who try to obtain card numbers or identity documents and use it to pay without the real owner's knowledge. Hackers have creative tricks to reach their goal, and so must the payment industry continuously work to fight back.
+## PEP and Sanction control
 
-> 
-> Our technology is here to help you fight this situation, and give your end-customer the peace of mind your business requires.
-> To enable this, Xpollens uses encrypted payloads, and a specific SDK called ```Secure Interface```.
-> 
+### Politically Exposed People (PEP)
+Those people, politically exposed persons (PEPs), hold a crucial position in public and are vulnerable to financial crime.
 
-<Image src="docs/SCA-getPIN.png" alt="usecase 1"/>
-<Image src="docs/SCA-getPAN.png" alt="usecase 1"/>
+### Sanction People or organization
+Those persons, organizations or governments may have the potential to be involved in the financial activities which are:  
+- Terrorism financing
+- Trafficking of narcotics
+- Violation of human rights
+- Money laundering
+- Proliferation of weapons
+- Violation of international contracts
 
-### Customer experience -vs- security PCI-DSS
+### Xpollens controls
+Xpollens performs both initial checks when the customer onboards and periodically during the customer contract.
+The identity is checked against international lists for both PEP and Sanction.
+Effects could be block the account or to get additional information from the customer.
 
-Your end-customer will want to access some of his very sensitive data directly on his selfcare :
-- his card PIN
-- his card number, expiry date, CVV2 code
-- his account IBAN
+---
 
-These data are subject to a specific regulation, PCI-DSS.
+## Scoring 
+Xpollens performs a scoring calculation based on customers informations.
+Main effect from a customer relationship perspective is the time between 2 KYC updates.
 
-> You do not need to become PCI-DSS compliant. Our solution is compliant and packaged inside our ```Secure Interface``` : you will never manipulate unencrypted sensitive data.
+---
 
-<Highlight type="tip">
-Screen mirroring, screenshots, malware, spyware, jailbreak, code change : our Secure Interface is there to ensure these types of hack will not occur on your end-customer's device.
-</Highlight>
+## Tax information control
 
+### Procees introduction
+To support governments to fight against tax evasion, financial institutions must implement solutions to collect and verify their 
+customers' tax information.
 
+Xpollens does collect and verify its customers tax information at the onboarding but also periodically or following an event, for update.
 
+### Physical Person detailled process
+At the onbaording, the tax informations and US relation are asked and are mandatories.
+Our customer can prodvide up to 3 tax countries and Tax Idenfication Numbers (TIN).
 
-## SDK Secure Interface
+Here after are tho examples :
+- First a non US customer providing its taxation information correctly in coherency with its personal informations.
+- Second an american customer providing its taxation information correctly in coherency with its personal informations.
 
-To ensure end-to-end encryption, some payloads will be fully encrypted. You will **not** have the keys to decrypt such payloads, and you will have to use our SDK to encrypt the payload directly on your end-user's device.
+<Image src="docs/Compliance-Tax-Info-NonUS.png" alt="usecase 1"/>
 
-> Note that you will not have access to your end-user's data ; only her/him will have the possibility to see the data.
-> 
-> ``` issuerClientId ``` is the SDK parameter that must receive the ``` publicUserCode ``` given by the **callback type 34**.
+<Image src="docs/Compliance-Tax-Info-US.png" alt="usecase 2"/>
 
-<Image src="docs/SCA-encryption-basics.png" alt="usecase 1"/>
+### Businesses detailled process
+Under construction and available soon
 
-<Highlight type="caution">
-<b class="term">Our Secure Interface SDK documentation is subject to Non-Disclosure Agreement, please talk to your Sales Representative.</b>
-</Highlight>
+## Endpoints
+
+You can provide tax information for check using this API :
+
+<Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
+
+Once the Tax info has been vaidated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
+
+<Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/self-certification" method="get"/> 
+
+---
+
+## AML/FT control
+XPollens is processing operation screening and monitoring to secure the customers and fight against Money Laundering and terrorism Financing..
+For example, operations IN coming from sensible geographies will be blocked or operation out to sensitive people..
+
+---
+
+## Endpoints
+
+You can retrieve all the user compliance informations through a single API :
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="GET /api/v2.1/user/compliance/{appUserId}" method="get"/>
+
+More information regarding this endpoint in the [API reference.](/api/Core)
