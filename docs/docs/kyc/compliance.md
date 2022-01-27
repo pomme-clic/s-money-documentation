@@ -4,7 +4,8 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Compliance
-As a part of BPCE group, Xpollens is following the BPCE compliance group directives. Here after is an introduction of the different processes involved.
+As a part of BPCE group, Xpollens is following the BPCE compliance group directives. 
+Here after is an introduction of the different processes involved.
 
 ## PEP and Sanction control
 
@@ -12,8 +13,7 @@ As a part of BPCE group, Xpollens is following the BPCE compliance group directi
 Those people, politically exposed persons (PEPs), hold a crucial position in public and are vulnerable to financial crime.
 
 ### Sanction People or organization
-Those persons, organizations or governments may have the potential to be involved in the financial activities which are:
-
+Those persons, organizations or governments may have the potential to be involved in the financial activities which are:  
 - Terrorism financing
 - Trafficking of narcotics
 - Violation of human rights
