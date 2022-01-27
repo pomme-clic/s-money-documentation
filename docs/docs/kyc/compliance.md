@@ -26,9 +26,13 @@ Xpollens performs both initial checks when the customer onboards and periodicall
 The identity is checked against international lists for both PEP and Sanction.
 Effects could be block the account or to get additional information from the customer.
 
+---
+
 ## Scoring 
 Xpollens performs a scoring calculation based on customers informations.
 Main effect from a customer relationship perspective is the time between 2 KYC updates.
+
+---
 
 ## Tax information control
 
@@ -53,8 +57,28 @@ Here after are tho examples :
 ### Businesses detailled process
 Under construction and available soon
 
+## Endpoints
+
+You can provide tax information for check using this API :
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
+
+Once the Tax info has been vaidated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.1/user/{appUserId}/self-certification" method="get"/> 
+
+---
+
 ## AML/FT control
 XPollens is processing operation screening and monitoring to secure the customers and fight against Money Laundering and terrorism Financing..
 For example, operations IN coming from sensible geographies will be blocked or operation out to sensitive people..
 
+---
 
+## Endpoints
+
+You can retrieve all the user compliance informations through a single API :
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="GET /api/v2.1/user/compliance/{appUserId}" method="get"/>
+
+More information regarding this endpoint in the [API reference.](/api/Core)
