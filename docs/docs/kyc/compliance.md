@@ -64,11 +64,11 @@ Under construction and available soon
 
 You can provide tax information for check using this API :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
+<Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
 
 Once the Tax info has been vaidated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.1/user/{appUserId}/self-certification" method="get"/> 
+<Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/self-certification" method="get"/> 
 
 ---
 
