@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Compliance  
+# Complanfzzf
 
 As a part of BPCE group, Xpollens is following the BPCE compliance group directives. 
 Here after is an introduction of the different processes involved.
