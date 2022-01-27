@@ -14,12 +14,12 @@ Those people, politically exposed persons (PEPs), hold a crucial position in pub
 ### Sanction People or organization
 Those persons, organizations or governments may have the potential to be involved in the financial activities which are:
 
-	Terrorism financing
-	Trafficking of narcotics
-	Violation of human rights
-	Money laundering
-	Proliferation of weapons
-	Violation of international contracts
+- Terrorism financing
+- Trafficking of narcotics
+- Violation of human rights
+- Money laundering
+- Proliferation of weapons
+- Violation of international contracts
 
 ### Xpollens controls
 Xpollens performs both initial checks when the customer onboards and periodically during the customer contract.
