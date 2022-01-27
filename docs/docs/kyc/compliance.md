@@ -46,9 +46,9 @@ Here after are tho examples :
 	First a non US customer providing its taxation information correctly in coherency with its personal informations.
 	Second an american customer providing its taxation information correctly in coherency with its personal informations.
 	
-<Image src="docs/PPTAXINFONONUS.png" alt="usecase 1"/>
+<Image src="docs/Compliance-Tax-Info-NonUS.png" alt="usecase 1"/>
 
-<Image src="docs/PPTAXINFOUS.png" alt="usecase 2"/>
+<Image src="docs/Compliance-Tax-Info-US.png" alt="usecase 2"/>
 
 ### Businesses detailled process
 Under construction and soon available
