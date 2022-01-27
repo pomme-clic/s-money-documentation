@@ -5,7 +5,7 @@ import Cta from '@theme/Cta'
 
 
 
-# Banking Compliance
+# Compliance
 
 ## Context
 
