@@ -85,6 +85,6 @@ For example, operations IN coming from sensible geographies will be blocked or o
 
 You can retrieve all the user compliance informations through a single API :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="GET /api/v2.1/user/compliance/{appUserId}" method="get"/>
+<Endpoint apiUrl="/v2.1/compliance" path="GET /api/v2.1/user/compliance/{appUserId}" method="get"/>
 
-More information regarding this endpoint in the [API reference.](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Compliance)
