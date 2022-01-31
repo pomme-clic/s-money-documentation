@@ -20,7 +20,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Payment',
-      items: ['docs/payment/beneficiaries', 'docs/payment/IP', 'docs/payment/topup', 'docs/payment/card-payment' , 'docs/payment/sdd'],
+      items: ['docs/payment/beneficiaries', 'docs/payment/IP', 'docs/payment/card-payment' , 'docs/payment/sdd'],
     },
     {
       type: 'category',
