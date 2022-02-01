@@ -180,6 +180,14 @@ Example:
 https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p
 ```
 
+To then show this webview to your end-user, you must iframe it in your app, allowing access to both cameras, and also allowing fullscreen.
+
+Example:
+```
+<iframe src="https://pad-staging.api-ot.com/api/v2/static/dist/index.html?technicalId=DC0A9829DF8D544A581292D8CE6C4C48FCEC14A07DDD4F0C8A1B9CFD8487711CB7A49C47047521DF3C9967215B5D7937310E26743193A7D5431AB2DA9A27AFE4&token=J5Ti9Y9p"  allow="camera;fullscreen" allowfullscreen="true" style="width: 100vw; height: 100vh;" frameborder="0"></iframe>
+```
+
+
 ### Main: Close webview URL
 
 You will know when to close the webview when the URL changes, adding a ``` #SUCCESS ``` at the end.
