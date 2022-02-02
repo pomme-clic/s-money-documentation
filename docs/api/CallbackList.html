@@ -1,0 +1,3745 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="Callbacks%20Webhook_fichiers/filelist.xml">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+x\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<style id="Callbacks Webhook_1650_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:" ";}
+.font01650
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;}
+.font51650
+	{color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;}
+.xl151650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl651650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl661650
+	{padding:0px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Poppins;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid #8EA9DB;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid #8EA9DB;
+	background:#FFC000;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl671650
+	{padding:0px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Poppins;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid #8EA9DB;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid #8EA9DB;
+	background:#FFC000;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl681650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl691650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl701650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl711650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl721650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl731650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl741650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl751650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl761650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl771650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl781650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl791650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl801650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl811650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl821650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl831650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl841650
+	{padding:0px;
+	mso-ignore:padding;
+	color:#172B4D;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Segoe UI", sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid black;
+	border-right:none;
+	border-bottom:.5pt solid black;
+	border-left:.5pt solid black;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl851650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid black;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl861650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Segoe UI", sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid black;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl871650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid black;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl881650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid black;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl891650
+	{padding:0px;
+	mso-ignore:padding;
+	color:#172B4D;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid black;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl901650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:none;
+	border-left:.5pt solid black;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl911650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:none;
+	border-left:.5pt solid black;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl921650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:none;
+	border-left:.5pt solid black;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl931650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl941650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl951650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl961650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl971650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl981650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl991650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1001650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1011650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1021650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1031650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1041650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1051650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1061650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1071650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1081650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1091650
+	{padding:0px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Poppins;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid #8EA9DB;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#FFC000;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1101650
+	{padding:0px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Poppins;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#FFC000;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1111650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl1121650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1131650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1141650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1151650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1161650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1171650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1181650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1191650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1201650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1211650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1221650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1231650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1241650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:.5pt solid black;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1251650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:.5pt solid black;
+	border-bottom:none;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1261650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1271650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1281650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1291650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid black;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1301650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:none;
+	border-bottom:.5pt solid black;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1311650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1321650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1331650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1341650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1351650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1361650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1371650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1381650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1391650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1401650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1411650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1421650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1431650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1441650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1451650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1461650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1471650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1481650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1491650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1501650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1511650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1521650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1531650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1541650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1551650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1561650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1571650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1581650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl1591650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1601650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1611650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1621650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid black;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1631650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt solid black;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1641650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1651650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1661650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	background:#D6DCE4;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1671650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1681650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1691650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl1701650
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;
+	background:#E7E6E6;
+	mso-pattern:black none;
+	white-space:nowrap;}
+-->
+</style>
+<title>Callback</title>
+</head>
+
+<body>
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+<!--Les informations suivantes ont été générées par l’Assistant Publier en tant
+que page web de Microsoft Excel.-->
+<!--SI vous republiez le même élément à partir d'Excel, toutes les informations
+entre les balises DIV seront remplacées.-->
+<!----------------------------->
+<!--DÉBUT DE LA SORTIE À PARTIR DE L'ASSISTANT PUBLIER EN TANT QUE PAGE WEB
+D'EXCEL -->
+<!----------------------------->
+
+<div id="Callbacks Webhook_1650" align=center x:publishsource="Excel">
+
+<h1 style='color:black;font-family:Calibri;font-size:14.0pt;font-weight:800;
+font-style:normal'>Callback</h1>
+
+<table border=0 cellpadding=0 cellspacing=0 width=2072 style='border-collapse:
+ collapse;table-layout:fixed;width:1556pt'>
+ <col class=xl691650 width=170 span=2 style='mso-width-source:userset;
+ mso-width-alt:6058;width:128pt'>
+ <col class=xl1111650 width=170 style='mso-width-source:userset;mso-width-alt:
+ 6058;width:128pt'>
+ <col class=xl681650 width=490 style='mso-width-source:userset;mso-width-alt:
+ 17436;width:368pt'>
+ <col width=263 style='mso-width-source:userset;mso-width-alt:9358;width:197pt'>
+ <col width=82 style='width:62pt'>
+ <col class=xl651650 width=727 style='mso-width-source:userset;mso-width-alt:
+ 25856;width:545pt'>
+ <tr height=28 style='height:21.0pt'>
+  <td height=28 class=xl661650 width=170 style='height:21.0pt;width:128pt'>Callback
+  type</td>
+  <td class=xl661650 width=170 style='width:128pt'>Domain</td>
+  <td class=xl1101650 width=170 style='width:128pt'>Webhook</td>
+  <td class=xl1091650 width=490 style='width:368pt'>Callback context</td>
+  <td class=xl661650 width=263 style='width:197pt'>Parameters (Payload Details)</td>
+  <td class=xl661650 width=82 style='width:62pt'>Type</td>
+  <td class=xl671650 width=727 style='width:545pt'>Description</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=6 height=442 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:331.8pt'>1</td>
+  <td rowspan=6 class=xl1181650 style='border-bottom:1.0pt solid black'>Acquisition</td>
+  <td rowspan=6 class=xl1351650 style='border-bottom:1.0pt solid black'>NON</td>
+  <td rowspan=6 class=xl1211650 style='border-bottom:1.0pt solid black'>TopUp</td>
+  <td class=xl761650>id</td>
+  <td class=xl761650 style='border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-left:none;width:545pt'>Identifiant
+  de la transaction</td>
+ </tr>
+ <tr height=173 style='height:129.6pt'>
+  <td height=173 class=xl781650 style='height:129.6pt;border-top:none'>error</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Code d’erreur pour les paiements échoués, 0 si aucune
+  erreur.<br>
+    Référentiels des statuts : <br>
+    0 = 0XXX operation succeeded or still processing<br>
+    10 = 1XXX operation rejected because of bad request configuration<br>
+    11 = 2XXX operation rejected because of bad reference usage<br>
+    12 = 3XXX operation rejected because of bad account configuration<br>
+    13 = 4XXX operation rejected because of the bank or the supplier<br>
+    14 = 5XXX operation rejected because of a system error<br>
+    15 = 6XXX operation rejected because of anti-fraud engine</td>
+ </tr>
+ <tr height=192 style='height:144.0pt'>
+  <td height=192 class=xl781650 style='height:144.0pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction<br>
+    Référentiels des statuts : <br>
+    -1 = unknow<br>
+    0 = waiting<br>
+    1 = completed<br>
+    2 = refunded<br>
+    3 = refused<br>
+    4 = Waiting for validation<br>
+    5 = Cancelled<br>
+    6 = Waiting to be sent</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>type</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>initialOrderID</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction initiale</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>amount</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=6 height=653 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:490.2pt;border-top:none'>4</td>
+  <td rowspan=6 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>User &amp; KYC</td>
+  <td rowspan=6 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=6 class=xl1471650 width=490 style='border-bottom:1.0pt solid black;
+  border-top:none;width:368pt'><font class="font51650">KYC demand</font><font
+  class="font01650"><br>
+    Sent everytime the status of the KYC demand is updated</font></td>
+  <td class=xl701650 style='border-top:none'>type</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callback type = 4</td>
+ </tr>
+ <tr height=96 style='height:72.0pt'>
+  <td height=96 class=xl721650 style='height:72.0pt;border-top:none'>status</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'><font class="font51650">status of the KYC demand :</font><font
+  class="font01650"><br>
+    Initialized<br>
+    Incomplete<br>
+    Complete<br>
+    Pending</font></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>appUserId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The user's unique identifier</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>diligences
+  -&gt; reason</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The reason of acceptance or rejection of the diligence :</td>
+ </tr>
+ <tr height=422 style='height:316.8pt'>
+  <td height=422 class=xl721650 style='height:316.8pt;border-top:none'>diligences
+  -&gt; diligenceType</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'><font class="font51650">type of the diligence :</font><font
+  class="font01650"><br>
+    ID_CARD<br>
+    PASSPORT<br>
+    VETERAN_CARD<br>
+    MILITARY_ID<br>
+    RES_CARD<br>
+    EMPL_CONTRACT<br>
+    PAYSLIP<br>
+    CESU<br>
+    PENSION_RET<br>
+    STUDENT_ID<br>
+    TAX_NOTICE<br>
+    INCOME_TAX<br>
+    ASDIR<br>
+    RSA<br>
+    RMI<br>
+    DIS_CERTIF<br>
+    PROOF_FAM_ALLOW<br>
+    ACC_STAT<br>
+    SCTIN<br>
+    ACC_AGG<br>
+    SELFIE</font></td>
+ </tr>
+ <tr height=78 style='height:58.2pt'>
+  <td height=78 class=xl741650 style='height:58.2pt;border-top:none'>diligences
+  -&gt; Status</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'><font class="font51650">status of the diligence</font><font
+  class="font01650"> :<br>
+    Validated<br>
+    Refused<br>
+    To_Review_Manually</font></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=3 height=58 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:43.8pt;border-top:none'>5</td>
+  <td rowspan=3 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Acquisition</td>
+  <td rowspan=3 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>NON</td>
+  <td rowspan=3 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Enregistrement de carte bancaire</td>
+  <td class=xl761650 style='border-top:none'>type</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>id</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appcardid de la carte enregistrée</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>userid</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur qui a enregistré la carte</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=5 height=192 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:144.6pt;border-top:none'>16</td>
+  <td rowspan=5 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=5 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=5 class=xl1441650 style='border-bottom:1.0pt solid black;
+  border-top:none'>SCTIn</td>
+  <td class=xl701650 style='border-top:none'>id</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl721650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=5 height=192 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:144.6pt;border-top:none'>17</td>
+  <td rowspan=5 class=xl1181650 style='border-top:none'>Transfer</td>
+  <td rowspan=5 class=xl1351650 style='border-top:none'>OUI</td>
+  <td rowspan=5 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>SCTOut</td>
+  <td class=xl761650 style='border-top:none'>id</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl781650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=5 height=192 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:144.6pt;border-top:none'>18</td>
+  <td rowspan=5 class=xl1411650 style='border-bottom:1.0pt solid black'>Transfer</td>
+  <td rowspan=5 class=xl1261650 style='border-bottom:1.0pt solid black'>OUI</td>
+  <td rowspan=5 class=xl1441650 style='border-bottom:1.0pt solid black;
+  border-top:none'>SDDOut</td>
+  <td class=xl701650 style='border-top:none'>id</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl721650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=5 height=192 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:144.6pt;border-top:none'>19</td>
+  <td rowspan=5 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=5 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=5 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>SDDIn</td>
+  <td class=xl761650 style='border-top:none'>id</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl781650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=19 height=534 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:403.8pt;border-top:none'>20</td>
+  <td rowspan=19 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Card Operation</td>
+  <td rowspan=19 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=19 class=xl1471650 width=490 style='border-bottom:1.0pt solid black;
+  border-top:none;width:368pt'><font class="font51650">Card Operation</font><font
+  class="font01650"> Status change</font></td>
+  <td class=xl701650 style='border-top:none'>Id</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>long</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>S-money internal Id</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Operation OrderID</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>type</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callback Type = 20</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>appCardId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>reference of the card given by the partner</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>transactionAmount</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>decimal</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>amount in local currency (euro or foreign currency)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>currencyCodeTransaction</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>string</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>currency transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>cardHolderBillingAmount</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>decimal</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Amount in euro (used for foreign currency transactions)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>cardHolderBillingConversionRate</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>decimal</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Exchange rate (used for foreign currency transactions)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>availableBalance</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>decimal</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>balance after authorization</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>actionCode</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>response codes (authorization and reasons for refusal)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>merchantType</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>merchant category code</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>cardAcceptorIdentificationCodeName</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>string</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>merchant information = name, adress</td>
+ </tr>
+ <tr height=134 style='height:100.8pt'>
+  <td height=134 class=xl721650 style='height:100.8pt;border-top:none'>status</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Operations status<br>
+    0 = Waiting<br>
+    1 = Completed<br>
+    2 = Refunded<br>
+    3 = Failed<br>
+    5 = Cancelled<br>
+    7 = Expired</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl721650 style='height:28.8pt;border-top:none'>ert</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>transaction context <br>
+    (more details on the codification in Chapter 2.5)</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl721650 style='height:28.8pt;border-top:none'>cardDataInputMode</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>how to use the card<br>
+    (more details on the codification in Chapter 2.5)</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl721650 style='height:28.8pt;border-top:none'>tokenRequestorID</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>determines a payment that uses a token (such as XPAY)<br>
+    (more details on the codification in Chapter 2.5)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>terminalCountryCode</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>country reference where payment took place</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>string</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>reference of the user given by the partner</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>executedDate</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>DateTime</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Executed date of the operation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=7 height=671 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:504.6pt;border-top:none'>21</td>
+  <td rowspan=7 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Card management</td>
+  <td rowspan=7 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=7 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Card creation (or card change status)<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl761650 style='border-top:none'>id</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Xpollens' internal and technical card identifier</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Reference or Alias of the card (Called also AppCardId)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>type</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>21' is the callback type when the card is ordered or it's status
+  has changed<span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height=134 style='height:100.8pt'>
+  <td height=134 class=xl781650 style='height:100.8pt;border-top:none'>cardType</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type of the card ordered. <br>
+    Here are the different types that the card can have:<br>
+    1 = Classic virtual<br>
+    2 = Classic physical<br>
+    3 = Premium virtual<br>
+    4 = Premium physical<br>
+    </td>
+ </tr>
+ <tr height=134 style='height:100.8pt'>
+  <td height=134 class=xl781650 style='height:100.8pt;border-top:none'>action</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Actions done on the card.<br>
+    Here are the different values of actions.<br>
+    0 = Creation<br>
+    1 = Cancellation <br>
+    2 = Refabrication<br>
+    3 = Renewal ( Not used yet)<br>
+    4 = Update<span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height=211 style='height:158.4pt'>
+  <td height=211 class=xl781650 style='height:158.4pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Status of the card.<br>
+    Here are the different stauts that the card can have:<br>
+    0 = Ordered<br>
+    1 = Sent<br>
+    2 = Activated<br>
+    3 = Expired (Not used yet)<br>
+    4 = Opposed<br>
+    5= Failed<br>
+    6=Deactivated<br>
+    7=Cancelled<br>
+    </td>
+ </tr>
+ <tr height=135 style='height:101.4pt'>
+  <td height=135 class=xl801650 style='height:101.4pt;border-top:none'>opposedReason</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Reason on card's opposition, this field is different than '0'
+  only when the card is opposed.<br>
+    Here are the different reasons for card's opposition: <br>
+    07 = special conditions<br>
+    34 = Suspected fraud<br>
+    41 = Lost<br>
+    43 = Stolen<br>
+    </td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=3 height=58 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:43.8pt;border-top:none'>24</td>
+  <td rowspan=3 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Card Operation</td>
+  <td rowspan=3 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=3 class=xl1471650 width=490 style='border-bottom:1.0pt solid black;
+  border-top:none;width:368pt'><font class="font51650">Card Operation Clearing</font><font
+  class="font01650"> processing Id</font></td>
+  <td class=xl701650 style='border-top:none'>id</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>long</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>S-money internal Id</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Batch file reference to retrieve the operations of the clearing
+  report with the API</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callbacks card clearing = 24</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=9 height=461 class=xl1181650 style='height:346.2pt;border-top:
+  none'>25</td>
+  <td rowspan=9 class=xl1181650 style='border-top:none'>Card management</td>
+  <td rowspan=9 class=xl1351650 style='border-top:none'>OUI</td>
+  <td rowspan=9 class=xl1211650 style='border-top:none'>Token life cycle
+  management (or token status change )<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl761650 style='border-top:none'>&nbsp;id</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Xpollens' internal and technical card identifier</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>reference</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Reference or Alias of the card (Called also AppCardId)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>type</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>25' is the callback type sent when the Token is created or
+  changes it's status</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>tokenValue</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Value of the token</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>tokenReferenceID</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Value returned by VISA, it's an unique ID for the Token
+  associated with the PAN (Card)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>tokenRequestorID</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Value returned by VISA, it's anID assigned to the Initiator of
+  the Token Request</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>panReferenceId</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Value returned by VISA refers to the pan</td>
+ </tr>
+ <tr height=154 style='height:115.2pt'>
+  <td height=154 class=xl781650 style='height:115.2pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Status of the token.<br>
+    Here are the different values that the token can have:<br>
+    A = Active for payment<br>
+    I = Inactive (not active yet) for payment<br>
+    S = Temporaly Suspended for payment<br>
+    D = Permanently Deactivated for Payment<br>
+    <br>
+    </td>
+ </tr>
+ <tr height=174 style='height:130.2pt'>
+  <td height=174 class=xl821650 style='height:130.2pt;border-top:none'>messageReasonCode</td>
+  <td class=xl821650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl831650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Reason of the reception of this callback. it will be equal to
+  1400 (Token creation) or null<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=4 height=77 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:58.2pt'>29</td>
+  <td rowspan=4 class=xl1411650 style='border-bottom:1.0pt solid black'>Transfer</td>
+  <td rowspan=4 class=xl1261650 style='border-bottom:1.0pt solid black'>OUI</td>
+  <td rowspan=4 class=xl1441650 style='border-bottom:1.0pt solid black'>P2P</td>
+  <td class=xl701650>id</td>
+  <td class=xl701650 style='border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-left:none;width:545pt'>Identifiant
+  de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>receiver</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>appaccountid du bénéficiaire de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>sender</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>appaccountid de l'emetteur de la transaction</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td rowspan=12 height=386 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:289.8pt;border-top:none'>31</td>
+  <td rowspan=12 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>User &amp; KYC</td>
+  <td rowspan=12 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=12 class=xl1561650 width=490 style='border-bottom:1.0pt solid black;
+  border-top:none;width:368pt'>KYC complementary diligence SCT_IN /
+  InstanPayment</td>
+  <td class=xl761650 style='border-top:none'>type</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callback type = 31</td>
+ </tr>
+ <tr height=77 style='height:57.6pt'>
+  <td height=77 class=xl781650 style='height:57.6pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The status of the diligence :<br>
+    Validated<br>
+    Refused<br>
+    To_Review_Manually</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>appUserId</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The user's unique identifier</td>
+ </tr>
+ <tr height=58 style='height:43.2pt'>
+  <td height=58 class=xl781650 style='height:43.2pt;border-top:none'>diligenceType</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The type of the diligence :<br>
+    SCT_In<br>
+    InstantPayment_In</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>reason</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The reason of acceptance or rejection of the diligence</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>amount</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The amount of the money in</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>transferDate</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Date</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The date of the money in transfer</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>transmitterFullName</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The firstname and lastname (and birthname if existing) of the
+  transmitter</td>
+ </tr>
+ <tr height=58 style='height:43.2pt'>
+  <td height=58 class=xl781650 style='height:43.2pt;border-top:none'>operationType</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The type of the operation :<br>
+    SCT_In<br>
+    InstantPayment_In</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>orderId</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The operation's unique identifier</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>score
+  -&gt; name</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The result of the identity matching algorithm (between 0 and 1)</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>score
+  -&gt; firstname</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>Int</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The result of the identity matching algorithm (between 0 and 1)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=4 height=77 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:58.2pt;border-top:none'>32</td>
+  <td rowspan=4 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Compliance</td>
+  <td rowspan=4 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=4 class=xl1471650 width=490 style='border-bottom:1.0pt solid black;
+  border-top:none;width:368pt'><font class="font51650">Risk Level</font><font
+  class="font01650"> change</font></td>
+  <td class=xl701650 style='border-top:none'>&nbsp;eventDate</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>Date</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Date of the risk level event change</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>appUserId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Xpollens Customer Identifier given by the partner</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>riskLevel</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Level of customer risk based on several criteria. Can be Low,
+  Medium or high</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callback Type=32</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=9 height=172 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:130.2pt;border-top:none'>33</td>
+  <td rowspan=9 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Account</td>
+  <td rowspan=9 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=9 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Client debt created<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl761650 style='border-top:none'>type</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>string</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>33 : is the code of the callback dedicated to a debt creation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Date</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>datetime</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Date of origin operation creation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>id</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>string</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Id of the origin operation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>char</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The user technical identification</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>originAmount</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>long</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The amount of principal operation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Status of the debt (In progress,closed with recovery or closed
+  without recovery)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>debtAmount</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>long</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The principal amount of a debt</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>debtReason</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>string</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Functional cases leading to a debt creation ( P2P, CardOperation
+  ,JRI)</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>lossAndProfitBalance</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>long</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The amount of loss and profit account after the debt creation.</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=4 height=154 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:115.8pt;border-top:none'>34</td>
+  <td rowspan=4 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>User &amp; KYC</td>
+  <td rowspan=4 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=4 class=xl1591650 style='border-bottom:1.0pt solid black;
+  border-top:none'>User's onboarding state (called <font class="font51650">user
+  record</font><font class="font01650">)</font></td>
+  <td class=xl701650 style='border-top:none'>type</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callback type = 34</td>
+ </tr>
+ <tr height=96 style='height:72.0pt'>
+  <td height=96 class=xl721650 style='height:72.0pt;border-top:none'>userRecordStatus</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The status of the user record :<br>
+    1	Initialized <br>
+    2	InProgress<br>
+    4	Validated<br>
+    5	Refused</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>appUserId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The user's unique identifier</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>publicUserCode</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Corresponds to issuerClientID at Antelop. It is used to create
+  the wallet at Antelop</td>
+ </tr>
+ <tr height=22 style='height:16.8pt'>
+  <td rowspan=5 height=111 class=xl1181650 style='height:83.7pt;border-top:
+  none'>35</td>
+  <td rowspan=5 class=xl1181650 style='border-top:none'>Foundation</td>
+  <td rowspan=5 class=xl1351650 style='border-top:none'>OUI</td>
+  <td rowspan=5 class=xl1211650 style='border-top:none'>Callback for strong
+  authentication (sensitives actions)</td>
+  <td class=xl841650 dir=LTR>type</td>
+  <td class=xl851650>String</td>
+  <td class=xl861650 dir=LTR style='border-left:none'>Callback Type (35)</td>
+ </tr>
+ <tr height=22 style='mso-height-source:userset;height:16.5pt'>
+  <td height=22 class=xl841650 dir=LTR style='height:16.5pt;border-top:none'>AppUserId</td>
+  <td class=xl851650 style='border-top:none'>String</td>
+  <td class=xl861650 dir=LTR style='border-top:none;border-left:none'>User's
+  unique identifier</td>
+ </tr>
+ <tr height=22 style='mso-height-source:userset;height:16.5pt'>
+  <td height=22 class=xl841650 dir=LTR style='height:16.5pt;border-top:none'>ActivationCode</td>
+  <td class=xl851650 style='border-top:none'>String</td>
+  <td class=xl861650 dir=LTR style='border-top:none;border-left:none'>Code use
+  to activate wallet (32 char)</td>
+ </tr>
+ <tr height=22 style='mso-height-source:userset;height:16.5pt'>
+  <td height=22 class=xl841650 dir=LTR style='height:16.5pt;border-top:none'>ErrorMessage</td>
+  <td class=xl851650 style='border-top:none'>String</td>
+  <td class=xl861650 dir=LTR style='border-top:none;border-left:none'>Error
+  message if an error occurs</td>
+ </tr>
+ <tr height=23 style='height:17.4pt'>
+  <td height=23 class=xl841650 dir=LTR style='height:17.4pt;border-top:none'>ExtraData</td>
+  <td class=xl851650 style='border-top:none'>Json Object</td>
+  <td class=xl861650 dir=LTR style='border-top:none;border-left:none'>Contains
+  the webview URL</td>
+ </tr>
+ <tr height=19 style='mso-height-source:userset;height:14.4pt'>
+  <td rowspan=8 height=192 class=xl1261650 style='border-bottom:1.0pt solid black;
+  height:145.2pt'>36</td>
+  <td rowspan=8 class=xl1291650 style='border-bottom:1.0pt solid black'>Foundation</td>
+  <td rowspan=8 class=xl1621650>OUI</td>
+  <td rowspan=8 class=xl1241650>Callback for strong authentication (wallet
+  enrollment)</td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>AuthenticationId</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>long</td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>Id of the
+  Authentication Operation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl871650 dir=LTR style='height:14.4pt;border-top:none;
+  border-left:none'>Type</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>Callback
+  Type (36)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl871650 dir=LTR style='height:14.4pt;border-top:none;
+  border-left:none'>AppUserId</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl891650 dir=LTR style='border-top:none;border-left:none'>User's
+  unique identifier</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl871650 dir=LTR style='height:15.0pt;border-top:none;
+  border-left:none'>AuthenticationResultDate</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>Datetime</td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>Effective
+  authentication result date</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl871650 dir=LTR style='height:14.4pt;border-top:none;
+  border-left:none'>RequestProcessedDate</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>Datetime</td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>Effective
+  end date for the operation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl871650 dir=LTR style='height:14.4pt;border-top:none;
+  border-left:none'>RequestResponseCode</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>int</td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>Http
+  status code of the operation</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl871650 dir=LTR style='height:14.4pt;border-top:none;
+  border-left:none'>Status</td>
+  <td class=xl881650 style='border-top:none;border-left:none'>enum Authentic<span
+  style='display:none'>ationStatus</span></td>
+  <td class=xl871650 dir=LTR style='border-top:none;border-left:none'>Status of
+  the authentication</td>
+ </tr>
+ <tr height=58 style='height:43.8pt'>
+  <td height=58 class=xl901650 dir=LTR style='height:43.8pt;border-top:none;
+  border-left:none'>Reason</td>
+  <td class=xl911650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl921650 dir=LTR width=727 style='border-top:none;border-left:none;
+  width:545pt'>TIMEOUT: customer did not authenticate in due time<br>
+    CANCELED: customer canceled the authentication request,<br>
+    FAILED: customer did not successfully authenticate</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=6 height=442 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:331.8pt;border-top:none'>37</td>
+  <td rowspan=6 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Acquisition</td>
+  <td rowspan=6 class=xl1351650 style='border-bottom:1.0pt solid black'>&nbsp;</td>
+  <td rowspan=6 class=xl1211650 style='border-bottom:1.0pt solid black'>Refund
+  TopUp</td>
+  <td class=xl761650>id</td>
+  <td class=xl761650 style='border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-left:none;width:545pt'>Identifiant
+  de la transaction</td>
+ </tr>
+ <tr height=173 style='height:129.6pt'>
+  <td height=173 class=xl781650 style='height:129.6pt;border-top:none'>error</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Code d’erreur pour les paiements échoués, 0 si aucune
+  erreur.<br>
+    Référentiels des statuts : <br>
+    0 = 0XXX operation succeeded or still processing<br>
+    10 = 1XXX operation rejected because of bad request configuration<br>
+    11 = 2XXX operation rejected because of bad reference usage<br>
+    12 = 3XXX operation rejected because of bad account configuration<br>
+    13 = 4XXX operation rejected because of the bank or the supplier<br>
+    14 = 5XXX operation rejected because of a system error<br>
+    15 = 6XXX operation rejected because of anti-fraud engine</td>
+ </tr>
+ <tr height=192 style='height:144.0pt'>
+  <td height=192 class=xl781650 style='height:144.0pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction<br>
+    Référentiels des statuts : <br>
+    -1 = unknow<br>
+    0 = waiting<br>
+    1 = completed<br>
+    2 = refunded<br>
+    3 = refused<br>
+    4 = Waiting for validation<br>
+    5 = Cancelled<br>
+    6 = Waiting to be sent</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>type</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>initialOrderID</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction initiale</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>amount</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=7 height=230 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:173.4pt;border-top:none'>38</td>
+  <td rowspan=7 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=7 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=7 class=xl1441650 style='border-bottom:1.0pt solid black;
+  border-top:none'><span style='mso-spacerun:yes'> </span>InstantPaymentIn</td>
+  <td class=xl701650 style='border-top:none'>id</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>orderId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>operationAmount</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl721650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>rejectReason</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Motif du rejet, en cas de rejet de la transaction</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=7 height=230 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:173.4pt;border-top:none'>39</td>
+  <td rowspan=7 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=7 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=7 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>InstantPaymentOut</td>
+  <td class=xl761650 style='border-top:none'>id</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>orderId</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>operationAmount</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl781650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>rejectReason</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Motif du rejet, en cas de rejet de la transaction</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=7 height=249 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:187.8pt;border-top:none'>40</td>
+  <td rowspan=7 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=7 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=7 class=xl1441650 style='border-bottom:1.0pt solid black;
+  border-top:none'>FundReservation</td>
+  <td class=xl701650 style='border-top:none'>type</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>operationId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>orderId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>userId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>operationAmount</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>authorizationBalanceAmount</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Solde d'autorisation</td>
+ </tr>
+ <tr height=135 style='height:101.4pt'>
+  <td height=135 class=xl741650 style='height:101.4pt;border-top:none'>dispositionCheckStatusId</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut du DispositionCheck.<br>
+    Référentiel des status : <br>
+    <span style='mso-spacerun:yes'>     </span>NotReceived = 1,<br>
+    <span style='mso-spacerun:yes'>     </span>Requested = 2,<br>
+    <span style='mso-spacerun:yes'>     </span>Authorized = 3,<br>
+    <span style='mso-spacerun:yes'>     </span>Refused = 10,<br>
+    <span style='mso-spacerun:yes'>     </span>Canceled = 11</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=7 height=230 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:173.4pt;border-top:none'>41</td>
+  <td rowspan=7 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=7 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=7 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>RecallInstantPaymentIn</td>
+  <td class=xl761650 style='border-top:none'>id</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>orderId</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>operationAmount</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl781650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>rejectReason</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Motif du rejet, en cas de rejet de la transaction</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl811650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=7 height=230 class=xl1411650 style='border-bottom:1.0pt solid black;
+  height:173.4pt;border-top:none'>42</td>
+  <td rowspan=7 class=xl1411650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Transfer</td>
+  <td rowspan=7 class=xl1261650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=7 class=xl1441650 style='border-bottom:1.0pt solid black;
+  border-top:none'>RecallInstantPaymentOut</td>
+  <td class=xl701650 style='border-top:none'>id</td>
+  <td class=xl701650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl711650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identifiant de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>orderId</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Orderid de la transaction</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>userid</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Appuserid de l'utilisateur</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>operationAmount</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Montant de la transaction</td>
+ </tr>
+ <tr height=115 style='height:86.4pt'>
+  <td height=115 class=xl721650 style='height:86.4pt;border-top:none'>status</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Statut de la transaction. <br>
+    Référentiel des statuts : <br>
+    <span style='mso-spacerun:yes'>        </span>Pending = 0,<br>
+    <span style='mso-spacerun:yes'>        </span>Succeeded = 1,<br>
+    <span style='mso-spacerun:yes'>        </span>Refund = 2,<br>
+    <span style='mso-spacerun:yes'>        </span>Failed = 3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl721650 style='height:14.4pt;border-top:none'>rejectReason</td>
+  <td class=xl721650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl731650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Motif du rejet, en cas de rejet de la transaction</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl741650 style='height:15.0pt;border-top:none'>type</td>
+  <td class=xl741650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl751650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Type du callback</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=23 height=553 class=xl1181650 style='border-bottom:1.0pt solid black;
+  height:418.2pt;border-top:none'>43</td>
+  <td rowspan=23 class=xl1181650 style='border-bottom:1.0pt solid black;
+  border-top:none'>User &amp; KYC</td>
+  <td rowspan=23 class=xl1351650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=23 class=xl1211650 style='border-bottom:1.0pt solid black;
+  border-top:none'>legalEntity</td>
+  <td class=xl761650 style='border-top:none'>type</td>
+  <td class=xl761650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl771650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Callback type = 43</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>legalEntityId</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The legal entity's unique identifier</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl781650 style='height:28.8pt;border-top:none'>RegistrationNumber</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Identification number of the legal entity<br>
+    It's the Sirène if the legal Entity is registered in France</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>RegistrationCountry</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The registration country of the legal entity (Code ISO 3166-1)</td>
+ </tr>
+ <tr height=58 style='height:43.2pt'>
+  <td height=58 class=xl781650 style='height:43.2pt;border-top:none'>LegalEntityCreationStatus</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The legal entity's creation status :<br>
+    Succeeded<br>
+    Failed</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>RegistrationCity</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The legal entity's registration city</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>CompanyName</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The name of the legal entity</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>TradeName</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The commercial name of the legal entity</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>NaceCode</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Legal entity's type of economical activity</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>LegalForm</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Legal entity's legal form</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>CreationDate</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>Date</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The creation date of the legal entity</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>legalEntityRecordStatus</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>The onboarding status of the legal entity</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>TurnOver</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Turn Over N-1</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl781650 style='height:28.8pt;border-top:none'>HighFinancialIncome</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>High Financial Income<br>
+    Value: &quot;True&quot; , &quot;False&quot;</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl781650 style='height:28.8pt;border-top:none'>ListedInStockMarkets</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Listed In Stock Markets <br>
+    Value: &quot;True&quot; , &quot;False&quot;</td>
+ </tr>
+ <tr height=38 style='height:28.8pt'>
+  <td height=38 class=xl781650 style='height:28.8pt;border-top:none'>Regulated</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td class=xl791650 width=727 style='border-top:none;border-left:none;
+  width:545pt'>Regulated <br>
+    Value: &quot;True&quot; , &quot;False&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Address
+  -&gt; Street</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+  <td rowspan=7 class=xl1381650 width=727 style='border-bottom:1.0pt solid black;
+  border-top:none;width:545pt'>The address informations of the legal entity</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Address
+  -&gt; SupplementIn</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Address
+  -&gt; SupplementOut</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Address
+  -&gt; Area</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Address
+  -&gt; ZipCode</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl781650 style='height:14.4pt;border-top:none'>Address
+  -&gt; City</td>
+  <td class=xl781650 style='border-top:none;border-left:none'>String</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl801650 style='height:15.0pt;border-top:none'>Address
+  -&gt; Country</td>
+  <td class=xl801650 style='border-top:none;border-left:none'>String</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=6 height=115 class=xl1121650 style='border-bottom:1.0pt solid black;
+  height:87.0pt;border-top:none'>44</td>
+  <td rowspan=6 class=xl1321650 style='border-bottom:1.0pt solid black;
+  border-top:none'>Compliance</td>
+  <td rowspan=6 class=xl1641650 style='border-bottom:1.0pt solid black;
+  border-top:none'>OUI</td>
+  <td rowspan=6 class=xl1151650 width=490 style='border-bottom:1.0pt solid black;
+  width:368pt'>&nbsp;FatcaEai Callback</td>
+  <td class=xl931650 style='border-top:none'>&nbsp;appUserId</td>
+  <td class=xl941650>String</td>
+  <td class=xl951650 width=727 style='width:545pt'>Xpollens Customer Identifier
+  given by the partner</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl961650 style='height:14.4pt'>diligences</td>
+  <td class=xl961650>Array</td>
+  <td class=xl971650 width=727 style='width:545pt'>Customer uploaded fatcaEai
+  diligence(s) with each diligence status and reason information
+  discriminated<span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl981650 style='height:14.4pt;border-left:none'>status</td>
+  <td class=xl961650>String</td>
+  <td class=xl971650 width=727 style='width:545pt'>The global factaEai status
+  of a costumer</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl991650 style='height:14.4pt'>Reason</td>
+  <td class=xl991650>String</td>
+  <td class=xl1001650 width=727 style='width:545pt'>In case the diligences is
+  refused by xpollens analysts</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl991650 style='height:14.4pt'>date</td>
+  <td class=xl991650>date</td>
+  <td class=xl1001650 width=727 style='width:545pt'>Date that represents the
+  final calculation of the costumer fatcaEai status</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl1011650 style='height:15.0pt'>type</td>
+  <td class=xl1011650>String</td>
+  <td class=xl1021650 width=727 style='width:545pt'>Callback Type = 44</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td rowspan=3 height=57 class=xl1521650 style='height:43.2pt;border-top:none'>45</td>
+  <td rowspan=3 class=xl1691650 style='border-top:none'>Account</td>
+  <td rowspan=3 class=xl1671650 style='border-top:none'>OUI</td>
+  <td rowspan=3 class=xl1541650 width=490 style='width:368pt'>Account status</td>
+  <td class=xl1031650 style='border-top:none'>&nbsp;appUserId</td>
+  <td class=xl1041650>String</td>
+  <td class=xl1051650 width=727 style='width:545pt'>Xpollens Customer
+  Identifier given by the partner</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl1061650 style='height:14.4pt'>accountId</td>
+  <td class=xl1061650>string</td>
+  <td class=xl1071650 width=727 style='width:545pt'>Xpollens Account identifier
+  (Guid)</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl1081650 style='height:14.4pt;border-left:none'>Account
+  Status</td>
+  <td class=xl1061650>String</td>
+  <td class=xl1071650 width=727 style='width:545pt'>Account status</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=170 style='width:128pt'></td>
+  <td width=170 style='width:128pt'></td>
+  <td width=170 style='width:128pt'></td>
+  <td width=490 style='width:368pt'></td>
+  <td width=263 style='width:197pt'></td>
+  <td width=82 style='width:62pt'></td>
+  <td width=727 style='width:545pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--FIN DE LA SORTIE À PARTIR DE L'ASSISTANT PUBLIER EN TANT QUE PAGE WEB
+D'EXCEL-->
+<!----------------------------->
+</body>
+
+</html>
