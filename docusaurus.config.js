@@ -6,6 +6,7 @@ module.exports = {
   url: 'https://docs.xpollens.com/',
   baseUrl: '/',
   noIndex: false,
+  wrapPagesHTML: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
