@@ -124,9 +124,6 @@ module.exports = {
       footerCustom: {},
       baseAPIURL: '',
     },
-    gtag: {
-      trackingID: 'G-1WKNGB5DKZ',
-    },
   },
   plugins: [
     path.resolve(__dirname, './plugins/customDocument'),
