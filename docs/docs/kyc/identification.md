@@ -57,7 +57,21 @@ By triggering a sensitive operation endpoint, a push notification will be genera
 
 Here is a list of all ``` RAW_LIST ``` messages you can receive:
 
-<Image src="docs/SCA-format-rawlist.png" alt="usecase 1"/>
+| Sensitive Operation          | "message"                       | "format"  | "title"                                          | "value"                                                                  |
+| ---------------------------- | ------------------------------- | --------- | ------------------------------------------------ | ------------------------------------------------------------------------ |
+| Add a beneficiairy           | Ajout d’un Bénéficiaire         | RAW\_LIST | Nom:<br />IBAN:                                  | %Nom\_Bénéficiaire<br />%IBAN\_Masqué\_Bénéficiaire                      |
+| Modify a bénéficiary         | Modification d’un Bénéficiaire  | RAW\_LIST | Nom:<br />IBAN:                                  | %Nom\_Bénéficiaire<br />%IBAN\_Masqué\_Bénéficiaire                      |
+| Read account's information   | Consultations des opérations    | RAW\_LIST | Compte:                                          | %Nom\_Partenaire                                                         |
+| Set an immédiate transfer    | Virement immédiat               | RAW\_LIST | Montant:<br />Bénéficiaire:                      | %Montant %Devise<br />%Nom\_Bénéficiaire                                 |
+| Set a future dated transfer  | Virement planifié               | RAW\_LIST | Montant:<br />Bénéficiaire:<br />Date planifiée: | %Montant %Devise<br />%Nom\_Bénéficiaire<br /> %Date\_Future             |
+| Set a recurrent transfer     | Virement récurrent              | RAW\_LIST | Montant:<br />Bénéficiaire:<br />Récurrence:     | %Montant %Devise<br />%Nom\_Bénéficiaire<br />Tous les %Quantile du mois |
+| Order a new card             | Commande d’une Carte            | RAW\_LIST | Type:                                            | Carte VISA %Type %Nom\_Partenaire                                        |
+| Modify personal data         | Modification Donnée Personnelle | RAW\_LIST | Rue:                                             | %adresse                                                                 |
+| Accept Terms & Conditions    | Acceptation des CGU             | RAW\_LIST | Compte:                                          | %Nom\_Partenaire                                                         |
+| Sign FATCA/EAI certification | Déclaratifs Fiscaux             | RAW\_LIST | Compte:                                          | %Nom\_Partenaire                                                         |
+| Read PIN                     | Affichage Code PIN              | RAW\_LIST | Carte:                                           | %Nom\_Partenaire                                                         |
+| Choose PIN                   | Choix d’un nouveau Code PIN     | RAW\_LIST | Carte:                                           | %Nom\_Partenaire                                                         |
+| Read PAN, DLV & CVV2         | Affichage de votre Carte        | RAW\_LIST | Carte:                                           | %Nom\_Partenaire                                                         |
 
 <Highlight type="caution">
 Your customer's security-wallet must be active and properly binded for the authentication request to reach her/his mobile app.
