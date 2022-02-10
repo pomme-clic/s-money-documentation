@@ -8,6 +8,13 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## February 2022
+**Partner portal** :
+- Added a card cancellation process through the partner portal. You can now cancel a card (if a customer no longer want it for instance) via two simple clicks on your web interface.  
+
+**Users** :
+- Improved the v2.0/users POST API endpoint to adapt age of majority according to the user’s country.   
+
 ## January 2022
 **Partner portal** :
 - A new profile management module has been added to our Webportal. Partners can now create their own profile with associated rights to tailor access to their own needs.  
