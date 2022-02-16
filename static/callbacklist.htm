@@ -406,7 +406,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	font-weight:700;
 	font-style:normal;
 	text-decoration:none;
-	font-family:"Poppins Black";
+	font-family:Poppins;
 	mso-generic-font-family:auto;
 	mso-font-charset:0;
 	mso-number-format:General;
@@ -1055,7 +1055,7 @@ D'EXCEL -->
   context</td>
   <td class=xl6912013 width=312 style='border-left:none;width:234pt'>Parameter
   name</td>
-  <td class=xl8212013 width=97 style='border-left:none;width:73pt'>Parameter da<span
+  <td class=xl8212013 width=97 style='border-left:none;width:73pt'>Type<span
   style='display:none'>ta type (JSON)</span></td>
   <td class=xl6912013 width=650 style='border-left:none;width:488pt'>Parameter
   description</td>
@@ -1762,88 +1762,6 @@ D'EXCEL -->
   <td class=xl7312013 style='border-top:none;border-left:none'>string</td>
   <td class=xl7412013 width=650 style='border-top:none;border-left:none;
   width:488pt'>Callback type</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td rowspan=9 height=336 class=xl8412013 style='height:253.2pt;border-top:
-  none'>25</td>
-  <td rowspan=9 class=xl8712013 width=221 style='border-top:none;width:166pt'>Token
-  life cycle management<br>
-    (or token status change)<span style='mso-spacerun:yes'> </span></td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>&nbsp;id</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Xpollens internal card id</td>
-  <td rowspan=9 class=xl10012013 width=528 style='border-bottom:.5pt solid #A5A5A5;
-  border-top:none;width:396pt'>{<br>
-    	&quot;Id&quot;: &quot;245&quot;,<br>
-    	&quot;TokenData&quot;: &quot;123456&quot;,<br>
-    	&quot;UserId&quot;: &quot;253&quot;,<br>
-    	&quot;AppCardId&quot;: &quot;mycard&quot;,<br>
-    	&quot;Type&quot;: &quot;25&quot;,<br>
-    	&quot;Status&quot;: &quot;I&quot;,<br>
-    	&quot;MessageReasonCode&quot;: &quot;1400&quot;<br>
-    }</td>
-  <td rowspan=9 class=xl8412013 style='border-top:none'>JSON body</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>reference</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Reference or alias of the card</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>Type</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Callback type</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>tokenValue</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>int</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Value of the token</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>tokenReferenceID</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Unique VISA ID for the token associated with the PAN</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>tokenRequestorID</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>int</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Unique VISA ID assigned to the initiator of the token request</td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>panReferenceId</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>VISA pan reference</td>
- </tr>
- <tr height=120 style='height:90.0pt'>
-  <td height=120 class=xl7212013 style='height:90.0pt;border-top:none;
-  border-left:none'>Status</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Status of the token :<br>
-    <font class="font512013">A = active for payment<br>
-    I = inactive for payment<br>
-    S = temporarily suspended for payment<br>
-    D = permanently deactivated for payment</font></td>
- </tr>
- <tr height=27 style='height:20.4pt'>
-  <td height=27 class=xl7212013 style='height:20.4pt;border-top:none;
-  border-left:none'>MessageReasonCode</td>
-  <td class=xl7212013 style='border-top:none;border-left:none'>string</td>
-  <td class=xl8012013 width=650 style='border-top:none;border-left:none;
-  width:488pt'>Equal to 1400 (Token creation) or null</td>
  </tr>
  <tr height=27 style='height:20.4pt'>
   <td rowspan=4 height=108 class=xl8912013 style='height:81.6pt;border-top:
