@@ -22,7 +22,4 @@ At Xpollens, we use webhooks to notify your application when an event happens. W
 See with your Xpollens representative to setup your webhook configuration and start receiving events.  
 
 
-Click <a href="/callbacklist.htm" target="_blank">here</a> to view the full list of callbacks.
-
-
-
+<p>Click <u><a target="_blank" href="/callbacklist.htm">here</a></u> to view the full list of callbacks.</p>
