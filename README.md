@@ -132,4 +132,6 @@ Avant de publier, checklist des choses à vérifier :
 - La branche develop à publier est stable et a compilé sans erreur
 - Les secrets d'authentification ont été changé de "Swagman" à "Demo"
 
-Vous pouvez aussi mettre en production en créant une pull request de la branche develop vers main (main <- develop). Cela lancera automatiquement le processus de build netlify. Assurez vous que la branche develop soit stable (https://develop--s-money-documentation-site.netlify.app/) avant de réaliser cette action.
+Vous pouvez aussi mettre en production en créant une pull request de la branche develop vers main (main <- develop). Cela lancera automatiquement le processus de build netlify.
+
+**Assurez vous que la branche develop soit _stable_ (https://develop--s-money-documentation-site.netlify.app/) avant de réaliser cette action.**
