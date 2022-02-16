@@ -13,11 +13,7 @@ import Cta from '@theme/Cta'
 As a part of BPCE group, Xpollens is following the BPCE compliance group directives. 
 Here after is an introduction of the different processes involved.
 
-<object data="docs/xauth-cgu.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="docs/xauth-cgu.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<embed src="docs/xauth-cgu.pdf" alt="usecase 1">
 <Image src="docs/xauth-fond.png" alt="usecase 1"/>
 
 ## PEP and Sanction control
