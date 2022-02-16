@@ -13,6 +13,9 @@ import Cta from '@theme/Cta'
 As a part of BPCE group, Xpollens is following the BPCE compliance group directives. 
 Here after is an introduction of the different processes involved.
 
+<Image src="docs/xauth-cgu.pdf" alt="usecase 1"/>
+<Image src="docs/xauth-fond.png" alt="usecase 1"/>
+
 ## PEP and Sanction control
 
 ### Politically Exposed People (PEP)
