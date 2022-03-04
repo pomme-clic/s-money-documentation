@@ -132,13 +132,13 @@ Here are the steps your mobile application should follow when it's launched by a
 
 Once a new user downloads your mobile application, you will need to check if his/her app is already securely binded or not. This can be achieved by looking at the ```state```  property of the security wallet. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/sdk/wallet_management.html).
 
-The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletManager.connect() ```.
+The SDK feature you can use to check the wallet State is the ``` walletManager.connect() ```.
 
 ### Loading: Check device elligibility
 
-If the wallet is ``` onProvisioningRequired ``` then an initializing is required. If not, then you can skip very step and go directly to your Home Page. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/general/getting-started.html).
+If the wallet ``` State ``` is ``` onProvisioningRequired ``` then an initializing is required. If not, then you can skip very step and go directly to your Home Page. More info regarding this feature in the [SDK documentation](https://doc.antelop-solutions.com/latest/wallet/general/getting-started.html).
 
-The SDK feature you are looking for to trigger the security-wallet and start the device-binding is the ``` walletProvisioning.initialize() ```.
+The SDK feature to initialize the device binding is ``` walletProvisioning.initialize() ```.
 
 ### Loading: Obtain access to both webcams of the smartphone
 
