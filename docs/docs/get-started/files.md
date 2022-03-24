@@ -19,7 +19,7 @@ Here you can find all technical documentation :
 
 - [eKYC_Agent_Workflow_Callbacks.pdf](./eKYC_Agent_Workflow_Callbacks.pdf)  
 - [FAQ.xlsx](./FAQ.xlsx)  
-- [InstantPayment - Dossier d_intégration.pptx](./InstantPayment_Dossier_d_intégration.pptx)  
+- [InstantPayment - Dossier d_intégration.pptx](./InstantPayment-Dossier_integration.pptx)  
 - [Intro aux APIs Xpollens.pptx](./Intro_aux_APIs_Xpollens.pptx)  
 - [ProcessKYC-avec-VirementEntrant.png](./ProcessKYC-avec-VirementEntrant.png)  
 - [S-money - API - Getting Started - v1.0.docx](./S-money-API-Getting_Started-v1.0.docx)  
