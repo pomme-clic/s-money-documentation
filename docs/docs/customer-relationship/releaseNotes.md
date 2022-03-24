@@ -8,6 +8,15 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+
+## Mars 2022
+**Card** :
+- A new endpoint  for token Activation in the In-App6 verification workflow has been delivered. More [HERE](/api/xpay).
+- We have integrated the alias related to the subscription mode for recurring payment. You can now add the subscription mode to your one click payment method. More [HERE](/api/Core).
+
+**Partner Portal** :
+- Improved the export process.   
+
 ## February 2022
 **Partner portal** :
 - Added a card cancellation process through the partner portal. You can now cancel a card (if a customer no longer want it for instance) via two simple clicks on your web interface.  
