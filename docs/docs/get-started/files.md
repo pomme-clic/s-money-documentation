@@ -14,7 +14,7 @@ You can find here all redacted documentation. This page is not indexed in the si
 
 ## Files 
 
-### List
+### Support Docs
 Here you can find all technical documentation :
 
 - [eKYC_Agent_Workflow_Callbacks.pdf](./eKYC_Agent_Workflow_Callbacks.pdf)  
@@ -39,3 +39,8 @@ Here you can find all technical documentation :
 - [S-money-API-SCT-BiB-v2.5.docx](./S-money-API-SCT-BiB-v2.5.docx)
 - [S-money-API-Users-BiB-v2.6.docx](./S-money-API-Users-BiB-v2.6.docx)
 - [Xpollens Strong Authentication -v1.4.pdf](./Xpollens_Strong_Authentication-v1.4.pdf)
+
+### SDK Docs
+
+- [CardCompanionSDK_2.0.0_Android.zip](./CardCompanionSDK_2.0.0_Android.zip)
+- [CardCompanionSDK_2.0.0_iOS.zip](./CardCompanionSDK_2.0.0_iOS.zip)
