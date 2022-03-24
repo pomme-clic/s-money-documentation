@@ -30,7 +30,7 @@ Here you can find all technical documentation :
 - [S-money-API-CardOperations-BiB-v2.9.doc](./S-money-API-CardOperations-BiB-v2.9.doc)
 - [S-money-API-Cards-BiB-v1.33.docx](./S-money-API-Cards-BiB-v1.33.docx)
 - [S-money-API-ClientDebts-BiB-v1.2.doc](./S-money-API-ClientDebts-BiB-v1.2.doc)
-- [S-money-API-How to use STS-v1.0.docx](./S-money-API-How to use STS-v1.0.docx)
+- [S-money-API-How to use STS-v1.0.docx](./S-money-API-How_to_use_STS-v1.0.docx)
 - [S-money-API-IP-BiB-v1.0-en.docx](./S-money-API-IP-BiB-v1.0-en.docx)
 - [S-money-API-KYC-BiB-v1.5.docx](./S-money-API-KYC-BiB-v1.5.docx)
 - [S-money-API-P2P-BiB-v1.4-fr.docx](./S-money-API-P2P-BiB-v1.4-fr.docx)
