@@ -59,7 +59,7 @@ If several conditions are met, some transactions can be processed offline (so wi
 We provide you with 2 callbacks allowing you to retrieve the processing information of authorization requests made in real time as well as the processing of settlements carried out a posteriori by sending from fellow banks.
 
 
-These callback contain different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself.
+These callbacks contain different types of events corresponding to the operation. This allows you to manage smart automation such as notifying a user of his transaction (refusal or approval) but also for example to manage your transactions and your reconciliations yourself.
 
 #### type 20 _(authorization)_
 
@@ -77,7 +77,7 @@ It is the most important for you. You can follow activity and exchange with your
   "type" :                                  "int"      Callback Type = 20
   "appCardId" :                             "String"   reference of the card given by the partner
   "transactionAmount" :                     "decimal"  amount in local currency
-  "currencyCodeTransaction" :               "string"   currency transaction
+  "currencyCodeTransaction" :               "string"   ISO 4217 Numeric Code of local currency
   "cardHolderBillingAmount" :               "decimal"  Amount in euro
   "cardHolderBillingConversionRate" :       "decimal"  Exchange rate
   "availableBalance" :                      "decimal"  balance after authorization
