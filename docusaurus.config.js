@@ -58,7 +58,7 @@ module.exports = {
             },
             {
               label: 'SEPA transactions',
-              href: '/docs/payment/IP',
+              href: '/docs/payments/IP',
             },
             {
               label: 'Credit card',
@@ -66,7 +66,7 @@ module.exports = {
             },
             {
               label: 'Payment',
-              href: '/docs/payment/beneficiaries',
+              href: '/docs/payments/beneficiaries',
             },
             {
               label: 'KYC',

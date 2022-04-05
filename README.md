@@ -40,6 +40,14 @@ Les contenus se gèrent depuis [home.md](docs/docs/home.md).
 
 ---
 
+---
+
+## Figma
+
+Les contenus design blueprint depuis [FIGMA](https://www.figma.com/file/C5NXBGVefMFFBNIIkCIDRb/S-money-useCases-05?node-id=243%3A1).
+
+---
+
 ## Process d'édition des fichiers
 
 ### Branches Github
