@@ -16,7 +16,7 @@ We propose a debt management mechanism to ensure payment of this kind of operati
 
 <Highlight type="tip">
 
-The mechanism is based on automated P2P (see [here](docs/payments/P2P) that creates debt on the customer account and the ability for the Client to recover the missing amount.
+The mechanism is based on automated P2P (see [here](/docs/payments/P2P)) that creates debt on the customer account and the ability for the Client to recover the missing amount.
 Debt could be created following many operation types : an Offline Card operation, a P2P billing, a contestation after a Card Top Up, after a SCT IN recall, an ATM withdrawal in currency.
 
 </Highlight>
