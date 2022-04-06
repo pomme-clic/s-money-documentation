@@ -49,7 +49,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Callback management',
-      items: ['api/Webhooks','api/Callback'],
+      items: ['api/Webhooks','api/Callback','api/test'],
     },
   ],
 }
