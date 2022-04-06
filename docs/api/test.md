@@ -4,7 +4,7 @@ sidebar_label: Xpay
 hide_table_of_contents: true
 ---
 
-# Xpay
+# Test
 
 import Rapidoc from "@theme/Rapidoc"
 
