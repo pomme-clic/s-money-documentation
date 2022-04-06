@@ -40,13 +40,13 @@ Different options of P2P can be used when issued by the partner for example in c
 
 Within our P2P API you will be able to transfer money immediatly to another customer or to your commission account.
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/payments" method="post"/>
+<Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userid}/payments" method="post"/>
 
-More information regarding this endpoint in the [API reference.](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/SDD)
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/SDD"
   label="Try it out"
 />
