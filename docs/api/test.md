@@ -1,10 +1,10 @@
 ---
-title: Xpay
-sidebar_label: Xpay
+title: Callback OpenAPI
+sidebar_label: Callback OpenAPI
 hide_table_of_contents: true
 ---
 
-# Test
+# Callback OpenAPI
 
 import Rapidoc from "@theme/Rapidoc"
 
