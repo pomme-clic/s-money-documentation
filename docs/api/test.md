@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc fetchAPI="https://docs.xpollens.com/test.yaml">
+<Rapidoc apiUrl="/test">
 </Rapidoc>
