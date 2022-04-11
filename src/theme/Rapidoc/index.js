@@ -24,8 +24,9 @@ const Rapidoc = ({ apiUrl }) => {
   const { siteConfig } = useDocusaurusContext()
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
   const prodDomains = siteConfig.themeConfig.prodDomains
-  let serverUrl = 'https://sb-api.xpollens.com'
-  // let serverUrl = 'https://ic-api.s-money.net/'
+  let serverUrl = ''
+  //let serverUrl = 'https://sb-api.xpollens.com'
+  //let serverUrl = 'https://ic-api.s-money.net/'
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -42,9 +43,9 @@ const Rapidoc = ({ apiUrl }) => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
-    // serverUrl = isProd
-    //   ? 'https://sb-api.xpollens.com'
-    //   : 'https://ic-api.s-money.net/'
+    serverUrl = isProd
+    ? 'https://sb-api.xpollens.com'
+    : 'https://ic-api.s-money.net/'
 
     try {
       const response = await axios.get(fullAPIUrl)
