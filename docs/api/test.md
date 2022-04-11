@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/test">
+<Rapidoc apiUrl="/test.yaml">
 </Rapidoc>
