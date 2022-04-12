@@ -11,9 +11,9 @@ Xpollens changelog since September 2021
 
 ## April 2022
 **Partner Portal** :
-- We switched the chronological sorting value for card operations. We now use the operation value (time when payment is accepted) instead of the execution value (time when payment is cleared). 
-- By the way, these values are accessible and integrated into the [history items](/api/Core) endpoint. (Fields : OperationCreationDate vs ExecutionDate)
-- We eased user experience by switching most used search fields to the top and displaying the search criteria in the same order as in the customer list
+- We switched the chronological sorting value for card operations. We now use the operation value (time when payment is accepted) instead of the execution value (time when payment is cleared)  
+- By the way, these values are accessible and integrated into the [history items](/api/Core) endpoint. (Fields : OperationCreationDate vs ExecutionDate)  
+- We eased user experience by switching most used search fields to the top and displaying the search criteria in the same order as in the customer list  
 - We also further optimize the export features for operation list  
 
 
@@ -30,7 +30,7 @@ Xpollens changelog since September 2021
 - Added a card cancellation process through the partner portal. You can now cancel a card (if a customer no longer want it for instance) via two simple clicks on your web interface.  
 
 **Users** :
-- Improved the v2.0/users POST API endpoint to adapt age of majority according to the user’s country.   
+- Improved the v2.0/users POST API endpoint to adapt age of majority according to the user’s country   
 
 ## January 2022
 **Partner portal** :
@@ -44,7 +44,7 @@ Xpollens changelog since September 2021
 
 ## December 2021
 **Transfers** :
-- Added the Outgoing Sepa Direct Debit feature to our platform. We can now operate SDD both ways (incoming (already existing) and outgoing (new)).  
+- Added the Outgoing Sepa Direct Debit feature to our platform. We can now operate SDD both ways (incoming (already existing) and outgoing (new))  
 You can now present and manage SDDs, mandates dynamically via our APIs.  
 More here : [SDD API](/api/SDD)
 
