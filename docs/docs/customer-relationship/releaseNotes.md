@@ -9,13 +9,21 @@ Xpollens changelog since September 2021
 
 ---
 
+## April 2022
+**Partner Portal** :
+- We switched the chronological sorting value for card operations. We now use the operation value (time when payment is accepted) instead of the execution value (time when payment is cleared). 
+- By the way, these values are accessible and integrated into the [history items](/api/Core) endpoint. (Fields : OperationCreationDate vs ExecutionDate)
+- We eased user experience by switching most used search fields to the top and displaying the search criteria in the same order as in the customer list
+- We also further optimize the export features for operation list  
+
+
 ## Mars 2022
 **Card** :
 - A new endpoint  for token Activation in the In-App6 verification workflow has been delivered. More [HERE](/api/xpay).
 - We have integrated the alias related to the subscription mode for recurring payment. You can now add the subscription mode to your one click payment method. More [HERE](/api/Core).
 
 **Partner Portal** :
-- Improved the export process.   
+- Improved the export process  
 
 ## February 2022
 **Partner portal** :
