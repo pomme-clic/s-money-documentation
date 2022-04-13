@@ -19,7 +19,7 @@ const customThemeColors = {
   },
 }
 
-const Rapidoc = ({ apiUrl }) => {
+const Rapidoc = ({ apiUrl,isAbsolute }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
@@ -42,7 +42,7 @@ const Rapidoc = ({ apiUrl }) => {
   const fetchAPI = async () => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
-    const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+    const fullAPIUrl = isAbsolute ?  `${baseAPIUrl}${apiUrl}` : apiUrl
     serverUrl = isProd
     ? 'https://sb-api.xpollens.com'
     : 'https://ic-api.s-money.net/'
