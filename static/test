@@ -88,11 +88,12 @@
             "https://callbackUrl/id&error&status&type&initialOrderID&amount": {
               "post": {
                 "requestBody": {
-                  "description": "Callback items",
+                  "description": "Example",
                   "content": {
                     "application/x-www-form-urlencoded": {
                       "schema": {
-                        "type": "string"
+                        "type": "string",
+						"example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23""
                       }
                     }
                   }
