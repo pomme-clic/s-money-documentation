@@ -91,6 +91,18 @@
                   "description": "Callback items",
                   "content": {
                     "application/x-www-form-urlencoded": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "userData": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   }
                 },
