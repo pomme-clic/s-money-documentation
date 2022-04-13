@@ -152,6 +152,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
             sort-tags="true"
             render-style="read"
             load-fonts="false"
+			sort-endpoints-by="summary"
             regular-font="Poppins"
             primary-color="#63C2C7"
             allow-server-selection="false"
