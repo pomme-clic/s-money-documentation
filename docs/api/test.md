@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="https://docs.xpollens.com/test.yaml"  isRelative="false">
+<Rapidoc apiUrl="https://docs.xpollens.com/test.yaml"  isRelative = Boolean(false)>
 </Rapidoc>
