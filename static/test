@@ -142,12 +142,12 @@
                         "properties": {
                           "type": {
                             "type": "string",
-							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
-							"example": "incomplete"
+							"description": "callback type",
+							"example": "4"
                           },
                           "status": {
                             "type": "string",
-                            "format": "date-time"
+							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending"
                           },
                           "timestamp": {
                             "type": "string",
