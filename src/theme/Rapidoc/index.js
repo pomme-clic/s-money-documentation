@@ -47,7 +47,7 @@ console.dir(apiUrl);
     serverUrl = isProd
     ? 'https://sb-api.xpollens.com'
     : 'https://ic-api.s-money.net/'
-	
+console.dir(fullAPIUrl);
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
