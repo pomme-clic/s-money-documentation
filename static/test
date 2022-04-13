@@ -142,8 +142,8 @@
                         "properties": {
                           "type": {
                             "type": "string",
-                            "format": "date-time",
-							"example": "4"
+							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+							"example": "incomplete"
                           },
                           "status": {
                             "type": "string",
