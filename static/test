@@ -83,16 +83,32 @@
 	},
   "components": {
     "securitySchemes": {
-      "Bearer-token-authorization": {
+      "Bearer token authorization": {
         "type": "http",
         "description": "Authentication with bearer token",
         "scheme": "bearer"
       },
+      "Sts authentication": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://ic-connect.s-money.net/connect/token",
+            "scopes": {
+              "partner": "",
+              "internal_settings": "",
+              "thirdparty_kyc": ""
+            }
+          }
+        }
+      }
     }
   },
-   "security": [
+  "security": [
     {
-      "Bearer-token-authorization": [ ]
+      "Bearer token authorization": [ ]
     },
+    {
+      "Sts authentication": [ ]
+    }
   ]
 }
