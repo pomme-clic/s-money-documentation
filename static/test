@@ -7,8 +7,8 @@
   "paths": {
     "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
       "post": {
-		"summary": "Titre #1 - Topup Callback",  
-        "description": "#1 - Topup Callback",
+		"summary": "#1 - Topup Callback",  
+        "description": "Callback received in case of status change in a topup payment",
         "parameters": [
           {
             "name": "callbackUrl",
