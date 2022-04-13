@@ -306,7 +306,6 @@
         }
       }
     }
-    "4 - KYC Demand": {
   },
   "components": {
     "securitySchemes": {
