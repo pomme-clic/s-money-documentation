@@ -27,7 +27,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   let serverUrl = ''
   //let serverUrl = 'https://sb-api.xpollens.com'
   //let serverUrl = 'https://ic-api.s-money.net/'
-
+console.dir(isRelative);
   // Rapidoc rendering
   const rapidocRef = useRef()
   const [renderRapidoc, setRenderRapidoc] = useState(false)
@@ -46,7 +46,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
     serverUrl = isProd
     ? 'https://sb-api.xpollens.com'
     : 'https://ic-api.s-money.net/'
-	console.dir(isRelative);
+	
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
