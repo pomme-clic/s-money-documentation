@@ -147,7 +147,8 @@
                           },
                           "status": {
                             "type": "string",
-							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending"
+							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+							"example": "incomplete"
                           },
                           "timestamp": {
                             "type": "string",
