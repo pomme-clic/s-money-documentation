@@ -159,6 +159,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
             server-url={serverUrl}
             default-api-server={serverUrl}
             show-header="false"
+			schema-description-expanded="true"
             show-info="true"
             show-components="false"
             allow-api-list-style-selection="false"
