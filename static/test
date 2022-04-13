@@ -5,12 +5,41 @@
     "version": "1.0.0"
   },
   "paths": {
-    "//YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
+    "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
       "post": {
         "description": "#1 - Topup Callback",
         "parameters": [
           {
             "name": "callbackUrl",
+            "in": "query",
+            "required": true,
+            "description": "the location where data will be sent.  Must be network accessible by the source server",
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://tonys-server.com"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "description": " the error codes for failed payments :  
+0 = 0XXX operation succeeded or still processing  
+10 = 1XXX operation rejected because of bad request configuration  
+11 = 2XXX operation rejected because of bad reference usage  
+12 = 3XXX operation rejected because of bad account configuration  
+13 = 4XXX operation rejected because of the bank or the supplier  
+14 = 5XXX operation rejected because of a system error  
+15 = 6XXX operation rejected because of anti-fraud engine",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "TOPUP123"
+            }
+          },
+          {
+            "name": "error",
             "in": "query",
             "required": true,
             "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
@@ -19,7 +48,51 @@
               "format": "uri",
               "example": "https://tonys-server.com"
             }
-          }
+          },
+		  {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://tonys-server.com"
+            }
+          },
+		  {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://tonys-server.com"
+            }
+          },
+		  {
+            "name": "initialOrder",
+            "in": "query",
+            "required": true,
+            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://tonys-server.com"
+            }
+          },
+		  {
+            "name": "amount",
+            "in": "query",
+            "required": true,
+            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://tonys-server.com"
+            }
+          }		  
         ],
         "responses": {
           "201": {
