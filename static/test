@@ -271,27 +271,11 @@
         "description": "Authentication with bearer token",
         "scheme": "bearer"
       },
-      "Sts-authentication": {
-        "type": "oauth2",
-        "flows": {
-          "clientCredentials": {
-            "tokenUrl": "https://ic-connect.s-money.net/connect/token",
-            "scopes": {
-              "partner": "",
-              "internal_settings": "",
-              "thirdparty_kyc": ""
-            }
-          }
-        }
-      }
     }
   },
    "security": [
     {
       "Bearer-token-authorization": [ ]
     },
-    {
-      "Sts-authentication": [ ]
-    }
   ]
 }
