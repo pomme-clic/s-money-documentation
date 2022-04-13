@@ -38,7 +38,6 @@
             "description": "the error codes for failed payments :\n0 = 0XXX operation succeeded or still processing\n10 = 1XXX operation rejected because of bad request configuration\n11 = 2XXX operation rejected because of bad reference usage\n12 = 3XXX operation rejected because of bad account configuration\n13 = 4XXX operation rejected because of the bank or the supplier\n14 = 5XXX operation rejected because of a system error\n15 = 6XXX operation rejected because of anti-fraud engine",
             "schema": {
               "type": "string",
-              "format": "uri",
               "example": "0"
             }
           },
@@ -46,44 +45,42 @@
             "name": "status",
             "in": "query",
             "required": true,
-            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "description": "the transaction status :\n-1 = unknow\n0 = waiting\n1 = completed\n2 = refunded\n3 = refused\n4 = waiting for validation\n5 = cancelled\n6 = waiting to be sent",
             "schema": {
               "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
+              "example": "1"
             }
           },
 		  {
             "name": "type",
             "in": "query",
             "required": true,
-            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "description": "the callback type",
             "schema": {
               "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
+              "example": "1"
             }
           },
 		  {
-            "name": "initialOrder",
+            "name": "initialOrderID",
             "in": "query",
             "required": true,
-            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "description": "initial transaction orderid",
             "schema": {
               "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
+              "format": "uuid",
+              "example": "ABCD1234"
             }
           },
 		  {
             "name": "amount",
             "in": "query",
             "required": true,
-            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+            "description": "the transaction amount",
             "schema": {
-              "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
+              "type": "number",
+              "format": "float",
+              "example": "1234.56"
             }
           }		  
         ],
