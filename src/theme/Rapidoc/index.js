@@ -28,6 +28,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   //let serverUrl = 'https://sb-api.xpollens.com'
   //let serverUrl = 'https://ic-api.s-money.net/'
 console.dir(isRelative);
+console.dir(apiUrl);
   // Rapidoc rendering
   const rapidocRef = useRef()
   const [renderRapidoc, setRenderRapidoc] = useState(false)
