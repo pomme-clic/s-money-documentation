@@ -35,7 +35,7 @@
             "name": "error",
             "in": "query",
             "required": true,
-            "description": "the error codes for failed payments :/n0 = 0XXX operation succeeded or still processing/n10 = 1XXX operation rejected because of bad request configuration/n11 = 2XXX operation rejected because of bad reference usage/n12 = 3XXX operation rejected because of bad account configuration/n13 = 4XXX operation rejected because of the bank or the supplier/n14 = 5XXX operation rejected because of a system error/n15 = 6XXX operation rejected because of anti-fraud engine",
+            "description": "the error codes for failed payments :\n0 = 0XXX operation succeeded or still processing\n10 = 1XXX operation rejected because of bad request configuration\n11 = 2XXX operation rejected because of bad reference usage\n12 = 3XXX operation rejected because of bad account configuration\n13 = 4XXX operation rejected because of the bank or the supplier\n14 = 5XXX operation rejected because of a system error\n15 = 6XXX operation rejected because of anti-fraud engine",
             "schema": {
               "type": "string",
               "format": "uri",
