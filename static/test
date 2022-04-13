@@ -157,9 +157,13 @@
                           },
                           "diligences": {
                             "type": "array",
-							"items":{
+							"items":[{
+								"type": "string"
+								},
+								{
 								"type": "string"
 								}
+								],
                           }
                         }
                       }
