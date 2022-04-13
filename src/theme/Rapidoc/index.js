@@ -27,8 +27,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   let serverUrl = ''
   //let serverUrl = 'https://sb-api.xpollens.com'
   //let serverUrl = 'https://ic-api.s-money.net/'
-console.dir(isRelative);
-console.dir(apiUrl);
+
   // Rapidoc rendering
   const rapidocRef = useRef()
   const [renderRapidoc, setRenderRapidoc] = useState(false)
@@ -44,7 +43,6 @@ console.dir(apiUrl);
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
-	console.dir(fullAPIUrl);
     serverUrl = isProd
     ? 'https://sb-api.xpollens.com'
     : 'https://ic-api.s-money.net/'
