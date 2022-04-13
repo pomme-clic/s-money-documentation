@@ -150,8 +150,16 @@
 							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
 							"example": "incomplete"
                           },
-                          "userData": {
-                            "type": "string"
+                          "appUserId": {
+                            "type": "string",
+							"description": "User unique identifier",
+							"example": "rx193bo32"
+                          },
+                          "diligences": {
+                            "type": "array",
+							"items":{
+								"type": "string"
+								}
                           }
                         }
                       }
