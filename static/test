@@ -266,12 +266,12 @@
       }
     },
     "securitySchemes": {
-      "Bearer token authorization": {
+      "Bearer-token-authorization": {
         "type": "http",
         "description": "Authentication with bearer token",
         "scheme": "bearer"
       },
-      "Sts authentication": {
+      "Sts-authentication": {
         "type": "oauth2",
         "flows": {
           "clientCredentials": {
@@ -286,4 +286,12 @@
       }
     }
   },
+   "security": [
+    {
+      "Bearer-token-authorization": [ ]
+    },
+    {
+      "Sts-authentication": [ ]
+    }
+  ]
 }
