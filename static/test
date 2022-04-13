@@ -7,6 +7,7 @@
   "paths": {
     "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
       "post": {
+		"summary": "Titre #1 - Topup Callback",  
         "description": "#1 - Topup Callback",
         "parameters": [
           {
@@ -146,7 +147,7 @@
     "4 - KYC Demand": {
 		
       "post": {
-        "description": "subscribes a client to receive out-of-band data",
+        "description": "#4",
         "parameters": [
           {
             "name": "callbackUrl",
@@ -221,7 +222,7 @@
     },
     "/streams (copy 3)": {
       "post": {
-        "description": "subscribes a client to receive out-of-band data",
+        "description": "#3",
         "parameters": [
           {
             "name": "callbackUrl",
@@ -296,7 +297,7 @@
     },
     "/streams (copy 2)": {
       "post": {
-        "description": "subscribes a client to receive out-of-band data",
+        "description": "#2",
         "parameters": [
           {
             "name": "callbackUrl",
