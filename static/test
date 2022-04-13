@@ -142,7 +142,7 @@
                         "properties": {
                           "type": {
                             "type": "string",
-                            "format": "date-time"
+                            "format": "date-time",
 							"example": "4"
                           },
                           "status": {
