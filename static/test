@@ -28,7 +28,6 @@
             "description": "the transaction id",
             "schema": {
               "type": "string",
-              "format": "uuid",
               "example": "TOPUP123"
             }
           },
@@ -46,7 +45,7 @@
             "name": "status",
             "in": "query",
             "required": true,
-            "description": "the transaction status :\n-1 = unknow\n0 = waiting\n1 = completed\n2 = refunded\n3 = refused\n4 = waiting for validation\n5 = cancelled\n6 = waiting to be sent",
+            "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
             "schema": {
               "type": "string",
               "example": "1"
@@ -69,7 +68,6 @@
             "description": "initial transaction orderid",
             "schema": {
               "type": "string",
-              "format": "uuid",
               "example": "ABCD1234"
             }
           },
