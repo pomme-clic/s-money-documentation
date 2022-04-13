@@ -43,11 +43,11 @@ console.dir(apiUrl);
   const fetchAPI = async () => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
-    const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
+    const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : `apiUrl`
+	console.dir(fullAPIUrl);
     serverUrl = isProd
     ? 'https://sb-api.xpollens.com'
     : 'https://ic-api.s-money.net/'
-console.dir(fullAPIUrl);
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
