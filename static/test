@@ -7,7 +7,7 @@
   "paths": {
     "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
       "post": {
-		"summary": "#1 - Topup Callback",  
+		"summary": "#1 - Topup",  
         "description": "Callback received in case of status change in a topup payment",
         "parameters": [
           {
@@ -147,6 +147,7 @@
     "4 - KYC Demand": {
 		
       "post": {
+		"summary": "#4 - Topup",
         "description": "#4",
         "parameters": [
           {
@@ -222,6 +223,7 @@
     },
     "/streams (copy 3)": {
       "post": {
+		"summary": "#3 - Topup",
         "description": "#3",
         "parameters": [
           {
@@ -297,6 +299,7 @@
     },
     "/streams (copy 2)": {
       "post": {
+		"summary": "#2 - Topup",
         "description": "#2",
         "parameters": [
           {
