@@ -112,7 +112,7 @@
         }
       }
     },
-    "4 - KYC Demand": {	
+    "yourCallback4Url": {	
       "post": {
 		"summary": "#4 - KYC Demand",
         "description": "Callback received in case of status change in the KYC demand",
@@ -184,7 +184,7 @@
         }
       }
     },
-    "36 - Strong Authentication": {	
+    "yourCallback36Url": {	
       "post": {
 		"summary": "#36 - Strong authentication",
         "description": "Callback received for strong authentication (sensitives actions)",
