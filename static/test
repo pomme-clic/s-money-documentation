@@ -1,290 +1,292 @@
 {
-  "openapi": "3.0.0",
-  "info": {
-    "title": "Callback List",
-    "version": "1.0.0"
-  },
-  "paths": {
-    "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
-      "post": {
-		"summary": "#01 - Topup",
-        "description": "Callback received in case of status change in a topup payment",
-        "parameters": [
-          {
-            "name": "callbackUrl",
-            "in": "header",
-            "required": true,
-            "description": "the location where data will be sent.  Must be network accessible by the source server",
-            "schema": {
-              "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
-            }
-          },
-          {
-            "name": "id",
-            "in": "header",
-            "required": true,
-            "description": "the transaction id",
-            "schema": {
-              "type": "string",
-              "example": "TOPUP123"
-            }
-          },
-          {
-            "name": "error",
-            "in": "header",
-            "required": true,
-            "description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
-            "schema": {
-              "type": "string",
-              "example": "0"
-            }
-          },
-		  {
-            "name": "status",
-            "in": "header",
-            "required": true,
-            "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
-            "schema": {
-              "type": "string",
-              "example": "1"
-            }
-          },
-		  {
-            "name": "type",
-            "in": "header",
-            "required": true,
-            "description": "the callback type",
-            "schema": {
-              "type": "string",
-              "example": "1"
-            }
-          },
-		  {
-            "name": "initialOrderID",
-            "in": "header",
-            "required": true,
-            "description": "initial transaction orderid",
-            "schema": {
-              "type": "string",
-              "example": "ABCD1234"
-            }
-          },
-		  {
-            "name": "amount",
-            "in": "header",
-            "required": true,
-            "description": "the transaction amount",
-            "schema": {
-              "type": "number",
-              "format": "float",
-              "example": "1234.56"
-            }
-          }		  
-        ],
-        "callbacks": {
-          "onData": {
-            "https://callbackUrl/id&error&status&type&initialOrderID&amount": {
-              "post": {
-                "requestBody": {
-                  "description": "Example",
-                  "content": {
-                    "application/x-www-form-urlencoded": {
-                      "schema": {
-                        "type": "string",
-						"example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
-                      }
-                    }
-                  }
-                },
-                "responses": {
-                  "202": {
-                    "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
-                  },
-                  "204": {
-                    "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Callback List",
+        "version": "1.0.0"
     },
-    "/yourCallback4Url": {	
-      "post": {
-		"summary": "#04 - KYC Demand",
-        "description": "Callback received in case of status change in the KYC demand",
-        "parameters": [
-          {
-            "name": "callbackUrl",
-            "in": "query",
-            "required": true,
-            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
-            "schema": {
-              "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
-            }
-          }
-        ],
-        "callbacks": {
-          "onData": {
-            "{$request.query.callbackUrl}/data": {
-              "post": {
-                "requestBody": {
-                  "description": "callback example",
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
+    "paths": {
+        "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
+            "post": {
+                "summary": "#01 - Topup",
+                "description": "Callback received in case of status change in a topup payment",
+                "parameters": [
+                    {
+                        "name": "callbackUrl",
+                        "in": "header",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible by the source server",
+                        "schema": {
                             "type": "string",
-							"description": "callback type",
-							"example": "4"
-                          },
-                          "status": {
-                            "type": "string",
-							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
-							"example": "incomplete"
-                          },
-                          "appUserId": {
-                            "type": "string",
-							"description": "User unique identifier",
-							"example": "rx193bo32"
-                          },
-                          "diligences": {
-                            "type": "array",
-							"items":[{
-								"type": "string"
-								},
-								{
-								"type": "string"
-								}
-								]
-                          }
+                            "format": "uri",
+                            "example": "https://tonys-server.com"
                         }
-                      }
-                    }
-                  }
-                },
-                "responses": {
-                  "202": {
-                    "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
-                  },
-                  "204": {
-                    "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/yourCallback36Url": {	
-      "post": {
-		"summary": "#36 - Strong authentication",
-        "description": "Callback received for strong authentication (sensitives actions)",
-        "parameters": [
-          {
-            "name": "callbackUrl",
-            "in": "query",
-            "required": true,
-            "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
-            "schema": {
-              "type": "string",
-              "format": "uri",
-              "example": "https://tonys-server.com"
-            }
-          }
-        ],
-        "callbacks": {
-          "onData": {
-            "{$request.query.callbackUrl}/data": {
-              "post": {
-                "requestBody": {
-                  "description": "callback example",
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
+                    },
+                    {
+                        "name": "id",
+                        "in": "header",
+                        "required": true,
+                        "description": "the transaction id",
+                        "schema": {
                             "type": "string",
-							"description": "callback type",
-							"example": "4"
-                          },
-                          "status": {
-                            "type": "string",
-							"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
-							"example": "incomplete"
-                          },
-                          "appUserId": {
-                            "type": "string",
-							"description": "User unique identifier",
-							"example": "rx193bo32"
-                          },
-                          "diligences": {
-                            "type": "array",
-							"items":[{
-								"type": "string"
-								},
-								{
-								"type": "string"
-								}
-								]
-                          }
+                            "example": "TOPUP123"
                         }
-                      }
+                    },
+                    {
+                        "name": "error",
+                        "in": "header",
+                        "required": true,
+                        "description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "header",
+                        "required": true,
+                        "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "header",
+                        "required": true,
+                        "description": "the callback type",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "initialOrderID",
+                        "in": "header",
+                        "required": true,
+                        "description": "initial transaction orderid",
+                        "schema": {
+                            "type": "string",
+                            "example": "ABCD1234"
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "in": "header",
+                        "required": true,
+                        "description": "the transaction amount",
+                        "schema": {
+                            "type": "number",
+                            "format": "float",
+                            "example": "1234.56"
+                        }
                     }
-                  }
-                },
-                "responses": {
-                  "202": {
-                    "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
-                  },
-                  "204": {
-                    "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
-                  }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "https://callbackUrl/id&error&status&type&initialOrderID&amount": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "Example",
+                                    "content": {
+                                        "application/x-www-form-urlencoded": {
+                                            "schema": {
+                                                "type": "string",
+                                                "example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "securitySchemes": {
-      "Bearer token authorization": {
-        "type": "http",
-        "description": "Authentication with bearer token",
-        "scheme": "bearer"
-      },
-      "Sts authentication": {
-        "type": "oauth2",
-        "flows": {
-          "clientCredentials": {
-            "tokenUrl": "https://ic-connect.s-money.net/connect/token",
-            "scopes": {
-              "partner": "",
-              "internal_settings": "",
-              "thirdparty_kyc": ""
+        },
+        "/yourCallback4Url": {
+            "post": {
+                "summary": "#04 - KYC Demand",
+                "description": "Callback received in case of status change in the KYC demand",
+                "parameters": [
+                    {
+                        "name": "callbackUrl",
+                        "in": "query",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "format": "uri",
+                            "example": "https://tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "callback type",
+                                                        "example": "4"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+                                                        "example": "incomplete"
+                                                    },
+                                                    "appUserId": {
+                                                        "type": "string",
+                                                        "description": "User unique identifier",
+                                                        "example": "rx193bo32"
+                                                    },
+                                                    "diligences": {
+                                                        "type": "array",
+                                                        "items": [
+                                                            {
+                                                                "type": "string"
+                                                            },
+                                                            {
+                                                                "type": "string"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          }
+        },
+        "/yourCallback36Url": {
+            "post": {
+                "summary": "#36 - Strong authentication",
+                "description": "Callback received for strong authentication (sensitives actions)",
+                "parameters": [
+                    {
+                        "name": "callbackUrl",
+                        "in": "query",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "format": "uri",
+                            "example": "https://tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "callback type",
+                                                        "example": "4"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+                                                        "example": "incomplete"
+                                                    },
+                                                    "appUserId": {
+                                                        "type": "string",
+                                                        "description": "User unique identifier",
+                                                        "example": "rx193bo32"
+                                                    },
+                                                    "diligences": {
+                                                        "type": "array",
+                                                        "items": [
+                                                            {
+                                                                "type": "string"
+                                                            },
+                                                            {
+                                                                "type": "string"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-  },
-  "security": [
-    {
-      "Bearer token authorization": []
     },
-    {
-      "Sts authentication": []
-    }
-  ]
+    "components": {
+        "securitySchemes": {
+            "Bearer token authorization": {
+                "type": "http",
+                "description": "Authentication with bearer token",
+                "scheme": "bearer"
+            },
+            "Sts authentication": {
+                "type": "oauth2",
+                "flows": {
+                    "clientCredentials": {
+                        "tokenUrl": "https://ic-connect.s-money.net/connect/token",
+                        "scopes": {
+                            "partner": "",
+                            "internal_settings": "",
+                            "thirdparty_kyc": ""
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer token authorization": []
+        },
+        {
+            "Sts authentication": []
+        }
+    ]
 }
