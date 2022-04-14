@@ -15,7 +15,7 @@
       }
     ],
     "paths": {
-        "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
+        "https://{callbackUrl}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
             "post": {
                 "summary": "#01 - Topup",
                 "description": "Callback received in case of status change in a topup payment",
