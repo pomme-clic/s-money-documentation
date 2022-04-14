@@ -28,7 +28,7 @@
                         "schema": {
                             "type": "string",
                             "format": "uri",
-                            "example": "https://tonys-server.com"
+                            "example": "tonys-server.com"
                         }
                     },
                     {
