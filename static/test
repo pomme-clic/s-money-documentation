@@ -163,17 +163,17 @@
                                                             {
                                                               "diligenceType" :{
                                                                 "type":"string",
-                                                                "description":"Type of diligence"
+                                                                "description":"Type of diligence",
                                                                 "example":"PASSPORT"
                                                               },
                                                               "status":{
                                                                 "type":"string",
-                                                                "description":"status of diligence"
+                                                                "description":"status of diligence",
                                                                 "example":"Validated"
                                                               }
                                                             }
-                                                        ]
-                                                    }
+                                                    ]
+                                                  }
                                                 }
                                             }
                                         }
