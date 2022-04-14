@@ -133,6 +133,7 @@
                         }
                     },
                     {
+                        "name": "json body",
                         "in": "body",
                         "required": true,
                         "description": "JSON body",
