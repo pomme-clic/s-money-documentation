@@ -23,7 +23,7 @@
                         "description": "the location where data will be sent.  Must be network accessible by the source server",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "enk0r3xvfg4ms.x.pipedream.net/"
                         }
                     },
                     {
@@ -90,7 +90,7 @@
                 ],
                 "callbacks": {
                     "onData": {
-                        "https://callbackUrl/id&error&status&type&initialOrderID&amount": {
+                        "https://yourCallbackAdress/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=ABCD1234&amount=12": {
                             "post": {
                                 "requestBody": {
                                     "description": "Example",
