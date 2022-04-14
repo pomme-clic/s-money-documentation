@@ -235,6 +235,218 @@
                 }
             }
         },
+        "/{callback05Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
+            "post": {
+                "summary": "#05 - Topup",
+                "description": "Callback received in case of status change in a bank card registration used in a topup",
+                "parameters": [
+                    {
+                        "name": "callback01Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible by the source server",
+                        "schema": {
+                            "type": "string",
+                            "example": "enk0r3xvfg4ms.x.pipedream.net"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction id",
+                        "schema": {
+                            "type": "string",
+                            "example": "TOPUP123"
+                        }
+                    },
+                    {
+                        "name": "error",
+                        "in": "path",
+                        "required": true,
+                        "description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "description": "the callback type",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "initialOrderID",
+                        "in": "path",
+                        "required": true,
+                        "description": "initial transaction orderid",
+                        "schema": {
+                            "type": "string",
+                            "example": "ABCD1234"
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction amount",
+                        "schema": {
+                            "type": "number",
+                            "format": "float",
+                            "example": "1234.56"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "https://yourCallbackAdress/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=ABCD1234&amount=12": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "Example",
+                                    "content": {
+                                        "application/x-www-form-urlencoded": {
+                                            "schema": {
+                                                "type": "string",
+                                                "example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{callback37Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
+            "post": {
+                "summary": "#37 - Refund TopUp",
+                "description": "Callback received in case of a status change for in the refund topup status",
+                "parameters": [
+                    {
+                        "name": "callback01Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible by the source server",
+                        "schema": {
+                            "type": "string",
+                            "example": "enk0r3xvfg4ms.x.pipedream.net"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction id",
+                        "schema": {
+                            "type": "string",
+                            "example": "TOPUP123"
+                        }
+                    },
+                    {
+                        "name": "error",
+                        "in": "path",
+                        "required": true,
+                        "description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "description": "the callback type",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "initialOrderID",
+                        "in": "path",
+                        "required": true,
+                        "description": "initial transaction orderid",
+                        "schema": {
+                            "type": "string",
+                            "example": "ABCD1234"
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction amount",
+                        "schema": {
+                            "type": "number",
+                            "format": "float",
+                            "example": "1234.56"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "https://yourCallbackAdress/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=ABCD1234&amount=12": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "Example",
+                                    "content": {
+                                        "application/x-www-form-urlencoded": {
+                                            "schema": {
+                                                "type": "string",
+                                                "example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/{callback36Url}": {
             "post": {
                 "summary": "#36 - Strong authentication",
@@ -279,6 +491,112 @@
                                                         "example": "rx193bo32"
                                                     }
                                                 }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{callback15Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
+            "post": {
+                "summary": "#15 - FreezeUser",
+                "description": "Callback received in case of a freeze status change for a user",
+                "parameters": [
+                    {
+                        "name": "callback01Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible by the source server",
+                        "schema": {
+                            "type": "string",
+                            "example": "enk0r3xvfg4ms.x.pipedream.net"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction id",
+                        "schema": {
+                            "type": "string",
+                            "example": "TOPUP123"
+                        }
+                    },
+                    {
+                        "name": "error",
+                        "in": "path",
+                        "required": true,
+                        "description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "description": "the callback type",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "initialOrderID",
+                        "in": "path",
+                        "required": true,
+                        "description": "initial transaction orderid",
+                        "schema": {
+                            "type": "string",
+                            "example": "ABCD1234"
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "in": "path",
+                        "required": true,
+                        "description": "the transaction amount",
+                        "schema": {
+                            "type": "number",
+                            "format": "float",
+                            "example": "1234.56"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "https://yourCallbackAdress/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=ABCD1234&amount=12": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "Example",
+                                    "content": {
+                                        "application/x-www-form-urlencoded": {
+                                            "schema": {
+                                                "type": "string",
+                                                "example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
                                             }
                                         }
                                     }
