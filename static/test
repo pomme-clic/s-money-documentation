@@ -4,6 +4,9 @@
         "title": "Callback List",
         "version": "1.0.0"
     },
+    "servers": {
+        "url": ""
+    },
     "paths": {
         "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=&amount=": {
             "post": {
@@ -269,7 +272,7 @@
             "Sts authentication": {
                 "type": "oauth2",
                 "x-client-id": "",
-                "x-client-secret":"",
+                "x-client-secret": "",
                 "flows": {
                     "clientCredentials": {
                         "tokenUrl": "https://ic-connect.s-money.net/connect/token",
