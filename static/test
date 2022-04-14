@@ -117,20 +117,19 @@
                 }
             }
         },
-        "/yourCallback4Url": {
+        "/{callbackUrl}": {
             "post": {
                 "summary": "#04 - KYC Demand",
                 "description": "Callback received in case of status change in the KYC demand",
                 "parameters": [
                     {
                         "name": "callbackUrl",
-                        "in": "query",
+                        "in": "path",
                         "required": true,
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "format": "uri",
-                            "example": "https://tonys-server.com"
+                            "example": "tonys-server.com"
                         }
                     }
                 ],
