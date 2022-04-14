@@ -159,14 +159,18 @@
                                                         "description": "User unique identifier",
                                                         "example": "rx193bo32"
                                                     },
-                                                    "diligences": {
-                                                        "type": "array",
-                                                        "items": [
+                                                    "diligences": [
                                                             {
-                                                                "type": "string"
-                                                            },
-                                                            {
-                                                                "type": "string"
+                                                              "diligenceType" :{
+                                                                "type":"string",
+                                                                "description":"Type of diligence"
+                                                                "example":"PASSPORT"
+                                                              },
+                                                              "status":{
+                                                                "type":"string",
+                                                                "description":"status of diligence"
+                                                                "example":"Validated"
+                                                              }
                                                             }
                                                         ]
                                                     }
