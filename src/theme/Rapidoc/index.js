@@ -155,7 +155,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
 			sort-endpoints-by="summary"
             regular-font="Poppins"
             primary-color="#63C2C7"
-            allow-server-selection="true"
+            allow-server-selection="false"
             server-url={serverUrl}
             default-api-server={serverUrl}
             show-header="false"

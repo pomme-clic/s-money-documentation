@@ -7,7 +7,7 @@
     "servers": [
       {
         "url": " https://",
-        "description": "Sandbox server (uses test data)"
+        "description": "For testing purposes"
       }
     ],
     "paths": {
