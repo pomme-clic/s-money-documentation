@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="https://develop--s-money-documentation-site.netlify.app/callbacks"  isRelative ="">
+<Rapidoc apiUrl="https://develop--s-money-documentation-site.netlify.app/callbacks.json"  isRelative ="">
 </Rapidoc>
