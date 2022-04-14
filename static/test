@@ -184,7 +184,7 @@
         }
       }
     },
-    "4 - KYC Demand": {	
+    "36 - Strong Authentication": {	
       "post": {
 		"summary": "#36 - Strong authentication",
         "description": "Callback received for strong authentication (sensitives actions)",
