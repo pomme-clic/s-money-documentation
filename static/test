@@ -268,6 +268,8 @@
             },
             "Sts authentication": {
                 "type": "oauth2",
+                "x-client-id": "",
+                "x-client-secret":"",
                 "flows": {
                     "clientCredentials": {
                         "tokenUrl": "https://ic-connect.s-money.net/connect/token",
