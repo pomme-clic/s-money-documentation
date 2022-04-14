@@ -76,7 +76,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
-      delete data.components.securitySchemes['Bearer token authorization']
+      //delete data.components.securitySchemes['Bearer token authorization']
 
       const stringifiedData = JSON.stringify(data)
 
