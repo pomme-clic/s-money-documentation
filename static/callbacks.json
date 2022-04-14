@@ -237,7 +237,7 @@
         },
         "/{callback05Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
             "post": {
-                "summary": "#05 - Topup",
+                "summary": "#05 - Registration of a bank card for TopUp",
                 "description": "Callback received in case of status change in a bank card registration used in a topup",
                 "parameters": [
                     {
