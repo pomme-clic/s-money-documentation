@@ -10,7 +10,7 @@
         "description": "Production server (uses live data)"
       },
       {
-        "url": " ",
+        "url": " https://",
         "description": "Sandbox server (uses test data)"
       }
     ],
