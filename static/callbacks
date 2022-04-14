@@ -119,7 +119,7 @@
         },
         "/{callback04Url}": {
             "post": {
-                "summary": "#04 - KYC Demand",
+                "summary": "#04 - KYC demand",
                 "description": "Callback received in case of status change in the KYC demand",
                 "requestBody": {
                     "description": "JSON Body",
