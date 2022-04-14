@@ -6,10 +6,6 @@
     },
     "servers": [
       {
-        "url": "https://api.example.com/v1",
-        "description": "Production server (uses live data)"
-      },
-      {
         "url": " https://",
         "description": "Sandbox server (uses test data)"
       }
