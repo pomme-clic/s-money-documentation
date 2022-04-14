@@ -148,7 +148,7 @@
                                         "properties": {
                                             "diligenceType": {
                                                 "type": "string",
-                                                "description": "Type of diligence :- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
+                                                "description": "Type of diligence :  \n- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
                                                 "example": "PASSPORT"
                                             },
                                             "status": {
