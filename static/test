@@ -23,7 +23,7 @@
                         "description": "the location where data will be sent.  Must be network accessible by the source server",
                         "schema": {
                             "type": "string",
-                            "example": "enk0r3xvfg4ms.x.pipedream.net/"
+                            "example": "enk0r3xvfg4ms.x.pipedream.net"
                         }
                     },
                     {
