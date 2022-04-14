@@ -131,6 +131,46 @@
                             "type": "string",
                             "example": "tonys-server.com"
                         }
+                    },
+                    {
+                        "in": "body",
+                        "required": true,
+                        "description": "JSON body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "description": "callback type",
+                                    "example": "4"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+                                    "example": "incomplete"
+                                },
+                                "appUserId": {
+                                    "type": "string",
+                                    "description": "User unique identifier",
+                                    "example": "rx193bo32"
+                                },
+                                "diligences": {
+                                    "type": "object",
+                                    "properties": {
+                                        "diligenceType": {
+                                            "type": "string",
+                                            "description": "Type of diligence",
+                                            "example": "PASSPORT"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "description": "status of diligence",
+                                            "example": "Validated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 ],
                 "callbacks": {
