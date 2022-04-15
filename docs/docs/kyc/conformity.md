@@ -16,7 +16,7 @@ Here after is an introduction of the different processes involved.
 ## PEP and Sanction control
 
 ### Politically Exposed People (PEP)
-Those people, politically exposed persons (PEPs), hold a crucial position in public and are vulnerable to financial crime.
+Those people, Politically Exposed Persons (PEPs), hold a crucial position in public and are vulnerable to financial crime.
 
 ### Sanction People or organization
 Those persons, organizations or governments may have the potential to be involved in the financial activities which are:  
@@ -36,13 +36,13 @@ Effects could be block the account or to get additional information from the cus
 
 ## Scoring 
 Xpollens performs a scoring calculation based on customers informations.
-Main effect from a customer relationship perspective is the time between 2 KYC updates.
+Main effect from a customer relationship perspective is the time between 2 KYC updates and differenciation in Banking activity controls.
 
 ---
 
 ## Tax information control
 
-### Procees introduction
+### Process introduction
 To support governments to fight against tax evasion, financial institutions must implement solutions to collect and verify their 
 customers' tax information.
 
@@ -69,7 +69,13 @@ You can provide tax information for check using this API :
 
 <Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
 
-Once the Tax info has been vaidated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
+If additionnal FATCA/CRS documents are required, the document can be sent here :
+
+<Endpoint apiUrl="/v2.0/users" path="/api/v2.0/user/{appUserId}/fatca/attachments" method="post"/>
+
+***
+
+Once the Tax info has been validated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
 
 <Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/self-certification" method="get"/> 
 
