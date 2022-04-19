@@ -10,7 +10,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Accounts',
-      items: ['docs/accounts/account-management', 'docs/accounts/debts'],
+      items: ['docs/accounts/account-management', 'docs/accounts/debts', 'docs/accounts/virtualiban'],
     },
     {
       type: 'category',
