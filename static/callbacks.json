@@ -345,8 +345,8 @@
         },
         "/{callback17Url}": {
             "post": {
-                "summary": "#17 - KYC demand",
-                "description": "Callback received in case of status change in the KYC demand",
+                "summary": "#17 - SCT Out",
+                "description": "Callback received in case of status change in an incoming SCT payment",
                 "requestBody": {
                     "description": "JSON Body",
                     "content": {
@@ -354,35 +354,30 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "type": {
+                                    "id": {
                                         "type": "string",
-                                        "description": "callback type",
-                                        "example": "4"
+                                        "description": "the transaction id",
+                                        "example": "10743"
+                                    },
+                                    "reference": {
+                                        "type": "string",
+                                        "description": "the transaction orderid",
+                                        "example": "o0pbb6ryc"
                                     },
                                     "status": {
                                         "type": "string",
-                                        "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
-                                        "example": "incomplete"
+                                        "description": "the transaction status :  \n1 = succeeded  \n2 = refund",
+                                        "example": "1"
                                     },
-                                    "appUserId": {
+                                    "userid": {
                                         "type": "string",
-                                        "description": "User unique identifier",
-                                        "example": "rx193bo32"
+                                        "description": "the user unique identifier",
+                                        "example": "dnboz3uht"
                                     },
-                                    "diligences": {
+                                    "type": {
                                         "type": "object",
-                                        "properties": {
-                                            "diligenceType": {
-                                                "type": "string",
-                                                "description": "Type of diligence :  \n- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
-                                                "example": "PASSPORT"
-                                            },
-                                            "status": {
-                                                "type": "string",
-                                                "description": "Status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
-                                                "example": "Validated"
-                                            }
-                                        }
+                                        "description": "the callback type",
+                                        "example": "16"
                                     }
                                 }
                             }
@@ -391,7 +386,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "callback04Url",
+                        "name": "callback16Url",
                         "in": "path",
                         "required": true,
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
@@ -412,35 +407,30 @@
                                             "schema": {
                                                 "type": "object",
                                                 "properties": {
-                                                    "type": {
+                                                    "id": {
                                                         "type": "string",
-                                                        "description": "callback type",
-                                                        "example": "4"
+                                                        "description": "the transaction id",
+                                                        "example": "10743"
+                                                    },
+                                                    "reference": {
+                                                        "type": "string",
+                                                        "description": "the transaction orderid",
+                                                        "example": "o0pbb6ryc"
                                                     },
                                                     "status": {
                                                         "type": "string",
-                                                        "description": "Status of the KYC demand",
-                                                        "example": "incomplete"
+                                                        "description": "the transaction status :  \n1 = succeeded  \n2 = refund",
+                                                        "example": "1"
                                                     },
-                                                    "appUserId": {
+                                                    "userid": {
                                                         "type": "string",
-                                                        "description": "User unique identifier",
-                                                        "example": "rx193bo32"
+                                                        "description": "the user unique identifier",
+                                                        "example": "dnboz3uht"
                                                     },
-                                                    "diligences": {
+                                                    "type": {
                                                         "type": "object",
-                                                        "properties": {
-                                                            "diligenceType": {
-                                                                "type": "string",
-                                                                "description": "Type of diligence",
-                                                                "example": "PASSPORT"
-                                                            },
-                                                            "status": {
-                                                                "type": "string",
-                                                                "description": "status of diligence",
-                                                                "example": "Validated"
-                                                            }
-                                                        }
+                                                        "description": "the callback type",
+                                                        "example": "16"
                                                     }
                                                 }
                                             }
