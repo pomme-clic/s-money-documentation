@@ -1769,8 +1769,8 @@
         },
         "/{callback35Url}": {
             "post": {
-                "summary": "#35 - User onboarding",
-                "description": "Callback received in case of client onboarding status change",
+                "summary": "#35 - Strong authentication enrollment",
+                "description": "Callback received in case of client SCA (Strong Customer Authentication) status change",
                 "requestBody": {
                     "description": "JSON Body",
                     "content": {
