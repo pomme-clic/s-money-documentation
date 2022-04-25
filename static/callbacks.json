@@ -1954,8 +1954,8 @@
         },
         "/{callback37Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
             "post": {
-                "summary": "#37 - Refund TopUp",
-                "description": "Callback received in case of a status change for in the refund topup status",
+                "summary": "#37 - Topup refund",
+                "description": "Callback received in case of a status change for in the topup refund status",
                 "parameters": [
                     {
                         "name": "callback37Url",
@@ -2122,7 +2122,7 @@
         },
         "/{callback15Url}/?type={type}&userstatus={userstatus}&userid={userid}": {
             "post": {
-                "summary": "#15 - FreezeUser",
+                "summary": "#15 - User freeze",
                 "description": "Callback received in case of a freeze status change for a user",
                 "parameters": [
                     {
