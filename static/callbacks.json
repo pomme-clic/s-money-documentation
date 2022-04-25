@@ -366,7 +366,7 @@
                                     },
                                     "status": {
                                         "type": "string",
-                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed \n2 = refunded  \n3 = failed",
+                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
                                         "example": "1"
                                     },
                                     "userid": {
