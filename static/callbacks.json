@@ -690,77 +690,77 @@
                                     },
                                     "type": {
                                         "type": "string",
-                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "description": "the callback type",
                                         "example": "20"
                                     },
                                     "appCardId": {
                                         "type": "string",
-                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "description": "the reference or alias of the card",
                                         "example": "null"
                                     },
                                     "transactionAmount": {
                                         "type": "string",
-                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "description": "the amount in local currency in decimal",
                                         "example": "11.9"
                                     },
                                     "currencyCodeTransaction": {
                                         "type": "string",
-                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "description": "the transaction currency code (ISO 4217 numeric code)",
                                         "example": "978"
                                     },
                                     "cardHolderBillingAmount": {
                                         "type": "string",
-                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "description": "the amount in euro (used for foreign currency transactions) in decimal format",
                                         "example": ""
                                     },
                                     "cardHolderBillingConversionRate": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the exchange rate (used for foreign currency transactions) in decimal value in string data type",
                                         "example": ""
                                     },
                                     "availableBalance": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the balance after authorization in decimal format",
                                         "example": "0.96"
                                     },
                                     "actionCode": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the response code (authorization and reasons for refusal)",
                                         "example": "0"
                                     },
                                     "merchantType": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the merchant category code",
                                         "example": "5814"
                                     },
                                     "cardAcceptorIdentificationCodeName": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the merchant information (name, adress,etc…)",
                                         "example": "MC DONALD S\\\\GRENOBLE"
                                     },
                                     "status": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the Operation status :  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = failed  \n5 = cancelled  \n7 = expired",
                                         "example": "0"
                                     },
                                     "ert": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the regulatory and technical environment (ATM, online payment, etc…)",
                                         "example": "10"
                                     },
                                     "cardDataInputMode": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "contact or contactless",
                                         "example": "9"
                                     },
                                     "tokenRequestorID": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the id of the token requestor (such as ApplePay, GooglePay, etc…)",
                                         "example": ""
                                     },
                                     "terminalCountryCode": {
                                         "type": "string",
-                                        "description": "the user unique identifier",
+                                        "description": "the Country where the payment took place",
                                         "example": "250"
                                     },
                                     "userid": {
@@ -770,7 +770,7 @@
                                     },
                                     "executedDate": {
                                         "type": "string",
-                                        "description": "the callback type",
+                                        "description": "the executed date of the operation. Warning: unusual date format: (dd/MM/yyyy hh:mm:ss)",
                                         "example": "01/12/2022 14:44:09"
                                     }
                                 }
@@ -813,77 +813,77 @@
                                                     },
                                                     "type": {
                                                         "type": "string",
-                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "description": "the callback type",
                                                         "example": "20"
                                                     },
                                                     "appCardId": {
                                                         "type": "string",
-                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "description": "the reference or alias of the card",
                                                         "example": "null"
                                                     },
                                                     "transactionAmount": {
                                                         "type": "string",
-                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "description": "the amount in local currency in decimal",
                                                         "example": "11.9"
                                                     },
                                                     "currencyCodeTransaction": {
                                                         "type": "string",
-                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "description": "the transaction currency code (ISO 4217 numeric code)",
                                                         "example": "978"
                                                     },
                                                     "cardHolderBillingAmount": {
                                                         "type": "string",
-                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "description": "the amount in euro (used for foreign currency transactions) in decimal format",
                                                         "example": ""
                                                     },
                                                     "cardHolderBillingConversionRate": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the exchange rate (used for foreign currency transactions) in decimal value in string data type",
                                                         "example": ""
                                                     },
                                                     "availableBalance": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the balance after authorization in decimal format",
                                                         "example": "0.96"
                                                     },
                                                     "actionCode": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the response code (authorization and reasons for refusal)",
                                                         "example": "0"
                                                     },
                                                     "merchantType": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the merchant category code",
                                                         "example": "5814"
                                                     },
                                                     "cardAcceptorIdentificationCodeName": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the merchant information (name, adress,etc…)",
                                                         "example": "MC DONALD S\\\\GRENOBLE"
                                                     },
                                                     "status": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the Operation status :  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = failed  \n5 = cancelled  \n7 = expired",
                                                         "example": "0"
                                                     },
                                                     "ert": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the regulatory and technical environment (ATM, online payment, etc…)",
                                                         "example": "10"
                                                     },
                                                     "cardDataInputMode": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "contact or contactless",
                                                         "example": "9"
                                                     },
                                                     "tokenRequestorID": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the id of the token requestor (such as ApplePay, GooglePay, etc…)",
                                                         "example": ""
                                                     },
                                                     "terminalCountryCode": {
                                                         "type": "string",
-                                                        "description": "the user unique identifier",
+                                                        "description": "the Country where the payment took place",
                                                         "example": "250"
                                                     },
                                                     "userid": {
@@ -893,7 +893,7 @@
                                                     },
                                                     "executedDate": {
                                                         "type": "string",
-                                                        "description": "the callback type",
+                                                        "description": "the executed date of the operation. Warning: unusual date format: (dd/MM/yyyy hh:mm:ss)",
                                                         "example": "01/12/2022 14:44:09"
                                                     }
                                                 }
