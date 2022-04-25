@@ -478,13 +478,13 @@
                 }
             }
         },
-        "/{callback15Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
+        "/{callback15Url}/?type={type}&userstatus={userstatus}&userid={userid}": {
             "post": {
                 "summary": "#15 - FreezeUser",
                 "description": "Callback received in case of a freeze status change for a user",
                 "parameters": [
                     {
-                        "name": "callback01Url",
+                        "name": "callback15Url",
                         "in": "path",
                         "required": true,
                         "description": "the location where data will be sent.  Must be network accessible by the source server",
@@ -494,70 +494,39 @@
                         }
                     },
                     {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "description": "the transaction id",
-                        "schema": {
-                            "type": "string",
-                            "example": "TOPUP123"
-                        }
-                    },
-                    {
-                        "name": "error",
-                        "in": "path",
-                        "required": true,
-                        "description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
-                        "schema": {
-                            "type": "string",
-                            "example": "0"
-                        }
-                    },
-                    {
-                        "name": "status",
-                        "in": "path",
-                        "required": true,
-                        "description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
-                        "schema": {
-                            "type": "string",
-                            "example": "1"
-                        }
-                    },
-                    {
                         "name": "type",
                         "in": "path",
                         "required": true,
                         "description": "the callback type",
                         "schema": {
                             "type": "string",
-                            "example": "1"
+                            "example": "15"
                         }
                     },
                     {
-                        "name": "initialOrderID",
+                        "name": "userstatus",
                         "in": "path",
                         "required": true,
-                        "description": "initial transaction orderid",
+                        "description": "the user new status :  \n1 = OK (not frozen)  \n2 = frozen",
                         "schema": {
                             "type": "string",
-                            "example": "ABCD1234"
+                            "example": "2"
                         }
                     },
                     {
-                        "name": "amount",
+                        "name": "userid",
                         "in": "path",
                         "required": true,
-                        "description": "the transaction amount",
+                        "description": "the appuserid",
                         "schema": {
-                            "type": "number",
-                            "format": "float",
-                            "example": "1234.56"
+                            "type": "string",
+                            "example": "x03ksnze9"
                         }
                     }
                 ],
                 "callbacks": {
                     "onData": {
-                        "https://yourCallbackAdress/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=ABCD1234&amount=12": {
+                        "https://YourCallbackUrl?type=15&userstatus=2&userid=x03ksnze9": {
                             "post": {
                                 "requestBody": {
                                     "description": "Example",
@@ -565,7 +534,7 @@
                                         "application/x-www-form-urlencoded": {
                                             "schema": {
                                                 "type": "string",
-                                                "example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
+                                                "example": "https://YourCallbackUrl?type=15&userstatus=2&userid=x03ksnze9"
                                             }
                                         }
                                     }
