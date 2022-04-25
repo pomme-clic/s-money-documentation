@@ -1521,7 +1521,7 @@
         },
         "/{callback33Url}": {
             "post": {
-                "summary": "#33 - Client Debt",
+                "summary": "#33 - Client debt",
                 "description": "Callback received in case of client debt change for a user",
                 "requestBody": {
                     "description": "JSON Body",
@@ -1649,6 +1649,104 @@
                                                         "type": "number",
                                                         "description": "the balance of loss and profit account after the debt creation (decimal, in euro)",
                                                         "example": "145258.55"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{callback34Url}": {
+            "post": {
+                "summary": "#34 - User onboarding",
+                "description": "Callback received in case of client onboarding status change",
+                "requestBody": {
+                    "description": "JSON Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",                        
+                                        "description": "the callback type",
+                                        "example": "34"
+                                    },                               
+                                    "userRecordStatus": {
+                                        "type": "string",
+                                        "description": "the status of the user record :  \n-initialized  \n-inProgress  \n-validated  \n-refused",
+                                        "example": "inProgress"
+                                    },
+                                    "appUserId": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "70rot07ay"
+                                    },
+                                    "publicUserCode": {
+                                        "type": "number",
+                                        "description": "this corresponds to issuerClientID in Antelop system. It is used to create the wallet in the Antelop system.",
+                                        "example": "363O2TWZ3787"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "callback34Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "example": "tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",                        
+                                                        "description": "the callback type",
+                                                        "example": "34"
+                                                    },                               
+                                                    "userRecordStatus": {
+                                                        "type": "string",
+                                                        "description": "the status of the user record :  \n-initialized  \n-inProgress  \n-validated  \n-refused",
+                                                        "example": "inProgress"
+                                                    },
+                                                    "appUserId": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "70rot07ay"
+                                                    },
+                                                    "publicUserCode": {
+                                                        "type": "number",
+                                                        "description": "this corresponds to issuerClientID in Antelop system. It is used to create the wallet in the Antelop system.",
+                                                        "example": "363O2TWZ3787"
                                                     }
                                                 }
                                             }
