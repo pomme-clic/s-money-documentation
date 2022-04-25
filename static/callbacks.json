@@ -667,6 +667,254 @@
                 }
             }
         },
+        "/{callback20Url}": {
+            "post": {
+                "summary": "#20 - Card Operation Status change",
+                "description": "Callback received in case of status change in a card operation",
+                "requestBody": {
+                    "description": "JSON Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "the Xpollens internal card id",
+                                        "example": "464890"
+                                    },
+                                    "reference": {
+                                        "type": "string",
+                                        "description": "the operation orderid",
+                                        "example": "8Y8Loh9L8E6FJsA7J1Tyrg"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "example": "20"
+                                    },
+                                    "appCardId": {
+                                        "type": "string",
+                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "example": "null"
+                                    },
+                                    "transactionAmount": {
+                                        "type": "string",
+                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "example": "11.9"
+                                    },
+                                    "currencyCodeTransaction": {
+                                        "type": "string",
+                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "example": "978"
+                                    },
+                                    "cardHolderBillingAmount": {
+                                        "type": "string",
+                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                        "example": ""
+                                    },
+                                    "cardHolderBillingConversionRate": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": ""
+                                    },
+                                    "availableBalance": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "0.96"
+                                    },
+                                    "actionCode": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "0"
+                                    },
+                                    "merchantType": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "5814"
+                                    },
+                                    "cardAcceptorIdentificationCodeName": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "MC DONALD S\\\\GRENOBLE"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "0"
+                                    },
+                                    "ert": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "10"
+                                    },
+                                    "cardDataInputMode": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "9"
+                                    },
+                                    "tokenRequestorID": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": ""
+                                    },
+                                    "terminalCountryCode": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "250"
+                                    },
+                                    "userid": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "dyYiUtSrj"
+                                    },
+                                    "executedDate": {
+                                        "type": "string",
+                                        "description": "the callback type",
+                                        "example": "01/12/2022 14:44:09"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "callback20Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "example": "tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "description": "the Xpollens internal card id",
+                                                        "example": "464890"
+                                                    },
+                                                    "reference": {
+                                                        "type": "string",
+                                                        "description": "the operation orderid",
+                                                        "example": "8Y8Loh9L8E6FJsA7J1Tyrg"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "example": "20"
+                                                    },
+                                                    "appCardId": {
+                                                        "type": "string",
+                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "example": "null"
+                                                    },
+                                                    "transactionAmount": {
+                                                        "type": "string",
+                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "example": "11.9"
+                                                    },
+                                                    "currencyCodeTransaction": {
+                                                        "type": "string",
+                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "example": "978"
+                                                    },
+                                                    "cardHolderBillingAmount": {
+                                                        "type": "string",
+                                                        "description": "the transaction status :  \n0 = pending  \n1 = succedeed  \n2 = refunded  \n3 = failed",
+                                                        "example": ""
+                                                    },
+                                                    "cardHolderBillingConversionRate": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": ""
+                                                    },
+                                                    "availableBalance": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "0.96"
+                                                    },
+                                                    "actionCode": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "0"
+                                                    },
+                                                    "merchantType": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "5814"
+                                                    },
+                                                    "cardAcceptorIdentificationCodeName": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "MC DONALD S\\\\GRENOBLE"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "0"
+                                                    },
+                                                    "ert": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "10"
+                                                    },
+                                                    "cardDataInputMode": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "9"
+                                                    },
+                                                    "tokenRequestorID": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": ""
+                                                    },
+                                                    "terminalCountryCode": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "250"
+                                                    },
+                                                    "userid": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "dyYiUtSrj"
+                                                    },
+                                                    "executedDate": {
+                                                        "type": "string",
+                                                        "description": "the callback type",
+                                                        "example": "01/12/2022 14:44:09"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/{callback05Url}/?type={type}&id={id}&userid={userid}": {
             "post": {
                 "summary": "#05 - Registration of a bank card for TopUp",
