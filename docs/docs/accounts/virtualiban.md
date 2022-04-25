@@ -3,30 +3,29 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# VIRTUAL IBAN
+# Virtual IBAN
 
 A Virtual Iban (VIBAN) is a secondary account identifier.  
-The VIBAN is linked to an existing account and can be used to receive or send payment from an account. 
-The VIBAN can be used to mask the Account IBAN.
+The VIBAN is linked to an existing account and can be used to receive or send payments from an existing account. 
+The VIBAN can be used to mask the original account IBAN.
 
-In the first release of the Xpollens VIBAN fature only the reation, send and receive of payment is available.
-The next relese of VIBAN will supply value added features linked to a VIBAN (for example, single use, activation/desactivation,..).
+In its first version, the Xpollens VIBAN feature will allow creation of VIBANs, reception and sending of funds from VIBANs.
 
 <Highlight>
 
-Once you have an account and its IBAN, you can create as many VIBAN you like. 
-For example, to supply dedicated account details to your customer and to better lettering your entering payment. 
+Once you have an account and its IBAN, you can create as many VIBANs as you like. 
+For example, to supply dedicated account details to your customer and to better lettering your incoming payment. 
 
 </Highlight>
 
 <Highlight type="tip">
 
-The VIBAN is an additional identifier for your account. Entering and outgoing payment will credit or debit your account : there is no account balance associated to a VIBAN. 
+The VIBAN is an additional identifier for your account. Incoming and outgoing payment will credit or debit your account : there is no account balance associated to VIBANs. 
 
 </Highlight>
 
 ---
-## Virtual Iban creation and use
+## Virtual Iban creation and utilization
 
 As a product or service supplier, you can letter your client payment in supplying a VIBAN to each of your customer or for each payment.
 
@@ -36,13 +35,8 @@ As a product or service supplier, you can letter your client payment in supplyin
 
 ## Endpoints
 
-One you have an account identifier, your can creation as many Virtual Iban you need linked to your account.
 
-API to be provided soon.
-
-Once a debit/credit has been made foolowinf a payment made with one of your Virtual Iban, you can letter the payment based on the payment operation detail.
-
-API to be provided soon.
+API definition coming soon
 
 More information regarding this endpoint in the [API reference](/api/Core)
 
