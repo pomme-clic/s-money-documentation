@@ -669,7 +669,7 @@
         },
         "/{callback20Url}": {
             "post": {
-                "summary": "#20 - Card Operation Status change",
+                "summary": "#20 - Card operation status change",
                 "description": "Callback received in case of status change in a card operation",
                 "requestBody": {
                     "description": "JSON Body",
@@ -895,6 +895,134 @@
                                                         "type": "string",
                                                         "description": "the executed date of the operation. Warning: unusual date format: (dd/MM/yyyy hh:mm:ss)",
                                                         "example": "01/12/2022 14:44:09"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{callback21Url}": {
+            "post": {
+                "summary": "#21 - Card creation (or card change status)",
+                "description": "Callback received in case of status change in a card operation",
+                "requestBody": {
+                    "description": "JSON Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "the Xpollens internal card id",
+                                        "example": "464890"
+                                    },
+                                    "reference": {
+                                        "type": "string",
+                                        "description": "the reference or alias of the card",
+                                        "example": "card-lHXYoKrpn"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "description": "the callback type",
+                                        "example": "21"
+                                    },
+                                    "cardType": {
+                                        "type": "string",
+                                        "description": "the type of the ordered card :  \n1 = classic virtual  \n2 = classic physical  \n3 = premium virtual  \n4 = premium physical",
+                                        "example": "4"
+                                    },
+                                    "action": {
+                                        "type": "string",
+                                        "description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update",
+                                        "example": "0"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "the Status of the card :  \n0 = ordered  \n1 = sent  \n2 = activated  \n3 = expired  \n4 = opposed  \n5 = failed  \n6 = deactivated  \n7 = cancelled",
+                                        "example": "1"
+                                    },        
+                                    "opposedReason": {
+                                        "type": "string",
+                                        "description": "the reason for card opposition :  \nThis field is different than '0' only when the card is opposed.  \n07 = special conditions  \n34 = suspected fraud  \n41 = lost  \n43 = stolen)",
+                                        "example": "0"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "callback21Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "example": "tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "description": "the Xpollens internal card id",
+                                                        "example": "464890"
+                                                    },
+                                                    "reference": {
+                                                        "type": "string",
+                                                        "description": "the reference or alias of the card",
+                                                        "example": "card-lHXYoKrpn"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "the callback type",
+                                                        "example": "21"
+                                                    },
+                                                    "cardType": {
+                                                        "type": "string",
+                                                        "description": "the type of the ordered card :  \n1 = classic virtual  \n2 = classic physical  \n3 = premium virtual  \n4 = premium physical",
+                                                        "example": "4"
+                                                    },
+                                                    "action": {
+                                                        "type": "string",
+                                                        "description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update",
+                                                        "example": "0"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "description": "the Status of the card :  \n0 = ordered  \n1 = sent  \n2 = activated  \n3 = expired  \n4 = opposed  \n5 = failed  \n6 = deactivated  \n7 = cancelled",
+                                                        "example": "1"
+                                                    },        
+                                                    "opposedReason": {
+                                                        "type": "string",
+                                                        "description": "the reason for card opposition :  \nThis field is different than '0' only when the card is opposed.  \n07 = special conditions  \n34 = suspected fraud  \n41 = lost  \n43 = stolen)",
+                                                        "example": "0"
                                                     }
                                                 }
                                             }

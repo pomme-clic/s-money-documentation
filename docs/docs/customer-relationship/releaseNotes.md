@@ -62,7 +62,7 @@ GET PIN endpoint
 GET CVV + PAN endpoint  
 All these new endpoint require to have the SCA SDK installed  
 - Improved SDK in-app provisioning stability and performance  
-- Added a WishPIN endpoint (GET/api​/v2.0​/tokensignature) to get authentication data required to display PIN  
+- Added a WishPIN endpoint (GET/api​/v2.0​/tokensignature) to get authentication data  
 - Modified the getCVV2 method to be reachable for physical and virtual cards  
 - Added two endpoints to display card infos to our client in agent mode  
 For PIN:  
