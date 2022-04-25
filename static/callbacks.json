@@ -1767,6 +1767,116 @@
                 }
             }
         },
+        "/{callback35Url}": {
+            "post": {
+                "summary": "#35 - User onboarding",
+                "description": "Callback received in case of client onboarding status change",
+                "requestBody": {
+                    "description": "JSON Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",                        
+                                        "description": "the callback type",
+                                        "example": "35"
+                                    },                               
+                                    "appUserId": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "610152c9J"
+                                    },
+                                    "activationCode": {
+                                        "type": "string",
+                                        "description": "the code used to activate the wallet (32 char)",
+                                        "example": "0xd14c7c77a134d87b45ec82cac16ac631"
+                                    },
+                                    "ErrorMessage": {
+                                        "type": "string",
+                                        "description": "the error message if an error occured",
+                                        "example": ""
+                                    },
+                                    "ExtraData": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "description": "the webview URL",
+                                        "example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "callback35Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "example": "tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",                        
+                                                        "description": "the callback type",
+                                                        "example": "35"
+                                                    },                               
+                                                    "appUserId": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "610152c9J"
+                                                    },
+                                                    "activationCode": {
+                                                        "type": "string",
+                                                        "description": "the code used to activate the wallet (32 char)",
+                                                        "example": "0xd14c7c77a134d87b45ec82cac16ac631"
+                                                    },
+                                                    "ErrorMessage": {
+                                                        "type": "string",
+                                                        "description": "the error message if an error occured",
+                                                        "example": ""
+                                                    },
+                                                    "ExtraData": {
+                                                        "type": "string",
+                                                        "format": "uri",
+                                                        "description": "the webview URL",
+                                                        "example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/{callback05Url}/?type={type}&id={id}&userid={userid}": {
             "post": {
                 "summary": "#05 - Registration of a bank card for TopUp",
