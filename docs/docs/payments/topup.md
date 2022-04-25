@@ -37,7 +37,7 @@ More information regarding this endpoint in the [hosted fields by Dalenys.](http
 
 ## Features with Xpollens shop
 
-### Create a topup with 3DSv2
+### Create a topup
 
 **Create a top up with 3DSV2**
 
@@ -55,6 +55,13 @@ To register the bank card during payment, you must, in the body of the request, 
 **Top up Oneclick with 3DSV2**
 
 To create a top up oneclick, you must, in the body of the request, add and fill in the "AppCardId" parameter instead of the "HFToken" parameter". This will allow you to directly call the previously registered bank card.
+
+**Top up MIT without 3DSV2**
+
+This endpoint is used to create top up request with 3DSV2. The holder of the Xpollens account can add money to his Xpollens account using his bank card. Thus, he will debit his bank account and credit his Xpollens account with the topup.
+If fees must be attached to this transaction, you can fill in the "Fee" parameter in the body of the request with the amount of the fees. The bank card holder will be debited for the "Amount+Fee".
+
+<Image src="docs/Topup_Create3DS.png" alt="usecase 1"/>
 
 #### Endpoint
 
