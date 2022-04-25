@@ -346,7 +346,7 @@
         "/{callback17Url}": {
             "post": {
                 "summary": "#17 - SCT Out",
-                "description": "Callback received in case of status change in an incoming SCT payment",
+                "description": "Callback received in case of status change in an outgoing SCT payment",
                 "requestBody": {
                     "description": "JSON Body",
                     "content": {
