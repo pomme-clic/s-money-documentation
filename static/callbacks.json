@@ -1879,7 +1879,7 @@
         },
         "/{callback05Url}/?type={type}&id={id}&userid={userid}": {
             "post": {
-                "summary": "#05 - Registration of a bank card for TopUp",
+                "summary": "#05 - Bank card registration",
                 "description": "Callback received in case of status change in a bank card registration used in a topup",
                 "parameters": [
                     {
