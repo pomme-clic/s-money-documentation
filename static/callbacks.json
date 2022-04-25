@@ -669,7 +669,7 @@
         },
         "/{callback20Url}": {
             "post": {
-                "summary": "#20 - Card operation status change",
+                "summary": "#20 - Card operation",
                 "description": "Callback received in case of status change in a card operation",
                 "requestBody": {
                     "description": "JSON Body",
@@ -917,7 +917,7 @@
         },
         "/{callback21Url}": {
             "post": {
-                "summary": "#21 - Card creation (or card status change)",
+                "summary": "#21 - Card creation/status",
                 "description": "Callback received in case of status change in a card operation",
                 "requestBody": {
                     "description": "JSON Body",
@@ -1045,7 +1045,7 @@
         },
         "/{callback24Url}": {
             "post": {
-                "summary": "#24 - Card operation clearing processing",
+                "summary": "#24 - Card clearing processing",
                 "description": "Callback received in case of status change in a clearing batch file",
                 "requestBody": {
                     "description": "JSON Body",
