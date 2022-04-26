@@ -2843,6 +2843,11 @@
                                         "description": "the turnover of N-1 year, decimal",
                                         "example": "360250.99"
                                     },
+                                    "currency": {
+                                        "type": "string",
+                                        "description": "currency of the turnover (ISO 4217 code)",
+                                        "example": "EUR"
+                                    },
                                     "highFinancialIncome": {
                                         "type": "string",
                                         "description": "Is the legal entity a high financial income entity",
