@@ -2170,117 +2170,27 @@
                 ],
                 "callbacks": {
                     "onData": {
-                        "{$request.query.callbackUrl}/data": {
+                        "https://yourCallbackAdress/": {
                             "post": {
-                                "summary": "#36 - Strong authentication",
-                                "description": "Callback received for strong authentication (sensitives actions)",
-                                "parameters": [
-                                    {
-                                        "name": "callback36Url",
-                                        "in": "path",
-                                        "required": true,
-                                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
-                                        "schema": {
-                                            "type": "string",
-                                            "format": "uri",
-                                            "example": "tonys-server.com"
-                                        }
-                                    },
-                                    {
-                                        "name": "authenticationId",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the id of the authentication operation (used to link to the synchronous response)",
-                                        "schema": {
-                                            "type": "string",
-                                            "example": "3285f14c-d0e3-4218-9482-30dd9f0c814f"
-                                        }
-                                    },
-                                    {
-                                        "name": "type",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the callback type",
-                                        "schema": {
-                                            "type": "string",
-                                            "example": "36"
-                                        }
-                                    },
-                                    {
-                                        "name": "appUserId",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the user unique identifier",
-                                        "schema": {
-                                            "type": "string",
-                                            "example": "jHiBCTeAK"
-                                        }
-                                    },
-                                    {
-                                        "name": "authenticationResultDate",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the effective authentication result date",
-                                        "schema": {
-                                            "type": "string",
-                                            "format": "date-time",
-                                            "example": "2021-10-13T08:32:23+00:00"
-                                        }
-                                    },
-                                    {
-                                        "name": "requestProcessDate",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the effective end date for the operation",
-                                        "schema": {
-                                            "type": "string",
-                                            "format": "date-time",
-                                            "example": "2021-10-13T08:32:24.1177698+00:00"
-                                        }
-                                    },
-                                    {
-                                        "name": "requestResponseCode",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the Http status code of the operation",
-                                        "schema": {
-                                            "type": "string",
-                                            "example": "200"
-                                        }
-                                    },
-                                    {
-                                        "name": "requestDate",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the effective date for the operation",
-                                        "schema": {
-                                            "type": "string",
-                                            "format": "date-time",
-                                            "example": "2021-10-13T08:31:21.5157898+00:00"
-                                        }
-                                    },
-                                    {
-                                        "name": "status",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the status of the authentication",
-                                        "schema": {
-                                            "type": "string",
-                                            "example": "succeeded"
-                                        }
-                                    },
-                                    {
-                                        "name": "reason",
-                                        "in": "header",
-                                        "required": true,
-                                        "description": "the reason of failure if applicable :  \n- TIMEOUT: customer did not authenticate in due time  \n- CANCELED: customer CANCELED the authentication request  \n- FAILED: customer did not successfully authenticate",
-                                        "schema": {
-                                            "type": "string",
-                                            "example": ""
+                                "requestBody": {
+                                    "description": "Example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "string",
+                                                "example": "https://YourCallbackUrl/"
+                                            }
                                         }
                                     }
-                                ]
-                                
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
                             }
                         }
                     }
