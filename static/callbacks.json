@@ -2763,7 +2763,7 @@
         "/{callback43Url}": {
             "post": {
                 "summary": "#43 - Legal entity",
-                "description": "Callback received in case of status change in the KYC demand",
+                "description": "Callback received in case of a change in a legal entity",
                 "requestBody": {
                     "description": "JSON Body",
                     "content": {
@@ -2773,31 +2773,122 @@
                                 "properties": {
                                     "type": {
                                         "type": "string",
-                                        "description": "callback type",
-                                        "example": "4"
+                                        "description": "the callback type",
+                                        "example": "43"
                                     },
-                                    "status": {
+                                    "legalEntityId": {
                                         "type": "string",
-                                        "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+                                        "description": "the legal entity unique identifier",
                                         "example": "incomplete"
                                     },
-                                    "appUserId": {
+                                    "registrationNumber": {
                                         "type": "string",
-                                        "description": "User unique identifier",
+                                        "description": "the legal identification number of the legal entity  \n(ex : SIREN in France)",
                                         "example": "rx193bo32"
                                     },
-                                    "diligences": {
-                                        "type": "object",
+                                    "registrationCountry": {
+                                        "type": "string",
+                                        "description": "the registration country of the legal entity (ISO 3166-1 code)",
+                                        "example": "rx193bo32"
+                                    },
+                                    "legalEntityCreationStatus": {
+                                        "type": "string",
+                                        "description": "Legal entity creation status :  \n- succeeded  \n- failed",
+                                        "example": "succeeded"
+                                    },
+                                    "registrationCity": {
+                                        "type": "string",
+                                        "description": "the legal entity registration city",
+                                        "example": "Melbourne"
+                                    },
+                                    "companyName": {
+                                        "type": "string",
+                                        "description": "the name of the legal entity",
+                                        "example": "NM Corporation"
+                                    },
+                                    "tradeName": {
+                                        "type": "string",
+                                        "description": "the commercial name of the legal entity",
+                                        "example": "NNNC"
+                                    },
+                                    "naceCode": {
+                                        "type": "string",
+                                        "description": "the legal entity type of economical activity (NACE code)",
+                                        "example": "P85.1"
+                                    },
+                                    "legalForm": {
+                                        "type": "string",
+                                        "description": "the legal entity legal form",
+                                        "example": "5499"
+                                    },
+                                    "creationDate": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "the creation date of the legal entity",
+                                        "example": "1982-12-08"
+                                    },
+                                    "legalEntityRecordStatus": {
+                                        "type": "string",
+                                        "description": "the onboarding status of the legal entity",
+                                        "example": "initialized"
+                                    },
+                                    "onboardingDate": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "the onboarding date of the legal entity",
+                                        "example": "2022-02-15T19:32:10.9931518+00:00"
+                                    },
+                                    "turnOver": {
+                                        "type": "string",
+                                        "description": "the turnover of N-1 year, decimal",
+                                        "example": "360250.99"
+                                    },
+                                    "highFinancialIncome": {
+                                        "type": "string",
+                                        "description": "Is the legal entity a high financial income entity",
+                                        "example": "false"
+                                    },
+                                    "listedInStockMarkets": {
+                                        "type": "string",
+                                        "description": "Is the legal entity listed in stock markets",
+                                        "example": "true"
+                                    },
+                                    "regulated": {
+                                        "type": "boolean",
+                                        "description": "Is the legal entity regulated under special circumstances",
+                                        "example": "false"
+                                    },
+                                    "address": {
+                                        "type": "object",                                        
+                                        "description": "adress details of the legal entity",
                                         "properties": {
-                                            "diligenceType": {
+                                            "street": {
                                                 "type": "string",
-                                                "description": "Type of diligence :  \n- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
-                                                "example": "PASSPORT"
+                                                "example": "51 Pender Street"
                                             },
-                                            "status": {
+                                            "supplementIn": {
                                                 "type": "string",
-                                                "description": "Status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
-                                                "example": "Validated"
+                                                "example": "Enter via garden in the back"
+                                            },
+                                            "supplementOut": {
+                                                "type": "string",
+                                                "example": "Residential house"
+                                            },
+                                            "area": {
+                                                "type": "string",
+                                                "example": "East-Thornbury"
+                                            },
+                                            "zipCode": {
+                                                "type": "string",
+                                                "example": "3071"
+                                            },
+                                            "city": {
+                                                "type": "string",
+                                                "example": "Thornbury"
+                                            },
+                                            "country": {
+                                                "type": "string",
+                                                "example": "AU"
                                             }
                                         }
                                     }
@@ -2831,31 +2922,122 @@
                                                 "properties": {
                                                     "type": {
                                                         "type": "string",
-                                                        "description": "callback type",
-                                                        "example": "4"
+                                                        "description": "the callback type",
+                                                        "example": "43"
                                                     },
-                                                    "status": {
+                                                    "legalEntityId": {
                                                         "type": "string",
-                                                        "description": "Status of the KYC demand",
+                                                        "description": "the legal entity unique identifier",
                                                         "example": "incomplete"
                                                     },
-                                                    "appUserId": {
+                                                    "registrationNumber": {
                                                         "type": "string",
-                                                        "description": "User unique identifier",
+                                                        "description": "the legal identification number of the legal entity  \n(ex : SIREN in France)",
                                                         "example": "rx193bo32"
                                                     },
-                                                    "diligences": {
-                                                        "type": "object",
+                                                    "registrationCountry": {
+                                                        "type": "string",
+                                                        "description": "the registration country of the legal entity (ISO 3166-1 code)",
+                                                        "example": "rx193bo32"
+                                                    },
+                                                    "legalEntityCreationStatus": {
+                                                        "type": "string",
+                                                        "description": "Legal entity creation status :  \n- succeeded  \n- failed",
+                                                        "example": "succeeded"
+                                                    },
+                                                    "registrationCity": {
+                                                        "type": "string",
+                                                        "description": "the legal entity registration city",
+                                                        "example": "Melbourne"
+                                                    },
+                                                    "companyName": {
+                                                        "type": "string",
+                                                        "description": "the name of the legal entity",
+                                                        "example": "NM Corporation"
+                                                    },
+                                                    "tradeName": {
+                                                        "type": "string",
+                                                        "description": "the commercial name of the legal entity",
+                                                        "example": "NNNC"
+                                                    },
+                                                    "naceCode": {
+                                                        "type": "string",
+                                                        "description": "the legal entity type of economical activity (NACE code)",
+                                                        "example": "P85.1"
+                                                    },
+                                                    "legalForm": {
+                                                        "type": "string",
+                                                        "description": "the legal entity legal form",
+                                                        "example": "5499"
+                                                    },
+                                                    "creationDate": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "description": "the creation date of the legal entity",
+                                                        "example": "1982-12-08"
+                                                    },
+                                                    "legalEntityRecordStatus": {
+                                                        "type": "string",
+                                                        "description": "the onboarding status of the legal entity",
+                                                        "example": "initialized"
+                                                    },
+                                                    "onboardingDate": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "description": "the onboarding date of the legal entity",
+                                                        "example": "2022-02-15T19:32:10.9931518+00:00"
+                                                    },
+                                                    "turnOver": {
+                                                        "type": "string",
+                                                        "description": "the turnover of N-1 year, decimal",
+                                                        "example": "360250.99"
+                                                    },
+                                                    "highFinancialIncome": {
+                                                        "type": "string",
+                                                        "description": "Is the legal entity a high financial income entity",
+                                                        "example": "false"
+                                                    },
+                                                    "listedInStockMarkets": {
+                                                        "type": "string",
+                                                        "description": "Is the legal entity listed in stock markets",
+                                                        "example": "true"
+                                                    },
+                                                    "regulated": {
+                                                        "type": "boolean",
+                                                        "description": "Is the legal entity regulated under special circumstances",
+                                                        "example": "false"
+                                                    },
+                                                    "address": {
+                                                        "type": "object",                                        
+                                                        "description": "adress details of the legal entity",
                                                         "properties": {
-                                                            "diligenceType": {
+                                                            "street": {
                                                                 "type": "string",
-                                                                "description": "Type of diligence",
-                                                                "example": "PASSPORT"
+                                                                "example": "51 Pender Street"
                                                             },
-                                                            "status": {
+                                                            "supplementIn": {
                                                                 "type": "string",
-                                                                "description": "status of diligence",
-                                                                "example": "Validated"
+                                                                "example": "Enter via garden in the back"
+                                                            },
+                                                            "supplementOut": {
+                                                                "type": "string",
+                                                                "example": "Residential house"
+                                                            },
+                                                            "area": {
+                                                                "type": "string",
+                                                                "example": "East-Thornbury"
+                                                            },
+                                                            "zipCode": {
+                                                                "type": "string",
+                                                                "example": "3071"
+                                                            },
+                                                            "city": {
+                                                                "type": "string",
+                                                                "example": "Thornbury"
+                                                            },
+                                                            "country": {
+                                                                "type": "string",
+                                                                "example": "AU"
                                                             }
                                                         }
                                                     }
