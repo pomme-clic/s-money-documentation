@@ -2760,6 +2760,260 @@
                 }
             }
         },
+        "/{callback43Url}": {
+            "post": {
+                "summary": "#43 - Legal entity",
+                "description": "Callback received in case of status change in the KYC demand",
+                "requestBody": {
+                    "description": "JSON Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "description": "callback type",
+                                        "example": "4"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
+                                        "example": "incomplete"
+                                    },
+                                    "appUserId": {
+                                        "type": "string",
+                                        "description": "User unique identifier",
+                                        "example": "rx193bo32"
+                                    },
+                                    "diligences": {
+                                        "type": "object",
+                                        "properties": {
+                                            "diligenceType": {
+                                                "type": "string",
+                                                "description": "Type of diligence :  \n- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
+                                                "example": "PASSPORT"
+                                            },
+                                            "status": {
+                                                "type": "string",
+                                                "description": "Status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
+                                                "example": "Validated"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "callback43Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "example": "tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "callback type",
+                                                        "example": "4"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "description": "Status of the KYC demand",
+                                                        "example": "incomplete"
+                                                    },
+                                                    "appUserId": {
+                                                        "type": "string",
+                                                        "description": "User unique identifier",
+                                                        "example": "rx193bo32"
+                                                    },
+                                                    "diligences": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "diligenceType": {
+                                                                "type": "string",
+                                                                "description": "Type of diligence",
+                                                                "example": "PASSPORT"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "status of diligence",
+                                                                "example": "Validated"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{callback44Url}": {
+            "post": {
+                "summary": "#44 - Fatca-EAI",
+                "description": "Callback received in case of user Fatca-EAI declaration change",
+                "requestBody": {
+                    "description": "JSON Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "appUserId": {
+                                        "type": "string",
+                                        "description": "the user unique identifier",
+                                        "example": "100120227"
+                                    },
+                                    "diligences": {
+                                        "type": "array",
+                                        "items" :{
+                                        "properties": {
+                                            "files": {
+                                                "type": "string",
+                                                "description": "TBD",
+                                                "example": "W9.png"
+                                            },
+                                            "status": {
+                                                "type": "string",
+                                                "description": "Global factaEai status of the customer",
+                                                "example": "NOK"
+                                            },  
+                                            "reason": {
+                                                "type": "string",
+                                                "description": "the reasons of refusal if applicable",
+                                                "example": ""
+                                            } 
+                                        }
+                                    }
+                                    },                           
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "the date of last costumer fatcaEai status",
+                                        "example": "2022-01-14T13:19:04+00:00"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "description": "the callback type",
+                                        "example": "44"
+                                    }
+                         
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "callback44Url",
+                        "in": "path",
+                        "required": true,
+                        "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+                        "schema": {
+                            "type": "string",
+                            "example": "tonys-server.com"
+                        }
+                    }
+                ],
+                "callbacks": {
+                    "onData": {
+                        "{$request.query.callbackUrl}/data": {
+                            "post": {
+                                "requestBody": {
+                                    "description": "callback example",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "appUserId": {
+                                                        "type": "string",
+                                                        "description": "the user unique identifier",
+                                                        "example": "100120227"
+                                                    },
+                                                    "diligences": {
+                                                        "type": "array",
+                                                        "items" :{
+                                                        "properties": {
+                                                            "files": {
+                                                                "type": "string",
+                                                                "description": "TBD",
+                                                                "example": "W9.png"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "Global factaEai status of the customer",
+                                                                "example": "NOK"
+                                                            },  
+                                                            "reason": {
+                                                                "type": "string",
+                                                                "description": "the reasons of refusal if applicable",
+                                                                "example": ""
+                                                            } 
+                                                        }
+                                                    }
+                                                    },                           
+                                                    "date": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "description": "the date of last costumer fatcaEai status",
+                                                        "example": "2022-01-14T13:19:04+00:00"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "the callback type",
+                                                        "example": "44"
+                                                    }
+                                         
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "202": {
+                                        "description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+                                    },
+                                    "204": {
+                                        "description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/{callback45Url}": {
             "post": {
                 "summary": "#45 - Account status",
