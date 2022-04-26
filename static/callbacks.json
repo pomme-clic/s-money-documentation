@@ -2849,12 +2849,12 @@
                                         "example": "EUR"
                                     },
                                     "highFinancialIncome": {
-                                        "type": "string",
+                                        "type": "boolean",
                                         "description": "Is the legal entity a high financial income entity",
                                         "example": "false"
                                     },
                                     "listedInStockMarkets": {
-                                        "type": "string",
+                                        "type": "boolean",
                                         "description": "Is the legal entity listed in stock markets",
                                         "example": "true"
                                     },
@@ -3003,12 +3003,12 @@
                                                         "example": "EUR"
                                                     },
                                                     "highFinancialIncome": {
-                                                        "type": "string",
+                                                        "type": "boolean",
                                                         "description": "Is the legal entity a high financial income entity",
                                                         "example": "false"
                                                     },
                                                     "listedInStockMarkets": {
-                                                        "type": "string",
+                                                        "type": "boolean",
                                                         "description": "Is the legal entity listed in stock markets",
                                                         "example": "true"
                                                     },
