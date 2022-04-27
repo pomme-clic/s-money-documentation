@@ -4,7 +4,7 @@ sidebar_label: Callback OpenAPI
 hide_table_of_contents: true
 ---
 
-# Callback OpenAPI
+# Callbacks OpenAPI
 
 import Rapidoc from "@theme/Rapidoc"
 
