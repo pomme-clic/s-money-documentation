@@ -1,6 +1,6 @@
 ---
-title: Callback OpenAPI
-sidebar_label: Callback OpenAPI
+title: Callbacks OpenAPI
+sidebar_label: Callbacks OpenAPI
 hide_table_of_contents: true
 ---
 
