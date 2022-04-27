@@ -1,6 +1,6 @@
 ---
-title: Webhooks
-sidebar_label: Webhooks
+title: Callback history
+sidebar_label: Callback history
 hide_table_of_contents: true
 ---
 
