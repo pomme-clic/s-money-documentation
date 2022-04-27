@@ -4,7 +4,7 @@ sidebar_label: Webhooks
 hide_table_of_contents: true
 ---
 
-# Webhooks
+# Callback history
 
 import Rapidoc from "@theme/Rapidoc"
 
