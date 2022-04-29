@@ -9,6 +9,15 @@ Xpollens changelog since September 2021
 
 ---
 
+## May 2022
+**Cards** :
+- New type of VISA card is now available for issuing : the VISA Infinite. You can issue via the same [endpoint](/api/CardFactory).  
+
+**Onboarding** :
+- Multiple wallet can now be attached to a single user. More [here](/api/v2.0/users/-appUserId-/generateqrcode).
+- New PAN copy feature available in the dedicated SDK
+- Enrichment of the callback 20 and the GET KYC demand responses
+
 ## April 2022
 **Partner Portal** :
 - We switched the chronological sorting value for card operations. We now use the operation value (time when payment is accepted) instead of the execution value (time when payment is cleared)  
