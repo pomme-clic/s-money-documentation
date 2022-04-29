@@ -14,7 +14,7 @@ Xpollens changelog since September 2021
 - New type of VISA card is now available for issuing : the VISA Infinite. You can issue via the same [endpoint](/api/CardFactory).  
 
 **Onboarding** :
-- Multiple wallet can now be attached to a single user. More [here](/api/v2.0/users/-appUserId-/generateqrcode).
+- Multiple wallet can now be attached to a single user. More [here](/api/v2.0/KYC).
 - New PAN copy feature available in the dedicated SDK
 - Enrichment of the callback 20 and the GET KYC demand responses
 
