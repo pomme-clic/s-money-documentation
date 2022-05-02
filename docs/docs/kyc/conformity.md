@@ -43,20 +43,21 @@ Main effect from a customer relationship perspective is the time between 2 KYC u
 ## Tax information control
 
 ### Process introduction
-To support governments to fight against tax evasion, financial institutions must implement solutions to collect and verify their 
-customers' tax information.
+To support governments to fight against tax evasion, financial institutions must implement solutions to collect a valid and credible self-certification in which their customers declare their tax information. 
 
-Xpollens does collect and verify its customers tax information at the onboarding but also periodically or following an event, for update.
+Xpollens is following the FATCA () and CRS () regulations and Xpollens does collect  the tax information self-certification at the onboarding but also periodically or following an event, for update.
+
 
 ### Physical Person detailled process
-At the onbaording, the tax informations and US relation are asked and are mandatories.
+At the onboarding, the tax informations and US relation are asked and are mandatories.
 Our customer can prodvide up to 3 tax countries and Tax Idenfication Numbers (TIN).
 
-Here after are tho examples :
+Here after are two examples :
 - First a non US customer providing its taxation information correctly in coherency with its personal informations.
-- Second an american customer providing its taxation information correctly in coherency with its personal informations.
 
 <Image src="docs/Compliance-Tax-Info-NonUS.png" alt="usecase 1"/>
+
+- Second an american customer providing its taxation information correctly in coherency with its personal informations.
 
 <Image src="docs/Compliance-Tax-Info-US.png" alt="usecase 2"/>
 
