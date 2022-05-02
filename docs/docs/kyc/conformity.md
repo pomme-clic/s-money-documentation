@@ -45,8 +45,7 @@ Main effect from a customer relationship perspective is the time between 2 KYC u
 ### Process introduction
 To support governments to fight against tax evasion, financial institutions must implement solutions to collect a valid and credible self-certification in which their customers declare their tax information. 
 
-Xpollens is following the FATCA () and CRS () regulations and Xpollens does collect  the tax information self-certification at the onboarding but also periodically or following an event, for update.
-
+Xpollens is following the FATCA (Foreign Account Tax Compliance Act) and CRS (Common Reporting Standard) regulations and Xpollens does collect  the tax information self-certification at the onboarding but also periodically or following an event, for update.
 
 ### Physical Person detailled process
 At the onboarding, the tax informations and US relation are asked and are mandatories.
