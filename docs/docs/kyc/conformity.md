@@ -51,6 +51,10 @@ Xpollens is following the FATCA (Foreign Account Tax Compliance Act) and CRS (Co
 At the onboarding, the tax informations and US relation are asked and are mandatories.
 Our customer can prodvide up to 3 tax countries and Tax Idenfication Numbers (TIN).
 
+<Highlight>
+See below that Xpollens fully automizes the self-certification generation, for very large majority of the Physical Person customers, no need to upload any document. 
+</Highlight>
+
 Here after are two examples :
 - First a non US customer providing its taxation information correctly in coherency with its personal informations.
 
