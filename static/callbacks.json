@@ -670,7 +670,7 @@
         "/{callback20Url}": {
             "post": {
                 "summary": "#20 - Card operation",
-                "description": "Callback received in case of status change in a card operation",
+                "description": "Callback received when a card authorisation is created following its processing in Xpollens and each time its status change",
                 "requestBody": {
                     "description": "JSON Body",
                     "content": {
@@ -680,7 +680,7 @@
                                 "properties": {
                                     "id": {
                                         "type": "string",
-                                        "description": "the Xpollens internal card id",
+                                        "description": "the Xpollens internal authorization id",
                                         "example": "464890"
                                     },
                                     "reference": {
@@ -697,6 +697,11 @@
                                         "type": "string",
                                         "description": "the reference or alias of the card",
                                         "example": "null"
+                                    },
+                                    "hint": {
+                                        "type": "string",
+                                        "description": "the card number hint",
+                                        "example": "9396XXXXXXXX6075"
                                     },
                                     "transactionAmount": {
                                         "type": "string",
@@ -720,17 +725,17 @@
                                     },
                                     "availableBalance": {
                                         "type": "string",
-                                        "description": "the balance after authorization in decimal format",
+                                        "description": "the balance after authorisation (or after a change in status = cancellation, expiry) in decimal format",
                                         "example": "0.96"
                                     },
                                     "actionCode": {
                                         "type": "string",
-                                        "description": "the response code (authorization and reasons for refusal)",
+                                        "description": "the response code (authorization and reasons for refusal) :  \n0 = approved  \n100 = denied, invalid card status  \n114 = denied, authorisation server does not respond  \n116 = denied, insufficient funds or limits reached  \n119 = denied, transaction not permitted to cardholder  \n198 = denied, technical error  \nother = denied, Natixis refused the transaction",
                                         "example": "0"
                                     },
                                     "merchantType": {
                                         "type": "string",
-                                        "description": "the merchant category code",
+                                        "description": "the merchant type (Merchant Category Code) is a four-digit number listed in ISO 18245 for retail financial services. An MCC is used to classify a business by the types of goods or services it provides",
                                         "example": "5814"
                                     },
                                     "cardAcceptorIdentificationCodeName": {
@@ -740,22 +745,22 @@
                                     },
                                     "status": {
                                         "type": "string",
-                                        "description": "the Operation status :  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = failed  \n5 = cancelled  \n7 = expired",
+                                        "description": "the Operation status :  \n0 = waiting  \n3 = failed  \n5 = cancelled  \n7 = expired",
                                         "example": "0"
                                     },
                                     "ert": {
                                         "type": "string",
-                                        "description": "the regulatory and technical environment (ATM, online payment, etc…)",
+                                        "description": "the regulatory and technical environment  \n10 = proximity, face-to-face payment  \n2x = online payment  \n4x = unattended vending machine  \n6x = quasi-cash  \n7x	= withdrawal (ATM, bank agency)",
                                         "example": "10"
                                     },
                                     "cardDataInputMode": {
                                         "type": "string",
-                                        "description": "contact or contactless",
+                                        "description": "the input mode for the payment :  \n0 = unspecified  \n5 = contact  \n9 = contactless  \nOther = manual (no terminal), magnetic stripe,…",
                                         "example": "9"
                                     },
                                     "tokenRequestorID": {
                                         "type": "string",
-                                        "description": "the id of the token requestor (such as ApplePay, GooglePay, etc…)",
+                                        "description": "the id of the token requestor :  \n40010030273 = Apple Pay  \n40010043095 = Samsung Pay  \n40010069887 = Garmin Pay  \n40010051602 = Amazon(COF)  \n40010075001 = Google Pay  \n40010075839 = Netflix (COF)  \n40010075338  = Visa Checkout - VCO",
                                         "example": ""
                                     },
                                     "terminalCountryCode": {
@@ -803,7 +808,7 @@
                                                 "properties": {
                                                     "id": {
                                                         "type": "string",
-                                                        "description": "the Xpollens internal card id",
+                                                        "description": "the Xpollens internal authorization id",
                                                         "example": "464890"
                                                     },
                                                     "reference": {
@@ -820,6 +825,11 @@
                                                         "type": "string",
                                                         "description": "the reference or alias of the card",
                                                         "example": "null"
+                                                    },
+                                                    "hint": {
+                                                        "type": "string",
+                                                        "description": "the card number hint",
+                                                        "example": "9396XXXXXXXX6075"
                                                     },
                                                     "transactionAmount": {
                                                         "type": "string",
@@ -843,17 +853,17 @@
                                                     },
                                                     "availableBalance": {
                                                         "type": "string",
-                                                        "description": "the balance after authorization in decimal format",
+                                                        "description": "the balance after authorisation (or after a change in status = cancellation, expiry) in decimal format",
                                                         "example": "0.96"
                                                     },
                                                     "actionCode": {
                                                         "type": "string",
-                                                        "description": "the response code (authorization and reasons for refusal)",
+                                                        "description": "the response code (authorization and reasons for refusal) :  \n0 = approved  \n100 = denied, invalid card status  \n114 = denied, authorisation server does not respond  \n116 = denied, insufficient funds or limits reached  \n119 = denied, transaction not permitted to cardholder  \n198 = denied, technical error  \nother = denied, Natixis refused the transaction",
                                                         "example": "0"
                                                     },
                                                     "merchantType": {
                                                         "type": "string",
-                                                        "description": "the merchant category code",
+                                                        "description": "the merchant type (Merchant Category Code) is a four-digit number listed in ISO 18245 for retail financial services. An MCC is used to classify a business by the types of goods or services it provides",
                                                         "example": "5814"
                                                     },
                                                     "cardAcceptorIdentificationCodeName": {
@@ -863,22 +873,22 @@
                                                     },
                                                     "status": {
                                                         "type": "string",
-                                                        "description": "the Operation status :  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = failed  \n5 = cancelled  \n7 = expired",
+                                                        "description": "the Operation status :  \n0 = waiting  \n3 = failed  \n5 = cancelled  \n7 = expired",
                                                         "example": "0"
                                                     },
                                                     "ert": {
                                                         "type": "string",
-                                                        "description": "the regulatory and technical environment (ATM, online payment, etc…)",
+                                                        "description": "the regulatory and technical environment  \n10 = proximity, face-to-face payment  \n2x = online payment  \n4x = unattended vending machine  \n6x = quasi-cash  \n7x	= withdrawal (ATM, bank agency)",
                                                         "example": "10"
                                                     },
                                                     "cardDataInputMode": {
                                                         "type": "string",
-                                                        "description": "contact or contactless",
+                                                        "description": "the input mode for the payment :  \n0 = unspecified  \n5 = contact  \n9 = contactless  \nOther = manual (no terminal), magnetic stripe,…",
                                                         "example": "9"
                                                     },
                                                     "tokenRequestorID": {
                                                         "type": "string",
-                                                        "description": "the id of the token requestor (such as ApplePay, GooglePay, etc…)",
+                                                        "description": "the id of the token requestor :  \n40010030273 = Apple Pay  \n40010043095 = Samsung Pay  \n40010069887 = Garmin Pay  \n40010051602 = Amazon(COF)  \n40010075001 = Google Pay  \n40010075839 = Netflix (COF)  \n40010075338  = Visa Checkout - VCO",
                                                         "example": ""
                                                     },
                                                     "terminalCountryCode": {
