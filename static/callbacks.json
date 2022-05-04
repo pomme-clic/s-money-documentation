@@ -750,7 +750,7 @@
                                     },
                                     "ert": {
                                         "type": "string",
-                                        "description": "the regulatory and technical environment  \n10 = proximity, face-to-face payment  \n2x = online payment  \n4x = unattended vending machine  \n6x = quasi-cash  \n7x	= withdrawal (ATM, bank agency)",
+                                        "description": "the regulatory and technical environment  \n10 = proximity (face-to-face payment)  \n2x = online payment  \n4x = unattended vending machine  \n6x = quasi-cash  \n7x = withdrawal (ATM or bank agency)",
                                         "example": "10"
                                     },
                                     "cardDataInputMode": {
@@ -878,7 +878,7 @@
                                                     },
                                                     "ert": {
                                                         "type": "string",
-                                                        "description": "the regulatory and technical environment  \n10 = proximity, face-to-face payment  \n2x = online payment  \n4x = unattended vending machine  \n6x = quasi-cash  \n7x	= withdrawal (ATM, bank agency)",
+                                                        "description": "the regulatory and technical environment  \n10 = proximity (face-to-face payment)  \n2x = online payment  \n4x = unattended vending machine  \n6x = quasi-cash  \n7x = withdrawal (ATM or bank agency)",
                                                         "example": "10"
                                                     },
                                                     "cardDataInputMode": {
