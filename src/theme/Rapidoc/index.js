@@ -156,7 +156,9 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
             primary-color="#63C2C7"
             allow-server-selection="false"
             server-url={serverUrl}
+  console.log(server-url)
             default-api-server={serverUrl}
+	    console.log( default-api-server)
             show-header="false"
 			schema-description-expanded="true"
             show-info="true"
