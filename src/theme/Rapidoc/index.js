@@ -24,7 +24,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   const { siteConfig } = useDocusaurusContext()
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
   const prodDomains = siteConfig.themeConfig.prodDomains
-  let serverUrl = ''
+  //let serverUrl = ''
   let serverUrl = 'https://sb-api.xpollens.com'
   //let serverUrl = 'https://ic-api.s-money.net/'
 
