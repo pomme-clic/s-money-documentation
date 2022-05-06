@@ -25,7 +25,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
   const prodDomains = siteConfig.themeConfig.prodDomains
   //let serverUrl = ''
-  let serverUrl = 'https://sb-api.xpollens.com'
+  //let serverUrl = 'https://sb-api.xpollens.com'
   //let serverUrl = 'https://ic-api.s-money.net/'
 
   // Rapidoc rendering
@@ -157,7 +157,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
             server-url={serverUrl}
             default-api-server={serverUrl}
             show-header="false"
-			schema-description-expanded="true"
+		schema-description-expanded="true"
             show-info="true"
             show-components="false"
             allow-api-list-style-selection="false"
