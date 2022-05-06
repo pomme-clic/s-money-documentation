@@ -24,7 +24,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   const { siteConfig } = useDocusaurusContext()
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
   const prodDomains = siteConfig.themeConfig.prodDomains
-  //let serverUrl = ''
+  let serverUrl = ''
   //let serverUrl = 'https://sb-api.xpollens.com'
   //let serverUrl = 'https://ic-api.s-money.net/'
 
@@ -42,8 +42,9 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
   const fetchAPI = async () => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
-    const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
     const serverUrl = isProd ? 'https://sb-api.xpollens.com' : 'https://ic-api.s-money.net/'
+    const fullAPIUrl = isRelative ? `${serverUrl}${apiUrl}` : apiUrl
+
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
