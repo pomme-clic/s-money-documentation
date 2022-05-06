@@ -43,7 +43,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
-    serverUrl = isProd ? 'https://sb-api.xpollens.com' : 'https://ic-api.s-money.net/'
+    const serverUrl = isProd ? 'https://sb-api.xpollens.com' : 'https://ic-api.s-money.net/'
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
