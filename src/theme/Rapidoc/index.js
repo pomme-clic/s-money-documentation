@@ -19,14 +19,12 @@ const customThemeColors = {
   },
 }
 
-const Rapidoc = ({ apiUrl,isRelative }) => {
+const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
   const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
   const prodDomains = siteConfig.themeConfig.prodDomains
-  let serverUrl = ''
-  //let serverUrl = 'https://sb-api.xpollens.com'
-  //let serverUrl = 'https://ic-api.s-money.net/'
+  let serverUrl = 'https://sb-api.xpollens.com'
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -43,9 +41,6 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
-    serverUrl = isProd
-	    ? 'https://sb-api.xpollens.com' 
-    	    : 'https://ic-api.s-money.net'
 
     try {
       const response = await axios.get(fullAPIUrl)
@@ -77,7 +72,7 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
-      //delete data.components.securitySchemes['Bearer token authorization']
+      delete data.components.securitySchemes['Bearer token authorization']
 
       const stringifiedData = JSON.stringify(data)
 
@@ -153,14 +148,14 @@ const Rapidoc = ({ apiUrl,isRelative }) => {
             sort-tags="true"
             render-style="read"
             load-fonts="false"
-			sort-endpoints-by="summary"
             regular-font="Poppins"
             primary-color="#63C2C7"
+            sort-endpoints-by="summary"
+            schema-description-expanded="true"
             allow-server-selection="false"
             server-url={serverUrl}
             default-api-server={serverUrl}
             show-header="false"
-		schema-description-expanded="true"
             show-info="true"
             show-components="false"
             allow-api-list-style-selection="false"
