@@ -23,8 +23,8 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
 
-  // const serverUrl = siteConfig.themeConfig.serverUrl
-  const serverUrl = 'https://sb-api.xpollens.com'
+  const serverUrl = siteConfig.themeConfig.serverUrl
+  const tryoutsServerUrl = 'https://sb-api.xpollens.com'
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -155,8 +155,8 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
             sort-endpoints-by="summary"
             schema-description-expanded="true"
             allow-server-selection="false"
-            server-url={serverUrl}
-            default-api-server={serverUrl}
+            server-url={tryoutsServerUrl}
+            default-api-server={tryoutsServerUrl}
             show-header="false"
             show-info="true"
             show-components="false"
