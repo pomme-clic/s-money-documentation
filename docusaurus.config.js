@@ -40,17 +40,10 @@ module.exports = {
         },
       ],
     },
-    prodDomains: [
-      ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
-    ],
     serverUrl:
       process.env.DEPLOYCONTEXT === 'production'
         ? 'https://sb-api.xpollens.com'
         : 'https://ic-api.s-money.net',
-    baseAPIUrls: {
-      sandbox: 'https://ic-api.s-money.net/swagger/docs',
-      production: 'https://sb-api.xpollens.com/swagger/docs',
-    },
     footer: {
       style: 'dark',
       links: [
@@ -142,7 +135,6 @@ module.exports = {
         steps: 4,
       },
     ],
-    // '@docusaurus/plugin-google-analytics',
     [
       path.resolve(__dirname, './plugins/@easyops-cn/docusaurus-search-local'),
       {
