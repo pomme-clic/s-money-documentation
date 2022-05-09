@@ -22,9 +22,11 @@ const customThemeColors = {
 const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
-  const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
-  const prodDomains = siteConfig.themeConfig.prodDomains
-  let serverUrl = 'https://sb-api.xpollens.com'
+  // const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
+  // const prodDomains = siteConfig.themeConfig.prodDomains
+  // let serverUrl = 'https://sb-api.xpollens.com'
+  const serverUrl = siteConfig.themeConfig.serverUrl
+  console.log('serverUrl: ', serverUrl)
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -38,9 +40,16 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
 
   // React Query
   const fetchAPI = async () => {
-    const isProd = prodDomains[0].includes(window.location.host)
-    const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
-    const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
+    // const isProd = prodDomains[0].includes(window.location.host)
+    // const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
+    // const fullAPIUrl = isRelative ? `${baseAPIUrl}${apiUrl}` : apiUrl
+    const fullAPIUrl = isRelative
+      ? `${serverUrl}/swagger/docs${apiUrl}`
+      : apiUrl
+
+    console.log('fullAPIUrl: ', fullAPIUrl)
+    //  production: 'https://sb-api.xpollens.com/swagger/docs',
+    // /swagger/docs
 
     try {
       const response = await axios.get(fullAPIUrl)

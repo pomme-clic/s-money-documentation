@@ -1,5 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const path = require('path')
+require('dotenv').config()
 
 module.exports = {
   title: 'Xpollens API docs',
@@ -42,6 +43,10 @@ module.exports = {
     prodDomains: [
       ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
     ],
+    serverUrl:
+      process.env.DEPLOYCONTEXT === 'production'
+        ? 'https://sb-api.xpollens.com'
+        : 'https://ic-api.s-money.net',
     baseAPIUrls: {
       sandbox: 'https://ic-api.s-money.net/swagger/docs',
       production: 'https://sb-api.xpollens.com/swagger/docs',
