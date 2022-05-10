@@ -7,7 +7,7 @@
     "servers": [
         {
             "url": " https://",
-            "description": "For testing purposes"
+            "description": "For testing purposes. Select this to direct callback to your server."
         }
     ],
     "paths": {
