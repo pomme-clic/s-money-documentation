@@ -151,6 +151,11 @@
                                                 "description": "Type of diligence :  \n- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
                                                 "example": "PASSPORT"
                                             },
+                                            "reason": {
+                                                "type": "string",
+                                                "description": "Reason of acceptance or rejection of diligence",
+                                                "example": ""
+                                            },
                                             "status": {
                                                 "type": "string",
                                                 "description": "Status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
@@ -193,7 +198,7 @@
                                                     },
                                                     "status": {
                                                         "type": "string",
-                                                        "description": "Status of the KYC demand",
+                                                        "description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
                                                         "example": "incomplete"
                                                     },
                                                     "appUserId": {
@@ -206,12 +211,17 @@
                                                         "properties": {
                                                             "diligenceType": {
                                                                 "type": "string",
-                                                                "description": "Type of diligence",
+                                                                "description": "Type of diligence :  \n- ID_CARD  \n- PASSPORT  \n- VETERAN_CARD  \n- MILITARY_ID  \n- RES_CARD  \n- EMPL_CONTRACT  \n- PAYSLIP  \n- CESU  \n- PENSION_RET  \n- STUDENT_ID  \n- TAX_NOTICE  \n- INCOME_TAX  \n- ASDIR  \n- RSA  \n- RMI  \n- DIS_CERTIF  \n- PROOF_FAM_ALLOW  \n- ACC_STAT  \n- SCTIN  \n- ACC_AGG  \n- SELFIE",
                                                                 "example": "PASSPORT"
+                                                            },
+                                                            "reason": {
+                                                                "type": "string",
+                                                                "description": "Reason of acceptance or rejection of diligence",
+                                                                "example": ""
                                                             },
                                                             "status": {
                                                                 "type": "string",
-                                                                "description": "status of diligence",
+                                                                "description": "Status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
                                                                 "example": "Validated"
                                                             }
                                                         }
@@ -1424,7 +1434,7 @@
                                         "example": "The beneficiary's name is different from the transmitter's name"
                                     },
                                     "amount": {
-                                        "type": "integer",
+                                        "type": "number",
                                         "description": "the amount of the money in transfer  (in cents of euro)",
                                         "example": "145"
                                     },
@@ -1453,12 +1463,12 @@
                                         "type": "object",
                                         "properties": {
                                             "name": {
-                                                "type": "integer",
+                                                "type": "number",
                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                 "example": "100"
                                             },
                                             "firstName": {
-                                                "type": "integer",
+                                                "type": "number",
                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                 "example": "100"
                                             }
@@ -1486,7 +1496,7 @@
                         "{$request.query.callbackUrl}/data": {
                             "post": {
                                 "requestBody": {
-                                    "description": "callback example",
+                                    "description": "JSON Body",
                                     "content": {
                                         "application/json": {
                                             "schema": {
@@ -1518,7 +1528,7 @@
                                                         "example": "The beneficiary's name is different from the transmitter's name"
                                                     },
                                                     "amount": {
-                                                        "type": "integer",
+                                                        "type": "number",
                                                         "description": "the amount of the money in transfer  (in cents of euro)",
                                                         "example": "145"
                                                     },
@@ -1547,12 +1557,12 @@
                                                         "type": "object",
                                                         "properties": {
                                                             "name": {
-                                                                "type": "integer",
+                                                                "type": "number",
                                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                                 "example": "100"
                                                             },
                                                             "firstName": {
-                                                                "type": "integer",
+                                                                "type": "number",
                                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                                 "example": "100"
                                                             }
@@ -1854,7 +1864,7 @@
                                         "example": "70rot07ay"
                                     },
                                     "publicUserCode": {
-                                        "type": "number",
+                                        "type": "string",
                                         "description": "this corresponds to issuerClientID in Antelop system. It is used to create the wallet in the Antelop system.",
                                         "example": "363O2TWZ3787"
                                     }
@@ -1902,7 +1912,7 @@
                                                         "example": "70rot07ay"
                                                     },
                                                     "publicUserCode": {
-                                                        "type": "number",
+                                                        "type": "string",
                                                         "description": "this corresponds to issuerClientID in Antelop system. It is used to create the wallet in the Antelop system.",
                                                         "example": "363O2TWZ3787"
                                                     }
