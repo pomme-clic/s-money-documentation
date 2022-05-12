@@ -1699,7 +1699,7 @@
                                 "type": "object",
                                 "properties": {
                                     "type": {
-                                        "type": "string",                        
+                                        "type": "integer",                        
                                         "description": "the callback type",
                                         "example": "33"
                                     },
@@ -1720,24 +1720,24 @@
                                         "example": "94j8Jnw9d"
                                     },
                                     "originAmount": {
-                                        "type": "integer",
-                                        "description": "the amount of the debt origin operation (cents of euro)",
-                                        "example": "12504"
+                                        "type": "number",
+                                        "description": "the amount of the debt origin operation (decimal in euro)",
+                                        "example": "125.04"
                                     },
                                     "status": {
-                                        "type": "string",
+                                        "type": "integer",
                                         "description": "the debt status :  \n0 =in progress  \n1 = closed with recovery   \n2 = closed without recovery ",
                                         "example": "0"
                                     },
                                     "debtAmount": {
-                                        "type": "string",
-                                        "description": "the actual debt amount (cents of euro)",
-                                        "example": "142"
+                                        "type": "number",
+                                        "description": "the actual debt amount (decimal in euro)",
+                                        "example": "1.42"
                                     },
                                     "debtReason": {
                                         "type": "string",
-                                        "description": "the functional cases that led to the debt creation :  \n- P2P  \n- CardOperation  \n- JRI",
-                                        "example": "high"
+                                        "description": "the functional cases that led to the debt creation :  \n- P2P  \n- CardOperation",
+                                        "example": "CardOperation"
                                     },
                                     "lossAndProfitBalance": {
                                         "type": "number",
@@ -1773,7 +1773,7 @@
                                                 "type": "object",
                                                 "properties": {
                                                     "type": {
-                                                        "type": "string",                        
+                                                        "type": "integer",                        
                                                         "description": "the callback type",
                                                         "example": "33"
                                                     },
@@ -1794,24 +1794,24 @@
                                                         "example": "94j8Jnw9d"
                                                     },
                                                     "originAmount": {
-                                                        "type": "integer",
-                                                        "description": "the amount of the debt origin operation (cents of euro)",
-                                                        "example": "12504"
+                                                        "type": "number",
+                                                        "description": "the amount of the debt origin operation (decimal in euro)",
+                                                        "example": "125.04"
                                                     },
                                                     "status": {
-                                                        "type": "string",
+                                                        "type": "integer",
                                                         "description": "the debt status :  \n0 =in progress  \n1 = closed with recovery   \n2 = closed without recovery ",
                                                         "example": "0"
                                                     },
                                                     "debtAmount": {
-                                                        "type": "string",
-                                                        "description": "the actual debt amount (cents of euro)",
-                                                        "example": "142"
+                                                        "type": "number",
+                                                        "description": "the actual debt amount (decimal in euro)",
+                                                        "example": "1.42"
                                                     },
                                                     "debtReason": {
                                                         "type": "string",
-                                                        "description": "the functional cases that led to the debt creation :  \n- P2P  \n- CardOperation  \n- JRI",
-                                                        "example": "high"
+                                                        "description": "the functional cases that led to the debt creation :  \n- P2P  \n- CardOperation",
+                                                        "example": "CardOperation"
                                                     },
                                                     "lossAndProfitBalance": {
                                                         "type": "number",
@@ -1946,17 +1946,17 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "type": {
+                                    "Type": {
                                         "type": "string",                        
                                         "description": "the callback type",
                                         "example": "35"
                                     },                               
-                                    "appUserId": {
+                                    "AppUserId": {
                                         "type": "string",
                                         "description": "the user unique identifier",
                                         "example": "610152c9J"
                                     },
-                                    "activationCode": {
+                                    "ActivationCode": {
                                         "type": "string",
                                         "description": "the code used to activate the wallet (32 char)",
                                         "example": "0xd14c7c77a134d87b45ec82cac16ac631"
@@ -1965,12 +1965,16 @@
                                         "type": "string",
                                         "description": "the error message if an error occured",
                                         "example": ""
-                                    },
+                                    },                                 
                                     "ExtraData": {
-                                        "type": "string",
-                                        "format": "uri",
-                                        "description": "the webview URL",
-                                        "example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+                                        "type": "object",
+                                        "properties": {
+                                            "WebViewUrl": {
+                                                "type": "string",
+                                                "description": "the webview URL",
+                                                "example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+                                            }                                           
+                                        }
                                     }
                                 }
                             }
@@ -2000,17 +2004,17 @@
                                             "schema": {
                                                 "type": "object",
                                                 "properties": {
-                                                    "type": {
+                                                    "Type": {
                                                         "type": "string",                        
                                                         "description": "the callback type",
                                                         "example": "35"
                                                     },                               
-                                                    "appUserId": {
+                                                    "AppUserId": {
                                                         "type": "string",
                                                         "description": "the user unique identifier",
                                                         "example": "610152c9J"
                                                     },
-                                                    "activationCode": {
+                                                    "ActivationCode": {
                                                         "type": "string",
                                                         "description": "the code used to activate the wallet (32 char)",
                                                         "example": "0xd14c7c77a134d87b45ec82cac16ac631"
@@ -2019,12 +2023,16 @@
                                                         "type": "string",
                                                         "description": "the error message if an error occured",
                                                         "example": ""
-                                                    },
+                                                    },                                 
                                                     "ExtraData": {
-                                                        "type": "string",
-                                                        "format": "uri",
-                                                        "description": "the webview URL",
-                                                        "example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "WebViewUrl": {
+                                                                "type": "string",
+                                                                "description": "the webview URL",
+                                                                "example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+                                                            }                                           
+                                                        }
                                                     }
                                                 }
                                             }
@@ -2243,7 +2251,7 @@
                         }
                     },
                     {
-                        "name": "authenticationId",
+                        "name": "AuthenticationId",
                         "in": "header",
                         "required": true,
                         "description": "the id of the authentication operation (used to link to the synchronous response)",
@@ -2253,7 +2261,7 @@
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "Type",
                         "in": "header",
                         "required": true,
                         "description": "the callback type",
@@ -2263,7 +2271,7 @@
                         }
                     },
                     {
-                        "name": "appUserId",
+                        "name": "AppUserId",
                         "in": "header",
                         "required": true,
                         "description": "the user unique identifier",
@@ -2273,7 +2281,7 @@
                         }
                     },
                     {
-                        "name": "authenticationResultDate",
+                        "name": "AuthenticationResultDate",
                         "in": "header",
                         "required": true,
                         "description": "the effective authentication result date",
@@ -2284,7 +2292,7 @@
                         }
                     },
                     {
-                        "name": "requestProcessDate",
+                        "name": "RequestProcessDate",
                         "in": "header",
                         "required": true,
                         "description": "the effective end date for the operation",
@@ -2295,7 +2303,7 @@
                         }
                     },
                     {
-                        "name": "requestResponseCode",
+                        "name": "RequestResponseCode",
                         "in": "header",
                         "required": true,
                         "description": "the Http status code of the operation",
@@ -2305,7 +2313,7 @@
                         }
                     },
                     {
-                        "name": "requestDate",
+                        "name": "RequestDate",
                         "in": "header",
                         "required": true,
                         "description": "the effective date for the operation",
@@ -2316,7 +2324,7 @@
                         }
                     },
                     {
-                        "name": "status",
+                        "name": "Status",
                         "in": "header",
                         "required": true,
                         "description": "the status of the authentication",
@@ -2326,7 +2334,7 @@
                         }
                     },
                     {
-                        "name": "reason",
+                        "name": "Reason",
                         "in": "header",
                         "required": true,
                         "description": "the reason of failure if applicable :  \n- TIMEOUT: customer did not authenticate in due time  \n- CANCELED: customer CANCELED the authentication request  \n- FAILED: customer did not successfully authenticate",
@@ -3352,6 +3360,11 @@
                                             } 
                                         }
                                     }
+                                    },
+                                    "fatcaEaiStatus": {
+                                        "type": "string",                                       
+                                        "description": "the fatcaEai status",
+                                        "example": "OK"
                                     },                           
                                     "date": {
                                         "type": "string",
@@ -3387,7 +3400,7 @@
                         "{$request.query.callbackUrl}/data": {
                             "post": {
                                 "requestBody": {
-                                    "description": "callback example",
+                                    "description": "JSON Body",
                                     "content": {
                                         "application/json": {
                                             "schema": {
@@ -3419,6 +3432,11 @@
                                                             } 
                                                         }
                                                     }
+                                                    },
+                                                    "fatcaEaiStatus": {
+                                                        "type": "string",                                       
+                                                        "description": "the fatcaEai status",
+                                                        "example": "OK"
                                                     },                           
                                                     "date": {
                                                         "type": "string",
@@ -3463,7 +3481,7 @@
                                 "type": "object",
                                 "properties": {
                                     "type": {
-                                        "type": "string",
+                                        "type": "integer",
                                         "description": "the callback type",
                                         "example": "45"
                                     },
@@ -3511,7 +3529,7 @@
                                                 "type": "object",
                                                 "properties": {
                                                     "type": {
-                                                        "type": "string",
+                                                        "type": "integer",
                                                         "description": "the callback type",
                                                         "example": "45"
                                                     },
