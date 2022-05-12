@@ -39,7 +39,7 @@ The hosted-fields library must always be called online. Using a downloaded versi
 
 2-	Declare the UTF-8 encoding
 
-3-	Create a <form> </ form> form with 4 containers identified by an id attribute. 
+3-	Create a form with 4 containers identified by an id attribute. 
 
 4-	Configure the hosted fields library
 
