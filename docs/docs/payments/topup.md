@@ -11,7 +11,12 @@ A topup card is a way for your customer to credit money on their account directl
 
 ## Xpollens shop integration
 
-First you have to integrate a Xpollens shop with our sister company Dalenys to provide some fields in your app to make the customer enter its card datas.
+Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use Dalenys' payment form with hosted-field integration to make the customer enter its card datas.
+
+### Topup workflow 
+
+<Image src="docs/Topup_workflow_3DS.png" alt="usecase 1"/>
+
 
 ### Hosted fields with Dalenys
 
