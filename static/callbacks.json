@@ -963,7 +963,7 @@
                                     },
                                     "cardType": {
                                         "type": "string",
-                                        "description": "the type of the ordered card :  \n1 = classic virtual  \n2 = classic physical  \n3 = premium virtual  \n4 = premium physical  \n6= infinite card",
+                                        "description": "the type of the ordered card :  \n1 = Visa classic virtual  \n2 = Visa classic physical  \n3 = Visa premium virtual  \n4 = Visa premium physical  \n6 = Visa infinite physical",
                                         "example": "4"
                                     },
                                     "action": {
@@ -1026,7 +1026,7 @@
                                                     },
                                                     "cardType": {
                                                         "type": "string",
-                                                        "description": "the type of the ordered card :  \n1 = classic virtual  \n2 = classic physical  \n3 = premium virtual  \n4 = premium physical  \n6 = infinite card",
+                                                        "description": "the type of the ordered card :  \n1 = Visa classic virtual  \n2 = Visa classic physical  \n3 = Visa premium virtual  \n4 = Visa premium physical  \n6 = Visa infinite physical",
                                                         "example": "4"
                                                     },
                                                     "action": {
