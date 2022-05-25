@@ -42,7 +42,7 @@ module.exports = {
     },
     serverUrl:
       process.env.DEPLOYCONTEXT === 'production'
-        ? 'https://sb-api.xpollens.com'
+        ? 'https://api.xpollens.com'
         : 'https://ic-api.s-money.net',
     footer: {
       style: 'dark',
