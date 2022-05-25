@@ -7,3 +7,12 @@ publish = "build"
 command = "npm run dev"
 port = 1234
 publish = "dist"
+
+[context.production]
+environment = {DEPLOYCONTEXT = "production"}
+
+[context.deploy-preview.environment]
+DEPLOYCONTEXT = "deploy-preview"
+
+[context.branch-deploy.environment]
+DEPLOYCONTEXT = "branch-deploy"

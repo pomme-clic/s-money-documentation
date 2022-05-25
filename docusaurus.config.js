@@ -1,5 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const path = require('path')
+require('dotenv').config()
 
 module.exports = {
   title: 'Xpollens API docs',
@@ -39,13 +40,10 @@ module.exports = {
         },
       ],
     },
-    prodDomains: [
-      ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
-    ],
-    baseAPIUrls: {
-      sandbox: 'https://ic-api.s-money.net/swagger/docs',
-      production: 'https://sb-api.xpollens.com/swagger/docs',
-    },
+    serverUrl:
+      process.env.DEPLOYCONTEXT === 'production'
+        ? 'https://sb-api.xpollens.com'
+        : 'https://ic-api.s-money.net',
     footer: {
       style: 'dark',
       links: [
@@ -137,7 +135,6 @@ module.exports = {
         steps: 4,
       },
     ],
-    // '@docusaurus/plugin-google-analytics',
     [
       path.resolve(__dirname, './plugins/@easyops-cn/docusaurus-search-local'),
       {

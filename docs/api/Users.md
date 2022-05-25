@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v2.0/user.usermanagment">
+<Rapidoc apiUrl="/v2.0/user.usermanagment"  isRelative="true">
 </Rapidoc>

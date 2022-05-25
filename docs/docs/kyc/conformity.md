@@ -13,12 +13,10 @@ import Cta from '@theme/Cta'
 As a part of BPCE group, Xpollens is following the BPCE compliance group directives. 
 Here after is an introduction of the different processes involved.
 
-<Image src="docs/xauth-fond.png" alt="usecase 1"/>
-
 ## PEP and Sanction control
 
 ### Politically Exposed People (PEP)
-Those people, politically exposed persons (PEPs), hold a crucial position in public and are vulnerable to financial crime.
+Those people, Politically Exposed Persons (PEPs), hold a crucial position in public and are vulnerable to financial crime.
 
 ### Sanction People or organization
 Those persons, organizations or governments may have the potential to be involved in the financial activities which are:  
@@ -38,27 +36,31 @@ Effects could be block the account or to get additional information from the cus
 
 ## Scoring 
 Xpollens performs a scoring calculation based on customers informations.
-Main effect from a customer relationship perspective is the time between 2 KYC updates.
+Main effect from a customer relationship perspective is the time between 2 KYC updates and differenciation in Banking activity controls.
 
 ---
 
 ## Tax information control
 
-### Procees introduction
-To support governments to fight against tax evasion, financial institutions must implement solutions to collect and verify their 
-customers' tax information.
+### Process introduction
+To support governments to fight against tax evasion, financial institutions must implement solutions to collect a valid and credible self-certification in which their customers declare their tax information. 
 
-Xpollens does collect and verify its customers tax information at the onboarding but also periodically or following an event, for update.
+Xpollens is following the FATCA (Foreign Account Tax Compliance Act) and CRS (Common Reporting Standard) regulations and Xpollens does collect  the tax information self-certification at the onboarding but also periodically or following an event, for update.
 
 ### Physical Person detailled process
-At the onbaording, the tax informations and US relation are asked and are mandatories.
+At the onboarding, the tax informations and US relation are asked and are mandatories.
 Our customer can prodvide up to 3 tax countries and Tax Idenfication Numbers (TIN).
 
-Here after are tho examples :
+<Highlight>
+See below that Xpollens fully automizes the self-certification generation, for very large majority of the Physical Person customers, no need to upload any document. 
+</Highlight>
+
+Here after are two examples :
 - First a non US customer providing its taxation information correctly in coherency with its personal informations.
-- Second an american customer providing its taxation information correctly in coherency with its personal informations.
 
 <Image src="docs/Compliance-Tax-Info-NonUS.png" alt="usecase 1"/>
+
+- Second an american customer providing its taxation information correctly in coherency with its personal informations.
 
 <Image src="docs/Compliance-Tax-Info-US.png" alt="usecase 2"/>
 
@@ -71,7 +73,14 @@ You can provide tax information for check using this API :
 
 <Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/fatcaEai" method="patch"/>
 
-Once the Tax info has been vaidated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
+
+If additionnal FATCA/CRS documents are required, the documents can be sent here using this API:
+
+<Endpoint apiUrl="/v2.0/users" path="/api/v2.0/user/{appUserId}/fatca/attachments" method="post"/>
+
+***
+
+Once the Tax info has been validated, for physiccal persons you can retrieve the self certification here. This document should be available for the user at any time :
 
 <Endpoint apiUrl="/v2.1/compliance" path="/api/v2.1/user/{appUserId}/self-certification" method="get"/> 
 

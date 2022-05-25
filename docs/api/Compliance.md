@@ -8,6 +8,6 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v2.1/compliance">
+<Rapidoc apiUrl="/v2.1/compliance" isRelative="true">
 </Rapidoc>
 

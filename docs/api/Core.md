@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v1.0/migrationProxy">
+<Rapidoc apiUrl="/v1.0/migrationProxy" isRelative="true">
 </Rapidoc>

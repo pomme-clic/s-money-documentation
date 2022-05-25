@@ -5,12 +5,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Onboarding',
-      items: ['docs/kyc/retail-customer', 'docs/kyc/identification', 'docs/kyc/encryption'],
+      items: ['docs/kyc/retail-customer', 'docs/kyc/identification', 'docs/kyc/encryption','docs/kyc/conformity'],
     },
     {
       type: 'category',
       label: 'Accounts',
-      items: ['docs/accounts/account-management', 'docs/accounts/debts'],
+      items: ['docs/accounts/account-management', 'docs/accounts/debts', 'docs/accounts/virtualiban'],
     },
     {
       type: 'category',
@@ -20,7 +20,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Payments',
-      items: ['docs/payments/beneficiaries', 'docs/payments/IP', 'docs/payments/card-payment' , 'docs/payments/sdd', 'docs/payments/P2P'],
+      items: ['docs/payments/beneficiaries', 'docs/payments/IP', 'docs/payments/card-payment','docs/payments/topup', 'docs/payments/sdd', 'docs/payments/P2P'],
     },
     {
       type: 'category',
@@ -49,7 +49,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Callback management',
-      items: ['api/Webhooks','api/Callback'],
+      items: ['api/Callback','api/Callbacks','api/Webhooks'],
     },
   ],
 }

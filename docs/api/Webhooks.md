@@ -1,12 +1,12 @@
 ---
-title: Webhooks
-sidebar_label: Webhooks
+title: Callback history
+sidebar_label: Callback history
 hide_table_of_contents: true
 ---
 
-# Webhooks
+# Callback history
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v2.0/webhook">
+<Rapidoc apiUrl="/v2.0/webhook"  isRelative="true">
 </Rapidoc>

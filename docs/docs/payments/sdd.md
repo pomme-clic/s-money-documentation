@@ -23,7 +23,7 @@ Available Mandate are CORE but can be used between Businesses. For more informat
 
 <Highlight type="tip">
 
-You can use your own signature solution or ask us for using our Strong Customer Authentication(SCA). 
+You have to have your own signature solution or ask us for using our Strong Customer Authentication(SCA). 
   
 </Highlight>
 

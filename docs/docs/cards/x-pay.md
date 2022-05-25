@@ -12,7 +12,7 @@ There are 2 methods to add your card to a wallet :
 - inapp verification method _(update of SMS OTP journey)_
 - inapp provisioning method
 
-The first is the usual method which consists since  : 
+The first is the usual method which consists in : 
 
 - iOS (for Apple Pay)
 - app Samsung Pay

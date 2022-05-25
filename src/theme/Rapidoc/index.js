@@ -19,14 +19,14 @@ const customThemeColors = {
   },
 }
 
-const Rapidoc = ({ apiUrl }) => {
+const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
-  const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
-  const prodDomains = siteConfig.themeConfig.prodDomains
-  //let serverUrl = ''
-  let serverUrl = 'https://sb-api.xpollens.com'
-  //let serverUrl = 'https://ic-api.s-money.net/'
+
+
+  const serverUrl = siteConfig.themeConfig.serverUrl
+  const tryoutsServerUrl = 'https://sb-api.xpollens.com'
+
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -40,12 +40,11 @@ const Rapidoc = ({ apiUrl }) => {
 
   // React Query
   const fetchAPI = async () => {
-    const isProd = prodDomains[0].includes(window.location.host)
-    const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
-    const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
-    serverUrl = isProd
-    ? 'https://sb-api.xpollens.com'
-    : 'https://ic-api.s-money.net/'
+    const fullAPIUrl = isRelative
+      ? `${serverUrl}/swagger/docs${apiUrl}`
+      : apiUrl
+
+    console.log('fullAPIUrl: ', fullAPIUrl)
 
     try {
       const response = await axios.get(fullAPIUrl)
@@ -77,7 +76,7 @@ const Rapidoc = ({ apiUrl }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
-      delete data.components.securitySchemes['Bearer token authorization']
+      
 
       const stringifiedData = JSON.stringify(data)
 
@@ -155,9 +154,11 @@ const Rapidoc = ({ apiUrl }) => {
             load-fonts="false"
             regular-font="Poppins"
             primary-color="#63C2C7"
-            allow-server-selection="false"
-            server-url={serverUrl}
-            default-api-server={serverUrl}
+            sort-endpoints-by="summary"
+            schema-description-expanded="true"
+            allow-server-selection="true"
+            server-url={tryoutsServerUrl}
+            default-api-server={tryoutsServerUrl}
             show-header="false"
             show-info="true"
             show-components="false"
