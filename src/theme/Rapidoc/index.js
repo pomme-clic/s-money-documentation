@@ -25,7 +25,7 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
 
 
   const serverUrl = siteConfig.themeConfig.serverUrl
-  const tryoutsServerUrl = 'https://api.xpollens.com'
+  const tryoutsServerUrl = 'https://sb-api.xpollens.com'
 
 
   // Rapidoc rendering
