@@ -23,8 +23,10 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
 
+
   const serverUrl = siteConfig.themeConfig.serverUrl
   const tryoutsServerUrl = 'https://sb-api.xpollens.com'
+
 
   // Rapidoc rendering
   const rapidocRef = useRef()
