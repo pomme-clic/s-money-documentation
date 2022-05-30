@@ -12,7 +12,7 @@ Xpollens changelog since September 2021
 ## May 2022
 **Cards** :
 - New type of VISA card is now available for issuing : the VISA Infinite. You can issue via the same [endpoint](/api/CardFactory).  
-- OTP SMS for Macbook enrolment (Xpay) : We developed a new «OTP SMS» CardholderVerification method for Macbook enrolment. The OTP is sent to the partner througha new [Callback «type 26»](/api/Callbacks#post-/-callback26Url-)
+- OTP SMS for Macbook enrolment (Xpay) : We developed a new «OTP SMS» Cardholder verification method for Macbook enrolment. The OTP is sent to the partner through a new [Callback «type 26»](/api/Callbacks#post-/-callback26Url-)
 
 **Onboarding** :
 - Multiple wallet can now be attached to a single user. More [here](/api/kyc).
