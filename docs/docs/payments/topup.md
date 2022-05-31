@@ -6,7 +6,7 @@ import Cta from '@theme/Cta'
 # Topup card
 
 
-A topup card is a way for your customer to credit money on their account directly from a bank card.
+A topup card is a way for your customer to credit money on their account directly from a bank card. There are different method to do a topup.
 
 
 ## Xpollens shop integration
