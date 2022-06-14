@@ -8,6 +8,26 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## June 2022
+**Cards**:
+- Added a new endpoint to display CVX2, PAN and Expiry date of a card. 
+Please note that this endpoint replaces unused endpoints ``GET /api/v2.0/pan/{cardExternalRef}`` and ``POST	/api/v2.0/cvx2/{cardExternalRef}`` which will be deprecated.
+More [here](https://develop--s-money-documentation-site.netlify.app/api/cardsecure/#get-/api/v2.0/carddisplay/-cardExternalRef-).
+
+**Callbacks**:
+- Added 2 new keys: ``sepaReason`` and ``sepaReasonCode`` in JSON payload of callbacks types 16, 17, 18, 19 (SEPA Direct Debits, SEPA Credit Transfer).
+More [here](https://docs.xpollens.com/api/Callbacks).
+
+**Partner portal**:
+- UI Improvement of SCT Out
+- UI Improvement of card oppose
+
+**Security**
+
+A new anti-bruteforce safety is put in place to mitigate brute force risks on our STS Server: ``https://sb-connect.xpollens.com/connect/token`` 
+- After 6 failed attempts over a 24-hour period, (erroneous client_id/client_secret), the caller IP address is blocked during 30 minutes (cannot connect on webportal or use the API)
+- Then, during 24 hours, each failed attempt blocks the IP address during 30 minutes
+
 
 ## May 2022
 **Cards** :
