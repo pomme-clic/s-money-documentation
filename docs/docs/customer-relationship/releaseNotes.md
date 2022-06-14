@@ -22,12 +22,6 @@ More [here](https://docs.xpollens.com/api/Callbacks).
 - UI Improvement of SCT Out
 - UI Improvement of card oppose
 
-**Security**
-
-A new anti-bruteforce safety is put in place to mitigate brute force risks on our STS Server: ``https://sb-connect.xpollens.com/connect/token`` 
-- After 6 failed attempts over a 24-hour period, (erroneous client_id/client_secret), the caller IP address is blocked during 30 minutes (cannot connect on webportal or use the API)
-- Then, during 24 hours, each failed attempt blocks the IP address during 30 minutes
-
 
 ## May 2022
 **Cards** :
