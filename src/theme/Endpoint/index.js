@@ -69,7 +69,7 @@ const Endpoint = ({ apiUrl, path, method }) => {
 
   const { isLoading, isError, data, error } = useQuery(
     ['fetchEndpoint', { apiUrl, path, method }],
-    console.log(fullAPIUrl),
+    console.log(apiUrl),
     fetchEndpoint,
     {
       retry: false,
