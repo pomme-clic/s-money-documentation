@@ -1037,7 +1037,7 @@
                                         "example": "card-lHXYoKrpn"
                                     },
                                     "type": {
-                                        "type": "string",
+                                        "type": "number",
                                         "description": "the callback type",
                                         "example": "21"
                                     },
@@ -1100,7 +1100,7 @@
                                                         "example": "card-lHXYoKrpn"
                                                     },
                                                     "type": {
-                                                        "type": "string",
+                                                        "type": "number",
                                                         "description": "the callback type",
                                                         "example": "21"
                                                     },
@@ -1927,7 +1927,7 @@
                                 "type": "object",
                                 "properties": {
                                     "type": {
-                                        "type": "integer",                        
+                                        "type": "number",                        
                                         "description": "the callback type",
                                         "example": "33"
                                     },
@@ -2001,7 +2001,7 @@
                                                 "type": "object",
                                                 "properties": {
                                                     "type": {
-                                                        "type": "integer",                        
+                                                        "type": "number",                        
                                                         "description": "the callback type",
                                                         "example": "33"
                                                     },
@@ -2494,7 +2494,7 @@
                         "required": true,
                         "description": "the callback type",
                         "schema": {
-                            "type": "string",
+                            "type": "number",
                             "example": "36"
                         }
                     },
