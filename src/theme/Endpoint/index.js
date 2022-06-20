@@ -88,7 +88,6 @@ const Endpoint = ({ apiUrl, path, method }) => {
         {isError && (
           <div className="flex flex-col items-center justify-center my-2 text-sm text-red-500">
             <div className="font-bold ">Error retrieving parameters: </div>
-            <div>{fullAPIUrl}</div>
             <div>{error.message}</div>
           </div>
         )}
