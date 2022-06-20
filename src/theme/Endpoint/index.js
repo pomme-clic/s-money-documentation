@@ -57,6 +57,8 @@ const Endpoint = ({ apiUrl, path, method }) => {
     const isProd = prodDomains[0].includes(window.location.host)
     const baseAPIUrl = isProd ? baseAPIUrls.production : baseAPIUrls.sandbox
     const fullAPIUrl = `${baseAPIUrl}${apiUrl}`
+    console.log(baseAPIUrl)
+    console.log(fullAPIUrl)
 
     try {
       const response = await axios.get(fullAPIUrl)
