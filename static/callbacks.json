@@ -1039,7 +1039,7 @@
                                     "type": {
                                         "type": "number",
                                         "description": "the callback type",
-                                        "example": "21"
+                                        "example": 21
                                     },
                                     "cardType": {
                                         "type": "string",
@@ -1102,7 +1102,7 @@
                                                     "type": {
                                                         "type": "number",
                                                         "description": "the callback type",
-                                                        "example": "21"
+                                                        "example": 21
                                                     },
                                                     "cardType": {
                                                         "type": "string",
@@ -1929,7 +1929,7 @@
                                     "type": {
                                         "type": "number",                        
                                         "description": "the callback type",
-                                        "example": "33"
+                                        "example": 33
                                     },
                                     "date": {
                                         "type": "string",
@@ -2003,7 +2003,7 @@
                                                     "type": {
                                                         "type": "number",                        
                                                         "description": "the callback type",
-                                                        "example": "33"
+                                                        "example": 33
                                                     },
                                                     "date": {
                                                         "type": "string",
