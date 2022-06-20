@@ -1037,9 +1037,9 @@
                                         "example": "card-lHXYoKrpn"
                                     },
                                     "type": {
-                                        "type": "string",
+                                        "type": "number",
                                         "description": "the callback type",
-                                        "example": "21"
+                                        "example": 21
                                     },
                                     "cardType": {
                                         "type": "string",
@@ -1100,9 +1100,9 @@
                                                         "example": "card-lHXYoKrpn"
                                                     },
                                                     "type": {
-                                                        "type": "string",
+                                                        "type": "number",
                                                         "description": "the callback type",
-                                                        "example": "21"
+                                                        "example": 21
                                                     },
                                                     "cardType": {
                                                         "type": "string",
@@ -1927,9 +1927,9 @@
                                 "type": "object",
                                 "properties": {
                                     "type": {
-                                        "type": "integer",                        
+                                        "type": "number",                        
                                         "description": "the callback type",
-                                        "example": "33"
+                                        "example": 33
                                     },
                                     "date": {
                                         "type": "string",
@@ -2001,9 +2001,9 @@
                                                 "type": "object",
                                                 "properties": {
                                                     "type": {
-                                                        "type": "integer",                        
+                                                        "type": "number",                        
                                                         "description": "the callback type",
-                                                        "example": "33"
+                                                        "example": 33
                                                     },
                                                     "date": {
                                                         "type": "string",
@@ -2494,7 +2494,7 @@
                         "required": true,
                         "description": "the callback type",
                         "schema": {
-                            "type": "string",
+                            "type": "number",
                             "example": "36"
                         }
                     },
