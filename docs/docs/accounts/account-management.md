@@ -48,20 +48,6 @@ You can setup account limitations here :
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/limits" method="put"/>
 
-You can retrieve account balances here :
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{appUserId}/balance" method="get"/>
-
----
-
-## Operations management
-
-You can access all your customer account operations but also your own account operations. 
-
-You can find more here : 
-
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/historyitems" method="get"/>
-
 
 ---
 
