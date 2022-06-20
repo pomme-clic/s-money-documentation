@@ -61,7 +61,6 @@ const Endpoint = ({ apiUrl, path, method }) => {
     try {
       const response = await axios.get(fullAPIUrl)
       const apiParameters = getApiParameters(response, path, method)
-      console.log(fullAPIUrl)
       return apiParameters
     } catch (error) {
       throw new Error(error.message)
@@ -71,7 +70,6 @@ const Endpoint = ({ apiUrl, path, method }) => {
   const { isLoading, isError, data, error } = useQuery(
     ['fetchEndpoint', { apiUrl, path, method }],
     fetchEndpoint,
-    console.log(fullAPIUrl)
     {
       retry: false,
     },
@@ -89,6 +87,7 @@ const Endpoint = ({ apiUrl, path, method }) => {
         {isError && (
           <div className="flex flex-col items-center justify-center my-2 text-sm text-red-500">
             <div className="font-bold ">Error retrieving parameters: </div>
+            <div>{fullAPIUrl}</div>
             <div>{error.message}</div>
           </div>
         )}
