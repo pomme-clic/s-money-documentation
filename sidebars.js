@@ -30,6 +30,7 @@ module.exports = {
   ],
   apisSidebar: [
     'api/Core',
+	'api/Accounts',
     {
       type: 'category',
       label: 'Cards',
