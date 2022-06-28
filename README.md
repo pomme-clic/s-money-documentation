@@ -2,11 +2,11 @@
 
 Repo Git du site comprenant le framework Docusaurus dans son ensemble et tous les fichiers pour la contribution de contenu.
 
-## Accès aux différentes prods
+## Accès aux différents sites
 
 - [Prod (Netlify alias)](https://s-money-documentation-site.netlify.app/)
 - [Staging (Netlify alias)](https://develop--s-money-documentation-site.netlify.app/)
-- Prod (xpollens.com/docs ?)
+- [Prod](https://xpollens.com/docs)
 
 ---
 
@@ -98,6 +98,13 @@ La liste des apiUrl est disponible [ici](/docs/api/0EndpointNames.txt)
 Le path est ensuite le endpoint spécifique que vous souhaitez montrer.
 
 ---
+
+#### Configuration du lecteur de swagger
+
+Vous pouvez configurer et paramétrer le lecteur de swagger via [index.js](/src/theme/Rapidoc/index.js)
+
+---
+
 #### Docs markdown d'exemples
 
 - [syntaxe de base](docs/docs/examples/basics.md)
@@ -134,7 +141,6 @@ Les différents problèmes liés à la contribution peuvent être remontés dans
 
 # Mise en production
 La mise en production se fait bia un publish de la dernière develop via netlify.
-Maxime NOININ a les accès pour le faire.
 
 Avant de publier, checklist des choses à vérifier : 
 - La branche develop à publier est stable et a compilé sans erreur
