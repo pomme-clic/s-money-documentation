@@ -36,9 +36,7 @@ You will be soon able to parameter your VIBAN : activate/deactivate (payment wil
 
 ## Endpoints
 
-You must use the Virtual Iban API to generate one or to retrieve the account information.
-
-More information regarding this endpoint in the [API reference](/api/Core)
+You must use the Virtual Iban API to generate one or to retrieve the account information and then the operations detail API to know who sends you a payment.
 
 Obtain a VIBAN and its ID by using the following End Point :
 
@@ -50,7 +48,8 @@ Retrieve the account informations of a defined VIBAN ID.
 
 Soon, an API to get the operations received on a particular VIBAN ID.
 
-VIBAN ID is available into the SEPA and Instant Payment operation details :
+
+To know who sends you a payment and why, the VIBAN ID is available into the SEPA and Instant Payment operation details :
 
 For instant Payment : <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst/{orderid}" method="get"/>
 
