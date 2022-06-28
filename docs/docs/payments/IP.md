@@ -94,13 +94,15 @@ Instant transfer can be refused due to the user thresholds.
 
 ## Endpoints
 
-You must use the Instant Payment API that includes amount and the beneficiary ID.
+You must use the Instant Payment API that includes amount and the beneficiary ID to send Instant Payment.
 
 More information regarding this endpoint in the [API reference.](/api/SCTinst)
 
 <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst" method="post"/>
 
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v2.0/users/{userid}/cards/{id}" method="delete"/> -->
+You can also have details of the received Instant Payment.
+
+<Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst/{orderid}" method="get"/>
 
 ---
 ## Recall
