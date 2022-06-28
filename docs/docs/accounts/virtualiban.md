@@ -14,13 +14,13 @@ In its first version, the Xpollens VIBAN feature will allow the creation of VIBA
 <Highlight>
 
 Once you have an account and its IBAN, you can create as many VIBANs as you like. 
-For example, you can supply dedicated account details to your customer and to better lettering your incoming payment in finding VIBAN into the operations details.
+You can then supply dedicated VIBAN to your stakeholders and letter easily their incoming payment in finding VIBAN into the operations details.
 
 </Highlight>
 
 <Highlight type="tip">
 
-The VIBAN is an additional identifier for your account. Incoming payment will credit your account balance : There is no balance associated to VIBANs but you can list the payment received on your VIBAN. 
+The VIBAN is an additional identifier for your account. Incoming payment will credit your account balance: there is no balance associated to VIBANs but you can list the payment received on your VIBAN. 
 
 </Highlight>
 
