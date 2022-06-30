@@ -66,6 +66,8 @@ You can setup an additional balance here :
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
 
+---
+
 ## Closure management
 
 You can ask for account closure following your customer request or if your customer doesn't, for example, follow your service rules.
