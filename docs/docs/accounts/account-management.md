@@ -35,7 +35,7 @@ All the xpollens accounts come with an IBAN. It can be your own (if you have a f
 
 <Highlight type="tip">
 We propose both individual and professional accounts.
-All the accounts we provide are currently in Euro only.
+All the accounts we provide are currently in Euro only. Other european currency will come soon, ask us for more details.
 </Highlight>
 
 
@@ -48,14 +48,11 @@ You can setup account limitations here :
 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/limits" method="put"/>
 
-
 ---
 
 ## Balance management
 
-
 Based on your customer risk management you can sometimes allow customers to spend more than its customer balance.
-
 
 <Highlight type="caution">
 
@@ -68,6 +65,22 @@ You can setup an additional balance here :
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/additionalBalance" method="put"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
+
+## Closure management
+
+You can ask for account closure following your customer request or if your customer doesn't, for example, follow your service rules.
+In the first case the effective closure will take 30 days, in the second the closure will take 60 days.
+For more details on how the operations will be managed during this period, do not hesitate to contact us.
+
+<Highlight type="caution">
+
+Please note that account closure can only be asked on null balance account (ie : the account owner might payout the remaining amount for its closing request to be agreed)
+ 
+</Highlight>
+
+You can setup an additional balance here : 
+
+<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.0/accounts/{accountId}/AccountClosureRequest" method="put"/>
 
 <Cta
   context="doc"
