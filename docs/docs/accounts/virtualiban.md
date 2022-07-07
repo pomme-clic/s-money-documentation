@@ -55,7 +55,7 @@ To know who sends you a payment and why, the VIBAN ID is available into the SEPA
 
 For instant Payment : <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst/{orderid}" method="get"/>
 
-For SEPA transfer :  <Endpoint apiUrl="/v1.1/users" path="/api/v1.1/users/{userid}/sct" method="get"/>
+For SEPA transfer :  <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/sct" method="get"/>
 
 <Cta
   context="doc"
