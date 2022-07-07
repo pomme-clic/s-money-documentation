@@ -42,7 +42,7 @@ You must use the Virtual Iban API to generate one or to retrieve the account inf
 
 Obtain a VIBAN and its ID by using the following End Point :
 
-<Endpoint apiUrl="/v2.0/virtual-ibans" path="/api/v2.0/virtual-ibans/{AccountId}" method="post"/>
+<Endpoint apiUrl="/v2.0/AccountManagement" path="/api/v2.0/virtual-ibans/{AccountId}" method="post"/>
 
 Retrieve the account informations of a defined VIBAN ID.
 
