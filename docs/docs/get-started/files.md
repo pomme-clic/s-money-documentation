@@ -40,6 +40,7 @@ Here you can find all technical documentation :
 - [S-money-API-Users-BiB-v2.6.docx](./S-money-API-Users-BiB-v2.6.docx)
 - [Xpollens-StrongAuthentication-v1.6.pdf](./Xpollens-StrongAuthentication-v1.6.pdf)
 
+
 ### SDK Docs
 
 - [CardCompanionSDK_2.0.0_Android.zip](./CardCompanionSDK_2.0.0_Android.zip)
