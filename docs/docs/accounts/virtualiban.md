@@ -5,9 +5,9 @@ import Cta from '@theme/Cta'
 
 # Virtual IBAN
 
-A Virtual Iban (VIBAN) is a secondary account identifier.  
-The VIBAN is linked to an existing account identified by its IBAN and can be used to receive SEPA or Instant Payement from an external account in your account. 
-The VIBAN can be used to mask and securize the original account IBAN or to identified the payment issuer or a payment.
+A Virtual Iban (VIBAN) is a secondary account identifier. It follows all rules of IBAN definition and has the same caracteristics than your IBAN (country code, bank code, branch code).
+The VIBAN is linked to your account identified by its IBAN and can be used to receive SEPA or Instant Payment from an external that will credit your account. 
+The VIBAN can be used to mask and securize the original account IBAN (your creditor do not know your IBAN) or to identified the payment issuer or a payment.
 
 In its first version, the Xpollens VIBAN feature will allow the creation of VIBANs, reception of funds through a VIBAN and identification of the operations received through a VIBAN.
 
