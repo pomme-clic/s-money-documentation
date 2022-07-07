@@ -42,11 +42,11 @@ You must use the Virtual Iban API to generate one or to retrieve the account inf
 
 Obtain a VIBAN and its ID by using the following End Point :
 
-<Endpoint apiUrl="/v2.0/virtual-ibans" path="/api/v2.0/virtual-ibans/{AccountId}" method="post"/>
+<Endpoint apiUrl="/v2.0/AccountManagement" path="/api/v2.0/virtual-ibans" method="post"/>
 
 Retrieve the account informations of a defined VIBAN ID.
 
-<Endpoint apiUrl="/v2.0/virtual-ibans" path="/api/v2.0/virtual-ibans/{virtualIbanId}" method="get"/>
+<Endpoint apiUrl="/v2.0/AccountManagement" path="/api/v2.0/virtual-ibans/{virtualIbanId}" method="get"/>
 
 Soon, an API to get the operations received on a particular VIBAN ID.
 
@@ -55,7 +55,7 @@ To know who sends you a payment and why, the VIBAN ID is available into the SEPA
 
 For instant Payment : <Endpoint apiUrl="/v2.0/Transfers.InstantPayment" path="/api/v2.0/users/{AppUserId}/sctinst/{orderid}" method="get"/>
 
-For SEPA transfer :  <Endpoint apiUrl="/v1.1/users" path="/api/v1.1/users/{AppUserId}/sct/{orderid}" method="get"/>
+For SEPA transfer :  <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/sct" method="get"/>
 
 <Cta
   context="doc"

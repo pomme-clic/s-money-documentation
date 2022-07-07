@@ -32,11 +32,11 @@ When a beneficiary is created, its IBAN is automatically checked and a transfer 
 
 You can add a beneficiary using this API :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/sca/v1.1/users/{appuserid}/bankaccounts" method="post"/>
+<Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userid}/bankaccounts" method="post"/>
 
 You can retrieve the list of a user beneficiaries here :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.0/beneficiaries?userId={userid}&beneficiaryId={id}" method="get"/>
+<Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v2.0/beneficiaries?userId={userid}&beneficiaryId={id}" method="get"/>
 
 More information regarding this endpoint in the [API reference.](/api/Core)
 
