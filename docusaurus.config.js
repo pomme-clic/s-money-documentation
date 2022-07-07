@@ -40,6 +40,13 @@ module.exports = {
         },
       ],
     },
+        prodDomains: [
+      ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
+    ],
+        baseAPIUrls: {
+      sandbox: 'https://ic-api.s-money.net/swagger/docs',
+      production: 'https://sb-api.xpollens.com/swagger/docs',
+    },
     serverUrl:
       process.env.DEPLOYCONTEXT === 'production'
         ? 'https://sb-api.xpollens.com'
