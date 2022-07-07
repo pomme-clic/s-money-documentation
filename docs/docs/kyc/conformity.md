@@ -76,7 +76,7 @@ You can provide tax information for check using this API :
 
 If additionnal FATCA/CRS documents are required, the documents can be sent here using this API:
 
-<Endpoint apiUrl="/v2.0/users" path="/api/v2.0/user/{appUserId}/fatca/attachments" method="post"/>
+<Endpoint apiUrl="/v2.0/kyc.usermanagment" path="/api/v2.0/users/{appUserId}/fatca/attachments" method="post"/>
 
 ***
 

@@ -82,7 +82,7 @@ Please note that account closure can only be asked on null balance account (ie :
 
 You can setup an additional balance here : 
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v2.0/accounts/{accountId}/AccountClosureRequest" method="put"/>
+<Endpoint apiUrl="/v2.0/AccountManagement" path="/api/v2.0/accounts/{accountId}/AccountClosureRequest" method="put"/>
 
 <Cta
   context="doc"
