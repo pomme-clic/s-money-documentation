@@ -23,11 +23,11 @@ FATCA/EAI:
 **Account**:
 
 Account closure: 
-- Automated the account closure process by updating the endpoint for the Webdesk portal. To help you reducing the customer lifecycle management, closing an account* is now a full-automated process at Xpollens when using the button on EPv4/BOv2.
-· In or Out Transactions for the 2 status "closure requested" or "pending closure" are blocked (except SCT Out and IP Out).
-· When account shall be closed, an SCT OUT is triggered when account balance is >0€.
-· A return SCT Out to be credited on the account is authorized
-*Friendly reminder : closing an account is only possible when account = 0€.
+- Automated the account closure process by updating the endpoint for the Webdesk portal. To help you reducing the customer lifecycle management, closing an account **is now a full-automated process at Xpollens** when using the button on EPv4/BOv2.  
+· In or Out Transactions for the 2 status "closure requested" or "pending closure" are blocked (except SCT Out and IP Out)  
+· When account shall be closed, an SCT OUT is triggered when account balance is >0€  
+· A return SCT Out to be credited on the account is authorized  
+*Friendly reminder : closing an account is only possible when account = 0€.*
 
 
 ## July 2022
