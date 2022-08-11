@@ -8,6 +8,18 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## August 2022
+**Cards**:
+
+WishPIN:
+- Updated the WishPIN token output to ease integration
+
+**Compliance**:
+FATCA/EAI:
+- Upgraded our engine to improve detection
+- Added error messages. More here (/api/Compliance).
+
+
 ## July 2022
 **Users**:
 
@@ -25,11 +37,11 @@ Split User/Account:
 **Cards**:
 - Added a new endpoint to display CVX2, PAN and Expiry date of a card. 
 Please note that this endpoint replaces unused endpoints ``GET /api/v2.0/pan/{cardExternalRef}`` and ``POST	/api/v2.0/cvx2/{cardExternalRef}`` which will be deprecated.
-More [here](https://develop--s-money-documentation-site.netlify.app/api/cardsecure/#get-/api/v2.0/carddisplay/-cardExternalRef-).
+More [here](/api/cardsecure/#get-/api/v2.0/carddisplay/-cardExternalRef-).
 
 **Callbacks**:
 - Added 2 new keys: ``sepaReason`` and ``sepaReasonCode`` in JSON payload of callbacks types 16, 17, 18, 19 (SEPA Direct Debits, SEPA Credit Transfer).
-More [here](https://docs.xpollens.com/api/Callbacks).
+More [here](/api/Callbacks).
 
 **Partner portal**:
 - UI Improvement of SCT Out
