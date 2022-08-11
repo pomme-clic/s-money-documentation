@@ -15,9 +15,10 @@ WishPIN:
 - Updated the WishPIN token output to ease integration
 
 **Compliance**:
+
 FATCA/EAI:
 - Upgraded our engine to improve detection
-- Added error messages. More here (/api/Compliance).
+- Added error messages. More [here](/api/Compliance).
 
 
 ## July 2022
