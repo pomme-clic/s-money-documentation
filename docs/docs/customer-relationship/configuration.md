@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 ## IP adresses to whitelist : 
 
-### PRODUCTION IPs of public services : 
+### Production adresses of public services : 
 - 13.69.68.64  
 - 20.101.29.15  
 - 20.101.31.58  
@@ -56,7 +56,7 @@ import Cta from '@theme/Cta'
 - 91.135.178.201
 - 91.135.178.202
 - 91.135.178.203
-- 91.135.189.196/229
+- 91.135.189.196 - 91.135.189.229
 
 
 
