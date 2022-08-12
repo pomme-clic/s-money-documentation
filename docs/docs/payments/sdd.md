@@ -14,8 +14,7 @@ SEPA Direct Debit (SDD) is a pull-based payment scheme that allows a creditor to
 SEPA Direct Debit is only available in Euros and can be used for both one-off transactions and recurring payments. It is often used for recurrent payments so that customers can avoid missing payments and being charged additional fees.  
 The debtor must sign a valid SDD mandate to authorize the creditor to withdraw the money from the debtor's account. Additionally, there are other rules governing SDDs, such as pre-notifications, refunds, returns, etc.  
 
-Xpollens provides a complete solution to create mandates and manage Sepa Direct Debit (SDD). You will be able to direct debit your customer with your SCI (Sepa Creditor ID).  
-If needed, we can also provide if necessary a SCI within 48 hours. 
+Xpollens provides a complete solution to create mandates and manage Sepa Direct Debit (SDD). If you already have a Sepa Creditor ID (SCI), you will be able to use it to direct debit your customer. If not, we can provide you with one within 48 hours. 
 
 
 <Image src="docs/MANDATE.png" alt="usecase 1"/>
@@ -35,7 +34,7 @@ Only the CORE scheme is available for now but it can be used between businesses.
 
 <Highlight type="tip">
 
-For mandate signature, you have to have your own signature solution or we can provide our own Strong Customer Authentication(SCA) if needed. 
+For the mandate signature process, we can provide a strong customer authentication tool if needed.
   
 </Highlight>
 
@@ -51,22 +50,35 @@ Do not forget to have a SCI since it's required to be identified on the debtor b
 
 ## Endpoints
 
-You must use the Mandate and SDD API that includes amount and the beneficiary ID.
+### Mandate creation
 
-More information regarding this endpoint in the [API reference.](/api/SDD)
-
-To create a Mandate you have in a second step to make it being signed and activate :
+First, you have to create a mandate with debtor account informations (BIC, IBAN, etc...).
 
 <Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{appuserId}/mandates" method="post"/>
 
-To ask for a Sepa Direct Debit related to a Mandate :
+### Mandate activation
+
+Second, you must make your debtor sign the mandate and inform Xpollens of the process completion.
+
+<Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{appuserId}/mandates/activate" method="put"/>
+
+### Direct Debit creation
+
+Thirdly, you can start to direct debit the debtor (one or multiple time) with detailing the account informations where the funds go and the date of the payment.
 
 <Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userId}/payins/directdebits" method="post"/>
 
-<!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v2.0/users/{userid}/cards/{id}" method="delete"/> -->
+<Highlight type="danger">
+
+The payment date must be set 3 working days in the future. Less than that will result in an error.
+
+</Highlight>
+
+More information regarding these endpoints in the [API reference.](/api/SDD)
+
 
 ---
-## Recall
+## Roadmap
 
-Next releases will able to create recurring, planified SDD, B2B Mandate and will provide a complete UX through our WebApp.
+Next releases will able to create recurring, planned SDD, B2B mandates and will provide a complete UX through our Business Portal.
 
