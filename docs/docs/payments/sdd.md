@@ -67,7 +67,9 @@ Second, you must make your debtor sign the mandate and inform Xpollens of the pr
 Thirdly, you can start to direct debit the debtor (one or multiple time) with detailing the account informations where the funds go and the date of the payment.
 
 <Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userId}/payins/directdebits" method="post"/>  
-<br>
+
+  
+
 <Highlight type="danger">
 
 The payment date must be set 3 working days in the future. Less than that will result in an error.
