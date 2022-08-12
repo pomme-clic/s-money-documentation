@@ -3,7 +3,7 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# Mandate and SDD
+# Mandates and SDD
 
 ## Sepa Direct Debit (SDD)
 
@@ -66,7 +66,7 @@ Second, you must make your debtor sign the mandate and inform Xpollens of the pr
 
 Thirdly, you can start to direct debit the debtor (one or multiple time) with detailing the account informations where the funds go and the date of the payment.
 
-<Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userId}/payins/directdebits" method="post"/>
+<Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userId}/payins/directdebits" method="post"/>  
 
 <Highlight type="danger">
 
