@@ -68,7 +68,7 @@ Thirdly, you can start to direct debit the debtor (one or multiple time) with de
 
 <Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userId}/payins/directdebits" method="post"/>  
 
-  
+<br/><br/>
 
 <Highlight type="danger">
 
