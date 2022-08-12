@@ -35,15 +35,10 @@ Only the CORE scheme is available for now but it can be used between businesses.
 
 <Highlight type="tip">
 
-You have to have your own signature solution or ask us for using our Strong Customer Authentication(SCA). 
+For mandate signature, you have to have your own signature solution or we can provide our own Strong Customer Authentication(SCA) if needed. 
   
 </Highlight>
 
-<Highlight type="caution">
-
-SDD for payin are only available in EUR.
-
-</Highlight>
 
 <Highlight type="danger">
 
