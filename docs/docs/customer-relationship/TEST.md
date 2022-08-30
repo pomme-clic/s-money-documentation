@@ -4,19 +4,51 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # TEST
+<Features>
 
-<a href="#" class="btn--success">Success Button</a>
+<!-- Feature 1 -->
 
-[Default Button Text](#link){: .btn}
-[Primary Button Text](#link){: .btn .btn--primary}
-[Success Button Text](#link){: .btn .btn--success}
-[Warning Button Text](#link){: .btn .btn--warning}
-[Danger Button Text](#link){: .btn .btn--danger}
-[Info Button Text](#link){: .btn .btn--info}
-[Inverse Button](#link){: .btn .btn--inverse}
-[Light Outline Button](#link){: .btn .btn--light-outline}
+<Feature title="Prepaid" icon="cb">
 
-<a href="#" class="btn btn--success">Success Button</a>
+Prepaid Card 
 
+<Cta
+  context="feature"
+  ui="inline"
+  link="docs/cards/issuing"
+  label="Get started"
+/>
 
+</Feature>
 
+<!-- Feature 2 -->
+
+<Feature title="Differed Payment Card" icon="payment">
+
+Xpollens lets you choose your preferred payment methods, build your own accounts structure and automated flows.
+  
+<Cta
+  context="feature"
+  ui="inline"
+  link="docs/accounts/account-management"
+  label="Get started"
+/>
+
+</Feature>
+
+<!-- Feature 3 -->
+
+<Feature title="Immediate Payment Card" icon="kyc">
+
+As an ACPR-approved payment institution, we guarantee secure account management systems and compliance with transaction security, banking compliance and ethics procedures.
+
+<Cta
+  context="feature"
+  ui="inline"
+  link="docs/kyc/retail-customer"
+  label="Get started"
+/>
+
+</Feature>
+
+</Features>
