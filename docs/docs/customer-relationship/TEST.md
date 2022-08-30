@@ -21,7 +21,7 @@ import Feature from '@theme/DocHomepage/feature'
 
 <details>
  <summary>If you need this</summary>
- hidden, collapsable content...
+ The prepaid card is the way to go
 </details>
 
 <Cta
@@ -39,7 +39,7 @@ import Feature from '@theme/DocHomepage/feature'
 
 <details>
  <summary>If you need that</summary>
- hidden, collapsable content...
+  A deferred debit card is where the purchase is made as normal but instead of the payment being taken out right away, it is taken out a few days later.
 </details>
   
 <Cta
@@ -57,7 +57,7 @@ import Feature from '@theme/DocHomepage/feature'
 
 <details>
  <summary>If you need something else</summary>
- hidden, collapsable content...
+ A debit card allows you to transfer money electronically from one bank account to another. 
 </details>
 
 <Cta
