@@ -25,7 +25,10 @@ Prepaid Card
 
 <Feature title="Differed Payment Card" icon="payment">
 
-Xpollens lets you choose your preferred payment methods, build your own accounts structure and automated flows.
+<details>
+ <summary>Details</summary>
+ hidden, collapsable content...
+</details>
   
 <Cta
   context="feature"
@@ -40,7 +43,10 @@ Xpollens lets you choose your preferred payment methods, build your own accounts
 
 <Feature title="Immediate Payment Card" icon="kyc">
 
-As an ACPR-approved payment institution, we guarantee secure account management systems and compliance with transaction security, banking compliance and ethics procedures.
+<details>
+ <summary>Details</summary>
+ hidden, collapsable content...
+</details>
 
 <Cta
   context="feature"
