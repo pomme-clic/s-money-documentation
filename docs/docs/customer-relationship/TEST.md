@@ -1,5 +1,6 @@
+---
 hide_table_of_contents: true
-
+---
 import Image from '@theme/Image';
 import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
