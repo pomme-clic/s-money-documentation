@@ -2,6 +2,12 @@ import Image from '@theme/Image';
 import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
+import DocHomepage from '@theme/DocHomepage'
+import Hero from '@theme/DocHomepage/hero'
+import Features from '@theme/DocHomepage/features'
+import Feature from '@theme/DocHomepage/feature'
+import Cta from '@theme/Cta'
+
 
 # TEST
 <Features>
