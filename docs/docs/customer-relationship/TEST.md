@@ -27,7 +27,7 @@ import Feature from '@theme/DocHomepage/feature'
 <Cta
   context="feature"
   ui="inline"
-  link="docs/cards/issuing"
+  link="/docs/cards/issuing"
   label="Get started"
 />
 
@@ -45,7 +45,7 @@ import Feature from '@theme/DocHomepage/feature'
 <Cta
   context="feature"
   ui="inline"
-  link="docs/cards/issuing"
+  link="/docs/cards/issuing"
   label="Get started"
 />
 
@@ -63,7 +63,7 @@ import Feature from '@theme/DocHomepage/feature'
 <Cta
   context="feature"
   ui="inline"
-  link="docs/cards/issuing"
+  link="/docs/cards/issuing"
   label="Get started"
 />
 
