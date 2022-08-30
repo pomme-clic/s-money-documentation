@@ -14,9 +14,14 @@ import Feature from '@theme/DocHomepage/feature'
 
 <!-- Feature 1 -->
 
-<Feature title="Prepaid" icon="cb">
+<Feature title="Prepaid">
 
 Prepaid Card 
+
+<details>
+ <summary>If you need this</summary>
+ hidden, collapsable content...
+</details>
 
 <Cta
   context="feature"
@@ -29,10 +34,10 @@ Prepaid Card
 
 <!-- Feature 2 -->
 
-<Feature title="Differed Payment Card" icon="payment">
+<Feature title="Deffered Debit">
 
 <details>
- <summary>Details</summary>
+ <summary>If you need that</summary>
  hidden, collapsable content...
 </details>
   
@@ -47,10 +52,10 @@ Prepaid Card
 
 <!-- Feature 3 -->
 
-<Feature title="Immediate Payment Card" icon="kyc">
+<Feature title="Immediate Debit" >
 
 <details>
- <summary>Details</summary>
+ <summary>If you need something else</summary>
  hidden, collapsable content...
 </details>
 
