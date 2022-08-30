@@ -6,7 +6,7 @@ import DocHomepage from '@theme/DocHomepage'
 import Hero from '@theme/DocHomepage/hero'
 import Features from '@theme/DocHomepage/features'
 import Feature from '@theme/DocHomepage/feature'
-import Cta from '@theme/Cta'
+
 
 
 # TEST
