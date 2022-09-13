@@ -47,7 +47,7 @@ New validation rules on email:
 - Email must be unique, unless userRecordStatus = "Refused"
 
 Split User/Account:
-- EndPoints User v2.0 (POST/PUT/GET) are now available and work as intended (data is available in V1.1 endpoints)
+- User v2.0 endPoints (POST/PUT/GET) are now available (data is still available in V1.1 endpoints)
 - Callback 45 is sent when an account is created (automatic when creating a user)
 - New endpoint GET /api/v2.0/accounts/{accountId}
 
