@@ -8,6 +8,13 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## September 2022
+**Users**:
+
+Re-upload of a KYC diligence:
+- We now allow to re-upload a KYC diligence in case of failed KYC.
+
+
 ## August 2022
 **Cards**:
 
@@ -23,11 +30,13 @@ FATCA/EAI:
 **Account**:
 
 Account closure: 
-- Automated the account closure process by updating the endpoint for the Webdesk portal. To help you reducing the customer lifecycle management, closing an account **is now a full-automated process at Xpollens** when using the button on EPv4/BOv2.  
-· In or Out Transactions for the 2 status "closure requested" or "pending closure" are blocked (except SCT Out and IP Out)  
-· When account shall be closed, an SCT OUT is triggered when account balance is >0€  
-· A return SCT Out to be credited on the account is authorized  
-*Friendly reminder : closing an account is only possible when account = 0€.*
+- Automated the account closure process by updating the endpoint for the Webdesk portal. To help you reduce the customer lifecycle management, closing an account **is now a full-automated process at Xpollens** when using the action button on EPv4/BOv2. 
+- Small reminder :  
+· Incoming and outgoing transactions for the "closure requested" and "pending closure" status are automatically blocked (except SCT Out and IP Out)  
+· When an account is going to be closed, an SCT OUT is triggered when the account balance is > 0€  
+· A Return SCT Out is authorized if a the recipient bank returns the money
+
+*Friendly reminder : closing an account is only possible when the account has no more money in it.*
 
 
 ## July 2022
@@ -38,7 +47,7 @@ New validation rules on email:
 - Email must be unique, unless userRecordStatus = "Refused"
 
 Split User/Account:
-- EndPoints User v2.0 (POST/PUT/GET) are now available and work as intended (data is available in V1.1 endpoints)
+- User v2.0 endPoints (POST/PUT/GET) are now available (data is still available in V1.1 endpoints)
 - Callback 45 is sent when an account is created (automatic when creating a user)
 - New endpoint GET /api/v2.0/accounts/{accountId}
 
