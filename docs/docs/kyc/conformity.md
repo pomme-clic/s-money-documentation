@@ -77,11 +77,11 @@ For businesses, the self certification is not fully automated and will need to b
 Here after are two examples for businesses that covers most of the business cases (ie non financial businesses) :
 - First a non US business customer providing its taxation information correctly in coherency with its personal informations and selfcertification.
 
-<Image src="docs/Compliance-Tax-Info-Business-NonUS.png" alt="usecase 1"/>
+<!---<Image src="docs/Compliance-Tax-Info-Business-NonUS.png" alt="usecase 1"/>--->
 
 - Second an american business customer providing its taxation information correctly in coherency with its personal informations and selfcertification.
 
-<Image src="docs/Compliance-Tax-Info-Business-US.png" alt="usecase 2"/>
+<!---<Image src="docs/Compliance-Tax-Info-Business-US.png" alt="usecase 2"/>--->
 
 <Highlight>
 For financial businesses, each of the shareholders (more than 25% of shares) tax information will be asked. These informations will also be needed in the company selfcertification.
