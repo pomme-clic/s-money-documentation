@@ -8,6 +8,13 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## September 2022
+**Users**:
+
+Re-upload of a KYC diligence:
+- We now allow to re-upload a KYC diligence in case of failed KYC.
+
+
 ## August 2022
 **Cards**:
 
