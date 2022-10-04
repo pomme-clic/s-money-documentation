@@ -3636,8 +3636,8 @@
 									},
 									"status": {
 										"type": "string",
-										"description": "the status of the KYB demand :  \n- initialized  \n- fullyReceived \n- pending \n- incomplete  \n- complete",
-										"example": "incomplete"
+										"description": "the status of the KYB demand : \n- Initialized \n- BeingReceived (this status does not trigger this callback) \n- FullyReceived \n- Pending \n- Incomplete  \n- Complete" ,
+										"example": "Incomplete"
 									},
 									"legalEntityId": {
 										"type": "string",
@@ -3706,8 +3706,8 @@
 										"properties": {
 											"status": {
 												"type": "string",
-												"description": "the status of the KYB demand :  \n- initialized  \n- FullyReceived \n- pending \n- incomplete  \n- complete",
-												"example": "incomplete"
+												"description": "the status of the KYB demand : \n- Initialized \n- BeingReceived (this status will not be received in this callback) \n- FullyReceived \n- Pending \n- Incomplete  \n- Complete",
+												"example": "Complete"
 											},
 											"appUserId": {
 												"type": "string",
@@ -3781,8 +3781,8 @@
 														},
 														"status": {
 															"type": "string",
-															"description": "the status of the KYB demand :  \n- initialized  \n- FullyReceived \n- pending \n- incomplete  \n- complete",
-															"example": "initialized"
+															"description": "the status of the KYB demand : \n- Initialized \n- BeingReceived (this status does not trigger this callback) \n- FullyReceived \n- Pending \n- Incomplete  \n- Complete",
+															"example": "Incomplete"
 														},
 														"legalEntityId": {
 															"type": "string",
@@ -3851,8 +3851,8 @@
 															"properties": {
 																"status": {
 																	"type": "string",
-																	"description": "the status of the KYB demand :  \n- initialized  \n- FullyReceived \n- pending \n- incomplete  \n- complete",
-																	"example": "complete"
+																	"description": "the status of the KYC demand :  \n- Initialized \n- BeingReceived (this status will not be received in this callback) \n- FullyReceived \n- Pending \n- Incomplete  \n- Complete",
+																	"example": "Complete"
 																},
 																"appUserId": {
 																	"type": "string",
@@ -3912,7 +3912,7 @@
 		},
 		"/{callback47Url}": {
 			"post": {
-				"summary": "#47 - re-upload of diligences",
+				"summary": "#47 - Re-upload of diligences",
 				"description": "Callback received in case of a webview URL is sent by the KYC provider to enable the re-upload of diligences",
 				"requestBody": {
 					"description": "JSON Body",
