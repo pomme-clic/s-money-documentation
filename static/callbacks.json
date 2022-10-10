@@ -155,8 +155,8 @@
 											},
 											"reason": {
 												"type": "string",
-												"description": "Reason of rejection of diligence",
-												"example": ""
+												"description": "reason for rejection of the diligence: \n- Data inversion \n- Invalid MRZ band \n- This document is not an identity document \n- Incomplete document \n- Illegible document \n- Blurred document \n- Expired document \n- Document and data mismatch \n- Minor person \n- Identity fraud \n- Too dark selfie \n- Too bright selfie \n- Non-matching selfie \n- Invalid selfie",
+												"example": "Illegible document"
 											},
 											"status": {
 												"type": "string",
@@ -221,8 +221,8 @@
 															},
 															"reason": {
 																"type": "string",
-																"description": "Reason of rejection of diligence",
-																"example": ""
+																"description": "reason for rejection of the diligence: \n- Data inversion \n- Invalid MRZ band \n- This document is not an identity document \n- Incomplete document \n- Illegible document \n- Blurred document \n- Expired document \n- Document and data mismatch \n- Minor person \n- Identity fraud \n- Too dark selfie \n- Too bright selfie \n- Non-matching selfie \n- Invalid selfie",
+												                "example": "Illegible document"
 															},
 															"status": {
 																"type": "string",
