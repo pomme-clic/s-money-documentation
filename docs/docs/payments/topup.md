@@ -11,7 +11,7 @@ A topup card is a way for your customer to credit money on their account directl
 
 ## Xpollens shop integration
 
-Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use Dalenys' payment form with hosted-field integration to make the customer enter its card datas.
+Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use Dalenys'payment form with hosted-field integration to make the customer enter its card datas.
 
 ### Topup workflow 
 
@@ -61,8 +61,9 @@ More information regarding this endpoint in the [hosted fields by Dalenys.](http
 
 **Create a top up with 3DSV2**
 
-This endpoint is used to create top up request with 3DSV2. The holder of the Xpollens account can add money to his Xpollens account using his bank card. Thus, he will debit his bank account and credit his Xpollens account with the topup.
-If fees must be attached to this transaction, you can fill in the "Fee" parameter in the body of the request with the amount of the fees. The bank card holder will be debited for the "Amount+Fee".
+I want to use my own credit card to load my account. I enter all the details of my card (PAN, Date, CVV2 : i.e. 23char) like a classic e-commerce payment to make it.
+Since PSD2, except in exceptional cases, a strong customer authentication request (challenge) is systematically made (3DS). Without authorization request process can't be done.
+Each time I perform a TopUP in this way, the card bank is likely to ask me for a challenge.
 
 <Image src="docs/Topup_Create3DS.png" alt="usecase 1"/>
 
