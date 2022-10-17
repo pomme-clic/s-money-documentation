@@ -16,7 +16,7 @@ The first is the usual method which consists in :
 
 - iOS (for Apple Pay)
 - app Samsung Pay
-- app Google Pay 
+- app Google Pay
 - app Garmin Pay _(coming soon)_
 
 <br/>
