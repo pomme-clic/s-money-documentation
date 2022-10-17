@@ -20,16 +20,17 @@ module.exports = {
     {
       type: 'category',
       label: 'Payments',
-      items: ['docs/payments/beneficiaries', 'docs/payments/IP', 'docs/payments/card-payment','docs/payments/topup', 'docs/payments/sdd', 'docs/payments/P2P'],
+      items: ['docs/payments/beneficiaries', 'docs/payments/IP', 'docs/payments/card-payment', 'docs/payments/sdd', 'docs/payments/P2P'],
     },
     {
       type: 'category',
       label: 'Xpollens and you',
-      items: [ 'docs/customer-relationship/business-portal', 'docs/customer-relationship/monitoring', 'docs/customer-relationship/releaseNotes'],
+      items: [ 'docs/customer-relationship/business-portal', 'docs/customer-relationship/monitoring', 'docs/customer-relationship/releaseNotes', 'docs/customer-relationship/configuration'],
     },
   ],
   apisSidebar: [
     'api/Core',
+	'api/Accounts',
     {
       type: 'category',
       label: 'Cards',
@@ -38,7 +39,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Users',
-      items: ['api/KYC','api/Users'],
+      items: ['api/KYC','api/Users','api/Users-old'],
     },
     {
       type: 'category',

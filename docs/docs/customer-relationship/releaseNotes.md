@@ -8,6 +8,74 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## September 2022
+**Users**:
+
+Re-upload of a KYC diligence:
+- We now allow to re-upload a KYC diligence in case of failed KYC.
+
+
+## August 2022
+**Cards**:
+
+WishPIN:
+- Updated the WishPIN token output to ease integration
+
+**Compliance**:
+
+FATCA/EAI:
+- Upgraded our engine to improve detection
+- Added error messages. More [here](/api/Compliance).
+
+**Account**:
+
+Account closure: 
+- Automated the account closure process by updating the endpoint for the Webdesk portal. To help you reduce the customer lifecycle management, closing an account **is now a full-automated process at Xpollens** when using the action button on EPv4/BOv2. 
+- Small reminder :  
+· Incoming and outgoing transactions for the "closure requested" and "pending closure" status are automatically blocked (except SCT Out and IP Out)  
+· When an account is going to be closed, an SCT OUT is triggered when the account balance is > 0€  
+· A Return SCT Out is authorized if a the recipient bank returns the money
+
+*Friendly reminder : closing an account is only possible when the account has no more money in it.*
+
+
+## July 2022
+**Users**:
+
+New validation rules on email:
+- If email domain is part of a disposable service, error message: "Invalid e-mail"  
+- Email must be unique, unless userRecordStatus = "Refused"
+
+Split User/Account:
+- User v2.0 endPoints (POST/PUT/GET) are now available (data is still available in V1.1 endpoints)
+- Callback 45 is sent when an account is created (automatic when creating a user)
+- New endpoint GET /api/v2.0/accounts/{accountId}
+
+
+## June 2022
+**Cards**:
+- Added a new endpoint to display CVX2, PAN and Expiry date of a card. 
+Please note that this endpoint replaces unused endpoints ``GET /api/v2.0/pan/{cardExternalRef}`` and ``POST	/api/v2.0/cvx2/{cardExternalRef}`` which will be deprecated.
+More [here](/api/cardsecure/#get-/api/v2.0/carddisplay/-cardExternalRef-).
+
+**Callbacks**:
+- Added 2 new keys: ``sepaReason`` and ``sepaReasonCode`` in JSON payload of callbacks types 16, 17, 18, 19 (SEPA Direct Debits, SEPA Credit Transfer).
+More [here](/api/Callbacks).
+
+**Partner portal**:
+- UI Improvement of SCT Out
+- UI Improvement of card oppose
+
+
+## May 2022
+**Cards** :
+- New type of VISA card is now available for issuing : the VISA Infinite. You can issue via the same [endpoint](/api/CardFactory).  
+- OTP SMS for Macbook enrolment (Xpay) : We developed a new «OTP SMS» Cardholder verification method for Macbook enrolment. The OTP is sent to the partner through a new [Callback «type 26»](/api/Callbacks#post-/-callback26Url-)
+
+**Onboarding** :
+- Multiple wallet can now be attached to a single user. More [here](/api/kyc).
+- New PAN copy feature available in the dedicated SDK
+- Enrichment of the callback 20 and the GET KYC demand responses
 
 ## April 2022
 **Partner Portal** :

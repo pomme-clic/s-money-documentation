@@ -23,8 +23,10 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
 
+
   const serverUrl = siteConfig.themeConfig.serverUrl
   const tryoutsServerUrl = 'https://sb-api.xpollens.com'
+
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -74,7 +76,7 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
-      delete data.components.securitySchemes['Bearer token authorization']
+      
 
       const stringifiedData = JSON.stringify(data)
 

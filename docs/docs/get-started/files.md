@@ -38,7 +38,8 @@ Here you can find all technical documentation :
 - [S-money-API-SandboxSimulator-SCT-SDD-v1.20-en.docx](./S-money-API-SandboxSimulator-SCT-SDD-v1.20-en.docx)
 - [S-money-API-SCT-BiB-v2.5.docx](./S-money-API-SCT-BiB-v2.5.docx)
 - [S-money-API-Users-BiB-v2.6.docx](./S-money-API-Users-BiB-v2.6.docx)
-- [Xpollens Strong Authentication -v1.4.pdf](./Xpollens_Strong_Authentication-v1.4.pdf)
+- [Xpollens-StrongAuthentication-v1.6.pdf](./Xpollens-StrongAuthentication-v1.6.pdf)
+
 
 ### SDK Docs
 

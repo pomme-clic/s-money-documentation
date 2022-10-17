@@ -47,9 +47,9 @@ To support governments to fight against tax evasion, financial institutions must
 
 Xpollens is following the FATCA (Foreign Account Tax Compliance Act) and CRS (Common Reporting Standard) regulations and Xpollens does collect  the tax information self-certification at the onboarding but also periodically or following an event, for update.
 
-### Physical Person detailled process
-At the onboarding, the tax informations and US relation are asked and are mandatories.
-Our customer can prodvide up to 3 tax countries and Tax Idenfication Numbers (TIN).
+### Retail customers and professionals detailled process
+At the customer onboarding, the tax informations and US relation are asked and are mandatories.
+The customers can provide up to 3 tax countries and Tax Idenfication Numbers (TIN).
 
 <Highlight>
 See below that Xpollens fully automizes the self-certification generation, for very large majority of the Physical Person customers, no need to upload any document. 
@@ -65,7 +65,27 @@ Here after are two examples :
 <Image src="docs/Compliance-Tax-Info-US.png" alt="usecase 2"/>
 
 ### Businesses detailled process
-Under construction and available soon
+As for retail and professionals, the tax informations and US relation are asked and are mandatories.
+The required informations depend on the customer activities. The processes below describe the non financial business process.
+For financial business (bank, hedgefunds,..), the tax information related to the business shareholders will be also required.
+Note that once required, up to 3 tax countries and Tax Idenfication Numbers (TIN) can be supplied.
+
+<Highlight>
+For businesses, the self certification is not fully automated and will need to be supplied in pdf format. The self certification vs tax information will be part of KYC checks.
+</Highlight>
+
+Here after are two examples for businesses that covers most of the business cases (ie non financial businesses) :
+- First a non US business customer providing its taxation information correctly in coherency with its personal informations and selfcertification.
+
+<!---<Image src="docs/Compliance-Tax-Info-Business-NonUS.png" alt="usecase 1"/>--->
+
+- Second an american business customer providing its taxation information correctly in coherency with its personal informations and selfcertification.
+
+<!---<Image src="docs/Compliance-Tax-Info-Business-US.png" alt="usecase 2"/>--->
+
+<Highlight>
+For financial businesses, each of the shareholders (more than 25% of shares) tax information will be asked. These informations will also be needed in the company selfcertification.
+</Highlight>
 
 ## Endpoints
 
@@ -76,7 +96,7 @@ You can provide tax information for check using this API :
 
 If additionnal FATCA/CRS documents are required, the documents can be sent here using this API:
 
-<Endpoint apiUrl="/v2.0/users" path="/api/v2.0/user/{appUserId}/fatca/attachments" method="post"/>
+<Endpoint apiUrl="/v2.0/kyc.usermanagment" path="/api/v2.0/users/{appUserId}/fatca/attachments" method="post"/>
 
 ***
 

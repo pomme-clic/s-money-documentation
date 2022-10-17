@@ -48,9 +48,9 @@ const getApiColor = (type) => {
 }
 
 const Endpoint = ({ apiUrl, path, method }) => {
-  const { siteConfig } = useDocusaurusContext()
-  const baseAPIUrls = siteConfig.themeConfig.baseAPIUrls
-  const prodDomains = siteConfig.themeConfig.prodDomains
+  const context = useDocusaurusContext()
+  const baseAPIUrls = context.siteConfig.themeConfig.baseAPIUrls
+  const prodDomains = context.siteConfig.themeConfig.prodDomains
 
   // React Query
   const fetchEndpoint = async () => {
