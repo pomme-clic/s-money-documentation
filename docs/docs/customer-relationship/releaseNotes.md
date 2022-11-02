@@ -8,6 +8,15 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## October 2022
+**Card Operations**:
+- Set up a new bus between Clearing & existing Operations µService to avoid competitive access ations for high volumes of Card Operations 
+- Miscellaneous optimizations related to high volumetry
+
+**WebDesk**:
+- The Partner Portal has been migrated to a more stable technical infrastructure that host both our back office and our clients. It's now called Webdesk to represent both of use cases.
+- Added status pending for FATCA demand for a better tracking of demand status 
+
 ## September 2022
 **Users**:
 
