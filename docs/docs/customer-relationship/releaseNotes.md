@@ -10,17 +10,17 @@ Xpollens changelog since September 2021
 ---
 ## November 2022
 **Accounts**:
-- Deployed the new virtual IBAN feature. You can now create multiple "throwable" IBANs to identify incoming fluxes or to not expose your main IBAN. Documentation on the different use cases enabled can be found [here](docs/accounts/virtualiban). Technical documentation is [here](api/accounts).
+- Deployed the new virtual IBAN feature. You can now create multiple "throwable" IBANs to identify incoming fluxes or to not expose your main IBAN. Documentation on the different use cases enabled can be found [here](/docs/accounts/virtualiban). Technical documentation is [here](/api/accounts).
 
 **Sandbox**:
 - Upgraded our sandbox environnement realism by adding simulators for processing of interchange fees and clearing report generation.
 
 **Onboarding**:
-- Added a new status "Fraud_Suspicion" & "AwaitingExpertise" for the onboarding process. This change is not reflected in the [callback 4](api/Callbacks#post-/-callback04Url-) to avoid breaking change in already existing implementation.
+- Added a new status "Fraud_Suspicion" & "AwaitingExpertise" for the onboarding process. This change is not reflected in the [callback 4](/api/Callbacks#post-/-callback04Url-) to avoid breaking change in already existing implementation.
 - Added an automatic refusal process for users identified as fraudster.
 
 **Operations**:
-- Added a [new endpoint](api/SDD) to revoke a mandate. This new revokation info is also now available in the **GET** method for SDD status. We also added the Appuserid in both responses of the POST and GET methods for SDD. 
+- Added a [new endpoint](/api/SDD) to revoke a mandate. This new revokation info is also now available in the **GET** method for SDD status. We also added the Appuserid in both responses of the POST and GET methods for SDD. 
 - Made an evolution on the callbacks #1 & #5. These callback are now in a JSON body format instead of the old URL Query format. The URL Query format is now **deprecated** and will be decommissioned as soon as all clients made the changes on their side. 
 
 **Partner Portal**:
