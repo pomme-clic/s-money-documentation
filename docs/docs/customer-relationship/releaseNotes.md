@@ -8,6 +8,26 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+## November 2022
+**Accounts**:
+- Deployed the new virtual IBAN feature. You can now create multiple "throwable" IBANs to identify incoming fluxes or to not expose your main IBAN. Documentation on the different use cases enabled can be found [here](docs/accounts/virtualiban). Technical documentation is [here](api/accounts).
+
+**Sandbox**:
+- Upgraded our sandbox environnement realism by adding simulators for processing of interchange fees and clearing report generation.
+
+**Onboarding**:
+- Added a new status "Fraud_Suspicion" & "AwaitingExpertise" for the onboarding process. This change is not reflected in the [callback 4](api/Callbacks#post-/-callback04Url-) to avoid breaking change in already existing implementation.
+- Added an automatic refusal process for users identified as fraudster.
+
+**Operations**:
+- Added a [new endpoint](api/SDD) to revoke a mandate. This new revokation info is also now available in the **GET** method for SDD status. We also added the Appuserid in both responses of the POST and GET methods for SDD. 
+- Made an evolution on the callbacks #1 & #5. These callback are now in a JSON body format instead of the old URL Query format. The URL Query format is now **deprecated** and will be decommissioned as soon as all clients made the changes on their side. 
+
+**Partner Portal**:
+- Added a few alert messages to improve user experience
+- UI improvements on FATCA & KYC screens
+- **FOR PECI clients ONLY**: Webdesk users can now access a new screen called "TO DO" that enable them to validate the "SCT IN" type of diligence.
+
 ## October 2022
 **Card Operations**:
 - Set up a new bus between Clearing & existing Operations µService to avoid competitive access ations for high volumes of Card Operations 
@@ -36,7 +56,7 @@ FATCA/EAI:
 - Upgraded our engine to improve detection
 - Added error messages. More [here](/api/Compliance).
 
-**Account**:
+**Accounts**:
 
 Account closure: 
 - Automated the account closure process by updating the endpoint for the Webdesk portal. To help you reduce the customer lifecycle management, closing an account **is now a full-automated process at Xpollens** when using the action button on EPv4/BOv2. 
@@ -95,7 +115,7 @@ More [here](/api/Callbacks).
 
 
 ## Mars 2022
-**Card** :
+**Cards** :
 - A new endpoint  for token Activation in the In-App6 verification workflow has been delivered. More [HERE](/api/xpay).
 - We have integrated the alias related to the subscription mode for recurring payment. You can now add the subscription mode to your one click payment method. More [HERE](/api/Core).
 
