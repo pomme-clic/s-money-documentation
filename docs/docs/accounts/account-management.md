@@ -39,7 +39,7 @@ All the accounts we provide are currently in Euro only. Other european currencie
 </Highlight>
 
 
- Our API offers the ability to manage all aspects of the account : from getting the balance of the account to set the different limits of transactions : you can adapt the account to your use cases.
+Our API offers the ability to manage all aspects of the account : from getting the balance of the account to set the different limits of transactions : you can adapt the account to your use cases.
  
 More information regarding this endpoint in the [API reference.](/api/Core)
 
@@ -51,11 +51,11 @@ You can setup account limitations here :
 
 ## Balance management
 
-Based on your customer risk management you can sometimes allow customers to spend more than its customer balance.
+Based on your customer risk management you can sometimes allow a customer to spend more than its balance. With our platform, yu can easily handle this.
 
 <Highlight type="caution">
 
-Please note that any additional balance will be automatically covered by you as partner. 
+Please note that any negative balance has to covered by you in the meantime. 
  
 </Highlight>
 
@@ -69,17 +69,17 @@ You can setup an additional balance here :
 
 ## Closure management
 
-You can ask for account closure following your customer request or if your customer doesn't, for example, follow your service rules.
+You can ask for an account closure following your customer request or if your customer doesn't, for example, follow your service rules.
 In the first case the effective closure will take 30 days, in the second the closure will take 60 days.
 For more details on how the operations will be managed during this period, do not hesitate to contact us.
 
 <Highlight type="caution">
 
-Please note that account closure can only be asked on null balance account (ie : the account owner might payout the remaining amount for its closing request to be agreed)
+Please note that an account closure can only be asked on a null balance account (ie : the account owner might payout the remaining balance for its closing request to be agreed)
  
 </Highlight>
 
-You can view current account closures here : 
+You can view how to close an account here : 
 
 <Endpoint apiUrl="/v2.0/AccountManagement" path="/api/v2.0/accounts/{accountId}/AccountClosureRequest" method="get"/>
 
