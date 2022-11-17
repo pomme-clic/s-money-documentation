@@ -5,29 +5,29 @@ import Cta from '@theme/Cta'
 
 # Debt Management
 
-## Client debt
+## Client debts
 
 <Highlight>
 
-In some cases of transaction, the account balance might not be sufficient, for example when an offline Card transaction or a payin contestation (money might be spent...).
-We propose a debt management mechanism to ensure payment of this kind of operation.
+In some transactions, the account balance might go negative; for example when an offline card transaction or a payin contestation (money might be spent...).
+We offer a debt management mechanism to ensure payment of this kind of operation.
 
 </Highlight>
 
 <Highlight type="tip">
 
-The mechanism is based on automated P2P (see [here](/docs/payments/P2P)) that creates debt on the customer account and the ability for the Client to recover the missing amount.
-Debt could be created following many operation types : an Offline Card operation, a P2P billing, a contestation after a Card Top Up, after a SCT IN recall, an ATM withdrawal in currency.
+The mechanism is based on an automated P2P (see [here](/docs/payments/P2P)) that creates a debt on the customer account and the ability for the client to recover the missing amount.
+Debt can be created following many operation types : an offline card operation, a P2P billing, a contestation after a card top-up, after a SCT IN recall or an ATM withdrawal.
 
 </Highlight>
 
-Here is the example of an ATM withdrawal with FX Change : 
+Here is an example of an ATM withdrawal with FX Change : 
 
 <Image src="docs/ATMDEBT.png" alt="usecase 1"/>
 
 <Highlight type="danger">
 
-Even if it is a rare occurence, you, as client, will have to cover and recover your client debt.
+Even if it is a rare occurence, you, as partner, will have to cover and recover your client debt.
 
 </Highlight>
 
@@ -35,7 +35,7 @@ Even if it is a rare occurence, you, as client, will have to cover and recover y
 
 ## Endpoints
 
-Within our debt API you will be able to manage your client debt follow-up and recovery.
+With our debt API, you will be able to manage your client debt follow-up and recovery.
 
 To retrieve the customer debt :
 
