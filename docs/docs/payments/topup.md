@@ -6,12 +6,12 @@ import Cta from '@theme/Cta'
 # Topup card
 
 
-A topup card is a way for your customer to credit money on their account directly from a bank card.
+A topup card is a way for your customer to credit money on their account directly from a bank card. There are different method to do a topup.
 
 
 ## Xpollens shop integration
 
-Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use Dalenys' payment form with hosted-field integration to make the customer enter its card datas.
+Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use Dalenys'payment form with hosted-field integration to make the customer enter its card datas.
 
 ### Topup workflow 
 
@@ -24,17 +24,32 @@ Like in e-commerce experience, you need a shop and a payment form. Xpollens crea
 
 In this picture, Xpollens is your shop.
 
-> 1. You display a payment page including a payment form, except that the bankcard input fields are replaced by hosted-fields containers. These containers could be any HTML tag: div, p, span… the hosted-fields JavaScript library injects Dalenys-hosted iframes in these containers, each containing the card data input fields;
-> 2. At the submit process, you should call the createToken method of the hosted-fields library which will trigger the tokenization of the cardholder data (card number, expiry date and cryptogram);
-> 3. If the tokenization is successful, you must add the received token to your form submission request (e.g. by adding a hidden input);
-> 4. You can submit the payment form to your own server by calling API Xpollens **Create a topup with 3DSv2**
-> 5. Xpollens sends a HTTPS POST request to our classical server to server endpoint: https://secure-test.dalenys.com/front/service/rest/process. The requests should contain the token instead of the cardholder data;
-> 6. The Dalenys platform sends a request to the bank network and waits for the results.
-> 7. Xpollens receives the results in the request response and answers you with callbacks.
-> 8. In parallel, the transaction result is confirmed by a notification request sent to the merchant’s NOTIFICATION_URL containing the transaction’s parameters (among which EXECCODE and TRANSACTIONID).  
+#### Principle
 
+1.	You display a payment page including a registration form, except that the bankcard input fields are replaced by hosted-fields containers. These containers could be any HTML tag: div, p, span… the hosted-fields JavaScript library injects Dalenys-hosted iframes in these containers, each containing the card data input fields
+2.	At the submit process, you should call the createToken method of the hosted-fields library which will trigger the tokenization of the cardholder data (card number, expiry date and cryptogram)
+3.	If the tokenization is successful, you must add the received token to your form submission request (e.g. by adding a hidden input)
 
+#### Creation of the form 
 
+You must own a TLS certificate to host a valid HTTPS payment page, otherwise the user’s browser will display security alerts and is likely to block it.
+The hosted-fields library must always be called online. Using a downloaded version hosted on your own server can cause serious malfunctions, especially in the case of an update of the API.
+
+1-	First, you must include the Dalenys hosted fields dedicated library, by adding code between the <head> and </head> tags in your HTML:
+
+2-	Declare the UTF-8 encoding
+
+3-	Create a form with 4 containers identified by an id attribute. 
+
+4-	Configure the hosted fields library
+
+5-	Load the hosted fields library
+
+At this point, your web browser may display the bank card input fields into their containers.
+
+6-	Token generation
+Once the user submits the form, you should call the createToken method to trigger the tokenization process.
+In case of success you have to add the received token to the form submit request (by adding an hidden input for example) :
 
 More information regarding this endpoint in the [hosted fields by Dalenys.](https://developer.dalenys.com/integration-modes/hosted-fields.html)
 
@@ -46,8 +61,9 @@ More information regarding this endpoint in the [hosted fields by Dalenys.](http
 
 **Create a top up with 3DSV2**
 
-This endpoint is used to create top up request with 3DSV2. The holder of the Xpollens account can add money to his Xpollens account using his bank card. Thus, he will debit his bank account and credit his Xpollens account with the topup.
-If fees must be attached to this transaction, you can fill in the "Fee" parameter in the body of the request with the amount of the fees. The bank card holder will be debited for the "Amount+Fee".
+I want to use my own credit card to load my account. I enter all the details of my card (PAN, Date, CVV2 : i.e. 23char) like a classic e-commerce payment to make it.
+Since PSD2, except in exceptional cases, a strong customer authentication request (challenge) is systematically made (3DS). Without authorization request process can't be done.
+Each time I perform a TopUP in this way, the card bank is likely to ask me for a challenge.
 
 <Image src="docs/Topup_Create3DS.png" alt="usecase 1"/>
 
