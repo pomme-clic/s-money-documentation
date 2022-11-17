@@ -7,7 +7,7 @@ import Cta from '@theme/Cta'
 
 ## What does IBAN mean ?
 
-The IBAN (International Bank Account Number) is the unique identifier of the User Account.  
+The IBAN (International Bank Account Number) is the unique identifier of an User Account.  
 The IBAN uniquely identifies an individual account, at a specific financial institution, in a particular country. 
 IBAN is the ISO 13616 international standard for numbering bank accounts.
 Many information on IBAN from European Central Bank can be found here : 
@@ -19,8 +19,8 @@ Once a user is created, an account can be created and will be attributed with an
 
 <Highlight type="caution">
 
-IBAN length varies by country. For France, the IBAN is up to 27.
-Also, french overseas territories have IBAN with FR but not all. 
+IBAN length can vary by country. For France, the IBAN is up to 27.
+Also, only some french overseas territories have IBAN with FR. 
 You can also have these codes : GF, GP, MQ, RE, PF, TF, YT, NC, BL, MF(French part), PM and WF.
 
 </Highlight>
@@ -30,17 +30,16 @@ You can also have these codes : GF, GP, MQ, RE, PF, TF, YT, NC, BL, MF(French pa
 ## Account management
 
 <Highlight>
-All the xpollens accounts come with an IBAN. It can be your own (if you have a financial agreement) or a Xpollens one. For more information, please contact our sales team.
+All the Xpollens accounts are associated with an IBAN. The IBAN can be from your own IBAN range (if you have your own banking license) or from the Xpollens one. For more information, please contact our sales team.
 </Highlight>
 
 <Highlight type="tip">
-We propose both individual and professional accounts.
-All the accounts we provide are currently in Euro only. Other european currency will come soon, ask us for more details.
+We offer both individual and professional accounts at Xpollens.
+All the accounts we provide are currently in Euro only. Other european currencies will come soon, ask us for more details about our roadmap.
 </Highlight>
 
 
- Our API offers the ability to manage all aspects of the account.
- From getting the balance of the account to set the different limits of transactions : you can adapt the account to your use cases.
+ Our API offers the ability to manage all aspects of the account : from getting the balance of the account to set the different limits of transactions : you can adapt the account to your use cases.
  
 More information regarding this endpoint in the [API reference.](/api/Core)
 
