@@ -21,14 +21,14 @@ The first is the usual method which consists in :
 
 <br/>
 
-The cardholder starts enrolment by entering his card informations and then he valids/confirms into his mobile app with a SCA (Strong Customer Authentication).
+The cardholder starts enrolment by entering his card informations and then he validates it into his mobile app with a SCA (Strong Customer Authentication).
 
 The second, mandatory for any wallet provider, it's a method without entering your informations card. It's strongly recommended for virtual cards. 
-It consists to start in your app (with SCA) with only button click by provisioning data cards then to valid Terms and Conditions and to finish in your app.
+It consists to start in your app (with SCA) with only one button click by provisioning data cards then to validate Terms and Conditions and finish the process in your app.
 
 ### Confirm your card
 
-You start your enrolment since wallet provider...
+You start your enrolment from the wallet provider...
 
 <Image src="docs/Card_verifWallet.png" alt="usecase 1"/>
 
@@ -71,7 +71,7 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 ### Add your card in-app
 
-In your mobile app, you can add a card to wallet
+In your mobile app, you can add a card to a wallet
 
 <Image src="docs/Card_addWallet.png" alt="usecase 1"/>
 
@@ -84,7 +84,7 @@ More information regarding the specifications in our SDK
 
 ##### Caution
 
-Before display the button "Add to wallet", you have to verify if this card **is not already present** in wallet and **if the phone or OS is compatible**.
+Before displaying the button "Add to a wallet", you have to verify if this card **is not already present** in the wallet and **if the phone or OS is compatible**.
 
 </Highlight>
 
@@ -92,7 +92,7 @@ Before display the button "Add to wallet", you have to verify if this card **is 
 
 ## About token
 
-Here is token life cycle (TLC). Your token has a own life but it is linked to his card too. So Card Life Cycle (CLC) act on the TLC.
+Here is the token life cycle (TLC). Your token has its own life but it is linked to his card too. So Card Life Cycle (CLC) acts on the TLC.
 
 <Image src="docs/Xpay_TokenStatus.png" alt="usecase 1"/>
 
