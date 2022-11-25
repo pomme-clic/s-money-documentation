@@ -8,13 +8,13 @@ import Cta from '@theme/Cta'
 
 ## List of cards
 
-You can retrieve all cards by holder. For example, in your journey, you can provide all cards to your holder in order he manages each one.
+You can retrieve all cards by holder. For example, in your journey, you can provide all cards to your holder so he can manage each one.
 
 <Image src="docs/Card_List.png" alt="usecase 1"/>
 
 #### ``` GET ``` /api/v2.0/holder/{holderExternalRef}
 
-This API allows to retrieve the list of his cards for a specific holder
+This API allows to retrieve the list of cards of a specific holder
 
 ```json
  {
@@ -111,7 +111,7 @@ You can manage your card with a selfcare in order to update some specifications 
 - block or unblock non domestic payment or withdrawal
 - oppose your card
 
-You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section.
+You can add the card in a wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.md) section.
 
 
 ### Block card
@@ -121,7 +121,7 @@ You can add in wallet by in-app provisionning (sdk) - See how in [Xpay](./x-pay.
 
 <Highlight type="tip">
  
- You can block or unblock in real time to secure your card if you don't find it.
+ You can block or unblock in real time to secure the card.
  
 </Highlight>
 
@@ -138,7 +138,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- You can increase or decrease your limits of payment and/or withdrawal.
+ You can increase or decrease limits of payment and/or withdrawal.
 
 </Highlight>
 
@@ -157,7 +157,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
-  You can block or unblock in real time if you don't want authorize e-commerce payment.
+  You can block or unblock payments in real time if you don't want to authorize e-commerce payments.
  
 </Highlight>
 
@@ -173,7 +173,7 @@ More information regarding this endpoint in the [API reference](/api/CardFactory
 
 <Highlight type="tip">
  
- You can block or unblock in real time if you don't want to authorize foreigner payments or withdrawal.
+ You can block or unblock payments in real time if you don't want to authorize foreigner payments or withdrawals.
  
 </Highlight>
 
@@ -225,7 +225,7 @@ Oppose a card is equal to block your card definitively.
 
 <Highlight>
  
- The next step is usually a refabricate or upgrade new card. See in Issue a card Section
+The next step is usually a refabrication or an upgrade of the new card. See more in [Issue a card Section](./issuing)
  
 </Highlight>
 
@@ -245,7 +245,7 @@ You can :
 
 <Highlight type="caution">
  
- To use API Informations Display, for PCI compliance, we use a secure interface by a SDK.
+ To use API Informations Display, for PCI compliance, we use a secure interface via a SDK.
  
 </Highlight>
 
