@@ -3,15 +3,15 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# SEPA and instant payment
+# SEPA and Instant payment
 
 ## SEPA zone
 
 
-The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French Overseas areas. More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
+The SEPA region consists of 36 European countries, including several countries which are not part of the euro area or the European Union. Also are included all French overseas areas. More information here : https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html
 
 
-Two protocols are being used on this system to wire money : SCT and instant SCT.
+Two protocols are being used on this system to wire money : SCT and Instant SCT.
 SCT stands for Sepa Credit Transfer and exists since the creation of the Euro.
 
 
@@ -24,13 +24,11 @@ It comes with a few limitations :
 - Irrevocable
 - No service interruption (operations can be processed all week)
 
-
-
 ---
 
 ## SCT transfer
 
-SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them and ask for a its refund.
+SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them or ask for its refund.
 
 <Image src="docs/SCA-SCTOUT.png" alt="usecase 1"/>
 
@@ -68,7 +66,7 @@ Instant transfer is used to send money within seconds to a beneficiary with an e
 
 <Highlight>
 
-The SEPA instant payment can be used in EUR only. The transfer is done within seconds.
+The SEPA Instant payment can be used in EUR only. The transfer is done within seconds.
   
 </Highlight>
 
@@ -107,7 +105,7 @@ You can also have details of the received Instant Payment.
 ---
 ## Recall
 
-For both SCT and instant SCT, all the recall operation are available :
+For both SCT and Instant SCT, all the recall operation are available :
 
 - Recall SCT OUT et IP OUT : in case you as partner would like to recall a SCT or IP out (you have 10 days..).
 - RFRO SCT OUT et IP OUT : in case a user would like to recall a SCT or IP out (wrong amount, wrong beneficiary,..) (the user has 13 months).
