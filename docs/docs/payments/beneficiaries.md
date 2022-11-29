@@ -5,13 +5,13 @@ import Cta from '@theme/Cta'
 
 # Beneficiaries management
 
-A beneficiary is a recipient of money transfer you want to make. It can be a person, a firm or even the state. 
+A beneficiary is the recipient of money transfer you want to make. It can be a person, a firm or even the state. 
 All beneficiaries are constituted with a bank account reference and their name.
 
 ## Adding a beneficiary
 
 
-Adding a beneficiary is necessary to make a money transfer.
+Adding a beneficiary is a necessary step to make a money transfer.
 
 
 <Image src="docs/BENEFICIARYMANAGEMENT.png" alt="usecase 1"/>
@@ -22,7 +22,7 @@ Retrieving a user beneficiaries list of a user is possible with the dedicated AP
 
 <Highlight type="caution">
 
-When a beneficiary is created, its IBAN is automatically checked and a transfer to it unlocked immediatly. Only SEPA and French overseas IBAN will be authorized.
+When a beneficiary is created, its IBAN is automatically checked and and transfer ready once approved. Only SEPA and French overseas IBAN will be authorized.
 
 </Highlight>
 
