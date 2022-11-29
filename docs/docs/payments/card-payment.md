@@ -8,35 +8,35 @@ import Cta from '@theme/Cta'
 ## Card payment lifecycle
 A cardholder uses his card or his mobile to pay a merchant (shop, online or automate) or to withdraw cash.
 
-First, in real time (Step 1-Authorization), the merchant PSP (Payment Service Provider) and his bank call Xpollens to ask authorization to deliver payment. Occurs then an exchange between cardholder and merchant.
-When requesting authorization (step 1), this amount (the money) is simply withheld on the user's account so that this amount cannot be used elsewhere and it is actually debited once the merchant sends his request for clearing. (Step 2-Settlement).
+First, in real time (Step 1-Authorization), the merchant PSP (Payment Service Provider) and its bank call Xpollens servers for the payment authorization. Once approved, the transaction goes through and the payment is made.
+When requesting authorization (step 1), the amount (the money) is simply withheld on the user's account so that this amount cannot be used elsewhere and it is actually debited once the merchant sends his request for clearing. (Step 2-Settlement).
 
 
-Next (step 2), one or more days after, the merchant bank do the clearing and send an order of settlement to Xpollens.
+Next (step 2), one or more days after, the merchant bank do the clearing and send an order of settlement to Xpollens. At this moment only, the funds previously witheld are sent to the Hub.
 
 
 <Image src="docs/CardOP_Payment.png" alt="usecase 1"/>
 
 ## Payment transactions
 
-Our HUB receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
+Our Hub receives all banking transactions, processes the corresponding events and returns them according to the type of operation.
 In real time (step 1), the IAS (Issuer Authorization Server) part manages authorization or adjustment requests that come to us from acquirers and types of events such as card opposition. 
 
-Then (step 2), the HUB also receives settlements resulting from clearing and other types of operations linked to the lifecycle of operations following a cardholder dispute.
+Then (step 2), the Hub also receives settlements resulting from clearing and other types of operations linked to the lifecycle of operations following a cardholder dispute.
 
 ### Authorization (IAS)
 
 **Step 1**
 
-All cards issued are systematic authorization cards.
+All cards issued are systematically authorized cards.
 This means that, when in use, an authorization request is sent to Xpollens in order to know whether the payment can be issued or not.
 Xpollens checks if the payment context is consistent with the card profile :
 
-- is this the correct PIN code,
-- is the card active,
-- are the ceilings or the balance sufficient,
-- is it a country, a payment type, or a merchant authorized _(list, exception, selfcare, ...)_
-- and more
+- if the PIN code is correct,
+- if the card is active,
+- if the ceilings or the balance are sufficient,
+- if the country, the payment type, or the merchant are authorized _(list, exception, selfcare, ...)_
+- and other checks
 
 Xpollens tests a lot of parameters in real time and responds to the merchant by indicating the response that was sent to his partner.
 
@@ -97,7 +97,7 @@ It is the most important for you. You can follow activity and exchange with your
 
 #### type 24 _(clearing)_
 
-This callback is sent when clearing process is finished for you. You receive a reference and you can retrieve your settlement in the clearing report.
+This callback is sent when the clearing process is done for you. You receive a reference and you can retrieve your settlement in the clearing report.
 
 ```json
 {
@@ -185,7 +185,7 @@ This API allows you to retrieve the payment and withdrawal limits for a card as 
 
 #### Get card operations
 
-This API allows to retrieve a user's card transactions, with or without date criteria. Without date criteria, the api returns the complete list of operations.
+This API allows to retrieve a user's card transactions, with or without date criteria. Without date criteria, the api returns a complete list of operations.
 
 <!-- 
 <Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/cardoperations" method="get"/> 

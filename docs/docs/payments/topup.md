@@ -6,12 +6,12 @@ import Cta from '@theme/Cta'
 # Topup card
 
 
-A topup card is a way for your customer to credit money on their account directly from a bank card. There are different method to do a topup.
+A topup card is a way for your customer to credit money on their account directly from a debit/credit card. There are different methods to do a topup.
 
 
 ## Xpollens shop integration
 
-Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use Dalenys'payment form with hosted-field integration to make the customer enter its card datas.
+Like in e-commerce experience, you need a shop and a payment form. Xpollens create a shop for you and use a Dalenys hosted-field payment form to make the customer enter its card datas.
 
 ### Topup workflow 
 
@@ -26,9 +26,9 @@ In this picture, Xpollens is your shop.
 
 #### Principle
 
-1.	You display a payment page including a registration form, except that the bankcard input fields are replaced by hosted-fields containers. These containers could be any HTML tag: div, p, span… the hosted-fields JavaScript library injects Dalenys-hosted iframes in these containers, each containing the card data input fields
-2.	At the submit process, you should call the createToken method of the hosted-fields library which will trigger the tokenization of the cardholder data (card number, expiry date and cryptogram)
-3.	If the tokenization is successful, you must add the received token to your form submission request (e.g. by adding a hidden input)
+1.	You display a payment page including a registration form, except that the bankcard input fields are replaced by hosted-fields containers. These containers could be any HTML tag: div, p, span… the hosted-fields JavaScript library injects Dalenys-hosted iframes in these containers, each containing the card data input fields.
+2.	At the submit process, you should call the createToken method of the hosted-fields library which will trigger the tokenization of the cardholder data (card number, expiry date and cryptogram).
+3.	If the tokenization is successful, you must add the received token to your form submission request (e.g. by adding a hidden input).
 
 #### Creation of the form 
 
