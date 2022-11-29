@@ -7,12 +7,12 @@ import Cta from '@theme/Cta'
 
 ## What is a P2P transfer ?
 
-P2P transfer translates to "Peer to Peer transfer". It's a way to transfer money from one of your customer to another one.
-This method of transfer exists to avoid processing by the banking network since both customer are hosted on the same platform.
+P2P transfer translates to "Peer to Peer transfer". It's a way to transfer money from one of own customer to another one.
+This method of transfer exists to avoid processing by the banking network since both customer have their bank account in the same bank.
 
 ### Advantages of P2P transfers 
 Making a P2P instead of a classic Sepa Credit Transfer (SCT) has several pros :
- - The transfer is made immediatly. No need to suffer the banking network delay.
+ - The transfer is made immediatly. No banking network delays.
  - The transfer is free. No banking network means no fees.
 
 
