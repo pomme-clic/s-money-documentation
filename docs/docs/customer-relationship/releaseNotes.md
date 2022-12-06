@@ -24,6 +24,8 @@ Xpollens changelog since September 2021
 - Made an evolution on the callbacks #1 & #5. These callback are now in a JSON body format instead of the old URL Query format. The URL Query format is now **deprecated** and will be decommissioned as soon as all clients made the changes on their side. 
 
 **Partner Portal**:
+- Displaying now in plain text the IBAN all across the Partner Portal
+- Added a new button to freeze/unfreeze accounts
 - Added a few alert messages to improve user experience
 - UI improvements on FATCA & KYC screens
 - **FOR PECI clients ONLY**: Webdesk users can now access a new screen called "TO DO" that enable them to validate the "SCT IN" type of diligence.
