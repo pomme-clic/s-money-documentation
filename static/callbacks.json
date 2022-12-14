@@ -119,7 +119,7 @@
 		},
 		"/{callback04Url}": {
 			"post": {
-				"summary": "#04 - KYC demand",
+				"summary": "#04 - KYC demand - DEPRECATED",
 				"description": "Callback received in case of status change in the KYC demand",
 				"requestBody": {
 					"description": "JSON Body",
@@ -201,8 +201,8 @@
 													},
 													"status": {
 														"type": "string",
-														"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
-														"example": "incomplete"
+														"description": "Status of the KYC demand :  \n- Initialized  \n- Incomplete  \n- Complete  \n- Pending",
+														"example": "Incomplete"
 													},
 													"appUserId": {
 														"type": "string",
@@ -232,6 +232,221 @@
 														}
 														}
 													}
+												}
+											}
+										}
+									}
+								},
+								"responses": {
+									"202": {
+										"description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+									},
+									"204": {
+										"description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{callback04-V2.0Url}": {
+			"post": {
+				"summary": "#04 - KYC demand - Version 2.0",
+				"description": "Callback received in case of status change in the KYC demand",
+				"requestBody": {
+					"description": "JSON Body",
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string",
+										"description": "callback type",
+										"example": "4"
+									},
+									"status": {
+										"type": "string",
+										"description": "Status of the KYC demand : \n- Initialized \n- BeingReceived (only used in KYB process) \n- FullyReceived (only used in KYB process) \n- Pending \n- Incomplete  \n- Complete",
+										"example": "Incomplete"
+									},
+									"appUserId": {
+										"type": "string",
+										"description": "User unique identifier",
+										"example": "rx193bo32"
+									},
+									"kycLevel": 
+									{
+										"type": "string",
+										"description": "the User's KYC level :  \n- Medium \n- High",
+										"example": "High"
+									},
+									"expectedDiligences": {
+															"type": "array",
+															"description": "the list of expected diligences types. It is not returned in the callback when all expected diligences are received.",
+															"items": {
+										                    "type": "object",
+															"properties": {
+																"type": {
+																	"type": "string",
+																	"description": "the type of diligence :  \n- Identity  \n- Complementary",
+																	"example": "Identity"
+																},
+																"expectedCount": {
+																	"type": "integer",
+																	"description": "the expected diligences count",
+																	"example": 1
+																},
+																"possibleDiligenceSubTypes": {
+																	"type": "array",
+																	"description": "the list of possible diligences sub type: \n ID_CARD \n PASSPORT \n VETERAN_CARD \n MILITARY_ID \n RES_CARD \n SELFIE \n SCTIN",
+																	"items": {
+																	"type": "string"
+																	},
+																	"example": [
+																		"ID_CARD",
+																		"PASSPORT",
+																		"VETERAN_CARD",
+																		"MILITARY_ID",
+																		"RES_CARD"
+																																				
+																	]
+																}
+															}
+															}
+														},
+														"receivedDiligences": {
+															"type": "array",
+															"description": "The list of diligences types that are received",
+															"items": {
+															"type": "object",
+															"properties": {
+																"diligenceType": {
+																	"type": "string",
+																	"description": "the diligence sub type : \n ID_CARD \n PASSPORT \n VETERAN_CARD \n MILITARY_ID \n RES_CARD \n SELFIE \n SCTIN",
+																	"example": "SELFIE"
+																},
+																"status": {
+																	"type": "string",
+																	"description": "the status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
+																	"example": "Validated"
+																},
+																"reason": {
+																	"type": "string",
+																	"description": "The reason for rejection of the diligence: \n- Data inversion \n- Invalid MRZ band \n- This document is not an identity document \n- Incomplete document \n- Illegible document \n- Blurred document \n- Expired document \n- Document and data mismatch \n- Minor person \n- Identity fraud \n- Too dark selfie \n- Too bright selfie \n- Non-matching selfie \n- Invalid selfie",
+																	
+																}
+															}
+															}
+														}
+								}
+							}
+						}
+					}
+				},
+				"parameters": [
+					{
+						"name": "callback04-V2.0Url",
+						"in": "path",
+						"required": true,
+						"description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+						"schema": {
+							"type": "string",
+							"example": "tonys-server.com"
+						}
+					}
+				],
+				"callbacks": {
+					"onData": {
+						"{$request.query.callbackUrl}/data": {
+							"post": {
+								"requestBody": {
+									"description": "callback example",
+									"content": {
+										"application/json": {
+											"schema": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"description": "callback type",
+														"example": "4"
+													},
+													"status": {
+														"type": "string",
+														"description": "Status of the KYC demand : \n- Initialized \n- BeingReceived (only used in KYB process) \n- FullyReceived (only used in KYB process) \n- Pending \n- Incomplete  \n- Complete",
+														"example": "Incomplete"
+													},
+													"appUserId": {
+														"type": "string",
+														"description": "User unique identifier",
+														"example": "rx193bo32"
+													},
+													"kycLevel": 
+													{
+														"type": "string",
+														"description": "the User's KYC level :  \n- Medium \n- High",
+														"example": "High"
+													},
+													"expectedDiligences": {
+															"type": "array",
+															"description": "the list of expected diligences types. It is not returned in the callback when all expected diligences are received.",
+															"items": {
+										                    "type": "object",
+															"properties": {
+																"type": {
+																	"type": "string",
+																	"description": "the type of diligence :  \n- Identity  \n- Complementary",
+																	"example": "Identity"
+																},
+																"expectedCount": {
+																	"type": "integer",
+																	"description": "the expected diligences count",
+																	"example": 1
+																},
+																"possibleDiligenceSubTypes": {
+																	"type": "array",
+																	"description": "the diligence sub type : \n ID_CARD \n PASSPORT \n VETERAN_CARD \n MILITARY_ID \n RES_CARD \n SELFIE \ SCTIN",
+																	"items": {
+																	"type": "string"
+																	},
+																	"example": [
+																		"ID_CARD",
+																		"PASSPORT",
+																		"VETERAN_CARD",
+																		"MILITARY_ID",
+																		"RES_CARD"
+																																																	
+																	]
+																}
+															}
+															}
+														},
+														"receivedDiligences": {
+															"type": "array",
+															"description": "The list of diligences types that are received",
+															"items": {
+															"type": "object",
+															"properties": {
+																"diligenceType": {
+																	"type": "string",
+																	"description": "the diligence sub type : \n ID_CARD \n PASSPORT \n VETERAN_CARD \n MILITARY_ID \n RES_CARD \n SELFIE \n SCTIN",
+																	"example": "SCTIN"
+																},
+																"status": {
+																	"type": "string",
+																	"description": "the status of diligence:  \n- Validated  \n- Refused  \n- To_Review_Manually",
+																	"example": "Validated"
+																},
+																"reason": {
+																	"type": "string",
+																	"description": "The reason for rejection of the diligence: \n- Data inversion \n- Invalid MRZ band \n- This document is not an identity document \n- Incomplete document \n- Illegible document \n- Blurred document \n- Expired document \n- Document and data mismatch \n- Minor person \n- Identity fraud \n- Too dark selfie \n- Too bright selfie \n- Non-matching selfie \n- Invalid selfie",
+																}
+															}
+															}
+														}
 												}
 											}
 										}
@@ -2089,8 +2304,8 @@
 									},
 									"userRecordStatus": {
 										"type": "string",
-										"description": "the status of the user record :  \n-initialized  \n-inProgress  \n-validated  \n-refused",
-										"example": "inProgress"
+										"description": "the status of the user record :  \n-Initialized  \n-InProgress  \n-Validated  \n-Refused",
+										"example": "InProgress"
 									},
 									"appUserId": {
 										"type": "string",
@@ -2137,8 +2352,8 @@
 													},
 													"userRecordStatus": {
 														"type": "string",
-														"description": "the status of the user record :  \n-initialized  \n-inProgress  \n-validated  \n-refused",
-														"example": "inProgress"
+														"description": "the status of the user record :  \n-Initialized  \n-InProgress  \n-Validated  \n-Refused",
+														"example": "InProgress"
 													},
 													"appUserId": {
 														"type": "string",
@@ -3009,27 +3224,27 @@
 									},
 									"legalEntityId": {
 										"type": "string",
-										"description": "the legal entity unique identifier",
-										"example": "incomplete"
+										"description": "The legal entity unique identifier",
+										"example": "rexapei79qohs"
 									},
 									"registrationNumber": {
 										"type": "string",
-										"description": "the legal identification number of the legal entity  \n(ex : SIREN in France)",
+										"description": "The legal identification number of the legal entity  \n(ex : SIREN in France)",
 										"example": "rx193bo32"
 									},
 									"registrationCountry": {
 										"type": "string",
-										"description": "the registration country of the legal entity (ISO 3166-1 code)",
+										"description": "The registration country of the legal entity (ISO 3166-1 code)",
 										"example": "rx193bo32"
 									},
 									"legalEntityCreationStatus": {
 										"type": "string",
-										"description": "Legal entity creation status :  \n- succeeded  \n- failed",
+										"description": " The legal entity creation status :  \n- Succeeded  \n- Failed",
 										"example": "succeeded"
 									},
 									"registrationCity": {
 										"type": "string",
-										"description": "the legal entity registration city",
+										"description": "The legal entity registration city",
 										"example": "Melbourne"
 									},
 									"companyName": {
@@ -3044,39 +3259,39 @@
 									},
 									"naceCode": {
 										"type": "string",
-										"description": "the legal entity type of economical activity (NACE code)",
+										"description": "The legal entity type of economical activity (NACE code)",
 										"example": "P85.1"
 									},
 									"legalForm": {
 										"type": "string",
-										"description": "the legal entity legal form",
+										"description": "The legal entity legal form",
 										"example": "5499"
 									},
 									"creationDate": {
 										"type": "string",
 										"format": "date",
-										"description": "the creation date of the legal entity",
+										"description": "The creation date of the legal entity",
 										"example": "1982-12-08"
 									},
 									"legalEntityRecordStatus": {
 										"type": "string",
-										"description": "the onboarding status of the legal entity",
+										"description": "The onboarding status of the legal entity :  \n- Initialized  \n- InProgress \n- Validated \n- Refused ",
 										"example": "initialized"
 									},
 									"onboardingDate": {
 										"type": "string",
 										"format": "date-time",
-										"description": "the onboarding date of the legal entity",
+										"description": "The onboarding date of the legal entity",
 										"example": "2022-02-15T19:32:10.9931518+00:00"
 									},
 									"turnOver": {
 										"type": "string",
-										"description": "the turnover of N-1 year, decimal",
+										"description": "The turnover of N-1 year, decimal",
 										"example": "360250.99"
 									},
 									"currency": {
 										"type": "string",
-										"description": "currency of the turnover (ISO 4217 code)",
+										"description": "Currency of the turnover (ISO 4217 code)",
 										"example": "EUR"
 									},
 									"highFinancialIncome": {
@@ -3096,7 +3311,7 @@
 									},
 									"address": {
 										"type": "object",
-										"description": "adress details of the legal entity",
+										"description": "Adress details of the legal entity",
 										"properties": {
 											"street": {
 												"type": "string",
@@ -3158,79 +3373,79 @@
 												"properties": {
 													"type": {
 														"type": "string",
-														"description": "the callback type",
+														"description": "The callback type",
 														"example": "43"
 													},
 													"legalEntityId": {
 														"type": "string",
-														"description": "the legal entity unique identifier",
-														"example": "incomplete"
+														"description": "The legal entity unique identifier",
+														"example": "rexapei79qohs"
 													},
 													"registrationNumber": {
 														"type": "string",
-														"description": "the legal identification number of the legal entity  \n(ex : SIREN in France)",
+														"description": "The legal identification number of the legal entity  \n(ex : SIREN in France)",
 														"example": "rx193bo32"
 													},
 													"registrationCountry": {
 														"type": "string",
-														"description": "the registration country of the legal entity (ISO 3166-1 code)",
+														"description": "The registration country of the legal entity (ISO 3166-1 code)",
 														"example": "rx193bo32"
 													},
 													"legalEntityCreationStatus": {
 														"type": "string",
-														"description": "Legal entity creation status :  \n- succeeded  \n- failed",
-														"example": "succeeded"
+														"description": " The legal entity creation status :  \n- Succeeded  \n- Failed",
+														"example": "Succeeded"
 													},
 													"registrationCity": {
 														"type": "string",
-														"description": "the legal entity registration city",
+														"description": "The legal entity registration city",
 														"example": "Melbourne"
 													},
 													"companyName": {
 														"type": "string",
-														"description": "the name of the legal entity",
+														"description": "The name of the legal entity",
 														"example": "NM Corporation"
 													},
 													"tradeName": {
 														"type": "string",
-														"description": "the commercial name of the legal entity",
+														"description": "The commercial name of the legal entity",
 														"example": "NNNC"
 													},
 													"naceCode": {
 														"type": "string",
-														"description": "the legal entity type of economical activity (NACE code)",
+														"description": "The legal entity type of economical activity (NACE code)",
 														"example": "P85.1"
 													},
 													"legalForm": {
 														"type": "string",
-														"description": "the legal entity legal form",
+														"description": "The legal entity legal form",
 														"example": "5499"
 													},
 													"creationDate": {
 														"type": "string",
 														"format": "date",
-														"description": "the creation date of the legal entity",
+														"description": "The creation date of the legal entity",
 														"example": "1982-12-08"
 													},
 													"legalEntityRecordStatus": {
 														"type": "string",
-														"description": "the onboarding status of the legal entity",
-														"example": "initialized"
+														"description": "The onboarding status of the legal entity :  \n- Initialized  \n- InProgress \n- Validated \n- Refused",
+														"example": "Initialized"
 													},
 													"onboardingDate": {
 														"type": "string",
 														"format": "date-time",
-														"description": "the onboarding date of the legal entity",
+														"description": "The onboarding date of the legal entity",
 														"example": "2022-02-15T19:32:10.9931518+00:00"
 													},
 													"turnOver": {
 														"type": "string",
-														"description": "the turnover of N-1 year, decimal",
+														"description": "The turnover of N-1 year, decimal",
 														"example": "360250.99"
 													},
 													"currency": {
 														"type": "string",
-														"description": "currency of the turnover (ISO 4217 code)",
+														"description": "The currency of the turnover (ISO 4217 code)",
 														"example": "EUR"
 													},
 													"highFinancialIncome": {
@@ -3250,7 +3465,7 @@
 													},
 													"address": {
 														"type": "object",
-														"description": "adress details of the legal entity",
+														"description": "Address details of the legal entity",
 														"properties": {
 															"street": {
 																"type": "string",
@@ -3791,7 +4006,7 @@
 														},
 														"expectedDiligences": {
 															"type": "array",
-															"description": "the list of expected diligences types. It is not returned in the callback when all exepcted diligences are received.",
+															"description": "the list of expected diligences types. It is not returned in the callback when all expected diligences are received.",
 															"items": {
 										                    "type": "object",
 															"properties": {
