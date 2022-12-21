@@ -13,7 +13,7 @@
 	"paths": {
 		"/{callback01Url}/?id={id}&error={error}&status={status}&type={type}&initialOrderID={initialOrderID}&amount={amount}": {
 			"post": {
-				"summary": "#01 - Topup",
+				"summary": "#01 - Topup - DEPRECATED",
 				"description": "Callback received in case of status change in a topup payment",
 				"parameters": [
 					{
@@ -99,6 +99,114 @@
 											"schema": {
 												"type": "string",
 												"example": "https://YourCallbackUrl/?id=TOPUP123&error=0&status=1&type=1&initialOrderID=123456&amount=150.23"
+											}
+										}
+									}
+								},
+								"responses": {
+									"202": {
+										"description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+									},
+									"204": {
+										"description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{callback01Url}": {
+			"post": {
+				"summary": "#01 - Topup",
+				"description": "Callback received in case of status change in a topup payment",
+				"requestBody": {
+					"description": "JSON Body",
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string",
+										"description": "the transaction id",
+										"example": "TOPUP123"
+									},
+									"amount": {
+										"type": "string",
+										"description": "the transaction amount",
+										"example": "1234.56"
+									},
+									"type": {
+										"type": "string",
+										"description": "the callback type",
+										"example": "1"
+									},
+									"status": {
+										"type": "string",
+										"description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
+										"example": "1"
+									},
+									"error": {
+										"type": "string",
+										"description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
+										"example": "0"
+									}
+								}
+							}
+						}
+					}
+				},
+				"parameters": [
+					{
+						"name": "callback01Url",
+						"in": "path",
+						"required": true,
+						"description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+						"schema": {
+							"type": "string",
+							"example": "tonys-server.com"
+						}
+					}
+				],
+				"callbacks": {
+					"onData": {
+						"{$request.query.callbackUrl}/data": {
+							"post": {
+								"requestBody": {
+									"description": "callback example",
+									"content": {
+										"application/json": {
+											"schema": {
+												"type": "object",
+												"properties": {
+													"id": {
+														"type": "string",
+														"description": "the transaction id",
+														"example": "TOPUP123"
+													},
+													"amount": {
+														"type": "string",
+														"description": "the transaction amount",
+														"example": "1234.56"
+													},
+													"status": {
+														"type": "string",
+														"description": "the transaction status :  \n-1 = unknow  \n0 = waiting  \n1 = completed  \n2 = refunded  \n3 = refused  \n4 = waiting for validation  \n5 = cancelled  \n6 = waiting to be sent",
+														"example": "1"
+													},
+													"error": {
+														"type": "string",
+														"description": "the error codes for failed payments :  \n0 = 0XXX operation succeeded or still processing  \n10 = 1XXX operation rejected because of bad request configuration  \n11 = 2XXX operation rejected because of bad reference usage  \n12 = 3XXX operation rejected because of bad account configuration  \n13 = 4XXX operation rejected because of the bank or the supplier  \n14 = 5XXX operation rejected because of a system error  \n15 = 6XXX operation rejected because of anti-fraud engine",
+														"example": "0"
+													},
+													"type": {
+														"type": "string",
+														"description": "the callback type",
+														"example": "1"
+													}
+												}
 											}
 										}
 									}
@@ -2504,7 +2612,7 @@
 		},
 		"/{callback05Url}/?type={type}&id={id}&userid={userid}": {
 			"post": {
-				"summary": "#05 - Bank card registration",
+				"summary": "#05 - Bank card registration - DEPRECATED",
 				"description": "Callback received in case of status change in a bank card registration used in a topup",
 				"parameters": [
 					{
@@ -2559,6 +2667,94 @@
 											"schema": {
 												"type": "string",
 												"example": "https://YourCallbackUrl?type=5&id=yvzinayg1&userid=SBTEIX-29"
+											}
+										}
+									}
+								},
+								"responses": {
+									"202": {
+										"description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+									},
+									"204": {
+										"description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{callback05Url}": {
+			"post": {
+				"summary": "#05 - Bank card registration",
+				"description": "Callback received in case of status change in a bank card registration used in a topup",
+				"requestBody": {
+					"description": "JSON Body",
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string",
+										"description": "the saved card Appcardid",
+										"example": "yvzinayg1"
+									},
+									"type": {
+										"type": "string",
+										"description": "the callback type",
+										"example": "5"
+									},
+									"userid": {
+										"type": "string",
+										"description": "the appuserid related to the appcardid",
+										"example": "SBTEIX-29"
+									}
+								}
+							}
+						}
+					}
+				},
+				"parameters": [
+					{
+						"name": "callback05Url",
+						"in": "path",
+						"required": true,
+						"description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+						"schema": {
+							"type": "string",
+							"example": "tonys-server.com"
+						}
+					}
+				],
+				"callbacks": {
+					"onData": {
+						"{$request.query.callbackUrl}/data": {
+							"post": {
+								"requestBody": {
+									"description": "callback example",
+									"content": {
+										"application/json": {
+											"schema": {
+												"type": "object",
+												"properties": {
+													"id": {
+														"type": "string",
+														"description": "the saved card Appcardid",
+														"example": "yvzinayg1"
+													},
+													"type": {
+														"type": "string",
+														"description": "the callback type",
+														"example": "5"
+													},
+													"userid": {
+														"type": "string",
+														"description": "the appuserid related to the appcardid",
+														"example": "SBTEIX-29"
+													}
+												}
 											}
 										}
 									}
