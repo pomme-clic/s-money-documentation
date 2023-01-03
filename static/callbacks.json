@@ -3884,7 +3884,7 @@
 									},
 									"accountStatus": {
 										"type": "string",
-										"description": "the account status:  \n-activated  \n-frozen  \n-closed  \n-closure requested  \n-pending closure",
+										"description": "the account status:  \n-initialized  \n-activated  \n-frozen  \n-closed  \n-closure requested  \n-pending closure",
 										"example": "frozen"
 									}
 								}
@@ -3932,7 +3932,7 @@
 													},
 													"accountStatus": {
 														"type": "string",
-														"description": "the account status:  \n-initialized \n-activated  \n-frozen  \n-closed  \n-closure requested  \n-pending closure",
+														"description": "the account status:  \n-initialized  \n-activated  \n-frozen  \n-closed  \n-closure requested  \n-pending closure",
 														"example": "frozen"
 													}
 												}
