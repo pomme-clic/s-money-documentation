@@ -8,6 +8,26 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+			
+## January 2023
+**Webdesk**
+- Adding of an access activity log feature (Audit Track)
+- Display SDD related to each mandate
+
+**E-Money MVP**
+- New version of GET / Accounts API (v2.1) to retrieve account service type (E-Money, Payment Account)
+- New account types (Current Account, Trust Account, Savings Account, ..)
+
+**X-Pay**
+- Token authorization request (TAR) workflow update
+	- No update of the authorization balance at TAR reception
+	- No callback #20 sent when TAR is received
+	
+**SDD**
+- Add of unique mandat reference filter in GET /api/v1.1/users/{userid}/sdd API
+
+	   
+				   
 ## November 2022
 **Accounts**:
 - Deployed the new virtual IBAN feature. You can now create multiple "throwable" IBANs to identify incoming fluxes or to not expose your main IBAN. Documentation on the different use cases enabled can be found [here](/docs/accounts/virtualiban). Technical documentation is [here](/api/accounts).

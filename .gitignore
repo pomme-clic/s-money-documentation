@@ -28,3 +28,4 @@ plugins/@easyops-cn/docusaurus-search-local/node_modules
 
 #Callbacks
 Callbacks.md
+*.bak
