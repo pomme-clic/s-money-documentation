@@ -8,6 +8,7 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+			
 ## January 2023
 **Webdesk**
 - Adding of an access activity log feature (Audit Track)
@@ -25,6 +26,8 @@ Xpollens changelog since September 2021
 **SDD**
 - Add of unique mandat reference filter in GET /api/v1.1/users/{userid}/sdd API
 
+	   
+				   
 ## November 2022
 **Accounts**:
 - Deployed the new virtual IBAN feature. You can now create multiple "throwable" IBANs to identify incoming fluxes or to not expose your main IBAN. Documentation on the different use cases enabled can be found [here](/docs/accounts/virtualiban). Technical documentation is [here](/api/accounts).
