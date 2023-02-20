@@ -9,8 +9,14 @@ Xpollens changelog since September 2021
 
 ---
 			
+			
+## February 2023
+**Partner Portal**
+- permissions (none, read or write) can now be managed on a per-page basis
+
+
 ## January 2023
-**Webdesk**
+**Partner Portal**
 - Adding of an access activity log feature (Audit Track)
 - Display SDD related to each mandate
 
