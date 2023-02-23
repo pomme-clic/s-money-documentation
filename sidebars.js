@@ -34,7 +34,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Cards',
-      items: ['api/CardFactory','api/CardSecure','api/Xpay'],
+      items: ['api/CardFactory','api/CardFactory-old','api/CardSecure','api/Xpay'],
     },
     {
       type: 'category',
