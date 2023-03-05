@@ -33,11 +33,11 @@ To integrate our solution, you will need both our API and our SDK : part of the 
 <Image src="docs/KYC-screens.png" alt="usecase 1"/>
 
 <Highlight>
-If you do not have a mobile app : no problem, we have an app for you: <b class="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
+If you do not have a mobile app : no problem, we have an app for you: <b className="term">Xpollens Authenticator</b> integrates the SDK and can fits perfectly in your onboarding process.
 </Highlight>
 
 <Highlight type="tip">
-  You define the unique identifier of your prospect : the <b class="term">appUserId</b> ; our callbacks will use this same identifier.
+  You define the unique identifier of your prospect : the <b className="term">appUserId</b> ; our callbacks will use this same identifier.
 </Highlight>
 
 ### Our modular KYC process
@@ -68,7 +68,7 @@ Our onboarding API embeds an Identity Verification Service. We offer a modular a
 Xpollens can easily parameterize our webview to include Facial Biometry for your customers. They will be required to show an ID document, and then perform a short selfie video. Validation of the identity will then take 3 to 6 minutes ; our callback will let you know asap. In the mean time, you can proceed with the next steps of your funnel.
 
 <Highlight>
-  Our biometry systems are <b class="term">compliant with Data Protection Regulations</b>. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
+  Our biometry systems are <b className="term">compliant with Data Protection Regulations</b>. We are supervised on this specific feature by CNIL (GDPR & Biometry) and by ANSSI (EIDAS & Identity Management).
 </Highlight>
 
 <Highlight type="tip">
@@ -76,7 +76,7 @@ Xpollens can easily parameterize our webview to include Facial Biometry for your
 </Highlight>
 
 <Highlight type="caution">
-  <b class="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our callback #35 gives you to move from the web to your mobile app.
+  <b className="term">This option can only occur on a mobile phone</b>, via an app. If your onboarding process started on Internet, you can use the QR Code our callback #35 gives you to move from the web to your mobile app.
 </Highlight>
 
 ### Option 2: SEPA Instant Credit Transfer IN (SCT Inst)
@@ -125,7 +125,7 @@ Here are the steps your mobile application should follow when it's launched by a
 <br/>
 
 <Highlight type="tip">
-  If you do not have a mobile app, we can provide your customers with <b class="term">Xpollens Authenticator</b>.
+  If you do not have a mobile app, we can provide your customers with <b className="term">Xpollens Authenticator</b>.
 </Highlight>
 
 ### Loading: Check security-wallet's state

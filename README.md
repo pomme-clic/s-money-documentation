@@ -75,7 +75,7 @@ De manière générale avec ce flow, il vaut mieux faire une série de changemen
 
 Toutes les pages de la documentation fonctionnelle sont des fichiers .md mimant l'arborescence de la sidebar sous [/docs/docs](/docs/docs).
 
-Des options additionnelles peuvent être configurées dans en intégrant une section de type frontmatter (ex: déclarer un label de sidebar différent du 1er niveau de titre du document). Toutes les options sont détaillées dans le [plugin Docusaurus](https://docusaurus.io/docs/2.0.0-beta.3/api/plugins/@docusaurus/plugin-content-docs) dédié au traitement des markdowns.
+Des options additionnelles peuvent être configurées dans en intégrant une section de type frontmatter (ex: déclarer un label de sidebar différent du 1er niveau de titre du document). Toutes les options sont détaillées dans le [plugin Docusaurus](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs) dédié au traitement des markdowns.
 
 ---
 
@@ -114,7 +114,7 @@ Vous pouvez configurer et paramétrer le lecteur de swagger via [index.js](/src/
 
 #### Images
 
-Les images (ex: use-cases) se gèrent en utilisant un plugin d'optimisation Docusaurus ([idealImage](https://docusaurus.io/docs/2.0.0-beta.3/api/plugins/@docusaurus/plugin-ideal-image)).
+Les images (ex: use-cases) se gèrent en utilisant un plugin d'optimisation Docusaurus ([idealImage](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image)).
 
 Pour l'utiliser :
 
@@ -149,3 +149,20 @@ Avant de publier, checklist des choses à vérifier :
 Vous pouvez aussi mettre en production en créant une pull request de la branche develop vers main (main <- develop). Cela lancera automatiquement le processus de build netlify.
 
 **Assurez vous que la branche develop soit _stable_ (https://develop--s-money-documentation-site.netlify.app/) avant de réaliser cette action.**
+
+For node 18 +
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
+https://xpollens.atlassian.net/wiki/spaces/smp/pages/20185342/Swagger+Guidelines
+Docs.xpollens.com - Xpollens Platform - Confluence (atlassian.net)
+
+
+<Rapidoc versions="["1.1", "2.0"]" apiUrl="/{version}/user.usermanagment"  isRelative="true">
+</Rapidoc>
+
+https://support.smartbear.com/swaggerhub/docs/apis/versioning.html
+
+Sujet de cors pour débloquerle dev en local
+
+Rapidoc fait le travail mais il y a un souci dans la structuration du swagger et la notion des versions
+
+https://github.com/facebook/docusaurus/tree/0f7552accb8f1986f48f788a310c1d4e308d7ebd/packages/docusaurus-theme-classic/src/theme

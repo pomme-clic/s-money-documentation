@@ -4,19 +4,19 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useCallback, useState, useEffect } from 'react'
-import clsx from 'clsx'
 import SearchBar from '@theme/SearchBar'
 import Toggle from '@theme/Toggle'
-import useThemeContext from '@theme/hooks/useThemeContext'
-import { useThemeConfig } from '@docusaurus/theme-common'
-import useHideableNavbar from '@theme/hooks/useHideableNavbar'
-import useLockBodyScroll from '@theme/hooks/useLockBodyScroll'
-import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize'
-import NavbarItem from '@theme/NavbarItem'
+import clsx from 'clsx'
+import React, { useCallback, useEffect, useState } from 'react'
+
+import { useColorMode, useThemeConfig, useWindowSize } from '@docusaurus/theme-common'
+import {
+  useHideableNavbar, useLockBodyScroll
+} from '@docusaurus/theme-common/internal'
+import IconMenu from '@theme/Icon/Menu'
 import Logo from '@theme/Logo'
-import IconMenu from '@theme/IconMenu'
-import styles from './styles.module.css' // retrocompatible with v1
+import NavbarItem from '@theme/NavbarItem'
+import styles from './styles.module.css'; // retrocompatible with v1
 
 const DefaultNavItemPosition = 'right' // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
@@ -40,7 +40,8 @@ function Navbar() {
     colorMode: { disableSwitch: disableColorModeSwitch },
   } = useThemeConfig()
   const [sidebarShown, setSidebarShown] = useState(false)
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext()
+  const { setLightTheme, setDarkTheme } = useColorMode()
+  const isDarkTheme = useColorMode().colorMode === 'dark';
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll)
   useLockBodyScroll(sidebarShown)
   const showSidebar = useCallback(() => {
@@ -55,7 +56,7 @@ function Navbar() {
   )
   const windowSize = useWindowSize()
   useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
+    if (windowSize === 'desktop') {
       setSidebarShown(false)
     }
   }, [windowSize])

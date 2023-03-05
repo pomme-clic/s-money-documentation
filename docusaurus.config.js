@@ -13,6 +13,7 @@ module.exports = {
   organizationName: 'xpollens',
   projectName: 's-money-documentation',
   themeConfig: {
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     navbar: {
       logo: {
         alt: 'Xpollens API docs',
@@ -40,10 +41,10 @@ module.exports = {
         },
       ],
     },
-        prodDomains: [
+    prodDomains: [
       ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
     ],
-        baseAPIUrls: {
+    baseAPIUrls: {
       sandbox: 'https://ic-api.s-money.net/swagger/docs',
       production: 'https://sb-api.xpollens.com/swagger/docs',
     },

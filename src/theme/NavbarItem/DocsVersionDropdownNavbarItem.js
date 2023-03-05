@@ -4,14 +4,12 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
-import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import {
-  useVersions,
-  useLatestVersion,
-  useActiveDocContext,
-} from '@theme/hooks/useDocs';
-import {useDocsPreferredVersion} from '@docusaurus/theme-common';
+  useActiveDocContext, useLatestVersion, useVersions
+} from '@docusaurus/plugin-content-docs/client';
+import { useDocsPreferredVersion } from '@docusaurus/theme-common';
+import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
+import React from 'react';
 
 const getVersionMainDoc = (version) =>
   version.docs.find((doc) => doc.id === version.mainDocId);
@@ -27,7 +25,7 @@ export default function DocsVersionDropdownNavbarItem({
   const activeDocContext = useActiveDocContext(docsPluginId);
   const versions = useVersions(docsPluginId);
   const latestVersion = useLatestVersion(docsPluginId);
-  const {preferredVersion, savePreferredVersionName} = useDocsPreferredVersion(
+  const { preferredVersion, savePreferredVersionName } = useDocsPreferredVersion(
     docsPluginId,
   );
 

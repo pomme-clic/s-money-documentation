@@ -4,22 +4,19 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react'
-import clsx from 'clsx'
+import isInternalUrl from '@docusaurus/isInternalUrl'
 import Link from '@docusaurus/Link'
 import { useThemeConfig } from '@docusaurus/theme-common'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import isInternalUrl from '@docusaurus/isInternalUrl'
-import styles from './styles.module.css'
 import ThemedImage from '@theme/ThemedImage'
-import IconExternalLink from '@theme/IconExternalLink'
+import clsx from 'clsx'
+import React from 'react'
 
 import XpollensLogo from '@site/static/img/ui/logo_xpollens_tagline.svg'
 
-import SocialIconTwitter from '@site/static/img/ui/icons/social/twitter.svg'
-import SocialIconLinkedin from '@site/static/img/ui/icons/social/linkedin.svg'
-import SocialIconFacebook from '@site/static/img/ui/icons/social/facebook.svg'
 import SocialIconDefault from '@site/static/img/ui/icons/social/default.svg'
+import SocialIconLinkedin from '@site/static/img/ui/icons/social/linkedin.svg'
+import SocialIconTwitter from '@site/static/img/ui/icons/social/twitter.svg'
 
 function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   const toUrl = useBaseUrl(to)
@@ -31,11 +28,11 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
       className="text-sm footer__link-item"
       {...(href
         ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
+          href: prependBaseUrlToHref ? normalizedHref : href,
+        }
         : {
-            to: toUrl,
-          })}
+          to: toUrl,
+        })}
       {...props}
     >
       {href && !isInternalUrl(href) ? label : label}
@@ -122,8 +119,8 @@ function Footer() {
                     </div>
                   ) : null}
                   {linkItem.items != null &&
-                  Array.isArray(linkItem.items) &&
-                  linkItem.items.length > 0 ? (
+                    Array.isArray(linkItem.items) &&
+                    linkItem.items.length > 0 ? (
                     <ul className="space-y-3 footer__items">
                       {linkItem.items.map((item, key) =>
                         item.html ? (

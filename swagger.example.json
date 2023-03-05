@@ -1,0 +1,4295 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Version 1.0",
+    "description": "Migration Proxy API",
+    "contact": {},
+    "version": "v1.0"
+  },
+  "paths": {
+    "/api/v1.1/users/{userid}/limits": {
+      "get": {
+        "tags": [
+          "Account Management"
+        ],
+        "summary": "Retrieve the limits of a client account.",
+        "description": "## <u>Description</u>\r\n<br/>\r\nRetrieve the limits of a client account.<br/>\r\nAccount limits are the set of rules for capping an account defined by the responsible compliance.<br/>\r\n(Xpollens Compliance for AGENT Partners, Partner Compliance for PSEE Partners)\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint :\r\n\r\n-   Partner should be authenticated",
+        "operationId": "User_GetLimits",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "User identifier of partner",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account Management"
+        ],
+        "summary": "Modify the limits of a client account.",
+        "description": "## <u>Description</u>\r\n<br/>\r\nModify the limits of a client account.<br/>\r\nFor Agent partners, it's not allowed to exceed the standard limits defined by the Xpollens compliance.\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint :\r\n\r\n-   Partner should be authenticated",
+        "operationId": "User_PutLimits",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "User identifier of partner",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "aed53176-645e-4800-98a3-3650d0d5ebb8"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/vnd.s-money.v1+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/vnd.s-money.v2+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/vnd.s-money.v4+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/vnd.s-money.v1+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/vnd.s-money.v2+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/vnd.s-money.v4+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+              }
+            }
+          },
+          "required": true,
+          "x-bodyName": "request"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.LimitDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{userid}/additionalBalance": {
+      "get": {
+        "tags": [
+          "Account Management"
+        ],
+        "summary": "Retrieve an account additional balance",
+        "description": "## <u>Description</u>\r\nThe users/{{AppUserId}}/additionalBalance API allows to retrieve the amount of additional balance.\r\n<br/>\r\n<br/>\r\n## <u>Prerequisite</u> \r\nThe card (associated with an offer) must have the attribute split_payment is true",
+        "operationId": "User_GetAdditionalBalance",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "AppUserId:User identifier in the third-party application.9 characters exactly:0-9a-zAâ€“Z_-+/:.?!Â§()",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account Management"
+        ],
+        "summary": "Put Additional Balance",
+        "description": "## <u>Description</u>\r\nThe users/{{AppUserId}}/additionalBalance API allows to authorize a payment with an amount above than the authorization balance. \r\n<br/>\r\n<br/>\r\n## <u>Prerequisite</u> \r\nThe card (associated with an offer) must have the attribute split_payment is true",
+        "operationId": "User_PutAdditionalBalance",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "User identifier in the third-party application.9 characters exactly:0-9a-zAâ€“Z_-+/:.?!Â§()",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "aed53176-645e-4800-98a3-3650d0d5ebb8"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Additional amount(in euro)that can be used for the split payment",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/vnd.s-money.v1+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/vnd.s-money.v2+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/vnd.s-money.v4+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/vnd.s-money.v1+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/vnd.s-money.v2+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/vnd.s-money.v4+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO"
+              }
+            }
+          },
+          "required": true,
+          "x-bodyName": "userAdditionalBalance"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{userid}/cards/registered": {
+      "get": {
+        "tags": [
+          "Acquisitions"
+        ],
+        "summary": "Get all registered banks cards",
+        "description": "\r\n## <u>Description</u>\r\n<br/>\r\nThe service is used to retrieve all existing bank cards already registered for a dedicated user. All information associated to the card will be displayed\r\n\r\n## <u>Prerequisites</u>\r\n\r\nThe existing appCardID (Bank card ID of third party partner) as well as the appUserID must be used to proceed <br/> \r\n\r\n\r\n",
+        "operationId": "Cards_GetCardsV4",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardResponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/payins/cardpayments": {
+      "post": {
+        "tags": [
+          "Acquisitions"
+        ],
+        "summary": "Create a top up",
+        "description": "\r\n## <u>Create a top up with 3DS v2</u>\r\n<br/>\r\nThis endpoint is used to create top up request with 3DS v2. The holder of the Xpollens account can add money to his Xpollens account using his bank card. Thus, he will debit his bank account and credit his Xpollens account with the topup.  \r\nIf fees must be attached to this transaction, you can fill in the \"Fee\" parameter in the body of the request with the amount of the fees. The bank card holder will be debited for the \"Amount+Fee\"\r\n\r\n## <u>## Card registration during payment</u>\r\n\r\nTo register the bank card during payment, you must, in the body of the request, in the \"Card\" parameter, specify the \"AppCardId\" parameter. It will be this \"AppCardId\" which will be called later for the top up oneclik. If there is no need to register the bank card during payment, then you should not specify \"AppCardId\". This parameter is optional.\r\n\r\n## <u>## ## Top up Oneclick with 3DSV2</u>\r\n\r\nTo create a top up oneclick, you must, in the body of the request, add and fill in the \"AppCardId\" parameter instead of the \"HFToken\" parameter\". This will allow you to directly call the previously registered bank card.\r\nBy default, a 3DS v2 authentication is asking. \r\n\r\nYou can also request a payment by subscription for reccuring payment by using the subscription mode parameter. \r\nThus, no authentication is resquested\r\n",
+        "operationId": "PayIns_CardPaymentV4",
+        "parameters": [
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "fd95e0f9-f3db-4147-99e9-69ecacda4c3a"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/vnd.s-money.v1+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/vnd.s-money.v2+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/vnd.s-money.v4+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/vnd.s-money.v1+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/vnd.s-money.v2+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/vnd.s-money.v4+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO"
+              }
+            }
+          },
+          "required": true,
+          "x-bodyName": "cardPaymentRequestDto"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{userid}/payins/cardpayments": {
+      "get": {
+        "tags": [
+          "Acquisitions"
+        ],
+        "summary": "Get all top up",
+        "description": "## <u>Description</u>\r\n<br/>\r\nThis endpoint is used by a dedicated user, to consult the list of top up operations, executed from his Xpollens account.\r\n<br/>\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint : \r\n- The holder account must first have executed a top up operation.\r\n<br/>\r\n<br/>\r\n\r\n",
+        "operationId": "PayIns_GetV4",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{userid}/payins/cardpayments/{id}": {
+      "get": {
+        "tags": [
+          "Acquisitions"
+        ],
+        "summary": "Get top up by orderId",
+        "description": "## <u>Description</u>\r\n<br/>\r\nThis endpoint is used by a dedicated user, to consult a specific top up operation, by the orderid.\r\n<br/>\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint : \r\n- The holder account must first have executed a top up operation.\r\n<br/>\r\n<br/>\r\n\r\n## <u>URL parameter</u>\r\n\"OrderId\" is the payment identifier in the third-party application and specified by the partner.\r\n\r\n| Parameter| Type   |Format  |Example    |Description                                       |\r\n|----------|--------|--------|-----------|--------------------------------------------------|\r\n| OrderId  | String |X(255)  |Moneyout-1 |Payment identifier in the third-party application |\r\n\r\n<br/>",
+        "operationId": "PayIns_GetCardPaymentV4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{userid}/payins/cardpayments/{id}/payments/{paymentid}/refunds": {
+      "post": {
+        "tags": [
+          "Acquisitions"
+        ],
+        "summary": "Refund a top up",
+        "description": "## <u>Description</u>\r\n<br/>\r\nThis endpoint is used to refund a top up. It is possible to fully or partially refund an operation.\r\n<br/>\r\nBy using this feature, the bank card holder will be refunded directly to his bank card, and the Xpollens account will be debited for the amount to be refunded. If there was a fee charged during the topup, then the fee will also be refunded to the bank card holder, and the Xpollens Partner's commission account will be debited with the amount of the commission to be refunded. \r\n<br/>\r\nThe amount specified in the body of the request corresponds to the amount to be refund. The fee specified in the body of the request corresponds to the fee to be refund. Each amount must be less than or equal to the initial amount of the topup.\r\nThe orderid specified in the body of the request corresponds to a new orderid designating the refund operation.\r\n<br/>\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint : \r\n- The holder account must first have executed a top up operation.\r\n<br/>\r\n<br/>\r\n",
+        "operationId": "PayIns_CardRefundDistributed",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "fd95e0f9-f3db-4147-99e9-69ecacda4c3a"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/vnd.s-money.v1+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/vnd.s-money.v2+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/vnd.s-money.v4+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/vnd.s-money.v1+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/vnd.s-money.v2+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/vnd.s-money.v4+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO"
+              }
+            }
+          },
+          "required": true,
+          "x-bodyName": "refund"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/cards/{appcardid}/limits": {
+      "get": {
+        "tags": [
+          "Card Operations"
+        ],
+        "summary": "Get used payment and withdrawal limits of a card",
+        "description": "## <u>Description</u>\r\nThe cards/{{AppCardId}}/limits API allows you to retrieve the payment and withdrawal limits for a card as well as the outstanding amounts\r\n<br/>\r\n<br/>\r\n## <u>Error Code</u>\r\n<details>\r\n<summary>The main possible values of HTTP code are :</summary>\r\n\r\n|HTTP Code        |Error Code              |Description                          |\r\n------------------|------------------------|-------------------------------------|\r\n|400              | C001                   |Card not found                       |\r\n|400              | C002                   |Card not active                      |\r\n\r\n<details/>\r\n<br/>",
+        "operationId": "CardLimits_GetCardLimits",
+        "parameters": [
+          {
+            "name": "appCardId",
+            "in": "path",
+            "description": "AppCardId:third party card ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                },
+                "example": {
+                  "AppCardId": "card-mycard_2",
+                  "CardLimits": {
+                    "Transaction": null,
+                    "ATMWeeklyAllowance": 30000,
+                    "ATMWeeklyUsedAllowance": 0,
+                    "MonthlyAllowance": 300000,
+                    "MonthlyUsedAllowance": 747.58
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.BankCardLimitsDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/cardoperations/{orderid}": {
+      "get": {
+        "tags": [
+          "Card Operations"
+        ],
+        "summary": "Get detail of a card operation",
+        "description": "## <u>Description</u>\r\nThis cardoperations/{{orderId}} API is used to retrieve the operation details.\r\n<br/>\r\n<br/>\r\n## <u>Error Code</u>\r\n<details>\r\n<summary>The main possible values of HTTP code are :</summary>\r\n\r\n|HTTP Code        |Error Code              |Description                          |\r\n------------------|------------------------|-------------------------------------|\r\n|404              | 356                    |Operation not found                  |\r\n|404              | 147                    |User cannot be found                 |\r\n\r\n<details/>\r\n<br/>",
+        "operationId": "CardOperations_Get",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "Payment identifier in the third-party application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "query",
+            "description": "User identifier in the third-party application.9 characters exactly:0-9a-zAâ€“Z_-+/:.?!Â§()",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                },
+                "example": {
+                  "Id": 5614,
+                  "AccountId": {
+                    "Id": 524,
+                    "AppAccountId": "gZADCgvWS",
+                    "DisplayName": "George McFly",
+                    "Iban": "FR56231110000209U000000EVAT",
+                    "Alias": "D.FL",
+                    "PhoneNumber": "00 33 30 14 17 53 5",
+                    "Email": "dv.dce#@cmil.com",
+                    "Href": "https://xpo-cardop-sb-api-bib.aadds.s-money.net//https://xpo-cardop-pr-api-bib.aadds.s-money.net//users/gZADCgvWS"
+                  },
+                  "Card": {
+                    "Id": 385,
+                    "AppCardId": "card-mycard",
+                    "Href": "https://xpo-cardop-sb-api-bib.aadds.s-money.net//https://xpo-cardop-pr-api-bib.aadds.s-money.net//users/gZADCgvWS/cards/card-mycard"
+                  },
+                  "Amount": 3159,
+                  "Fee": null,
+                  "OperationDate": "2021-06-02T12:01:51.0000000+00:00",
+                  "ExecutionDate": null,
+                  "ExecutedDate": "2021-06-03T18:00:04.0000000+00:00",
+                  "Direction": 2,
+                  "OrderId": "gjJzkTA08EGRPEGPF30gIw",
+                  "Motif": null,
+                  "Status": 1,
+                  "Type": 505,
+                  "RefundReference": null,
+                  "InitialOperation": null
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/cardoperations/{orderid}/messages": {
+      "get": {
+        "tags": [
+          "Card Operations"
+        ],
+        "summary": "Get detail of an authorization",
+        "description": "## <u>Description</u>\r\nThis api is used to retrieve the details of the authorization message\r\n<br/>\r\n<br/>\r\n## <u>Error Code</u>\r\n<details>\r\n<summary>The main possible values of HTTP code are :</summary>\r\n\r\n|HTTP Code        |Error Code              |Description                          |\r\n------------------|------------------------|-------------------------------------|\r\n|404              | 356                    |Operation not found                  |\r\n|404              | 147                    |User cannot be found                 |\r\n\r\n<details/>\r\n<br/>",
+        "operationId": "CardOperations_GetCardOperationMessages",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "Payment identifier in the third-party application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "query",
+            "description": "User identifier in the third-party application.9 characters exactly:0-9a-zAâ€“Z_-+/:.?!Â§()",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                },
+                "example": {
+                  "Id": 108954,
+                  "MTI": 1110,
+                  "TransactionDescription": "00",
+                  "Pan": "4398XXXXXXXX8881",
+                  "CardExpirationDate": "2411",
+                  "ERT": "10",
+                  "TransactionAmount": 860,
+                  "CardholderBillingAmount": null,
+                  "CardHolderBillingConversionRate": null,
+                  "LocalTransactionDate": "2021-10-13T12:42:08.0000000+00:00",
+                  "CountryCode": 250,
+                  "PSN": null,
+                  "ForwardingInstitutionIdentificationCode": 92500034505,
+                  "CardAcceptorIdentificationCode": "7173300        ",
+                  "CardAcceptorTerminalIdentification": "2064B69C        ",
+                  "CardAcceptorIdentificationCode_Name_Address": "SARL DEMULDER\\SAINT-ANDR",
+                  "CardAcceptorIdentificationCode_Complement_Address": "             FRA",
+                  "TransactionCurrencyCode": "978",
+                  "CardHolderBillingCurrencyCode": null,
+                  "TerminalCountryCode": 250,
+                  "ApprovalCode": "333013",
+                  "ActionCode": 0,
+                  "OriginalDataElements": "",
+                  "AcquiringInstitutionIdentificationCode": 497670,
+                  "MCC": 5462,
+                  "Conditioncode": null,
+                  "EntryMode": null,
+                  "Serial": "2064B69C        ",
+                  "CardDataInputMode": "5",
+                  "TokenRequestorId": null
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationMessageDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/cardoperations/clearingreport/{clearingfileid}": {
+      "get": {
+        "tags": [
+          "Card Operations"
+        ],
+        "summary": "Get list of cleared operations",
+        "description": "## <u>Description</u>\r\nThe cardoperations/clearingreport API is generated each time the transaction file transmitted by Natixis is received and processed.\r\n<br/>\r\n<br/>\r\n## <u>Prerequisite</u>\r\nPartner must have the reference file he wants to retrieve (the reference is transmitted via callback 24)",
+        "operationId": "CardOperations_GetClearingReport",
+        "parameters": [
+          {
+            "name": "clearingfileid",
+            "in": "path",
+            "description": "It allows to retrieve the operation of the clearing report with the API",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "query",
+            "description": "User identifier in the third-party application.9 characters exactly:0-9a-zAâ€“Z_-+/:.?!Â§()",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                },
+                "example": {
+                  "callback_type": 24,
+                  "batch_reference": 6580,
+                  "clearings": [
+                    {
+                      "card_operation_reference": "gxdfvy508EGRPn8YV30gIw",
+                      "card_operation": {
+                        "authorization_reference": "70001720210902",
+                        "card_identifier": "mycard_1",
+                        "amount": 3159,
+                        "date": "2021-09-02T14:02:08.0070000+00:00",
+                        "merchant_name": "AZURÂ Â Â Â Â Â Â Â Â Â Â Â 2920304",
+                        "merchant_category_code": 5411,
+                        "financial_network_code": "VISA",
+                        "original_amount": 3159,
+                        "currency": "EUR",
+                        "exchange_rate": 1,
+                        "merchant": {
+                          "name": "AZUR",
+                          "street": "",
+                          "city": "AIX"
+                        },
+                        "type_code": "00",
+                        "pos_entry_mode": "0",
+                        "operation_type": 505,
+                        "operation_status": 1,
+                        "service_fee": 0,
+                        "direction": 2,
+                        "clearing_date": "2021-09-03T18:00:04.6200000+00:00"
+                      }
+                    }
+                  ]
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearingBatch"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{userid}/cardoperations": {
+      "get": {
+        "tags": [
+          "Card Operations"
+        ],
+        "summary": "Get list of user card operations",
+        "description": "## <u>Description</u>\r\nThe users/{{appUserId}}/cardoperations API allows to retrieve a user's card transactions, with or without date criteria.\r\nThe search period cannot exceed 7 days. Without date criteria, the api returns the complete list of operations.\r\n<br/>\r\n<br/>\r\n## <u>Prerequisite</u>\r\nPartner must have the reference of the file containing the operations\r\n<br/>\r\n<br/>\r\n## <u>Error Code</u>\r\n<details>\r\n<summary>The main possible values of HTTP code are :</summary>\r\n\r\n|HTTP Code        |Error Code              |Description                          |\r\n------------------|--------------------------------------------------------------|\r\n|404              | 147                    |User cannot be found                 |\r\n|400              | 919                    |Invalid timespan                     |\r\n\r\n<details/>\r\n<br/>",
+        "operationId": "CardOperations_Get",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "User identifier in the third-party application.9 characters exactly:0-9a-zAâ€“Z_-+/:.?!Â§()",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start date of the search period (EndDate minus 7 days if not specified)",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End date of the search period (current date if not specified)",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                },
+                "example": {
+                  "Id": 5614,
+                  "AccountId": {
+                    "Id": 524,
+                    "AppAccountId": "gZADCgvWS",
+                    "DisplayName": "George McFly",
+                    "Iban": "FR56231110000209U000000EVAT",
+                    "Alias": "D.FL",
+                    "PhoneNumber": "00 33 30 14 17 53 5",
+                    "Email": "dv.dce#@cmil.com",
+                    "Href": "https://xpo-cardop-sb-api-bib.aadds.s-money.net//https://xpo-cardop-pr-api-bib.aadds.s-money.net//users/gZADCgvWS"
+                  },
+                  "Card": {
+                    "Id": 385,
+                    "AppCardId": "card-mycard",
+                    "Href": "https://xpo-cardop-sb-api-bib.aadds.s-money.net//https://xpo-cardop-pr-api-bib.aadds.s-money.net//users/gZADCgvWS/cards/card-mycard"
+                  },
+                  "Amount": 3159,
+                  "Fee": null,
+                  "OperationDate": "2021-06-02T12:01:51.0000000+00:00",
+                  "ExecutionDate": null,
+                  "ExecutedDate": "2021-06-03T18:00:04.0000000+00:00",
+                  "Direction": 2,
+                  "OrderId": "gjJzkTA08EGRPEGPF30gIw",
+                  "Motif": null,
+                  "Status": 1,
+                  "Type": 505,
+                  "RefundReference": null,
+                  "InitialOperation": null
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/clientdebts/{orderid}": {
+      "get": {
+        "tags": [
+          "Transaction Management"
+        ],
+        "summary": "Retrieve the details of a client debt.",
+        "description": "## <u>Description</u>\r\n<br/>\r\nRetrieve the details of a client debt.\r\nA client debt is a fund advance made by the partner to its client due to a transaction on an insufficiently funded account. \r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint :\r\n\r\n-   Partner should be authenticated\r\n-   The debt should already been created \r\n",
+        "operationId": "ClientDebts_Get",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "Payment identifier in the third-party application\r\n<details><summary> Payment identifier in the third-party application and specified by the partner </summary>\r\n\r\n| Parameter| Type   |Format  |Example    |Description                                       |\r\n|----------|--------|--------|-----------|--------------------------------------------------|\r\n| OrderId  | String |X(255)  |Moneyout-1 |Payment identifier in the third-party application |\r\n\r\n</details>",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/clientdebts/{orderid}/status": {
+      "put": {
+        "tags": [
+          "Transaction Management"
+        ],
+        "summary": "Modify the status of a client debt.",
+        "description": "## <u>Description</u>\r\n<br/>\r\nModify the status of a client debt.\r\nAllows the partner to monitor the recovery of its client debts.\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint :\r\n\r\n-   Partner should be authenticated\r\n-   The debt should already been created ",
+        "operationId": "ClientDebts_PutStatus",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "Payment identifier in the third-party application\r\n<details><summary> Payment identifier in the third-party application and specified by the partner </summary>\r\n\r\n| Parameter| Type   |Format  |Example    |Description                                       |\r\n|----------|--------|--------|-----------|--------------------------------------------------|\r\n| OrderId  | String |X(255)  |Moneyout-1 |Payment identifier in the third-party application |\r\n\r\n</details>",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "aed53176-645e-4800-98a3-3650d0d5ebb8"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/vnd.s-money.v1+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/vnd.s-money.v2+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/vnd.s-money.v4+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/vnd.s-money.v1+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/vnd.s-money.v2+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/vnd.s-money.v4+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtStatusDto"
+              }
+            }
+          },
+          "required": true,
+          "x-bodyName": "clientDebtStatusDto"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/clientdebts/{orderid}/remainingdebtamount": {
+      "put": {
+        "tags": [
+          "Transaction Management"
+        ],
+        "summary": "Modify the remaining amount of a client debt.",
+        "description": "## <u>Description</u>\r\n<br/>\r\nModify the remaining amount of a client debt.\r\nAllows the partner to monitor the recovery of its client debts. \r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint :\r\n\r\n-   Partner should be authenticated\r\n-   The debt should already been created ",
+        "operationId": "ClientDebts_PutRemainingDebtAmount",
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "Payment identifier in the third-party application\r\n<details><summary> Payment identifier in the third-party application and specified by the partner </summary>\r\n\r\n| Parameter| Type   |Format  |Example    |Description                                       |\r\n|----------|--------|--------|-----------|--------------------------------------------------|\r\n| OrderId  | String |X(255)  |Moneyout-1 |Payment identifier in the third-party application |\r\n\r\n</details>",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "aed53176-645e-4800-98a3-3650d0d5ebb8"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/vnd.s-money.v1+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/vnd.s-money.v2+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/vnd.s-money.v4+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/vnd.s-money.v1+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/vnd.s-money.v2+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/vnd.s-money.v4+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.RemainingDebtAmountDto"
+              }
+            }
+          },
+          "required": true,
+          "x-bodyName": "remainingDebtAmountDto"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/clientdebts": {
+      "get": {
+        "tags": [
+          "Transaction Management"
+        ],
+        "summary": "Retrieve the list of client debts.",
+        "description": "## <u>Description</u>\r\n<br/>\r\nRetrieve the list of client debts.\r\nIt is possible to apply a filter on the status of the debts and/or a client.\r\n<br/>\r\n\r\n## <u>Prerequisite</u>\r\n<br/>\r\nTo deal with this endpoint :\r\n\r\n-   Partner should be authenticated\r\n",
+        "operationId": "ClientDebts_Get",
+        "parameters": [
+          {
+            "name": "request.appUserId",
+            "in": "query",
+            "description": "User identifier of partner",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "request.status",
+            "in": "query",
+            "description": "Client debt status\r\n<details><summary> Client debt status referential </summary>\r\n\r\n| Value | Description                                 |\r\n|-------|---------------------------------------------|\r\n| 0     | The debt has not been recovered             |\r\n| 1     | The debt has been recovered                 |\r\n| 2     | The debt has been closed without recovery   |\r\n\r\n</details>",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "request.page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "request.perPage",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "request.pageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "request.direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Smoney.API.Models.ClientDebts.ClientDebtDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get users",
+        "description": "## <u>Description</u>\r\nThis endpoint allows to retrieve users\r\n<br/>\r\n## <u>Prerequisite</u>\r\nPrerequisites to call this endpoint are : \r\n- Partner should be authenticated",
+        "operationId": "User_GetUsersByCriteria",
+        "parameters": [
+          {
+            "name": "criteria.email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.phoneNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.lastName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.firstName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.birthName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.types",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.smoneyIds",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.appUserId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.hasDebtBalance",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "criteria.iban",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "criteria.kycStatus",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "criteria.status",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "criteria.page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "criteria.perPage",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "criteria.pageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "criteria.direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.1/users/{appuserid}": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get user information",
+        "description": "## <u>Description</u>\r\nThis endpoint allows to retrieve users\r\n<br/>\r\n## <u>Prerequisite</u>\r\nPrerequisites to call this endpoint are : \r\n- Partner should be authenticated",
+        "operationId": "User_GetUserByUserId",
+        "parameters": [
+          {
+            "name": "appuserid",
+            "in": "path",
+            "description": "User identifier of partner",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CorrId",
+            "in": "header",
+            "description": "Correlation Id",
+            "schema": {
+              "type": "String",
+              "default": "ccf9aff7-6969-4df9-96e0-44d069f06c30"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/vnd.s-money.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/vnd.s-money.v2+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/vnd.s-money.v4+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/vnd.s-money.v1+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/vnd.s-money.v2+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              },
+              "application/vnd.s-money.v4+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Smoney.API.Models.Users.UserDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Smoney.API.Models.Operations.LimitDTO": {
+        "type": "object",
+        "properties": {
+          "GlobalIn": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Operations.GlobalLimitDTO"
+          },
+          "GlobalOut": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Operations.GlobalLimitDTO"
+          },
+          "BalanceLimit": {
+            "type": "integer",
+            "description": "Authorized account balance limit (in cents)",
+            "format": "int64"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.GlobalLimitDTO": {
+        "type": "object",
+        "properties": {
+          "AnnualAllowance": {
+            "type": "integer",
+            "description": "Authorized annual amount (in cents)",
+            "format": "int64"
+          },
+          "UsedAllowance": {
+            "type": "integer",
+            "description": "Annual amount used (in cents)",
+            "format": "int64"
+          },
+          "RenewalDate": {
+            "type": "string",
+            "description": "Reset date of the annual amount used",
+            "format": "date-time"
+          },
+          "MonthlyAllowance": {
+            "type": "integer",
+            "description": "Authorized Monthly amount (in cents)",
+            "format": "int64"
+          },
+          "MonthlyUsedAllowance": {
+            "type": "integer",
+            "description": "Monthly amount used (in cents)",
+            "format": "int64"
+          },
+          "MonthlyRenewalDate": {
+            "type": "string",
+            "description": "Reset date of the monthly amount used",
+            "format": "date-time"
+          },
+          "WeeklyAllowance": {
+            "type": "integer",
+            "description": "Authorized Weekly amount (in cents)",
+            "format": "int64"
+          },
+          "WeeklyUsedAllowance": {
+            "type": "integer",
+            "description": "Weekly amount used (in cents)",
+            "format": "int64"
+          },
+          "WeeklyRenewalDate": {
+            "type": "string",
+            "description": "Reset date of the weekly amount used",
+            "format": "date-time"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.UserInfoAdditionalBalanceDTO": {
+        "type": "object",
+        "properties": {
+          "AdditionalBalanceAmount": {
+            "type": "number",
+            "description": "Additional amount(in euro)that can be used for the split payment",
+            "format": "double"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.CardResponseDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "AppCardId": {
+            "type": "string"
+          },
+          "Network": {
+            "type": "string"
+          },
+          "Hint": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "ExpiryDate": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "ExtraResult": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.DalenysOperationDTO"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.DalenysOperationDTO": {
+        "type": "object",
+        "properties": {
+          "TransactionId": {
+            "type": "string"
+          },
+          "ExecCode": {
+            "type": "string"
+          },
+          "Message": {
+            "type": "string"
+          },
+          "Currency": {
+            "type": "string"
+          },
+          "ThreeDSecure": {
+            "type": "string"
+          },
+          "ThreeDSAuthenticationStatus": {
+            "type": "string"
+          },
+          "AuthorizationNumber": {
+            "type": "string"
+          },
+          "CardNetwork": {
+            "type": "string"
+          },
+          "CardValidityDate": {
+            "type": "string"
+          },
+          "CardCountry": {
+            "type": "string"
+          },
+          "CardFullname": {
+            "type": "string"
+          },
+          "CardThreeDSecureEnrolled": {
+            "type": "string"
+          },
+          "ThreeDSecureVersion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ThreeDSGlobalStatus": {
+            "type": "string"
+          },
+          "Version": {
+            "type": "string"
+          },
+          "CardType": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.SubAccountRefDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "AppAccountId": {
+            "type": "string"
+          },
+          "DisplayName": {
+            "type": "string"
+          },
+          "Iban": {
+            "type": "string"
+          },
+          "Alias": {
+            "type": "string"
+          },
+          "PhoneNumber": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "Href": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.CardRefDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "always null",
+            "format": "int64"
+          },
+          "AppCardId": {
+            "type": "string",
+            "description": "always null"
+          },
+          "Href": {
+            "type": "string"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.CardPaymentRequestDTO": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string"
+          },
+          "OrderId": {
+            "type": "string"
+          },
+          "UrlReturn": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "ExecMessage": {
+            "type": "string"
+          },
+          "ExecCode": {
+            "type": "string"
+          },
+          "AuthenticationFormHtml": {
+            "type": "string"
+          },
+          "TermsAndConditionsValidationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Payer": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.PayerInfoDTO"
+          },
+          "Card": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardDTO"
+          },
+          "Payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.PaymentDTO"
+            }
+          },
+          "DalenysData": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.DalenysOperationDTO"
+          },
+          "SubscriptionTopUp": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.PayerInfoDTO": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "UserAgent": {
+            "type": "string"
+          },
+          "UrlReferrer": {
+            "type": "string"
+          },
+          "IpAddress": {
+            "type": "string"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.CardDTO": {
+        "type": "object",
+        "properties": {
+          "HFToken": {
+            "type": "string"
+          },
+          "AppCardId": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "Hint": {
+            "type": "string"
+          },
+          "ExpiryDate": {
+            "type": "string"
+          },
+          "IsActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.PaymentDTO": {
+        "type": "object",
+        "properties": {
+          "OrderId": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "Fee": {
+            "type": "number",
+            "format": "double"
+          },
+          "Beneficiary": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.BeneficiaryDTO"
+          },
+          "Message": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.BeneficiaryDTO": {
+        "type": "object",
+        "properties": {
+          "AppAccountId": {
+            "type": "string"
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.CardPaymentResponseDTO": {
+        "type": "object",
+        "properties": {
+          "Message": {
+            "type": "string"
+          },
+          "OrderId": {
+            "type": "string"
+          },
+          "UrlReturn": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "ExecMessage": {
+            "type": "string"
+          },
+          "ExecCode": {
+            "type": "string"
+          },
+          "AuthenticationFormHtml": {
+            "type": "string"
+          },
+          "Payer": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.PayerInfoDTO"
+          },
+          "Card": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.CardDTO"
+          },
+          "Payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.PaymentDTO"
+            }
+          },
+          "ExtraResult": {
+            "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.DalenysOperationDTO"
+          },
+          "TermsAndConditionsValidationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Refunds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Acquisition.BankCardPayment.Dtos.RefundDTO"
+            }
+          }
+        }
+      },
+      "Acquisition.BankCardPayment.Dtos.RefundDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "Fee": {
+            "type": "number",
+            "format": "double"
+          },
+          "OrderId": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.PayIns.PaymentCardRefundPostDTO": {
+        "type": "object",
+        "properties": {
+          "OrderId": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Fee": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "RefundFee": {
+            "type": "boolean"
+          },
+          "Status": {
+            "enum": [
+              "Pending",
+              "Succeeded",
+              "Refund",
+              "Failed",
+              "WaitingValidation",
+              "Canceled",
+              "WaitingRemittance",
+              "Expired",
+              "Registered"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.PayIns.PaymentCardRefundDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "OrderId": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "Fee": {
+            "type": "number",
+            "format": "double"
+          },
+          "Status": {
+            "enum": [
+              "Pending",
+              "Succeeded",
+              "Refund",
+              "Failed",
+              "WaitingValidation",
+              "Canceled",
+              "WaitingRemittance",
+              "Expired",
+              "Registered"
+            ],
+            "type": "string"
+          },
+          "PaymentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "OriginalPayment": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Operations.PayIns.PayInRefDTO"
+          },
+          "Type": {
+            "enum": [
+              "Card",
+              "CardRefund"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.PayIns.PayInRefDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "OrderId": {
+            "type": "string"
+          },
+          "Href": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.BankCardLimitsDTO": {
+        "type": "object",
+        "properties": {
+          "AppCardId": {
+            "type": "string",
+            "description": "Third party card ID"
+          },
+          "CardLimits": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.CardLimitsDTO"
+          }
+        },
+        "description": "Reduced DTO to get card limits"
+      },
+      "Smoney.API.Models.Users.CardLimitsDTO": {
+        "type": "object",
+        "properties": {
+          "Transaction": {
+            "type": "integer",
+            "description": "Not used",
+            "format": "int32"
+          },
+          "ATMWeeklyAllowance": {
+            "type": "number",
+            "description": "ATM weekly limit (value in cents)",
+            "format": "double"
+          },
+          "ATMWeeklyUsedAllowance": {
+            "type": "number",
+            "description": "Amount used in withdrawal over the last 7 days",
+            "format": "double"
+          },
+          "MonthlyAllowance": {
+            "type": "number",
+            "description": "Monthly payment limit (value in cents)",
+            "format": "double"
+          },
+          "MonthlyUsedAllowance": {
+            "type": "number",
+            "description": "Amount used in payment over the last 30 days",
+            "format": "double"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.CardOperationDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "Payment ID.",
+            "format": "int64"
+          },
+          "AccountId": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.SubAccountRefDTO"
+          },
+          "Card": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.CardRefDTO"
+          },
+          "Amount": {
+            "type": "integer",
+            "description": "Amount in cents (cardholder billing currency).",
+            "format": "int64"
+          },
+          "Fee": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Operations.FeeDTO"
+          },
+          "OperationDate": {
+            "type": "string",
+            "description": "Local date and time (UTC) of the transaction at the merchant, sent to S-money with the authorization message. Never changes during  the operation life cycle.",
+            "format": "date-time"
+          },
+          "ExecutionDate": {
+            "type": "string",
+            "description": "(not used).",
+            "format": "date-time"
+          },
+          "ExecutedDate": {
+            "type": "string",
+            "description": "Date and time (CET / CEST) of execution of the last processing on the S-money platform.",
+            "format": "date-time"
+          },
+          "Direction": {
+            "enum": [
+              "None",
+              "In",
+              "Out"
+            ],
+            "type": "string",
+            "description": " Direction\r\n <details><summary> Direction referential </summary>\r\n\r\n | Context |\tDescription |\r\n |---------|-------------|\r\n | 1       | In / Credit |\r\n | 2       | Out / Debit |\r\n\r\n</details>"
+          },
+          "OrderId": {
+            "type": "string"
+          },
+          "Motif": {
+            "type": "string",
+            "description": "Reason for decision (explicit when the refusal comes from S-money)"
+          },
+          "Status": {
+            "enum": [
+              "Pending",
+              "Succeeded",
+              "Refund",
+              "Failed",
+              "WaitingValidation",
+              "Canceled",
+              "WaitingRemittance",
+              "Expired",
+              "Registered"
+            ],
+            "type": "string",
+            "description": " Operation Status\r\n <details><summary> Operation status referential </summary>\r\n\r\n | Value | Description |\r\n |-------|-------------|\r\n | 1     | Completed   |\r\n | 2     | Refunded    |\r\n | 3     | Failed      |\r\n | 5     | Cancelled   |\r\n | 7     | Expired     |\r\n\r\n</details>"
+          },
+          "Type": {
+            "type": "integer",
+            "description": " Type\r\n <details><summary> Operation's type referential </summary>\r\n\r\n | Value | Description              |\r\n |-------|--------------------------|\r\n | 504   | CardOperation In         |\r\n | 505   | CardOperation Out        |\r\n | 510   | CardOperation In Refund  |\r\n | 511   | CardOperation Out Refund |\r\n | 516   | ATM Out                  |\r\n | 517   | ATM Out Refund           |\r\n\r\n</details>",
+            "format": "int32"
+          },
+          "RefundReference": {
+            "type": "string",
+            "description": "OrderId of the refunded operation."
+          },
+          "InitialOperation": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Operations.CardOperationOriginDTO"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.FeeDTO": {
+        "type": "object",
+        "properties": {
+          "Amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "VAT": {
+            "type": "number",
+            "format": "double"
+          },
+          "AmountWithVAT": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Status": {
+            "enum": [
+              "Pending",
+              "Succeeded",
+              "Refund",
+              "Failed",
+              "WaitingValidation",
+              "Canceled",
+              "WaitingRemittance",
+              "Expired",
+              "Registered"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.CardOperationOriginDTO": {
+        "type": "object",
+        "properties": {
+          "OrderId": {
+            "type": "string"
+          },
+          "OriginalAmount": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          }
+        }
+      },
+      "Smoney.API.Models.Operations.CardOperationMessageDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "Message Id.",
+            "format": "int64"
+          },
+          "MTI": {
+            "type": "integer",
+            "description": "Message Identification Type.",
+            "format": "int32"
+          },
+          "TransactionDescription": {
+            "type": "string",
+            "description": "Processing code."
+          },
+          "Pan": {
+            "type": "string",
+            "description": "Primary Account Number (=Card Number)."
+          },
+          "CardExpirationDate": {
+            "type": "string",
+            "description": "Card Expiration Date (MMYY)."
+          },
+          "ERT": {
+            "type": "string",
+            "description": " ERT\r\n <details><summary> Processing code referential </summary>\r\n\r\n | Value | Description                                 |\r\n |-------|---------------------------------------------|\r\n | 10    | Face-to-face payment, physical merchant     |\r\n | 2x    | Remote payments, online merchant            |\r\n | 4x    | Unattended vending machine                  |\r\n | 6x    | Quasi-cash                                  |\r\n | 7x    | Withdrawal (ATM, Bank Agency)               |\r\n\r\n</details>"
+          },
+          "TransactionAmount": {
+            "type": "integer",
+            "description": "Transaction Amount (in cents).",
+            "format": "int64"
+          },
+          "CardholderBillingAmount": {
+            "type": "integer",
+            "description": "Holder billing amount.",
+            "format": "int64"
+          },
+          "CardHolderBillingConversionRate": {
+            "type": "number",
+            "description": "Billing Conversion Rate.",
+            "format": "double"
+          },
+          "LocalTransactionDate": {
+            "type": "string",
+            "description": "Transaction Date.",
+            "format": "date-time"
+          },
+          "CountryCode": {
+            "type": "integer",
+            "description": "ISO 3166 3N.",
+            "format": "int32"
+          },
+          "PSN": {
+            "type": "integer",
+            "description": "Pan Sequence Number.",
+            "format": "int32"
+          },
+          "ForwardingInstitutionIdentificationCode": {
+            "type": "integer",
+            "description": "Forwarding Institution Code.",
+            "format": "int64"
+          },
+          "CardAcceptorIdentificationCode": {
+            "type": "string",
+            "description": "Acceptor Identification -generally a contract number."
+          },
+          "CardAcceptorTerminalIdentification": {
+            "type": "string",
+            "description": "Terminal Identification."
+          },
+          "CardAcceptorIdentificationCode_Name_Address": {
+            "type": "string",
+            "description": "Acceptor Name and Address."
+          },
+          "CardAcceptorIdentificationCode_Complement_Address": {
+            "type": "string",
+            "description": "Acceptor Address 2."
+          },
+          "TransactionCurrencyCode": {
+            "type": "string",
+            "description": "Currency code."
+          },
+          "CardHolderBillingCurrencyCode": {
+            "type": "string",
+            "description": "Billing currency code."
+          },
+          "TerminalCountryCode": {
+            "type": "integer",
+            "description": "ISO 3166.",
+            "format": "int32"
+          },
+          "ApprovalCode": {
+            "type": "string",
+            "description": "Approval code."
+          },
+          "ActionCode": {
+            "type": "integer",
+            "description": " Action Code\r\n <details><summary> Action code referential </summary>\r\n\r\n | Value | Description                                     |\r\n |-------|------------------------------------------------ |\r\n | 0     | Approved                                        |\r\n | 100   | Denied, invalid card status                     |\r\n | 114   | Denied, authorization server does not respond   |\r\n | 116   | Denied, insufficient funds or limits reached    |\r\n | 119   | Denied, transaction not permitted to cardholder |\r\n | 198   | Denied, technical error                         |\r\n | Other | Denied, Natixis refused the transaction         |\r\n\r\n</details>",
+            "format": "int32"
+          },
+          "OriginalDataElements": {
+            "type": "string",
+            "description": "Original Data Elements."
+          },
+          "AcquiringInstitutionIdentificationCode": {
+            "type": "integer",
+            "description": "Acquiring Institution Identification Code.",
+            "format": "int64"
+          },
+          "MCC": {
+            "type": "integer",
+            "description": "Merchant Category Code.",
+            "format": "int32"
+          },
+          "Conditioncode": {
+            "type": "integer",
+            "description": "Point-of-Service Condition Code.",
+            "format": "int32"
+          },
+          "EntryMode": {
+            "type": "integer",
+            "description": "Point-of-Service Entry Mode Code.",
+            "format": "int32"
+          },
+          "Serial": {
+            "type": "string",
+            "description": "Terminal Serial Number."
+          },
+          "CardDataInputMode": {
+            "type": "string",
+            "description": " CardDataInputMode\r\n <details><summary> CardDataInputMode referential </summary>\r\n\r\n | Value | Description                                       |\r\n |-------|---------------------------------------------------|\r\n | 0     | Unspecified, generally used for internet payment  |\r\n | 1     | Manual, no terminal                               |\r\n | 2     | Magnetic stripe                                   |\r\n | 3     | Bar Code                                          |\r\n | 4     | OCR                                               |\r\n | 5     | Contact mode                                      |\r\n | 6     | Key entered                                       |\r\n | 7     | Magnetic stripe                                   |\r\n | 8     | Electronic Commerce                               |\r\n | 9     | Contactless mode                                  |\r\n | A     | Magnetic stripe                                   |\r\n\r\n</details>"
+          },
+          "TokenRequestorId": {
+            "type": "integer",
+            "description": " TokenRequestorId\r\n <details><summary> TokenRequestorId referential </summary>\r\n\r\n | Value       | Description         |\r\n |-------------|---------------------|\r\n | 40010030273 | Apple Pay           |\r\n | 40010043095 | Samsung Pay         |\r\n | 40010069887 | Garmin Pay          |\r\n | 40010077056 | FitBit              |\r\n | 40010075338 | Visa Checkout - VCO |\r\n | 40010075839 | Netflix (COF)       |\r\n | 40010052236 | Cybersource (PSP)   |\r\n | 40010078862 | Cherri Tech (PSP)   |\r\n | 40010062941 | Adyen (PSP)         |\r\n | 40010051602 | Amazon(COF)         |\r\n | 40010069088 | SafeCharge (PSP)    |\r\n | 40010053788 | Worldpay (PSP)      |\r\n | 40010075001 | Google Pay          |\r\n\r\n</details>",
+            "format": "int64"
+          }
+        }
+      },
+      "Smoney.API.Models.Clearing.ReportClearingBatch": {
+        "type": "object",
+        "properties": {
+          "callback_type": {
+            "type": "integer",
+            "description": "Contains the callback number that indicates to the partner the file reference (is always 24)",
+            "format": "int32"
+          },
+          "batch_reference": {
+            "type": "integer",
+            "description": "Contains the reference of the file containing the operations.",
+            "format": "int64"
+          },
+          "clearings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportClearing"
+            },
+            "description": "Object containing all the operations processed in the festopeme"
+          }
+        },
+        "description": "Clearing file processing report"
+      },
+      "Smoney.API.Models.Clearing.ReportClearing": {
+        "type": "object",
+        "properties": {
+          "card_operation_reference": {
+            "type": "string"
+          },
+          "card_operation": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportCardOperation"
+          }
+        }
+      },
+      "Smoney.API.Models.Clearing.ReportCardOperation": {
+        "type": "object",
+        "properties": {
+          "authorization_reference": {
+            "type": "string",
+            "description": "Authorization unique reference"
+          },
+          "card_identifier": {
+            "type": "string",
+            "description": "Thirdparty card ID"
+          },
+          "amount": {
+            "type": "integer",
+            "description": "Transaction amount (in cents)",
+            "format": "int64"
+          },
+          "date": {
+            "type": "string",
+            "description": "Date and Time the authorization was processed into the system Smoney Time zone reference=Zulu Time(UTC+0)",
+            "format": "date-time"
+          },
+          "merchant_name": {
+            "type": "string",
+            "description": "Card acceptor Name"
+          },
+          "merchant_category_code": {
+            "type": "integer",
+            "description": "It allows to identify the merchant",
+            "format": "int32"
+          },
+          "financial_network_code": {
+            "type": "string",
+            "description": "Cards network"
+          },
+          "original_amount": {
+            "type": "integer",
+            "description": "Amount before exchange,in the smallest currency division",
+            "format": "int64"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency code ISO 4217"
+          },
+          "exchange_rate": {
+            "type": "number",
+            "description": "Exchange rate,1 if euro",
+            "format": "double"
+          },
+          "merchant": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Clearing.ReportMerchant"
+          },
+          "type_code": {
+            "type": "string",
+            "description": "Transaction description"
+          },
+          "pos_entry_mode": {
+            "type": "string",
+            "description": "POS capability ISO8583"
+          },
+          "operation_type": {
+            "type": "integer",
+            "description": "Values of operation's type are: (504: CardOperation In, 505: CardOperation Out, 510: CardOperation In Refund, 511: CardOperation Out Refund, 516: ATM Out, 517: ATM Out Refund)",
+            "format": "int32"
+          },
+          "operation_status": {
+            "type": "integer",
+            "description": "Values of operation's status are (1: Completed, 2: Refunded)",
+            "format": "int32"
+          },
+          "service_fee": {
+            "type": "integer",
+            "description": "Service fee amount in cents",
+            "format": "int32"
+          },
+          "direction": {
+            "type": "integer",
+            "description": "Values of operation's direction for the user are (1: In / Credit , 2: Out / Debit)",
+            "format": "int32"
+          },
+          "clearing_date": {
+            "type": "string",
+            "description": "Date and time (ZT) the operation was processed in the FestOpeme",
+            "format": "date-time"
+          }
+        }
+      },
+      "Smoney.API.Models.Clearing.ReportMerchant": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.ClientDebts.ClientDebtDto": {
+        "type": "object",
+        "properties": {
+          "OrderId": {
+            "type": "string",
+            "description": "Payment identifier in the third-party application\r\n<details><summary> Payment identifier in the third-party application and specified by the partner </summary>\r\n\r\n| Parameter| Type   |Format  |Example    |Description                                       |\r\n|----------|--------|--------|-----------|--------------------------------------------------|\r\n| OrderId  | String |X(255)  |Moneyout-1 |Payment identifier in the third-party application |\r\n\r\n</details>"
+          },
+          "AppUserId": {
+            "type": "string",
+            "description": "User identifier of partner"
+          },
+          "Date": {
+            "type": "string",
+            "description": "Client debt's creation date",
+            "format": "date-time"
+          },
+          "DebtAmount": {
+            "type": "integer",
+            "description": "Initial client debt amount (in cents)",
+            "format": "int64"
+          },
+          "RemainingDebtAmount": {
+            "type": "integer",
+            "description": "Remaining client Debt amount (in cents)",
+            "format": "int64"
+          },
+          "Status": {
+            "enum": [
+              "InProgress",
+              "ClosedWithRecovery",
+              "ClosedWithoutRecovery"
+            ],
+            "type": "string",
+            "description": "Client debt status\r\n<details><summary> Client debt status referential  </summary>\r\n\r\n| Value                       | Description                                 |\r\n|-----------------------------|---------------------------------------------|\r\n| 0 (InProgress)              | The debt has not been recovered             |\r\n| 1 (ClosedWithRecovery)      | The debt has been recovered                 |\r\n| 2 (ClosedWithoutRecovery)   | The debt has been closed without recovery   |\r\n\r\n</details>"
+          },
+          "Reason": {
+            "type": "string",
+            "description": "Client debt reason\r\n<details><summary> Client debt reason referential </summary>\r\n\r\n| Value         | Description                                                        |\r\n|---------------|--------------------------------------------------------------------|\r\n| P2P           | The original transaction related to the debt is a P2P              |\r\n| Cardoperation | The original transaction related to the debt is a Card Operation   |\r\n| JRI           | The original transaction related to the debt is a top-up CB unpaid |\r\n\r\n</details>"
+          }
+        }
+      },
+      "Smoney.API.Models.ClientDebts.ClientDebtStatusDto": {
+        "type": "object",
+        "properties": {
+          "Status": {
+            "type": "integer",
+            "description": "Client debt status\r\n<details><summary> Client debt status referential  </summary>\r\n\r\n| Value                       | Description                                 |\r\n|-----------------------------|---------------------------------------------|\r\n| 0 (InProgress)              | The debt has not been recovered             |\r\n| 1 (ClosedWithRecovery)      | The debt has been recovered                 |\r\n| 2 (ClosedWithoutRecovery)   | The debt has been closed without recovery   |\r\n\r\n</details>",
+            "format": "int32"
+          }
+        }
+      },
+      "Smoney.API.Models.ClientDebts.RemainingDebtAmountDto": {
+        "type": "object",
+        "properties": {
+          "RemainingDebtAmount": {
+            "type": "integer",
+            "description": "Remaining client Debt amount (in cents)",
+            "format": "int64"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.BankAccountRefDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "always null",
+            "format": "int64"
+          },
+          "Href": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.AddressDTO": {
+        "type": "object",
+        "properties": {
+          "Street": {
+            "type": "string",
+            "description": "Number and Street of residence's address"
+          },
+          "ZipCode": {
+            "type": "string",
+            "description": "City's zipCode of residence's address"
+          },
+          "City": {
+            "type": "string",
+            "description": "City residence's address"
+          },
+          "Country": {
+            "enum": [
+              "None",
+              "FR",
+              "DE",
+              "AT",
+              "BE",
+              "BG",
+              "CY",
+              "DK",
+              "ES",
+              "EE",
+              "FI",
+              "GR",
+              "HU",
+              "IE",
+              "IS",
+              "IT",
+              "LV",
+              "LI",
+              "LT",
+              "LU",
+              "MT",
+              "NO",
+              "NL",
+              "PL",
+              "PT",
+              "CZ",
+              "RO",
+              "GB",
+              "SK",
+              "SI",
+              "SE",
+              "CH",
+              "ZA",
+              "AU",
+              "BR",
+              "CA",
+              "KR",
+              "US",
+              "HK",
+              "IN",
+              "JP",
+              "MX",
+              "SG",
+              "HR",
+              "GP",
+              "MQ",
+              "GF",
+              "YT",
+              "NC",
+              "PF",
+              "RE",
+              "BL",
+              "MF",
+              "PM",
+              "TF",
+              "WS",
+              "AD",
+              "AL",
+              "DZ",
+              "AX",
+              "AO",
+              "AI",
+              "AQ",
+              "AG",
+              "AR",
+              "AM",
+              "AW",
+              "AZ",
+              "BH",
+              "BD",
+              "BB",
+              "BJ",
+              "BM",
+              "BT",
+              "BQ",
+              "BV",
+              "WF",
+              "IO",
+              "BF",
+              "BI",
+              "KH",
+              "CM",
+              "CV",
+              "KY",
+              "CL",
+              "CN",
+              "CX",
+              "CC",
+              "KM",
+              "CG",
+              "CK",
+              "CI",
+              "CW",
+              "DJ",
+              "DM",
+              "ER",
+              "FO",
+              "FJ",
+              "GA",
+              "GM",
+              "GE",
+              "GI",
+              "GL",
+              "GD",
+              "GG",
+              "GN",
+              "HM",
+              "VA",
+              "IL",
+              "JE",
+              "KE",
+              "KI",
+              "YE",
+              "XK",
+              "KW",
+              "LS",
+              "LR",
+              "MO",
+              "MG",
+              "MW",
+              "MY",
+              "MV",
+              "ML",
+              "FK",
+              "IM",
+              "MP",
+              "MR",
+              "MU",
+              "FM",
+              "MD",
+              "MC",
+              "MN",
+              "ME",
+              "MS",
+              "MA",
+              "MZ",
+              "NA",
+              "NP",
+              "NZ",
+              "NE",
+              "NF",
+              "OM",
+              "PW",
+              "PS",
+              "PG",
+              "PY",
+              "PN",
+              "PR",
+              "QA",
+              "MK",
+              "RW",
+              "KN",
+              "SH",
+              "LC",
+              "VC",
+              "SM",
+              "ST",
+              "SN",
+              "SC",
+              "SL",
+              "SX",
+              "SB",
+              "GS",
+              "SR",
+              "SJ",
+              "SZ",
+              "TW",
+              "TZ",
+              "TH",
+              "TL",
+              "TG",
+              "TK",
+              "TO",
+              "TC",
+              "TV",
+              "AE",
+              "UM",
+              "UY",
+              "VN",
+              "VG",
+              "ZM",
+              "AF",
+              "AS",
+              "BS",
+              "BO",
+              "BA",
+              "BW",
+              "BZ",
+              "BN",
+              "MM",
+              "BY",
+              "CF",
+              "LK",
+              "TD",
+              "CO",
+              "CD",
+              "CR",
+              "CU",
+              "DO",
+              "EC",
+              "SV",
+              "GQ",
+              "ET",
+              "GH",
+              "GU",
+              "GT",
+              "GY",
+              "HT",
+              "HN",
+              "ID",
+              "IR",
+              "IQ",
+              "JM",
+              "KZ",
+              "JO",
+              "KP",
+              "KG",
+              "LA",
+              "LB",
+              "LY",
+              "NR",
+              "VU",
+              "NI",
+              "NG",
+              "NU",
+              "MH",
+              "PK",
+              "PA",
+              "PE",
+              "PH",
+              "GW",
+              "RU",
+              "SA",
+              "RS",
+              "SO",
+              "ZW",
+              "SS",
+              "SD",
+              "EH",
+              "SY",
+              "TJ",
+              "TT",
+              "TN",
+              "TR",
+              "TM",
+              "UG",
+              "UA",
+              "EG",
+              "VI",
+              "UZ",
+              "VE",
+              "Other"
+            ],
+            "type": "string",
+            "description": "Country of residence's address (code ISO 3166-1)"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.UserDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "AppUserId": {
+            "type": "string",
+            "description": "User identifier in the third-party application. 9 characters exactly:\r\n<br />[^a-zA-Z0-9-_!Â§)(]"
+          },
+          "Type": {
+            "enum": [
+              "Unknown",
+              "Technical",
+              "Part",
+              "Pro"
+            ],
+            "type": "string",
+            "description": "User type : 1 = Individual client"
+          },
+          "Role": {
+            "type": "integer",
+            "description": "When creating the user, the role = 1\r\n<br /> If user's onbording is validated then user's role = 2\r\n<br /> UserRole is optional",
+            "format": "int32"
+          },
+          "Profile": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.UserProfileDTO"
+          },
+          "Credentials": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.UserCredentialsDTO"
+          },
+          "Amount": {
+            "type": "integer",
+            "description": "Amount",
+            "format": "int64"
+          },
+          "DebtBalance": {
+            "type": "integer",
+            "description": "Debt balance",
+            "format": "int64"
+          },
+          "AccountingBalanceAmount": {
+            "type": "integer",
+            "description": "Authorisation balance",
+            "format": "int64"
+          },
+          "SubAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Smoney.API.Models.Users.AccountDTO"
+            }
+          },
+          "BankAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Smoney.API.Models.Users.BankAccountRefDTO"
+            }
+          },
+          "CBCards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Smoney.API.Models.Users.CardRefDTO"
+            }
+          },
+          "Status": {
+            "enum": [
+              "Unknown",
+              "Unconfirmed",
+              "Ok",
+              "Frozen",
+              "OnTheFly",
+              "PendingClosing",
+              "Closed",
+              "WaitingKYC",
+              "Opposition"
+            ],
+            "type": "string",
+            "description": "Account status\r\n<details>\r\n\r\n| Value     | Description      |\r\n| --------- | --------------   |\r\n| -1        | Unknown          |\r\n| 0         | Unconfirmed      |\r\n| 1         | Ok               |   \r\n| 2         | Frozen           |\r\n| 3         | OnTheFly         |\r\n| 4         | PendingClosing   |\r\n| 5         | Closed           |\r\n| 6         | WaitingKYC       |\r\n| 7         | Opposition       |\r\n\r\n</details>"
+          },
+          "Company": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.Pro.CompanyDTO"
+          },
+          "CountryCode": {
+            "type": "string"
+          },
+          "KycStatus": {
+            "enum": [
+              "Incomplete",
+              "Pending",
+              "Refused",
+              "Accepted",
+              "NomConforme",
+              "Initialized",
+              "Complete"
+            ],
+            "type": "string",
+            "description": "This is the global status of the kyc. \r\n<details><summary>The different status are as follows:</summary>\r\n\r\n| Value | Description                                                                |\r\n| ------| -----------------------------------------------------------------          |\r\n| 5     | Initialized - demand is created for the first time                         |\r\n| 1     | Pending - demand was created by KYC Provider                               |\r\n| 0     | Incomplete - demand has at least one diligence received and validated      |\r\n| 6     | Complete - demand has all expected diligence and all of them are validated |\r\n| 4     | NomConforme                                                                |\r\n| 3     | Accepted                                                                   |\r\n| 2     | Refused                                                                    |\r\n\r\n</details>"
+          },
+          "OnBoardingDate": {
+            "type": "string",
+            "description": "Date of the user creation",
+            "format": "date-time"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.UserProfileDTO": {
+        "type": "object",
+        "properties": {
+          "Civility": {
+            "enum": [
+              "Empty",
+              "Mr",
+              "Mrs",
+              "Miss"
+            ],
+            "type": "string",
+            "description": "Civility :\r\n<details>\r\n\r\n|Value| Description|\r\n|-----|------------|\r\n|0    |Mr          |\r\n|1    |Mrs         |\r\n|2    |Miss        |\r\n\r\n</details>"
+          },
+          "FirstName": {
+            "type": "string",
+            "description": "User's first name. For card-manufacturing contraints, characters must be : AN or â€œ-â€œ"
+          },
+          "LastName": {
+            "type": "string",
+            "description": "User's last name. For card-manufacturing contraints, characters must be : AN or â€œ-â€œ"
+          },
+          "BirthName": {
+            "type": "string",
+            "description": "User's birth name. For card-manufacturing contraints, characters must be : AN or â€œ-â€œ"
+          },
+          "Birthdate": {
+            "type": "string",
+            "description": "User's birth date",
+            "format": "date-time"
+          },
+          "Birthcity": {
+            "type": "string",
+            "description": "Birth city of the user"
+          },
+          "BirthCountry": {
+            "type": "string",
+            "description": "Country of birth of the user (code ISO 3166-1)\r\n<br /> Example : \"FR\" for France"
+          },
+          "Address": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.AddressDTO"
+          },
+          "PhoneNumber": {
+            "type": "string",
+            "description": "Mobile phone number"
+          },
+          "Email": {
+            "type": "string",
+            "description": "User e-mail"
+          },
+          "Alias": {
+            "type": "string",
+            "description": "User nickname. Maximum number of characters: 32\r\n<br />Regex : ^([a - zA - Z]) ([a - zA - Z0 - 9_\\-\\.\\#\\s]+)$"
+          },
+          "Picture": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.PictureRefDTO"
+          },
+          "EconomicActivity": {
+            "enum": [
+              "FarmersonSmallFarms",
+              "FarmersOnAverageExploitation",
+              "FarmersonLargeFarm",
+              "Craftsmen",
+              "merchantsAndSimilar",
+              "EntrepreneursOfTenOrMoreEmployees",
+              "LiberalPrefessions",
+              "PublicServicemanagers",
+              "ProfessorsAndScientificProfessions",
+              "InformationProfessionsArtsAndEntertainement",
+              "CorporateAndCommercialExecutives",
+              "EngineersAndTechnicalExecutives",
+              "SchoolTeachersTeachersAndTheLike",
+              "IntermediateProfessionsOfHealthAndSocialWork",
+              "ClergyAndReligious",
+              "AdministrativeIntermediateProfessionsOfThePublicService",
+              "IntermediateAdministrativeAndCommercialProfessionsBusiness",
+              "Technicians",
+              "FormenAndSupervisors",
+              "CivilianAndPublicServiceEmployees",
+              "PoliceAndMilitary",
+              "CorporateAdministrativeEmployees",
+              "TradeEmployees",
+              "PersonalDirectServicesToIndividuals",
+              "SkilledWorkersOfIndustrialType",
+              "SkilledCraftsmen",
+              "Heaters",
+              "SkilledWorkersInHandlingWarehousingAndTransport",
+              "UnskilledIndustrialWorkers",
+              "UnskilledWorkersOfTheCraftType",
+              "AgriculturalWorkers",
+              "FormerFarmers",
+              "FormerCraftsmenTradersEntrepreneurs",
+              "FormerExecutives",
+              "FormerIntermediateProfessions",
+              "FormerEmployees",
+              "OldWorkers",
+              "UnemployedWhoHaveNeverWorked",
+              "MilitaryContigent",
+              "Students",
+              "VariousPersonsWithoutProfessionalActivityUnderSixtyYears",
+              "VariousPersonsWithoutProfessionalActivitySixtyYearsOldAndOver"
+            ],
+            "type": "string"
+          },
+          "Asset": {
+            "type": "integer",
+            "description": "User Assets\r\n<details><summary>Restricted values of asset are:</summary>\r\n\r\n|Value|\tDescription        |\r\n|-----|--------------------|\r\n|1\t  | No asset           |\r\n|2\t  | Up to 10000â‚¬       |\r\n|3\t  | 10000â‚¬ to 50000â‚¬   |\r\n|4\t  | 50000â‚¬ to 100000â‚¬  |\r\n|5\t  | 100000â‚¬ to 300000â‚¬ |\r\n|6\t  | 300000â‚¬ to 500000â‚¬ |\r\n|7\t  | Over 500000â‚¬       |\r\n\r\n</details>",
+            "format": "int32"
+          },
+          "Income": {
+            "type": "integer",
+            "description": "User Incomes\r\n<details><summary>Restricted  value of income are:</summary>\r\n\r\n|Value  | description    |\r\n|-------|----------------|\r\n|1\t    | Up to 1000â‚¬    |\r\n|2\t    | 1000â‚¬ to 1800â‚¬ |\r\n|3\t    | 1800â‚¬ to 2800â‚¬ |\r\n|4\t    | 2800â‚¬ to 3600â‚¬ |\r\n|5\t    | 3600â‚¬ to 4600â‚¬ |\r\n|6\t    | 4600â‚¬ to 6000â‚¬ |\r\n|7\t    | Over 6000â‚¬     |\r\n\r\n</details>",
+            "format": "int32"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.UserCredentialsDTO": {
+        "type": "object",
+        "properties": {
+          "WithCredentials": {
+            "type": "boolean",
+            "description": "always null"
+          },
+          "RedirectUri": {
+            "type": "string",
+            "description": "always null"
+          },
+          "CancelUri": {
+            "type": "string",
+            "description": "always null"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.AccountDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "AppAccountId": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "AccountingBalanceAmount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "DisplayName": {
+            "type": "string"
+          },
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "IsDefault": {
+            "type": "boolean"
+          },
+          "Iban": {
+            "type": "string"
+          },
+          "IbanHint": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.Pro.CompanyDTO": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "description": "Company's name"
+          },
+          "SIRET": {
+            "type": "string",
+            "description": "Company's registration number"
+          }
+        }
+      },
+      "Smoney.API.Models.Users.PictureRefDTO": {
+        "type": "object",
+        "properties": {
+          "Href": {
+            "type": "string"
+          }
+        }
+      },
+      "Smoney.API.Models.Paginate[System.Collections.Generic.IList[Smoney.API.Models.Users.IUserDTO]]": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Smoney.API.Models.Users.IUserDTO"
+            },
+            "readOnly": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Smoney.DomainModels.Link"
+            },
+            "readOnly": true
+          }
+        }
+      },
+      "Smoney.API.Models.Users.IUserDTO": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Profile": {
+            "$ref": "#/components/schemas/Smoney.API.Models.Users.UserProfileDTO"
+          }
+        }
+      },
+      "Smoney.DomainModels.Link": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "readOnly": true
+          },
+          "relation": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Authorization": {
+        "type": "http",
+        "description": "API Key Authentication",
+        "scheme": "bearer"
+      },
+      "Bearer token authorization": {
+        "type": "http",
+        "description": "Authentication with bearer token",
+        "scheme": "bearer"
+      },
+      "Sts authentication": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://sb-connect.xpollens.com/connect/token",
+            "scopes": {
+              "partner": "",
+              "internal_settings": "",
+              "thirdparty_kyc": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Authorization": []
+    },
+    {
+      "Bearer token authorization": []
+    },
+    {
+      "Sts authentication": []
+    }
+  ]
+}
