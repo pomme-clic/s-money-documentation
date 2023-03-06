@@ -1,3 +1,8 @@
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --ifm-color-primary: #006d8c;
   --ifm-color-primary-dark: rgb(33, 175, 144);
@@ -29,10 +34,7 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: #2a3845;
 }
 
-/* Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* Globals */
 .docusaurus-highlight-code-line {
