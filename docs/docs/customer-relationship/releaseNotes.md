@@ -46,7 +46,7 @@ Xpollens changelog since September 2021
 - Added an automatic refusal process for users identified as fraudster.
 
 **Operations**:
-- Added a [new endpoint](/api/SDD) to revoke a mandate. This new revokation info is also now available in the **GET** method for SDD status. We also added the Appuserid in both responses of the POST and GET methods for SDD. 
+- Added a [new endpoint](/api/TransferSDD) to revoke a mandate. This new revokation info is also now available in the **GET** method for SDD status. We also added the Appuserid in both responses of the POST and GET methods for SDD. 
 - Made an evolution on the callbacks #1 & #5. These callback are now in a JSON body format instead of the old URL Query format. The URL Query format is now **deprecated** and will be decommissioned as soon as all clients made the changes on their side. 
 
 **Partner Portal**:
@@ -171,7 +171,7 @@ More [here](/api/Callbacks).
 **Transfers** :
 - Added the Outgoing Sepa Direct Debit feature to our platform. We can now operate SDD both ways (incoming (already existing) and outgoing (new))  
 You can now present and manage SDDs, mandates dynamically via our APIs.  
-More here : [SDD API](/api/SDD)
+More here : [SDD API](/api/TransferSDD)
 
 **Cards** :
 - New validity date for Xpay token. The token is now deleted if not activated for the last 30 days.  
