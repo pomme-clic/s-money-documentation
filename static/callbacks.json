@@ -577,7 +577,7 @@
 		"/{callback16Url}": {
 			"post": {
 				"summary": "#16 - SCT In",
-				"description": "Callback received in case of status change in an incoming SCT payment",
+				"description": "Callback received in case of status change in an incoming SCT (Xpollens account is credited)",
 				"requestBody": {
 					"description": "JSON Body",
 					"content": {
@@ -705,7 +705,7 @@
 		"/{callback17Url}": {
 			"post": {
 				"summary": "#17 - SCT Out",
-				"description": "Callback received in case of status change in an outgoing SCT payment",
+				"description": "Callback received in case of status change in an outgoing SCT (Xpollens account is debited)",
 				"requestBody": {
 					"description": "JSON Body",
 					"content": {
@@ -833,7 +833,7 @@
 		"/{callback18Url}": {
 			"post": {
 				"summary": "#18 - SDD Out",
-				"description": "Callback received in case of status change in an outgoing SDD payment (money is captured to the Xpollens account)",
+				"description": "Callback received in case of status change in an outgoing SDD (Xpollens account is credited)",
 				"requestBody": {
 					"description": "JSON Body",
 					"content": {
@@ -961,7 +961,7 @@
 		"/{callback19Url}": {
 			"post": {
 				"summary": "#19 - SDD In",
-				"description": "Callback received in case of status change in an incoming SDD payment (money is withdrawn from Xpollens account)",
+				"description": "Callback received in case of status change in an incoming SDD (Xpollens account is debited)",
 				"requestBody": {
 					"description": "JSON Body",
 					"content": {
