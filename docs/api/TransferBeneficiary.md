@@ -4,7 +4,7 @@ sidebar_label: Beneficiary
 hide_table_of_contents: true
 ---
 
-# Beneficiary
+# Beneficiary 
 
 import Rapidoc from "@theme/Rapidoc"
 
