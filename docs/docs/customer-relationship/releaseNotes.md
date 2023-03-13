@@ -10,6 +10,18 @@ Xpollens changelog since September 2021
 ---
 			
 			
+## March 2023
+**User onboarding**
+- Partners can now send diligence files 
+- Improvement KYB demand (KYC for businesses) in status "Awaiting Expertise" 
+
+**Transaction management**
+- Internal transfers (P2P) *can* be managed with new endpoints: 
+	- ``POST /api/v2.0/users/{accountPartnerReference}/internal-transfer``
+	- ``GET /api/v2.0/users/{accountPartnerReference}/internal-transfer/{reference}``
+	- ``GET /api/v2.0/users/{accountPartnerReference}/internal-transfer``
+- Internal transfers (P2P) now allow for a new extra data, see fields ``label`` and ``subLabel``
+
 ## February 2023
 **Partner Portal**
 - permissions (none, read or write) can now be managed on a per-page basis
