@@ -9,7 +9,7 @@ Xpollens changelog since September 2021
 
 ---
 			
-		## March 2023
+## March 2023
 **User onboarding**
 - Partners can now send diligence files 
 - Improvement KYB demand (KYC for businesses) in status "Awaiting Expertise" 
