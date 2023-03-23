@@ -8,7 +8,7 @@
     "startfr": "npm run start -- --locale fr",
     "writefr": "npm run write - translations-- --locale fr",
     "preview": "npm run build && npm run serve",
-    "build": "docusaurus build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && docusaurus build",
     "buildAnalyzer": "docusaurus build --bundle-analyzer",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
