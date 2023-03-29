@@ -76,7 +76,7 @@ The payment date must be set 3 working days in the future. Less than that will r
 
 </Highlight>
 
-More information regarding these endpoints in the [API reference.](/api/SDD)
+More information regarding these endpoints in the [API reference.](/api/TransferSDD)
 
 
 ---

@@ -42,11 +42,11 @@ Within our P2P API you will be able to transfer money immediatly to another cust
 
 <Endpoint apiUrl="/v1.1/Transfers.Bib" path="/api/v1.1/users/{userid}/payments" method="post"/>
 
-More information regarding this endpoint in the [API reference.](/api/SDD)
+More information regarding this endpoint in the [API reference.](/api/TransferP2p)
 
 <Cta
   context="doc"
   ui="button"
-  link="/api/SDD"
+  link="/api/TransferP2p"
   label="Try it out"
 />

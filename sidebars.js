@@ -34,7 +34,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Cards',
-      items: ['api/CardFactory','api/CardSecure','api/Xpay'],
+      items: ['api/CardFactory','api/CardFactory-old','api/CardSecure','api/Xpay'],
     },
     {
       type: 'category',
@@ -43,8 +43,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'SEPA transfers and P2P',
-      items: ['api/SCTINST','api/SDD'],
+      label: 'SEPA transfers',
+      items: ['api/TransferBankAccount', 'api/TransferBeneficiary', 'api/SCTINST', 'api/TransferSCT', 'api/TransferSDD'],
+    },
+    {
+      type: 'category',
+      label: 'Internal transfers',
+      items: ['api/TransferP2p', 'api/TransferInternal'],
     },
 	'api/Compliance',
     {
