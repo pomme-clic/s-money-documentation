@@ -8,12 +8,12 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
-			
-			
+
+
 ## March 2023
 **User onboarding**
 - Partners can now send diligence files 
-- Improvement KYB demand (KYC for businesses) in status "Awaiting Expertise" 
+- Improvement KYB demand (KYC for businesses) in status "Awaiting Expertise" 
 
 **Transaction management**
 - Internal transfers (P2P) *can* be managed with new endpoints: 
