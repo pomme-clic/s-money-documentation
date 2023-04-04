@@ -8,6 +8,53 @@ import Cta from '@theme/Cta'
 Xpollens changelog since September 2021
 
 ---
+# Release Note
+## April 2023
+
+**Profile Management**
+
+Profile page rights management improvement.
+Avoid inconsistency between parent page rights and children page rights.
+
+**Cards Operation**
+
+Added a merchant label for offline card operations on the operation list for card operation details.
+Merchant labels are now displayed for both online and offline operations.
+
+**Internal Transfer(P2P)**
+
+Added two new attributes `label` and `subLabel` to display additionnal information on each P2P detail.
+
+**Users (phone number)**
+
+Phone numbers format is checked against E.164 normalization (https://www.itu.int/rec/T-REC-E.164/).
+In case of invalid format, user creation will be rejected.
+
+Endpoints concerned
+* `POST /api/v2.0/users`
+* `POST /api/v1.1/users`
+* `PUT /api/v2.0/users/{appUserId}`
+* `PUT /api/v1.1/users/{appUserId}`
+
+**Users (address)**
+
+Endpoints v2.0 - address fields such as `street`, and `city` have a maximum character length. See details: https://docs.xpollens.com/api/Users
+
+Endpoints v1.1 - address field `street` can exceed 38 char length, but is truncated to 38 chars by Xpollens card service.
+
+Endpoints concerned:
+* `POST /api/v2.0/users`
+* `PUT /api/v2.0/users/{appUserId}`
+* `POST /api/v1.1/users`
+* `PUT /api/v1.1/users/{appUserId}`
+
+**Legal Entity**
+
+`legalForm` and `highFinancialIncome` can now be updated with endpoint `PUT /api/v2.0/legalentities/{legalEntityId}`.
+
+**Card Display**
+
+The PAN can now be copied to the clipboard.
 
 
 ## March 2023
