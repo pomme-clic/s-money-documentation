@@ -75,7 +75,7 @@ module.exports = {
             },
             {
               label: 'KYC',
-              href: 'docs/kyc/retail-customer',
+              href: '/docs/kyc/retail-customer',
             },
           ],
         },
