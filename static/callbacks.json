@@ -243,8 +243,8 @@
 									},
 									"status": {
 										"type": "string",
-										"description": "Status of the KYC demand :  \n- initialized  \n- incomplete  \n- complete  \n- pending",
-										"example": "incomplete"
+										"description": "Status of the KYC demand :  \n- Initialized  \n- Incomplete  \n- Complete  \n- Pending",
+										"example": "Incomplete"
 									},
 									"appUserId": {
 										"type": "string",
@@ -1957,7 +1957,7 @@
 		"/{callback31Url}": {
 			"post": {
 				"summary": "#31 - KYC complementary diligence",
-				"description": "Callback received in case of status change in the KYC complementary due diligence (be it SCT or Instant Payment)",
+				"description": "Callback received in case of status change in the KYC complementary due diligence (be it SCT IN or Instant Payment)",
 				"requestBody": {
 					"description": "JSON Body",
 					"content": {
@@ -1972,8 +1972,8 @@
 									},
 									"status": {
 										"type": "string",
-										"description": "Status of the KYC demand :  \n- validated  \n- refused  \n- to_review_manually",
-										"example": "to_review_manually"
+										"description": "Status of the KYC demand :  \n- Validated  \n- Refused  \n- To_Review_Manually",
+										"example": "To_Review_Manually"
 									},
 									"appUserId": {
 										"type": "string",
@@ -1982,8 +1982,8 @@
 									},
 									"diligenceType": {
 										"type": "string",
-										"description": "the type of diligence :  \n- SCT_In  \n- InstantPayment_In",
-										"example": "SCT_In"
+										"description": "the type of diligence :  \n- SCTIN" ,
+										"example": "SCTIN"
 									},
 									"reason": {
 										"type": "string",
@@ -2066,8 +2066,8 @@
 													},
 													"status": {
 														"type": "string",
-														"description": "Status of the KYC demand :  \n- validated  \n- refused  \n- to_review_manually",
-														"example": "to_review_manually"
+														"description": "Status of the KYC demand :  \n- Validated  \n- Refused  \n- To_Review_Manually",
+														"example": "To_Review_Manually"
 													},
 													"appUserId": {
 														"type": "string",
@@ -2076,8 +2076,8 @@
 													},
 													"diligenceType": {
 														"type": "string",
-														"description": "the type of diligence :  \n- SCT_In  \n- InstantPayment_In",
-														"example": "SCT_In"
+														"description": "the type of diligence :  \n- SCTIN",
+														"example": "SCTIN"
 													},
 													"reason": {
 														"type": "string",
