@@ -9,6 +9,10 @@ module.exports = {
   noIndex: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],  
   favicon: 'img/favicon.svg',
   organizationName: 'xpollens',
   projectName: 's-money-documentation',
@@ -31,6 +35,12 @@ module.exports = {
           type: 'doc',
           docId: 'api/Core',
           label: 'API references',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'usecases/Introduction',
+          label: 'Use Cases',
           position: 'left',
         },
         {

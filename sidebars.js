@@ -58,4 +58,12 @@ module.exports = {
       items: ['api/Callback','api/Callbacks','api/Webhooks'],
     },
   ],
+  usecasesSidebar: [
+    'usecases/Introduction',
+    {
+      type: 'category',
+      label: 'Cards Operations',
+      items: ['usecases/OnlineCardOperations','usecases/OfflineCardOperations','usecases/CardsOperationsClearing','usecases/CardsOperationsHowToTest'],
+    },    
+  ],  
 }

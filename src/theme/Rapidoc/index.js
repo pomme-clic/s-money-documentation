@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import Head from '@docusaurus/Head'
 
-import useThemeContext from '@theme/hooks/useThemeContext'
+//import useThemeContext from '@theme/hooks/useThemeContext'
+import { useColorMode } from '@docusaurus/theme-common';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
@@ -20,7 +21,8 @@ const customThemeColors = {
 }
 
 const Rapidoc = ({ apiUrl, isRelative }) => {
-  const { isDarkTheme } = useThemeContext()
+  const { isDarkTheme } = useColorMode()
+  //const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
 
 

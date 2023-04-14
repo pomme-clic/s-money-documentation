@@ -1,21 +1,29 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React, { useCallback, useState, useEffect } from 'react'
+
+import NavbarLayout from '@theme/Navbar/Layout';
+import NavbarContent from '@theme/Navbar/Content';
+
 import clsx from 'clsx'
 import SearchBar from '@theme/SearchBar'
 import Toggle from '@theme/Toggle'
-import useThemeContext from '@theme/hooks/useThemeContext'
-import { useThemeConfig } from '@docusaurus/theme-common'
-import useHideableNavbar from '@theme/hooks/useHideableNavbar'
-import useLockBodyScroll from '@theme/hooks/useLockBodyScroll'
-import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize'
-import NavbarItem from '@theme/NavbarItem'
-import Logo from '@theme/Logo'
-import IconMenu from '@theme/IconMenu'
+
+import {useColorMode, useThemeConfig} from '@docusaurus/theme-common';
+import ColorModeToggle from '@theme/ColorModeToggle';
+
+import {
+  useHideableNavbar,
+  useLockBodyScroll,
+  useNavbarMobileSidebar,
+} from '@docusaurus/theme-common/internal';
+
+
+import {useWindowSize} from '@docusaurus/theme-common';
+import NavbarItem from '@theme/NavbarItem';
+import Logo from '@theme/Logo';
+
+import IconMenu from '@theme/Icon/Menu';
+
+
 import styles from './styles.module.css' // retrocompatible with v1
 
 const DefaultNavItemPosition = 'right' // If split links by left/right
@@ -33,32 +41,33 @@ function splitNavItemsByPosition(items) {
     rightItems,
   }
 }
-
-function Navbar() {
+export default function Navbar() {
   const {
     navbar: { items, hideOnScroll, style },
     colorMode: { disableSwitch: disableColorModeSwitch },
   } = useThemeConfig()
   const [sidebarShown, setSidebarShown] = useState(false)
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext()
+  const {colorMode, setColorMode} = useColorMode();
+  const { isDarkTheme } = colorMode === "dark";
+  const setDarkTheme = () => { colorMode = 'dark'}
+  const setLightTheme = () => { colorMode = 'light'}
+  const switchTheme = () => { colorMode === 'light' ? setColorMode('dark') : setColorMode('light');}
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll)
   useLockBodyScroll(sidebarShown)
+  
   const showSidebar = useCallback(() => {
     setSidebarShown(true)
   }, [setSidebarShown])
+  
   const hideSidebar = useCallback(() => {
     setSidebarShown(false)
   }, [setSidebarShown])
+  
   const onToggleChange = useCallback(
     (e) => (e.target.checked ? setDarkTheme() : setLightTheme()),
     [setLightTheme, setDarkTheme],
   )
-  const windowSize = useWindowSize()
-  useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
-      setSidebarShown(false)
-    }
-  }, [windowSize])
+
   const hasSearchNavbarItem = items.some((item) => item.type === 'search')
   const { leftItems, rightItems } = splitNavItemsByPosition(items)
   return (
@@ -79,7 +88,7 @@ function Navbar() {
         },
       )}
     >
-      {/* styles.navbar */}
+	{/* styles.navbar */}
       <div className="navbar__inner">
         <div className="navbar__items">
           {items != null && items.length !== 0 && (
@@ -103,10 +112,12 @@ function Navbar() {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        <div className="navbar__items navbar__items--right">
+		{/* This block err */}
+		  <div className="navbar__items navbar__items--right">
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
+          {/*NE FONCTIONNE PAS
           {!disableColorModeSwitch && (
             <Toggle
               className={styles.displayOnlyInLargeViewport}
@@ -114,8 +125,18 @@ function Navbar() {
               onChange={onToggleChange}
             />
           )}
+          NE FONCTIONNE PAS*/}
+          {/**/}
+          <ColorModeToggle 
+              className={styles.displayOnlyInLargeViewport}
+              checked={isDarkTheme}
+              onChange={switchTheme}          
+          />
+          {/**/}
+          {/*<ColorModeToggle />*/}
           {!hasSearchNavbarItem && <SearchBar />}
         </div>
+		{/* End of block */}
       </div>
       <div
         role="presentation"
@@ -134,9 +155,11 @@ function Navbar() {
             titleClassName="navbar__title"
             onClick={hideSidebar}
           />
+          {/*
           {!disableColorModeSwitch && sidebarShown && (
             <Toggle checked={isDarkTheme} onChange={onToggleChange} />
           )}
+          */}
         </div>
         <div className="navbar-sidebar__items">
           <div className="menu">
@@ -156,5 +179,3 @@ function Navbar() {
     </nav>
   )
 }
-
-export default Navbar
