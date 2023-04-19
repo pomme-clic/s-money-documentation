@@ -592,7 +592,7 @@
 									},
 									"refundReference": {
 										"type": "string",
-										"description": "the new transaction id in case of refund status",
+										"description": "the new transaction orderid in case of refund status",
 										"example": "REFUND-S-MONEY-20230306123230103141"
 									},
 									"reference": {
@@ -723,10 +723,15 @@
 										"description": "the transaction id",
 										"example": "10743"
 									},
+									"refundReference": {
+										"type": "string",
+										"description": "the new transaction orderId in case of refund status",
+										"example": "REFUND-2197404"
+									},
 									"reference": {
 										"type": "string",
 										"description": "the transaction orderid",
-										"example": "o0pbb6ryc"
+										"example": "2197404"
 									},
 									"status": {
 										"type": "string",
