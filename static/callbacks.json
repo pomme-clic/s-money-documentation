@@ -1572,9 +1572,9 @@
 								"type": "object",
 								"properties": {
 									"id": {
-										"type": "string",
+										"type": "integer",
 										"description": "the Xpollens card id",
-										"example": "637877811699419000"
+										"example": 637877811699419000
 									},
 									"reference": {
 										"type": "string",
@@ -1582,9 +1582,9 @@
 										"example": "card-tgHqiYVAb"
 									},
 									"type": {
-										"type": "string",
+										"type": "integer",
 										"description": "the callback type",
-										"example": "25"
+										"example": 25
 									},
 									"tokenValue": {
 										"type": "string",
@@ -1612,9 +1612,9 @@
 										"example": "I"
 									},
 									"messageReasonCode": {
-										"type": "string",
+										"type": "integer",
 										"description": "Equal to 1400 (Token creation) or null",
-										"example": "1400"
+										"example": 1400
 									}
 								}
 							}
