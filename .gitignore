@@ -29,8 +29,3 @@ plugins/@easyops-cn/docusaurus-search-local/node_modules
 #Callbacks
 Callbacks.md
 *.bak
-/.vs/VSWorkspaceState.json
-/.vs/tasks.vs.json
-/.vs/slnx.sqlite
-/.vs/s-money-documentation
-/docs/docs/cards/x-pay.md
