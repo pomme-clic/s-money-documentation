@@ -196,7 +196,7 @@ body.homepage {
 
 @screen md {
   .menu {
-    @apply py-9 pl-8 pr-6 !important;
+    @apply mt-1 py-9 pl-8 pr-4 !important;
   }
 }
 
@@ -240,9 +240,14 @@ aside > div > nav > ul > li:nth-child(2) > ul > li {
         @apply mt-3;
       }
 
-      > .menu__link {
+      > .menu__link,
+      .menu__list-item-collapsible > .menu__link {
         @apply relative pl-8 pr-0 font-semibold text-[15px];
         @apply before:absolute before:top-1/2 before:left-2 before:-translate-y-1/2 before:bg-xp-primary-500 before:w-2 before:h-2 before:rounded-full;
+      }
+
+      .theme-doc-sidebar-item-link-level-2 {
+        @apply pl-2;
       }
     }
   }
@@ -460,4 +465,8 @@ html[data-theme='dark'] {
 
 .CookieDeclaration {
   display: none !important;
+}
+
+.navbar-sidebar__items {
+  @apply px-2 py-4;
 }
