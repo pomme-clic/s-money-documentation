@@ -49,7 +49,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Internal transfers',
-      items: ['api/TransferP2p', 'api/TransferInternal'],
+      items: ['api/TransferP2p'],
     },
 	'api/Compliance',
     {
