@@ -147,7 +147,7 @@ You can test using our Test Merchant website, once you have created and activate
 <Cta
   context="doc"
   ui="button"
-  link="https://ssl-liv-u6f-fo-acs-ve-nps.wlp-acs.com/acs-protocol-102-test-service/"
+  link="https://ssl-liv-u6f-fo-acs-ve-nps.wlp-acs.com/acs-protocol-2-test-service/#!/appBased"
   label="Try it out"
 />
 <br/>
