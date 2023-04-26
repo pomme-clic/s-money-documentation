@@ -477,6 +477,32 @@ html[data-theme='dark'] {
 
 .navbar-sidebar.submenu {
   @apply w-full;
+
+  .menu.secondary {
+    @apply w-full;
+  }
+
+  .menu__list {
+    @apply w-full;
+
+    > .menu__list-item {
+      .menu__list-item-collapsible {
+        background: none !important;
+      }
+
+      .theme-doc-sidebar-item-link-level-2 {
+        @apply pl-0;
+        a {
+          @apply !pl-2;
+        }
+      }
+      &:not(.theme-doc-sidebar-item-link-level-2) {
+        @apply relative;
+        @apply before:absolute before:top-[17px] before:left-0 before:-translate-y-1/2 before:bg-xp-primary-500 before:w-2 before:h-2 before:rounded-full;
+        @apply pl-2;
+      }
+    }
+  }
 }
 
 .menu__button.submenu {

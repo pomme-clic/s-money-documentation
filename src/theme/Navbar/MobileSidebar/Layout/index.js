@@ -16,7 +16,9 @@ export default function NavbarMobileSidebarLayout({
         })}
       >
         <div className="navbar-sidebar__item menu">{primaryMenu}</div>
-        <div className="navbar-sidebar__item menu">{secondaryMenu}</div>
+        <div className="navbar-sidebar__item menu secondary">
+          {secondaryMenu}
+        </div>
       </div>
     </div>
   )
