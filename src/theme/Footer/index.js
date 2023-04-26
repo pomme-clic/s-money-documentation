@@ -10,15 +10,11 @@ import Link from '@docusaurus/Link'
 import { useThemeConfig } from '@docusaurus/theme-common'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import isInternalUrl from '@docusaurus/isInternalUrl'
-import styles from './styles.module.css'
-import ThemedImage from '@theme/ThemedImage'
-import IconExternalLink from '@theme/Icon/ExternalLink'
 
 import XpollensLogo from '@site/static/img/ui/logo_xpollens_tagline.svg'
 
 import SocialIconTwitter from '@site/static/img/ui/icons/social/twitter.svg'
 import SocialIconLinkedin from '@site/static/img/ui/icons/social/linkedin.svg'
-import SocialIconFacebook from '@site/static/img/ui/icons/social/facebook.svg'
 import SocialIconDefault from '@site/static/img/ui/icons/social/default.svg'
 
 function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
@@ -42,10 +38,6 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
     </Link>
   )
 }
-
-const FooterLogo = ({ sources, alt }) => (
-  <ThemedImage className="footer__logo" alt={alt} sources={sources} />
-)
 
 function Footer() {
   const { footer } = useThemeConfig()
