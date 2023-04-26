@@ -139,11 +139,7 @@ export default function Navbar() {
             <NavbarItem {...item} key={i} />
           ))}
 
-          <ColorModeToggle
-            className={styles.displayOnlyInLargeViewport}
-            checked={isDarkTheme}
-            onChange={switchTheme}
-          />
+          <ColorModeToggle checked={isDarkTheme} onChange={switchTheme} />
 
           {!hasSearchNavbarItem && <SearchBar />}
         </div>
