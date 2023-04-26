@@ -1,11 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react'
-
-import NavbarLayout from '@theme/Navbar/Layout'
-import NavbarContent from '@theme/Navbar/Content'
+import { useLocation } from 'react-router-dom'
 
 import clsx from 'clsx'
 import SearchBar from '@theme/SearchBar'
-import Toggle from '@theme/Toggle'
 
 import { useColorMode, useThemeConfig } from '@docusaurus/theme-common'
 import ColorModeToggle from '@theme/ColorModeToggle'
@@ -17,7 +14,6 @@ import {
 } from '@docusaurus/theme-common/internal'
 
 import NavbarMobileSidebar from '@theme/Navbar/MobileSidebar'
-import { useWindowSize } from '@docusaurus/theme-common'
 import NavbarItem from '@theme/NavbarItem'
 import Logo from '@theme/Logo'
 
@@ -41,12 +37,30 @@ function splitNavItemsByPosition(items) {
   }
 }
 export default function Navbar() {
+  const location = useLocation()
+
+  useEffect(() => {
+    toggleShowSubmenu()
+  }, [location])
+
   const {
     navbar: { items, hideOnScroll, style },
     colorMode: { disableSwitch: disableColorModeSwitch },
   } = useThemeConfig()
-  const mobileSidebar = useNavbarMobileSidebar()
+
   const [sidebarShown, setSidebarShown] = useState(false)
+  const [sidebarSubmenu, setSidebarSubmenu] = useState(false)
+
+  const toggleShowSubmenu = (status) => {
+    if (status) {
+      setSidebarSubmenu(true)
+      setSidebarShown(true)
+    } else {
+      setSidebarSubmenu(false)
+      setSidebarShown(false)
+    }
+  }
+
   const { colorMode, setColorMode } = useColorMode()
   const { isDarkTheme } = colorMode === 'dark'
   const setDarkTheme = () => {
@@ -76,7 +90,7 @@ export default function Navbar() {
 
   const hasSearchNavbarItem = items.some((item) => item.type === 'search')
   const { leftItems, rightItems } = splitNavItemsByPosition(items)
-  console.log(mobileSidebar)
+
   return (
     <nav
       ref={navbarRef}
@@ -90,7 +104,6 @@ export default function Navbar() {
           'navbar--primary': style === 'primary',
           '!border-b-darkmode-divider bg-darkmode-background': isDarkTheme,
           'navbar-sidebar--show': sidebarShown,
-          // 'navbar-sidebar--show': mobileSidebar.shown,
           [styles.navbarHideable]: hideOnScroll,
           [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
         },
@@ -120,31 +133,20 @@ export default function Navbar() {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        {/* This block err */}
+
         <div className="navbar__items navbar__items--right">
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {/*NE FONCTIONNE PAS
-          {!disableColorModeSwitch && (
-            <Toggle
-              className={styles.displayOnlyInLargeViewport}
-              checked={isDarkTheme}
-              onChange={onToggleChange}
-            />
-          )}
-          NE FONCTIONNE PAS*/}
-          {/**/}
+
           <ColorModeToggle
             className={styles.displayOnlyInLargeViewport}
             checked={isDarkTheme}
             onChange={switchTheme}
           />
-          {/**/}
-          {/*<ColorModeToggle />*/}
+
           {!hasSearchNavbarItem && <SearchBar />}
         </div>
-        {/* End of block */}
       </div>
       {/* Backdrop */}
       <div
@@ -164,31 +166,54 @@ export default function Navbar() {
             titleClassName="navbar__title"
             onClick={hideSidebar}
           />
-          {/*
-          {!disableColorModeSwitch && sidebarShown && (
-            <Toggle checked={isDarkTheme} onChange={onToggleChange} />
-          )}
-          */}
         </div>
         <div className="navbar-sidebar__items">
           <div className="menu">
             <ul className="menu__list">
               {items.map((item, i) => (
-                <NavbarItem
-                  mobile
-                  {...item} // TODO fix typing
-                  onClick={hideSidebar}
-                  key={i}
-                />
+                <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />
               ))}
             </ul>
           </div>
         </div>
-        {/* New mobile sidebar */}
       </div>
-      {/* <div onClick={hideSidebar}> */}
-      {/* <NavbarMobileSidebar /> */}
-      {/* </div> */}
+      {/* New mobile sidebar submenu */}
+      {sidebarSubmenu && <NavbarMobileSidebar />}
+
+      {/* Toggle submenu */}
+      <button
+        aria-label="Open submenu"
+        aria-haspopup="true"
+        className="block md:hidden button button--secondary button--sm menu__button submenu"
+        type="button"
+        onClick={() => toggleShowSubmenu(!sidebarSubmenu)}
+      >
+        {sidebarShown && sidebarSubmenu ? (
+          <span className="sidebarMenuIcon_fgN0 sidebarMenuCloseIcon_1lpH">
+            ×
+          </span>
+        ) : (
+          <svg
+            className={`${
+              sidebarShown
+                ? 'sidebarMenuIcon_fgN0'
+                : 'sidebarMenuCloseIcon_1lpH'
+            }`}
+            width="24"
+            height="24"
+            viewBox="0 0 30 30"
+            aria-hidden="true"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              d="M4 7h22M4 15h22M4 23h22"
+            ></path>
+          </svg>
+        )}
+      </button>
     </nav>
   )
 }

@@ -470,3 +470,30 @@ html[data-theme='dark'] {
 .navbar-sidebar__items {
   @apply px-2 py-4;
 }
+
+.navbar-sidebar__back {
+  @apply hidden;
+}
+
+.navbar-sidebar.submenu {
+  @apply w-full;
+}
+
+.menu__button.submenu {
+  bottom: 2rem;
+  position: fixed;
+  right: 1rem;
+  z-index: var(--ifm-z-index-fixed);
+  @apply bg-xp-primary-500;
+}
+
+.sidebarMenuCloseIcon_1lpH {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1.5rem;
+  font-weight: var(--ifm-font-weight-bold);
+  height: 24px;
+  justify-content: center;
+  line-height: 0.9;
+  width: 24px;
+}

@@ -8,15 +8,12 @@ export default function NavbarMobileSidebarLayout({
 }) {
   const { shown: secondaryMenuShown } = useNavbarSecondaryMenu()
   return (
-    <div className="navbar-sidebar">
-      {header}
+    <div className="navbar-sidebar submenu">
+      {/* {header} */}
       <div
         className={clsx('navbar-sidebar__items', {
           'navbar-sidebar__items--show-secondary': secondaryMenuShown,
         })}
-        // className={clsx(
-        //   'navbar-sidebar__items navbar-sidebar__items--show-secondary ',
-        // )}
       >
         <div className="navbar-sidebar__item menu">{primaryMenu}</div>
         <div className="navbar-sidebar__item menu">{secondaryMenu}</div>
