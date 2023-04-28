@@ -4,14 +4,13 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useState, useRef, memo } from 'react'
-import { useThemeConfig } from '@docusaurus/theme-common'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import CustomToggleImgDark from '@site/static/img/ui/icons/toggle-dark.svg'
+import CustomToggleImgLight from '@site/static/img/ui/icons/toggle-light.svg'
 import clsx from 'clsx'
+import React, { memo, useRef, useState } from 'react'
 import './styles.css'
 import styles from './styles.module.css'
-import CustomToggleImgLight from '@site/static/img/ui/icons/toggle-light.svg'
-import CustomToggleImgDark from '@site/static/img/ui/icons/toggle-dark.svg'
 
 const Dark = ({ icon, style }) => (
   <span className={clsx(styles.toggle, styles.dark)} style={style}>
@@ -73,18 +72,13 @@ const Toggle = memo(
   },
 )
 export default function (props) {
-  const {
-    colorMode: {
-      switchConfig: { darkIcon, darkIconStyle, lightIcon, lightIconStyle },
-    },
-  } = useThemeConfig()
   const { isClient } = useDocusaurusContext()
   return (
     <Toggle
       disabled={!isClient}
       icons={{
-        checked: <Dark icon={darkIcon} style={darkIconStyle} />,
-        unchecked: <Light icon={lightIcon} style={lightIconStyle} />,
+        checked: <Dark />,
+        unchecked: <Light />,
       }}
       {...props}
     />

@@ -56,5 +56,5 @@ To ensure end-to-end encryption, some payloads will be fully encrypted. You will
 <Image src="docs/SCA-encryption-basics.png" alt="usecase 1"/>
 
 <Highlight type="caution">
-<b class="term">Our Secure Interface SDK documentation is subject to Non-Disclosure Agreement, please talk to your Sales Representative.</b>
+<b className="term">Our Secure Interface SDK documentation is subject to Non-Disclosure Agreement, please talk to your Sales Representative.</b>
 </Highlight>

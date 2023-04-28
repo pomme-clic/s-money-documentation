@@ -1,14 +1,14 @@
-import React, { useRef, useEffect, useState } from 'react'
-import Head from '@docusaurus/Head'
+import Head from '@docusaurus/Head';
+import React, { useEffect, useRef, useState } from 'react';
 
-import useThemeContext from '@theme/hooks/useThemeContext'
+import { useColorMode } from "@docusaurus/theme-common";
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
-import { useQuery } from 'react-query'
-import axios from 'axios'
-import Loader from '@theme/Loaders'
-import './styles.module.css'
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Loader from '@theme/Loaders';
+import axios from 'axios';
+import { useQuery } from 'react-query';
+import './styles.module.css';
 
 const customThemeColors = {
   'darkmode-background': '#121E24',
@@ -20,7 +20,7 @@ const customThemeColors = {
 }
 
 const Rapidoc = ({ apiUrl, isRelative }) => {
-  const { isDarkTheme } = useThemeContext()
+  const isDarkTheme = useColorMode().colorMode === 'dark'
   const { siteConfig } = useDocusaurusContext()
 
 
@@ -76,7 +76,7 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
-      
+
 
       const stringifiedData = JSON.stringify(data)
 
@@ -96,7 +96,7 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
 
         // Cleanup
         return () => {
-          rapidocRef.current.removeEventListener(
+          rapidocRef.current?.removeEventListener(
             'before-render',
             handleRenderRapidoc,
           )

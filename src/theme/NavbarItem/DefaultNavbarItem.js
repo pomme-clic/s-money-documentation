@@ -4,14 +4,14 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useState, useRef, useEffect } from 'react'
-import clsx from 'clsx'
-import Link from '@docusaurus/Link'
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import { useLocation } from '@docusaurus/router'
-import { isSamePath } from '@docusaurus/theme-common'
-import CustomIconExternalLink from '@site/static/img/ui/icons/external link.svg'
 import isInternalUrl from '@docusaurus/isInternalUrl'
+import Link from '@docusaurus/Link'
+import { useLocation } from '@docusaurus/router'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import { isSamePath } from '@docusaurus/utils-common'
+import CustomIconExternalLink from '@site/static/img/ui/icons/external link.svg'
+import clsx from 'clsx'
+import React, { useEffect, useRef, useState } from 'react'
 const dropdownLinkActiveClass = 'dropdown__link--active'
 
 function NavLink({
@@ -37,21 +37,21 @@ function NavLink({
     <Link
       {...(href
         ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
+          href: prependBaseUrlToHref ? normalizedHref : href,
+        }
         : {
-            isNavLink: true,
-            activeClassName,
-            to: toUrl,
-            ...(activeBasePath || activeBaseRegex
-              ? {
-                  isActive: (_match, location) =>
-                    activeBaseRegex
-                      ? new RegExp(activeBaseRegex).test(location.pathname)
-                      : location.pathname.startsWith(activeBaseUrl),
-                }
-              : null),
-          })}
+          isNavLink: true,
+          activeClassName,
+          to: toUrl,
+          ...(activeBasePath || activeBaseRegex
+            ? {
+              isActive: (_match, location) =>
+                activeBaseRegex
+                  ? new RegExp(activeBaseRegex).test(location.pathname)
+                  : location.pathname.startsWith(activeBaseUrl),
+            }
+            : null),
+        })}
       {...props}
     >
       {isExternalLink ? (

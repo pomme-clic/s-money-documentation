@@ -109,7 +109,7 @@ More information regarding the specifications in our SDK PIN Definition.
 
 <Highlight type="caution">
  
- WishPIN is <b class="term">only possible for mobile app</b>. <b class="term">You have to add our sdk in addition with a Token signature API</b>
+ WishPIN is <b className="term">only possible for mobile app</b>. <b className="term">You have to add our sdk in addition with a Token signature API</b>
  
 </Highlight>
 
@@ -149,7 +149,7 @@ Order a virtual uses the same API to create a card (physical or virtual). Change
 
 <Highlight type="caution">
  
- When your end user order a virtual card, obviously there is <b class="term">no PIN with a virtual card</b>. So, wishPIn and isNfcActivated is not used.
+ When your end user order a virtual card, obviously there is <b className="term">no PIN with a virtual card</b>. So, wishPIn and isNfcActivated is not used.
   
 </Highlight>
 

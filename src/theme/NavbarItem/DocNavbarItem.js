@@ -4,12 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
+import { useActiveDocContext, useLatestVersion } from '@docusaurus/plugin-content-docs/client';
+import { uniq, useDocsPreferredVersion } from '@docusaurus/theme-common';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
-import {useLatestVersion, useActiveDocContext} from '@theme/hooks/useDocs';
 import clsx from 'clsx';
-import {useDocsPreferredVersion} from '@docusaurus/theme-common';
-import {uniq} from '@docusaurus/utils-common';
+import React from 'react';
 
 function getDocInVersions(versions, docId) {
   // vanilla-js flatten, TODO replace soon by ES flat() / flatMap()
@@ -18,9 +17,8 @@ function getDocInVersions(versions, docId) {
 
   if (!doc) {
     const docIds = allDocs.map((versionDoc) => versionDoc.id).join('\n- ');
-    throw new Error(`DocNavbarItem: couldn't find any doc with id "${docId}" in version${
-      versions.length ? 's' : ''
-    } ${versions.map((version) => version.name).join(', ')}".
+    throw new Error(`DocNavbarItem: couldn't find any doc with id "${docId}" in version${versions.length ? 's' : ''
+      } ${versions.map((version) => version.name).join(', ')}".
 Available doc ids are:\n- ${docIds}`);
   }
 
@@ -34,8 +32,8 @@ export default function DocNavbarItem({
   docsPluginId,
   ...props
 }) {
-  const {activeVersion, activeDoc} = useActiveDocContext(docsPluginId);
-  const {preferredVersion} = useDocsPreferredVersion(docsPluginId);
+  const { activeVersion, activeDoc } = useActiveDocContext(docsPluginId);
+  const { preferredVersion } = useDocsPreferredVersion(docsPluginId);
   const latestVersion = useLatestVersion(docsPluginId); // Versions used to look for the doc to link to, ordered + no duplicate
 
   const versions = uniq(

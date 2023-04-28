@@ -4,11 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
-import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
-import IconLanguage from '@theme/IconLanguage';
+import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {useAlternatePageUtils} from '@docusaurus/theme-common';
+import IconLanguage from '@theme/Icon/Language';
+import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
+import React from 'react';
 export default function LocaleDropdownNavbarItem({
   mobile,
   dropdownItemsBefore,
@@ -16,7 +16,7 @@ export default function LocaleDropdownNavbarItem({
   ...props
 }) {
   const {
-    i18n: {currentLocale, locales, localeConfigs},
+    i18n: { currentLocale, locales, localeConfigs },
   } = useDocusaurusContext();
   const alternatePageUtils = useAlternatePageUtils();
 
