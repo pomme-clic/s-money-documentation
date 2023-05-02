@@ -58,4 +58,12 @@ module.exports = {
       items: ['api/Callback','api/Callbacks','api/Webhooks'],
     },
   ],
+  useCasesSidebar: [
+    {
+      type: 'category',
+      label: 'X-Pay',
+      items: ['use-cases/xpay/xpay', 'use-cases/xpay/SDK', 'use-cases/xpay/test-idealimage'
+      ]
+    }
+  ]
 }
