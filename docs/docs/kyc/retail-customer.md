@@ -18,7 +18,7 @@ import Cta from '@theme/Cta'
 
 All banks are subject to a number of regulations concerning customer onboarding ; Banking-as-a-Service does not escape this rule. We manage this compliance for you : our **Onboarding API** webservice embeds the required Identity Verification service as well as all other regulatory requirements.
 
-<Image img="docs/KYC-regulatory-context.png" alt="usecase 1"/>
+<Image src="docs/KYC-regulatory-context.png" alt="usecase 1"/>
 
 Many tasks are performed by our Operational Teams : FICOBA declarations, ACPR reporting, Anti-Monney Laundering checks, Fighting Terrorism, Identity Fraud surveillance, etc. In the unlikely event your prospect raises a flag, our teams will perform adequate actions within a limited timeframe. All intermediate steps will be visible to you in the callbacks.
 
