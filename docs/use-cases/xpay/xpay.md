@@ -41,7 +41,6 @@ Please note that step 4. must include in-app and OTP SMS (partner must implement
 
 Step 7 (In-App Verification Activation) and step 12 (Webhook Type 25) are described below.
 
-
 ### In-App Verification Activation
 
 This endpoint is useful only for Yellow flow. It must be called by the partner back end only if the user is strongly authenticated and approves the process.
@@ -80,7 +79,7 @@ This flow starts **from the partner app**. The cardholder clicks on a button and
 
 [![X-Pay - In-App Provisionning sequence diagram](https://mermaid.ink/img/pako:eNp1k9Fu2jAUhl_lyFdUIjSBpGTWhMTWXqAJDYlJrabcOPGBWiS259jVGOIh9gS72QPuEeYE0oa184Vl-5zz-fev4wMpFEdCSY3fHMoCbwXbGlZlkjmrpKtyNJkEPzQzVhRCM2nhz6-fv-FO8sDVXXjVCzdriWYgPq9hrvXVa8CDVmWJsob17af_R9-KsP3r0-6-nBW7ACU_X3iaL7QGs9m_4ih8LEWxAyUhI3POwarmvES4Z16FzcjLA_t1HtV_BW0m2DhZWOFRha-F97m5nsF6uZivPjjr7VwyybadY_3qHoyCkAHTGrRRT6L2MCnk9sx6KVp4GQsZeCWw6hKbvGdDG6susKs3eAOusAapLIhKs8ICno2CnJXMt0N9dSm2Z-Cz2_Qe80eldvBlrxHGCQxqy6yrYe69eEJPIENSoamY4L7TDg0xI_YRK8wI9UuOG-bK1umjT3WaM4t3XFhlCLXG4ZA03bjey6Lbn3LOzUrohpW1P_XdQOiBfCd0Mh1NozROwjSJ4yhO4yHZExrdJKPkJk4naTiZhmEcjo9D8kMpT4hGYTvGkzSO0mT6rqV9bWOnK7EVtDx9l_bXHP8CBzsVBA?type=svg)](https://mermaid.live/edit#pako:eNp1k9Fu2jAUhl_lyFdUIjSBpGTWhMTWXqAJDYlJrabcOPGBWiS259jVGOIh9gS72QPuEeYE0oa184Vl-5zz-fev4wMpFEdCSY3fHMoCbwXbGlZlkjmrpKtyNJkEPzQzVhRCM2nhz6-fv-FO8sDVXXjVCzdriWYgPq9hrvXVa8CDVmWJsob17af_R9-KsP3r0-6-nBW7ACU_X3iaL7QGs9m_4ih8LEWxAyUhI3POwarmvES4Z16FzcjLA_t1HtV_BW0m2DhZWOFRha-F97m5nsF6uZivPjjr7VwyybadY_3qHoyCkAHTGrRRT6L2MCnk9sx6KVp4GQsZeCWw6hKbvGdDG6susKs3eAOusAapLIhKs8ICno2CnJXMt0N9dSm2Z-Cz2_Qe80eldvBlrxHGCQxqy6yrYe69eEJPIENSoamY4L7TDg0xI_YRK8wI9UuOG-bK1umjT3WaM4t3XFhlCLXG4ZA03bjey6Lbn3LOzUrohpW1P_XdQOiBfCd0Mh1NozROwjSJ4yhO4yHZExrdJKPkJk4naTiZhmEcjo9D8kMpT4hGYTvGkzSO0mT6rqV9bWOnK7EVtDx9l_bXHP8CBzsVBA)
 
-Please note that Step1 is done with an SDK (software Development Kit) provided by Xpollens. See the related documentation [here](SDK-provisionning)
+Please note that Step1 is done with an SDK (software Development Kit) provided by Xpollens. See the related documentation [here](iOS_SDK)
 
 ---
 
