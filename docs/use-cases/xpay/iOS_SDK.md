@@ -8,7 +8,9 @@ import Cta from '@theme/Cta'
 The first step of In-App Provisionning must be done using an SDK (software Development Kit) provided by Xpollens.
 The technical documentation below explains how to download, install and use the SDK.
 
-## Download SDK: [documentation repo](/docs/get-started/files)
+## Download
+
+Download the In-App Provisionning SDK in the [documentation repository](/docs/get-started/files)
 
 ## 1.Introduction
 

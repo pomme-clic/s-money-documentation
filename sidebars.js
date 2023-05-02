@@ -62,7 +62,7 @@ module.exports = {
     {
       type: 'category',
       label: 'X-Pay',
-      items: ['use-cases/xpay/xpay', 'use-cases/xpay/SDK', 'use-cases/xpay/test-idealimage'
+      items: ['use-cases/xpay/xpay', 'use-cases/xpay/iOS_SDK', 'use-cases/xpay/test-idealimage'
       ]
     }
   ]
