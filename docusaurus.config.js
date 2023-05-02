@@ -35,7 +35,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'use-cases/xpay/xpay',
+          docId: 'use-cases/xpay/X-Pay',
           label: 'Use cases',
           position: 'left',
         },

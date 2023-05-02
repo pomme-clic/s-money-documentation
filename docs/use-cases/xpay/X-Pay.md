@@ -4,8 +4,6 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-# X-Pay
-
 ## Flow 1: Enrollment from X-Pay wallet
 
 This flow starts **from the digital wallet app**. The cardholder starts enrollment by scanning or entering the card information.

@@ -32,7 +32,7 @@ This flow is also known as **In-App Provisionning** or **Push Provisionning**
 3. Click on Add to Apple Wallet
 4. Accept Terms & Conditions
 
-## Xpollens functionnal coverage
+## Xpollens functional coverage
 
 Xpollens supports the following enrollment flows:
 
@@ -47,6 +47,6 @@ Xpollens does not support other X-Pay providers such as Garmin Pay, FitBit, Alip
 <Cta
   context="doc"
   ui="button"
-  link="/use-cases/xpay/xpay"
+  link="/use-cases/xpay/X-Pay"
   label="Read detailed documentation here"
 />
