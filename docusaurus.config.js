@@ -3,7 +3,7 @@ const path = require('path')
 require('dotenv').config()
 
 module.exports = {
-  title: 'Xpollens API docs',
+  title: 'Xpollens Documentation',
   url: 'https://docs.xpollens.com/',
   baseUrl: '/',
   noIndex: false,
@@ -15,7 +15,7 @@ module.exports = {
   themeConfig: {
     navbar: {
       logo: {
-        alt: 'Xpollens API docs',
+        alt: 'Documentation home page',
         src: 'img/ui/logo_xpollens.svg',
         srcDark: 'img/ui/logo_xpollens_dark.svg',
         href: '/',
@@ -31,6 +31,12 @@ module.exports = {
           type: 'doc',
           docId: 'api/Core',
           label: 'API references',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'use-cases/xpay/X-Pay',
+          label: 'Use cases',
           position: 'left',
         },
         {
@@ -100,7 +106,7 @@ module.exports = {
               href: 'https://www.xpollens.com/en/legal-statement/',
             },
             {
-              label: 'Cookies policies',
+              label: 'Cookie policy',
               href: 'https://www.xpollens.com/en/cookie-policy/',
             },
             {
@@ -140,6 +146,7 @@ module.exports = {
         max: 2000,
         min: 640,
         steps: 4,
+        disableInDev: false,
       },
     ],
     [
