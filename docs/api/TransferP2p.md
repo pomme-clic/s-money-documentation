@@ -4,7 +4,7 @@ sidebar_label: P2P Transfers
 hide_table_of_contents: true
 ---
 
-# P2P Transfers
+# P2P Transfers (Deprecated)
 
 import Rapidoc from "@theme/Rapidoc"
 

@@ -4,7 +4,7 @@ sidebar_label: Internal Transfers
 hide_table_of_contents: true
 ---
 
-# P2P Transfers (Deprecated)
+# Internal transfers
 
 import Rapidoc from "@theme/Rapidoc"
 
