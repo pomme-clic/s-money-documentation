@@ -24,7 +24,7 @@ Here you can find all technical documentation :
 - [ProcessKYC-avec-VirementEntrant.png](./ProcessKYC-avec-VirementEntrant.png)  
 - [S-money - API - Getting Started - v1.0.docx](./S-money-API-Getting_Started-v1.0.docx)  
 - [S-money - API - Guide des outils.docx](./S-money-API-Guide_des_outils.docx)  
-- [S-Money-API - Top up Credit Card- 3DS 2.0_hostedfields_1.8.docx](./S-Money-API-Top_up_Credit_Card-3DS_2.0_hostedfields_1.8.docx)  
+- [S-Money-API - Top up Credit Card- 3DS 2.0_hostedfields_1.9.docx](./S-Money-API-Top_up_Credit_Card-3DS_2.0_hostedfields_1.9.docx)  
 - [S-money-API-Accounts-BiB-v1.2.doc](./S-money-API-Accounts-BiB-v1.2.doc)  
 - [S-money-API-CardClearing-BiB-V1.8.docx](./S-money-API-CardClearing-BiB-V1.8.docx)
 - [S-money-API-CardOperations-BiB-v2.9.doc](./S-money-API-CardOperations-BiB-v2.9.doc)
