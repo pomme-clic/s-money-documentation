@@ -125,6 +125,14 @@ body.api {
   header {
     display: none;
   }
+
+  .theme-doc-markdown h1 {
+    @apply hidden;
+  }
+
+  #docusaurus_skipToContent_fallback > div > main > div {
+    padding: 0 !important;
+  }
 }
 
 body.api .padding-vert--lg {

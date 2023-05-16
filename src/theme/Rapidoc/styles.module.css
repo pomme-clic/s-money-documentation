@@ -2,6 +2,11 @@ rapi-doc::part(label-overview-title) {
   @apply font-bold;
 }
 
+rapi-doc::part(section-navbar) {
+  /* <<< targets navigation bar */
+  padding-top: 30px !important;
+}
+
 html[data-theme='dark'] {
   rapi-doc::part(label-overview-title) {
     @apply text-white;
