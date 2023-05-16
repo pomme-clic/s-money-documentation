@@ -33,12 +33,12 @@ module.exports = {
           label: 'API references',
           position: 'left',
         },
-        {
-          type: 'doc',
-          docId: 'use-cases/xpay/X-Pay',
-          label: 'Use cases',
-          position: 'left',
-        },
+        // {
+        //   type: 'doc',
+        //   docId: 'use-cases/xpay/X-Pay',
+        //   label: 'Use cases',
+        //   position: 'left',
+        // },
         {
           href: 'https://www.xpollens.com',
           label: 'xpollens.com',
