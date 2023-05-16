@@ -23,7 +23,9 @@ Check that you have the following before you start the implementation:
 
 - Request access from Apple
 - The latest version of the Xpollens In-App ProvisioningSDK
-- Your iOS app must request an STS Token according to the following sequence: [![](https://mermaid.ink/img/pako:eNp9kt1LwzAQwP-VcE8OutGv2S0Pg8FERMRhfRAplNDcXLBNapo669j_btZurjoxD-FyH7-7y90WMsURKFT4VqPMcCHYi2YFaU8i93fJtBGZKJk0ZGlliXpeluc2cR-n8eL23PBUqjxHWaXxY_yPdb68Sa-ZwQ1rEtn5ndINZ7M-hpKHfcGVIRcbYdYkywVKkwruHMUKM41m0HH6oUOLOnEpsSryqF7xr5SHlijhjWSFyFieN6TU6l1w_B148O0X2uvIIhRhklgV0T9K_8YMwIECdcEEtwPZ7qkJmDUWmAC1IscVq3OTQCJ31rUuuUVfcWGUBmp0jQ6w2qi4kdnx3fkcZgp0xfLKau23A93CB1A_Go3DKIqm3sQPJ54bONAA9cbu6DKYRJ7v-mEQRkG0c-BTKUtwR9NJEPre1PeiwHVDb9zinltjlxPbiu66tWq3a_cFZTHJlg?type=svg)](https://mermaid.live/edit#pako:eNp9kt1LwzAQwP-VcE8OutGv2S0Pg8FERMRhfRAplNDcXLBNapo669j_btZurjoxD-FyH7-7y90WMsURKFT4VqPMcCHYi2YFaU8i93fJtBGZKJk0ZGlliXpeluc2cR-n8eL23PBUqjxHWaXxY_yPdb68Sa-ZwQ1rEtn5ndINZ7M-hpKHfcGVIRcbYdYkywVKkwruHMUKM41m0HH6oUOLOnEpsSryqF7xr5SHlijhjWSFyFieN6TU6l1w_B148O0X2uvIIhRhklgV0T9K_8YMwIECdcEEtwPZ7qkJmDUWmAC1IscVq3OTQCJ31rUuuUVfcWGUBmp0jQ6w2qi4kdnx3fkcZgp0xfLKau23A93CB1A_Go3DKIqm3sQPJ54bONAA9cbu6DKYRJ7v-mEQRkG0c-BTKUtwR9NJEPre1PeiwHVDb9zinltjlxPbiu66tWq3a_cFZTHJlg)
+- All SDK functionality requires a valid Xpollens access token.
+
+This access token will only be valid for this application. For more information on how to obtain this access token please contact Xpollens.
 
 ## 3.Request access from Apple
 
