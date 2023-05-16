@@ -9,6 +9,29 @@ Xpollens changelog since September 2021
 
 ---
 # Release Note
+
+## May 2023
+
+**Webdesk**
+
+- Implemented 4 eyes validation for enhanced security and control.
+- Task orders are now sorted from oldest to newest, providing a better user experience and easier access to the most recent tasks.
+
+**Anti Money Laundering**
+
+- Improved scoring and compliance with French regulation
+
+
+**Bug Fixing**
+
+- Fixed an issue with the filter "GET SCT" for operations on VIRTUAL IBAN, which was previously not functional.
+- Resolved an error where a "CardActivated" event was triggered for a card that was still in the "Ordered" status.
+- Addressed the issue where a "Result Code 400" error occurred when attempting to update a user's phone number in the PUT User v2.0 endpoint, indicating that the phone number was already in use by the same user.
+- Fixed the malfunctioning search filters in the Users management section, ensuring all filters now work correctly.
+- Resolved the problem with Scoring Endpoints not functioning properly in the Integration environment, allowing for accurate scoring operations.
+- Fixed the functionality issues with Card creation Classic Physical in V1.1 and Get card detail in V1.1 endpoints, ensuring they now work correctly.
+- Updated the Roles technical with IsReadOnly=1 to ensure the appropriate permissions and restrictions are applied to technical roles.
+
 ## April 2023
 
 **Profile Management**
