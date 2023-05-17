@@ -3,8 +3,24 @@ rapi-doc::part(label-overview-title) {
 }
 
 rapi-doc::part(section-navbar) {
-  /* <<< targets navigation bar */
   padding-top: 30px !important;
+}
+
+rapi-doc::part(section-navbar-operations-top) {
+  color: #666;
+  border-bottom: 1px solid #ccc;
+}
+
+rapi-doc::part(section-navbar-tag) {
+  @apply rounded-none text-[#006D8C];
+}
+
+rapi-doc::part(section-navbar-active-item) {
+  @apply text-black rounded-none;
+}
+
+rapi-doc::part(section-navbar-scroll) {
+  padding-top: 10px;
 }
 
 html[data-theme='dark'] {

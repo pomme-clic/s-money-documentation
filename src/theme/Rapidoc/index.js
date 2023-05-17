@@ -164,7 +164,7 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
             server-url={tryoutsServerUrl}
             default-api-server={tryoutsServerUrl}
             show-header="false"
-            show-info="true"
+            show-info="false"
             show-components="false"
             allow-api-list-style-selection="false"
             style={{

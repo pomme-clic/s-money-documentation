@@ -130,8 +130,9 @@ body.api {
     @apply hidden;
   }
 
-  #docusaurus_skipToContent_fallback > div > main > div {
+  #docusaurus_skipToContent_fallback > div > main .container {
     padding: 0 !important;
+    @apply max-w-none !important;
   }
 }
 
