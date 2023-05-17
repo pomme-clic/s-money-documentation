@@ -132,7 +132,7 @@ body.api {
 
   #docusaurus_skipToContent_fallback > div > main .container {
     padding: 0 !important;
-    @apply max-w-none !important;
+    @apply relative max-w-none !important;
   }
 }
 

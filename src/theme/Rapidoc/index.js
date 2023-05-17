@@ -20,7 +20,8 @@ const customThemeColors = {
   },
 }
 
-import localAPI from '@site/swaggers/swagger.json'
+// test using local API:
+// import localAPI from '@site/swaggers/swagger.json'
 
 const Rapidoc = ({ apiUrl, isRelative }) => {
   const { isDarkTheme } = useColorMode()
@@ -42,18 +43,14 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
 
   // React Query
   const fetchAPI = async () => {
-    // const fullAPIUrl = isRelative
-    //   ? `${serverUrl}/swagger/docs${apiUrl}`
-    //   : apiUrl
-
-    // const fullAPIUrl = localAPI
-
-    // console.log('fullAPIUrl: ', fullAPIUrl)
+    const fullAPIUrl = isRelative
+      ? `${serverUrl}/swagger/docs${apiUrl}`
+      : apiUrl
 
     try {
-      // const response = await axios.get(fullAPIUrl)
-      return localAPI
-      // return response.data
+      const response = await axios.get(fullAPIUrl)
+      return response.data
+      // return localAPI
     } catch (error) {
       throw new Error(error.message)
     }
