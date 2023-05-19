@@ -67,4 +67,5 @@ module.exports = {
         'use-cases/xpay/iOS_SDK',
       ]
     }
+  ]
 }
