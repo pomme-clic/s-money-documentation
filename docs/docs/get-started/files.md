@@ -3,19 +3,15 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-
-
-
 # Documentation repo
 
-## Context
+## Description
 
-You can find here all redacted documentation. This page is not indexed in the site but available nonetheless.
+Here is some technical documentation. This page is intended to be hidden from the rest of the website.
 
-## Files 
+## Files
 
 ### Support Docs
-Here you can find all technical documentation :
 
 - [eKYC_Agent_Workflow_Callbacks.pdf](./eKYC_Agent_Workflow_Callbacks.pdf)  
 - [FAQ.xlsx](./FAQ.xlsx)  
@@ -42,8 +38,15 @@ Here you can find all technical documentation :
 - [Xpollens-StrongAuthentication-v1.8.pdf](./Xpollens-StrongAuthentication-v1.8.pdf)
 - [xauth-cgu.pdf](./xauth-cgu.pdf)
 
+## SDK (Software Development Kits)
 
-### SDK Docs
+### CardCompanionSDK - for PIN Distribution, PIN Definition (WishPIN)
 
 - [CardCompanionSDK_2.0.0_Android.zip](./CardCompanionSDK_2.0.0_Android.zip)
 - [CardCompanionSDK_2.0.0_iOS.zip](./CardCompanionSDK_2.0.0_iOS.zip)
+
+### SMInAppProvisioningSDK - for Apple In-App Provisionning
+
+- [SMInAppProvisioningSDK_v1.2.zip](./SMInAppProvisioningSDK_v1.2.zip)
+- [SMInAppProvisioningSDK_v1.1.zip](./SMInAppProvisioningSDK_v1.1.zip)
+- [SMInAppProvisioningSDK.zip](./SMInAppProvisioningSDK.zip)
