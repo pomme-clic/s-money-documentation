@@ -1,6 +1,6 @@
 ---
-title: KYC v3.0
-sidebar_label: KYC v3.0
+title: KYC v2.0
+sidebar_label: KYC v2.0
 hide_table_of_contents: true
 ---
 
@@ -8,5 +8,5 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v3.0/kyc.usermanagment" isRelative="true">
+<Rapidoc apiUrl="/v2.0/kyc.usermanagment" isRelative="true">
 </Rapidoc>
