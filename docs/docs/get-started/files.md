@@ -3,17 +3,15 @@ import Highlight from '@theme/Highlight';
 import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
-
-
-
 # Documentation repo
 
-## Context
+## Description
 
-You can find here all redacted documentation. This page is not indexed in the site but available nonetheless.
+Here is some technical documentation. This page is intended to be hidden from the rest of the website.
 
-## Support Docs
-Here you can find all technical documentation :
+## Files
+
+### Support Docs
 
 - [eKYC_Agent_Workflow_Callbacks.pdf](./eKYC_Agent_Workflow_Callbacks.pdf)  
 - [FAQ.xlsx](./FAQ.xlsx)  
@@ -22,7 +20,7 @@ Here you can find all technical documentation :
 - [ProcessKYC-avec-VirementEntrant.png](./ProcessKYC-avec-VirementEntrant.png)  
 - [S-money - API - Getting Started - v1.0.docx](./S-money-API-Getting_Started-v1.0.docx)  
 - [S-money - API - Guide des outils.docx](./S-money-API-Guide_des_outils.docx)  
-- [S-Money-API - Top up Credit Card- 3DS 2.0_hostedfields_1.8.docx](./S-Money-API-Top_up_Credit_Card-3DS_2.0_hostedfields_1.8.docx)  
+- [S-Money-API - Top up Credit Card- 3DS 2.0_hostedfields_1.9.docx](./S-Money-API-Top_up_Credit_Card-3DS_2.0_hostedfields_1.9.docx)  
 - [S-money-API-Accounts-BiB-v1.2.doc](./S-money-API-Accounts-BiB-v1.2.doc)  
 - [S-money-API-CardClearing-BiB-V1.8.docx](./S-money-API-CardClearing-BiB-V1.8.docx)
 - [S-money-API-CardOperations-BiB-v2.9.doc](./S-money-API-CardOperations-BiB-v2.9.doc)
@@ -40,10 +38,9 @@ Here you can find all technical documentation :
 - [Xpollens-StrongAuthentication-v1.8.pdf](./Xpollens-StrongAuthentication-v1.8.pdf)
 - [xauth-cgu.pdf](./xauth-cgu.pdf)
 
-
 ## SDK (Software Development Kits)
 
-### [OBSOLETE] CardCompanionSDK - for PIN Distribution, PIN Definition
+### CardCompanionSDK - for PIN Distribution, PIN Definition (WishPIN)
 
 - [CardCompanionSDK_2.0.0_Android.zip](./CardCompanionSDK_2.0.0_Android.zip)
 - [CardCompanionSDK_2.0.0_iOS.zip](./CardCompanionSDK_2.0.0_iOS.zip)

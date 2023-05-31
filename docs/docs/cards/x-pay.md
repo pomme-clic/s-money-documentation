@@ -17,19 +17,21 @@ Two flows are employed for X-Pay enrollment:
 
 ### Flow 1: Enrollment starts from X-Pay wallet
 
-This flow is also known as **In-App Verification**
+This flow is also known as **In-App Verification**.
 
 1. Scan or enter card details
 2. Accept Terms & Conditions
-3. (if requested by Apple) Strong authentication with the partner app
+3. Strong authentication with the partner app
+
+This last step is skipped if X-Pay provider trusts the end-user (Green path).
 
 ### Flow 2: Enrollment starts from partner app
 
-This flow is also known as **In-App Provisionning** or **Push Provisionning**
+This flow is also known as **In-App Provisionning** or **Push Provisionning**.
 
 1. Open the partner app
 2. Go to card management section
-3. Click on Add to Apple Wallet
+3. Click on "Add to Apple Wallet", "Add to Google Wallet" or "Add to Samsung Wallet"
 4. Accept Terms & Conditions
 
 ## Xpollens functional coverage
@@ -48,5 +50,5 @@ Xpollens does not support other X-Pay providers such as Garmin Pay, FitBit, Alip
   context="doc"
   ui="button"
   link="/use-cases/xpay/X-Pay"
-  label="Read detailed documentation here"
+  label="Detailed X-Pay documentation"
 />
