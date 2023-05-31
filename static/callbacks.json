@@ -1898,7 +1898,7 @@
 		},
 		"/{callback29Url}": {
 			"post": {
-				"summary": "#29 - P2P transfer - DEPRECATED",
+				"summary": "#29 - P2P transfer - v1",
 				"description": "Callback received in case of status change in Peer to Peer (P2P) transfer",
 				"requestBody": {
 					"description": "JSON Body",
@@ -1996,7 +1996,7 @@
 		},
 		"/{callback29Url-V2.0Url}": {
 			"post": {
-				"summary": "#29 - Internal Transfers",
+				"summary": "#29 - Internal Transfers - v2",
 				"description": "Callback received in case of status change in an internal transfer",
 				"requestBody": {
 					"description": "JSON Body",
@@ -2136,7 +2136,7 @@
 														"nullable": true,
 														"example": "Test_Internal_Transfer_001"
 													},
-													"operationDate": {
+													"creationDate": {
 													"type": "string",
 													"description": "PaymentDate",
 													"format": "date-time"
@@ -2166,7 +2166,7 @@
 														"2 - Completed - Transaction settled",
 														"3 - Refunded - Transaction refunded",
 														"4 - Rejected - Transaction rejected",
-														"5 - Cancelled - Transaction cancelled"
+														"5 - Cancelled - Transaction canceled"
 													],
 													"type": "integer",
 													"format": "int32"
@@ -2224,7 +2224,7 @@
 													},
 													"reason": {
 														"type": "string",
-														"description": "Reason",
+														"description": "Error reason",
 														"nullable": true
 													}
 												}

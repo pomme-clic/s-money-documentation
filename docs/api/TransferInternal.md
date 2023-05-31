@@ -1,6 +1,6 @@
 ---
-title: Internal Transfers
-sidebar_label: Internal Transfers
+title: Internal Transfers v2
+sidebar_label: Internal Transfers v2
 hide_table_of_contents: true
 ---
 
