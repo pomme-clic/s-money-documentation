@@ -39,7 +39,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Users',
-      items: ['api/KYC','api/Users','api/Users-old'],
+      items: ['api/KYC','api/KYC-old','api/Users','api/Users-old'],
     },
     {
       type: 'category',
@@ -49,7 +49,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Internal transfers',
-      items: ['api/TransferP2p', 'api/TransferInternal'],
+      items: ['api/TransferP2p'],
     },
 	'api/Compliance',
     {
@@ -65,5 +65,13 @@ module.exports = {
       label: 'Cards Operations',
       items: ['usecases/OnlineCardOperations','usecases/OfflineCardOperations','usecases/CardsOperationsClearing','usecases/CardsOperationsHowToTest'],
     },    
-  ],  
+    {
+      type: 'category',
+      label: 'X-Pay',
+      items: [
+        'use-cases/xpay/X-Pay',
+        'use-cases/xpay/iOS_SDK',
+      ]
+    }
+  ]
 }

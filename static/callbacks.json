@@ -82,7 +82,7 @@
 						"required": true,
 						"description": "the transaction amount",
 						"schema": {
-							"type": "number",
+							"type": "decimal",
 							"format": "float",
 							"example": "1234.56"
 						}
@@ -590,10 +590,15 @@
 										"description": "the transaction id",
 										"example": "10743"
 									},
+									"refundReference": {
+										"type": "string",
+										"description": "the new transaction orderid in case of refund status",
+										"example": "REFUND-S-MONEY-20230306123230103141"
+									},
 									"reference": {
 										"type": "string",
 										"description": "the transaction orderid",
-										"example": "o0pbb6ryc"
+										"example": "S-MONEY-20230306123230103141"
 									},
 									"status": {
 										"type": "string",
@@ -653,10 +658,15 @@
 														"description": "the transaction id",
 														"example": "10743"
 													},
+													"refundReference": {
+														"type": "string",
+														"description": "the new transaction orderid in case of refund status",
+														"example": "REFUND-S-MONEY-20230306123230103141"
+													},
 													"reference": {
 														"type": "string",
 														"description": "the transaction orderid",
-														"example": "o0pbb6ryc"
+														"example": "S-MONEY-20230306123230103141"
 													},
 													"status": {
 														"type": "string",
@@ -718,10 +728,15 @@
 										"description": "the transaction id",
 										"example": "10743"
 									},
+									"refundReference": {
+										"type": "string",
+										"description": "the new transaction orderId in case of refund status",
+										"example": "REFUND-2197404"
+									},
 									"reference": {
 										"type": "string",
 										"description": "the transaction orderid",
-										"example": "o0pbb6ryc"
+										"example": "2197404"
 									},
 									"status": {
 										"type": "string",
@@ -781,10 +796,15 @@
 														"description": "the transaction id",
 														"example": "10743"
 													},
+													"refundReference": {
+														"type": "string",
+														"description": "the new transaction orderid in case of refund status",
+														"example": "REFUND-2197404"
+													},
 													"reference": {
 														"type": "string",
 														"description": "the transaction orderid",
-														"example": "o0pbb6ryc"
+														"example": "2197404"
 													},
 													"status": {
 														"type": "string",
@@ -845,6 +865,11 @@
 										"type": "string",
 										"description": "the transaction id",
 										"example": "10743"
+									},
+									"refundReference": {
+										"type": "string",
+										"description": "the new transaction orderid in case of refund status",
+										"example": "REFUND-o0pbb6ryc"
 									},
 									"reference": {
 										"type": "string",
@@ -908,6 +933,11 @@
 														"type": "string",
 														"description": "the transaction id",
 														"example": "10743"
+													},
+													"refundReference": {
+														"type": "string",
+														"description": "the new transaction orderid in case of refund status",
+														"example": "REFUND-o0pbb6ryc"
 													},
 													"reference": {
 														"type": "string",
@@ -974,6 +1004,11 @@
 										"description": "the transaction id",
 										"example": "10735"
 									},
+									"refundReference": {
+										"type": "string",
+										"description": "the new transaction orderid in case of refund status",
+										"example": "REFUND-S-MONEY-20210223161700000112"
+									},
 									"reference": {
 										"type": "string",
 										"description": "the transaction orderid",
@@ -1036,6 +1071,11 @@
 														"type": "string",
 														"description": "the transaction id",
 														"example": "10743"
+													},
+													"refundReference": {
+														"type": "string",
+														"description": "the new transaction orderid in case of refund status",
+														"example": "REFUND-S-MONEY-20210223161700000112"
 													},
 													"reference": {
 														"type": "string",
@@ -1356,9 +1396,9 @@
 								"type": "object",
 								"properties": {
 									"id": {
-										"type": "string",
+										"type": "integer",
 										"description": "the Xpollens internal card id",
-										"example": "464890"
+										"example": 464890
 									},
 									"reference": {
 										"type": "string",
@@ -1366,29 +1406,29 @@
 										"example": "card-lHXYoKrpn"
 									},
 									"type": {
-										"type": "number",
+										"type": "integer",
 										"description": "the callback type",
 										"example": 21
 									},
 									"cardType": {
-										"type": "string",
+										"type": "integer",
 										"description": "the type of the ordered card :  \n1 = Visa classic virtual  \n2 = Visa classic physical  \n3 = Visa premium virtual  \n4 = Visa premium physical  \n6 = Visa infinite physical",
-										"example": "4"
+										"example": 4
 									},
 									"action": {
-										"type": "string",
+										"type": "integer",
 										"description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update",
-										"example": "0"
+										"example": 0
 									},
 									"status": {
-										"type": "string",
+										"type": "integer",
 										"description": "the Status of the card :  \n0 = ordered  \n1 = sent  \n2 = activated  \n3 = expired  \n4 = opposed  \n5 = failed  \n6 = deactivated  \n7 = cancelled",
-										"example": "1"
+										"example": 1
 									},
 									"opposedReason": {
-										"type": "string",
+										"type": "integer",
 										"description": "the reason for card opposition :  \nThis field is different than '0' only when the card is opposed.  \n07 = special conditions  \n34 = suspected fraud  \n41 = lost  \n43 = stolen)",
-										"example": "0"
+										"example": 0
 									}
 								}
 							}
@@ -1419,9 +1459,9 @@
 												"type": "object",
 												"properties": {
 													"id": {
-														"type": "string",
+														"type": "integer",
 														"description": "the Xpollens internal card id",
-														"example": "464890"
+														"example": 464890
 													},
 													"reference": {
 														"type": "string",
@@ -1429,29 +1469,29 @@
 														"example": "card-lHXYoKrpn"
 													},
 													"type": {
-														"type": "number",
+														"type": "integer",
 														"description": "the callback type",
 														"example": 21
 													},
 													"cardType": {
-														"type": "string",
+														"type": "integer",
 														"description": "the type of the ordered card :  \n1 = Visa classic virtual  \n2 = Visa classic physical  \n3 = Visa premium virtual  \n4 = Visa premium physical  \n6 = Visa infinite physical",
-														"example": "4"
+														"example": 4
 													},
 													"action": {
-														"type": "string",
+														"type": "integer",
 														"description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update",
-														"example": "0"
+														"example": 0
 													},
 													"status": {
-														"type": "string",
+														"type": "integer",
 														"description": "the Status of the card :  \n0 = ordered  \n1 = sent  \n2 = activated  \n3 = expired  \n4 = opposed  \n5 = failed  \n6 = deactivated  \n7 = cancelled",
-														"example": "1"
+														"example": 1
 													},
 													"opposedReason": {
-														"type": "string",
+														"type": "integer",
 														"description": "the reason for card opposition :  \nThis field is different than '0' only when the card is opposed.  \n07 = special conditions  \n34 = suspected fraud  \n41 = lost  \n43 = stolen)",
-														"example": "0"
+														"example": 0
 													}
 												}
 											}
@@ -1572,9 +1612,9 @@
 								"type": "object",
 								"properties": {
 									"id": {
-										"type": "string",
+										"type": "integer",
 										"description": "the Xpollens card id",
-										"example": "637877811699419000"
+										"example": 637877811699419000
 									},
 									"reference": {
 										"type": "string",
@@ -1582,9 +1622,9 @@
 										"example": "card-tgHqiYVAb"
 									},
 									"type": {
-										"type": "string",
+										"type": "integer",
 										"description": "the callback type",
-										"example": "25"
+										"example": 25
 									},
 									"tokenValue": {
 										"type": "string",
@@ -1612,9 +1652,9 @@
 										"example": "I"
 									},
 									"messageReasonCode": {
-										"type": "string",
+										"type": "integer",
 										"description": "Equal to 1400 (Token creation) or null",
-										"example": "1400"
+										"example": 1400
 									}
 								}
 							}
@@ -1645,9 +1685,9 @@
 												"type": "object",
 												"properties": {
 													"id": {
-														"type": "string",
+														"type": "integer",
 														"description": "the Xpollens card id",
-														"example": "637877811699419000"
+														"example": 637877811699419000
 													},
 													"reference": {
 														"type": "string",
@@ -1655,9 +1695,9 @@
 														"example": "card-tgHqiYVAb"
 													},
 													"type": {
-														"type": "string",
+														"type": "integer",
 														"description": "the callback type",
-														"example": "25"
+														"example": 25
 													},
 													"tokenValue": {
 														"type": "string",
@@ -1685,9 +1725,9 @@
 														"example": "I"
 													},
 													"messageReasonCode": {
-														"type": "string",
+														"type": "integer",
 														"description": "Equal to 1400 (Token creation) or null",
-														"example": "1400"
+														"example": 1400
 													}
 												}
 											}
@@ -1720,9 +1760,9 @@
 								"type": "object",
 								"properties": {
 									"id": {
-										"type": "string",
+										"type": "integer",
 										"description": "the Xpollens card id",
-										"example": "637877811699419000"
+										"example": 637877811699419000
 									},
 									"reference": {
 										"type": "string",
@@ -1732,15 +1772,15 @@
 									"type": {
 										"type": "integer",
 										"description": "the callback type",
-										"example": "26"
+										"example": 26
 									},
 									"otpValue": {
-										"type": "integer",
+										"type": "string",
 										"description": "the value of the OTP",
 										"example": "1234AB"
 									},
 									"tokenValue": {
-										"type": "integer",
+										"type": "string",
 										"description": "the token value",
 										"example": "4642353030856914"
 									},
@@ -1762,7 +1802,7 @@
 									"secureElementId": {
 										"type": "string",
 										"description": "the secure element ID",
-										"example": ""
+										"example": "042805A3CD5D800201631041433057916EB96AAB441854F0"
 									}
 								}
 							}
@@ -1793,9 +1833,9 @@
 												"type": "object",
 												"properties": {
 													"id": {
-														"type": "string",
+														"type": "integer",
 														"description": "the Xpollens card id",
-														"example": "637877811699419000"
+														"example": 637877811699419000
 													},
 													"reference": {
 														"type": "string",
@@ -1805,15 +1845,15 @@
 													"type": {
 														"type": "integer",
 														"description": "the callback type",
-														"example": "26"
+														"example": 26
 													},
 													"otpValue": {
-														"type": "integer",
+														"type": "string",
 														"description": "the value of the OTP",
 														"example": "1234AB"
 													},
 													"tokenValue": {
-														"type": "integer",
+														"type": "string",
 														"description": "the token value",
 														"example": "4642353030856914"
 													},
@@ -1835,7 +1875,7 @@
 													"secureElementId": {
 														"type": "string",
 														"description": "the secure element ID",
-														"example": ""
+														"example": "042805A3CD5D800201631041433057916EB96AAB441854F0"
 													}
 												}
 											}
@@ -1991,9 +2031,9 @@
 										"example": "The beneficiary's name is different from the transmitter's name"
 									},
 									"amount": {
-										"type": "number",
+										"type": "integer",
 										"description": "the amount of the money in transfer  (in cents of euro)",
-										"example": "145"
+										"example": 145
 									},
 									"transferDate": {
 										"type": "string",
@@ -2020,14 +2060,14 @@
 										"type": "object",
 										"properties": {
 											"name": {
-												"type": "number",
+												"type": "decimal",
 												"description": "the result of the identity matching algorithm (percentage)",
-												"example": "100"
+												"example": 0.3333333333333333
 											},
 											"firstName": {
-												"type": "number",
+												"type": "decimal",
 												"description": "the result of the identity matching algorithm (percentage)",
-												"example": "100"
+												"example": 1
 											}
 										}
 									}
@@ -2085,9 +2125,9 @@
 														"example": "The beneficiary's name is different from the transmitter's name"
 													},
 													"amount": {
-														"type": "number",
+														"type": "integer",
 														"description": "the amount of the money in transfer  (in cents of euro)",
-														"example": "145"
+														"example": 145
 													},
 													"transferDate": {
 														"type": "string",
@@ -2114,14 +2154,14 @@
 														"type": "object",
 														"properties": {
 															"name": {
-																"type": "number",
+																"type": "decimal",
 																"description": "the result of the identity matching algorithm (percentage)",
-																"example": "100"
+																"example": 0.3333333333333333
 															},
 															"firstName": {
-																"type": "number",
+																"type": "decimal",
 																"description": "the result of the identity matching algorithm (percentage)",
-																"example": "100"
+																"example": 1
 															}
 														}
 													}
@@ -2157,7 +2197,6 @@
 								"properties": {
 									"eventDate": {
 										"type": "string",
-										"format": "date-time",
 										"description": "the date of the risk level event change",
 										"example": "2021-01-30T08:30:00Z"
 									},
@@ -2206,7 +2245,6 @@
 												"properties": {
 													"eventDate": {
 														"type": "string",
-														"format": "date-time",
 														"description": "the date of the risk level event change",
 														"example": "2021-01-30T08:30:00Z"
 													},
@@ -2256,13 +2294,12 @@
 								"type": "object",
 								"properties": {
 									"type": {
-										"type": "number",
+										"type": "integer",
 										"description": "the callback type",
 										"example": 33
 									},
 									"date": {
 										"type": "string",
-										"format": "date-time",
 										"description": "the origin operation creation date",
 										"example": "2021-02-26T10:01:34.447732+00:00"
 									},
@@ -2277,19 +2314,19 @@
 										"example": "94j8Jnw9d"
 									},
 									"originAmount": {
-										"type": "number",
-										"description": "the amount of the debt origin operation (decimal in euro)",
-										"example": "125.04"
+										"type": "decimal",
+										"description": "the amount of the debt origin operation (decimal, in euro)",
+										"example": 125.04
 									},
 									"status": {
 										"type": "integer",
 										"description": "the debt status :  \n0 =in progress  \n1 = closed with recovery   \n2 = closed without recovery ",
-										"example": "0"
+										"example": 0
 									},
 									"debtAmount": {
-										"type": "number",
-										"description": "the actual debt amount (decimal in euro)",
-										"example": "1.42"
+										"type": "decimal",
+										"description": "the actual debt amount (decimal, in euro)",
+										"example": 1.42
 									},
 									"debtReason": {
 										"type": "string",
@@ -2297,9 +2334,9 @@
 										"example": "CardOperation"
 									},
 									"lossAndProfitBalance": {
-										"type": "number",
+										"type": "decimal",
 										"description": "the balance of loss and profit account after the debt creation (decimal, in euro)",
-										"example": "145258.55"
+										"example": 145258.55
 									}
 								}
 							}
@@ -2330,13 +2367,12 @@
 												"type": "object",
 												"properties": {
 													"type": {
-														"type": "number",
+														"type": "integer",
 														"description": "the callback type",
 														"example": 33
 													},
 													"date": {
 														"type": "string",
-														"format": "date-time",
 														"description": "the origin operation creation date",
 														"example": "2021-02-26T10:01:34.447732+00:00"
 													},
@@ -2351,9 +2387,9 @@
 														"example": "94j8Jnw9d"
 													},
 													"originAmount": {
-														"type": "number",
-														"description": "the amount of the debt origin operation (decimal in euro)",
-														"example": "125.04"
+														"type": "decimal",
+														"description": "the amount of the debt origin operation (decimal, in euro)",
+														"example": 125.04
 													},
 													"status": {
 														"type": "integer",
@@ -2361,9 +2397,9 @@
 														"example": "0"
 													},
 													"debtAmount": {
-														"type": "number",
-														"description": "the actual debt amount (decimal in euro)",
-														"example": "1.42"
+														"type": "decimal",
+														"description": "the actual debt amount (decimal, in euro)",
+														"example": 1.42
 													},
 													"debtReason": {
 														"type": "string",
@@ -2371,9 +2407,9 @@
 														"example": "CardOperation"
 													},
 													"lossAndProfitBalance": {
-														"type": "number",
+														"type": "decimal",
 														"description": "the balance of loss and profit account after the debt creation (decimal, in euro)",
-														"example": "145258.55"
+														"example": 145258.55
 													}
 												}
 											}
@@ -2844,8 +2880,7 @@
 						"required": true,
 						"description": "the transaction amount",
 						"schema": {
-							"type": "number",
-							"format": "float",
+							"type": "decimal",
 							"example": "1234.56"
 						}
 					}
@@ -2882,13 +2917,13 @@
 		"/{callback36Url}": {
 			"post": {
 				"summary": "#36 - Strong authentication",
-				"description": "Callback received for strong authentication (sensitives actions)",
+				"description": "Callback received for strong authentication (sensitives requests). The sentitive request response is sent in request body",
 				"parameters": [
 					{
 						"name": "callback36Url",
 						"in": "path",
 						"required": true,
-						"description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+						"description": "the location where data will be sent. Must be network accessible\nby the source server\n",
 						"schema": {
 							"type": "string",
 							"format": "uri",
@@ -2911,8 +2946,8 @@
 						"required": true,
 						"description": "the callback type",
 						"schema": {
-							"type": "number",
-							"example": "36"
+							"type": "integer",
+							"example": 36
 						}
 					},
 					{
@@ -2932,7 +2967,6 @@
 						"description": "the effective authentication result date",
 						"schema": {
 							"type": "string",
-							"format": "date-time",
 							"example": "2021-10-13T08:32:23+00:00"
 						}
 					},
@@ -2943,7 +2977,6 @@
 						"description": "the effective end date for the operation",
 						"schema": {
 							"type": "string",
-							"format": "date-time",
 							"example": "2021-10-13T08:32:24.1177698+00:00"
 						}
 					},
@@ -2951,10 +2984,10 @@
 						"name": "RequestResponseCode",
 						"in": "header",
 						"required": true,
-						"description": "the Http status code of the operation",
+						"description": "the HTTP status code of the operation",
 						"schema": {
-							"type": "string",
-							"example": "200"
+							"type": "integer",
+							"example": 200
 						}
 					},
 					{
@@ -2964,7 +2997,6 @@
 						"description": "the effective date for the operation",
 						"schema": {
 							"type": "string",
-							"format": "date-time",
 							"example": "2021-10-13T08:31:21.5157898+00:00"
 						}
 					},
@@ -3476,7 +3508,6 @@
 									},
 									"onboardingDate": {
 										"type": "string",
-										"format": "date-time",
 										"description": "The onboarding date of the legal entity",
 										"example": "2022-02-15T19:32:10.9931518+00:00"
 									},
@@ -3493,17 +3524,17 @@
 									"highFinancialIncome": {
 										"type": "boolean",
 										"description": "Is the legal entity a high financial income entity",
-										"example": "false"
+										"example": false
 									},
 									"listedInStockMarkets": {
 										"type": "boolean",
 										"description": "Is the legal entity listed in stock markets",
-										"example": "true"
+										"example": true
 									},
 									"regulated": {
 										"type": "boolean",
 										"description": "Is the legal entity regulated under special circumstances",
-										"example": "false"
+										"example": false
 									},
 									"address": {
 										"type": "object",
@@ -3630,7 +3661,6 @@
 													},
 													"onboardingDate": {
 														"type": "string",
-														"format": "date-time",
 														"description": "The onboarding date of the legal entity",
 														"example": "2022-02-15T19:32:10.9931518+00:00"
 													},
@@ -3647,17 +3677,17 @@
 													"highFinancialIncome": {
 														"type": "boolean",
 														"description": "Is the legal entity a high financial income entity",
-														"example": "false"
+														"example": false
 													},
 													"listedInStockMarkets": {
 														"type": "boolean",
 														"description": "Is the legal entity listed in stock markets",
-														"example": "true"
+														"example": true
 													},
 													"regulated": {
 														"type": "boolean",
 														"description": "Is the legal entity regulated under special circumstances",
-														"example": "false"
+														"example": false
 													},
 													"address": {
 														"type": "object",
@@ -3734,12 +3764,12 @@
 											"properties": {
 												"files": {
 													"type": "string",
-													"description": "TBD",
+													"description": "diligence expected by Xpollens system",
 													"example": "W9.png"
 												},
 												"status": {
 													"type": "string",
-													"description": "Global factaEai status of the customer",
+													"description": "status of the diligence",
 													"example": "NOK"
 												},
 												"reason": {
@@ -3752,13 +3782,12 @@
 									},
 									"fatcaEaiStatus": {
 										"type": "string",
-										"description": "the fatcaEai status",
+										"description": "the fatcaEai status. Can be OK or NOK",
 										"example": "OK"
 									},
 									"date": {
 										"type": "string",
-										"format": "date-time",
-										"description": "the date of last costumer fatcaEai status",
+										"description": "the last update of fatcaEai status",
 										"example": "2022-01-14T13:19:04+00:00"
 									},
 									"type": {
@@ -3805,12 +3834,12 @@
 															"properties": {
 																"files": {
 																	"type": "string",
-																	"description": "TBD",
+																	"description": "diligence expected by Xpollens system",
 																	"example": "W9.png"
 																},
 																"status": {
 																	"type": "string",
-																	"description": "Global factaEai status of the customer",
+																	"description": "status of the diligence",
 																	"example": "NOK"
 																},
 																"reason": {
@@ -3823,13 +3852,12 @@
 													},
 													"fatcaEaiStatus": {
 														"type": "string",
-														"description": "the fatcaEai status",
+														"description": "the fatcaEai status. Can be OK or NOK",
 														"example": "OK"
 													},
 													"date": {
 														"type": "string",
-														"format": "date-time",
-														"description": "the date of last costumer fatcaEai status",
+														"description": "the last update of fatcaEai status",
 														"example": "2022-01-14T13:19:04+00:00"
 													},
 													"type": {
@@ -3868,7 +3896,7 @@
 								"type": "object",
 								"properties": {
 									"type": {
-										"type": "integer",
+										"type": "string",
 										"description": "the callback type",
 										"example": "45"
 									},
@@ -3884,8 +3912,8 @@
 									},
 									"accountStatus": {
 										"type": "string",
-										"description": "the account status:  \n-initialized  \n-activated  \n-frozen  \n-closed  \n-closure requested  \n-pending closure",
-										"example": "frozen"
+										"description": "the account status:  \n-Initialized  \n-Activated  \n-Frozen  \n-Closed  \n-ClosureRequested  \n-PendingClosure",
+										"example": "Frozen"
 									}
 								}
 							}
@@ -3916,7 +3944,7 @@
 												"type": "object",
 												"properties": {
 													"type": {
-														"type": "integer",
+														"type": "string",
 														"description": "the callback type",
 														"example": "45"
 													},
@@ -3932,8 +3960,8 @@
 													},
 													"accountStatus": {
 														"type": "string",
-														"description": "the account status:  \n-initialized  \n-activated  \n-frozen  \n-closed  \n-closure requested  \n-pending closure",
-														"example": "frozen"
+														"description": "the account status:  \n-Initialized  \n-Activated  \n-Frozen  \n-Closed  \n-ClosureRequested  \n-PendingClosure",
+														"example": "Frozen"
 													}
 												}
 											}
@@ -4079,8 +4107,9 @@
 												},
 												"example": [
 													"COMPANY_STATUTES",
-													"KBIS"
-													]
+													"KBIS",
+													"OTHER_EXISTENCE_PROOF"
+												]
 											}
 										}
 										}
@@ -4093,7 +4122,7 @@
 										"properties": {
 											"diligenceType": {
 												"type": "string",
-												"description": "the diligence sub type :  \n- KBIS  \n- COMPANY_STATUTES \n- OTHER_ECONOMIC_ACTIVITY_EVIDENCE  etc.",
+												"description": "the diligence sub type :  \n- KBIS  \n- COMPANY_STATUTES \n- OTHER_ECONOMIC_ACTIVITY_EVIDENCE \n- BALANCE_SHEET  etc.",
 												"example": "KBIS"
 											},
 											"status": {
@@ -4224,7 +4253,8 @@
 																	},
 																	"example": [
 																		"COMPANY_STATUTES",
-																		"KBIS"
+																		"KBIS",
+																		"OTHER_EXISTENCE_PROOF"
 																	]
 																}
 															}
@@ -4238,7 +4268,7 @@
 															"properties": {
 																"diligenceType": {
 																	"type": "string",
-																	"description": "the diligence sub type :  \n- KBIS  \n- COMPANY_STATUTES \n- OTHER_ECONOMIC_ACTIVITY_EVIDENCE  etc.",
+																	"description": "the diligence sub type :  \n- KBIS  \n- COMPANY_STATUTES \n- OTHER_ECONOMIC_ACTIVITY_EVIDENCEOTHER_ECONOMIC_ACTIVITY_EVIDENCE \n- BALANCE_SHEET etc.",
 																	"example": "KBIS"
 																},
 																"status": {
@@ -4332,6 +4362,11 @@
 							"schema": {
 								"type": "object",
 								"properties": {
+									"type": {
+										"type": "string",
+										"description": "the callback type",
+										"example": "47"
+									},
 									"appUserId": {
 										"type": "string",
 										"description": "User unique identifier",
@@ -4370,6 +4405,11 @@
 											"schema": {
 												"type": "object",
 												"properties": {
+													"type": {
+														"type": "string",
+														"description": "the callback type",
+														"example": "47"
+													},
 													"appUserId": {
 														"type": "string",
 														"description": "User unique identifier",
@@ -4379,6 +4419,114 @@
 														"type": "string",
 														"description": "the new webview URL that enables the re-upload of diligences ",
 														"example": "https://example.com/api/v2/static/dist/index.html?technicalId=D6C39X"
+													}
+												}
+											}
+										}
+									}
+								},
+								"responses": {
+									"202": {
+										"description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+									},
+									"204": {
+										"description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{callback48Url}": {
+			"post": {
+				"summary": "#48 - Webview Url (Netheos)",
+				"description": "Callback received in case of Netheos KYC onboarding",
+				"requestBody": {
+					"description": "JSON Body",
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string",
+										"description": "the callback type",
+										"example": "48"
+									},
+									"appUserId": {
+										"type": "string",
+										"description": "User unique identifier",
+										"example": "QsmzNIwZm"
+									},
+									"webviewUrl": {
+										"type": "string",
+										"description": "the webview URL that enables the upload of diligences ",
+										"example": "https://integration-api.ekeynox.net/contract/signbook/signbook.html?token=20240512_UIj93FVbtEt2ZFQ2go47TkTBL1Q5n4z"
+									},
+									"url": {
+										"type": "string",
+										"description": "the root URL",
+										"example": "https://integration-api.ekeynox.net/contract/signbook/signbook.html"
+									},
+									"token": {
+										"type": "string",
+										"description": "token param used to distinguish between users",
+										"example": "20240512_UIj93FVbtEt2ZFQ2go47TkTBL1Q5n4z"
+									}
+								}
+							}
+						}
+					}
+				},
+				"parameters": [
+					{
+						"name": "callback48Url",
+						"in": "path",
+						"required": true,
+						"description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+						"schema": {
+							"type": "string",
+							"example": "tonys-server.com"
+						}
+					}
+				],
+				"callbacks": {
+					"onData": {
+						"{$request.query.callbackUrl}/data": {
+							"post": {
+								"requestBody": {
+									"description": "callback example",
+									"content": {
+										"application/json": {
+											"schema": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"description": "the callback type",
+														"example": "48"
+													},
+													"appUserId": {
+														"type": "string",
+														"description": "User unique identifier",
+														"example": "QsmzNIwZm"
+													},
+													"webviewUrl": {
+														"type": "string",
+														"description": "the webview URL that enables the upload of diligences ",
+														"example": "https://integration-api.ekeynox.net/contract/signbook/signbook.html?token=20240512_UIj93FVbtEt2ZFQ2go47TkTBL1Q5n4z"
+													},
+													"url": {
+														"type": "string",
+														"description": "the root URL",
+														"example": "https://integration-api.ekeynox.net/contract/signbook/signbook.html"
+													},
+													"token": {
+														"type": "string",
+														"description": "token param used to distinguish between users",
+														"example": "20240512_UIj93FVbtEt2ZFQ2go47TkTBL1Q5n4z"
 													}
 												}
 											}
@@ -4413,11 +4561,9 @@
 				"x-client-secret": "",
 				"flows": {
 					"clientCredentials": {
-						"tokenUrl": "https://ic-connect.s-money.net/connect/token",
+						"tokenUrl": "https://sb-connect.xpollens.com/connect/token",
 						"scopes": {
-							"partner": "",
-							"internal_settings": "",
-							"thirdparty_kyc": ""
+							"partner": ""
 						}
 					}
 				}
