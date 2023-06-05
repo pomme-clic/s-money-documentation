@@ -10,6 +10,74 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+**June 2023**
+
+**USER & KYC**
+
+Netheos integration
+
+- Implemented callback 48 that provides the Webview URL to the partner.
+- Workflow Identity: Implemented API to send identity diligence.
+- Added functionality to retrieve the proof file of the case.
+- Resolved issue where cases were rejected due to poor quality of documents. Users can now re-upload the documents.
+
+**Bug Fixing**
+
+**Failed Top Up Failure Callback not sent since 31/01/2023**
+- Fixed the issue causing the failure of sending the Top Up Failure Callback. Callbacks will now be sent correctly for any failed top-up transactions.
+
+**Client Account Activated with Non-KYC Client's Limits**
+- Fixed the issue causing client accounts to be activated with the limits of a non-KYC client. Activated client accounts will now have the appropriate limits based on their KYC status.
+
+**Failed Callbacks for SCT/SDD/P2P Transactions**
+- Resolved the problem causing failed callbacks for SCT, SDD, and P2P transactions. Callbacks will now be successfully triggered for these transaction types.
+
+**Partner unable to update an Account with Existing Phone Number**
+- Corrected the uniqueness rule in the PUT/user when a partner wants to update an account with an existing phone number.
+
+**SCT in sandbox simulator has changed**
+
+Old route: ```POST /api/v1.1/api/sct/in/registration```
+
+New route: ```POST /api/v1.1/users/{userid}/sct/in/registration```
+
+New requestBody:
+
+```json
+
+{
+
+  "amountRequest": {
+
+    "value": "1000.15",
+
+    "currency": "EUR"
+
+  },
+
+  "executionDate": "2023-05-31T10:07:10.3255134+02:00",
+
+  "externalBankAccountModel": {
+
+    "thirdPartyIban": "FR7616528000510000001751068",
+
+    "thirdPartyBIC": "SMOEFRP1",
+
+    "thirdPartyFullName": "John Doe"
+
+  },
+
+  "partnerOperationId": "b27a5243-e041-413c-84fe-c42104d4e688",
+
+  "message": "Sending money through SCT",
+
+  "motif": "Sending money with Xpollens"
+
+}
+
+```
+
+
 ## May 2023
 
 **Webdesk**
