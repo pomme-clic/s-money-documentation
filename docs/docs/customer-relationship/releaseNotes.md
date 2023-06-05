@@ -10,7 +10,7 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
-**June 2023**
+## June 2023
 
 **USER & KYC**
 
