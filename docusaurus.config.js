@@ -9,6 +9,10 @@ module.exports = {
   noIndex: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   favicon: 'img/favicon.svg',
   organizationName: 'xpollens',
   projectName: 's-money-documentation',
@@ -40,16 +44,22 @@ module.exports = {
         //   position: 'left',
         // },
         {
+          type: 'doc',
+          docId: 'usecases/Introduction',
+          label: 'Use Cases',
+          position: 'left',
+        },
+        {
           href: 'https://www.xpollens.com',
           label: 'xpollens.com',
           position: 'left',
         },
       ],
     },
-        prodDomains: [
+    prodDomains: [
       ['s-money-documentation-site.netlify.app', 'docs.xpollens.com'],
     ],
-        baseAPIUrls: {
+    baseAPIUrls: {
       sandbox: 'https://ic-api.s-money.net/swagger/docs',
       production: 'https://sb-api.xpollens.com/swagger/docs',
     },
@@ -165,6 +175,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          breadcrumbs: false,
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
         },

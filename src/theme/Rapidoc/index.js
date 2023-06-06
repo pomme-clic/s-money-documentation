@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import Head from '@docusaurus/Head'
 
-import useThemeContext from '@theme/hooks/useThemeContext'
+//import useThemeContext from '@theme/hooks/useThemeContext'
+import { useColorMode } from '@docusaurus/theme-common'
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
@@ -19,14 +20,16 @@ const customThemeColors = {
   },
 }
 
-const Rapidoc = ({ apiUrl, isRelative }) => {
-  const { isDarkTheme } = useThemeContext()
-  const { siteConfig } = useDocusaurusContext()
+// test using local API:
+// import localAPI from '@site/swaggers/swagger.json'
 
+const Rapidoc = ({ apiUrl, isRelative }) => {
+  const { isDarkTheme } = useColorMode()
+  //const { isDarkTheme } = useThemeContext()
+  const { siteConfig } = useDocusaurusContext()
 
   const serverUrl = siteConfig.themeConfig.serverUrl
   const tryoutsServerUrl = 'https://sb-api.xpollens.com'
-
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -44,11 +47,10 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
       ? `${serverUrl}/swagger/docs${apiUrl}`
       : apiUrl
 
-    console.log('fullAPIUrl: ', fullAPIUrl)
-
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
+      // return localAPI
     } catch (error) {
       throw new Error(error.message)
     }
@@ -76,7 +78,6 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
-      
 
       const stringifiedData = JSON.stringify(data)
 
@@ -160,7 +161,7 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
             server-url={tryoutsServerUrl}
             default-api-server={tryoutsServerUrl}
             show-header="false"
-            show-info="true"
+            show-info="false"
             show-components="false"
             allow-api-list-style-selection="false"
             style={{
