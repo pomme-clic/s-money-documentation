@@ -1898,7 +1898,7 @@
 		},
 		"/{callback29Url}": {
 			"post": {
-				"summary": "#29 - P2P transfer",
+				"summary": "#29 - P2P transfer - v1",
 				"description": "Callback received in case of status change in Peer to Peer (P2P) transfer",
 				"requestBody": {
 					"description": "JSON Body",
@@ -1974,6 +1974,258 @@
 														"type": "string",
 														"description": "the callback type",
 														"example": "29"
+													}
+												}
+											}
+										}
+									}
+								},
+								"responses": {
+									"202": {
+										"description": "Your server implementation should return this HTTP status code\nif the data was received successfully\n"
+									},
+									"204": {
+										"description": "Your server should return this HTTP status code if no longer interested\nin further updates\n"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{callback29Url-V2.0Url}": {
+			"post": {
+				"summary": "#29 - Internal Transfers - v2",
+				"description": "Callback received in case of status change in an internal transfer",
+				"requestBody": {
+					"description": "JSON Body",
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"internalTransferId": {
+										"type": "string",
+										"description": " Payment identifier in the third-party application and specified by the partner\r\n <details>\r\n \r\n| Parameter          | Type   |Format  |Example    |Description                                       |\r\n|--------------------|--------|--------|-----------|--------------------------------------------------|\r\n| InternalTransferId | String |X(255)  |P2P-1      |Payment identifier in the third-party application |\r\n \r\n</details>",
+										"nullable": true,
+										"example": "Test_Internal_Transfer_001"
+									},
+									"operationDate": {
+									"type": "string",
+									"description": "PaymentDate",
+									"format": "date-time"
+									},
+									"amount": {
+									"type": "object",
+									"properties": {
+										"currency": {
+										"type": "string",
+										"description": "Currency code",
+										"nullable": true,
+										"example": "EUR"
+										},
+										"value": {
+										"type": "string",
+										"description": "Value : decimal with up to 3 digits precision and usage of dot separator",
+										"nullable": true,
+										"example": "25.121"
+										}
+									},
+									"additionalProperties": false
+									},
+									"status": {
+									"enum": [
+										"0 - Created - Transaction created",
+										"1 - Approved - Transaction authorized (with or without auth balance updated)",
+										"2 - Completed - Transaction settled",
+										"3 - Refunded - Transaction refunded",
+										"4 - Rejected - Transaction rejected",
+										"5 - Cancelled - Transaction cancelled"
+									],
+									"type": "integer",
+									"format": "int32"
+									},
+									"message": {
+									"type": "string",
+									"description": "Payment message\r\n<details><summary>Payment message</summary>\r\n\r\n| Parameter| Type  |Format |Example                              |Description               |\r\n|----------|-------|-------|-------------------------------------|--------------------------|\r\n| Message  | String|X(140) |Transfer Xpollens of 12th August 2021|Payment message           |\r\n\r\n</details>",
+									"nullable": true,
+									"example": "This is an internal transfer"
+									},
+									"label": {
+									"type": "string",
+									"description": "Label - Use to put extra data",
+									"nullable": true,
+									"example": "This is a facturation internal transfer"
+									},
+									"subLabel": {
+									"type": "string",
+									"description": "SubLabel - Use to put extra data",
+									"nullable": true,
+									"example": "Furniture"
+									},
+									"tag": {
+									"type": "string",
+									"description": "Tag - Use to put extra data",
+									"nullable": true,
+									"example": "Free category extra data field"
+									},
+									"senderId": {
+									"type": "object",
+										"properties": {
+										"accountId": {
+											"type": "string",
+											"description": "AccountId",
+											"example": "xpo-psee-ic-pep",
+											"nullable": true
+										}
+										}
+									},
+									"recipientId": {
+										"type": "object",
+										"properties": {
+										"accountId": {
+											"type": "string",
+											"description": "AccountId",
+											"example": "xpo-psee-ic-test-account01",
+											"nullable": true
+										}
+										}
+									},
+									"type": {
+									"type": "string",
+									"description": "the callback type",
+									"example": "29"
+									},
+									"reason": {
+										"type": "string",
+										"description": "Reason",
+										"nullable": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"parameters": [
+					{
+						"name": "callback29Url-V2.0Url",
+						"in": "path",
+						"required": true,
+						"description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
+						"schema": {
+							"type": "string",
+							"example": "tonys-server.com"
+						}
+					}
+				],
+				"callbacks": {
+					"onData": {
+						"{$request.query.callbackUrl}/data": {
+							"post": {
+								"requestBody": {
+									"description": "callback example",
+									"content": {
+										"application/json": {
+											"schema": {
+												"type": "object",
+												"properties": {
+													"internalTransferId": {
+														"type": "string",
+														"description": " Payment identifier in the third-party application and specified by the partner\r\n <details>\r\n \r\n| Parameter          | Type   |Format  |Example    |Description                                       |\r\n|--------------------|--------|--------|-----------|--------------------------------------------------|\r\n| InternalTransferId | String |X(255)  |P2P-1      |Payment identifier in the third-party application |\r\n \r\n</details>",
+														"nullable": true,
+														"example": "Test_Internal_Transfer_001"
+													},
+													"creationDate": {
+													"type": "string",
+													"description": "PaymentDate",
+													"format": "date-time"
+													},
+													"amount": {
+													"type": "object",
+													"properties": {
+														"currency": {
+														"type": "string",
+														"description": "Currency code",
+														"nullable": true,
+														"example": "EUR"
+														},
+														"value": {
+														"type": "string",
+														"description": "Value : decimal with up to 3 digits precision and usage of dot separator",
+														"nullable": true,
+														"example": "25.121"
+														}
+													},
+													"additionalProperties": false
+													},
+													"status": {
+													"enum": [
+														"0 - Created - Transaction created",
+														"1 - Approved - Transaction authorized (with or without auth balance updated)",
+														"2 - Completed - Transaction settled",
+														"3 - Refunded - Transaction refunded",
+														"4 - Rejected - Transaction rejected",
+														"5 - Cancelled - Transaction canceled"
+													],
+													"type": "integer",
+													"format": "int32"
+													},
+													"message": {
+													"type": "string",
+													"description": "Payment message\r\n<details><summary>Payment message</summary>\r\n\r\n| Parameter| Type  |Format |Example                              |Description               |\r\n|----------|-------|-------|-------------------------------------|--------------------------|\r\n| Message  | String|X(140) |Transfer Xpollens of 12th August 2021|Payment message           |\r\n\r\n</details>",
+													"nullable": true,
+													"example": "This is an internal transfer"
+													},
+													"label": {
+													"type": "string",
+													"description": "Label - Use to put extra data",
+													"nullable": true,
+													"example": "This is a facturation internal transfer"
+													},
+													"subLabel": {
+													"type": "string",
+													"description": "SubLabel - Use to put extra data",
+													"nullable": true,
+													"example": "Furniture"
+													},
+													"tag": {
+													"type": "string",
+													"description": "Tag - Use to put extra data",
+													"nullable": true,
+													"example": "Free category extra data field"
+													},
+													"senderId": {
+													"type": "object",
+														"properties": {
+														"accountId": {
+															"type": "string",
+															"description": "AccountId",
+															"example": "xpo-psee-ic-pep",
+															"nullable": true
+														}
+														}
+													},
+													"recipientId": {
+														"type": "object",
+														"properties": {
+														"accountId": {
+															"type": "string",
+															"description": "AccountId",
+															"example": "xpo-psee-ic-test-account01",
+															"nullable": true
+														}
+														}
+													},
+													"type": {
+													"type": "string",
+													"description": "the callback type",
+													"example": "29"
+													},
+													"reason": {
+														"type": "string",
+														"description": "Error reason",
+														"nullable": true
 													}
 												}
 											}

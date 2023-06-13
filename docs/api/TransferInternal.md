@@ -1,10 +1,10 @@
 ---
-title: Internal Transfers
-sidebar_label: Internal Transfers
+title: Internal Transfers v2
+sidebar_label: Internal Transfers v2
 hide_table_of_contents: true
 ---
 
-# P2P Transfers (Deprecated)
+# Internal transfers
 
 import Rapidoc from "@theme/Rapidoc"
 
