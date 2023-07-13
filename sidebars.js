@@ -59,6 +59,12 @@ module.exports = {
     },
   ],
   usecasesSidebar: [
+    'usecases/Introduction',
+    {
+      type: 'category',
+      label: 'Cards Operations',
+      items: ['usecases/OnlineCardOperations','usecases/OfflineCardOperations','usecases/CardsOperationsClearing','usecases/CardsOperationsHowToTest'],
+    },    
     {
       type: 'category',
       label: 'X-Pay',
