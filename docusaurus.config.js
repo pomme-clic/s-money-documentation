@@ -44,12 +44,6 @@ module.exports = {
         //   position: 'left',
         // },
         {
-          type: 'doc',
-          docId: 'usecases/Introduction',
-          label: 'Use Cases',
-          position: 'left',
-        },
-        {
           href: 'https://www.xpollens.com',
           label: 'xpollens.com',
           position: 'left',
