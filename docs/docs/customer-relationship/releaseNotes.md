@@ -10,6 +10,21 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+## July 2023
+
+**Webdesk**
+
+The latest release of Webdesk introduces a new account list feature that allows users to view and interact with a list of accounts and their associated event targets. The account list is presented on a dedicated page, which includes a search bar, filters, pagination, and displays all types of accounts (pro, part, partner) in a single consolidated view.
+
+**Bug Fixing**
+
+- Inconsistent balances due to IP Out: Resolved an issue where balances were displaying inaccurately as a result of IP Out activities.
+- Exporting Operations Failure: Fixed a bug that prevented the successful download of Excel files when exporting operations.
+- Loss and Profit Account Retrieval Issue: Addressed an problem that made it impossible to retrieve loss and profit account information.
+- Missing data in GET /api/v2.0/webhooks: Fixed an issue where setting the "remove" parameter to false in the mentioned API call was not returning any data.
+- Internal Routing Error in POST /api/sca/v3.0/cards/{appUserId}: Resolved a routing issue in the mentioned API call, ensuring proper functionality.
+- 500 Error in Account List with Account ID search: Fixed a bug that caused a 500 error when attempting to search for an account using the Account ID field in the account list.
+
 ## June 2023
 
 **USER & KYC**

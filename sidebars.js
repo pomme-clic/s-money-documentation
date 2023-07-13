@@ -58,7 +58,7 @@ module.exports = {
       items: ['api/Callback','api/Callbacks','api/Webhooks'],
     },
   ],
-  useCasesSidebar: [
+  usecasesSidebar: [
     {
       type: 'category',
       label: 'X-Pay',

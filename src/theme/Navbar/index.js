@@ -1,21 +1,24 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React, { useCallback, useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
 import clsx from 'clsx'
 import SearchBar from '@theme/SearchBar'
-import Toggle from '@theme/Toggle'
-import useThemeContext from '@theme/hooks/useThemeContext'
-import { useThemeConfig } from '@docusaurus/theme-common'
-import useHideableNavbar from '@theme/hooks/useHideableNavbar'
-import useLockBodyScroll from '@theme/hooks/useLockBodyScroll'
-import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize'
+
+import { useColorMode, useThemeConfig } from '@docusaurus/theme-common'
+import ColorModeToggle from '@theme/ColorModeToggle'
+
+import {
+  useHideableNavbar,
+  useLockBodyScroll,
+  useNavbarMobileSidebar,
+} from '@docusaurus/theme-common/internal'
+
+import NavbarMobileSidebar from '@theme/Navbar/MobileSidebar'
 import NavbarItem from '@theme/NavbarItem'
 import Logo from '@theme/Logo'
-import IconMenu from '@theme/IconMenu'
+
+import IconMenu from '@theme/Icon/Menu'
+
 import styles from './styles.module.css' // retrocompatible with v1
 
 const DefaultNavItemPosition = 'right' // If split links by left/right
@@ -33,34 +36,61 @@ function splitNavItemsByPosition(items) {
     rightItems,
   }
 }
+export default function Navbar() {
+  const location = useLocation()
 
-function Navbar() {
+  useEffect(() => {
+    toggleShowSubmenu()
+  }, [location])
+
   const {
     navbar: { items, hideOnScroll, style },
     colorMode: { disableSwitch: disableColorModeSwitch },
   } = useThemeConfig()
+
   const [sidebarShown, setSidebarShown] = useState(false)
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext()
+  const [sidebarSubmenu, setSidebarSubmenu] = useState(false)
+
+  const toggleShowSubmenu = (status) => {
+    if (status) {
+      setSidebarSubmenu(true)
+      setSidebarShown(true)
+    } else {
+      setSidebarSubmenu(false)
+      setSidebarShown(false)
+    }
+  }
+
+  const { colorMode, setColorMode } = useColorMode()
+  const { isDarkTheme } = colorMode === 'dark'
+  const setDarkTheme = () => {
+    colorMode = 'dark'
+  }
+  const setLightTheme = () => {
+    colorMode = 'light'
+  }
+  const switchTheme = () => {
+    colorMode === 'light' ? setColorMode('dark') : setColorMode('light')
+  }
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll)
   useLockBodyScroll(sidebarShown)
+
   const showSidebar = useCallback(() => {
     setSidebarShown(true)
   }, [setSidebarShown])
+
   const hideSidebar = useCallback(() => {
     setSidebarShown(false)
   }, [setSidebarShown])
+
   const onToggleChange = useCallback(
     (e) => (e.target.checked ? setDarkTheme() : setLightTheme()),
     [setLightTheme, setDarkTheme],
   )
-  const windowSize = useWindowSize()
-  useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
-      setSidebarShown(false)
-    }
-  }, [windowSize])
+
   const hasSearchNavbarItem = items.some((item) => item.type === 'search')
   const { leftItems, rightItems } = splitNavItemsByPosition(items)
+
   return (
     <nav
       ref={navbarRef}
@@ -103,20 +133,18 @@ function Navbar() {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
+
         <div className="navbar__items navbar__items--right">
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {!disableColorModeSwitch && (
-            <Toggle
-              className={styles.displayOnlyInLargeViewport}
-              checked={isDarkTheme}
-              onChange={onToggleChange}
-            />
-          )}
+
+          <ColorModeToggle checked={isDarkTheme} onChange={switchTheme} />
+
           {!hasSearchNavbarItem && <SearchBar />}
         </div>
       </div>
+      {/* Backdrop */}
       <div
         role="presentation"
         className="navbar-sidebar__backdrop"
@@ -134,27 +162,54 @@ function Navbar() {
             titleClassName="navbar__title"
             onClick={hideSidebar}
           />
-          {!disableColorModeSwitch && sidebarShown && (
-            <Toggle checked={isDarkTheme} onChange={onToggleChange} />
-          )}
         </div>
         <div className="navbar-sidebar__items">
           <div className="menu">
             <ul className="menu__list">
               {items.map((item, i) => (
-                <NavbarItem
-                  mobile
-                  {...item} // TODO fix typing
-                  onClick={hideSidebar}
-                  key={i}
-                />
+                <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />
               ))}
             </ul>
           </div>
         </div>
       </div>
+      {/* New mobile sidebar submenu */}
+      {sidebarSubmenu && <NavbarMobileSidebar />}
+
+      {/* Toggle submenu */}
+      <button
+        aria-label="Open submenu"
+        aria-haspopup="true"
+        className="block md:hidden button button--secondary button--sm menu__button submenu"
+        type="button"
+        onClick={() => toggleShowSubmenu(!sidebarSubmenu)}
+      >
+        {sidebarShown && sidebarSubmenu ? (
+          <span className="sidebarMenuIcon_fgN0 sidebarMenuCloseIcon_1lpH">
+            ×
+          </span>
+        ) : (
+          <svg
+            className={`${
+              sidebarShown
+                ? 'sidebarMenuIcon_fgN0'
+                : 'sidebarMenuCloseIcon_1lpH'
+            }`}
+            width="24"
+            height="24"
+            viewBox="0 0 30 30"
+            aria-hidden="true"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              d="M4 7h22M4 15h22M4 23h22"
+            ></path>
+          </svg>
+        )}
+      </button>
     </nav>
   )
 }
-
-export default Navbar
