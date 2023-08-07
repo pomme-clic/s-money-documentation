@@ -10,6 +10,30 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+## July 2023 - S74
+
+**Webdesk**
+* New "ACCOUNT" list webpage
+  * All accounts type are now listed in a new "ACCOUNT" web page
+	  * End user accounts
+	  * Professional accounts
+	  * Internal accounts
+
+* Remove card order functionnality from the webdesk
+  * This functionnality is under improvement
+  * This functionnality will be added again in the future
+
+**Users & KYC**
+* Netheos integration
+	* Allow update of user personnal information to trigger automatic KYC controls again after a case has been refused
+	* Update of callback 4 to take into account when personnal information update is required
+
+
+**Bug Fixing**
+* Fix a problem with the field `reference` of a sepa credit transfer was not returned by the the API.
+* Fix a problem with card operations missing from the bank account statements when they span across two months.
+* Fix a problem when trying to get an internal account by API returned an error 500.
+
 ## July 2023
 
 **Webdesk**
