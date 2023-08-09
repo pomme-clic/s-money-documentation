@@ -19,10 +19,6 @@ Xpollens changelog since September 2021
 	  * Professional accounts
 	  * Internal accounts
 
-* Remove card order functionnality from the webdesk
-  * This functionnality is under improvement
-  * This functionnality will be added again in the future
-
 **Users & KYC**
 * Netheos integration
 	* Allow update of user personnal information to trigger automatic KYC controls again after a case has been refused
