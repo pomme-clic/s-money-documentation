@@ -10,6 +10,37 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+## August 2023 - S75
+
+**Users & KYC**
+* Netheos integration
+	* Block user information update once the KYC is validated. (It should not be possible to update user data once the KYC is validated)
+
+**Anti Fraud and Compliance**
+* PEP / AML screening refactoring
+	* Refactoring of the entire internal process for PEP and AML screening
+	* New callback `PoliticallyExposedPersonStatusCreatedOrUpdated` exposed to partners.
+
+**Card operation**
+* Refactoring and improvement of IAS (Issuer Authorization Server)
+	* Performance improvements
+	* Reliability improvements
+
+⚠ Important note : The new IAS will be activated during the month of September.
+
+**Web desk**
+* Performance and reliability improvement of SEPA related functionnalities
+* Displaying authorization and accounting balance on the account list
+* Add of account balance in search criteriae
+* Add account list export functionnality
+* Clear text IBAN display in account list
+* Other performance and reliability improvements
+
+**Bug Fixing**
+* Fix a problem where callback 4 (KYC) was not sent to the partner after the KYC was rejected
+* Fix a problem where the bankstatement API returned not result
+* Fix an issue where it was not possible to activate a card after receiving it in a specific scenario where user updated his/her personnal information after having ordered a card.
+
 ## July 2023 - S74
 
 **Webdesk**
