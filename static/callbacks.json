@@ -1446,7 +1446,7 @@
                                     },
                                     "action": {
                                         "type": "integer",
-                                        "description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update",
+                                        "description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update  \n5 = opposition",
                                         "example": 0
                                     },
                                     "status": {
@@ -1508,7 +1508,7 @@
                                                     },
                                                     "action": {
                                                         "type": "integer",
-                                                        "description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update",
+                                                        "description": "the action done on the card :  \n0 = creation  \n1 = cancellation  \n2 = refabrication  \n3 = renewal  \n4 = update  \n5 = opposition",
                                                         "example": 0
                                                     },
                                                     "status": {
@@ -2485,7 +2485,7 @@
                                     "identificationLevel": {
                                         "type": "string",
                                         "description": "the identification level define which step will be perform by the user during his onboarding",
-                                        "example": ""
+                                        "example": "Intermediate"
                                     }
                                 }
                             }
@@ -2537,7 +2537,7 @@
                                                     "identificationLevel": {
                                                         "type": "string",
                                                         "description": "the identification level define which step will be perform by the user during his onboarding",
-                                                        "example": ""
+                                                        "example": "Intermediate"
                                                     }
                                                 }
                                             }
@@ -3577,7 +3577,7 @@
                                     "identificationLevel": {
                                         "type": "string",
                                         "description": "the identification level define which step will be perform by the user during his onboarding",
-                                        "example": ""
+                                        "example": "Intermediate"
                                     }
                                 }
                             }
@@ -3734,7 +3734,7 @@
                                                     "identificationLevel": {
                                                         "type": "string",
                                                         "description": "the identification level define which step will be perform by the user during his onboarding",
-                                                        "example": ""
+                                                        "example": "Intermediate"
                                                     }
                                                 }
                                             }
