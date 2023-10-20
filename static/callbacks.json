@@ -4532,16 +4532,16 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "type": {
-                                        "type": "string",
-                                        "description": "the callback type",
-                                        "example": "48"
-                                    },                                  
                                     "appUserId": {
                                         "type": "string",
                                         "description": "User unique identifier",
                                         "example": "rx193bo32"
                                     },
+                                    "type": {
+                                        "type": "string",
+                                        "description": "the callback type",
+                                        "example": "48"
+                                    },  
                                     "url": {
                                         "type": "string",
                                         "description": "The new webview URL that enables to perform KYC verification ",
@@ -4579,16 +4579,16 @@
                                             "schema": {
                                                 "type": "object",
                                                 "properties": {
-                                                    "type": {
-                                                        "type": "string",
-                                                        "description": "the callback type",
-                                                        "example": "48"
-                                                    },   
                                                     "appUserId": {
                                                         "type": "string",
                                                         "description": "User unique identifier",
                                                         "example": "rx193bo32"
                                                     },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "the callback type",
+                                                        "example": "48"
+                                                    },  
                                                     "url": {
                                                         "type": "string",
                                                         "description": "The new webview URL that enables to perform KYC verification ",
