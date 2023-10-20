@@ -74,7 +74,7 @@
                         "required": true,
                         "description": "the transaction amount",
                         "schema": {
-                            "type": "decimal",
+                            "type": "number",
                             "format": "float",
                             "example": "1234.56"
                         }
@@ -2084,12 +2084,12 @@
                                         "type": "object",
                                         "properties": {
                                             "name": {
-                                                "type": "decimal",
+                                                "type": "number",
                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                 "example": 0.3333333333333333
                                             },
                                             "firstName": {
-                                                "type": "decimal",
+                                                "type": "number",
                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                 "example": 1
                                             }
@@ -2177,12 +2177,12 @@
                                                         "type": "object",
                                                         "properties": {
                                                             "name": {
-                                                                "type": "decimal",
+                                                                "type": "number",
                                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                                 "example": 0.3333333333333333
                                                             },
                                                             "firstName": {
-                                                                "type": "decimal",
+                                                                "type": "number",
                                                                 "description": "the result of the identity matching algorithm (percentage)",
                                                                 "example": 1
                                                             }
@@ -2336,7 +2336,7 @@
                                         "example": "94j8Jnw9d"
                                     },
                                     "originAmount": {
-                                        "type": "decimal",
+                                        "type": "number",
                                         "description": "the amount of the debt origin operation (decimal, in euro)",
                                         "example": 125.04
                                     },
@@ -2346,7 +2346,7 @@
                                         "example": 0
                                     },
                                     "debtAmount": {
-                                        "type": "decimal",
+                                        "type": "number",
                                         "description": "the actual debt amount (decimal, in euro)",
                                         "example": 1.42
                                     },
@@ -2356,7 +2356,7 @@
                                         "example": "CardOperation"
                                     },
                                     "lossAndProfitBalance": {
-                                        "type": "decimal",
+                                        "type": "number",
                                         "description": "the balance of loss and profit account after the debt creation (decimal, in euro)",
                                         "example": 145258.55
                                     }
@@ -2408,7 +2408,7 @@
                                                         "example": "94j8Jnw9d"
                                                     },
                                                     "originAmount": {
-                                                        "type": "decimal",
+                                                        "type": "number",
                                                         "description": "the amount of the debt origin operation (decimal, in euro)",
                                                         "example": 125.04
                                                     },
@@ -2418,7 +2418,7 @@
                                                         "example": "0"
                                                     },
                                                     "debtAmount": {
-                                                        "type": "decimal",
+                                                        "type": "number",
                                                         "description": "the actual debt amount (decimal, in euro)",
                                                         "example": 1.42
                                                     },
@@ -2428,7 +2428,7 @@
                                                         "example": "CardOperation"
                                                     },
                                                     "lossAndProfitBalance": {
-                                                        "type": "decimal",
+                                                        "type": "number",
                                                         "description": "the balance of loss and profit account after the debt creation (decimal, in euro)",
                                                         "example": 145258.55
                                                     }
@@ -2897,7 +2897,8 @@
                         "required": true,
                         "description": "the transaction amount",
                         "schema": {
-                            "type": "decimal",
+                            "type": "number",
+                            "format": "float",
                             "example": "1234.56"
                         }
                     }
@@ -4531,6 +4532,11 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "description": "the callback type",
+                                        "example": "48"
+                                    },                                  
                                     "appUserId": {
                                         "type": "string",
                                         "description": "User unique identifier",
@@ -4573,6 +4579,11 @@
                                             "schema": {
                                                 "type": "object",
                                                 "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "description": "the callback type",
+                                                        "example": "48"
+                                                    },   
                                                     "appUserId": {
                                                         "type": "string",
                                                         "description": "User unique identifier",
