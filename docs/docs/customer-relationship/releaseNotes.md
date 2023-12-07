@@ -10,6 +10,79 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+## Dec 2023 - S80
+
+**⬛ USER & KYC**<br/><br/>
+**Multiple legal representatives** <br/>
+▸ New role "Mandated" available for KYB user creation (`POST USER`)<br/>
+▸ Add new rule to validate legal entity onboarding and put legalentity identification level to full when one mandated has validated his onboarding (and if all other step has been performed)<br/>
+▸ Update rule to to validate legal entity onboarding and put legal entity identification level to full when all the legal representative have validated their onboarding<br/>
+▸ Update rule to to validate legal entity onboarding and put legal entity identification level to full when all beneficial owner have validated their onboarding<br/>
+
+**⬛️ CARD OPERATION**<br/><br/>
+▸ Fix authorization expiration when many authorizations are created at the same time for the same card<br/>
+▸ Response time optmization<br/>
+
+**⬛️ WEB DESK**<br/><br/>
+**Multi Account**<br/>
+▸ Display card list per account<br/>
+▸ Improvement on card list and detail pages (adding information and improving display)<br/><br/>
+**Operations**<br/>
+▸ Add the direction on operations lists and export.<br/>
+
+**⬛️ PAYMENT OPERATION**<br/><br/>
+**Sepa Credit Transfer refactoring (TARGET)**<br/>
+▸ Delivery of the new SCT based on new Core Banking System (v2.0).<br/>
+▸ SCT in/out v1.1 (retro-compatibility) targetization (Endpoints+Callbacks)<br/>
+▸ SCT IN/OUT R-transaction (recall, return) targetization<br/>
+
+## Sept-Oct-Nov 2023 - S77/78/79
+**⬛️ USER & KYC**<br/><br/>
+**Handling the case of electronic signature refusal.**<br/>
+A problem has been identified in case the end user refuse to sign the T&C in an electronic signature workflow. 
+The refusal of the signature results in the closure of the user account, which should not be the case. An ongoing (unfinished) enhancement is in progress to address this situation and allow a user to continue their onboarding process even in the event of a refusal to sign the terms and conditions<br/><br/>
+**Handling the KYC case expiration**<br/>
+A problem has been identified in the case where a KYC (Know Your Customer) file initiated more than 90 days ago results in a blockage of the process for the end user. <br/>
+An ongoing enhancement is underway to address this issue and allow the user to restart their KYC process beyond the 90-day validity period of a KYC file.<br/><br/>
+**New "Third Party Introduction" complementary diligence type**<br/>
+Creation diligence subtype Tierce Introduction. This new subtype will be available on partner config (for authorized partners only) and will allow a partner to autovalidate the KYC through a new `complementarydiligence` endpoint.<br/><br/>
+**Add document type "Other" for KYB and KYC**<br/>
+Partner will be allowed to send multiple type of document regroup in an Other category.
+No impact on the KYC process, it's just informative doc. Endpoint to be used is still POST `Attachments`.
+<br/>
+
+**⬛ CARD OPERATION**<br/><br/>
+**Exposition of the new V1.1 card operation endpoints**<br/> 
+All existing APIs now point to the new Core Banking System. This change is seamless and fully backward-compatible for partners but ensures greater stability and scalability, laying the groundwork for the upcoming arrival of new card operation endpoints.<br/><br/>
+**Optimization of response times for a card authorization request**<br/>
+Several performance improvement have been delivered on the card authorization response time.
+<br/>
+
+**⬛ WEB DESK**<br/><br/>
+**Kyc**<br/>
+▸ Display proof file document in the KYC detail for each customer on the Webdesk<br/>
+▸ Display "report" file in the proof file document type<br/>
+▸ Adding status “rejected” for KYC demand status on the KYC diligences<br/><br/> 
+
+**Operation list**<br/>
+▸ Date and hours of operation target are now display depending of the system date of the computer.<br/>
+▸ In france, the date and hours will be display in UTC 	+1 or 2 (depending winter or summer)<br/>
+▸ Operation search is also based on the same concept<br/>
+▸ Change the label of tag P2P target for "label"<br/><br/>  
+
+**Multi-Account**<br/> 
+First components delivered for multi-account management on the webdesk. 
+These enhancements will be available only with the full multi-account management scheduled for Q1 2024.<br/><br/>
+
+**️P2P**<br/>
+Added the ability to perform peer-to-peer transfers from account to account within a partner scope.
+<br/><br/>
+
+**⬛ ️PAYMENT OPERATION**<br/><br/>
+**Instant Payment** <br/>
+▸ New endpoints v3.0 on full target system delivered. <br/>
+▸ Old enpoints v2.0 fully backward compatibles 
+
 ## August 2023 - S75
 
 **Users & KYC**
