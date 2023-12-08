@@ -1,6 +1,6 @@
 ---
 title: Accounts
-sidebar_label: Accounts Management
+sidebar_label: Accounts
 hide_table_of_contents: true
 ---
 
