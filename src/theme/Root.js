@@ -11,7 +11,7 @@ import clsx from 'clsx'
 
 const Root = ({ children }) => {
   const { pathname } = useLocation()
-  const isDocPage = pathname.includes('/docs')
+  const isDocPage = pathname.includes('/docs') || pathname.includes('/usecases')
 
   return (
     <>

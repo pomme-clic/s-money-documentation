@@ -20,16 +20,51 @@ const customThemeColors = {
   },
 }
 
-// test using local API:
-// import localAPI from '@site/swaggers/swagger.json'
-
-const Rapidoc = ({ apiUrl, isRelative }) => {
+const Rapidoc = ({ apiUrl, apiUrls = [], isRelative }) => {
+  const [selectedApi, setSelectedApi] = useState(
+    apiUrls.length === 0 ? apiUrl : apiUrls[0].apiUrl
+  );  
+  
+  const [selectedVersion, setSelectedVersion] = useState(
+    apiUrls.length === 0 ? "" : apiUrls[0].version
+  );
+  
+  const [selectedMessage, setSelectedMessage] = useState(
+    (apiUrls.length > 0 && apiUrls[0].message) ?? ""
+  );  
+  
+  console.log('apiUrls.length : ', apiUrls.length)
+//  console.log('apiUrls[0].apiUrl : ', apiUrls[0].apiUrl)
+  console.log('apiUrls:', apiUrls);
+  console.log('selectedApi:', selectedApi);  
+  console.log('selectedVersion:', selectedVersion); 
+  console.log('selectedMessage:', selectedMessage); 
+  
+  const handleApiChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedApi(selectedValue);
+    const selectedVersion = apiUrls.find((url) => url.apiUrl === selectedValue)?.version || '';
+    setSelectedVersion(selectedVersion);
+    const selectedMessage = apiUrls.find((url) => url.apiUrl === selectedValue)?.message || '';
+    setSelectedMessage(selectedMessage); 
+    console.log('selectedMessage:', selectedMessage);     
+  };  
+  
   const { isDarkTheme } = useColorMode()
   //const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
 
+
   const serverUrl = siteConfig.themeConfig.serverUrl
   const tryoutsServerUrl = 'https://sb-api.xpollens.com'
+
+  {/*const addCustomElement = () => {
+    const customElement = document.createElement('div');
+    customElement.innerHTML = '<p>This is a custom element</p>';
+
+    // Append the custom element to the container (or wherever you want it)
+    document.body.appendChild(customElement);
+  };*/}
 
   // Rapidoc rendering
   const rapidocRef = useRef()
@@ -44,20 +79,22 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
   // React Query
   const fetchAPI = async () => {
     const fullAPIUrl = isRelative
-      ? `${serverUrl}/swagger/docs${apiUrl}`
-      : apiUrl
+      ? `${serverUrl}/swagger/docs${selectedApi}`
+      : selectedApi
+
+    console.log('fullAPIUrl: ', fullAPIUrl)
+    console.log(selectedApi)
 
     try {
       const response = await axios.get(fullAPIUrl)
       return response.data
-      // return localAPI
     } catch (error) {
       throw new Error(error.message)
     }
   }
 
   const { isLoading, isError, data, error } = useQuery(
-    ['fetchAPI', { apiUrl }],
+    ['fetchAPI', { selectedApi }],
     fetchAPI,
     {
       retry: false,
@@ -78,6 +115,8 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
         'Demo'
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
+      
+      
 
       const stringifiedData = JSON.stringify(data)
 
@@ -135,7 +174,60 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
               !renderRapidoc || isError || isLoading ? 'hidden' : 'visible',
           }}
         >
-          <rapi-doc
+        
+        {/*<div>
+        <button onClick={addCustomElement}>Add Custom Element</button>
+        </div> */}
+
+        {/* Combo box for selecting API URLs and versions */}
+        {apiUrls.length > 0 && (
+          <div className="mt-4 font-poppins font-semibold flex items-center justify-end space-x-2 mr-4">
+          <label htmlFor="apiSelector">SELECT API VERSION:</label>
+          <select 
+            id="apiSelector" 
+            value={selectedApi} 
+            onChange={handleApiChange} 
+            className="p-2 rounded border border-green-300 font-fira-code"
+            style={{
+              padding: '8px', // Adjust as needed
+              borderRadius: '8px', // For rounded corners
+              border: '2px solid #B4E2C2', // Light pastel green border
+              fontFamily: 'Fira Code', // Change the font family
+              // Add more styles as needed
+            }}>
+            {apiUrls.map((record) => (
+              <option 
+                className="p-2 rounded border border-green-300 font-fira-code"
+                key={record.version} 
+                value={record.apiUrl}
+                style={{
+                  fontFamily: 'Fira Code', // Change the font family
+                  //fontSize: '30px'
+                  // Add more styles as needed
+                }}>
+                {record.version}
+              </option>
+            ))}
+          </select>
+          {selectedMessage !== "" && (
+          <div
+            style={{
+              //backgroundColor: 'lightgray',
+              border: '1px solid gray',
+              padding: '8px', // Adjust as needed
+              borderRadius: '8px', // For rounded corners  
+              fontFamily: 'Fira Code', // Change the font family
+              //marginTop: '5px', // Adjust as needed
+              display: 'inline-block', // Make the background and border cover only the content
+            }}
+          >
+            <font className="text-xs">{selectedMessage}</font>
+          </div>
+          )}
+        </div>
+        )}       
+        
+        <rapi-doc
             ref={rapidocRef}
             theme={isDarkTheme ? 'dark' : 'light'}
             bg-color={
@@ -169,7 +261,8 @@ const Rapidoc = ({ apiUrl, isRelative }) => {
               width: '100%',
               maxWidth: '100%',
             }}
-          ></rapi-doc>
+          >
+          </rapi-doc>
         </div>
       </div>
     </>
