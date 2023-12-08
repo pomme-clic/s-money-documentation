@@ -49,6 +49,6 @@ Xpollens does not support other X-Pay providers such as Garmin Pay, FitBit, Alip
 <Cta
   context="doc"
   ui="button"
-  link="/use-cases/xpay/X-Pay"
+  link="/usecases/xpay/X-Pay"
   label="Detailed X-Pay documentation"
 />

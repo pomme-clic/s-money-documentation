@@ -27,4 +27,7 @@ html[data-theme='dark'] {
   rapi-doc::part(label-overview-title) {
     @apply text-white;
   }
+  rapi-doc::part(section-navbar-active-item) {
+    @apply text-white;
+  }  
 }
