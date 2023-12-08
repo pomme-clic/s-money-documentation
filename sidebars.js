@@ -82,7 +82,7 @@ module.exports = {
         'usecases/users/onboarding/sca/sca',
         'usecases/users/onboarding/cgu/cgu'
       ]
-    }
+    },
     {
       type: 'category',
       label: 'X-Pay',
