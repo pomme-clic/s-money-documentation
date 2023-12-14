@@ -5,8 +5,27 @@
         "version": "1.0.0"
     },
     "servers": [{
-            "url": " https://",
-            "description": "For testing purposes. Select this to direct callback to your server."
+            "url": "https://xpo-sb-demo.requestcatcher.com",
+            "description": "Default XPollens Callback Test Endpoint"
+        }, {
+            "url": "https://webhook.site",
+            "description": "Create a temporary webhook address on webhook.site"
+        }, {
+            "url": "{protocol}://{baseURL}/",
+            "description": "Custom server to retrieve callbacks",
+            "variables": {
+                "baseURL": {
+                    "default": "xpo-sb-demo.requestcatcher.com",
+                    "description": "Enter your own test server Base URL"
+                },
+                "protocol": {
+                    "default": "https",
+                    "enum": [
+                        "http",
+                        "https"
+                    ]
+                }
+            }
         }
     ],
     "paths": {
@@ -21,7 +40,25 @@
                         "description": "the location where data will be sent.  Must be network accessible by the source server",
                         "schema": {
                             "type": "string",
-                            "example": "enk0r3xvfg4ms.x.pipedream.net"
+                            "example": "callbackEndpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }, {
                         "name": "id",
@@ -157,7 +194,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -277,7 +332,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -473,7 +546,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -671,7 +762,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -808,7 +917,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -945,7 +1072,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1082,7 +1227,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1279,7 +1442,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1471,7 +1652,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1578,7 +1777,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1695,7 +1912,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1842,7 +2077,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -1964,7 +2217,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2107,7 +2378,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2250,7 +2539,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2372,7 +2679,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2499,7 +2824,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2611,7 +2954,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2687,6 +3048,24 @@
                         "schema": {
                             "type": "string",
                             "example": "enk0r3xvfg4ms.x.pipedream.net"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }, {
                         "name": "type",
@@ -2784,7 +3163,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -2845,6 +3242,24 @@
                         "schema": {
                             "type": "string",
                             "example": "enk0r3xvfg4ms.x.pipedream.net"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }, {
                         "name": "id",
@@ -2944,7 +3359,25 @@
                         "schema": {
                             "type": "string",
                             "format": "uri",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }, {
                         "name": "AuthenticationId",
@@ -3116,7 +3549,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -3243,7 +3694,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -3370,7 +3839,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -3592,7 +4079,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -3821,7 +4326,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -3940,7 +4463,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -4006,6 +4547,24 @@
                         "schema": {
                             "type": "string",
                             "example": "enk0r3xvfg4ms.x.pipedream.net"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }, {
                         "name": "type",
@@ -4244,7 +4803,25 @@
                         "description": "the location where data will be sent.  Must be network accessible by the source server ",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -4472,7 +5049,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -4536,7 +5131,7 @@
                                         "type": "string",
                                         "description": "the callback type",
                                         "example": "48"
-                                    },  
+                                    },
                                     "appUserId": {
                                         "type": "string",
                                         "description": "User unique identifier",
@@ -4564,7 +5159,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],
@@ -4583,7 +5196,7 @@
                                                         "type": "string",
                                                         "description": "the callback type",
                                                         "example": "48"
-                                                    },  
+                                                    },
                                                     "appUserId": {
                                                         "type": "string",
                                                         "description": "User unique identifier",
@@ -4661,7 +5274,25 @@
                         "description": "the location where data will be sent.  Must be network accessible\nby the source server\n",
                         "schema": {
                             "type": "string",
-                            "example": "tonys-server.com"
+                            "example": "callbackEnpoint"
+                        }
+                    }, {
+                        "name": "Webhook-Id",
+                        "in": "header",
+                        "required": true,
+                        "description": "Uuid of the sent callback",
+                        "schema": {
+                            "type": "string",
+                            "example": "3a0a2870-f188-46e5-a6f0-f55b38565d7b"
+                        }
+                    }, {
+                        "name": "Webhook-Processdate",
+                        "in": "header",
+                        "required": true,
+                        "description": "Callback Send date",
+                        "schema": {
+                            "type": "string",
+                            "example": "12/12/2023 17:51:40 +00:00"
                         }
                     }
                 ],

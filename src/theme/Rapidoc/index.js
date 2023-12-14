@@ -33,12 +33,11 @@ const Rapidoc = ({ apiUrl, apiUrls = [], isRelative }) => {
     (apiUrls.length > 0 && apiUrls[0].message) ?? ""
   );  
   
-  console.log('apiUrls.length : ', apiUrls.length)
 //  console.log('apiUrls[0].apiUrl : ', apiUrls[0].apiUrl)
-  console.log('apiUrls:', apiUrls);
-  console.log('selectedApi:', selectedApi);  
-  console.log('selectedVersion:', selectedVersion); 
-  console.log('selectedMessage:', selectedMessage); 
+  ////  console.log('apiUrls[0].apiUrl : ', apiUrls[0].apiUrl)
+  //console.log('apiUrls:', apiUrls);
+  //console.log('selectedApi:', selectedApi);  
+  //console.log('selectedVersion:', selectedVersion); 
   
   const handleApiChange = (event) => {
     const selectedValue = event.target.value;
