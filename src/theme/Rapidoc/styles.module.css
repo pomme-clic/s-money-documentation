@@ -31,3 +31,7 @@ html[data-theme='dark'] {
     @apply text-white;
   }  
 }
+
+rapi-doc::part(textbox-server-var) {
+  min-width: 300px;
+}
