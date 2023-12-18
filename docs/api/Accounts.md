@@ -8,5 +8,8 @@ hide_table_of_contents: true
 
 import Rapidoc from "@theme/Rapidoc"
 
-<Rapidoc apiUrl="/v2.0/AccountManagement" isRelative="true">
+<Rapidoc apiUrl="/v2.0/AccountManagement" apiUrls={[
+    { apiUrl: "/v2.0/AccountManagement", version: "v2.0", message: "Latest - Prod Version" },
+    { apiUrl: "/v3.0/AccountManagement", version: "v3.0", message: "Future - Pre-Version"},
+  ]} isRelative="true">
 </Rapidoc>

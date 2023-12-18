@@ -16,7 +16,7 @@
             "variables": {
                 "baseURL": {
                     "default": "xpo-sb-demo.requestcatcher.com",
-                    "description": "Enter your own test server Base URL"
+                    "description": "Enter your own test server Base URL."
                 },
                 "protocol": {
                     "default": "https",
