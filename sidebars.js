@@ -79,6 +79,7 @@ module.exports = {
         'usecases/users/onboarding/cgu/cgu'
       ]
     },
+    'usecases/webhooks/webhooks',
     {
       type: 'category',
       label: 'X-Pay',
