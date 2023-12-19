@@ -79,6 +79,15 @@ module.exports = {
         'usecases/users/onboarding/cgu/cgu'
       ]
     },
+    {
+        type: 'category',
+        label: 'Cards Management',
+        items: [
+            'usecases/cards/issuing/CardsIssuing', 
+            'usecases/cards/selfcare/physical', 
+            'usecases/cards/selfcare/virtual'
+        ]
+    },
     'usecases/webhooks/webhooks',
     {
       type: 'category',
