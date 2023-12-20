@@ -165,7 +165,6 @@ XPO ->> BPCE : CardStatus: ACTIVATED 'cardCreaedOrUpdated'
 stateDiagram
 state fork_state <<fork>>
 state fork_state2 <<fork>>
-%%state fork_state3 <<fork>>
 
   [*] --> Ordered
   Ordered --> fork_state
@@ -175,10 +174,6 @@ state fork_state2 <<fork>>
   
   Sent --> fork_state2
   Sent --> Activated
-  %%fork_state2 --> Cancelled
-  %%fork_state2 --> Opposed
-  %%fork_state2 --> Expired
-	 %%fork_state2 --> Deactivated
 
   Activated --> fork_state3
   fork_state3 --> Cancelled
