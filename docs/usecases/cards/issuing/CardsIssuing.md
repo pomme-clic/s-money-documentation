@@ -57,14 +57,17 @@ Participant Thales
 Participant BPCE
 
 Partner ->> XPO : Order a physical card <br/>  (POST /api/v3.0/cards)
-XPO ->> Partner :return OK (201)
+XPO ->> Partner :return OK (201) {cardId}
 XPO --) XPO : Create the card ( Status:ORDERED)
 
 
 alt Wishpin
-Partner ->> Thales : GET /api/v2.0/tokensignature/{cardExternalRef}
+Partner ->> XPO : GET /api/v2.0/tokensignature/{cardExternalRef} <br/> where cardExternalRef = cardId
+XPO -->> Partner: tokensignature outputs <br/> (see section Get the tokensignature)
+Partner -->> Partner: create token,  where token inputs  = tokensignature outputs  <br/> (see section tokensignature and token mapping) <br/><br/> create signature  <br/> (see section Token and Signature CB compliant) <br/>
+Partner -->> Thales : definePINToken {token, signature} 
 Thales -->> BPCE : Acknowledgement of receipt of the wishpin
-BPCE --) BPCE : Wainting for the matching between card order and whispin <br/> if matching isn't validated within 4 days , <br/>the creation is failed.
+BPCE --) BPCE : Waiting for the matching between card order and whispin <br/> if matching isn't validated within 4 days , <br/>the creation is failed.
 end
 
 XPO ->> BPCE : Generate the file all days at 6:30 Pm ( paris time)
@@ -360,7 +363,7 @@ The token must be formatted as a JSON message and needs to contain the following
 - `IdPorteur`: Unique ID (uid) of the cardholder retrieving his PIN. Same unique id used during provisioning step.
 - `IdTransaction`: Unique identifier of the transaction. All request following will be rejected if they use the same idTransaction.
 - `Timestamp`: Timestamp in UNIX format (unit second) generated for each transaction.
-- `Type`: Transaction type: 00 for PIN delivery, 01 for PIN reminder and 02 for PIN definition
+- `Type`: Transaction type: Only 02 is used and supported in Xpollens context for PIN definition
 - `SignatureCertAlias`: alias of the certificate used to sign the token – Optional –
 
 * * *
