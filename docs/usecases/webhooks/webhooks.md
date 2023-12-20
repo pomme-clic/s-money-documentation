@@ -1,6 +1,6 @@
 # WebHook Manager
 ## Description
-The Xpollens webhook manager is a centralized system hosted at XPollens in charge of sending asynchronous notifications based on events to the parner information system.
+The Xpollens webhook manager is a centralized system hosted at Xpollens in charge of sending asynchronous notifications based on events to the parner information system.
 
 > ie
 > 
@@ -12,7 +12,7 @@ The Xpollens webhook manager is a centralized system hosted at XPollens in charg
 > - ...
 
 <br/>
-Each time an internal event is received at XPollens that requires the partner to be informed of a change, a callback is sent to the partner.  
+Each time an internal event is received at Xpollens that requires the partner to be informed of a change, a callback is sent to the partner.  
 
 These callbacks are HTTP/RESTful based and target a partner endpoint in charge of handling this event.
 
@@ -31,10 +31,10 @@ This system has several advantages:
 * * *
 
 ## How it works?
-Callbacks are sent as soon as they are received internally by the XPollens webhook manager.
+Callbacks are sent as soon as they are received internally by the Xpollens webhook manager.
 
 The parameterization of target enpoints is made during the onboarding phase.  
-The partner has to provide the associated endpoint hosted in its information system so they can be set by XPollens for each of the corresponding callbacks
+The partner has to provide the associated endpoint hosted in its information system so they can be set by Xpollens for each of the corresponding callbacks
 
 > Example :
 > 
@@ -52,8 +52,8 @@ The partner has to provide the associated endpoint hosted in its information sys
 
 - The http request can be retried by the webhook if the partner is not able to respond or responds with an error (timeout, bad http status received from the partner, ...).
 The retry mecanism is done 3 times within a fixed interval (20 secondes) 
-- Partner should send an http response to the query. This response should return HTTP/200. The response body can either be empty or contains some information (will not be handled by XPollens)
-- Every change in partner callbacks URL should be requested to the XPollens Support team through a zendesk support request.
+- Partner should send an http response to the query. This response should return HTTP/200. The response body can either be empty or contains some information (will not be handled by Xpollens)
+- Every change in partner callbacks URL should be requested to the Xpollens Support team through a zendesk support request.
 
 * * *
 
