@@ -50,7 +50,8 @@ The partner has to provide the associated endpoint hosted in its information sys
 
 **These  rules apply to all callbacks :**
 
-- There is no automatic retry in case of errors (timeout, bad http status received from the partner, ...)
+- The http request can be retried by the webhook if the partner is not able to respond or responds with an error (timeout, bad http status received from the partner, ...).
+The retry mecanism is done 3 times within a fixed interval (20 secondes) 
 - Partner should send an http response to the query. This response should return HTTP/200. The response body can either be empty or contains some information (will not be handled by XPollens)
 - Every change in partner callbacks URL should be requested to the XPollens Support team through a zendesk support request.
 
