@@ -175,11 +175,11 @@ state fork_state2 <<fork>>
   Sent --> fork_state2
   Sent --> Activated
 
-  Activated --> fork_state3
-  fork_state3 --> Cancelled
-  fork_state3 --> Opposed
-  fork_state3 --> Expired
-  fork_state3 --> Deactivated
+  Activated --> fork_state2
+  fork_state2 --> Cancelled
+  fork_state2 --> Opposed
+  fork_state2 --> Expired
+  fork_state2 --> Deactivated
 
   fork_state --> Failed : pin not matched
 
