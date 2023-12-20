@@ -238,7 +238,7 @@ Functional principle is as follows :
 * The card’s creation returns a card reference (cardExternalRef or AppCardId). 
 * This reference should be passed to the signature service and finally to the WishPIN SDK along with the signature.
 * The defined PIN is then sent in real time to Thales through the SDK and then sent from Thales to BPCE/PS.
-* Card order and WishPIN are then reconciled after the card is sent for customization.
+* Card order and WishPIN are then reconciled then the card is sent for customization.
 
 <br/>
 
