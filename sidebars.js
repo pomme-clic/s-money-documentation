@@ -80,6 +80,16 @@ module.exports = {
       ]
     },
     {
+        type: 'category',
+        label: 'Cards Management',
+        items: [
+            'usecases/cards/issuing/CardsIssuing', 
+            'usecases/cards/selfcare/physical', 
+            'usecases/cards/selfcare/virtual'
+        ]
+    },
+    'usecases/webhooks/webhooks',
+    {
       type: 'category',
       label: 'X-Pay',
       items: [
