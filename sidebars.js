@@ -30,7 +30,11 @@ module.exports = {
   ],
   apisSidebar: [
     'api/Core',
-    'api/Accounts',
+    {
+      type: 'category',
+      label: 'Accounts',
+      items: ['api/Accounts','api/AccountsOperations'],
+    },   
     {
       type: 'category',
       label: 'Cards',
@@ -51,6 +55,7 @@ module.exports = {
       label: 'Internal transfers',
       items: ['api/TransferInternal'],
     },
+  'api/Topup',
 	'api/Compliance',
     {
       type: 'category',
