@@ -10,6 +10,52 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+## Jan 2024 - S82
+
+:::note Release S81
+Due to the end-of-year freeze, there was no S81 release  
+:::
+
+**⬛️ CARD OPERATION**<br/><br/>
+▸ Manage two authorizations at the same time  
+▸ Implement retry policy for reversal case  
+▸ Fix implementation for duplicate card opposition for unknown cards  
+
+**⬛️ WEB DESK**<br/><br/>
+**Debt Management**  
+▸ Display debt information on the target operation list  
+▸ Card ordering refactoring (Target)  
+
+**⬛️ CARD ISSUING**<br/><br/>
+**Top Up refactoring**  
+▸ Target Top Up core management has been deployed
+* Top up creation  
+* Retrieve Top Up details  
+* Get All Top Ups for one user  
+* Refund a Top Up  
+* Get all top up cards registered by user  
+* Delete registered top up cards<br/>  
+
+:::note v1.1 endpoints
+There is no impact on exposed endpoints for now (v1.1)
+:::
+
+▸ Refactoring of associated callbacks so that they are now centralized by the webhook manager.  
+
+**⬛️ PAYMENT OPERATION**<br/>    
+**Sepa Direct Debit refactoring (TARGET)**    
+▸SDD core refactoring (TARGET)  
+▸Legacy API (v1.1) retro-compatibility (SDD IN-OUT, Mandate management)  
+
+:::note API V2.0
+New API v2.0 will be delivered in the next release  
+:::
+
+**⬛️ Anti-Fraud and Compliance**<br/><br/> 
+▸Add `RiskAnalysisStatus` field in the `PoliticallyExposedPersonStatusCreatedOrUpdated` callback  
+▸Show user’s full address residence in FATCA’s self-certification  
+
+
 ## Dec 2023 - S80
 
 **⬛ USER & KYC**<br/><br/>
