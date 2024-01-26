@@ -5381,13 +5381,18 @@
          },
          "isPoliticallyExposedPerson": {
           "type": "boolean",
-          "description": "PEP status.<br/><br/>True = PEP;<br/>False = NOT PEP;<br/>null = the user is still in analyse (hit)",
+              "description": "PEP status.<br/><br/>true = the user is a PEP<br/>false = the user is not a PEP<br/>null = the user is still in analyse (hit)",
           "example": "true"
          },
          "finalDecisionPep": {
           "type": "boolean",
-          "description": "Xpollens final decision status in case of PEP = TRUE<br/>  <br/>                                       True = PEP step validated for onboarding;<br/>False = onboarding blocked for PEP reason;<br/>  null = waiting for decision, if PEP=TRUE. If PEP = FALSE this field will always remain as null",
+              "description": "Xpollens final decision status in case of PEP TRUE.<br/><br/>null = initial status, if PEP = FALSE this field will always remain as null<br/>true = PEP step validated for onboarding<br/>false = onboarding blocked for PEP reason",
           "example": "false"
+             },
+	     "riskAnalysisStatut": {
+              "type": "string",
+              "description": "Status of Xpollens' overall risk analysis.<br/><br/>null = initial status<br/>inProgress = Xpollens is still running some risk analysis<br/>done = all risk analysis were completed",
+              "example": "done"
          }
         }
        }
@@ -5449,13 +5454,18 @@
              },
              "isPoliticallyExposedPerson": {
               "type": "boolean",
-              "description": "PEP status.<br/><br/>True = PEP;<br/>False = NOT PEP;<br/>null = the user is still in analyse (hit)",
+              "description": "PEP status.<br/><br/>true = the user is a PEP<br/>false = the user is not a PEP<br/>null = the user is still in analyse (hit)",
               "example": "true"
              },
              "finalDecisionPep": {
               "type": "boolean",
-              "description": "Xpollens final decision status in case of PEP = TRUE<br/>  <br/>                                       True = PEP step validated for onboarding;<br/>False = onboarding blocked for PEP reason;<br/>  null = waiting for decision, if PEP=TRUE. If PEP = FALSE this field will always remain as null",
+              "description": "Xpollens final decision status in case of PEP TRUE.<br/><br/>null = initial status, if PEP = FALSE this field will always remain as null<br/>true = PEP step validated for onboarding<br/>false = onboarding blocked for PEP reason",
               "example": "false"
+             },
+	     "riskAnalysisStatut": {
+              "type": "string",
+              "description": "Status of Xpollens' overall risk analysis.<br/><br/>null = initial status<br/>inProgress = Xpollens is still running some risk analysis<br/>done = all risk analysis were completed",
+              "example": "done"
              }
             }
            }
