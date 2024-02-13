@@ -10,6 +10,39 @@ Xpollens changelog since September 2021
 ---
 # Release Note
 
+## Feb 2024 - S83
+
+**⬛ USER & KYC**<br/>
+▸ Removal of erroneous controls on the countries of residence during KYC, which were blocking the onboarding of certain users  
+▸ **KYC improvements**   
+&nbsp;&nbsp;&nbsp;&nbsp;- Better handling of technical errors  
+&nbsp;&nbsp;&nbsp;&nbsp;- Signature refusal management  
+&nbsp;&nbsp;&nbsp;&nbsp;- KYC enforcement management  
+&nbsp;&nbsp;&nbsp;&nbsp;- Case expiration management  
+&nbsp;&nbsp;&nbsp;&nbsp;- "UNDEFINED" document are now handled as "KO Quality" with the possibility to retry upload  
+&nbsp;&nbsp;&nbsp;&nbsp;- Add of the possilbity to submit a new KYC demand for an existing user in case the previous one was refused (except for Fraud case)  
+&nbsp;&nbsp;&nbsp;&nbsp;-  KYC expiration date management  
+&nbsp;&nbsp;&nbsp;&nbsp;-  Deletion of the "Continue on my PC" button on the KYC web page landing page    
+<br/>
+
+**⬛️ CARD OPERATION**<br/>
+▸ Refactoring of online card operation simulator  
+
+**⬛️ WEB DESK**<br/>
+▸ Migrate card order API to the latest version (v3.0)  
+▸ Fix Card order process (partner card order offers are now used for card ordering)  
+
+**⬛️ PAYMENT OPERATION**<br/>    
+▸ Removal of legacy system dependencies (Target)  
+▸ Fix IP IN label  
+▸ Correct `type` field in `InstantPaymentCreatedOrUpdated` callback  
+
+**⬛️ ANTI FRAUD & COMPLIANCE**<br/>    
+▸ **API refactoring. Delivery of version 3.0 of the API**  
+&nbsp;&nbsp;&nbsp;&nbsp;- GET /api/v3.0/users/{appUserId}/fatca-eai  
+&nbsp;&nbsp;&nbsp;&nbsp;- GET /api/v3.0/users/{appUserId}/anti-money-laundering  
+&nbsp;&nbsp;&nbsp;&nbsp;- PATCH /api/v3.0/users/{appUserId}/fatca-eai  
+
 ## Jan 2024 - S82
 
 :::note Release S81
