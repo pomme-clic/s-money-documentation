@@ -94,6 +94,7 @@ module.exports = {
         ]
     },
     'usecases/webhooks/webhooks',
+    'usecases/ratelimits/ratelimits',
     {
       type: 'category',
       label: 'X-Pay',
