@@ -3,8 +3,6 @@
 
 Rate limiting is a traffic policy employed to block an excessive number of calls. It restricts requests (Limit) on the ApiGateway side by blocking requests that surpass the defined rate (Rate).
 
-<br/>
-
 * * *
 
 ## Why ?
@@ -16,8 +14,6 @@ In order to stop attacks :
 - Web scrapping
 
 It is also us to manage resources (prevent altering QOS) and to avoid api overuse.
-
- <br/>
 
 * * *
 
@@ -32,9 +28,6 @@ Therefore, each endpoint is characterised by:
 
 - a number of calls over a given period: ratelimit, composed by `Limit` & `Period`
 - a ban duration if this limit is exceeded: `periodTimeSpan`
-
-  
-<br/>
 
 * * *
 
@@ -53,8 +46,6 @@ As a consequence, you have to store Xpollens configurations for ratelimits and P
 :::warning  Note
 We strongly advise against replaying API requests until they are successful again. This would render our monitoring inoperative and add a stream of completely useless calls.
 :::
-
-<br/>
 
 * * *
 
@@ -84,10 +75,6 @@ Start HH:MM:SS:200
 Limit (10 req) reached at HH:MM:SS:600  
 The next request authorised is after HH:MM:SS+1:600  
 even if we have a request at HH:MM:SS:900
-
-  
-<br/>
-
 * * *
 
 ## How to test
