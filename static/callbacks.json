@@ -5376,7 +5376,7 @@
          },
          "type": {
           "type": "string",
-          "description": "callback type",
+          "description": "Callback type",
           "example": "PoliticallyExposedPersonStatusCreatedOrUpdated"
          },
          "isPoliticallyExposedPerson": {
@@ -5449,7 +5449,7 @@
              },
              "type": {
               "type": "string",
-              "description": "callback type",
+              "description": "Callback type",
               "example": "PoliticallyExposedPersonStatusCreatedOrUpdated"
              },
              "isPoliticallyExposedPerson": {
@@ -5736,7 +5736,7 @@
   },
   "/{SepaCreditTransferCreatedOrUpdated}": {
    "post": {
-    "summary": "sepaCreditTransferCreatedOrUpdated",
+    "summary": "SepaCreditTransferCreatedOrUpdated",
     "description": "Callback received in case of operation status change.",
     "requestBody": {
      "description": "JSON Body",
@@ -5748,7 +5748,7 @@
          "type": {
           "type": "string",
           "description": "the callback type",
-          "example": "sepaCreditTransferCreatedOrUpdated"
+          "example": "SepaCreditTransferCreatedOrUpdated"
          },
          "sepaCreditTransferId": {
           "type": "string",
@@ -5887,7 +5887,7 @@
     },
     "parameters": [
      {
-      "name": "sepaCreditTransferCreatedOrUpdated",
+      "name": "SepaCreditTransferCreatedOrUpdated",
       "in": "path",
       "required": true,
       "description": "the location where data will be sent.  Must be network accessible by the source server ",
@@ -5931,7 +5931,7 @@
              "type": {
               "type": "string",
               "description": "the callback type",
-              "example": "sepaCreditTransferCreatedOrUpdated"
+              "example": "SepaCreditTransferCreatedOrUpdated"
              },
              "sepaCreditTransferId": {
               "type": "string",
