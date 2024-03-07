@@ -1,0 +1,37 @@
+rapi-doc::part(label-overview-title) {
+  @apply font-bold;
+}
+
+rapi-doc::part(section-navbar) {
+  padding-top: 30px !important;
+}
+
+rapi-doc::part(section-navbar-operations-top) {
+  color: #666;
+  border-bottom: 1px solid #ccc;
+}
+
+rapi-doc::part(section-navbar-tag) {
+  @apply rounded-none text-[#006D8C];
+}
+
+rapi-doc::part(section-navbar-active-item) {
+  @apply text-black rounded-none;
+}
+
+rapi-doc::part(section-navbar-scroll) {
+  padding-top: 10px;
+}
+
+html[data-theme='dark'] {
+  rapi-doc::part(label-overview-title) {
+    @apply text-white;
+  }
+  rapi-doc::part(section-navbar-active-item) {
+    @apply text-white;
+  }  
+}
+
+rapi-doc::part(textbox-server-var) {
+  min-width: 300px;
+}
