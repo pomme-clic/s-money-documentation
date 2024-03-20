@@ -25,7 +25,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Xpollens and you',
-      items: [ 'docs/customer-relationship/business-portal', 'docs/customer-relationship/monitoring', 'docs/customer-relationship/releaseNotes', 'docs/customer-relationship/configuration'],
+      items: [ 'docs/customer-relationship/business-portal', 'docs/customer-relationship/monitoring', 'docs/customer-relationship/releaseNotes', 'docs/customer-relationship/configuration', 'usecases/CustomPage'],
     },
   ],
   apisSidebar: [
