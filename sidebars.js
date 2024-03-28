@@ -93,6 +93,13 @@ module.exports = {
             'usecases/cards/selfcare/virtual'
         ]
     },
+    {
+        type: 'category',
+        label: 'SEPA Transfers',
+        items: [
+            'usecases/sepa_transfers/instant_payment'
+        ]
+    },    
     'usecases/webhooks/webhooks',
     'usecases/ratelimits/ratelimits',
     {
