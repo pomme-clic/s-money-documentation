@@ -41,11 +41,11 @@ All the accounts we provide are currently in Euro only. Other european currencie
 
 Our API offers the ability to manage all aspects of the account : from getting the balance of the account to set the different limits of transactions : you can adapt the account to your use cases.
  
-More information regarding this endpoint in the [API reference.](/api/Core)
+More information regarding this endpoint in the [API reference.](/api/Accounts)
 
 You can setup account limitations here : 
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/limits" method="put"/>
+<Endpoint apiUrl="/v1.1/AccountManagement" path="/api/v1.1/users/{userid}/limits" method="put"/>
 
 ---
 
@@ -61,7 +61,7 @@ Please note that any negative balance has to covered by you in the meantime.
 
 You can setup an additional balance here : 
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/users/{userid}/additionalBalance" method="put"/>
+<Endpoint apiUrl="/v1.1/AccountManagement" path="/api/v1.1/users/{userid}/additionalBalance" method="put"/>
 
 <!-- <Endpoint apiUrl="/v1.0/migrationProxy" path="​/api/v1.0/users/{userid}/cards/{id}" method="delete"/> -->
 
@@ -86,7 +86,7 @@ You can view how to close an account here :
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/Accounts"
   label="Try it out"
 />
 

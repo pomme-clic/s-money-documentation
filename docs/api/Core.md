@@ -1,12 +1,8 @@
 ---
-title: Core
-sidebar_label: Core resources
+title: XPollens API
+sidebar_label: XPollens API
 hide_table_of_contents: true
 ---
 
-# Core
-
-import Rapidoc from "@theme/Rapidoc"
-
-<Rapidoc apiUrl="/v1.0/migrationProxy" isRelative="true">
-</Rapidoc>
+# XPollens API
+You'll find here all XPollens APIs.
