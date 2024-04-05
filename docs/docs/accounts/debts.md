@@ -39,17 +39,17 @@ With our debt API, you will be able to manage your client debt follow-up and rec
 
 To retrieve the customer debt :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts" method="get"/>
+<Endpoint apiUrl="/v1.1/AccountManagement" path="/api/v1.1/clientdebts" method="get"/>
 
 Once you recover modify the customer debt :
   
 - The remaining amount :
  
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts/{orderid}/remainingdebtamount" method="put"/> 
+<Endpoint apiUrl="/v1.1/AccountManagement" path="/api/v1.1/clientdebts/{orderid}/remainingdebtamount" method="put"/> 
 
 - The remaining status :
 
-<Endpoint apiUrl="/v1.0/migrationProxy" path="/api/v1.1/clientdebts/{orderid}/status" method="put"/> 
+<Endpoint apiUrl="/v1.1/AccountManagement" path="/api/v1.1/clientdebts/{orderid}/status" method="put"/> 
 
 
 More information regarding this endpoint in the [API reference](/api/Core)
@@ -59,6 +59,6 @@ More information regarding this endpoint in the [API reference](/api/Core)
 <Cta
   context="doc"
   ui="button"
-  link="/api/Core"
+  link="/api/AccountsOperations"
   label="Try it out"
 />
