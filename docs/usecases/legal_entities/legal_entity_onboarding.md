@@ -12,7 +12,6 @@ Those steps have to be achieved using the **XPollens APIs** and **XPollens Callb
 | Sign the service Terms & conditions (**param**) | https://docs.xpollens.com/api/Users#post-/api/v2.0/users/- AppUserId-/cgu | **mandatory** | 
 | Provide FATCA information | https://docs.xpollens.com/api/Compliance#patch-/api/v3.0/users/-appUserId-/fatca-eai | **mandatory** | 
 | Provide FATCA documents | https://docs.xpollens.com/api/KYC#get-/api/v3.0/users/-AppUserId-/fatca/attachments/-Key- | *param* | 
-| Provide Benefical owners declarative | https://docs.xpollens.com/api/Users#patch-/api/v2.0/users/-appUserId-/beneficial-owner-declarative | *optional* | 
 | Provide KYB documents | https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/attachments | **mandatory** | 
 :::
 
@@ -708,7 +707,7 @@ The first step of the user onboarding consists in providing personnal informatio
 ![bfa481888258f1401cec6f26b4e9dd3f.png](./_resources/6.png)
 
 #### More information
-You can refer to the Usedrf onboarding available documentation here : https://docs.xpollens.com/usecases/users/onboarding/user_onboarding
+You can refer to the User onboarding available Use Case documentation here : https://docs.xpollens.com/usecases/users/onboarding/user_onboarding
 
 * * *
 ## Legal Entity T&C validation
