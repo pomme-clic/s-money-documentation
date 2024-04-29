@@ -5,7 +5,7 @@ Those steps have to be achieved using the **XPollens APIs** and **XPollens Callb
 * * *
 # Reference
 
-::: note  Legal Entity Creation XPollens APIs  
+:::note  Legal Entity Creation XPollens APIs  
 | description | API | required |
 | ----------- | --- | -------- |
 | Initiate the creation of a Legal Entity | https://docs.xpollens.com/api/Users#post-/api/v2.0/legalentities | **mandatory** | 
@@ -16,7 +16,8 @@ Those steps have to be achieved using the **XPollens APIs** and **XPollens Callb
 | Provide KYB documents | https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/attachments | **mandatory** | 
 :::
 
-:::  note  Legal Entity Management XPollens APIs  
+:::note  Legal Entity Management XPollens APIs  
+
 | description | API | required |
 | ----------- | --- | -------- |
 | Retrieve Legal Entity details | https://docs.xpollens.com/api/Users#get-/api/v2.0/legalentities | *optional* | 
