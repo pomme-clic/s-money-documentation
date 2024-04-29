@@ -5,46 +5,38 @@ Those steps have to be achieved using the **XPollens APIs** and **XPollens Callb
 * * *
 # Reference
 
-:::note  Legal Entity Creation XPollens APIs
-* Initiate the creation of a Legal Entity (**mandatory**)
-	* https://docs.xpollens.com/api/Users#post-/api/v2.0/legalentities
-* Sign the service Terms & conditions (**param**)
-	* https://docs.xpollens.com/api/Users#post-/api/v2.0/users/-AppUserId-/cgu
-* Provide FATCA information (**param**)
-	* https://docs.xpollens.com/api/Compliance#patch-/api/v3.0/users/-appUserId-/fatca-eai
-* Provide FATCA documents (**param**)
-	* https://docs.xpollens.com/api/KYC#get-/api/v3.0/users/-AppUserId-/fatca/attachments/-Key-
-* Provide Benefical owners declarative (***optional***)
-	* https://docs.xpollens.com/api/Users#patch-/api/v2.0/users/-appUserId-/beneficial-owner-declarative
+::: note  Legal Entity Creation XPollens APIs  
+| description | API | required |
+| ----------- | --- | -------- |
+| Initiate the creation of a Legal Entity | https://docs.xpollens.com/api/Users#post-/api/v2.0/legalentities | **mandatory** | 
+| Sign the service Terms & conditions (**param**) | https://docs.xpollens.com/api/Users#post-/api/v2.0/users/- AppUserId-/cgu | **mandatory** | 
+| Provide FATCA information | https://docs.xpollens.com/api/Compliance#patch-/api/v3.0/users/-appUserId-/fatca-eai | **mandatory** | 
+| Provide FATCA documents | https://docs.xpollens.com/api/KYC#get-/api/v3.0/users/-AppUserId-/fatca/attachments/-Key- | *param* | 
+| Provide Benefical owners declarative | https://docs.xpollens.com/api/Users#patch-/api/v2.0/users/-appUserId-/beneficial-owner-declarative | *optional* | 
+| Provide KYB documents | https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/attachments | **mandatory** | 
 :::
 
-:::note  Legal Entity Management XPollens APIs
-* Retrieve Legal Entity details
-	* https://docs.xpollens.com/api/Users#get-/api/v2.0/legalentities
-* Update Legal Entity information
-	* https://docs.xpollens.com/api/Users#put-/api/v2.0/legalentities/-legalEntityId-
+:::  note  Legal Entity Management XPollens APIs  
+| description | API | required |
+| ----------- | --- | -------- |
+| Retrieve Legal Entity details | https://docs.xpollens.com/api/Users#get-/api/v2.0/legalentities | *optional* | 
+| Update Legal Entity information | https://docs.xpollens.com/api/Users#put-/api/v2.0/legalentities/-legalEntityId- | *optional* | 
 :::
 
-:::note  Representatives XPollens APIs 
-* Create user representative (mandated, legal representative, Beneficial owner) (**mandatory**)
-	* https://docs.xpollens.com/api/Users#post-/api/v2.0/users
-* Sign the Terms & Conditions (**param**)
-	* https://docs.xpollens.com/api/Users#post-/api/v2.0/users/-AppUserId-/cgu
-* Provide FATCA information (**param**)
-	* https://docs.xpollens.com/api/Compliance#patch-/api/v3.0/users/-appUserId-/fatca-eai
-* Provide FATCA documents (**param**)
-	* https://docs.xpollens.com/api/KYC#get-/api/v3.0/users/-AppUserId-/fatca/attachments/-Key-
-* Create a KYC demand (***param***)
-	* https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/demand
-* Upload KYC diligence (***param***)
-	* https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/attachments
-* Provide beneficial owner declaratives (***optional***)
-	* https://docs.xpollens.com/api/Users#patch-/api/v2.0/users/-appUserId-/beneficial-owner-declarative
-* Provide User Declaratives (**param**)
-	* https://docs.xpollens.com/api/Users#post-/api/v2.0/users/-AppUserId-/declarative
+:::note  Representatives XPollens APIs  
+| description | API | required |
+| ----------- | --- | -------- |
+| Create user representative (mandated, legal representative, Beneficial owner) | https://docs.xpollens.com/api/Users#post-/api/v2.0/users | **mandatory** | 
+| Sign the Terms & Conditions  | https://docs.xpollens.com/api/Users#post-/api/v2.0/users/-AppUserId-/cgu | **mandatory** | 
+| Provide FATCA information | https://docs.xpollens.com/api/Compliance#patch-/api/v3.0/users/-appUserId-/fatca-eai | *param* | 
+| Provide FATCA documents | https://docs.xpollens.com/api/KYC#get-/api/v3.0/users/-AppUserId-/fatca/attachments/-Key- | *param* |
+| Create a KYC demand | https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/demand | *param* | 
+| Upload KYC diligence | https://docs.xpollens.com/api/KYC#post-/api/v3.0/users/-appUserId-/kyc/attachments | *param* | 
+| Provide beneficial owner declaratives | https://docs.xpollens.com/api/Users#patch-/api/v2.0/users/-appUserId-/beneficial-owner-declarative | *optional* | 
+| Provide User Declaratives | https://docs.xpollens.com/api/Users#post-/api/v2.0/users/-AppUserId-/declarative | *param* |
 :::
 
-:::note  XPollens Callbacks
+:::note  XPollens Callbacks  
 | Scope | Documentation link | Purpose | Trigger |
 | ----- | ------------------ | ------- | ------- |
 | Legal Entity creation | https://docs.xpollens.com/api/Callbacks#post-/-callback43Url- | Provide information on legal entity | on status change |
@@ -79,7 +71,7 @@ Choose your country
 Fill in required information
 ![480c47622c43fd76e26df57d2ba9b615.png](./_resources/2.png)
 
-:::note  Note
+:::note  Note  
 Company detailed information are not mandatory when registering a French Entity.
 All company details will be automatically retrieved from official government data.
 :::
@@ -287,9 +279,10 @@ For each diligence received from our partner, xpollens calculates the KYB demand
 The demand is considered fully received (legal entity kycDemandStatus = Fully_received) if:
 
 1. All expected diligences are received successfully (for legal entity and contributors)
-2. KYC demand(s) of legal representative are complete (With OneyTrust)
-3. KYC demand(s) of beneficial owners are fully_received (identity received)
-4. All expected fatca diligences received (legal entity fatcaDemandStatus = fully_received) 
+2. KYC demand(s) of legal representative is completed
+3. KYC of mandated reprensentative is completed 
+4. KYC demand(s) of beneficial owners are fully_received (identity received)
+5. All expected fatca diligences received (legal entity fatcaDemandStatus = fully_received) 
 
 ```mermaid
 stateDiagram-v2
@@ -305,9 +298,8 @@ stateDiagram-v2
 			awaiting external partner\nvalidation
 		end note
    
-   [*] --> initialized : on user creation
+   [*] --> initialized : on legal entity creation
    initialized --> being_received : first diligence received
-   initialized --> pending : first KYC received \nthrough OT
    being_received --> fully_received : all expected diligences received
    fully_received --> fully_received : Failure sending to external\n partner for validation
    fully_received --> pending : Diligences have been \nsent succcessfully\nto external partner for validation
