@@ -103,6 +103,12 @@ module.exports = {
     'usecases/webhooks/webhooks',
     'usecases/ratelimits/ratelimits',
     {
+        type: 'category',
+        label: 'Top Up',
+        items: [
+            'usecases/topups/topups']
+    },
+    {
       type: 'category',
       label: 'X-Pay',
       items: [
