@@ -3,6 +3,8 @@
 The provider used by Xpollens is Netheos.
 This documentation is available here: https://integration-api.ekeynox.net/docs/integration/latest/en/intro/
 
+<br/>
+
 * * *
 
 ## KYC Workflow
@@ -11,14 +13,17 @@ This documentation is available here: https://integration-api.ekeynox.net/docs/i
 
 The KYC status represents the progress of the user's KYC. This status includes the state of progress on all due diligences.
 
+<br/>
+
 * * *
+
 ### KYC State Diagram
 
 ```mermaid
 stateDiagram
-    [*] --> Initialized
+    [*] --> Initialized : KYC demand created
 		state fork_state <<fork>>
-    Initialized --> Pending : If case was created by KYC provider
+    Initialized --> Pending
     Pending --> fork_state
     fork_state -->	Incomplete : At least one diligence has been received by the provider
 		fork_state --> AwaintingExpertise : All diligences are "validated" and "FinalDecision" = pending
@@ -29,19 +34,24 @@ stateDiagram
 	  fork_state2 --> Complete : All expected diligences are "Validated" and Decision "OK"
 	  fork_state2 --> FraudSuspicion : Decision = "KOFraud"
 	  fork_state2 --> AwaintingExpertise : All diligences are "validated" and "FinalDecision" = pending
+      fork_state2 --> Rejected : - the enduser refused the electronic T&C <br/> - electronic signature expired <br/> - number of SMS sent exceeded <br/> - KYC file expired
+
 	  
 	  AwaintingExpertise --> Complete : "FinalDecision" = OK	  
-	  AwaintingExpertise --> Incomplete : All expected diligences are not 'Validated' AND   
+      AwaintingExpertise --> Incomplete : All expected diligences are not 'Validated' 
 	  AwaintingExpertise --> FraudSuspicion : "FinalDecision" = KOFraud	  
 	  
 
 
     FraudSuspicion --> [*]
     Complete --> [*]
+    Rejected --> [*]
+
 
 ```
 
 * * *
+
 ### KYC Sequence diagram
 
 ```mermaid
@@ -68,26 +78,33 @@ else using API, identity workflow only
     Partner -->> User : Request for identity document upload
     
 end
+
+
+
 ```
 
 <br/><br/>
 
->**Note**<br/>
-> Wokflow parameterization has to be made upstream during the environment parameterization. Partner choice is then taken into account by XPollens for global workflow parameterization. The XPollens recommandations by order of preference are as follow :
-><br/>
- > 1- Electronic signature + Identity (in fallback) <br/>
- > 2- Electronic signature alone (in this case the user has no choice but to use the selfie) <br/>
- > 3- Identity alone (not recommended) 
-
+:::note  **Note**
+Wokflow parameterization has to be made upstream during the environment parameterization. Partner choice is then taken into account by XPollens for global workflow parameterization. The XPollens recommandations by order of preference are as follow :
 <br/>
+1- Electronic signature + Identity (in fallback)  
+2- Identity alone (not recommended)  
 
->**Note**<br/>
->**⚠ XPollens recommend to use the `Identity` workflow only in fallback when the user is not able to complete the Electronic signature workflow** 
+In accordance with CNIL regulations and rules:
+	- all customers have the right to refuse the use of biometrics when entering into a relationship with us
+	- the service provider must offer a fallback solution, enabling the customer to enter into a relationship.
 
-<br/>
+In the case of facial scanning, it is therefore **mandatory** to implement the "Identity" fallback solution with SCT IN diligence.
+:::
 
-> **Remark**<br/>
-> Steps 6 and 7 are optionnal and depends on partner implementation
+:::warning  **Note**
+**⚠ XPollens recommend to use the `Identity` workflow only in fallback when the user is not able to complete the Electronic signature workflow**
+:::
+
+:::info  **Remark**
+Steps 6 and 7 are optionnal and depends on partner implementation
+:::
 
 * * *
 ### APIs, callbacks and technical items
@@ -98,84 +115,8 @@ end
 This API is dedicated to the new KYC solution.
 It enables the creation of the KYC demand with a specific workflow.
 
-***Prerequisite***
-
-Prerequisites to call this endpoint are : 
-
-- User must exist. 
-- KYC demand doesn't exit.
-
-***Body parameter***
-
-```json
-{
-  "workflowCode": "string"
-}
-```
-
-***Parameters***
-
-| Name | In  | Type | Required | Description |
-| --- | --- | --- | --- | --- |
-| appUserId | path | string | true | <details><summary>User identifier of partner</summary><br/><summary>Format</summary> Min 9 characters, max 30 characters<br/><summary>Accepted characters</summary> 0-9 a-z A-Z\_-.!()<br/><summary>Example</summary> ABCDEFGHI or A1B2C3d4f5g678901234567890123</details> |
-| CorrId | header | string | false | Correlation Id |
-| body | body | [CreateKycDemand](#schemacreatekycdemand) | true | Information needed to provided |
-
-> Example responses
-> 400 Response
-> 
-> ```json
-> {
->   "message": "string"
-> }
-> ```
-
-<br/>
-
-***Responses***
-
-| Status | Meaning | Description | Schema |
-| --- | --- | --- | --- |
-| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created | None |
-| 400 | [Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1) | <details><summary>Bad Request :</summary><br/>\- The appUserId field is required.<br/>\- The WorkflowCode field is required.<br/>\- The User's KYC demand already exists<br/>\- WorkflowCode does not exist in referential</details> | [ErrorResponse](#schemaerrorresponse) |
-| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) | Not Found | [ErrorResponse](#schemaerrorresponse) |
-| 405 | [Method Not Allowed](https://tools.ietf.org/html/rfc7231#section-6.5.5) | Operation not allowed | [ErrorResponse](#schemaerrorresponse) |
-| 500 | [Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1) | Server Error | [ErrorResponse](#schemaerrorresponse) |
-
-***Schemas***
-
-* *CreateKycDemand*
-
-```json
-{
-  "workflowCode": "string"
-}
-```
-
-***Properties*** 
-
-| Name | Type | Required | Restrictions | Description |
-| --- | --- | --- | --- | --- |
-| workflowCode | string | true | none | **workflowCode**<br/>*Worflow of the KYC process.*<br/>Possible values:<br/><br/>\- Electronic\_Sign<br/>\- Identity |
-
-***ErrorResponse***
-
-```json
-{
-  "message": "string"
-}
-
-```
-
-***Error Properties***
-
-| Name | Type | Required | Restrictions | Description |
-| --- | --- | --- | --- | --- |
-| message | string | true | none | none |
-
-<br/>
-
 * * *
+
 #### [`GET /api/v2.0/users/{appUserId}/kyc/demand`](https://docs.xpollens.com/api/KYC#get-/api/v2.0/users/-appUserId-/kyc/demand)
 
 ***Description***
@@ -187,11 +128,13 @@ This API retrieves the KYC demand that contains the KYC diligences received and 
 The KYC demand must exists.
 
 * * *
+
 #### Callback type 4 - [`#04 - KYC demand`](https://docs.xpollens.com/api/callbacks#post-/-callback04-V2.0Url-)
 
 ***Description***
-
 Callback received in case of status change in the KYC demand
+
+<br/>
 
 * * *
 ### Workflow change
@@ -200,18 +143,35 @@ During user onboarding it is possible for the user to switch from the `Electroni
 This is possible as long as the user has not completed the Selfie+ID step in the `Electronic_Signature` workflow.
 To handle the switch of workflow, partner should call the `PUT /api/v3.0/users/{appUserId}/kyc/demand` by specifying the new workflow in the payload.
 
-> Exemple
-> 
-> ```json
-> PATCH /api/v3.0/users/{appUserId}/kyc/demand
-> {
->      "workflowCode" : "Identity"
-> }
-> ```
+:::note  Example
+
+```json
+PATCH /api/v3.0/users/{appUserId}/kyc/demand
+{
+     "workflowCode" : "Identity"
+}
+```
+:::
 
 <br/>
 
 > Conversely, it is impossible to switch from the `Identity` workflow to the `Electronic_Signature` workflow.
+
+<br/>
+
+* * *
+
+## KYC file expiry
+A KYC folder expires after a period of 90 days from the date it was created. If the user has not finalised or validated the file within this period, it will automatically expire.
+
+As soon as the KYC is rejected, a callback 4 is sent with the statut `Rejected` . 
+With a request to GET
+/api/v3.0/users/{appUserId}/kyc/demand endpoint, the `decision`  is retrieved with the value "expired".
+The userRecordStatus does not change.
+
+After expiry, the enduser always has the option of making a new KYC request.
+
+ <br/> <br/>
 
 * * *
 
@@ -235,6 +195,8 @@ For these two workflows, when configuring your environment, you can choose to ac
 * resident permit
 
 Identity checks are subject to SLAs: 5 minutes maximum in 90% of cases.
+
+<br/>
 
 * * *
 ### Due Diligence state diagram
@@ -276,7 +238,9 @@ state fork_state2 <<fork>>
 
 <br/>
 
-> Each time the status of a due diligence changes, a callback 4 is sent.
+:::note
+Each time the status of a due diligence changes, a callback 4 is sent.
+:::
 
 * * *
 
@@ -287,10 +251,10 @@ state fork_state2 <<fork>>
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
-Partner -->> XPO: POST /api/v3.0/user/{appUserId}/kyc/demand<br/>workflowCode: Electronic_Sign
+Partner ->> XPO: POST /api/v3.0/user/{appUserId}/kyc/demand<br/>workflowCode: Electronic_Sign
 XPO -->> Partner : HTTP/201
 XPO --) Partner : Callback 4 - KYC Demand<br/>status:PENDING <br/> expectedDiligences{type,possibleDiligenceSubTypes}
 XPO --) Partner : Callback 48 - Web View URL
@@ -313,8 +277,9 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Complete
 <br/>
 <br/>
 
->**Note**  
->The strong authentification code expires after 10 minutes. A second SMS is sent after the first expires.
+:::note
+The strong authentification code expires after 10 minutes. A second SMS is sent after the first expires.
+:::
 
 *  * *
 ### Due Diligence sequence diagram : case identity
@@ -329,7 +294,7 @@ Two important pieces of information about workflow:
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
 Partner -->> XPO: POST /api/v3.0/user/{appUserId}/kyc/demand<br/>workflowCode: Identity
@@ -364,15 +329,22 @@ XPO --) Partner : Callback 34 - userRecordStatus: Validated
 
 ```
 
+ 
+ <br/>
+
 * * *
 
 ### Due Diligence SCT IN
+
+**Important information** : the iban for SCT IN due diligence is displayed IF AND ONLY IF the ID due diligence has been completed.  
+Otherwise, a comparison could be made between an issuer and the wrong identity.
+
 The minimum and maximum amount of the Sepa Credit Transfer (as a diligence) is set when the environment is created.
 Usally, the minimum amout is 1€ and the maximum amount 1000€.
 
 In order to be accepted, the issuer of the SCT must be the same person as the account holder.
 To achieve this, the account from which the transfer is made must be in the customer's first and last name. 
-Depending on the degree of consistency between the two names, the stagecoach may be validated, manually reviewed by an operator or rejected.
+Depending on the degree of consistency between the two names, the diligence may be validated, manually reviewed by an operator or rejected.
 
 This due diligence process takes much longer, with the SCT taking around 2 working days to be transmitted from the issuing bank to Xpollens.
 
@@ -380,15 +352,36 @@ This due diligence process takes much longer, with the SCT taking around 2 worki
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
+		Partner ->> XPO: GET /api/v2.0/accounts/{accountId}
+		XPO ->> Partner :http 200 {bic, iban}
+    Partner -->> User: display IBAN & RIB
 
-	Partner -->> User: display IBAN & RIB
+alt With standard SCT
 	User -->> XPO: Sepa Credit Transfer
+		XPO --) Partner : Callback 31 - KYC complementary diligence {status: To_Review_Manually}
+		break Diligence review ~ 2 days max
+				XPO --) XPO : Diligence review
+		end
+    XPO --) Partner : Callback 31 - KYC complementary diligence {status: Validated}
+    XPO --) Partner : Callback  - SCTIN {status: 1}
+	
+else With Instant Payment
+	  User -->> XPO: Instant Payment
+    XPO --) Partner : Callback 31 - KYC complementary diligence {status: To_Review_Manually}
+		break Diligence review ~ 10 sec
+				XPO --) XPO : Diligence review
+		end
 	XPO --) Partner : Callback 31 - KYC complementary diligence {status: Validated}
+    XPO --) Partner : Callback 16 - SCTIN {status: 1}
+end
+
 
 ```
+
+ <br/>
 
 * * *
 
@@ -399,7 +392,7 @@ Participant XPO
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
 break Identity controls (5mins)
@@ -426,7 +419,9 @@ end
 
 <br/><br/>
 
-> The `WebViewUrl` remains the same for the next attempt(s).
+:::note
+The `WebViewUrl` remains the same for the next attempt(s).
+:::
 
 <br/>
 
@@ -442,7 +437,7 @@ end
 
 <br/>
 
-| **Error when providing an identity document via API. (Workflow: Identity)** |
+| **Error when providing an identity document.** |
 | :--- |
 | Document is too large |
 | The document is empty |
@@ -480,7 +475,7 @@ Use the `PUT /api/v2.0/users/{appUserId}` to modify the wrong data.
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
 
@@ -503,8 +498,6 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDil
 
 
 ```
-
-  
 * * *
 **Error codes**
 
@@ -518,14 +511,17 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDil
 | Data inversion: birthName and lastName |
 | Inconsistent civility between ID document and user’s information |
 | Data inversion: firstName and lastName |
+| Nationality on id card does not match with user's nationality. Case will be reopened |
 
-&nbsp;
+
+<br/>
 
   
 * * *
 #### Due diligence ID refused: diligence type undefined
-In some cases, the Netheos robot is unable to recognise the type of identity document sent to it (e.g. the user sends an image containing the front and back of their identity document).
-The diligence status changes to "refused", and callback 4 is sent as follows: 
+In some cases, the Netheos robot is unable to **recognise** the type of identity document sent to it (e.g. the user sends an image containing the front and back of their identity document).  
+The diligence status changes to "refused", and callback 4 is sent as follows, the refusal may be for different reasons.   
+If this is the case, ask your customer to scan the ID again, making sure that the accepted documents are respected.
 
 ```json
 {
@@ -591,15 +587,17 @@ The diligence status changes to "refused", and callback 4 is sent as follows:
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
 
 	Partner -->> User: display IBAN & RIB
-	User -->> XPO: Sepa Credit Transfer
+    User -->> XPO: Sepa Credit Transfer IN or Instant Payment IN
 	XPO --) Partner : Callback 31 - KYC complementary diligence {status: Refused}
+        XPO -->> User : Sepa Credit Transfer Refund
+        XPO -->> Partner : Callback 16 {status 2}
 	Partner -->> User: ask for a new SCT IN 
-	User -->> XPO: Sepa Credit Transfer
+    User -->> XPO: Sepa Credit Transfer IN or Instant Payment IN
 	XPO --) Partner : Callback 31 - KYC complementary diligence {status: Validated}
 
 ```
@@ -610,13 +608,161 @@ Participant XPO
 | :--- |
 | The beneficiary's name is different from the transmitter's name |
 
+  
+
+* * *
+
+#### Due diligence eletronic_signature T&C refused by the enduser
+
+If :
+- the enduser refuses to sign the T&C, 
+- the user does not sign within 90 days
+- the user makes all his sms OTP attempts without success
+the status of the due diligence changes to "Refused".  
+
+As a consequence, the KYC status changes for **Rejected**. This status is an final status: if the enduser changes his mind and wishes to sign the GCU, **a new KYC demand is required.**
+
+```json
+Callback 4 example: refuse to sign T&C
+{ 
+   "Payload": {
+        "type": "4",
+        "status": "Rejected",
+        "appUserId": "7297826676138718614",
+        "kycLevel": "High",
+        "workflowCode": "Electronic_Sign",
+        "receivedDiligences": [
+            {
+                "reason": "",
+                "diligenceType": "ID_CARD",
+                "status": "Validated",
+                "attachments": [
+                    {
+                        "fileName": "xxx_FRONT_SIDE_1.jpg",
+                        "attachmentKey": "5966c914-02dc-49f2-84c6-62d65b220a35"
+                    },
+                    {
+                        "fileName": "xxx_BACK_SIDE_1.jpg",
+                        "attachmentKey": "e0289fc6-5141-47db-8b0f-4017d94da69d"
+                    }
+                ]
+            },
+            {
+                "diligenceType": "SELFIE",
+                "status": "Validated",
+                "attachments": [
+                    {
+                        "fileName": "1_alexis_bonnet_hevin_SELFIE_1.jpg",
+                        "attachmentKey": "83bd84a5-4e98-407c-a574-18cd49c14ecc"
+                    },
+                    {
+                        "fileName": "1_alexis_bonnet_hevin_SELFIE_2.jpg",
+                        "attachmentKey": "74bbda94-5a71-4691-bc92-fdc1a7ba8220"
+                    },
+                    {
+                        "fileName": "1_alexis_bonnet_hevin_SELFIE_3.jpg",
+                        "attachmentKey": "a8ee8219-f2ef-4560-960a-c9b3089bb757"
+                    }
+                ]
+            },
+            {
+                "reason": "Refusal to sign the T&Cs",
+                "diligenceType": "ESIGN",
+                "status": "Refused",
+                "attachments": [
+                    {
+                        "fileName": "document_cgu_testAgent.pdf",
+                        "attachmentKey": "317c6b36-6c77-4de4-9425-015a15ec2863"
+                    }
+                ]
+            }
+        ],
+        "expectedDiligences": [
+            {
+                "type": "Complementary",
+                "expectedCount": 1,
+                "possibleDiligenceSubTypes": [
+                    "SCTIN",
+                    "DELEGATED_COMPLEMENTARY_DILIGENCE",
+                    "ESIGN"
+                ]
+            }
+        ]
+    },
+```
+
+Here is an example of GET KYC/demand  
+
+```json
+{
+    "status": "Rejected",
+    "creationDate": "2023-11-07T13:22:32",
+    "lastUpdate": "2023-11-07T13:35:19",
+    "diligences": [
+        {
+            "type": "ID_CARD",
+            "status": "Validated",
+            "reason": "",
+            "files": [
+                {
+                    "name": "1_corinne_berthier_FRONT_SIDE_1.jpg",
+                    "key": "8e053965-382a-4b35-8d26-a5a9e40b661b"
+                },
+                {
+                    "name": "1_corinne_berthier_BACK_SIDE_1.jpg",
+                    "key": "c8bc9f16-98db-43a6-84f5-29ad472a566e"
+                }
+            ],
+            "creationDate": "2023-11-07T13:26:23",
+            "lastUpdate": "2023-11-07T13:26:23"
+        },
+        {
+            "type": "SELFIE",
+            "status": "Validated",
+            "files": [
+                {
+                    "name": "1_corinne_berthier_SELFIE_1.jpg",
+                    "key": "89ef63f8-36a3-43f9-adb4-9febe66c7f5e"
+                },
+                {
+                    "name": "1_corinne_berthier_SELFIE_2.jpg",
+                    "key": "cac978d7-fab8-4ce1-bd9f-0e4b9b4d98a8"
+                },
+                {
+                    "name": "1_corinne_berthier_SELFIE_3.jpg",
+                    "key": "4b935737-b235-447b-8ad4-e217b646e987"
+                }
+            ],
+            "creationDate": "2023-11-07T13:26:23",
+            "lastUpdate": "2023-11-07T13:26:23"
+        },
+        {
+            "type": "ESIGN",
+            "status": "Refused",
+            "reason": "Refusal to sign the T&Cs",
+            "files": [
+                {
+                    "name": "document_cgu_testAgent.pdf",
+                    "key": "59592f49-277f-4f5e-8ec1-286f80a8b859"
+                }
+            ],
+            "creationDate": "2023-11-07T13:35:19",
+            "lastUpdate": "2023-11-07T13:35:19"
+        }
+    ],
+    "decision": "Abandoned"
+}
+```
+
+<br/>
+
 * * *
 ### Fraud suspicion
 
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User
 Participant Partner
 Participant XPO
 break Controls (5mins)
@@ -630,6 +776,8 @@ Note over User, XPO: Onboarding refused.<br/> The user can not try again.
 
 
 ```
+
+<br/>
 
 * * *
 
@@ -658,10 +806,11 @@ The Netheos Web Page can be displayed using the `webviewUrl` or `url`?token=`tok
 </script>
 ```
 
-  <br/>
+<br/>
 
->**Note** 
->See the full Netheos Documentation here : [https://integration-api.ekeynox.net/docs/integration/latest/integration\_signbook\_v3/](https://integration-api.ekeynox.net/docs/integration/latest/integration_signbook_v3/)
+:::note
+See the full Netheos Documentation here : https://integration-api.ekeynox.net/docs/integration/latest/integration_signbook_v3/
+:::
 
 * * *
 #### Javascript Events handling
@@ -670,7 +819,7 @@ The Netheos Web Page can be displayed using the `webviewUrl` or `url`?token=`tok
 
 When identity check is completed (10 min max), an "identity" type event will be sent to the main page.
 
-> Exemple :
+:::note  Example
 
 ```javascript
 event = {
@@ -679,8 +828,11 @@ event = {
    ok: true
 }
 ```
+:::
 
-> This event should be handled as in the exemple below :
+> This event should be handled as in the example below :  
+
+:::note  Example
 
 ```javascsript
 window.addEventListener('message', function(evt){
@@ -690,6 +842,7 @@ window.addEventListener('message', function(evt){
     }
 }, false);
 ```
+:::
 
 * * *
 ##### Electronic Signature Event handling
@@ -703,13 +856,15 @@ The same way, once an electronic signature is performed, a `clientFileEvent` wil
 The `Identity` workflow can also be processed by API.
 It will require to send the ID Documents using the `post /api/v2.0/users/{appUserId}/kyc/attachments` API.
 
->**Note** 
->In this case, it is not neccessary to handle the webview URL provided in callback 48. 
+:::note
+In this case, it is not neccessary to handle the webview URL provided in callback 48. 
+:::
 
 <br/>
 
->**Note 2** 
->`Ìdentity` workflow requires an addionnal identity verification diligence. The additionnal diligence supported by XPollens in an incoming money transfer originating from an account owned by the user (name, firstname, .. are checked at the receipt of the money transfer by XPollens) 
+:::note  note 2
+Ìdentity` workflow requires an addionnal identity verification diligence. The additionnal diligence supported by XPollens in an incoming money transfer originating from an account owned by the user (name, firstname, .. are checked at the receipt of the money transfer by XPollens) 
+:::
 
 * * *
 #### Callbacks type 4
@@ -752,8 +907,9 @@ This callback is composed of `expectedDiligences` and `receivedDiligences`, so y
 
 <br/>
 
->**Note** 
->`possibleDiligenceSubTypes` as `expectedDiligences` depend on the environment parameterization. 
+:::note
+`possibleDiligenceSubTypes` as `expectedDiligences` depend on the environment parameterization. 
+:::
 
 * * *
 ##### KYC Status "Incomplete", the identity document and the selfie have been sent
@@ -921,12 +1077,16 @@ The format of the new callback is the following :
 > 1.  The `webviewUrl` is the concatenation of the `url` value and `token` value with the following format: `url`?token= `token`
 > 2.  The `WebViewUrl` contained if the callback #35 is deprecated.
 
+
+<br/>
+
+
 * * *
 
 ## FAQ
 ### FAQ1: Is the webview display customisable?
 
-R: Partially: [https://integration-api.ekeynox.net/docs/integration/latest/integration\_signbook\_v3/#parametrage-de-lapparence-du-facematch-video](https://integration-api.ekeynox.net/docs/integration/latest/integration_signbook_v3/#parametrage-de-lapparence-du-facematch-video)
+R: Partially: https://integration-api.ekeynox.net/docs/integration/latest/integration_signbook_v3/#parametrage-de-lapparence-du-facematch-video
 
 * * *
 ### FAQ2: Do I have to send the second and third first names?
@@ -941,6 +1101,8 @@ R: Yes, provided that the operator is not blacklisted.
 R: The iban should only be displayed:
 - as part of the Eletronic-sign workflow, the user is validated (userRecordStatus validated).
 - as part of the Identity workflow, the identity check part is validated.
+
+<br/>
 
 * * *
 
