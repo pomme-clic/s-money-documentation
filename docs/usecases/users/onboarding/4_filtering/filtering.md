@@ -161,29 +161,265 @@ Important note: no information is displayed during a hit sanction, for complianc
 
 ### Mapping  API / callback
 #### Cas not hit
-| Step | API | Callback |
-| :--- |:--- |:--- |
-| Fircosoft filtering done |{<br/>"isPoliticallyExposedPerson": false,<br/>"isPoliticallyExposedPersonTrueAuthorized": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": false,<br/>"finalDecisionPep": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |
-| Immediately after |{<br/>"isPoliticallyExposedPerson": false,<br/>"isPoliticallyExposedPersonTrueAuthorized": null,<br/>"riskAnalysisStatus": "Done"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": false,<br/>"finalDecisionPep": null,<br/>"riskAnalysisStatus": "Done"<br/>} |
+
+<table>
+<tr>
+<th>Step</th>
+<th>API</th>
+<th>Callback</th>
+</tr>
+<tr>
+<td>Fircosoft filtering done </td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": false,
+"isPoliticallyExposedPersonTrueAuthorized": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+
+</td>
+<td>"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": false,
+"finalDecisionPep": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>Immediately after</td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": false,
+"isPoliticallyExposedPersonTrueAuthorized": null,
+"riskAnalysisStatus": "Done"
+}
+```
+</td>
+<td>
+"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": false,
+"finalDecisionPep": null,
+"riskAnalysisStatus": "Done"
+}
+```
+</td>
+</tr>
+</table>
 
 #### Cas hit PPE
-| Step | Comment | API | Callback |
-| :--- |:--- |:--- |:--- |
-| Fircosoft filtering done, hit raised |We know there is a hit, but we don't know if it will be confirmed. <br/> As a consequence, isPoliticallyExposedPerson is null. |{<br/>"isPoliticallyExposedPerson": null,<br/>"isPoliticallyExposedPersonTrueAuthorized": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": null,<br/>"finalDecisionPep": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |
-| After manual review, hit confirmed |We don't yet know whether we'll be able to enter into a relationship with this enduser.<br/>As a consequence, isPoliticallyExposedPersonTrueAuthorized is null |{<br/>"isPoliticallyExposedPerson": true,<br/>"isPoliticallyExposedPersonTrueAuthorized": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": true,<br/>"finalDecisionPep": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |
-| case 1: Relationship accepted ||{<br/>"isPoliticallyExposedPerson": true,<br/>"isPoliticallyExposedPersonTrueAuthorized": true,<br/>"riskAnalysisStatus": "Done"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": true,<br/>"finalDecisionPep": true,<br/>"riskAnalysisStatus": "Done"<br/>} |
-|case 2:  Relationship refused ||{<br/>"isPoliticallyExposedPerson": true,<br/>"isPoliticallyExposedPersonTrueAuthorized": false,<br/>"riskAnalysisStatus": "Done"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": true,<br/>"finalDecisionPep": false,<br/>"riskAnalysisStatus": "Done"<br/>} |
+<table>
+<tr>
+<th>Step</th>
+<th>Comment</th>
+<th>API</th>
+<th>Callback</th>
+</tr>
+<tr>
+<td>Fircosoft filtering done, hit raised </td>
+<td>We know there is a hit, but we don't know if it will be confirmed.  As a consequence, isPoliticallyExposedPerson is null.</td>
+<td>
 
+```json
+{
+"isPoliticallyExposedPerson": null,
+"isPoliticallyExposedPersonTrueAuthorized": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
 
+</td>
+<td>
+"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": null,
+"finalDecisionPep": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+</td>
+</tr>
+<tr>
+<td>After manual review, hit confirmed </td>
+<td>We don't yet know whether we'll be able to enter into a relationship with this enduser.As a consequence, isPoliticallyExposedPersonTrueAuthorized is null </td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": true,
+"isPoliticallyExposedPersonTrueAuthorized": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+
+</td>
+<td>
+"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": true,
+"finalDecisionPep": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>case 1: Relationship accepted </td>
+<td>&nbsp;</td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": true,
+"isPoliticallyExposedPersonTrueAuthorized": true,
+"riskAnalysisStatus": "Done"
+}
+```
+
+</td>
+<td>"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": true,
+"finalDecisionPep": true,
+"riskAnalysisStatus": "Done"
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>case 2:  Relationship refused </td>
+<td>&nbsp;</td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": true,
+"isPoliticallyExposedPersonTrueAuthorized": false,
+"riskAnalysisStatus": "Done"
+}
+```
+
+</td>
+<td>
+"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": true,
+"finalDecisionPep": false,
+"riskAnalysisStatus": "Done"
+}
+```
+
+</td>
+</tr>
+</table>
 
 #### Cas hit Sanction
-| Step | Comment | API | Callback |
-| :--- |:--- |:--- |:--- |
-| Fircosoft filtering done, hit raised |We don't know if the hit has been confirmed |{<br/>"isPoliticallyExposedPerson": null,<br/>"isPoliticallyExposedPersonTrueAuthorized": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": null,<br/>"finalDecisionPep": null,<br/>"riskAnalysisStatus": "InProgress"<br/>} |
-| After manual review, hit confirmed |End of relationship|{<br/>"isPoliticallyExposedPerson": false,<br/>"isPoliticallyExposedPersonTrueAuthorized": null,<br/>"riskAnalysisStatus": "Done"<br/>} |"Payload":{<br/>"appUserId": "{{appUserId}}",<br/>"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",<br/>"isPoliticallyExposedPerson": false,<br/>"finalDecisionPep": null,<br/>"riskAnalysisStatus": "Done"<br/>} |
 
-> Note that the first two fields are false and null because they point to the PPE characteristic.
-> We can not display sanction data for compliance reasons. 
+<table>
+<tr>
+<th>Step</th>
+<th>Comment</th>
+<th>API</th>
+<th>Callback</th>
+</tr>
+<tr>
+<td>Fircosoft filtering done, hit raised </td>
+<td>We don't know if the hit has been confirmed </td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": null,
+"isPoliticallyExposedPersonTrueAuthorized": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+
+</td>
+<td>
+"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": null,
+"finalDecisionPep": null,
+"riskAnalysisStatus": "InProgress"
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>After manual review, hit confirmed </td>
+<td>End of relationship</td>
+<td>
+
+```json
+{
+"isPoliticallyExposedPerson": false,
+"isPoliticallyExposedPersonTrueAuthorized": null,
+"riskAnalysisStatus": "Done"
+}
+```
+
+</td>
+<td>
+"Payload":
+
+```json
+{
+"appUserId": "{{appUserId}}",
+"type": "PoliticallyExposedPersonStatusCreatedOrUpdated",
+"isPoliticallyExposedPerson": false,
+"finalDecisionPep": null,
+"riskAnalysisStatus": "Done"
+}
+```
+
+</td>
+</tr>
+</table>
+
+:::note
+Note that the first two fields are false and null because they point to the PPE characteristic.
+We can not display sanction data for compliance reasons. 
+:::
 
 <br/>
 <br/>
