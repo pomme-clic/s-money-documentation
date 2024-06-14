@@ -151,7 +151,7 @@ Important note: no information is displayed during a hit sanction, for complianc
 [PoliticallyExposedPersonStatusCreatedOrUpdated](https://docs.xpollens.com/api/callbacks/#post-/PoliticallyExposedPersonStatusCreatedOrUpdated)
 
 
-### Mapping fields API \<\> callback
+### Mapping fields API / callback
 | API | Callback |
 | :--- |:--- |
 | isPoliticallyExposedPerson |isPoliticallyExposedPerson |
@@ -159,7 +159,7 @@ Important note: no information is displayed during a hit sanction, for complianc
 | riskAnalysisStatus |riskAnalysisStatus |
 
 
-### Mapping  API \<\> callback
+### Mapping  API / callback
 #### Cas not hit
 | Step | API | Callback |
 | :--- |:--- |:--- |
