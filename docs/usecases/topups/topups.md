@@ -543,10 +543,38 @@ Response code 200
 | Date | date-time | Yes | true/false | UTC (FR) |
 | Refunds | string | false | \-  | Details of the refund |
 
-### All top-up
+### Get All top-up
 
 [`GET /api/v1.1/users/{userid}/payins/cardpayments`](https://docs.xpollens.com/api/Topup#get-/api/v1.1/users/-userid-/payins/cardpayments)  
 <br/>
+
+:::warning  IMPORTANT
+When The `GET /api/v1.1/users/{userid}/payins/cardpayments` API is called without additional parameters (`startDate`, `endDate)`it will return the user top-ups starting **30 days** before the current date until the **current date**.  
+
+<br/>
+
+The maximum timeframe between `startDate` and `endDate` is **31 days**.  
+  
+<br/>
+  
+If the timeframe exceeds 31 days then an exception (http/400) will be raised by the API.  
+  
+<br/><br/>
+  
+
+```json
+{
+  "code": 1,
+  "errorMessage": "Unknown technical error, please contact Xpollens support. Max date range allowed is 31 days.",
+  "title": "Technical error",
+  "priority": 2,
+  "date": "2024-06-17T15:04:39.3684193Z",
+  "operationId": "f7903cd3b34ef856bfdf493d4ad65f9f",
+  "httpStatusCode": 400
+}
+```
+
+:::
 
 * * *
 
@@ -851,3 +879,10 @@ You need to fill the `UrlReturn` in the post.
 ### Can I customise the 3DS page?
 
 No, you can only modify the logo and the merchant name.
+
+### I can't find my top-ups
+
+The `GET /api/v1.1/users/{userid}/payins/cardpayments` has some limitations regarding the timeframe and the maximum number of records it can return.  
+
+Please see the note here for more detailed information : [Get All top-ups](#get-all-top-up)  
+
