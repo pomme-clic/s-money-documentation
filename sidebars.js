@@ -33,7 +33,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Accounts',
-      items: ['api/Accounts','api/AccountsOperations', 'api/AccountStatements'],
+      items: ['api/Accounts','api/AccountsOperations', , 'api/AccountTransactions', 'api/AccountStatements'],
     },   
     {
       type: 'category',
