@@ -86,6 +86,14 @@ module.exports = {
     },
     {
         type: 'category',
+        label: 'Accounts Management',
+        items: [
+            'usecases/accounts/AccountStatements', 
+            'usecases/accounts/DebtsManagement',        
+            'usecases/accounts/AccountClosure'
+        ]
+    },    {
+        type: 'category',
         label: 'Cards Management',
         items: [
             'usecases/cards/issuing/CardsIssuing', 
