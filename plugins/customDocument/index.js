@@ -21,7 +21,7 @@ module.exports = function (context, options) {
       }
     });
   }</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WKNGB5DKZ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJDBW94Y6D"></script>
   <script>
   window.axeptioSettings = {
 clientId: "61b87582c302ec78dfea393b",
@@ -38,7 +38,7 @@ function loadGoogleAnalyticsTag() {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-1WKNGB5DKZ');
+  gtag('config', 'G-NJDBW94Y6D');
   }
 
   void 0 === window._axcb && (window._axcb = []);
