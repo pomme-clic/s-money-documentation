@@ -1,12 +1,3 @@
----
-title: Sepa Credit Transfer - v1.0
-updated: 2024-12-09 15:39:16Z
-created: 2024-03-14 13:53:38Z
-latitude: 48.85661400
-longitude: 2.35222190
-altitude: 0.0000
----
-
 # Sepa Credit Transfer (SCT)
 
 SCT transfer is used to send money to a beneficiary defined by an IBAN. You can also define recurring SCT, plan them or ask for its refund.
