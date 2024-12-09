@@ -105,7 +105,8 @@ module.exports = {
         type: 'category',
         label: 'SEPA Transfers',
         items: [
-            'usecases/sepa_transfers/instant_payment'
+            'usecases/sepa_transfers/instant_payment',
+	    'usecases/sepa_transfers/sepa_credit_transfer'
         ]
     },    
     'usecases/webhooks/webhooks',
