@@ -113,6 +113,13 @@ module.exports = {
 		'usecases/cards/operations/card_dispute' 
         ]
     },
+	{
+        type: 'category',
+        label: 'Internal Transfer',
+        items: [
+            'usecases/internal_transfer/internal_transfer'
+        ]
+    },
     {
         type: 'category',
         label: 'SEPA Transfers',
