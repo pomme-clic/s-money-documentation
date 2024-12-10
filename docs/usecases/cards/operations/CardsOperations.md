@@ -18,17 +18,15 @@ stateDiagram-v2
     Approved --> Completed
     Approved --> Canceled 
     Approved--> Expired
-
-<br/><br/>
-
 ```
+<br/>
 
 ### Card Authorization status
 
 | **Value** | **Description** |
 | --- | --- |
-| **Approved** | 1\. After an authorization creation  <br>2\. After an amount adjustment (partial recovery) |
-| **Completed** | 1\. Authorization Online  <br>2\. Authorization Offline |
+| **Approved** | 1\. After an authorization creation <br/> 2\. After an amount adjustment (partial recovery) |
+| **Completed** | 1\. Authorization Online  <br/>2\. Authorization Offline |
 | **Rejected** | Refused during authorisation |
 | **Canceled** | Total recovery |
 | **Expired** | After 7 days without clearing (30 days for booking & deposit) |
