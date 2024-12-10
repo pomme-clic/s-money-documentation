@@ -117,7 +117,7 @@ module.exports = {
         type: 'category',
         label: 'Internal Transfers',
         items: [
-            'usecases/internal_transfers/internal_transfer'
+            'usecases/internal_transfer/internal_transfer'
         ]
     },
     {
