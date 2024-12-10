@@ -152,7 +152,7 @@ A link is created with the initial operation when this information is available.
 {
   "CardDisputeId": "222a3d0a-4a3b-40a2-9ba6-826b6f68627a",
   "CardDisputeCreationDate": "2024-09-23T17:46:26Z",
-  "InitialCardOperationId": null, (Pas syst alimenté! nullable)
+  "InitialCardOperationId": null,
   "Amount": 
    {
    "Value": "31,78",
@@ -177,7 +177,7 @@ A link is created with the initial operation when this information is available.
   "cardDisputeId": "DF52BB10-ED3B-4809-B8A8-24EA69296CF8",
   "cardDisputeCreationDate": "2024-11-19T22:30:11.294Z",
   "initialCardOperationId": null,
-  "status": Completed,
+  "status": 'Completed',
   "amount": {
     "value": "36.15",
     "currency": "EUR"
