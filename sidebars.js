@@ -107,7 +107,7 @@ module.exports = {
         items: [
             'usecases/cards/operations/CardsOperations', 
             'usecases/cards/operations/OnlineCardOperations', 
-            'usecases/cards/operations/CardsOperationsClearing.',
+            'usecases/cards/operations/CardsOperationsClearing',
 		'usecases/cards/operations/OfflineCardOperations', 
 		'usecases/cards/operations/CardsOperationsHowToTest',
 		'usecases/cards/operations/card_dispute' 
