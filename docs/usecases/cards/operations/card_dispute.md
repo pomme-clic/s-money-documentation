@@ -128,7 +128,7 @@ Merchant Bank -->>  BPCE Premium: chargeback accepted
 BPCE Premium -->> XPO: FESTOPME
 XPO -->> XPO: CardOperation {"cardOperationType": "CreditAdjustment"}
 
-XPO -->> Partner: callback CardOperationCreatedOrUpdated <br> {"cardOperationType": "CreditAdjustment"}
+XPO -->> Partner: callback CardOperationCreatedOrUpdated <br/> {"cardOperationType": "CreditAdjustment"}
 
 
 ```
@@ -200,14 +200,14 @@ A link is created with the initial operation when this information is available.
 | initialCardOperationId   | string nullable | lenght: 26  | initial card operation |
 | status | string | Completed | Status of the card dispute operation |
 | amount{} | --- | --- | --- |
-| value | string | minLength: 1 <br> XX.XX| operation amount in euro |
+| value | string | minLength: 1 <br/> XX.XX | operation amount in euro |
 | currency | string | EUR | currency |
-| creditedAccountId | string | maxLength: 255 <br> minLength: 1 | Reference of the credited account |
-| debitedAccountId | string | maxLength: 255 <br> minLength: 1 | Reference of the debited account |
+| creditedAccountId | string | maxLength: 255 <br/>minLength: 1 | Reference of the credited account |
+| debitedAccountId | string | maxLength: 255 <br/> minLength: 1 | Reference of the debited account |
 | cardDisputeDetails{} | --- | --- | ---  |
 | disputeTriggerEvent | enum | --- | Trigger event |
 | disputeFileId | string | --- | dispute file Id |
-| disputeNature | enum | Undefined<br>AbusiveUse<br>LostCard<br>NonViolentStolenCard<br>CardStolenUnderThreat<br>CardNotReceivedByTheHolder<br>CounterfeitCardDetection<br>IdentityFraud<br>MultipleCounterfeitCards<br>AccountTakeover<br>UnauthorizedBillingDispute<br>GeneralInformationRequest<br>Information<br>ExpiredCard<br>ClosedAccount<br>DuplicateTransactionProcessing<br>DefectiveMerchandiseClaim<br>CardholderWithdrawalDispute<br>PreClaimWithdrawalRegulation<br>PartialWithdrawalIncident | Method used for PAN entry to initiate the card operation |
+| disputeNature | enum | Undefined<br/>AbusiveUse<br/>LostCard<br/>NonViolentStolenCard<br/>CardStolenUnderThreat<br/>CardNotReceivedByTheHolder<br/>CounterfeitCardDetection<br/>IdentityFraud<br/>MultipleCounterfeitCards<br/>AccountTakeover<br/>UnauthorizedBillingDispute<br/>GeneralInformationRequest<br/>Information<br/>ExpiredCard<br/>ClosedAccount<br/>DuplicateTransactionProcessing<br/>DefectiveMerchandiseClaim<br/>CardholderWithdrawalDispute<br/>PreClaimWithdrawalRegulation<br/>PartialWithdrawalIncident | Method used for PAN entry to initiate the card operation |
 
 <br/><br/>
 
