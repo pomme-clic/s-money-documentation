@@ -200,7 +200,7 @@ A link is created with the initial operation when this information is available.
 | initialCardOperationId   | string nullable | lenght: 26  | initial card operation |
 | status | string | Completed | Status of the card dispute operation |
 | amount{} | --- | --- | --- |
-| value | string | minLength: 1 <br>pattern: ^\d{1,30}(.\d{1,2})?$<br>default: 1.1| operation amount in euro |
+| value | string | minLength: 1 <br> XX.XX| operation amount in euro |
 | currency | string | EUR | currency |
 | creditedAccountId | string | maxLength: 255 <br> minLength: 1 | Reference of the credited account |
 | debitedAccountId | string | maxLength: 255 <br> minLength: 1 | Reference of the debited account |
