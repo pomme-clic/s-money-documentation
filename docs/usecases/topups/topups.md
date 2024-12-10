@@ -1,11 +1,12 @@
 # Top-Up
+
 ## Definition
 
 A topup card is a way for your customer to credit money on their account directly from a debit/credit card. There are different methods to do a topup.
 
 Refere to this page for the functionnal overview: https://docs.xpollens.com/docs/payments/topup/#xpollens-shop-integration
 
-&nbsp;
+<br/><br/>
 
 * * *
 
@@ -21,7 +22,6 @@ Refund --> [*]
 Rejected --> [*]
 Completed --> [*]
 ```
-<br/>
 
 | Statut code | Status name |
 | --- | --- |
@@ -30,13 +30,17 @@ Completed --> [*]
 | 2   | Refunded |
 | 3   | Rejected |
 
+<br/><br/>
+
 * * *
 
 ## General rules
 
 A top-up amount must be between 1€ and 1000€ (excluded).  
-A user cannot make more than 5 top-ups within a 48-hour period.
+A user cannot make more than 5 top-ups within a 48-hour period.  
 You cannot load an account with a card belonging to that account.
+
+<br/><br/>
 
 * * *
 
@@ -46,24 +50,24 @@ You cannot load an account with a card belonging to that account.
 
 There are 4 possibilities for the top-up:
 
-- create a top-up **without card registration**.   
-The card information will have to be filled in again the next time a topup is done.
+- create a top-up **without card registration**.  
+    The card information will have to be filled in again the next time a topup is done.
 - create a top-up **with card registration**.  
-This first top-up is necessary for one-click top-ups.
+    This first top-up is necessary for one-click top-ups.
 - create a **one-click** top-up.  
-this is possible only if the card is registred. In this case, the card information was registred during the first top-up, and is not needed during the one-click top-up. Only the 3DS validation remains to be done.
-- creation of a **subscription**, or **reccurent** top-up  
-Enabling the card to be saved and not having to validate it on the 3DS the next time it is loaded: it is called "recurrent"
+    this is possible only if the card is registred. In this case, the card information was registred during the first top-up, and is not needed during the one-click top-up. Only the 3DS validation remains to be done.
+- creation of a **subscription**, or **recurrent** top-up  
+    Enabling the card to be saved and not having to validate it on the 3DS the next time it is loaded: it is called "recurrent"
 
-&nbsp;
-
-:::note  
-The **one-click** top-up is **customer-initiated**.
-:::  
+<br/>
 
 :::note  
-**Subscription** top-up, on the other hand, is **reserved exclusively for the partner initiative**, for example to take expenses or a subscription. It is forbidden to use it on a customer's initiative, in order to dispense with 3DS. **For all customer-initiated top-ups, the 3DS is mandatory.**
-:::  
+The **one-click** top-up is **customer-initiated**.  
+:::
+
+:::note  
+**Subscription** top-up, on the other hand, is **reserved exclusively for the partner initiative**, for example to take expenses or a subscription. It is forbidden to use it on a customer's initiative, in order to dispense with 3DS. **For all customer-initiated top-ups, the 3DS is mandatory.**  
+:::
 
 ### Hosted fields
 
@@ -110,7 +114,10 @@ XPO ->> Partner : callback 1 {status:0}
 else HTTP/400: error during Xpollens checks
 XPO ->> Partner : HTTP/400
 end
+
 ```
+
+<br/>
 
 * * *
 
@@ -126,27 +133,48 @@ In this case, for the next top-up:
 
 **POST** /api/v1.1/payins/cardpayments
 
-- the `appCardId` is not filled
+- the `AppCardId` is not filled
 
 ```json
 {
-   [...]
-    "card": {
-            "hfToken": "xxx"
-   [...]
+    "OrderId": "{{orderId_TOPUP_1}}",
+    "UrlReturn": "http://rest-integ.s-money.net/HostedFieldsApp/v2/ProcessTopUp",
+    "Payer": {
+        "Name": "Jean DUPONT",
+        "Email": "jean_dupont@gmail.com",
+        "UserAgent": "Mozilla/5.0 CK={​​}​​ (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
+        "UrlReferrer": "https://www.s-money.fr?cart=473",
+        "IpAddress": "127.0.0.1"
+    },
+    "subscriptionTopUp": false,
+        "Card": {
+            "HFToken":"{{HFToken}}",
+    },
+    "TermsAndConditionsValidationDate": "2022-05-17T17:00:48.0255806+01:00",
+    "Payments": [
+        {
+            "OrderId": "payment_{{orderId_TOPUP_1}}",
+            "Amount": 100, //cents
+            "Fee": 0, // cents
+            "Beneficiary": {
+                "AppAccountId": "{{accountId}}"
+            }
+        }
+    ]
 }
 ```
 
-**Case 2: with card registration**
+**Case 2: with card registration**  
+Same request, with the `AppCardId` filled.
 
 **POST** /api/v1.1/payins/cardpayments
 
 ```json
 {
    [...]
-   "card": {
-            "hfToken": "xxx",
-            "appCardId": "CB_Test"
+   "Card": {
+            "HFToken": "xxx",
+            "AppCardId": "CB_Test"
     },
    [...]
     }
@@ -158,21 +186,22 @@ In this case, for the next top-up:
 
 The card must already be registered.
 
-To create a top up oneclick, you must, in the body of the request, add and fill in the `appCardId` parameter instead of the `hfToken` parameter. This will allow you to directly call the previously registered bank card.
+To create a top up oneclick, you must, in the body of the request, add and fill in the `AppCardId` parameter instead of the `HFToken` parameter. This will allow you to directly call the previously registered bank card.
 
 **POST** /api/v1.1/payins/cardpayments
 
 ```json
 {
    [...]
-   "card": {
-        "appCardId": "CB_Test",
+   "Card": {
+        "AppCardId": "CB_Test",
     },
      "subscriptionTopUp": false
    [...]
 
     }
 ```
+<br/>
 
 * * *
 
@@ -182,7 +211,7 @@ The card must already be registered.
 
 **1st request**
 
-- `appCardId` and `hfToken`
+- `AppCardId` and `HFToken`
 - 3DS validation
 
 **POST** /api/v1.1/payins/cardpayments
@@ -191,17 +220,25 @@ The card must already be registered.
 {
    [...]
    "card": {
-            "hfToken": "xxx"
-            "appCardId": "CB_Test",
+            "HFToken": "xxx"
+            "AppCardId": "CB_Test",
     },
      [...]
+          "Payments": [
+        {
+             [...]
+            "Beneficiary": {
+                "AppAccountId": "{{accountId}}"
+            }
+ [...]
 }
 ```
 
 **Next request**
 
-- no `hfToken`, only the `appCardId`
+- no `HFToken`, only the `AppCardId`
 - no 3DS validation
+- the `Payments.Beneficiary.AppAccountId` must be the same as then one used for the first request
 
 **POST** /api/v1.1/payins/cardpayments
 
@@ -209,12 +246,20 @@ The card must already be registered.
 {
    [...]
    "card": {
-                "appCardId": "CB_Test"
+                "AppCardId": "CB_Test"
     },
      "subscriptionTopUp": true
    [...]
+              "Payments": [
+        {
+             [...]
+            "Beneficiary": {
+                "AppAccountId": "{{accountId}}"
+            }
+ [...]
 }
 ```
+<br/><br/>
 
 * * *
 
@@ -226,7 +271,7 @@ The card must already be registered.
 | 2   | 3DS authentication |     | If KO, callback 1 {status 3} |
 | 3   | Creation of the authorisation on the Payplug side. |     | If OK, callback 1 {status: 1}.  <br/>If KO, callback 1 {status: 3} |
 
-<br/>
+  
 
 ```mermaid
 stateDiagram
@@ -248,151 +293,18 @@ HTTP/400 --> [*]
 
 ### Erros Code: response 400
 
-<table>
-<tr>
-<th>
-  Message
- </th>
-<th>
-  Error 
-</th>
-</tr>
-<tr>
-<td>When Hftoken is not filled</td>
-<td> 
+| Name | Type |
+| --- | --- | 
+| When Hftoken is not filled | {"Code": 354,<br/>    "ErrorMessage": "Erreur module de rechargement",<br/>"Title": "",<br/>"Priority": 2} | 
+| When card is already registrered | {    "Code": 717,<br/>     "ErrorMessage": "CardId déjà existant.",<br/>     "Title": "L'opération ne peut pas aboutir",<br/>     "Priority": 2} | 
+| When OrderId already exists | {    "Code": 710,<br/>    "ErrorMessage": "OrderId déjà existant.",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2} | 
+| When the card is not found	 | {    "Code": 195,<br/>     "ErrorMessage": "Carte de crédit introuvable",<br/>     "Title": "L'opération ne peut pas aboutir",<br/>     "Priority": 2} | 
+| When Payer name is not filled	 | {    "Code": 177,<br/>    "ErrorMessage": "Valeur de paramètre invalide ('Name' ne doit pas être vide.)",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2} | 
+| When Amount is not filled	 | {    "Code": 178,<br/>     "ErrorMessage": "Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Amount.",<br/>     "Title": "L'opération ne peut pas aboutir",<br/>     "Priority": 2} | 
+| When AppAcountId is not filled	 | {    "Code": 149,<br/>     "ErrorMessage": "Plafond de transaction atteint",<br/>     "Title": "Opération non autorisée"<br/> } | 
+| When the appCardId is not registered for the accountId (error 404)	 | {    "Code": 195,<br/>    "ErrorMessage": "Carte de crédit introuvable",<br/>    "Title": "L'opération ne peut pas aboutir"} | 
 
-```json  
-{
-    "Code": 354,
-    "ErrorMessage": "Erreur module de rechargement",
-    "Title": "",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When card is already registrered </td>
-<td> 
-
-```json
-{
-    "Code": 717,
-    "ErrorMessage": "CardId déjà existant.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When OrderId already exists </td>
-<td> 
-
-```json
-{
-    "Code": 710,
-    "ErrorMessage": "OrderId déjà existant.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When the card is not found </td>
-<td> 
-
-```json
-{
-    "Code": 195,
-    "ErrorMessage": "Carte de crédit introuvable",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When Payer name is not filled </td>
-<td> 
-
-```json
-{
-    "Code": 177,
-    "ErrorMessage": "Valeur de paramètre invalide ('Name' ne doit pas être vide.)",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When Amount is not filled </td>
-<td> 
-
-```json  
-{
-    "Code": 178,
-    "ErrorMessage": "Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Amount.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-``` 
-
-</td>
-</tr>
-<tr>
-<td> When amount is lower or equal to 0 </td>
-<td> 
-
-```json
-{
-    "Code": 177,
-    "ErrorMessage": "Valeur de paramètre invalide ('Amount' doit être plus grand à '0'.)",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When AppAcountId is not filled </td>
-<td> 
-
-```json
-{
-    "Code": 178,
-    "ErrorMessage": "Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Beneficiary.AppAccountId.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> When AppAcountId is not filled </td>
-<td> 
-
-```json
-{
-    "Code": 149,
-    "ErrorMessage": "Plafond de transaction atteint",
-    "Title": "Opération non autorisée"
-}
-```
-
-</td>
-</tr>
-</table>
-
+<br/>
 
 * * *
 
@@ -413,38 +325,41 @@ The execution codes are organized with different ranges:
 | --- | --- | --- |
 | 0000 | Successful operation | 1   |
 | 0001 | 3-D Secure authentication required | 0   |
-| 4001 | Transaction declined by the banking network | 3 |
-| 4002 | Insufficient funds | 3 |
-| 4003 | Card declined by the banking network | 3 |
-| 4004 | The transaction has been abandoned | 3 |
-| 4005 | Fraud suspicion | 3 |
-| 4009 | 3DSecure authentication abandoned or expired | 3 |
-| 4010 | Invalid transaction | 3 |
-| 4011 | Duplicated transaction | 3 |
-| 4012 | Invalid card data | 3 |
-| 4013 | Transaction not allowed by banking network for this holder | 3 |
-| 4014 | Non 3-D Secure-enrolled card | 3|
-| 4015 | Expired transaction | 3 |
-| 4016 | Transaction declined by the payment terminal | 3 |
-| 4017 | Form expiration (as planed by the merchant) | 3 |
-| 4018 | Recurring payment revocated for this card holder | 3 |
-| 4019 | The bank will decline further transactions from this card | 3 |
-| 4020 | Strong customer authentication required by issuer | 3 |
-| 4021 | Operation not allowed / not supported | 3 |
-| 5001 | Exchange protocol failure | 3 |
-| 5002 | Banking network error | 3 |
-| 5003 | System under maintenance, please try again later | 3 |
-| 5004 | Time out, the response will be sent to the notification URL (only applicable for Visa / MasterCard direct connection) | 3 |
-| 5005 | 3-D Secure authentication error | 3 |
-| 5006 | Unexpected bank response | 3 |
-| 6001 | Transaction declined by the merchant | 3 |
-| 6002 | Transaction declined | 3 |
-| 6003 | The cardholder has already disputed a transaction | 3 |
-| 6004 | Transaction declined by merchant and/or platform rules | 3 |
-| 6005 | Card not enrolled or 3-D secure unavailable | 3 |
-| 6006 | Blocked payment method | 3 |
-| 6007 | Operation prohibited by the bank networks | 3 |
-| 6008 | Card holder has already declared transaction as fraudulent | 3 |
+| 4001 | Transaction declined by the banking network | 3   |
+| 4002 | Insufficient funds | 3   |
+| 4003 | Card declined by the banking network | 3   |
+| 4004 | The transaction has been abandoned | 3   |
+| 4005 | Fraud suspicion | 3   |
+| 4009 | 3DSecure authentication abandoned or expired | 3   |
+| 4010 | Invalid transaction | 3   |
+| 4011 | Duplicated transaction | 3   |
+| 4012 | Invalid card data | 3   |
+| 4013 | Transaction not allowed by banking network for this holder | 3   |
+| 4014 | Non 3-D Secure-enrolled card | 3   |
+| 4015 | Expired transaction | 3   |
+| 4016 | Transaction declined by the payment terminal | 3   |
+| 4017 | Form expiration (as planed by the merchant) | 3   |
+| 4018 | Recurring payment revocated for this card holder | 3   |
+| 4019 | The bank will decline further transactions from this card | 3   |
+| 4020 | Strong customer authentication required by issuer | 3   |
+| 4021 | Operation not allowed / not supported | 3   |
+| 5001 | Exchange protocol failure | 3   |
+| 5002 | Banking network error | 3   |
+| 5003 | System under maintenance, please try again later | 3   |
+| 5004 | Time out, the response will be sent to the notification URL (only applicable for Visa / MasterCard direct connection) | 3   |
+| 5005 | 3-D Secure authentication error | 3   |
+| 5006 | Unexpected bank response | 3   |
+| 6001 | Transaction declined by the merchant | 3   |
+| 6002 | Transaction declined | 3   |
+| 6003 | The cardholder has already disputed a transaction | 3   |
+| 6004 | Transaction declined by merchant and/or platform rules | 3   |
+| 6005 | Card not enrolled or 3-D secure unavailable | 3   |
+| 6006 | Blocked payment method | 3   |
+| 6007 | Operation prohibited by the bank networks | 3   |
+| 6008 | Card holder has already declared transaction as fraudulent | 3   |
+
+
+<br/><br/>
 
 * * *
 
@@ -488,6 +403,8 @@ date: date/time UTC+2
 | Payments.Message | string | false | \-  | Obsolete |
 | Payments.Statut | string | false | \-  | Obsolete |
 | SubscriptionTopUp | string | false | true/false | Subscription for a topup |
+
+<br/><br/>
 
 * * *
 
@@ -548,19 +465,19 @@ Response code 200
 [`GET /api/v1.1/users/{userid}/payins/cardpayments`](https://docs.xpollens.com/api/Topup#get-/api/v1.1/users/-userid-/payins/cardpayments)  
 <br/>
 
-:::warning  IMPORTANT
-When The `GET /api/v1.1/users/{userid}/payins/cardpayments` API is called without additional parameters (`startDate`, `endDate)`it will return the user top-ups starting **30 days** before the current date until the **current date**.  
+:::warning IMPORTANT  
+When The `GET /api/v1.1/users/{userid}/payins/cardpayments` API is called without additional parameters (`startDate`, `endDate)`it will return the user top-ups starting **30 days** before the current date until the **current date**.
 
-<br/>
+  
 
-The maximum timeframe between `startDate` and `endDate` is **31 days**.  
+The maximum timeframe between `startDate` and `endDate` is **31 days**.
+
+  
+
+If the timeframe exceeds 31 days then an exception (http/400) will be raised by the API.
+
   
 <br/>
-  
-If the timeframe exceeds 31 days then an exception (http/400) will be raised by the API.  
-  
-<br/><br/>
-  
 
 ```json
 {
@@ -574,7 +491,7 @@ If the timeframe exceeds 31 days then an exception (http/400) will be raised by 
 }
 ```
 
-:::
+<br/><br/>
 
 * * *
 
@@ -597,8 +514,6 @@ and paymentId = paymentId of the original transaction
 | orderId | string | Mandatory | Unique orderId | Your orderId for the refund |
 | status | string | Obsolete | \-  | Obsolete |
 
-  
-
 > Note: If the cancellation is made on the same day, before the merchant discount, then there is only one transaction, with the status Refund.  
 > In the opposite case, two operations will exist: the original operation with Completed status, and the Refund operation with status Completed and Rtransaction = true
 
@@ -619,135 +534,19 @@ Response
 | OriginalPayment.Href | string | no  | Obsolete | Obsolete |
 | Type | string | no  | 1   | Obsolete |
 
-  
-
 ### Error codes
 
-<table>
-<tr>
-<th>Message</th>
-<th>Error</th>
-</tr>
-<tr>
-<td> Insufficient balance </td>
-<td> 
+| Name | Type |
+| --- | --- |
+| Insufficient balance | {    "Code": 110,<br/>    "ErrorMessage": "Votre solde est insuffisant pour effectuer ce virement. Veuillez saisir un autre montant.",<br/>    "Title": "Opération non autorisée",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:39:57.3326109Z",<br/>    "OperationId": "2cb1cd79829d041fe2fd0c4c5274ce03"} | 
+| Status of the top-up is not "Completed"	 | {    "Code": 364,<br/>    "ErrorMessage": "Opération invalide",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:46:57.8817933Z",<br/>    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"} | 
+| Refund orderId already exists	 | {    "Code": 364,<br/>    "ErrorMessage": "Opération invalide",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:46:57.8817933Z",<br/>    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"} | 
+| Refund amount = 0 | {    "Code": 704,<br/>    "ErrorMessage": "Paramètre(s) d'appel manquant(s) ({0}). amount is invalid",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-05-15T13:50:27.452768Z",<br/>    "OperationId": "bcb194d1af237f8bab8c1697c41bf67c"} | 
+| Sum of refunds > initial transaction amount | {    "Code": 706,<br/>    "ErrorMessage": "Le montant du remboursement dépasse le montant de l'opération originale.",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-05-15T13:48:34.9307117Z",<br/>    "OperationId": "74204d2cabbcdac8293458f5a0a07404"} | 
+| Top-up already refunds through Payplug BackOffice | {    "Code": 707,    "ErrorMessage": "{0}",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-05-07T15:26:20.9242088Z",<br/>    "OperationId": "1ff1458942d8c1f1914cfe27640abf4e"} | 
+| Transaction already refunded totally | {    "Code": 708,<br/>    "ErrorMessage": "Statut du paiement incohérent",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:43:53.2930334Z",<br/>    "OperationId": "57591d396a793b2156053840cec15ee8"}| 
 
-```json
-{
-    "Code": 110,
-    "ErrorMessage": "Votre solde est insuffisant pour effectuer ce virement. Veuillez saisir un autre montant.",
-    "Title": "Opération non autorisée",
-    "Priority": 2,
-    "Date": "2024-04-25T09:39:57.3326109Z",
-    "OperationId": "2cb1cd79829d041fe2fd0c4c5274ce03"
-}
-```
-
-</td>
-
-</tr>
-<tr>
-<td> Status of the top-up is not "Completed" </td>
-<td> 
-
-```json
-{
-    "Code": 364,
-    "ErrorMessage": "Opération invalide",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-04-25T09:46:57.8817933Z",
-    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> Refund orderId already exists </td>
-<td> 
-
-```json
-{
-    "Code": 364,
-    "ErrorMessage": "Opération invalide",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-04-25T09:46:57.8817933Z",
-    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> Refund amount = 0 </td>
-<td>
-
-```json
-{
-    "Code": 704,
-    "ErrorMessage": "Paramètre(s) d'appel manquant(s) ({0}). amount is invalid",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-05-15T13:50:27.452768Z",
-    "OperationId": "bcb194d1af237f8bab8c1697c41bf67c"
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> Sum of refunds > initial transaction amount </td>
-<td> 
-
-```json
-{
-    "Code": 706,
-    "ErrorMessage": "Le montant du remboursement dépasse le montant de l'opération originale.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-05-15T13:48:34.9307117Z",
-    "OperationId": "74204d2cabbcdac8293458f5a0a07404"
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> Top-up already refunds through Payplug BackOffice </td>
-<td> 
-
-```json
-{
-    "Code": 707,
-    "ErrorMessage": "{0}",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-05-07T15:26:20.9242088Z",
-    "OperationId": "1ff1458942d8c1f1914cfe27640abf4e"
-}
-```
-
-</td>
-</tr>
-<tr>
-<td> Transaction already refunded totally </td>
-<td> 
-
-```json
-{
-    "Code": 708,
-    "ErrorMessage": "Statut du paiement incohérent",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-04-25T09:43:53.2930334Z",
-    "OperationId": "57591d396a793b2156053840cec15ee8"
-}
-```
-</td>
-</tr>
-</table>  
+<br/><br/>
 
 * * *
 
@@ -882,7 +681,12 @@ No, you can only modify the logo and the merchant name.
 
 ### I can't find my top-ups
 
-The `GET /api/v1.1/users/{userid}/payins/cardpayments` has some limitations regarding the timeframe and the maximum number of records it can return.  
+The `GET /api/v1.1/users/{userid}/payins/cardpayments` has some limitations regarding the timeframe and the maximum number of records it can return.
 
-Please see the note here for more detailed information : [Get All top-ups](#get-all-top-up)  
+Please see the note here for more detailed information : [Get All top-ups](#get-all-top-up)
 
+### Can we have top-ups without 3DS 
+
+Yes, 
+- if the subscription mode is used
+- for B2B cards

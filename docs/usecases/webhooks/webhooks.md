@@ -27,6 +27,7 @@ This system has several advantages:
 * It ensures that callbacks are processed in the order in which they were received.
 * It makes callbacks accessible to clients via a standardized API.
 
+<br/><br/>
 
 * * *
 
@@ -54,6 +55,8 @@ The partner has to provide the associated endpoint hosted in its information sys
 The retry mecanism is done 3 times within a fixed interval (20 secondes) 
 - Partner should send an http response to the query. This response should return HTTP/200. The response body can either be empty or contains some information (will not be handled by Xpollens)
 - Every change in partner callbacks URL should be requested to the Xpollens Support team through a zendesk support request.
+
+<br/><br/>
 
 * * *
 
@@ -125,6 +128,8 @@ Exemple :<br/>
 ]
 ```
 
+<br/><br/>
+
 * * *
 
 ## How to use the queue
@@ -132,7 +137,7 @@ Exemple :<br/>
 The queue has to be unstacked at **least every day**.
 
 Here is a **best practice guide**:  
-1- Call Get {{URLT}}/v2.0/webhooks?limit={\*}&remove={false}, with limit = X  
+1- Call GET {{URLT}}/v2.0/webhooks?limit={\*}&remove={false}, with limit = X  
 2- Count the number of callbacks returned = Y
 
 If nb callbacks returned (Y) = X  
@@ -144,20 +149,144 @@ nb callbacks returned != X (it is inferior because your are at the end of the qu
 
 By doing this, you can be sure that you're only deleting what you got on the first call, and not a callback that arrived between the first get with remove = false, and the second with remove = true.
 
-  
+> Note: the `limit` is max 30 in sandbox, 100 in production
+
+Why make two requests—one with `remove = false` and another with `remove = true`—instead of just a single request with `remove = true`?  
+This approach ensures that the queue is only cleared once the consumption process is successfully completed.
+
+If you use `remove = true` from the start and an error occurs during the process, the callbacks would already be deleted from the queue, making it impossible to process them again.
+
+<br/><br/>
+
+* * *
+
+## Retry policy
+
+In the event of a sending or receiving error, Xpollens has a retry policy:
+
+1st retry: 20 seconds  
+2nd retry: 60 seconds  
+3rd retry: 5 minutes  
+4th retry: 30 minutes
+
+If, after these 4 attempts, the callback still cannot be delivered, the recommended practice is to retrieve it from the queue.
+
+> Note: Due to the retry policy, a "single" callback (identified by one metadata.id) can appear multiple times. The queue records each attempt to send the callback along with the corresponding httpStatusCode.
+
+```json
+Example of a response for a callback that has been retried twice.
+
+[
+    {
+        "metadata": {
+            "type": "20",
+            "version": "1.0",
+            "id": "504b959e-74a5-4bee-af66-2589f203f96a",
+            "processDate": "2024-09-24T22:10:24"
+        },
+        "payload": {
+            "id": "2564400",
+            "reference": "5D10CE36-0286-4D61-BF41-166D0DB11364",
+            "type": "20",
+            "appCardId": "cbsCardId70022",
+            "hint": "4990XXXXXXXX9276",
+            "transactionAmount": "21.80",
+            "currencyCodeTransaction": "124",
+            "cardHolderBillingAmount": "14.53",
+            "cardHolderBillingConversionRate": "0.666514",
+            "availableBalance": "51.25",
+            "actionCode": "0",
+            "merchantType": "5999",
+            "cardAcceptorIdentificationCodeName": "YYZ  Sweet Maple\\\\Mississauga",
+            "status": "0",
+            "ert": "10",
+            "cardDataInputMode": "9",
+            "tokenRequestorId": "",
+            "terminalCountryCode": "124",
+            "userId": "39966-1708350677834",
+            "executedDate": "09/25/2024 00:10:24"
+        },
+        "response": {
+            "httpStatusCode": null,
+            "pushDate": "2024-09-24T22:10:24.405909+00:00",
+            "duration": "00:00:00.0035648",
+            "body": "An error occurred while sending the request."
+        }
+    },
+    
+   	{
+        "metadata": {
+            "type": "20",
+            "version": "1.0",
+            "id": "504b959e-74a5-4bee-af66-2589f203f96a",
+            "processDate": "2024-09-24T22:10:24"
+        },
+        "payload": {
+            "id": "2564400",
+            "reference": "5D10CE36-0286-4D61-BF41-166D0DB11364",
+            "type": "20",
+            "appCardId": "cbsCardId70022",
+            "hint": "4990XXXXXXXX9276",
+            "transactionAmount": "21.80",
+            "currencyCodeTransaction": "124",
+            "cardHolderBillingAmount": "14.53",
+            "cardHolderBillingConversionRate": "0.666514",
+            "availableBalance": "51.25",
+            "actionCode": "0",
+            "merchantType": "5999",
+            "cardAcceptorIdentificationCodeName": "YYZ  Sweet Maple\\\\Mississauga",
+            "status": "0",
+            "ert": "10",
+            "cardDataInputMode": "9",
+            "tokenRequestorId": "",
+            "terminalCountryCode": "124",
+            "userId": "39966-1708350677834",
+            "executedDate": "09/25/2024 00:10:24"
+        },
+        "response": {
+            "pushDate": "2024-09-24T22:10:44.8618928+00:00",
+            "duration": "00:00:00.0909751",
+            "httpStatusCode": "201 (Created)",
+            "body": "ok"
+        }
+    }
+]
+
+```
+
+<br/><br/>
 
 * * *
 
 ## Authentification
 
-The type of authentication is set when the environments are created. 
+The type of authentication is set when the environments are created.  
 There are 3 authentication scheme supported :
 
-- basic Oauth <br/>
-(https://datatracker.ietf.org/doc/html/rfc7617)
-- Oauth2<br/>
-https://datatracker.ietf.org/doc/html/rfc6749#section-4.4
-- mTLS<br/>
-https://datatracker.ietf.org/doc/html/rfc8120
+- basic Oauth  
+    <br/>(https://datatracker.ietf.org/doc/html/rfc7617)
+- Oauth2  
+    <br/>https://datatracker.ietf.org/doc/html/rfc6749#section-4.4
+- mTLS  
+    <br/>https://datatracker.ietf.org/doc/html/rfc8120
 
 Refer to the functionnal documentation for more details.
+
+
+<br/><br/>
+
+* * *
+
+## Best pratices
+
+### Response 204
+
+If you receive a callback but your system does not use it, return a 204 response: this will tell us which callbacks are really being used, so that we can monitor them.
+
+### Versioning
+
+Callbacks are versioned at each breaking change. Adding an attribute is not considered to be a breaking change. It is therefore important that your interface contract controls accept new attributes.
+
+### Queue polling frequency
+
+Minimum once a day.

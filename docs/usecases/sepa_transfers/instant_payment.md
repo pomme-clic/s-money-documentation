@@ -1,18 +1,19 @@
 # Instant Payment
 
 ## Create a beneficiary
-Before being able to perform an **instant transfer**, it is necessary to add the transfer recipient to one's list of beneficiaries.  
 
-The [Create a beneficiary](/api/TransferBeneficiary#post-/api/v2.0/users/-appUserId-/beneficiary) endpoint is used in order to create and associate an external beneficiary account in order to perfom a Sepa Out operation.  
+Before being able to perform an **instant transfer**, it is necessary to add the transfer recipient to one's list of beneficiaries.
 
-* The BIC (Bank Identifier Code) is optionnal to add a beneficiary.  
-* The IBAN (International Bank Account Number) is mandatory to create the beneficiary  
+The [Create a beneficiary](/api/TransferBeneficiary#post-/api/v2.0/users/-appUserId-/beneficiary) endpoint is used in order to create and associate an external beneficiary account in order to perfom a Sepa Out operation.
 
-<br/>  
+* The BIC (Bank Identifier Code) is optionnal to add a beneficiary.
+* The IBAN (International Bank Account Number) is mandatory to create the beneficiary
+
+  
 The following sequence diagram shows the API workflow to add a beneficiary :
 
+  
 <br/><br/>  
-
 
 ```mermaid
 sequenceDiagram
@@ -32,18 +33,18 @@ User ->> sca : Authentication
 sca -->> XPO : Authentication<br/>result
 XPO -->> XPO : Authentication OK
 XPO --) Partner : Callback 36<br/>{beneficiaryId}
+
 ```
 
-<br/>
-
-:::warning  Important
-When the **add beneficiary** feature is triggered by a manual action from an end user, it is mandatory to use the **sca** route to add a beneficiary as user authentication is required for security / compliance reasons.
-:::
-
-:::note  **API reference**
-API : https://docs.xpollens.com/api/TransferBeneficiary#tag--Beneficiary
-:::
   
+
+:::warning  Important  
+When the **add beneficiary** feature is triggered by a manual action from an end user, it is mandatory to use the **sca** route to add a beneficiary as user authentication is required for security / compliance reasons.  
+:::
+
+::: note  **API reference**  
+API : https://docs.xpollens.com/api/TransferBeneficiary#tag--Beneficiary  
+:::
 
 * * *
 
@@ -54,17 +55,15 @@ API : https://docs.xpollens.com/api/TransferBeneficiary#tag--Beneficiary
 ```mermaid
 stateDiagram
 [*] --> Created: http 200 <br/> [synch]
-Created --> Completed : Checks between XPO and <br/> BPCE OK <br/> [asynchone]
-Created --> Rejected : Checks between XPO and <br/> BPCE KO[asynchone]
+Created --> Approved: *Internal status* <br/> transaction validated by <br/> the Payment Decision system
+Approved --> Completed : Checks between XPO and <br/> BPCE OK <br/> [Callback]
+Approved --> Rejected : Checks between XPO and <br/> BPCE KO <br/>[Callback]
 Completed --> [*]
-Completed --> Refunded
-Refunded --> [*]
 Rejected --> [*]
 
 
-```
 
-  
+```
 
 * * *
 
@@ -94,13 +93,14 @@ BPCE PS --)XPO : IP accepted
 XPO -->> Partner :Callback InstantPaymentCreatedOrUpdated {status:Completed, direction:debit}
 end
 Partner -->> User : Notification
+
 ```
 
-<br/>
+  
 
 [`POST /api/v3.0/sepa-instant-payments`](https://docs.xpollens.com/api/SCTINST#post-/api/v3.0/sepa-instant-payments)
 
-[`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-) 
+[`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-)
 
 ##### Succeeded during the post sepa-instant-payments Check Eligibility
 
@@ -111,9 +111,8 @@ stateDiagram
 [*] --> Created: http 200
 
 
-```
 
-  
+```
 
 ##### Succeeded during the process between Xpollens and BPCE PS
 
@@ -124,9 +123,8 @@ stateDiagram
      Created --> Completed
 
 
-```
 
-  
+```
 
 * * *
 
@@ -149,28 +147,32 @@ XPO --) XPO : Create transaction
 
 
 alt Synchronous checks KO
-		rect rgb(255, 0, 0, 0.1)
+        rect rgb(255, 0, 0, 0.1)
     XPO ->> Partner : http 40x
     Partner -->> User : Notification
-		end
-		
+        end
+        
 else Checks KO between XPO and BPCE PS
-        XPO ->> Partner : http 201
-		rect rgb(255, 0, 0, 0.1)
+	rect rgb(0, 255, 0, 0.1)
+			XPO ->> Partner : http 201
+	end
+
+   rect rgb(255, 0, 0, 0.1)
     Note over XPO, BPCE PS: Checks between XPO and BPCE PS <br/> Need to answer in less than 8 secondes
     XPO --) BPCE PS : Processing
     BPCE PS --)XPO : IP Rejected
     XPO -->> Partner : Callback InstantPaymentCreatedOrUpdated {status:Rejected}
-		end
-		
+   end
+        
 end
 
 Partner -->> User : Notification
 
 
+
 ```
 
-  <br/> 
+  
 
 #### Failed during the post sepa-instant-payments
 
@@ -182,7 +184,7 @@ Partner -->> User : Notification
 | 201 |     |     | **Created** |
 | 500 |     | XPOLLENS INTERNAL ERROR | \*  |
 
- <br/>
+  
 
 #### Failed during the process between Xpollens and BPCE PS
 
@@ -214,8 +216,8 @@ Partner -->> User : Notification
 | Rejected | RR04 | Regulatory Reason |
 | Rejected | TM01 | Time-out – maximum execution time has been exceeded |
 
- <br/>
- <br/> 
+  
+<br/>
 
 * * *
 
@@ -244,9 +246,10 @@ XPO -->> Partner : Callback InstantPaymentCreatedOrUpdated  <br/> {status:Comple
 Partner --) Xpollens User: Notification
 
 
+
 ```
 
-- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-) 
+- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-)
 
 * * *
 
@@ -271,8 +274,8 @@ Participant Counter part Bank
 User --) Partner: Recall request
 Partner --) Xpollens/Production Bancaire : Recall request (Zendesk)
 Xpollens/Production Bancaire --) XPO : Recall Request 
-XPO --) XPO : Check origin operation exist ( Debit )
-XPO --) XPO : Check origin operation is successed / Completed
+XPO --) XPO : Check initial operation exist ( Debit )
+XPO --) XPO : Check initial operation is successed / Completed
 XPO --) XPO : Created recall transaction ( Created / Credit )
 XPO --) Counter part Bank: Recall
 Counter part Bank --) XPO : OK
@@ -281,12 +284,11 @@ XPO -->> Partner : Callback InstantPaymentCreatedOrUpdated {status:Completed, is
 Partner -->> User: Notification
 
 
+
 ```
 
 - Account credited
-- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-) 
-
-  
+- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-)
 
 #### Failed
 
@@ -304,8 +306,8 @@ Participant Partner
 User --) Partner: Recall request
 Partner --) Xpollens/Production Bancaire : Recall request (Zendesk)
  Xpollens/Production Bancaire ->> XPO : Recall Request
-XPO --) XPO : Check origin operation exist ( Debit )
-XPO --) XPO : Check origin operation is successed / Completed
+XPO --) XPO : Check initial operation exist ( Debit )
+XPO --) XPO : Check initial operation is successed / Completed
 XPO --) XPO :Created recall transaction ( Created / Credit )
 XPO ->> Counter part Bank: Recall
 Counter part Bank ->> XPO : KO
@@ -315,12 +317,13 @@ Partner -->> User: Notification
 
 
 
+
 ```
 
 - Account not debited
-- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-) 
+- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-)
 
- <br/> 
+  
 
 * * *
 
@@ -348,19 +351,19 @@ Xpollens/Production Bancaire ->> Xpollens/Production Bancaire : Reception of Rec
 Note over Xpollens/Production Bancaire, XPO: 10 days to answer
 Xpollens/Production Bancaire ->> XPO  : Validate Recall
 
-XPO --) XPO : Check origin operation exist ( Credit )
-XPO --) XPO : Check origin operation is successed / Completed
+XPO --) XPO : Check initial operation exist ( Credit )
+XPO --) XPO : Check initial operation is successed / Completed
 XPO --) XPO :Created recall transaction ( Created / Debit )
 XPO -->> Counter part Bank: OK
 XPO -->> Partner : Callback InstantPaymentCreatedOrUpdated  <br/> {status:Completed, isRTransaction:true, direction:debit}
 
 
 
+
 ```
 
 - Account debited
-- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-) 
-
+- [`Callback "InstantPaymentCreatedOrUpdated"`](https://docs.xpollens.com/api/Callbacks#post-/-InstantPaymentCreatedOrUpdated-)
 
 #### Failed
 
@@ -384,12 +387,13 @@ Xpollens/Production Bancaire -->> Counter part Bank  : Refuse Recall
 
 
 
+
 ```
 
 - Account not debited
 
- <br/>
-  <br/>
+  
+<br/>
 
 * * *
 
@@ -427,8 +431,6 @@ Xpollens/Production Bancaire -->> Counter part Bank  : Refuse Recall
 
 ```
 
-  
-
 `POST /api/v3.0/sepa-instant-payments`
 
 ```json
@@ -448,16 +450,20 @@ Xpollens/Production Bancaire -->> Counter part Bank  : Refuse Recall
 
 ```
 
-  <br/>
+
+ <br/> 
 
 * * *
+
 ### IP IN
+
 Simulator to come, to create cases ask your Customer Integration Manager.
 
 ### IP OUT
+
 Simulator to come, to create cases ask your Customer Integration Manager.
 
- <br/> 
+<br/>
 
 * * *
 

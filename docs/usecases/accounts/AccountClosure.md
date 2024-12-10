@@ -59,7 +59,8 @@ J-- Yes -->K[Closed]
 J-- No <br/> every day -->F{"Accounting 
 Balance = 0€ ?"}
 F-- No -->L{"Existing 
-benefiaciaryAccount ?"}
+beneficiaryAccountId 
+in the closure request ?"}
 L-- No -->N[zendesk]
 L-- Yes -->M["SCT created"]
 M-->F
@@ -102,11 +103,16 @@ XPO -->> Partner: callback 21 {status:cancelled}
 XPO -->> Partner: callback 45 {accountStatus:PendingClosure}
 
 ```
-<br/><br/>
+<br/>
 
 As soon as the account statut is PendingClosure, the account is frozen
 
 <br/><br/>
+
+* * *
+
+## Transaction accepted or refused during the PendingClosure period
+<br/>
 
 | **Type of transaction** | **Acceptation** |
 | --- | --- |
@@ -142,9 +148,9 @@ If charges are to be levied, it is important to do so before the account closure
 
 * * *
 ## Account closed
-
+### Case: account balance is 0 or beneficiaryAccountId available  
 30 / 60 days later, the account automatically changes from PendingClosure to Closed.
-If the holder's balance has been topped up during this period, all funds are automatically sent to the  `beneficiaryAccountId`  indicated in the request made for the closure-request.
+If the holder's balance has been credited during this period, all funds are automatically sent to the  `beneficiaryAccountId`  indicated in the request made for the closure-request.
 
 ```mermaid
 sequenceDiagram
@@ -165,6 +171,52 @@ XPO -->> Partner: callback 45 {accountStatus:Closed}
 ```
 
 <br/><br/>
+
+### Case: missing beneficiaryAccountId and Non-Zero Balance During Account Closure Request
+
+After the 30/60 days, when the closure is requested, but the `beneficiaryAccountId` is either not available or not provided, and the account still has a non-zero balance, it becomes impossible to execute the SCT OUT.
+
+The affected account IDs are included in a specialized report listing all accounts that cannot be closed due to missing IBAN information.
+
+Then next steps are manual: 
+- A Zendesk ticket is created and sent to you, containing the list of accounts requiring the IBAN.
+- As a partner, you contact your end users to request the necessary IBAN information.
+- Once retrieved, you update the Zendesk ticket with the required IBANs.
+- The banking team then processes a corrective SCT to transfer the remaining balance.
+
+```mermaid
+sequenceDiagram
+Title: Close the account
+autoNumber
+Actor User
+Participant Partner
+Participant XPO
+
+
+XPO -->> Partner: zendesk
+Partner  -->> User: iban requested
+User -->> Partner : iban completed
+Partner -->> XPO: zendesk completed
+
+XPO -->> XPO: manual actions to add beneficiary and create SCT OUT
+
+XPO -->> Partner: callback SepaCreditTransferCreatedOrUpdated {"direction": "Debit", "isCorrective": true}
+
+XPO -->> XPO: Account closure
+XPO -->> Partner: callback 45 {accountStatus:Closed}
+
+
+```
+
+
+:::note
+Corrective SCT operations are only available for Xpollens teams.
+:::
+
+<br/><br/>
+
+## Transaction accepted or refused as soon as the account is closed
+<br/>
 
 | **Type of transaction** | **Acceptation** |
 | --- | --- |
@@ -196,6 +248,29 @@ XPO -->> Partner: callback 45 {accountStatus:Closed}
 Operations credited in the Xpollens's outstanding account are refunded manually to the enduser.
 :::
 
+<br/><br/>
+
+## Suspended operations
+In the event of receiving a credit or debit transaction on a closed account, the transaction is created with a "Suspended" status. The end user's account is not debited or credited; instead, the partner's suspense account is impacted.
+
+```mermaid
+sequenceDiagram
+Title: Transaction on a closed account	
+autoNumber
+Actor User
+Participant Partner
+Participant XPO
+Participant BPCE
+
+Note over Partner, XPO: Account closed
+BPCE -->> XPO: operation
+XPO -->> Partner: callback CardOperationCreatedOrUpdated {"status": "Suspended", <br>"cardOperationType": "CardPayment"}
+
+```
+
+<br/><br/>
+
+
 * * *
 ## Technical items
 ### Closure request
@@ -224,14 +299,21 @@ It is therefore essential to collect debts before closing the account.
 Commission cannot be taken out once the account has been closed.
 It is therefore essential that accounts in ClosureRequested, Pendingclosure and Closed status are **removed from the fee-taking batches**.
 
+<br/>
+
 * * *
 ## FAQ
 
-### FAQ1: What does the application do when a customer closes an account?
-As soon as an account closure request is made, it is essential to cut off access to the functionalities:
-- Sepa transfers (standard SCT or IP)
-- Card creation
-- Mandate creation & SDD creation
+### FAQ1: What should your application do when a customer requests account closure?
+When a customer initiates an account closure request, your application should immediately restrict access to the following functionalities:
+
+- SEPA Transfers: Block both standard SEPA Credit Transfers (SCT) and Instant Payments (IP).
+- Card Creation: Disable the ability to request or issue new cards
+- Mandate & SDD Creation: Prevent the creation of new mandates and SEPA Direct Debits (SDD).
+
+If a request is made to any of these functionalities after the account closure request, a 40x error will be returned.
+
+
 
 <br/>
 

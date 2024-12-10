@@ -4,228 +4,292 @@ import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Online card transaction
-## Feature Description
-This document describes the card operation flow from payment initiation / authorization to operation clearing and settlement.
 
-## Feature Flow - Sequence diagram
+## Online Authorisation - Description
+
+An transaction is named "online" if an authorization exists.  
+Otherwise, we talk about offline transaction.
+
+<br/><br/>
+
+* * *
+
+## Online Authorisation - Sequence diagram
+
 ```mermaid
 sequenceDiagram
 title: online transaction
 autonumber
-participant u as User
-participant t as TPE
-participant xb as Xpollens backend+SAE
-participant pb as Partner backend
+Actor User
+participant TPE
+participant BPCE
+participant Xpollens SAE
+participant Partner
 #participant ua as Partner application
 rect rgb(240,240, 240)
-		Note over u: Online transaction
-		u ->> t: online card op
-		t ->> xb: issuer auth requ.
-		xb -->> pb: callback 20
-		pb ->> pb: update authorization balance<br/>update movement
-		xb ->> t: issuer auth resp.
-		t ->> u: paiement OK
+        Note over User: Transaction
+        User ->> TPE: online card op
+        TPE ->> BPCE: issuer auth requ.
+                BPCE ->> Xpollens SAE: issuer auth requ.
+                Xpollens SAE ->> BPCE: Author. validated
+                Par User notification in the mobile app
+                    Xpollens SAE -->> Partner:  Callback <br/>  CardOperationCreatedOrUpdated
+                    Partner ->> User: notification
+                and Author validation
+                    BPCE ->> TPE: Author. validated
+                    TPE ->> User: Transaction succeeded
+                end
 end
 ```
 
----
-## Callback #20 - Card operation
-`POST /{callback20Url}`
-
-Callback received when a card authorization is created following its processing in Xpollens and each time its status change
-
-> Body parameter (exemple)
-
-```json
-{
-  "id": "464890",
-  "reference": "8Y8Loh9L8E6FJsA7J1Tyrg",
-  "type": "20",
-  "appCardId": "test_card",
-  "hint": "9396XXXXXXXX6075",
-  "transactionAmount": "11.9",
-  "currencyCodeTransaction": "978",
-  "cardHolderBillingAmount": "",
-  "cardHolderBillingConversionRate": "",
-  "availableBalance": "0.96",
-  "actionCode": "0",
-  "merchantType": "5814",
-  "cardAcceptorIdentificationCodeName": "MC DONALD S\\\\GRENOBLE",
-  "status": "0",
-  "ert": "10",
-  "cardDataInputMode": "9",
-  "tokenRequestorID": "",
-  "terminalCountryCode": "250",
-  "userid": "dyYiUtSrj",
-  "executedDate": "01/12/2022 14:44:09"
-}
-```
+<br/><br/>
 
 * * *
 
-### Parameters
+## Online Authorisation - State diagram & balance
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|callback20Url|path|string|true|the location where data will be sent.  Must be network accessible|
-|body|body|object|false|JSON Body|
-|» id|body|string|false|the Xpollens internal authorization id|
-|» reference|body|string|false|the operation orderid|
-|» type|body|string|false|the callback type|
-|» appCardId|body|string|false|the reference or alias of the card|
-|» hint|body|string|false|the card number hint|
-|» transactionAmount|body|string|false|the amount in local currency in decimal|
-|» currencyCodeTransaction|body|string|false|the transaction currency code (ISO 4217 numeric code)|
-|» cardHolderBillingAmount|body|string|false|the amount in euro (used for foreign currency transactions) in decimal format|
-|» cardHolderBillingConversionRate|body|string|false|the exchange rate (used for foreign currency transactions) in decimal value in string data type|
-|» availableBalance|body|string|false|the balance after authorisation (or after a change in status = cancellation, expiry) in decimal format|
-|» actionCode|body|string|false|the response code (authorization and reasons for refusal) :  |
-|» merchantType|body|string|false|the merchant type (Merchant Category Code) is a four-digit number listed in ISO 18245 for retail financial services. An MCC is used to classify a business by the types of goods or services it provides|
-|» cardAcceptorIdentificationCodeName|body|string|false|the merchant information (name, adress,etc…)|
-|» status|body|string|false|the Operation status :  |
-|» ert|body|string|false|the regulatory and technical environment  |
-|» cardDataInputMode|body|string|false|the input mode for the payment :  |
-|» tokenRequestorID|body|string|false|the id of the token requestor :  |
-|» terminalCountryCode|body|string|false|the Country where the payment took place|
-|» userid|body|string|false|the user unique identifier|
-|» executedDate|body|string|false|the executed date of the operation. Warning: unusual date format: (dd/MM/yyyy hh:mm:ss)|
-
-* * *
-#### Detailed descriptions
-
-**callback20Url**: the location where data will be sent.  Must be network accessible by the source server
-
-**» actionCode**: the response code (authorization and reasons for refusal) :  
-0 = approved  
-100 = denied, invalid card status  
-114 = denied, authorisation server does not respond  
-116 = denied, insufficient funds or limits reached  
-119 = denied, transaction not permitted to cardholder  
-198 = denied, technical error  
-other = denied, Natixis refused the transaction
-
-> `actionCode` is inherited from the authorization server and brings some details about the refusal of the card authorization if any.
-> It is direcly related to the `status` of the operation. If `actionCode`=0 then `status`=0, if `actionCode`>0 then `status`=3
-
-**» status**: the Operation status :  
-0 = waiting  
-1  = completed
-3 = failed  
-5 = cancelled  
-7 = expired
-
-> `status` is the XPollens status of the card authorization. Possible `status` returned consequently to the authorisation request are 0/waiting and 3/failed. Other status may happen during the life cycle of the card operation (5/cancelled, 7/expired)
-
-**» ert**: the regulatory and technical environment  
-10 = proximity (face-to-face payment)  
-2x = online payment  
-4x = unattended vending machine  
-6x = quasi-cash  
-7x = withdrawal (ATM or bank agency)
-
-**» cardDataInputMode**: the input mode for the payment :  
-0 = unspecified  
-5 = contact  
-9 = contactless  
-Other = manual (no terminal), magnetic stripe,…
-
-**» tokenRequestorID**: the id of the token requestor :  
-40010030273 = Apple Pay  
-40010043095 = Samsung Pay  
-40010069887 = Garmin Pay  
-40010051602 = Amazon(COF)  
-40010075001 = Google Pay  
-40010075839 = Netflix (COF)  
-40010075338  = Visa Checkout - VCO
-
-<h3 id="#20---card-operation-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|202|[Accepted](https://tools.ietf.org/html/rfc7231#section-6.3.3)|Your server implementation should return this HTTP status code if the data was received successfully|None|
-|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|Your server should return this HTTP status code if no longer interested in further updates|None|
-
-* * *
-
-## FAQ
-When the partner receives the callback 20, some information need to be recorded to track the card operation.
-
-For **ATM** withdrawals, the account balance will be updated along the authorization balance.
-
-
-**Scope**
-
-For each **online** card operation authorization, the partner will receive a callback 20.
-Information contained in the callback #20 deals with a single card operation (authorization).
-Information contained in the callback #20 allows partner to update :
-
-* the authorization balance amount of the customer account
-* the card operation list of the customer
-<br/>
-
-**Card information request**
-
-A card information request (wallet card tokenisation, card on file) will not trigger the callback #20, but a callback #25.
-<br/>
-
-**Authorization reference / OrderId**
-
-The `reference` field is the pivot ID that will allow the partner to link an authorization request to a settled payment amount.
-The `id` field is an internal ID that **should not be used by the partner**.
-<br/>
-
-**Amounts**
-
-* `transactionAmount` is the requested authorized amount in **local currency**. 
-  
-  > Note that this amount can be null in some cases.
-
-* `currencyCodeTransaction` is the local currency code (ISO 4217)
-
-* `cardHolderBillingAmount` is the requested converted authorized amount in **Euros** (based on `cardHolderBillingConversionRate`)
-
-* `cardHolderBillingConversionRate`is the converstion rate applied on local currency amount to retrieve euro amount at the time of the authorization request.
-
-> `transactionAmount` * `cardHolderBillingConversionRate` = `cardHolderBillingAmount`
-
-* * *
-
-**`ActionCode` and `Status`**
-
-In the case of an authozrized transaction, `ActionCode` will always be **0** (approved) and `Status` will always equal **0** (waiting)
-In the case an authorization is refused, `ActionCode` will be **>0** and `Status` will always equal **3** (failed)
-All other cases (**1**(completed), **5** (cancelled), **7** (expired)) can not happen in first place but can happen subsequently on an already authorized transaction.
-
-> Authorization State diagram
+### State diagram
 
 ```mermaid
 stateDiagram-v2
  state fork_state <<fork>>
       [*] --> fork_state: Authorization request
-      fork_state --> Waiting: Authorization created (status 0)
-      fork_state --> Failed: Authorization failed (status 3)
-    Waiting --> Completed :(status 1)
-    Waiting --> Canceled :(status 5)
-       Waiting--> Expired :(status 7)
+      fork_state --> Approved: Authorization created
+      fork_state --> Rejected: Authorization failed
+    Approved --> Canceled : Total recovery
+    Approved--> Expired : After 7 days
+
 ```
+<br/><br/>
 
-**`merchantType`**
+* * *
 
-The `merchantType` will always be set (can't be `null`) in the callback 20 response body.
-It matches the MCC (Merchant Category Code) of the merchant based on ISO 18245 (https://www.iso.org/fr/standard/79450.html)
+## Authorisation context
 
-**`cardAcceptorIdentificationCodeName`**
+The context of card usage is provided in field `context` .  
+Depending on this context, the `method` varies to provide even more details about the operation conducted.
 
-The `cardAcceptorIdentificationCodeName `  is the merchant Name.
-This data will always be set in the callback 20.
+The `merchantName` should be displayed in the cardholder's mobile application to provide them with details about their transaction history.
 
-**`terminalCountryCode`**
+The `tokenRequestorId` is filled in only if the payment has been made with a tokenized card.
 
-This fields contains the country code of country where card operation occurs.
-**It may not be available** in some cases (Web Payment, ATM withdrawals, ..)
+The `merchantCategoryCode` will always be set. It is based on ISO 18245 (https://www.iso.org/fr/standard/79450.html)
 
-**Card Authorization expiration**
+Payments made abroad are characterized by:
 
-The card authorization -if not settled- will expire after 7 days in most cases.
+- `localAmount` is not null and contains details about the currency and the value
+- `conversionRate` explains how the `amount` is calculated from the `localAmount`
+
+<br/><br/>
+
+* * *
+
+## Authorisation failed
+
+An authorization can fail for various reasons stemming from the card, the account, the transaction conducted, etc.  
+In case of authorization refusal, use the `rejectReason` to provide information to your cardholder.
+
+| rejectReason |
+| --- |
+| AccountLimitsExceeded |
+| AccountStatus |
+| ActivationDeclined |
+| ActivationDeclinedCapture |
+| BlockedCard |
+| CardLocked |
+| CryptoFailure |
+| CVV2Blocked |
+| CVV2Failed |
+| ExpiredCard |
+| ForeignOperationBlocked, |
+| InsertCardNeeded |
+| InsufficientAccountBalance |
+| Limits exceeded relatives to the period |
+| MerchantNotAuthorized |
+| MonthlyPaymentLimitExceeded |
+| PINBlocked |
+| PINFailed |
+| RemotePaymentBlocked |
+| SuspiciousFraud |
+| TechnicalError |
+| TechnicalErrorCapture |
+| Timeout |
+| TransactionNotAllowed |
+| WeeklyWithdrawalLimitExceeded |
+
+<br/><br/>
+
+* * *
+
+## Card Authorization expiration
+
+The card authorization -if not settled- will expire after 7 days in most cases.  
 Some card authorization for specific MCC (hotels, car rent, ..) can last up to 31 days before they expire if no capture is performed on operation.
 
+```mermaid
+sequenceDiagram
+title: online transaction
+autonumber
+Actor User
+participant TPE
+participant BPCE
+participant Xpollens SAE
+participant Partner
+
+       	Note over User: Transaction
+       	User ->> TPE: online card op
+       	TPE ->> BPCE: issuer auth requ.
+       	BPCE ->> Xpollens SAE: issuer auth requ.
+       	Xpollens SAE ->> BPCE: Author. validated
+                Xpollens SAE -->> Partner: Callback <br/> CardOperationCreatedOrUpdated  {status=Approved}
+
+rect rgb(245,244,255)
+                break Waiting for the clearing operation
+        		Xpollens SAE-->	Xpollens SAE : 
+    		end
+            
+                Xpollens SAE -->> Partner: Callback <br/>  CardOperationCreatedOrUpdated {status=Expired}
+end 
+```
+
+In some rather rare cases, settlements may occur belatedly, after the regulatory delay of 7 and 31 days. In these instances, the authorization expires, and the compensation will be created as an offline operation.
+
+<br/><br/>
+
+* * *
+
+## Authorisation partial or total reversal
+
+Used in particular in fuel distributors.
+
+```mermaid
+sequenceDiagram
+title: online transaction
+autonumber
+Actor User
+participant TPE
+participant BPCE
+participant Xpollens SAE
+participant Partner
+
+       	Note over User: Transaction
+       	User ->> TPE: online card op
+       	TPE ->> BPCE: issuer auth requ.
+       	BPCE ->> Xpollens SAE: issuer auth requ.
+       	Xpollens SAE ->> BPCE: Author. validated
+                Xpollens SAE -->> Partner: CardOperationCreatedOrUpdated  {status=Approved, localAmount.Value=X}
+
+rect rgb(245,244,255)
+                break Pending the final amount of the operation
+        		User-->	Xpollens SAE : 
+    		end
+
+            alt Partial reversal
+                BPCE ->> Xpollens SAE: partial reversal
+                Xpollens SAE -->> Partner: Callback <br/>  CardOperationCreatedOrUpdated  {status=Approved, localAmount.Value=Y}
+            else Total reversal
+                BPCE ->> Xpollens SAE: total  reversal
+                Xpollens SAE -->> Partner: Callback <br/>  CardOperationCreatedOrUpdated  {status=Canceled, localAmount.Value=0.00}
+                end
+end 
+```
+<br/><br/>
+
+* * *
+
+## ATM withdrawal
+
+ATM withdrawal is an online transaction. It is define by the `cardOperationType` = AtmWithdrawal
+
+> Note: ATM withdrawal under 20€ are refused.
+
+<br/><br/>
+
+* * *
+
+## Internet payments
+
+```mermaid
+stateDiagram
+[*] --> 3DS_authentication
+3DS_authentication --> Xpollens_checks
+
+```
+
+> Note: In any case, the Xpollens checks are performed after the 3DS check.
+
+
+### Sequence diagram
+
+```mermaid
+sequenceDiagram
+title: internet payments
+autonumber
+Actor User
+participant InternetWebsite
+participant VISA
+participant ACS
+participant Entrust
+participant BPCE
+participant Xpollens SAE
+participant Partner
+#participant ua as Partner application
+rect rgb(245,255, 246)
+        Note over User: Transaction
+        User ->> InternetWebsite: online card op
+        InternetWebsite ->> VISA: issuer auth requ.
+                 VISA ->> ACS : check eligibility
+                 alt Card Eligible
+                ACS ->> Entrust: strong authent needed.
+                                    Entrust ->> Partner: strong authent needed
+                                    Partner ->> User : strong authent needed
+                                    User -->> Entrust: strong authent accepted
+                                    Entrust ->> ACS: OK
+                                    ACS ->> VISA : OK
+                                    VISA ->> BPCE : issuer auth requ.
+                                    BPCE ->> Xpollens SAE: issuer auth requ.
+                Xpollens SAE ->> BPCE: Author. validated
+                Par User notification in the mobile app
+                    Xpollens SAE -->> Partner:  Callback <br/>  CardOperationCreatedOrUpdated
+                    Partner ->> User: notification
+                and Author validation
+                    BPCE ->> InternetWebsite: Author. validated
+                    InternetWebsite ->> User: Transaction succeeded
+                end
+end
+end
+```
+
+<br/><br/>
+
+* * *
+
+## Xpay
+
+An Xpay is an online transaction. In case of an Xpay, the `tokenRequestorId` is not null, and details the provider from which the card was tokenised.
+
+<br/><br/>
+
+* * *
+
+## FAQ about card authorisation
+
+### FAQ1 - Card information request
+
+A card information request (wallet card tokenisation, card on file) will not trigger the callback #CardOperationCreatedOrUpdated, but a callback #25.
+
+### FAQ2 - `merchantType`
+
+The `merchantType` will always be settled (can't be `null`) in the callback CardOperationCreatedOrUpdated response body.  
+It matches the MCC (Merchant Category Code) of the merchant based on ISO 18245 (https://usa.visa.com/content/dam/VCOM/download/merchants/visa-merchant-data-standards-manual.pdf)
+
+### FAQ3 - One payment but multiple settlement
+
+On marketplaces, one authorisation can lead to several settlements.  
+For example  
+I am on marketplace A,  
+I have a basket of 3 items from 3 different merchants,  
+when I pay, I only receive one payment authorisation.  
+However, 3 transactions are carried out at the 3 merchants.  
+So 3 compensations will be issued by the 3 banks of my merchants.  
+In this case, the first clearing will match the authorisation. The other two clearing will created offline operations.
