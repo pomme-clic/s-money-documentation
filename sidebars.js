@@ -101,6 +101,18 @@ module.exports = {
             'usecases/cards/selfcare/virtual'
         ]
     },
+	      {
+        type: 'category',
+        label: 'Card Operations',
+        items: [
+            'usecases/cards/operations/CardsOperations', 
+            'usecases/cards/operations/OnlineCardOperations', 
+            'usecases/cards/operations/CardsOperationsClearing.',
+		'usecases/cards/operations/OfflineCardOperations', 
+		'usecases/cards/operations/CardsOperationsHowToTest',
+		'usecases/cards/operations/card_dispute' 
+        ]
+    },
     {
         type: 'category',
         label: 'SEPA Transfers',
