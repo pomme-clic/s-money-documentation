@@ -293,123 +293,16 @@ HTTP/400 --> [*]
 
 ### Erros Code: response 400
 
-<table class="jop-noMdConv"><tbody><tr class="jop-noMdConv"><th class="jop-noMdConv">Message</th><th class="jop-noMdConv">Error</th></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When Hftoken is not filled</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 354,
-    "ErrorMessage": "Erreur module de rechargement",
-    "Title": "",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">354</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Erreur module de rechargement"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">""</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When card is already registrered</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 717,
-    "ErrorMessage": "CardId déjà existant.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">717</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"CardId déjà existant."</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When OrderId already exists</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 710,
-    "ErrorMessage": "OrderId déjà existant.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">710</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"OrderId déjà existant."</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When the card is not found</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 195,
-    "ErrorMessage": "Carte de crédit introuvable",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">195</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Carte de crédit introuvable"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When Payer name is not filled</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 177,
-    "ErrorMessage": "Valeur de paramètre invalide ('Name' ne doit pas être vide.)",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">177</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Valeur de paramètre invalide ('Name' ne doit pas être vide.)"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When Amount is not filled</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 178,
-    "ErrorMessage": "Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Amount.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">178</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Amount."</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When amount is lower or equal to 0</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 177,
-    "ErrorMessage": "Valeur de paramètre invalide ('Amount' doit être plus grand à '0'.)",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">177</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Valeur de paramètre invalide ('Amount' doit être plus grand à '0'.)"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When AppAcountId is not filled</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 178,
-    "ErrorMessage": "Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Beneficiary.AppAccountId.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">178</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Beneficiary.AppAccountId."</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When AppAcountId is not filled</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 149,
-    "ErrorMessage": "Plafond de transaction atteint",
-    "Title": "Opération non autorisée"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">149</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Plafond de transaction atteint"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Opération non autorisée"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">When the appCardId is not registered for the accountId (error 404)</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 195,
-    "ErrorMessage": "Carte de crédit introuvable",
-    "Title": "L'opération ne peut pas aboutir"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">195</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Carte de crédit introuvable"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr></tbody></table>
+| Name | Type |
+| --- | --- | 
+| When Hftoken is not filled | {"Code": 354,<br/>    "ErrorMessage": "Erreur module de rechargement",<br/>"Title": "",<br/>"Priority": 2} | 
+| When card is already registrered | {    "Code": 717,<br/>     "ErrorMessage": "CardId déjà existant.",<br/>     "Title": "L'opération ne peut pas aboutir",<br/>     "Priority": 2} | 
+| When OrderId already exists | {    "Code": 710,<br/>    "ErrorMessage": "OrderId déjà existant.",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2} | 
+| When the card is not found	 | {    "Code": 195,<br/>     "ErrorMessage": "Carte de crédit introuvable",<br/>     "Title": "L'opération ne peut pas aboutir",<br/>     "Priority": 2} | 
+| When Payer name is not filled	 | {    "Code": 177,<br/>    "ErrorMessage": "Valeur de paramètre invalide ('Name' ne doit pas être vide.)",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2} | 
+| When Amount is not filled	 | {    "Code": 178,<br/>     "ErrorMessage": "Les paramètres suivants sont invalides : cardPaymentRequestDto.Payments\[0\].Amount.",<br/>     "Title": "L'opération ne peut pas aboutir",<br/>     "Priority": 2} | 
+| When AppAcountId is not filled	 | {    "Code": 149,<br/>     "ErrorMessage": "Plafond de transaction atteint",<br/>     "Title": "Opération non autorisée"<br/> } | 
+| When the appCardId is not registered for the accountId (error 404)	 | {    "Code": 195,<br/>    "ErrorMessage": "Carte de crédit introuvable",<br/>    "Title": "L'opération ne peut pas aboutir"} | 
 
 <br/>
 
@@ -643,119 +536,15 @@ Response
 
 ### Error codes
 
-<table class="jop-noMdConv"><tbody><tr class="jop-noMdConv"><th class="jop-noMdConv">Message</th><th class="jop-noMdConv">Error</th></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Insufficient balance</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 110,
-    "ErrorMessage": "Votre solde est insuffisant pour effectuer ce virement. Veuillez saisir un autre montant.",
-    "Title": "Opération non autorisée",
-    "Priority": 2,
-    "Date": "2024-04-25T09:39:57.3326109Z",
-    "OperationId": "2cb1cd79829d041fe2fd0c4c5274ce03"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">110</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Votre solde est insuffisant pour effectuer ce virement. Veuillez saisir un autre montant."</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Opération non autorisée"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-04-25T09:39:57.3326109Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2cb1cd79829d041fe2fd0c4c5274ce03"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Status of the top-up is not "Completed"</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 364,
-    "ErrorMessage": "Opération invalide",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-04-25T09:46:57.8817933Z",
-    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">364</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Opération invalide"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-04-25T09:46:57.8817933Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"7b2e38c3ac31db9d1256aea67f7b7b7f"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Refund orderId already exists</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 364,
-    "ErrorMessage": "Opération invalide",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-04-25T09:46:57.8817933Z",
-    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">364</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Opération invalide"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-04-25T09:46:57.8817933Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"7b2e38c3ac31db9d1256aea67f7b7b7f"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Refund amount = 0</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 704,
-    "ErrorMessage": "Paramètre(s) d'appel manquant(s) ({0}). amount is invalid",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-05-15T13:50:27.452768Z",
-    "OperationId": "bcb194d1af237f8bab8c1697c41bf67c"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">704</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paramètre(s) d'appel manquant(s) ({0}). amount is invalid"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-05-15T13:50:27.452768Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"bcb194d1af237f8bab8c1697c41bf67c"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Sum of refunds &gt; initial transaction amount</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 706,
-    "ErrorMessage": "Le montant du remboursement dépasse le montant de l'opération originale.",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-05-15T13:48:34.9307117Z",
-    "OperationId": "74204d2cabbcdac8293458f5a0a07404"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">706</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Le montant du remboursement dépasse le montant de l'opération originale."</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-05-15T13:48:34.9307117Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"74204d2cabbcdac8293458f5a0a07404"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Top-up already refunds through Payplug BackOffice</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 707,
-    "ErrorMessage": "{0}",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-05-07T15:26:20.9242088Z",
-    "OperationId": "1ff1458942d8c1f1914cfe27640abf4e"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">707</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"{0}"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-05-07T15:26:20.9242088Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"1ff1458942d8c1f1914cfe27640abf4e"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr><tr class="jop-noMdConv"><td class="jop-noMdConv">Transaction already refunded totally</td><td class="jop-noMdConv"><div class="joplin-editable"><pre class="joplin-source" data-joplin-language="json" data-joplin-source-open="```json
-" data-joplin-source-close="
-```">{
-    "Code": 708,
-    "ErrorMessage": "Statut du paiement incohérent",
-    "Title": "L'opération ne peut pas aboutir",
-    "Priority": 2,
-    "Date": "2024-04-25T09:43:53.2930334Z",
-    "OperationId": "57591d396a793b2156053840cec15ee8"
-}</pre><pre class="hljs"><code><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"Code"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">708</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"ErrorMessage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Statut du paiement incohérent"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"L'opération ne peut pas aboutir"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"Date"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2024-04-25T09:43:53.2930334Z"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"OperationId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"57591d396a793b2156053840cec15ee8"</span>
-<span class="hljs-punctuation">}</span></code></pre></div></td></tr></tbody></table>
+| Name | Type |
+| --- | --- |
+| Insufficient balance | {    "Code": 110,<br/>    "ErrorMessage": "Votre solde est insuffisant pour effectuer ce virement. Veuillez saisir un autre montant.",<br/>    "Title": "Opération non autorisée",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:39:57.3326109Z",<br/>    "OperationId": "2cb1cd79829d041fe2fd0c4c5274ce03"} | 
+| Status of the top-up is not "Completed"	 | {    "Code": 364,<br/>    "ErrorMessage": "Opération invalide",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:46:57.8817933Z",<br/>    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"} | 
+| Refund orderId already exists	 | {    "Code": 364,<br/>    "ErrorMessage": "Opération invalide",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:46:57.8817933Z",<br/>    "OperationId": "7b2e38c3ac31db9d1256aea67f7b7b7f"} | 
+| Refund amount = 0 | {    "Code": 704,<br/>    "ErrorMessage": "Paramètre(s) d'appel manquant(s) ({0}). amount is invalid",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-05-15T13:50:27.452768Z",<br/>    "OperationId": "bcb194d1af237f8bab8c1697c41bf67c"} | 
+| Sum of refunds > initial transaction amount | {    "Code": 706,<br/>    "ErrorMessage": "Le montant du remboursement dépasse le montant de l'opération originale.",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-05-15T13:48:34.9307117Z",<br/>    "OperationId": "74204d2cabbcdac8293458f5a0a07404"} | 
+| Top-up already refunds through Payplug BackOffice | {    "Code": 707,    "ErrorMessage": "{0}",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-05-07T15:26:20.9242088Z",<br/>    "OperationId": "1ff1458942d8c1f1914cfe27640abf4e"} | 
+| Transaction already refunded totally | {    "Code": 708,<br/>    "ErrorMessage": "Statut du paiement incohérent",<br/>    "Title": "L'opération ne peut pas aboutir",<br/>    "Priority": 2,<br/>    "Date": "2024-04-25T09:43:53.2930334Z",<br/>    "OperationId": "57591d396a793b2156053840cec15ee8"}| 
 
 <br/><br/>
 
