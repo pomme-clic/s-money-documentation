@@ -193,22 +193,6 @@ A link is created with the initial operation when this information is available.
 
 ```
 
-| Attribute name| Type | Constraint | Definition  | 
-| --- | --- | --- | --- |
-| cardDisputeId   | string | lenght: 26 | Unique card dispute reference |
-| cardDisputeCreationDate   | date |--- | Date of creation of the dispute operation card in Xpollens system |
-| initialCardOperationId   | string nullable | lenght: 26  | initial card operation |
-| status | string | Completed | Status of the card dispute operation |
-| amount{} | --- | --- | --- |
-| value | string | minLength: 1 <br/> XX.XX | operation amount in euro |
-| currency | string | EUR | currency |
-| creditedAccountId | string | maxLength: 255 <br/>minLength: 1 | Reference of the credited account |
-| debitedAccountId | string | maxLength: 255 <br/> minLength: 1 | Reference of the debited account |
-| cardDisputeDetails{} | --- | --- | ---  |
-| disputeTriggerEvent | enum | --- | Trigger event |
-| disputeFileId | string | --- | dispute file Id |
-| disputeNature | enum | Undefined<br/>AbusiveUse<br/>LostCard<br/>NonViolentStolenCard<br/>CardStolenUnderThreat<br/>CardNotReceivedByTheHolder<br/>CounterfeitCardDetection<br/>IdentityFraud<br/>MultipleCounterfeitCards<br/>AccountTakeover<br/>UnauthorizedBillingDispute<br/>GeneralInformationRequest<br/>Information<br/>ExpiredCard<br/>ClosedAccount<br/>DuplicateTransactionProcessing<br/>DefectiveMerchandiseClaim<br/>CardholderWithdrawalDispute<br/>PreClaimWithdrawalRegulation<br/>PartialWithdrawalIncident | Method used for PAN entry to initiate the card operation |
-
 <br/><br/>
 
 * * *
