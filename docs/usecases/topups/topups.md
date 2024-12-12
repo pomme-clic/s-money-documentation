@@ -8,6 +8,8 @@ Refere to this page for the functionnal overview: https://docs.xpollens.com/docs
 
 <br/><br/>
 
+
+
 * * *
 
 ## Top-up state diagram
@@ -458,7 +460,7 @@ Response code 200
 | extraResult.CardType | string | no  | null | Obsolete |
 | TermsAndConditions  <br/>ValidationDate | date-time | Yes | yyyy-mm-ddThh:mm:ss.xxxxxxx | Same value than the post |
 | Date | date-time | Yes | true/false | UTC (FR) |
-| Refunds | string | false | \-  | Details of the refund |
+| refunds | string | false | \-  | Details of the refund |
 
 ### Get All top-up
 
@@ -467,15 +469,10 @@ Response code 200
 
 :::warning IMPORTANT  
 When The `GET /api/v1.1/users/{userid}/payins/cardpayments` API is called without additional parameters (`startDate`, `endDate)`it will return the user top-ups starting **30 days** before the current date until the **current date**.
-
-  
-
-The maximum timeframe between `startDate` and `endDate` is **31 days**.
-
-  
+The maximum timeframe between `startDate` and `endDate` is **31 days**
 
 If the timeframe exceeds 31 days then an exception (http/400) will be raised by the API.
-
+:::
   
 <br/>
 

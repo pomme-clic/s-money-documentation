@@ -13,11 +13,18 @@ This part describes the card operation flow from payment initiation / authorizat
 stateDiagram-v2
  state fork_state <<fork>>
       [*] --> fork_state: Authorization request
+	  [*] --> Suspended
       fork_state --> Approved: Authorization created
       fork_state --> Rejected: Authorization failed
     Approved --> Completed
+	Approved --> Reversed
+	Reversed --> Completed
     Approved --> Canceled 
     Approved--> Expired
+	Completed --> [*]
+	Canceled --> [*]
+	Expired --> [*]
+	Suspended --> [*]
 ```
 <br/>
 
@@ -25,15 +32,17 @@ stateDiagram-v2
 
 | **Value** | **Description** |
 | --- | --- |
-| **Approved** | 1\. After an authorization creation <br/> 2\. After an amount adjustment (partial recovery) |
+| **Approved** | After an authorization creation |
+| **Reversed** | After an amount adjustment (partial recovery) |
 | **Completed** | 1\. Authorization Online  <br/>2\. Authorization Offline |
 | **Rejected** | Refused during authorisation |
 | **Canceled** | Total recovery |
-| **Expired** | After 7 days without clearing (30 days for booking & deposit) |
+| **Expired** | After 10 days without clearing (30 days for booking & deposit), 21 days for a withdrawal |
+| **Suspended** | Card operation on a closed account |
 
 ### Balance diagram
 
-| **Step** | **Authorisation balance** | **Real balance** |
+| **Step** | **Authorisation balance** | **Accounting balance** |
 | --- | --- | --- |
 | 1- Authorisation | x   |     |
 | 2-a. Settlement of an existing authorisation |     | x   |
