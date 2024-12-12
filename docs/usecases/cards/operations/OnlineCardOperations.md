@@ -56,10 +56,12 @@ stateDiagram-v2
       [*] --> fork_state: Authorization request
       fork_state --> Approved: Authorization created
       fork_state --> Rejected: Authorization failed
+	  Approved --> Reversed : Partial recovery
     Approved --> Canceled : Total recovery
-    Approved--> Expired : After 7 days
+    Approved--> Expired : After 10 days (or 21 for withdrawal) 
 
 ```
+
 <br/><br/>
 
 * * *
@@ -123,8 +125,9 @@ In case of authorization refusal, use the `rejectReason` to provide information 
 
 ## Card Authorization expiration
 
-The card authorization -if not settled- will expire after 7 days in most cases.  
+The card authorization -if not settled- will expire after 10 days in most cases.  
 Some card authorization for specific MCC (hotels, car rent, ..) can last up to 31 days before they expire if no capture is performed on operation.
+Withdrawals expire after 21 days.
 
 ```mermaid
 sequenceDiagram
@@ -152,7 +155,7 @@ rect rgb(245,244,255)
 end 
 ```
 
-In some rather rare cases, settlements may occur belatedly, after the regulatory delay of 7 and 31 days. In these instances, the authorization expires, and the compensation will be created as an offline operation.
+In some rather rare cases, settlements may occur belatedly, after the regulatory delay of 10 and 31 days. In these instances, the authorization expires, and the compensation will be created as an offline operation.
 
 <br/><br/>
 
@@ -186,7 +189,7 @@ rect rgb(245,244,255)
 
             alt Partial reversal
                 BPCE ->> Xpollens SAE: partial reversal
-                Xpollens SAE -->> Partner: Callback <br/>  CardOperationCreatedOrUpdated  {status=Approved, localAmount.Value=Y}
+                Xpollens SAE -->> Partner: Callback <br/>  CardOperationCreatedOrUpdated  {status=Reversed, localAmount.Value=Y}
             else Total reversal
                 BPCE ->> Xpollens SAE: total  reversal
                 Xpollens SAE -->> Partner: Callback <br/>  CardOperationCreatedOrUpdated  {status=Canceled, localAmount.Value=0.00}
