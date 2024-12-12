@@ -8,6 +8,8 @@ Refere to this page for the functionnal overview: https://docs.xpollens.com/docs
 
 <br/><br/>
 
+
+
 * * *
 
 ## Top-up state diagram
@@ -27,7 +29,7 @@ Completed --> [*]
 | --- | --- |
 | 0   | Approved |
 | 1   | Completed |
-| 2   | ed |
+| 2   | Refunded |
 | 3   | Rejected |
 
 <br/><br/>
@@ -458,7 +460,7 @@ Response code 200
 | extraResult.CardType | string | no  | null | Obsolete |
 | TermsAndConditions  <br/>ValidationDate | date-time | Yes | yyyy-mm-ddThh:mm:ss.xxxxxxx | Same value than the post |
 | Date | date-time | Yes | true/false | UTC (FR) |
-| s | string | false | \-  | Details of the refund |
+| refunds | string | false | \-  | Details of the refund |
 
 ### Get All top-up
 
@@ -474,7 +476,6 @@ If the timeframe exceeds 31 days then an exception (http/400) will be raised by 
   
 <br/>
 
-
 ```json
 {
   "code": 1,
@@ -486,7 +487,6 @@ If the timeframe exceeds 31 days then an exception (http/400) will be raised by 
   "httpStatusCode": 400
 }
 ```
-
 
 <br/><br/>
 
