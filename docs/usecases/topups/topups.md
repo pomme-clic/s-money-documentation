@@ -467,17 +467,13 @@ Response code 200
 
 :::warning IMPORTANT  
 When The `GET /api/v1.1/users/{userid}/payins/cardpayments` API is called without additional parameters (`startDate`, `endDate)`it will return the user top-ups starting **30 days** before the current date until the **current date**.
-
-  
-
-The maximum timeframe between `startDate` and `endDate` is **31 days**.
-
-  
+The maximum timeframe between `startDate` and `endDate` is **31 days**
 
 If the timeframe exceeds 31 days then an exception (http/400) will be raised by the API.
 :::
   
 <br/>
+
 
 ```json
 {
@@ -490,6 +486,7 @@ If the timeframe exceeds 31 days then an exception (http/400) will be raised by 
   "httpStatusCode": 400
 }
 ```
+
 
 <br/><br/>
 
