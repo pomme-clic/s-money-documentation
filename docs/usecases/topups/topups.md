@@ -27,7 +27,7 @@ Completed --> [*]
 | --- | --- |
 | 0   | Approved |
 | 1   | Completed |
-| 2   | Refunded |
+| 2   | ed |
 | 3   | Rejected |
 
 <br/><br/>
@@ -458,7 +458,7 @@ Response code 200
 | extraResult.CardType | string | no  | null | Obsolete |
 | TermsAndConditions  <br/>ValidationDate | date-time | Yes | yyyy-mm-ddThh:mm:ss.xxxxxxx | Same value than the post |
 | Date | date-time | Yes | true/false | UTC (FR) |
-| Refunds | string | false | \-  | Details of the refund |
+| s | string | false | \-  | Details of the refund |
 
 ### Get All top-up
 
@@ -475,7 +475,7 @@ The maximum timeframe between `startDate` and `endDate` is **31 days**.
   
 
 If the timeframe exceeds 31 days then an exception (http/400) will be raised by the API.
-
+:::
   
 <br/>
 
