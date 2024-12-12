@@ -33,7 +33,7 @@ stateDiagram-v2
 
 ### Balance diagram
 
-| **Step** | **Authorisation balance** | **Real balance** |
+| **Step** | **Authorisation balance** | **Accounting balance** |
 | --- | --- | --- |
 | 1- Authorisation | x   |     |
 | 2-a. Settlement of an existing authorisation |     | x   |
