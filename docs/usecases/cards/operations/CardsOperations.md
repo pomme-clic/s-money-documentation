@@ -19,12 +19,12 @@ stateDiagram-v2
       fork_state --> Approved: Authorization created
       fork_state --> Rejected: Authorization failed
     Approved --> fork_state3
+	fork_state3 --> Canceled 
 	fork_state3 --> Completed
 	fork_state3 --> Reversed
 	Reversed --> fork_state2
 	fork_state2 --> Completed
 	fork_state2 --> Expired
-    fork_state3 --> Canceled 
     fork_state3--> Expired
 	Completed --> [*]
 	Canceled --> [*]
