@@ -219,13 +219,8 @@ Solution relies on
 * the `tokensignature` API [see here](https://docs.xpollens.com/api/CardSecure#get-/api/v2.0/tokensignature/-cardExternalRef-)
 * an **SDK** provided by Thales
 
-SDK and SDK documentation are available to download here (Files are password protected, please ask access through our support team) : 
+Ask your Customer Integration Manager to provide the SDK and its documentation.
 
-| SDK & Documentation   |
-| -- |
-| **SDK Documentation**<br/>[CardCompanion SDK - Technical documentation - A16.zip](./files/CardCompanion%20SDK%20-%20Technical%20documentation%20-%20A16.zip)|
-|**ANDROID SDK**<br/>[CardCompanionSDK_2.0.0_Android.zip](./files/CardCompanionSDK_2.0.0_Android.zip)|
-|**iOS SDK**<br/>[CardCompanionSDK_2.0.2_iOS.zip](./files/CardCompanionSDK_2.0.2_iOS.zip)|
 
 
 <br/>
