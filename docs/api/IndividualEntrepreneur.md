@@ -1,6 +1,6 @@
 ---
-title: Users
-sidebar_label: Users
+title: Individual Entrepreneur
+sidebar_label: Individual Entrepreneur
 hide_table_of_contents: true
 ---
 
