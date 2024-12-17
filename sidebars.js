@@ -43,7 +43,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Users',
-      items: ['api/KYC','api/Users'],
+      items: ['api/KYC','api/Users','api/IndividualEntrepreneur'],
     },
     {
       type: 'category',
