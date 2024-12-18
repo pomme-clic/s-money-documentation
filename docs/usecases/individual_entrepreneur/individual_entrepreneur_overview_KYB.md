@@ -7,7 +7,8 @@ The  identity of the physical person is composed by 2 diligences:
 - the ID document
 - the complementary diligence 
 
-![966ad32c9379f9f90f06576cd9418c75.png](../../../../_resources/966ad32c9379f9f90f06576cd9418c75.png)
+![individual_entrepreneur_KYB.png](_ressources/individual_entrepreneur_KYB.png)
+
 <br/>
 
 * * *
@@ -596,8 +597,8 @@ the status of the due diligence changes to "Refused".
 
 As a consequence, the KYC status changes for **Rejected**. This status is an final status: if the enduser changes his mind and wishes to sign the GCU, **a new KYC demand is required.**
 
-```json
 Callback 4 example: refuse to sign T&C
+```json
 { 
    "Payload": {
         "type": "4",
