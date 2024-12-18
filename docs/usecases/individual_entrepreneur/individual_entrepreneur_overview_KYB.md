@@ -22,10 +22,10 @@ Initialized	--> Being_received : At least 1 diligence received
 
 Being_received --> Fully_received: all documents received
 Fully_received --> Pending: Overall checks 
-Pending --> Rejected: - Onboarding abandonned <br/> - CGU refused <br/> - KYC OTP ko
+Pending --> Rejected:  -- Onboarding abandonned <br/> -- CGU refused <br/> -- KYC OTP ko
 Pending --> Incomplete: Error in the KYB
 Incomplete --> Pending : KYB corrected
-Pending --> Complete: - T&Cs signed <br/> - KYB validated
+Pending --> Complete: -- T&Cs signed <br/>-- KYB validated
 Pending --> FraudSuspicion: Fraud suspicion
 Being_received --> FraudSuspicion: Fraud suspicion
 
@@ -764,8 +764,8 @@ To handle the switch of workflow, partner should call the `PUT /api/v3.0/users/{
 
 :::note  Example
 
-```json
 PATCH /api/v3.0/users/{individualEntrepreneurId}/kyc/demand
+```json
 {
      "workflowCode" : "Identity"
 }
@@ -1071,8 +1071,7 @@ Each time a diligence is refused, a `reason` is added to the callback.
                 ]
             }
         ]
-    },
-
+    }
 ```
 
 * * *
