@@ -84,6 +84,14 @@ module.exports = {
         'usecases/users/onboarding/cgu/cgu'
       ]
     },
+	{
+      type: 'category',
+      label: 'Individual Entrepreneur Onboarding',
+      items: [
+        'usecases/individual_entrepreneur/individual_entrepreneur_overview',        
+        'usecases/individual_entrepreneur/individual_entrepreneur_KYB'
+      ]
+    },
     {
         type: 'category',
         label: 'Accounts Management',
