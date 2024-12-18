@@ -145,8 +145,8 @@ To handle the switch of workflow, partner should call the `PUT /api/v3.0/users/{
 
 :::note  Example
 
-```json
 PATCH /api/v3.0/users/{appUserId}/kyc/demand
+```json
 {
      "workflowCode" : "Identity"
 }
