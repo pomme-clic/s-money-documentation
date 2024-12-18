@@ -1,3 +1,9 @@
+<!-- markdownlint-disable MD045-->
+import Image from '@theme/Image';
+import Highlight from '@theme/Highlight';
+import Endpoint from "@theme/Endpoint"
+import Cta from '@theme/Cta'
+
 # Individual Entrepreneur
 The Individual Entrepreneur (EI) is a legal status that does not create a separate legal entity distinct from the entrepreneur. The entrepreneur operates in their own name, with no distinction between their person and their business. Here are the key features:
 
@@ -14,7 +20,7 @@ The Individual Entrepreneur (EI) is a legal status that does not create a separa
 * * *
 ## Global overview
 
-![individual_entrepreneur_overview_image1.png](_ressources/individual_entrepreneur_overview_image1.png)
+[![](individual_entrepreneur_overview_image1.png)](_ressources/individual_entrepreneur_overview_image1.png)
 
 The individual entrepreneur onboarding is composed by the following steps:
 - KYB
