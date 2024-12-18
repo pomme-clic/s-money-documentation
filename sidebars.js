@@ -89,7 +89,8 @@ module.exports = {
       label: 'Individual Entrepreneur Onboarding',
       items: [
         'usecases/individual_entrepreneur/individual_entrepreneur_overview',        
-        'usecases/individual_entrepreneur/individual_entrepreneur_KYB'
+        'usecases/individual_entrepreneur/individual_entrepreneur_KYB',
+	'usecases/individual_entrepreneur/individual_entrepreneur_fatca'
       ]
     },
     {
