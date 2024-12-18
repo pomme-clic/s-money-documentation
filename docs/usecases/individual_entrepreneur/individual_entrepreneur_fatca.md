@@ -1,4 +1,4 @@
-# FATCA / EAI
+# FATCA / EAI for an individual entrepreneur
 
 To fight against tax evasion, the government has asked financial institutions to implement solutions to collect and verify their customers' tax information. This is the role of FatacaEai Feature, which consists of verifying FATCA information and related documents at the onboarding phase, analyzing the FATCA information versus the customer banking usage during the relationship and finally reporting to tax institutions.
 
