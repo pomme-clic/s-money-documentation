@@ -92,7 +92,8 @@ module.exports = {
         'usecases/individual_entrepreneur/individual_entrepreneur_KYB',
 	'usecases/individual_entrepreneur/individual_entrepreneur_fatca',
 	'usecases/individual_entrepreneur/individual_entrepreneur_how_to_test',
-	'usecases/individual_entrepreneur/individual_entrepreneur_filtering'
+	'usecases/individual_entrepreneur/individual_entrepreneur_filtering',
+	'usecases/individual_entrepreneur/individual_entrepreneur_TC'
       ]
     },
     {
