@@ -113,7 +113,7 @@ The field fatcaEaiStatus can have 3 possibles values:
 - enum 1 = Pending,
 - enum 2 = OK
 
-![fatca status.png](../_resources/fatca%20status.png)
+![fatca status.png](docs/usecases/users/onboarding/_resources/fatca%20status.png)
 
 ### FatcaEaiStatus OK
 
