@@ -14,7 +14,7 @@ The Individual Entrepreneur (EI) is a legal status that does not create a separa
 * * *
 ## Global overview
 
-![9f8efb411c4d495ebd6faf302a5b1bbf.png](../../../../_resources/9f8efb411c4d495ebd6faf302a5b1bbf.png)
+![individual_entrepreneur_overview_image1.png](individual_entrepreneur_overview_image1.png)
 
 The individual entrepreneur onboarding is composed by the following steps:
 - KYB
@@ -198,7 +198,7 @@ individualEntrepreneurCreatedOrUpdated
     "company": {
         "registrationNumber": "881676191",
         "registrationCountry": "FR",
-        "companyName": TEST EI,
+        "companyName": "TEST EI",
         "tradeName": "TEST EI",
         "legalForm": "1000",
         "creationDate": "2024-09-26",
