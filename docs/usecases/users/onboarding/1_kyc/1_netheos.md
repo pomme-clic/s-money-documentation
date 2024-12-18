@@ -34,7 +34,7 @@ stateDiagram
 	  fork_state2 --> Complete : All expected diligences are "Validated" and Decision "OK"
 	  fork_state2 --> FraudSuspicion : Decision = "KOFraud"
 	  fork_state2 --> AwaintingExpertise : All diligences are "validated" and "FinalDecision" = pending
-      fork_state2 --> Rejected : - the enduser refused the electronic T&C <br/> - electronic signature expired <br/> - number of SMS sent exceeded <br/> - KYC file expired
+      fork_state2 --> Rejected : -- the enduser refused the electronic T&C <br/> -- electronic signature expired <br/> -- number of SMS sent exceeded <br/> -- KYC file expired
 
 	  
 	  AwaintingExpertise --> Complete : "FinalDecision" = OK	  
