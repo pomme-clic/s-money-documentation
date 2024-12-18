@@ -14,7 +14,7 @@ The Individual Entrepreneur (EI) is a legal status that does not create a separa
 * * *
 ## Global overview
 
-![individual_entrepreneur_overview_image1.png](individual_entrepreneur_overview_image1.png)
+![individual_entrepreneur_overview_image1.png](_ressources/individual_entrepreneur_overview_image1.png)
 
 The individual entrepreneur onboarding is composed by the following steps:
 - KYB
