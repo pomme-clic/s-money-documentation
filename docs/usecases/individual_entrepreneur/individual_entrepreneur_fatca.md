@@ -159,10 +159,8 @@ The diligences have 3 statuts: Validated/ To\_Review\_Manually/Refused
 If W8 or W9 are expected, here are the templates:
 
 - W8:https://www.irs.gov/forms-pubs/about-form-w-8-ben
-	- [fw8ben.pdf](../_resources/fw8ben.pdf)
 
 - W9: https://www.irs.gov/forms-pubs/about-form-w-9
-	- [fw9.pdf](../_resources/fw9.pdf)
 
 <br/>
 
