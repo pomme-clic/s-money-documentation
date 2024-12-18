@@ -1,4 +1,4 @@
-# KYC Netheos
+# KYC for a physcial person
 
 The provider used by Xpollens is Netheos.
 This documentation is available here: https://integration-api.ekeynox.net/docs/integration/latest/en/intro/
