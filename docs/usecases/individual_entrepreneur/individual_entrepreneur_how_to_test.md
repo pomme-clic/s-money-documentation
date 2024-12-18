@@ -181,9 +181,9 @@ Open the URL from with a webview component inside your app or in a desktop or mo
 * * *
 ## Step 5 - Upload your ID Document
 * * *
-![CNI_Berthier_Recto.png](../_resources/CNI_Berthier_Recto.png)
+![CNI_Berthier_Recto.png](_ressources/CNI_Berthier_Recto.png)
 
-![CNI_Berthier_Verso.png](../_resources/CNI_Berthier_Verso.png)
+![CNI_Berthier_Verso.png](_ressources/CNI_Berthier_Verso.png)
 
 Find other test IDs in this link: https://www.consilium.europa.eu/prado/fr/search-by-document-country.html
 
@@ -191,7 +191,7 @@ Find other test IDs in this link: https://www.consilium.europa.eu/prado/fr/searc
 
 * * *
 ## Step 6 - Perform liveness
-![8f95632ed8ad56a5b67d28fa3fa73a30.png](../_resources/8f95632ed8ad56a5b67d28fa3fa73a30.png)
+![8f95632ed8ad56a5b67d28fa3fa73a30.png](_ressources/8f95632ed8ad56a5b67d28fa3fa73a30.png)
 
 You can use your own face or any other royalty-free face.
 
@@ -228,7 +228,7 @@ Example for a KBIS
   "files": [
     {
       "name": "KBIS.png",
-      "content": Encode base64
+      "content": "file content base64 encoded"
 		 }
   ]
 }
@@ -260,8 +260,8 @@ Copy SMS OTP
 Submit
 Wait for signature to be validated
 
-> **⚠ NOTE**
-> **The final case validation requires a manual validation through the Netheos Backoffice**
+
+<br/><br/>
 
 * * *
 
