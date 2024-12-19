@@ -802,10 +802,10 @@ After expiry, the enduser always has the option of making a new KYC request.
 
 * * *
 
-### APIs, callbacks & technical items
-#### WebView integration
+## APIs, callbacks & technical items
+### WebView integration
 
-##### Parent Page integration (mandatory)
+#### Parent Page integration (mandatory)
 
 The Netheos Web Page can be displayed using the `webviewUrl` or `url`?token=`token` URL.
 **But** as the partner will have to handle some specific **javascript** event, it is mandatory to implement the following code in the parent page to display the URL :
@@ -834,9 +834,9 @@ See the full Netheos Documentation here : https://integration-api.ekeynox.net/do
 :::
 
 * * *
-#### Javascript Events handling
+### Javascript Events handling
 
-##### Identity check events
+#### Identity check events
 
 When identity check is completed (10 min max), an "identity" type event will be sent to the main page.
 
@@ -866,13 +866,13 @@ window.addEventListener('message', function(evt){
 :::
 
 * * *
-##### Electronic Signature Event handling
+#### Electronic Signature Event handling
 
 The same way, once an electronic signature is performed, a `clientFileEvent` will be sent with `accepted` status.
 
 * * *
 
-#### Upload ID document by API
+### Upload ID document by API
 
 The `Identity` workflow can also be processed by API.
 It will require to send the ID Documents using the `post /api/v2.0/users/{appUserId}/kyc/attachments` API.
@@ -888,13 +888,13 @@ In this case, it is not neccessary to handle the webview URL provided in callbac
 :::
 
 * * *
-#### Callbacks type 4
+### Callbacks type 4
 
 Each time the status of a due diligence changes, a callback 4 is sent.
 This callback is composed of `expectedDiligences` and `receivedDiligences`, so you can see the progress of the items sent.
 
 * * *
-##### KYC Status Pending, no due diligence sent
+#### KYC Status Pending, no due diligence sent
 
 > Body parameter
 
@@ -933,7 +933,7 @@ This callback is composed of `expectedDiligences` and `receivedDiligences`, so y
 :::
 
 * * *
-##### KYC Status "Incomplete", the identity document and the selfie have been sent
+#### KYC Status "Incomplete", the identity document and the selfie have been sent
 
 > Body parameter
 
@@ -985,7 +985,7 @@ This callback is composed of `expectedDiligences` and `receivedDiligences`, so y
 ```
 
 * * *
-##### KYC Status "Complete", all due diligences are validated
+#### KYC Status "Complete", all due diligences are validated
 
 When all due diligence has been completed, the KYC status changes to "Completed".
 
@@ -1015,7 +1015,7 @@ When all due diligence has been completed, the KYC status changes to "Completed"
 ```
 
 * * *
-##### KYC Status "Refused"
+#### KYC Status "Refused"
 
 The identity document status and the selfie status are not always the same.
 The identity document is checked in several stages:
@@ -1084,7 +1084,7 @@ Each time a diligence is refused, a `reason` is added to the callback.
 
 * * *
 
-#### Callback 48 - WebView URL
+### Callback 48 - WebView URL
 
 The new [callback 48](https://docs.xpollens.com/api/callbacks#post-/-callback48Url-) will contain required information to display the KYC Web View URL to the user.
 The format of the new callback is the following :
