@@ -43,7 +43,7 @@ FraudSuspicion --> [*]
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User as Individual_Entrepreneur
+Actor User as Individual_Entrepreneur
 Participant Partner
 Participant XPO
 User ->> Partner : Individual entrepreneur creation
@@ -60,20 +60,11 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status: Initialized
 
 
 Note over User, XPO: Physical person identity
-XPO --) Partner : Callback 48 - Web View URL
-alt using the webview
-    Partner -->> User : Display WebViewURL <br/> Electronic_sign: ID & selfie <br/> Identity: ID
-else using API, identity workflow only
-    Partner -->> User : Request for identity document upload
-    
-end
+
 
 Note over User, XPO: Company identity
-Partner ->> XPO: POST  /api/v3.0/users/{individualEntrepreneurId}/kyc/attachments (Existence proof)
-
 
 Note over User, XPO: Complementary diligence
-
 ```
 
 <br/><br/>
@@ -191,6 +182,8 @@ XPO -->> Partner : HTTP/201
 XPO --) Partner : Callback 4 - KYC Demand<br/>status:Pending <br/> expectedDiligences{type,possibleDiligenceSubTypes}
 XPO --) Partner : Callback 48 - Web View URL
 XPO --) Partner : Callback 35 - SCA Wallet Initialization
+
+Note over User, XPO: Physical person identity
 Partner -->> User : Display WebViewURL
 User -->> XPO : Identity document
 User -->> XPO : Liveness
@@ -200,6 +193,7 @@ break Controls (5mins)
 end
 XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated}],<br/>expectedDiligences [{diligenceType Complementary: ESIGN}]
 
+Note over User, XPO: Complementary diligence
 Partner -->> User : Display WebViewURL for CGU signature
 XPO -->> User : SMS sent for strong authentification
 User -->> XPO : CGU signature
@@ -241,6 +235,7 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Pending <br/> expectedDilig
 XPO --) Partner : Callback 48 - Web View URL
 XPO --) Partner : Callback 35 - SCA Wallet Initialization
 
+Note over User, XPO: Physical person identity
 	alt Webview
 		Partner -->> User : Display WebViewURL
 		User -->> XPO : Identity document
@@ -252,6 +247,8 @@ XPO --) Partner : Callback 35 - SCA Wallet Initialization
 		XPO --> XPO: Controls (5mins) 
 	end
 	XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated}],<br/>expectedDiligences [{diligenceType Complementary SCTIN}]
+	
+	Note over User, XPO: Complementary diligence
 	Partner -->> User: display IBAN & RIB
 	User -->> XPO: Sepa Credit Transfer
 	XPO --) Partner : Callback 31 - KYC complementary diligence
@@ -326,6 +323,7 @@ Participant XPO
 
 XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences{diligenceType Existence_Proof}
 
+Note over User, XPO: Company identity
 User -->> Partner: existence proof document
 Partner ->> XPO: POST /api/v2.0/users/{individualEntrepreneurId}/kyc/attachments
 
@@ -371,6 +369,9 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+
+Note over User, XPO: Physical person identity
 break Identity controls (5mins)
     XPO --> XPO: Identity controls (5mins) 
 end
@@ -454,6 +455,8 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+Note over User, XPO: Physical person identity
 
 loop
 
@@ -565,6 +568,8 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+Note over User, XPO: Complementary diligence
 
 	Partner -->> User: display IBAN & RIB
     User -->> XPO: Sepa Credit Transfer IN or Instant Payment IN
@@ -740,6 +745,9 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+Note over User, XPO: Physical person identity
+
 break Controls (5mins)
     XPO --> XPO: Controls (5mins) 
 end
