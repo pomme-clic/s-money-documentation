@@ -43,7 +43,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Users',
-      items: ['api/KYC','api/Users'],
+      items: ['api/KYC','api/Users','api/IndividualEntrepreneur'],
     },
     {
       type: 'category',
@@ -82,6 +82,18 @@ module.exports = {
         'usecases/users/onboarding/filtering/filtering',
         'usecases/users/onboarding/sca/sca',
         'usecases/users/onboarding/cgu/cgu'
+      ]
+    },
+	{
+      type: 'category',
+      label: 'Individual Entrepreneur Onboarding',
+      items: [
+        'usecases/individual_entrepreneur/individual_entrepreneur_overview',        
+        'usecases/individual_entrepreneur/individual_entrepreneur_KYB',
+	'usecases/individual_entrepreneur/individual_entrepreneur_fatca',
+	'usecases/individual_entrepreneur/individual_entrepreneur_how_to_test',
+	'usecases/individual_entrepreneur/individual_entrepreneur_filtering',
+	'usecases/individual_entrepreneur/individual_entrepreneur_TC'
       ]
     },
     {

@@ -1,92 +1,76 @@
-# KYC for a physcial person
+# Individual Entrepreneur KYB
+The KYB for a individual entrepreur is composed by:
+- the validation of the identity of the physical person.
+- the validation of the documents related to the company
 
-The provider used by Xpollens is Netheos.
-This documentation is available here: https://integration-api.ekeynox.net/docs/integration/latest/en/intro/
+The  identity of the physical person is composed by 2 diligences:
+- the ID document
+- the complementary diligence 
 
-<br/>
-
-* * *
-
-## KYC Workflow
-
-### KYC Status definition
-
-The KYC status represents the progress of the user's KYC. This status includes the state of progress on all due diligences.
+![individual_entrepreneur_KYB.png](_ressources/individual_entrepreneur_KYB.png)
 
 <br/>
 
 * * *
 
-### KYC State Diagram
-
+## Status diagram for an IndividualEntrepreneur KYB
 ```mermaid
 stateDiagram
-    [*] --> Initialized : KYC demand created
-		state fork_state <<fork>>
-    Initialized --> Pending
-    Pending --> fork_state
-    fork_state -->	Incomplete : At least one diligence has been received by the provider
-		fork_state --> AwaintingExpertise : All diligences are "validated" and "FinalDecision" = pending
-	  fork_state --> FraudSuspicion : Decision = "KOFraud"
-	  
-	  state fork_state2 <<fork>>
-	  Incomplete -->  fork_state2
-	  fork_state2 --> Complete : All expected diligences are "Validated" and Decision "OK"
-	  fork_state2 --> FraudSuspicion : Decision = "KOFraud"
-	  fork_state2 --> AwaintingExpertise : All diligences are "validated" and "FinalDecision" = pending
-      fork_state2 --> Rejected : -- the enduser refused the electronic T&C <br/> -- electronic signature expired <br/> -- number of SMS sent exceeded <br/> -- KYC file expired
 
-	  
-	  AwaintingExpertise --> Complete : "FinalDecision" = OK	  
-      AwaintingExpertise --> Incomplete : All expected diligences are not 'Validated' 
-	  AwaintingExpertise --> FraudSuspicion : "FinalDecision" = KOFraud	  
-	  
+[*] --> Initialized : KYB demand created
+Initialized	--> Being_received : At least 1 diligence received
 
+Being_received --> Fully_received: all documents received
+Fully_received --> Pending: Overall checks 
+Pending --> Rejected:  -- Onboarding abandonned <br/> -- CGU refused <br/> -- KYC OTP ko
+Pending --> Incomplete: Error in the KYB
+Incomplete --> Pending : KYB corrected
+Pending --> Complete: -- T&Cs signed <br/>-- KYB validated
+Pending --> FraudSuspicion: Fraud suspicion
+Being_received --> FraudSuspicion: Fraud suspicion
 
-    FraudSuspicion --> [*]
-    Complete --> [*]
-    Rejected --> [*]
-
-
+Complete --> [*]
+Rejected --> [*]
+FraudSuspicion --> [*]
 ```
+
+<br/>
 
 * * *
 
-### KYC Sequence diagram
+## Sequence diagram for an IndividualEntrepreneur KYB
 
 ```mermaid
 sequenceDiagram
 autoNumber
-Participant User
+Actor User as Individual_Entrepreneur
 Participant Partner
 Participant XPO
-User ->> Partner : Account creation requested<br/>appUserId<br/>civility<br/>lastName<br/>...
-Partner ->> XPO : POST / api/v2.0/users
+User ->> Partner : Individual entrepreneur creation
+Partner ->> XPO : POST /api/v3.0/individual-entrepreneurs
 XPO -->> Partner: HTTP/201
-XPO --) Partner : Callback 34<br/>userRecordStatus :Initialized
+XPO -->> Partner: Callback IndividualEntrepreneurCreatedOrUpdated {recordStatus: "Initialized"}
 XPO --) Partner : Callback 45<br/>Account Status :Initialized
+
 Partner -->> User : Display KYC workflow choice<br/>(depends on partner implementation)
 User -->> Partner: Choose KYC Workflow<br/>(depends on partner implementation)
-Partner ->> XPO: POST /api/v3.0/user/{appUserId}/kyc/demand<br/>workflowCode: Electronic_Sign|Identity
+Partner ->> XPO: POST /api/v3.0/user/{individualEntrepreneurId}/kyc/demand<br/>workflowCode: Electronic_Sign|Identity
 XPO -->> Partner : HTTP/201
-XPO --) Partner : Callback 4 - KYC Demand<br/>status:PENDING
-XPO --) Partner : Callback 48 - Web View URL
-XPO --) Partner : Callback 35 - SCA Wallet Initialization
-alt using the webview
-    Partner -->> User : Display WebViewURL <br/> Electronic_sign: ID & selfie <br/> Identity: ID
-else using API, identity workflow only
-    Partner -->> User : Request for identity document upload
-    
-end
+XPO --) Partner : Callback 4 - KYC Demand<br/>status: Initialized
 
 
+Note over User, XPO: Physical person identity
 
+
+Note over User, XPO: Company identity
+
+Note over User, XPO: Complementary diligence
 ```
 
 <br/><br/>
 
 :::note  **Note**
-Wokflow parameterization has to be made upstream during the environment parameterization. Partner choice is then taken into account by XPollens for global workflow parameterization. The XPollens recommandations by order of preference are as follow :
+Wokflow parameterization has to be made upstream during the environment parameterization. Partner choice is then taken into account by XPollens for global workflow parameterization. The Xpollens recommandations by order of preference are as follow :
 <br/>
 1- Electronic signature + Identity (in fallback)  
 2- Identity alone (not recommended)  
@@ -106,87 +90,23 @@ In the case of facial scanning, it is therefore **mandatory** to implement the "
 Steps 6 and 7 are optionnal and depends on partner implementation
 :::
 
-* * *
-### APIs, callbacks and technical items
-
-#### `POST /api/v3.0/user/{appUserId}/kyc/demand`
-***Description***
-
-This API is dedicated to the new KYC solution.
-It enables the creation of the KYC demand with a specific workflow.
-
-* * *
-
-#### [`GET /api/v2.0/users/{appUserId}/kyc/demand`](https://docs.xpollens.com/api/KYC#get-/api/v2.0/users/-appUserId-/kyc/demand)
-
-***Description***
-
-This API retrieves the KYC demand that contains the KYC diligences received and their status.
-
-***Prerequisite***
-
-The KYC demand must exists.
-
-* * *
-
-#### Callback type 4 - [`#04 - KYC demand`](https://docs.xpollens.com/api/callbacks#post-/-callback04-V2.0Url-)
-
-***Description***
-Callback received in case of status change in the KYC demand
-
 <br/>
-
-* * *
-### Workflow change
-
-During user onboarding it is possible for the user to switch from the `Electronic_Signature` workflow to the `Identity` workflow (this way only, it is not possible to switch from `Identity` to `Electronic_Signature`).
-This is possible as long as the user has not completed the Selfie+ID step in the `Electronic_Signature` workflow.
-To handle the switch of workflow, partner should call the `PUT /api/v3.0/users/{appUserId}/kyc/demand` by specifying the new workflow in the payload.
-
-:::note  Example
-
-PATCH /api/v3.0/users/{appUserId}/kyc/demand
-```json
-{
-     "workflowCode" : "Identity"
-}
-```
-:::
-
-<br/>
-
-> Conversely, it is impossible to switch from the `Identity` workflow to the `Electronic_Signature` workflow.
-
-<br/>
-
-* * *
-
-## KYC file expiry
-A KYC folder expires after a period of 90 days from the date it was created. If the user has not finalised or validated the file within this period, it will automatically expire.
-
-As soon as the KYC is rejected, a callback 4 is sent with the statut `Rejected` . 
-With a request to GET
-/api/v3.0/users/{appUserId}/kyc/demand endpoint, the `decision`  is retrieved with the value "expired".
-The userRecordStatus does not change.
-
-After expiry, the enduser always has the option of making a new KYC request.
-
- <br/> <br/>
 
 * * *
 
 ## Due diligence Workflow
 ### Due Diligence types
-
 For the `Electronic_Signature` workflow, the due diligences expected are :
 
-1- Identity document & selfie<br/>
+1- Identity document & selfie 
 2- Electronic signature
+3- Existence proof
 
 For the `Identity` workflow, the due diligences expected are :
 
 1- Identity document<br/>
 2- Sepa Credit Transfer IN (this sepa transfer could be an instant payment, a standard one)
+3- Existence proof
 
 For these two workflows, when configuring your environment, you can choose to accept one or more of the following forms of identification:
 
@@ -199,8 +119,9 @@ Identity checks are subject to SLAs: 5 minutes maximum in 90% of cases.
 <br/>
 
 * * *
+
 ### Due Diligence state diagram
-#### Diligence Status (webview mode):
+#### Diligence Status (webview mode)
 
 ```mermaid
 stateDiagram
@@ -209,7 +130,7 @@ state fork_state2 <<fork>>
 
   [*] --> fork_state
  fork_state --> To_Review_Manually: provider needs to check manually the diligence
- fork_state --> Validated: provider valides diligence 
+ fork_state --> Validated: provider validates diligence 
  
  To_Review_Manually --> fork_state2
 	fork_state2--> Refused: provider rejects the diligence after manual check
@@ -217,7 +138,7 @@ state fork_state2 <<fork>>
 ```
 
 * * *
-#### Diligence Status (API mode):
+#### Diligence Status (API mode)
 
 ```mermaid
 stateDiagram
@@ -242,9 +163,11 @@ state fork_state2 <<fork>>
 Each time the status of a due diligence changes, a callback 4 is sent.
 :::
 
+<br/><br/>
+
 * * *
 
-### Due Diligence sequence diagram : case electronic\_sign
+### Due Diligence identity & complementary: workflow Electronic_Sign
 
 #### Best scenario: due diligences validated
 
@@ -254,11 +177,13 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
-Partner ->> XPO: POST /api/v3.0/user/{appUserId}/kyc/demand<br/>workflowCode: Electronic_Sign
+Partner ->> XPO: POST /api/v3.0/user/{individualEntrepreneurId}/kyc/demand<br/>workflowCode: Electronic_Sign
 XPO -->> Partner : HTTP/201
-XPO --) Partner : Callback 4 - KYC Demand<br/>status:PENDING <br/> expectedDiligences{type,possibleDiligenceSubTypes}
+XPO --) Partner : Callback 4 - KYC Demand<br/>status:Pending <br/> expectedDiligences{type,possibleDiligenceSubTypes}
 XPO --) Partner : Callback 48 - Web View URL
 XPO --) Partner : Callback 35 - SCA Wallet Initialization
+
+Note over User, XPO: Physical person identity
 Partner -->> User : Display WebViewURL
 User -->> XPO : Identity document
 User -->> XPO : Liveness
@@ -268,10 +193,14 @@ break Controls (5mins)
 end
 XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated}],<br/>expectedDiligences [{diligenceType Complementary: ESIGN}]
 
+Note over User, XPO: Complementary diligence
 Partner -->> User : Display WebViewURL for CGU signature
 XPO -->> User : SMS sent for strong authentification
 User -->> XPO : CGU signature
-XPO --) Partner : Callback 4 - KYC Demand<br/>status:Complete
+
+XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated},<br/>{diligenceType Complementary: ESIGN,status:Validated}]
+
+
 ```
 
 <br/>
@@ -281,13 +210,16 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Complete
 The strong authentification code expires after 10 minutes. A second SMS is sent after the first expires.
 :::
 
+<br/>
+
 *  * *
-### Due Diligence sequence diagram : case identity
+### Due Diligence identity & complementary : workflow Identity
 
 Two important pieces of information about workflow:
 
 - the identity document can be sent either via the webview or the API
-- the cgu must be signed by API
+- in this case T&Cs are signed by API and the signature is not considered as a diligence
+- the complementary diligence is the SCT/IP IN diligence
 
 #### Best scenario: due diligences validated
 
@@ -297,35 +229,31 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
-Partner -->> XPO: POST /api/v3.0/user/{appUserId}/kyc/demand<br/>workflowCode: Identity
+Partner -->> XPO: POST /api/v3.0/user/{individualEntrepreneurId}/kyc/demand<br/>workflowCode: Identity
 XPO -->> Partner : HTTP/201
-XPO --) Partner : Callback 4 - KYC Demand<br/>status:PENDING <br/> expectedDiligences{type,possibleDiligenceSubTypes}
+XPO --) Partner : Callback 4 - KYC Demand<br/>status:Pending <br/> expectedDiligences{type,possibleDiligenceSubTypes}
 XPO --) Partner : Callback 48 - Web View URL
 XPO --) Partner : Callback 35 - SCA Wallet Initialization
-par
+
+Note over User, XPO: Physical person identity
 	alt Webview
 		Partner -->> User : Display WebViewURL
 		User -->> XPO : Identity document
 	else API
-		User -->> XPO : POST /api/v2.0/users/{appUserId}/kyc/attachments
+		User -->> XPO : POST /api/v2.0/users/{individualEntrepreneurId}/kyc/attachments
 	end
-	XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences{diligenceType, status:To_Review_Manually}
+	XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences{diligenceType Identity, status:To_Review_Manually}
 	break Controls (5mins)
 		XPO --> XPO: Controls (5mins) 
 	end
-	XPO --) Partner : Callback 34 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated}],<br/>expectedDiligences [{diligenceType Complementary}]
+	XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated}],<br/>expectedDiligences [{diligenceType Complementary SCTIN}]
+	
+	Note over User, XPO: Complementary diligence
 	Partner -->> User: display IBAN & RIB
 	User -->> XPO: Sepa Credit Transfer
 	XPO --) Partner : Callback 31 - KYC complementary diligence
-	XPO --) Partner : Callback 4 - KYC Demand<br/>status:Complete 
-and
-	Partner --) Partner : SCA Wallet Initialization <br/> -with Entrust
-end
-Note over User, Partner: Note: for the identity workflow, <br/> the CGU validation has to be done by <br/> API to validate the userRecordStatus
-Partner -->> User : Display CGU
-User -->> Partner : Validate CGU
-Partner -->> XPO: POST /api/sca/v2.0/users/{AppUserId}/cgu
-XPO --) Partner : Callback 34 - userRecordStatus: Validated
+
+XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences[{diligenceType Identity, status:Validated},<br/>{diligenceType Complementary: SCTIN,status:Validated}]
 
 ```
 
@@ -334,7 +262,7 @@ XPO --) Partner : Callback 34 - userRecordStatus: Validated
 
 * * *
 
-### Due Diligence SCT IN
+#### Due Diligence SCT IN details
 
 **Important information** : the iban for SCT IN due diligence is displayed IF AND ONLY IF the ID due diligence has been completed.  
 Otherwise, a comparison could be made between an issuer and the wrong identity.
@@ -366,7 +294,7 @@ alt With standard SCT
 				XPO --) XPO : Diligence review
 		end
     XPO --) Partner : Callback 31 - KYC complementary diligence {status: Validated}
-    XPO --) Partner : Callback  - SCTIN {status: 1}
+    XPO --) Partner : Callback  - SepaCreditTransferCreatedOrUpdated {status: "Completed"}
 	
 else With Instant Payment
 	  User -->> XPO: Instant Payment
@@ -375,10 +303,56 @@ else With Instant Payment
 				XPO --) XPO : Diligence review
 		end
 	XPO --) Partner : Callback 31 - KYC complementary diligence {status: Validated}
-    XPO --) Partner : Callback 16 - SCTIN {status: 1}
+    XPO --) Partner : Callback InstantPaymentCreatedOrUpdated {status: "Completed"}
+end
+```
+
+
+<br/>
+
+*  * *
+### Due Diligence existence proof 
+
+
+```mermaid
+sequenceDiagram
+autoNumber
+Actor User
+Participant Partner
+Participant XPO
+
+XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDiligences{diligenceType Existence_Proof}
+
+Note over User, XPO: Company identity
+User -->> Partner: existence proof document
+Partner ->> XPO: POST /api/v2.0/users/{individualEntrepreneurId}/kyc/attachments
+
+break 15 minutes
+	XPO -->> XPO: Global checks
 end
 
+XPO --) Partner : Callback 4 - KYC Demand<br/>receivedDiligences[{diligenceType Existence_Proof, status:Validated}]
 
+```
+
+
+The callback 4 describes the expected documents.
+Here is an example:
+```json
+      {
+          "type": "Existence_Proof",
+          "expectedCount": 1,
+          "possibleDiligenceSubTypes": [
+              "COMPANY_STATUTES",
+              "KBIS",
+              "EXTRACT_D1",
+              "OTHER_EXISTENCE_PROOF",
+              "BUSINESS_CARD",
+              "SIREN_NOTICE",
+              "ADELI_CERTIFICATE",
+              "PROFESSIONAL_ORDER_CERTIFICATE"
+          ]
+      }
 ```
 
  <br/>
@@ -387,7 +361,7 @@ end
 
 ### Due Diligence sequence diagram : refused
 
-#### Due diligence ID refused : issue during the identity document checks
+#### Due diligence Identity refused : issue during the identity document checks
 
 ```mermaid
 sequenceDiagram
@@ -395,6 +369,9 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+
+Note over User, XPO: Physical person identity
 break Identity controls (5mins)
     XPO --> XPO: Identity controls (5mins) 
 end
@@ -410,7 +387,7 @@ else Identity
     alt Webview
         User -->> XPO : Identity document
     else API
-        User -->> XPO : POST /api/v2.0/users/{appUserId}/kyc/attachments
+        User -->> XPO : POST /api/v2.0/users/{individualEntrepreneurId}/kyc/attachments
     end
 end
 
@@ -467,9 +444,9 @@ The `WebViewUrl` remains the same for the next attempt(s).
 | Expiration date is not consistent with the MRZ |
 
 * * *
-#### Due diligence ID refused: inconsistency between the data declared and the data on the identity document
+#### Due diligence Identity refused: inconsistency between the data declared and the data on the identity document
 
-Use the `PUT /api/v2.0/users/{appUserId}` to modify the wrong data.
+Use the `PUT /api/v3.0/individual-entrepreneurs/{individualEntrepreneurId}` to modify the wrong data.
 
 
 ```mermaid
@@ -478,6 +455,8 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+Note over User, XPO: Physical person identity
 
 loop
 
@@ -488,7 +467,7 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDil
 
 Partner -->> User: Checking declared information
 User -->> Partner: Forwarding information  
-Partner -->> XPO: PUT /api/v2.0/users/{appUserId}
+Partner -->> XPO: PUT /api/v3.0/individual-entrepreneurs/{individualEntrepreneurId}
 Note over User, XPO: automatic relaunches the check with <br/> the identity document and the selfie
 
 end
@@ -518,7 +497,7 @@ XPO --) Partner : Callback 4 - KYC Demand<br/>status:Incomplete <br/>receivedDil
 
   
 * * *
-#### Due diligence ID refused: diligence type undefined
+#### Due diligence Identity refused: diligence type undefined
 In some cases, the Netheos robot is unable to **recognise** the type of identity document sent to it (e.g. the user sends an image containing the front and back of their identity document).  
 The diligence status changes to "refused", and callback 4 is sent as follows, the refusal may be for different reasons.   
 If this is the case, ask your customer to scan the ID again, making sure that the accepted documents are respected.
@@ -572,7 +551,6 @@ If this is the case, ask your customer to scan the ID again, making sure that th
                 "expectedCount": 1,
                 "possibleDiligenceSubTypes": [
                     "SCTIN",
-                    "DELEGATED_COMPLEMENTARY_DILIGENCE",
                     "ESIGN"
                 ]
             }
@@ -591,11 +569,13 @@ Actor User
 Participant Partner
 Participant XPO
 
+Note over User, XPO: Complementary diligence
+
 	Partner -->> User: display IBAN & RIB
     User -->> XPO: Sepa Credit Transfer IN or Instant Payment IN
 	XPO --) Partner : Callback 31 - KYC complementary diligence {status: Refused}
         XPO -->> User : Sepa Credit Transfer Refund
-        XPO -->> Partner : Callback 16 {status 2}
+        XPO -->> Partner : Callback SepaCreditTransferCreatedOrUpdated {status: "Completed"}
 	Partner -->> User: ask for a new SCT IN 
     User -->> XPO: Sepa Credit Transfer IN or Instant Payment IN
 	XPO --) Partner : Callback 31 - KYC complementary diligence {status: Validated}
@@ -622,8 +602,8 @@ the status of the due diligence changes to "Refused".
 
 As a consequence, the KYC status changes for **Rejected**. This status is an final status: if the enduser changes his mind and wishes to sign the GCU, **a new KYC demand is required.**
 
-```json
 Callback 4 example: refuse to sign T&C
+```json
 { 
    "Payload": {
         "type": "4",
@@ -765,6 +745,9 @@ autoNumber
 Actor User
 Participant Partner
 Participant XPO
+
+Note over User, XPO: Physical person identity
+
 break Controls (5mins)
     XPO --> XPO: Controls (5mins) 
 end
@@ -781,10 +764,48 @@ Note over User, XPO: Onboarding refused.<br/> The user can not try again.
 
 * * *
 
-### APIs, callbacks & technical items
-#### WebView integration
+## Workflow change
 
-##### Parent Page integration (mandatory)
+During user onboarding it is possible for the user to switch from the `Electronic_Signature` workflow to the `Identity` workflow (this way only, it is not possible to switch from `Identity` to `Electronic_Signature`).
+This is possible as long as the user has not completed the Selfie+ID step in the `Electronic_Signature` workflow.
+To handle the switch of workflow, partner should call the `PUT /api/v3.0/users/{individualEntrepreneurId}/kyc/demand` by specifying the new workflow in the payload.
+
+:::note  Example
+
+PATCH /api/v3.0/users/{individualEntrepreneurId}/kyc/demand
+```json
+{
+     "workflowCode" : "Identity"
+}
+```
+:::
+
+<br/>
+
+> Conversely, it is impossible to switch from the `Identity` workflow to the `Electronic_Signature` workflow.
+
+<br/>
+
+* * *
+
+## KYC file expiry
+A KYC folder expires after a period of 90 days from the date it was created. If the user has not finalised or validated the file within this period, it will automatically expire.
+
+As soon as the KYC is rejected, a callback 4 is sent with the statut `Rejected` . 
+With a request to GET
+/api/v3.0/users/{appUserId}/kyc/demand endpoint, the `decision`  is retrieved with the value "expired".
+The userRecordStatus does not change.
+
+After expiry, the enduser always has the option of making a new KYC request.
+
+ <br/><br/>
+
+* * *
+
+## APIs, callbacks & technical items
+### WebView integration
+
+#### Parent Page integration (mandatory)
 
 The Netheos Web Page can be displayed using the `webviewUrl` or `url`?token=`token` URL.
 **But** as the partner will have to handle some specific **javascript** event, it is mandatory to implement the following code in the parent page to display the URL :
@@ -813,9 +834,9 @@ See the full Netheos Documentation here : https://integration-api.ekeynox.net/do
 :::
 
 * * *
-#### Javascript Events handling
+### Javascript Events handling
 
-##### Identity check events
+#### Identity check events
 
 When identity check is completed (10 min max), an "identity" type event will be sent to the main page.
 
@@ -845,13 +866,13 @@ window.addEventListener('message', function(evt){
 :::
 
 * * *
-##### Electronic Signature Event handling
+#### Electronic Signature Event handling
 
 The same way, once an electronic signature is performed, a `clientFileEvent` will be sent with `accepted` status.
 
 * * *
 
-#### Upload ID document by API
+### Upload ID document by API
 
 The `Identity` workflow can also be processed by API.
 It will require to send the ID Documents using the `post /api/v2.0/users/{appUserId}/kyc/attachments` API.
@@ -867,13 +888,13 @@ In this case, it is not neccessary to handle the webview URL provided in callbac
 :::
 
 * * *
-#### Callbacks type 4
+### Callbacks type 4
 
 Each time the status of a due diligence changes, a callback 4 is sent.
 This callback is composed of `expectedDiligences` and `receivedDiligences`, so you can see the progress of the items sent.
 
 * * *
-##### KYC Status Pending, no due diligence sent
+#### KYC Status Pending, no due diligence sent
 
 > Body parameter
 
@@ -912,7 +933,7 @@ This callback is composed of `expectedDiligences` and `receivedDiligences`, so y
 :::
 
 * * *
-##### KYC Status "Incomplete", the identity document and the selfie have been sent
+#### KYC Status "Incomplete", the identity document and the selfie have been sent
 
 > Body parameter
 
@@ -964,7 +985,7 @@ This callback is composed of `expectedDiligences` and `receivedDiligences`, so y
 ```
 
 * * *
-##### KYC Status "Complete", all due diligences are validated
+#### KYC Status "Complete", all due diligences are validated
 
 When all due diligence has been completed, the KYC status changes to "Completed".
 
@@ -994,7 +1015,7 @@ When all due diligence has been completed, the KYC status changes to "Completed"
 ```
 
 * * *
-##### KYC Status "Refused"
+#### KYC Status "Refused"
 
 The identity document status and the selfie status are not always the same.
 The identity document is checked in several stages:
@@ -1058,13 +1079,12 @@ Each time a diligence is refused, a `reason` is added to the callback.
                 ]
             }
         ]
-    },
-
+    }
 ```
 
 * * *
 
-#### Callback 48 - WebView URL
+### Callback 48 - WebView URL
 
 The new [callback 48](https://docs.xpollens.com/api/callbacks#post-/-callback48Url-) will contain required information to display the KYC Web View URL to the user.
 The format of the new callback is the following :
