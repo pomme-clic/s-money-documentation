@@ -462,11 +462,11 @@ Response code 200
 | Payer.urlReferrer | string | Yes | \-  | Obsolete |
 | Payer.ipAddress | string | Yes | \-  | Enduser Ip address |
 | Card.AppCardId | string | Yes | Given name to the used card | Token of the card used for the top-up |
-| Card.SelectedBrand | string | Yes | CB / MASTERCARD/ VISA / ... | Card brand used for the top-up |
 | Card.Status | integer | no  | 0   | Obsolete |
 | Card.Hint | Obsolete | no  | \-  | Obsolete |
 | Card.ExpiryDate | string | no  | \-  | Obsolete |
 | Card.IsActive | string | no  | \-  | Obsolete |
+| SelectedBrand | string | Yes | CB / MASTERCARD/ VISA | Card brand used for the top-up |
 | Payments.OrderId | string | no  | \-  | Obsolete, use orderId |
 | Payments.Amount | string | Yes | \-  | Amount of the top-up |
 | Payments.Fee | string | no  | 0.0 | Obsolete, use the P2P post to debit fees |
@@ -648,8 +648,8 @@ POST {{URLT}}/v1.1/payins/cardpayments
     "subscriptionTopUp": false,
     "Card": {
         "HFToken":"{{HFTOKEN}}",
-        "AppCardId": "CB_{{orderId_TOPUP_1}}"
-		"SelectedBrand": "VISA"
+        "AppCardId": "CB_{{orderId_TOPUP_1}}",
+	"SelectedBrand": "VISA"
     },
     "TermsAndConditionsValidationDate": "2022-05-17T17:00:48.0255806+01:00",
     "Payments": [
