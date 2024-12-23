@@ -186,6 +186,8 @@ In this case, for the next top-up:
 }
 ```
 
+
+
 **Case 2: with card registration**  
 Same request, with the `AppCardId` filled.
 
@@ -455,7 +457,7 @@ Response code 200
 | Payer.urlReferrer | string | Yes | \-  | Obsolete |
 | Payer.ipAddress | string | Yes | \-  | Enduser Ip address |
 | Card.AppCardId | string | Yes | Given name to the used card | Token of the card used for the top-up |
-| Card.SelectedBrand | string | Yes | CB / MASTERCARD/ VISA | Card brand used for the top-up |
+| Card.SelectedBrand | string | Yes | CB / MASTERCARD/ VISA / ... | Card brand used for the top-up |
 | Card.Status | integer | no  | 0   | Obsolete |
 | Card.Hint | Obsolete | no  | \-  | Obsolete |
 | Card.ExpiryDate | string | no  | \-  | Obsolete |
@@ -675,7 +677,7 @@ POST {{URLT}}/V1.1/users/{{accountId}}/payins/cardpayments/{{orderId_TOPUP_1}}/p
 ```json
 {
         "orderid" : "orderId_refund",
-        "amount" : {{amount}} //cents
+        "amount" : {amount} //cents
 }
 ```
 
