@@ -285,6 +285,8 @@ The card must already be registered.
             "Beneficiary": {
                 "AppAccountId": "{{accountId}}"
             }
+	}
+]
  [...]
 }
 ```
