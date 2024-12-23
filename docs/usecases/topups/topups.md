@@ -256,10 +256,13 @@ The card must already be registered.
             "Beneficiary": {
                 "AppAccountId": "{{accountId}}"
             }
+	}
+]
  [...]
 }
 ```
 
+<br/>
 **Next request**
 
 - no `HFToken`, only the `AppCardId`
