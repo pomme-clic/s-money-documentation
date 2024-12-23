@@ -169,8 +169,8 @@ In this case, for the next top-up:
     },
     "subscriptionTopUp": false,
         "Card": {
-            "HFToken":"{{HFToken}}",
-			"SelectedBrand":"{{selectedBrand}}"
+		"HFToken":"{{HFToken}}",
+		"SelectedBrand":"{{selectedBrand}}"
     },
     "TermsAndConditionsValidationDate": "2022-05-17T17:00:48.0255806+01:00",
     "Payments": [
@@ -197,9 +197,9 @@ Same request, with the `AppCardId` filled.
 {
    [...]
    "Card": {
-            "HFToken": "xxx",
-            "AppCardId": "CB_Test",
-			"SelectedBrand":"{{selectedBrand}}"
+		"HFToken": "xxx",
+		"AppCardId": "CB_Test",
+		"SelectedBrand":"{{selectedBrand}}"
     },
    [...]
     }
