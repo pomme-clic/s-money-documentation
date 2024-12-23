@@ -8,8 +8,6 @@ Refere to this page for the functionnal overview: https://docs.xpollens.com/docs
 
 <br/><br/>
 
-
-
 * * *
 
 ## Top-up state diagram
@@ -76,6 +74,10 @@ The **one-click** top-up is **customer-initiated**.
 To create a top-up, you need to implement the Dalenys hosted fields.  
 Please refere to this documentation: https://developer.dalenys.com/ui/developer-doc/integration-modes/hosted-fields.html
 
+Mor details about brandselector here:
+https://developer.dalenys.com/ui/developer-doc/miscellaneous/brand-selector.html
+
+
 * * *
 
 ### Top-up sequence diagram
@@ -122,6 +124,23 @@ end
 <br/>
 
 * * *
+### Get an HF token
+To proceed, you first need to retrieve a token.
+
+You have two options for obtaining the `HFToken`.:
+- Use the integrated payment HTML page provided by Dalenys.
+- Utilize the provided API to generate the token programmatically.
+
+The response payload contains two key pieces of information:
+- the `HFTOKEN`,
+- the `SELECTEDBRAND`,
+
+Both of these values must be included in the input when creating the top-up.
+
+<br/>
+
+* * *
+
 
 ### 3DS top-up with / without card registration
 
@@ -150,7 +169,8 @@ In this case, for the next top-up:
     },
     "subscriptionTopUp": false,
         "Card": {
-            "HFToken":"{{HFToken}}",
+		"HFToken":"{{HFToken}}",
+		"SelectedBrand":"{{selectedBrand}}"
     },
     "TermsAndConditionsValidationDate": "2022-05-17T17:00:48.0255806+01:00",
     "Payments": [
@@ -166,6 +186,8 @@ In this case, for the next top-up:
 }
 ```
 
+
+
 **Case 2: with card registration**  
 Same request, with the `AppCardId` filled.
 
@@ -175,8 +197,9 @@ Same request, with the `AppCardId` filled.
 {
    [...]
    "Card": {
-            "HFToken": "xxx",
-            "AppCardId": "CB_Test"
+		"HFToken": "xxx",
+		"AppCardId": "CB_Test",
+		"SelectedBrand":"{{selectedBrand}}"
     },
    [...]
     }
@@ -203,6 +226,7 @@ To create a top up oneclick, you must, in the body of the request, add and fill 
 
     }
 ```
+
 <br/>
 
 * * *
@@ -232,10 +256,13 @@ The card must already be registered.
             "Beneficiary": {
                 "AppAccountId": "{{accountId}}"
             }
+	}
+]
  [...]
 }
 ```
 
+<br/>
 **Next request**
 
 - no `HFToken`, only the `AppCardId`
@@ -258,6 +285,8 @@ The card must already be registered.
             "Beneficiary": {
                 "AppAccountId": "{{accountId}}"
             }
+	}
+]
  [...]
 }
 ```
@@ -394,6 +423,7 @@ date: date/time UTC+2
 | Payer.ipAddress | string | true | \-  | Ip address of the user (ipv4 or v6) |
 | Card.HfToken | string | false -   <br/>depending of the use case | \-  | Hf token previously created |
 | Card.AppCardId | string | false -   <br/>depending of the use case | Existing card | Token of the card used for the top-up |
+| Card.SelectedBrand | string | true  | Value returned in the HFTOKEN	 | Card brand used for the top-up |
 | Card.Status | integer | false | \-  | Obsolete |
 | Card.Hint | Obsolete | false | \-  | Obsolete |
 | Card.ExpiryDate | string | false | \-  | Obsolete |
@@ -432,6 +462,7 @@ Response code 200
 | Payer.urlReferrer | string | Yes | \-  | Obsolete |
 | Payer.ipAddress | string | Yes | \-  | Enduser Ip address |
 | Card.AppCardId | string | Yes | Given name to the used card | Token of the card used for the top-up |
+| Card.SelectedBrand | string | Yes | CB / MASTERCARD/ VISA / ... | Card brand used for the top-up |
 | Card.Status | integer | no  | 0   | Obsolete |
 | Card.Hint | Obsolete | no  | \-  | Obsolete |
 | Card.ExpiryDate | string | no  | \-  | Obsolete |
@@ -618,6 +649,7 @@ POST {{URLT}}/v1.1/payins/cardpayments
     "Card": {
         "HFToken":"{{HFTOKEN}}",
         "AppCardId": "CB_{{orderId_TOPUP_1}}"
+		"SelectedBrand": "VISA"
     },
     "TermsAndConditionsValidationDate": "2022-05-17T17:00:48.0255806+01:00",
     "Payments": [
@@ -686,4 +718,4 @@ Please see the note here for more detailed information : [Get All top-ups](#get-
 
 Yes, 
 - if the subscription mode is used
-- for B2B cards
+- for B2B cards	
