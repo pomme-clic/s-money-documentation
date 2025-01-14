@@ -186,7 +186,7 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://cdn.botx.cloud/messenger/botx.min.js?id=10234', // Chemin vers le script dans le dossier static
+      src: 'https://cdn.botx.cloud/messenger/botx.min.js?id=8141', // Chemin vers le script dans le dossier static
       async: true,               // Utilisez "async" si vous souhaitez que le script soit chargé de manière asynchrone
     },
   ],  
