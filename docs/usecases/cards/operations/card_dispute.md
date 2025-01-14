@@ -96,7 +96,7 @@ XPO -->> XPO: Create a Card Dispute {CardDisputeId} <br/> between user account a
 
 XPO -->> Partner: callback CardDisputeCreatedOrUpdated
 
-Partner -->> XPO: GET /api/v2.0/card-disputes/{CardDisputeId}
+Partner -->> XPO: GET /api/v2.0/card-operations/disputes/{cardDisputeId}
 
 ```
 
