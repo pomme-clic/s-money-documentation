@@ -245,6 +245,7 @@ const Rapidoc = ({ apiUrl, apiUrls = [], isRelative }) => {
             render-style="read"
             load-fonts="false"
             regular-font="Poppins"
+            show-method-in-nav-bar="as-colored-text"
             primary-color="#63C2C7"
             sort-endpoints-by="summary"
             schema-description-expanded="true"

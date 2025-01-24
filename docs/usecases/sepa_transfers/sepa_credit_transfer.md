@@ -261,9 +261,8 @@ end
 | --- | --- | --- | --- | --- |
 | 400 | 715 | ERR_BENEFECIARY_NOT_FOUND | Beneficiary not found | not created |
 | 404 | 147 | ERR_USER_NOTFOUND | User does not existe | not created |
-| 400 | 149 | Plafond de transaction atteint | Plafond de transaction atteint | created |
-| 201 |     |     | **Approved** |     |
-| 500 |     | XPOLLENS INTERNAL ERROR | \*  |     |
+| 400 | 149 | Plafond de transaction atteint | limit reached | not created |
+| 500 |     | XPOLLENS INTERNAL ERROR | \*  |  not created   |
 
 * * *
 
