@@ -1,4 +1,4 @@
-# Instant Payment
+# Instant Payment (IP)
 
 ## Create a beneficiary
 
