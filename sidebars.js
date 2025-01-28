@@ -43,7 +43,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Users',
-      items: ['api/KYC','api/Users','api/IndividualEntrepreneur'],
+      items: ['api/Users','api/IndividualEntrepreneur','api/KYC'],
     },
     {
       type: 'category',
@@ -139,9 +139,7 @@ module.exports = {
             'usecases/sepa_transfers/instant_payment',
 	    'usecases/sepa_transfers/sepa_credit_transfer'
         ]
-    },    
-    'usecases/webhooks/webhooks',
-    'usecases/ratelimits/ratelimits',
+    },
     {
         type: 'category',
         label: 'Top Up',
@@ -155,6 +153,8 @@ module.exports = {
         'usecases/xpay/X-Pay',
         'usecases/xpay/iOS_SDK'
       ]
-    }
+    },    
+    'usecases/webhooks/webhooks',
+    'usecases/ratelimits/ratelimits'
   ]
 }
