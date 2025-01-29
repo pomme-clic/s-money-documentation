@@ -10,7 +10,7 @@ The technical documentation below explains how to download, install and use the 
 
 ## Download
 
-Download the In-App Provisionning SDK in the [documentation repository](/docs/get-started/files)
+Contact your customer integration manager.
 
 ## 1.Introduction
 
