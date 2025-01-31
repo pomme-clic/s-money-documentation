@@ -446,9 +446,7 @@ They are chosen by Xpollens and validated with BPCE PS.
 
 | SDK & Documentation   |
 | -- |
-| **SDK Documentation**<br/>[CardCompanion SDK - Technical documentation - A16.zip](./files/CardCompanion%20SDK%20-%20Technical%20documentation%20-%20A16.zip)|
-|**ANDROID SDK**<br/>[CardCompanionSDK_2.0.0_Android.zip](./files/CardCompanionSDK_2.0.0_Android.zip)|
-|**iOS SDK**<br/>[CardCompanionSDK_2.0.2_iOS.zip](./files/CardCompanionSDK_2.0.2_iOS.zip)|
+| Ask your Customer Integration Manager to get SDKs and documentation |
 
 * * *
 ## How to test
