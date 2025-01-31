@@ -612,7 +612,7 @@ Participant XPO
 
 * * *
 
-#### Due diligence eletronic_signature T&C refused by the enduser
+#### Due diligence electronic_signature T&C refused by the enduser
 
 If :
 - the enduser refuses to sign the T&C, 
@@ -1099,7 +1099,7 @@ R: Yes, provided that the operator is not blacklisted.
 * * *
 ### FAQ4: when can I display my customer's iban?
 R: The iban should only be displayed:
-- as part of the Eletronic-sign workflow, the user is validated (userRecordStatus validated).
+- as part of the Electronic-sign workflow, the user is validated (userRecordStatus validated).
 - as part of the Identity workflow, the identity check part is validated.
 
 <br/>

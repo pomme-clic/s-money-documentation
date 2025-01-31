@@ -40,7 +40,7 @@ In the future, these two actions will be decoupled: the account should be create
 
 * * *
 ## User sequence diagram
-### Eletronic_sign workflow
+### electronic_sign workflow
 ```mermaid
 stateDiagram
 state fork_state1 <<fork>>
@@ -135,7 +135,7 @@ rect rgb(104, 180, 255, 0.1)
 end
 rect rgb(104, 180, 255, 0.1)
 	Note over User, XPO: CGU -- See dedicated section --
-	alt Eletronic_sign <br/> CGU included in the KYC workflow
+	alt Electronic_sign <br/> CGU included in the KYC workflow
 	else Identity
 		autonumber 8
 		User ->> Partner: CGU validated
