@@ -451,8 +451,9 @@ They are chosen by Xpollens and validated with BPCE PS.
 * * *
 ## How to test
 ### Create a virtual card
-```json
 POST /api/v3.0/cards
+```json
+
 {
     "cardId": "yourCardId",
     "cardholderId": "yourCardHolderId",
