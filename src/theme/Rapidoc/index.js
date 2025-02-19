@@ -115,7 +115,74 @@ const Rapidoc = ({ apiUrl, apiUrls = [], isRelative }) => {
       data.components.securitySchemes['Sts authentication']['x-client-secret'] =
         'Demo'
       
+    // Find the dynamic key in the paths
+    var callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback20Url}")
+    );
+
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `cardOperationCreatedOrUpdated` callback**</font>";
+    }   
       
+    callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback16Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `SepaCreditTransferCreatedOrUpdated` callback**</font>";
+    }       
+    callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback17Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `SepaCreditTransferCreatedOrUpdated` callback**</font>";
+    }       
+
+    callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback38Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `InstantPaymentCreatedOrUpdated` callback**</font>";
+    }       
+    callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback39Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `InstantPaymentCreatedOrUpdated` callback**</font>";
+    }     callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback41Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `InstantPaymentCreatedOrUpdated` callback**</font>";
+    }       
+    callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback42Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `InstantPaymentCreatedOrUpdated` callback**</font>";
+    }  
+
+    callbackUrlKey = Object.keys(data.paths).find((key) =>
+      key.includes("{callback24Url}")
+    );
+    if (callbackUrlKey && data.paths[callbackUrlKey].post) {
+      // Append the new deprecation message to the existing description
+      data.paths[callbackUrlKey].post.description +=
+        "<br/><font color=red>**?? This callback will be deprecated and will be replaced by the new `CardOperationCreatedOrUpdated` callback**</font>";
+    }      
 
       const stringifiedData = JSON.stringify(data)
 
