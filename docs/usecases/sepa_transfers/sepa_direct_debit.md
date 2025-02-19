@@ -303,7 +303,8 @@ Rejected
 
 | **Use case** | **HTTP code** | **Code** | **Response** |
 | :--- | :--- | :--- | :--- |
-| Technical error on our supplier side | 400 | 1056 | {"Code": 1056,  <br>"ErrorMessage": "Erreur creation mandat.",  <br>"Title": "L'opération ne peut pas aboutir",  <br>"Priority": 2,  <br>"Date": "2024-05-28T12:56:13.9122356Z",  <br>"OperationId": "81e6a6e9b12064e14d636477904fb621"} |
+| Technical error on our supplier side | 400 | 1056 | {"Code": 1056,  <br/>"ErrorMessage": "Erreur creation mandat.",  <br/>"Title": "L'opération ne peut pas aboutir",  <br/>"Priority": 2,  <br/>"Date": "2024-05-28T12:56:13.9122356Z",  <br/> "OperationId":"81e6a6e9b12064e14d636477904fb621"}|
+
 
 <br/>
 
@@ -313,13 +314,13 @@ Rejected
 
 | **Use case** | **Transaction** | **HTTP code** | **Code** | **Response** |
 | :--- | :--- | :--- | :--- | :--- |
-| orderId already exists | Not created | 400 | 710 | {"Code": 710,  <br>"ErrorMessage": "Opération déjà existante.",  <br>"Title": "L'opération ne peut pas aboutir",8  <br>"Priority": 2,  <br>"Date": "2024-05-22T14:36:43.3317607Z",  <br>"OperationId": "7bf9a2a1de20f2be1ccb56c89475dd8a"  <br>} |
-| Invalid Mandate | Created | 400 | 1025 | {  <br>"Code": 1025,  <br>"ErrorMessage": "Le status du mandat est invalid",  <br>"Title": "L'opération ne peut pas aboutir",  <br>"Priority": 2,  <br>"Date": "2024-05-22T14:44:21.8696087Z",  <br>"OperationId": "5a2894dfc63eb5e2f94d0f5f2362d961"  <br>} |
-| Can not created 2 SDD | Created | 400 | 1026 | {  <br>"Code": 1026,  <br>"ErrorMessage": "Une erreur technique est survenue, veuillez réessayer. Si l'erreur persiste, contactez le support client S-money.",  <br>"Title": "Erreur technique",  <br>"Priority": 2,  <br>"Date": "2024-05-22T14:44:21.8696087Z",  <br>"OperationId": "5a2894dfc63eb5e2f94d0f5f2362d961"  <br>} |
-| Action not authorized | Created | 401 | 362 | {  <br>"Code": 362,  <br>"ErrorMessage": "Opération non autorisée",  <br>"Title": "",  <br>"Priority": 2,  <br>"Date": "2024-05-22T14:35:52.4521289Z",  <br>"OperationId": "fe02aa2ac8481ec53707dd003aca72be"  <br>} |
-| SDD created in the past | Not created | 400 | 715 | {"Code": 715,  <br>"ErrorMessage": "Paramètre(s) d'appel invalide(s). Invalid date",  <br>"Title": "L'opération ne peut pas aboutir",  <br>"Priority": 2,  <br>"Date": "2024-05-28T12:47:33.1807154Z",  <br>"OperationId":"98139f1c201f12b510c6e8fb8d431bed"} |
-| Limit reached | Created | 400 | 149 | {"Code": 362,  <br>"ErrorMessage": "Plafond de transaction atteint",  <br>"Title": "Opération non autorisée",  <br>"Priority": 2,  <br>"Date": "2024-05-28T12:47:33.1807154Z",  <br>"OperationId":"98139f1c201f12b510c6e8fb8d431bed"} |
-| Insufficient balance | Created | 400 | 362 | {"Code": 362,  <br>"ErrorMessage": "Opération non autorisée",  <br>"Title": "",  <br>"Priority": 2,  <br>"Date": "2024-05-28T12:47:33.1807154Z",  <br>"OperationId":"98139f1c201f12b510c6e8fb8d431bed"} |
+| orderId already exists | Not created | 400 | 710 | {"Code": 710,  <br/>"ErrorMessage": "Opération déjà existante.",  <br/>"Title": "L'opération ne peut pas aboutir",8  <br/>"Priority": 2,  <br/>"Date": "2024-05-22T14:36:43.3317607Z",  <br/>"OperationId": "7bf9a2a1de20f2be1ccb56c89475dd8a"} |
+| Invalid Mandate | Created | 400 | 1025 | {  <br/>"Code": 1025,  <br/>"ErrorMessage": "Le status du mandat est invalid",  <br/>"Title": "L'opération ne peut pas aboutir",  <br/>"Priority": 2,  <br/>"Date": "2024-05-22T14:44:21.8696087Z",  <br/>"OperationId": "5a2894dfc63eb5e2f94d0f5f2362d961"} |
+| Can not created 2 SDD | Created | 400 | 1026 | {  <br/>"Code": 1026,  <br/>"ErrorMessage": "Une erreur technique est survenue, veuillez réessayer. Si l'erreur persiste, contactez le support client S-money.",  <br/>"Title": "Erreur technique",  <br/>"Priority": 2,  <br/>"Date": "2024-05-22T14:44:21.8696087Z",  <br/>"OperationId": "5a2894dfc63eb5e2f94d0f5f2362d961"} |
+| Action not authorized | Created | 401 | 362 | {  <br/>"Code": 362,  <br/>"ErrorMessage": "Opération non autorisée",  <br/>"Title": "",  <br/>"Priority": 2,  <br/>"Date": "2024-05-22T14:35:52.4521289Z",  <br/>"OperationId": "fe02aa2ac8481ec53707dd003aca72be"} |
+| SDD created in the past | Not created | 400 | 715 | {"Code": 715,  <br/>"ErrorMessage": "Paramètre(s) d'appel invalide(s). Invalid date",  <br/>"Title": "L'opération ne peut pas aboutir",  <br/>"Priority": 2,  <br/>"Date": "2024-05-28T12:47:33.1807154Z",  <br/>"OperationId":"98139f1c201f12b510c6e8fb8d431bed"} |
+| Limit reached | Created | 400 | 149 | {"Code": 362,  <br/>"ErrorMessage": "Plafond de transaction atteint",  <br/>"Title": "Opération non autorisée",  <br/>"Priority": 2,  <br/>"Date": "2024-05-28T12:47:33.1807154Z",  <br/>"OperationId":"98139f1c201f12b510c6e8fb8d431bed"} |
+| Insufficient balance | Created | 400 | 362 | {"Code": 362,  <br/>"ErrorMessage": "Opération non autorisée",  <br/>"Title": "",  <br/>"Priority": 2,  <br/>"Date": "2024-05-28T12:47:33.1807154Z",  <br/>"OperationId":"98139f1c201f12b510c6e8fb8d431bed"} |
 
 <br/>
 
@@ -329,7 +330,7 @@ Rejected
 
 | **Use case** | **HTTP code** | **Code** | **Response** |
 | :--- | :--- | :--- | :--- |
-| Revocation in the futur | 400 | 1   | {"Code": 1,  <br>"ErrorMessage": "Une erreur technique est survenue, veuillez réessayer. Si l’erreur persiste, contactez le support client S-money. The mandate is just allowed to be revoked in the current date.",  <br>"Title": "Erreur technique",  <br>"Priority": 2,  <br>"Date": "2024-05-28T12:57:56.1073723Z",  <br>"OperationId": "ef85ecfe6c6f83a48115046f930f86b4"} |
+| Revocation in the futur | 400 | 1   | {"Code": 1,  <br/>"ErrorMessage": "Une erreur technique est survenue, veuillez réessayer. Si l’erreur persiste, contactez le support client S-money. The mandate is just allowed to be revoked in the current date.",  <br/>"Title": "Erreur technique",  <br/>"Priority": 2,  <br/>"Date": "2024-05-28T12:57:56.1073723Z",  <br/>"OperationId": "ef85ecfe6c6f83a48115046f930f86b4"} |
   
 <br/><br/>
 
