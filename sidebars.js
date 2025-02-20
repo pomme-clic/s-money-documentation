@@ -137,7 +137,8 @@ module.exports = {
         label: 'SEPA Transfers',
         items: [
             'usecases/sepa_transfers/instant_payment',
-	    'usecases/sepa_transfers/sepa_credit_transfer'
+	    'usecases/sepa_transfers/sepa_credit_transfer',
+	    'usecases/sepa_transfers/sepa_direct_debit'
         ]
     },
     {
