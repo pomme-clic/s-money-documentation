@@ -209,7 +209,25 @@ state fork_state3 <<fork>>
 	Opposed --> [*]
 
 ```
+
+<br/>
+
 * * *
+### Multiple holding of physical cards
+The multiple holding of physical cards is prohibited: it is not possible to order more than one physical card for the same bank account.
+
+Any new card request will be automatically declined if a card already exists on the account with one of the following statuses: "ordered," "sent," or "activated."
+
+From a technical standpoint, the API will return a 400 error with the following message: "Card can't be ordered because an active card is already attached to this account."
+
+Note: This restriction does not apply to virtual cards.
+
+
+
+<br/> <br/>
+
+* * *
+
 ## Wishpin process
 ### Description
 The WishPIN Xpollens solution complies with the new BPCE security standards.
