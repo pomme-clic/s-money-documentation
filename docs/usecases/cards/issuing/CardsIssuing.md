@@ -224,8 +224,10 @@ Note: This restriction does not apply to virtual cards.
 
 
 
-<br/><br/>
+<br/> <br/>
+
 * * *
+
 ## Wishpin process
 ### Description
 The WishPIN Xpollens solution complies with the new BPCE security standards.
