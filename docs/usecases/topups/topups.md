@@ -74,9 +74,12 @@ The **one-click** top-up is **customer-initiated**.
 To create a top-up, you need to implement the Dalenys hosted fields.  
 Please refere to this documentation: https://developer.dalenys.com/ui/developer-doc/integration-modes/hosted-fields.html
 
-Mor details about brandselector here:
+More details about brandselector here:
 https://developer.dalenys.com/ui/developer-doc/miscellaneous/brand-selector.html
 
+:::note
+The accepted card brands are CB, Visa and Mastercard.
+:::
 
 * * *
 
