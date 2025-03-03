@@ -108,7 +108,7 @@ POST /v2.0/users/{{appuserid}}/kyc/complementarydiligence
 
 ```json
 {
- "Type" : 53,
+ "Type" : 56,
  "Status" : "Validated",
  "Reason" : "None"
 }
