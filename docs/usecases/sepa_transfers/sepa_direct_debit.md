@@ -157,14 +157,11 @@ stateDiagram-v2
     Pending --> Rejected : /- rejected by BPCE <br/> /- rejected by the Interbank_market <br/> /- rejected by the external bank
         Pending --> Succeeded : accepted
         Pending --> Canceled: cancel between creation and paymentDate
-		Pending --> Refunded: refunded SDD 
+		Succeeded --> Refunded: refunded SDD 
 		Rejected --> [*]
 		Refunded --> [*]
         Succeeded --> [*]
         Canceled --> [*]
-
-
-
 
 ```
 
