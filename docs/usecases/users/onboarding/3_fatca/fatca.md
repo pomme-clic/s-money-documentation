@@ -139,9 +139,9 @@ The diligences have 3 statuts: Validated/ To\_Review\_Manually/Refused
 | 2 or 3 | Validated | No Diligence Received | Pending |
 | 2 or 3 | To Review Manually | To Review Manually | Pending |
 | 2 or 3 | To Review Manually | Validated | Pending |
-| 2 or 3 | Validated | Validated | Validated |
-| 2 or 3 | Refused | Refused | Refused |
-| 2 or 3 | Refused | Validated | Refused |
+| 2 or 3 | Validated | Validated | OK |
+| 2 or 3 | Refused | Refused | NOK |
+| 2 or 3 | Refused | Validated | NOK |
 
 ### W8 or W9 as FATCA attachments
 
