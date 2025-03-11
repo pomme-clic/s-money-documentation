@@ -340,9 +340,7 @@ Partners should act upon `"status": "A"` and ignore any other values.
 ## FAQ
 
 ### FAQ1: Can I tokenise my card on multiple device?
-
 Yes. You have one token per device used.
 
-### FAQ2: If an enduser tokenises its card on multiple device, how can I differ
-
+### FAQ2: If an enduser tokenises its card on multiple device, how can I differ them?
 Our application does not saved the type of device used. As a consequence, you must created a link on your own between the device, the deviceInformation and the token.
