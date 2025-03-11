@@ -1,8 +1,12 @@
 <!-- markdownlint-disable MD045-->
-import Image from '@theme/Image';
-import Highlight from '@theme/Highlight';
-import Endpoint from "@theme/Endpoint"
+import Image from '@theme/Image';  
+import Highlight from '@theme/Highlight';  
+import Endpoint from "@theme/Endpoint"  
 import Cta from '@theme/Cta'
+
+# Xpay 
+
+<br/>
 
 ## Flow 1: Enrollment from X-Pay wallet
 
@@ -10,7 +14,7 @@ This flow is also known as **In-App Verification**.
 
 This flow starts **from the digital wallet app**. The cardholder starts enrollment by scanning or entering the card information.
 
-### Green and Yellow paths
+#### Green and Yellow paths
 
 At the start of the enrollment, The provider assesses the cardholder risk.
 This risk level trigers these paths:
@@ -31,21 +35,79 @@ Only green and yellow paths are described below.
 
 Please note that step 4. must include in-app and OTP SMS (only applicable if partner wants to allow for Mac Book enrollment. In this case, Partner must integrate webhook 26 and must implement an SMS server).
 
+Please note that step 4. must include in-app and OTP SMS (only applicable if partner wants to allow for Mac Book enrollment. In this case, Partner must integrate webhook 26 and must implement an SMS server).
+
 ### Sequence diagram (green path)
 
-[![X-Pay - Enrollment from X-Pay wallet - sequence diagram (green path)](https://mermaid.ink/img/pako:eNp1ks1q3DAQx19l0GkD3m3srO1YlIXQ5FhYaElD8GVszSYitqToI8Rd9iH6BL30AfsIldfOYUmqg5DmP_zmc89aLYhx5ug5kGrpWuKDxb5WGLxWoW_I1griMWi9bKVB5eHv719_4EaJZXAfyXfLLQ5grH6R4kPd6K4j5d4r2_hWZBcNtk9LUuLs_y5XxszqdJ_ktNxsTpPg0GJPFsG1qEBb6FEF7EAqEzzoXZStAEEeZefgc2M_bWAxlZ8AvRppBxDoKYEvt7dz3NMIY8i5Lg7b0eikVkqqhxEHI09ocqA0yN5g64HmZKHBDmPr3Rt3xkTiu35w-EHNo9ZP8H0wBFkOC-fRBwdXrZcvFBEsYbHSHqWIY92PyJr5R-qpZjw-Be0wdL5mtTpE12DGsm6E9Noy7m2ghI2j_zao9u0_-cybwfgOOxetcRqM79kr4-t0VVQXVX6epRdpVhRlwgbG07JardOsvFyv08uqiNohYT-1joR0lZV5WVRFXqR5mRbFkXZ_1KaQdEzo67SbxxU9_AOWHuTq?type=svg)](https://mermaid.live/edit#pako:eNp1ks1q3DAQx19l0GkD3m3srO1YlIXQ5FhYaElD8GVszSYitqToI8Rd9iH6BL30AfsIldfOYUmqg5DmP_zmc89aLYhx5ug5kGrpWuKDxb5WGLxWoW_I1griMWi9bKVB5eHv719_4EaJZXAfyXfLLQ5grH6R4kPd6K4j5d4r2_hWZBcNtk9LUuLs_y5XxszqdJ_ktNxsTpPg0GJPFsG1qEBb6FEF7EAqEzzoXZStAEEeZefgc2M_bWAxlZ8AvRppBxDoKYEvt7dz3NMIY8i5Lg7b0eikVkqqhxEHI09ocqA0yN5g64HmZKHBDmPr3Rt3xkTiu35w-EHNo9ZP8H0wBFkOC-fRBwdXrZcvFBEsYbHSHqWIY92PyJr5R-qpZjw-Be0wdL5mtTpE12DGsm6E9Noy7m2ghI2j_zao9u0_-cybwfgOOxetcRqM79kr4-t0VVQXVX6epRdpVhRlwgbG07JardOsvFyv08uqiNohYT-1joR0lZV5WVRFXqR5mRbFkXZ_1KaQdEzo67SbxxU9_AOWHuTq)
+```mermaid
+sequenceDiagram
+autonumber
+    participant 👤 End-user
+    participant X-Pay provider
+    participant Xpollens
+    participant Partner(back-end)
+    participant Partner(App)
+    
+    👤 End-user->>X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
+    X-Pay provider->>Xpollens: Provisionning <br /> (does no impact end-user balances)
+    Xpollens->>Partner(back-end): Webhook Type 25 (status Active)
+
+```
+
+  
 
 ### Sequence diagram (yellow path)
 
-[![X-Pay - Enrollment from X-Pay wallet - sequence diagram (yellow path)](https://mermaid.ink/img/pako:eNrNVNuK2zAQ_ZVBTyk4WzmXxmvKQkiXdqGFwG63peRlYk02IrakSnJYd8lH9Av60g_sJ1S-ZGlIAvtYg43kGZ05c2Y0TyzTgljKHH0vSWX0TuKDxWKhsPRalcWS7EJBeAxaLzNpUHn48-vnb7hWol-6U-av_TlWYKzeSnHSbnSek3LHlnlYK7K9JWabPinx6rzL1JjO2n4POPWvrg5JpJBhQRbBZahAWyhQlZiDVKb0oFfBbAUI8ihzB2-X9vUV9Nr0I6BHI20FAj1FMLu_7-IeRqhDdnmlMK9_OqmVkuqhhoMaT2hyoDTIwmDmgTqysMQcg_Ruj9vBBMQjPVL4Qsu11hu4qwzBYAw959GXDm5UwJRbOkfuX91SuJ1NwYaSS0sCemjMRyxVtv5s8-78UeSD_N6TB8xz8HoT9rCsWv26RGdryjYO5Ar8miwBhld29PZHvIYtWbmqTlfvkO1srWVGz2UKZxuwUI9DsrX3adVuVD8Y4b4OKTP0oTQwbTHC8iUpvwRhz-pcHz9X9jTJD3d3cxhwHjVAWs3C1QTOz7E7lqkWx5Whk9yqzPMKUAhq5Dp1I_-v9p3um5dFLFzUAqUIU-mphlyw0EYFLVgaloJWWOZ-wRZqF1xLU9_KayG9tiz1tqSI1ZPrtlLZft_6dIONpSvMXfgbhglLn9gjSxN-kQyHg8nlOOacj_g4YhVLR5cXg1HMk8skmfDRaJDsIvZD6wAQX8RJPI6HfBLzNzxO-KRB-9YY25DUEPrUjtZmwu7-At0z1DU?type=svg)](https://mermaid.live/edit#pako:eNrNVNuK2zAQ_ZVBTyk4WzmXxmvKQkiXdqGFwG63peRlYk02IrakSnJYd8lH9Av60g_sJ1S-ZGlIAvtYg43kGZ05c2Y0TyzTgljKHH0vSWX0TuKDxWKhsPRalcWS7EJBeAxaLzNpUHn48-vnb7hWol-6U-av_TlWYKzeSnHSbnSek3LHlnlYK7K9JWabPinx6rzL1JjO2n4POPWvrg5JpJBhQRbBZahAWyhQlZiDVKb0oFfBbAUI8ihzB2-X9vUV9Nr0I6BHI20FAj1FMLu_7-IeRqhDdnmlMK9_OqmVkuqhhoMaT2hyoDTIwmDmgTqysMQcg_Ruj9vBBMQjPVL4Qsu11hu4qwzBYAw959GXDm5UwJRbOkfuX91SuJ1NwYaSS0sCemjMRyxVtv5s8-78UeSD_N6TB8xz8HoT9rCsWv26RGdryjYO5Ar8miwBhld29PZHvIYtWbmqTlfvkO1srWVGz2UKZxuwUI9DsrX3adVuVD8Y4b4OKTP0oTQwbTHC8iUpvwRhz-pcHz9X9jTJD3d3cxhwHjVAWs3C1QTOz7E7lqkWx5Whk9yqzPMKUAhq5Dp1I_-v9p3um5dFLFzUAqUIU-mphlyw0EYFLVgaloJWWOZ-wRZqF1xLU9_KayG9tiz1tqSI1ZPrtlLZft_6dIONpSvMXfgbhglLn9gjSxN-kQyHg8nlOOacj_g4YhVLR5cXg1HMk8skmfDRaJDsIvZD6wAQX8RJPI6HfBLzNzxO-KRB-9YY25DUEPrUjtZmwu7-At0z1DU)
+```mermaid
+sequenceDiagram
+autonumber
+    Actor 👤 End-user
+    participant X-Pay provider
+    participant Xpollens
+    participant Partner(back-end)
+    participant Partner(App)
+    participant SCA_Provider
+    
+    👤 End-user ->> X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
+    X-Pay provider ->> Xpollens: Provisionning <br /> (does no impact end-user balances)
+    
+    Xpollens ->> Partner(back-end): Webhook Type 25 (status Inactive)
+    X-Pay provider ->> Partner(App): App opening
+    Partner(App) ->> 👤 End-user: App connection
+    
+    Partner(back-end) ->> Xpollens: Get all tokens by card <br/> Checks if there are inactive tokens to verify
+    Xpollens ->> Partner(back-end): Tokens status
+    Partner(back-end) ->> Partner(App): Send card to activate
+    Partner(App) ->> 👤 End-user: Display card to activate
+    👤 End-user ->> Partner(App): Choice of card to activate
+    Partner(App) ->> SCA_Provider: Strong authentication notification
+    SCA_Provider ->> 👤 End-user: Strong authentication notification
+    👤 End-user ->> SCA_Provider: SCA validated
+    SCA_Provider ->> Partner(back-end): offline_authentication_token
+    
+    Partner(back-end)->>Xpollens: In-App Verification Activation <br/> POST /api/sca/normal/v2.0/{{appUserId}}/token/xpayInAppVerifActivation/{{cardExternalRef}} <br/> with offline_authentication_token
+    
+    activate Partner(back-end)
+    Xpollens-->>Partner(back-end): HTTP 200, actionCode 00
+    Partner(back-end)-->>Partner(App): Card sucessfully added to X-Pay provider
+    X-Pay provider->>Xpollens: Provisionning <br /> (does no impact end-user balances)
+    Xpollens->>Partner(back-end): Webhook Type 25 (status Active)
 
-Step 7 (In-App Verification Activation) and step 12 (Webhook Type 25) are described below.
+```
+
+
 
 ### In-App Verification Activation
 
 This endpoint is useful only for Yellow flow. It must be called by the partner back end only if the user is strongly authenticated and approves the process.
 
-```POST /api/v2.0/token/{cardExternalRef}/XPayInAppVerifActivation```
+`POST /api/sca/normal/v2.0/{{appUserId}}/token/xpayInAppVerifActivation/{{cardExternalRef}}`
+
+Header
+
+| Field | Format | Required(Y/C/O) | Settings | Description |
+| --- | --- | --- | --- | --- |
+| offline_authentication_token | string | Y | header | The proof of authentication (or JWS) should be transmitted in the header of the request and described as follows:  <br>Key = offline_authentication_token  <br>Value = authentication proof |
 
 Request Body:
 
@@ -56,16 +118,97 @@ Request Body:
 }
 ```
 
-Read more about In-App Verification Activation here: [API Reference - Cards - Xpay](https://docs.xpollens.com/api/Xpay)
+Read more about In-App Verification Activation here: [API Reference - Cards - Xpay](https://docs.xpollens.com/api/xpay/#post-/api/v2.0/token/-cardExternalRef-/xpayInAppVerifActivation)
 
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Xpay"
-  label="Try it out"
-/>
+<br/>
 
----
+* * *
+
+## Token status diagram
+
+```mermaid
+stateDiagram
+    [*] --> INACTIVE : token created
+    
+    INACTIVE --> ACTIVATED: token activated
+    INACTIVE --> DELETED
+    ACTIVATED --> DELETED : permanently deactivated
+    ACTIVATED --> SUSPENDED : temporarily suspended
+    SUSPENDED --> ACTIVATED
+    
+    DELETED --> [*]
+    SUSPENDED --> [*]
+
+
+```
+
+The token status changes to SUSPENDED if:
+
+- the card is temporarily blocked
+
+The token status changes to DELETED if:
+
+- the card is deleted from the wallet
+- the card is opposed
+
+<br/>
+
+* * *
+
+## General rules
+
+A card can be added to the wallet as soon as its status is **ACTIVATED**.
+
+If a token is not activated within 30 days of its creation, its status changes to **DELETED**.
+
+During provisioning, VISA creates an authorization on the associated card. This authorization does not impact the user's balance and is not visible to either you or the end user.
+
+In case of multiple tokens to activate, we recommend differentiating them by:
+- Displaying the type of device used for enrollment
+- Displaying the enrollment date. Note that our endpoint does not return this value. If needed, you have to integrate it when receiving the callback 25 with status "INACTIVE".
+
+ <br/> 
+
+* * *
+
+## Apple pay in app verif
+
+For apple pay, the information needed by Xpollens are:
+
+- the mobile banking app id, which is the team id + the bundle id
+- the deeplink which redirect the enduser to the process in app verification (in your app)
+
+ <br/> 
+
+* * *
+
+## Samsung & Google pay in app verif
+
+For Samsung and Google pay, the information needed by Xpollens is the app bundleId.
+
+Then the following actions have to be taken into account:  
+1- create the activity a2a in your app 
+2- use this activity to redirect the enduser to the in app verif process  
+3- redirect the enduser to the wallet
+
+Find more details in these websites:  
+https://developer.samsung.com/pay/ID&V/implementing-app2app-id&v.html  
+https://developers.google.com/pay/issuers/tsp-integration/app-to-app-idv
+
+ <br/> 
+
+* * *
+
+## How to test
+
+The Xpay can **not** be tested in sandbox.  
+As a consequence, first tokenisation are processed in production, on whitelisted PANs.
+
+  
+<br/>
+<br/>
+
+* * *
 
 ## Flow 2: Enrollment from partner app
 
@@ -80,11 +223,27 @@ This flow starts **from the partner app**. The cardholder clicks on a button and
 
 ### Sequence diagram
 
-[![X-Pay - In-App Provisionning sequence diagram](https://mermaid.ink/img/pako:eNp1k9Fu2jAUhl_lyFdUIjSBpGTWhMTWXqAJDYlJrabcOPGBWiS259jVGOIh9gS72QPuEeYE0oa184Vl-5zz-fev4wMpFEdCSY3fHMoCbwXbGlZlkjmrpKtyNJkEPzQzVhRCM2nhz6-fv-FO8sDVXXjVCzdriWYgPq9hrvXVa8CDVmWJsob17af_R9-KsP3r0-6-nBW7ACU_X3iaL7QGs9m_4ih8LEWxAyUhI3POwarmvES4Z16FzcjLA_t1HtV_BW0m2DhZWOFRha-F97m5nsF6uZivPjjr7VwyybadY_3qHoyCkAHTGrRRT6L2MCnk9sx6KVp4GQsZeCWw6hKbvGdDG6susKs3eAOusAapLIhKs8ICno2CnJXMt0N9dSm2Z-Cz2_Qe80eldvBlrxHGCQxqy6yrYe69eEJPIENSoamY4L7TDg0xI_YRK8wI9UuOG-bK1umjT3WaM4t3XFhlCLXG4ZA03bjey6Lbn3LOzUrohpW1P_XdQOiBfCd0Mh1NozROwjSJ4yhO4yHZExrdJKPkJk4naTiZhmEcjo9D8kMpT4hGYTvGkzSO0mT6rqV9bWOnK7EVtDx9l_bXHP8CBzsVBA?type=svg)](https://mermaid.live/edit#pako:eNp1k9Fu2jAUhl_lyFdUIjSBpGTWhMTWXqAJDYlJrabcOPGBWiS259jVGOIh9gS72QPuEeYE0oa184Vl-5zz-fev4wMpFEdCSY3fHMoCbwXbGlZlkjmrpKtyNJkEPzQzVhRCM2nhz6-fv-FO8sDVXXjVCzdriWYgPq9hrvXVa8CDVmWJsob17af_R9-KsP3r0-6-nBW7ACU_X3iaL7QGs9m_4ih8LEWxAyUhI3POwarmvES4Z16FzcjLA_t1HtV_BW0m2DhZWOFRha-F97m5nsF6uZivPjjr7VwyybadY_3qHoyCkAHTGrRRT6L2MCnk9sx6KVp4GQsZeCWw6hKbvGdDG6susKs3eAOusAapLIhKs8ICno2CnJXMt0N9dSm2Z-Cz2_Qe80eldvBlrxHGCQxqy6yrYe69eEJPIENSoamY4L7TDg0xI_YRK8wI9UuOG-bK1umjT3WaM4t3XFhlCLXG4ZA03bjey6Lbn3LOzUrohpW1P_XdQOiBfCd0Mh1NozROwjSJ4yhO4yHZExrdJKPkJk4naTiZhmEcjo9D8kMpT4hGYTvGkzSO0mT6rqV9bWOnK7EVtDx9l_bXHP8CBzsVBA)
+```mermaid
+sequenceDiagram
+autonumber
+    participant 👤 End-user
+    Participant Partner(iOS App)
+    participant Xpollens SDK
+    participant Xpollens
+    participant Xpay
+    participant Partner(back-end)
+    
+    👤 End-user->>Partner(iOS App): Click on "Add to Apple Wallet"
+    Partner(iOS App)->>Xpollens SDK: SDK function call <br/> SMIAPButtonManager
+    Xpollens SDK->>Xpollens: in-app provisionning <br/>  Xpollens IOS In-App Provisioning SDK
+    Xpay->>Xpollens: Provisionning <br/> (does not impact end-user balances)
+    Xpollens->>Partner(back-end):Webhook Type 25 (status Active)
 
-Please note that Step1 is done with an SDK (software Development Kit) provided by Xpollens. See the related documentation [here](iOS_SDK)
+```
 
----
+Please note that Step1 is done with an SDK (software Development Kit) provided by Xpollens. See the related documentation [here](/C:/Users/NicolasPeyrusse/AppData/Local/Programs/Joplin/resources/app.asar/iOS_SDK "iOS_SDK")
+
+* * *
 
 ### Get all tokens by card
 
@@ -92,7 +251,7 @@ This endpoint retrieves the list of tokens for a specific card.
 
 It must be requested in Flow 2 (enrollment from partner app), see sequence diagram above, message number 5.
 
-```GET /api/v2.0/token/card/{cardExternalRef}```
+`GET /api/v2.0/token/card/{cardExternalRef}`
 
 Response Body:
 
@@ -137,26 +296,21 @@ Then filter out only tokens having `"tokenType": "SECURE_ELEMENT"` (Apple Pay) o
 
 Partners should display the push provisionning button (see below) only if there are no active X-Pay token associated with the card.
 
-![button add to apple wallet](https://developer.apple.com/wallet/add-to-apple-wallet-guidelines/images/print-clearspace.svg)
+ ![button add to apple wallet](https://developer.apple.com/wallet/add-to-apple-wallet-guidelines/images/print-clearspace.svg) Edit 🖊️
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
 
-<Endpoint apiUrl="/v2.0/cardxpay" path="/api/v2.0/token/card/{cardExternalRef]" method="post"/>
+<endpoint apiurl="/v2.0/cardxpay" path="/api/v2.0/token/card/{cardExternalRef]" method="post">
 
-<Cta
-  context="doc"
-  ui="button"
-  link="/api/Xpay"
-  label="Try it out"
-/>
-<br/>
+<cta context="doc" ui="button" link="/api/Xpay" label="Try it out">  
+<br/></cta>
 
 ## Webhook Type 25
 
 This Webhook is useful for all flows.
 
-Xpollens sends this Webhook to partners in case of a token status change.
-Partners should act upon ``"status": "A"`` and ignore any other values.
+Xpollens sends this Webhook to partners in case of a token status change.  
+Partners should act upon `"status": "A"` and ignore any other values.
 
 ```json
 "id": "integer",              // internal Id, e.g. 637877811699419000
@@ -173,8 +327,22 @@ Partners should act upon ``"status": "A"`` and ignore any other values.
                               // * "I" (Inactive)
                               // * "A" (Active)
                               // * "S" (Suspended)
-                              // * "D" (Deactivated)
+                              // * "D" (Deleted)
 "messageReasonCode": "string",// useless for partners, e.g. null or "1400" (token created)
 ```
 
-Read more about Webhooks here: [Callbacks OpenAPI](https://docs.xpollens.com/api/Callbacks)
+
+  <br/>
+  <br/>
+
+* * *
+
+## FAQ
+
+### FAQ1: Can I tokenise my card on multiple device?
+
+Yes. You have one token per device used.
+
+### FAQ2: If an enduser tokenises its card on multiple device, how can I differ
+
+Our application does not saved the type of device used. As a consequence, you must created a link on your own between the device, the deviceInformation and the token.
