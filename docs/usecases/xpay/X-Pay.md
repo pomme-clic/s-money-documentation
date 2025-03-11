@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD045-->
-import Image from '@theme/Image';  
-import Highlight from '@theme/Highlight';  
-import Endpoint from "@theme/Endpoint"  
+import Image from '@theme/Image';
+import Highlight from '@theme/Highlight';
+import Endpoint from "@theme/Endpoint"
 import Cta from '@theme/Cta'
 
 # Xpay 
@@ -27,11 +27,13 @@ This risk level trigers these paths:
 Only green and yellow paths are described below.
 
 ### User journey
+### User journey
 
 |<span style={{color: 'green'}}>■</span><span style={{color: 'yellow'}}>■</span>green and yellow paths <br /> [![](iOS_IAV_01_scan_card_number-150.png)](iOS_IAV_01_scan_card_number.png) <br /> 1. Scan or enter card number|<span style={{color: 'green'}}>■</span><span style={{color: 'yellow'}}>■</span>green and yellow paths <br /> [![](iOS_IAV_02_exp_cvv-150.png)](iOS_IAV_02_exp_cvv.png) <br /> 2. Enter expiry date and CVV | <span style={{color: 'green'}}>■</span><span style={{color: 'yellow'}}>■</span>green and yellow paths <br /> [![](iOS_IAV_03_read_accept_T&C-150.png)](iOS_IAV_03_read_accept_T&C.png) <br /> 3. Read and accept T&C<sup> [1](./CGU_Apple_Pay.pdf) [2](CGU_Google_Wallet.pdf) [3](CGU_Samsung_Wallet.pdf)</sup>|
 |:---|:---|:---|
 | <span style={{color: 'yellow'}}>■</span> yellow path only <br /> [![](iOS_IAV_04_choose_verification_method-150.png)](iOS_IAV_04_choose_verification_method.png) <br /> **4. Choose verification method <br /> (call center, in-app, OTP SMS)** | <span style={{color: 'yellow'}}>■</span> yellow path only <br /> [![](iOS_IAV_05_open_partner_app-150.png)](iOS_IAV_05_open_partner_app.png) <br /> **5. Open partner app** | <span style={{color: 'yellow'}}>■</span> yellow path only <br /> [![](iOS_IAV_06_log_in_partner_app-150.png)](iOS_IAV_06_log_in_partner_app.png) <br /> **6. Log in to the partner app** |
 |<span style={{color: 'yellow'}}>■</span> yellow path only <br /> [![](iOS_IAV_07_choose_which_cards_to_activate-150.png)](iOS_IAV_07_choose_which_cards_to_activate.png) <br /> **7. Choose which card(s) to verify** |<span style={{color: 'yellow'}}>■</span> yellow path only <br /> [![](iOS_IAV_08_confirmation_message-150.png)](iOS_IAV_08_confirmation_message.png) <br /> **8. X-Pay Enrollment confirmation message** |<span style={{color: 'green'}}>■</span><span style={{color: 'yellow'}}>■</span>green and yellow paths <br /> [![](iOS_IAV_09_confirmation_notification-150.png)](iOS_IAV_09_confirmation_notification.png) <br /> **9. X-Pay Enrollment confirmation notification** |
+
 
 Please note that step 4. must include in-app and OTP SMS (only applicable if partner wants to allow for Mac Book enrollment. In this case, Partner must integrate webhook 26 and must implement an SMS server).
 
@@ -42,47 +44,45 @@ Please note that step 4. must include in-app and OTP SMS (only applicable if par
 ```mermaid
 sequenceDiagram
 autonumber
-    participant 👤 End-user
+    participant End-user
     participant X-Pay provider
     participant Xpollens
     participant Partner(back-end)
     participant Partner(App)
     
-    👤 End-user->>X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
+    End-user->>X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
     X-Pay provider->>Xpollens: Provisionning <br /> (does no impact end-user balances)
     Xpollens->>Partner(back-end): Webhook Type 25 (status Active)
 
 ```
-
-  
 
 ### Sequence diagram (yellow path)
 
 ```mermaid
 sequenceDiagram
 autonumber
-    Actor 👤 End-user
+    Actor End-user
     participant X-Pay provider
     participant Xpollens
     participant Partner(back-end)
     participant Partner(App)
     participant SCA_Provider
     
-    👤 End-user ->> X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
+    End-user ->> X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
     X-Pay provider ->> Xpollens: Provisionning <br /> (does no impact end-user balances)
     
     Xpollens ->> Partner(back-end): Webhook Type 25 (status Inactive)
     X-Pay provider ->> Partner(App): App opening
-    Partner(App) ->> 👤 End-user: App connection
+    Partner(App) ->> End-user: App connection
     
     Partner(back-end) ->> Xpollens: Get all tokens by card <br/> Checks if there are inactive tokens to verify
     Xpollens ->> Partner(back-end): Tokens status
     Partner(back-end) ->> Partner(App): Send card to activate
-    Partner(App) ->> 👤 End-user: Display card to activate
-    👤 End-user ->> Partner(App): Choice of card to activate
+    Partner(App) ->> End-user: Display card to activate
+    End-user ->> Partner(App): Choice of card to activate
     Partner(App) ->> SCA_Provider: Strong authentication notification
-    SCA_Provider ->> 👤 End-user: Strong authentication notification
-    👤 End-user ->> SCA_Provider: SCA validated
+    SCA_Provider ->> End-user: Strong authentication notification
+    End-user ->> SCA_Provider: SCA validated
     SCA_Provider ->> Partner(back-end): offline_authentication_token
     
     Partner(back-end)->>Xpollens: In-App Verification Activation <br/> POST /api/sca/normal/v2.0/{{appUserId}}/token/xpayInAppVerifActivation/{{cardExternalRef}} <br/> with offline_authentication_token
@@ -94,7 +94,6 @@ autonumber
     Xpollens->>Partner(back-end): Webhook Type 25 (status Active)
 
 ```
-
 
 
 ### In-App Verification Activation
@@ -226,18 +225,18 @@ This flow starts **from the partner app**. The cardholder clicks on a button and
 ```mermaid
 sequenceDiagram
 autonumber
-    participant 👤 End-user
+    participant End-user
     Participant Partner(iOS App)
     participant Xpollens SDK
     participant Xpollens
     participant Xpay
     participant Partner(back-end)
     
-    👤 End-user->>Partner(iOS App): Click on "Add to Apple Wallet"
-    Partner(iOS App)->>Xpollens SDK: SDK function call <br/> SMIAPButtonManager
-    Xpollens SDK->>Xpollens: in-app provisionning <br/>  Xpollens IOS In-App Provisioning SDK
-    Xpay->>Xpollens: Provisionning <br/> (does not impact end-user balances)
-    Xpollens->>Partner(back-end):Webhook Type 25 (status Active)
+    End-user ->> Partner(iOS App): Click on "Add to Apple Wallet"
+    Partner(iOS App) ->> Xpollens SDK: SDK function call <br/> SMIAPButtonManager
+    Xpollens SDK ->> Xpollens: in-app provisionning <br/>  Xpollens IOS In-App Provisioning SDK
+    Xpay ->> Xpollens: Provisionning <br/> (does not impact end-user balances)
+    Xpollens ->> Partner(back-end):Webhook Type 25 (status Active)
 
 ```
 
@@ -296,14 +295,21 @@ Then filter out only tokens having `"tokenType": "SECURE_ELEMENT"` (Apple Pay) o
 
 Partners should display the push provisionning button (see below) only if there are no active X-Pay token associated with the card.
 
- ![button add to apple wallet](https://developer.apple.com/wallet/add-to-apple-wallet-guidelines/images/print-clearspace.svg) Edit 🖊️
+![button add to apple wallet](https://developer.apple.com/wallet/add-to-apple-wallet-guidelines/images/print-clearspace.svg)
 
 More information regarding this endpoint in the [API reference](/api/Xpay)
 
-<endpoint apiurl="/v2.0/cardxpay" path="/api/v2.0/token/card/{cardExternalRef]" method="post">
 
-<cta context="doc" ui="button" link="/api/Xpay" label="Try it out">  
-<br/></cta>
+<Endpoint apiUrl="/v2.0/cardxpay" path="/api/v2.0/token/card/{cardExternalRef]" method="post"/>
+
+<Cta
+  context="doc"
+  ui="button"
+  link="/api/Xpay"
+  label="Try it out"
+/>
+
+<br/>
 
 ## Webhook Type 25
 
@@ -329,6 +335,7 @@ Partners should act upon `"status": "A"` and ignore any other values.
                               // * "S" (Suspended)
                               // * "D" (Deleted)
 "messageReasonCode": "string",// useless for partners, e.g. null or "1400" (token created)
+
 ```
 
 
