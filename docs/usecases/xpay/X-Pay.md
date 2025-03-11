@@ -240,7 +240,7 @@ autonumber
 
 ```
 
-Please note that Step1 is done with an SDK (software Development Kit) provided by Xpollens. See the related documentation [here](/C:/Users/NicolasPeyrusse/AppData/Local/Programs/Joplin/resources/app.asar/iOS_SDK "iOS_SDK")
+Please note that Step1 is done with an SDK (software Development Kit) provided by Xpollens.
 
 * * *
 
