@@ -107,7 +107,7 @@ Header
 
 | Field | Format | Required(Y/C/O) | Settings | Description |
 | --- | --- | --- | --- | --- |
-| offline_authentication_token | string | Y | header | The proof of authentication (or JWS) should be transmitted in the header of the request and described as follows:  <br>Key = offline_authentication_token  <br>Value = authentication proof |
+| offline_authentication_token | string | Y | header | The proof of authentication (or JWS) should be transmitted in the header of the request and described as follows:  <br/>Key = offline_authentication_token  <br/>Value = authentication proof |
 
 Request Body:
 
