@@ -43,16 +43,16 @@ Please note that step 4. must include in-app and OTP SMS (only applicable if par
 
 ```mermaid
 sequenceDiagram
-autonumber
-    participant End-user
-    participant X-Pay provider
+autoNumber
+    Actor Enduser
+    participant Xpay Provider
     participant Xpollens
-    participant Partner(back-end)
-    participant Partner(App)
+    participant Partner (Back end)
+    participant Partner (App)
     
-    End-user->>X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
-    X-Pay provider->>Xpollens: Provisionning <br /> (does no impact end-user balances)
-    Xpollens->>Partner(back-end): Webhook Type 25 (status Active)
+    Enduser -->> Xpay Provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
+    Xpay Provider -->> Xpollens: Provisionning <br /> (does no impact end-user balances)
+    Xpollens -->> Partner (Back end): Webhook Type 25 (status Active)
 
 ```
 
@@ -61,28 +61,28 @@ autonumber
 ```mermaid
 sequenceDiagram
 autonumber
-    Actor End-user
+    Actor Enduser
     participant X-Pay provider
     participant Xpollens
     participant Partner(back-end)
     participant Partner(App)
     participant SCA_Provider
     
-    End-user ->> X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
+    Enduser ->> X-Pay provider: camera scan or manual input of card details <br/> (number, expiry date, CVV)
     X-Pay provider ->> Xpollens: Provisionning <br /> (does no impact end-user balances)
     
     Xpollens ->> Partner(back-end): Webhook Type 25 (status Inactive)
     X-Pay provider ->> Partner(App): App opening
-    Partner(App) ->> End-user: App connection
+    Partner(App) ->> Enduser: App connection
     
     Partner(back-end) ->> Xpollens: Get all tokens by card <br/> Checks if there are inactive tokens to verify
     Xpollens ->> Partner(back-end): Tokens status
     Partner(back-end) ->> Partner(App): Send card to activate
-    Partner(App) ->> End-user: Display card to activate
-    End-user ->> Partner(App): Choice of card to activate
+    Partner(App) ->> Enduser: Display card to activate
+    Enduser ->> Partner(App): Choice of card to activate
     Partner(App) ->> SCA_Provider: Strong authentication notification
-    SCA_Provider ->> End-user: Strong authentication notification
-    End-user ->> SCA_Provider: SCA validated
+    SCA_Provider ->> Enduser: Strong authentication notification
+    Enduser ->> SCA_Provider: SCA validated
     SCA_Provider ->> Partner(back-end): offline_authentication_token
     
     Partner(back-end)->>Xpollens: In-App Verification Activation <br/> POST /api/sca/normal/v2.0/{{appUserId}}/token/xpayInAppVerifActivation/{{cardExternalRef}} <br/> with offline_authentication_token
@@ -225,16 +225,16 @@ This flow starts **from the partner app**. The cardholder clicks on a button and
 ```mermaid
 sequenceDiagram
 autonumber
-    participant End-user
+    Actor Enduser
     Participant Partner(iOS App)
     participant Xpollens SDK
     participant Xpollens
     participant Xpay
-    participant Partner(back-end)
+    participant Partner(backend)
     
-    End-user ->> Partner(iOS App): Click on "Add to Apple Wallet"
-    Partner(iOS App) ->> Xpollens SDK: SDK function call <br/> SMIAPButtonManager
-    Xpollens SDK ->> Xpollens: in-app provisionning <br/>  Xpollens IOS In-App Provisioning SDK
+    Enduser ->> Partner(iOS App): Click on "Add to Apple Wallet"
+    Partner(iOS App) ->> Xpollens_SDK: SDK function call <br/> SMIAPButtonManager
+    Xpollens_SDK ->> Xpollens: in-app provisionning <br/>  Xpollens IOS In-App Provisioning SDK
     Xpay ->> Xpollens: Provisionning <br/> (does not impact end-user balances)
     Xpollens ->> Partner(back-end):Webhook Type 25 (status Active)
 
