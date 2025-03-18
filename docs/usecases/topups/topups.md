@@ -170,11 +170,11 @@ In this case, for the next top-up:
         "UrlReferrer": "https://www.s-money.fr?cart=473",
         "IpAddress": "127.0.0.1"
     },
-    "subscriptionTopUp": false,
-        "Card": {
+    "Card": {
 		"HFToken":"{{HFToken}}",
 		"SelectedBrand":"{{selectedBrand}}"
     },
+   "subscriptionTopUp": false,
     "TermsAndConditionsValidationDate": "2022-05-17T17:00:48.0255806+01:00",
     "Payments": [
         {

@@ -57,6 +57,7 @@ module.exports = {
     },
   'api/Topup',
 	'api/Compliance',
+  'api/StrongAuthentication',
     {
       type: 'category',
       label: 'Callback management',
