@@ -58,12 +58,12 @@ state fork_state2 <<fork>>
   fork_state2 --> Expired
   fork_state2 --> Deactivated
 
-  fork_state --> Failed : pin not matched
+  fork_state --> Failed_(deprecated) : pin not matched
 
   Expired --> [*]
 	Cancelled --> [*]
 	Opposed --> [*]
-	Failed --> [*]
+	Failed_(deprecated) --> [*]
 	Deactivated --> [*]
 ```
 <br/>
