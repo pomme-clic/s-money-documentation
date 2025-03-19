@@ -110,7 +110,7 @@ module.exports = {
         label: 'Cards Management',
         items: [
             'usecases/cards/issuing/PhysicalCardIssuing',
-	    'usecases/cards/selfcare/VirtualCardIssuing',
+	    'usecases/cards/issuing/VirtualCardIssuing',
             'usecases/cards/selfcare/physical', 
             'usecases/cards/selfcare/virtual'
         ]
