@@ -1,4 +1,4 @@
-# Cards Issuing: physical card
+# Physical card issuance
 This document applies for **Physical Card Order **.
 
 * * *
