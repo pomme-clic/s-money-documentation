@@ -44,12 +44,19 @@ The virtual card has to be activated to be used.
 ```mermaid
 stateDiagram
 state fork_state3 <<fork>>
+state fork_state4 <<fork>>
 
   Sent --> fork_state3
   fork_state3 --> Activated
+  Activated --> fork_state4
+
   fork_state3 --> Canceled
   fork_state3 --> Opposed
-  fork_state3 --> Expired 
+  fork_state3 --> Expired
+
+  fork_state4 --> Canceled
+  fork_state4 --> Opposed
+  fork_state4 --> Expired 
 
   Expired --> [*]
   Canceled --> [*]
