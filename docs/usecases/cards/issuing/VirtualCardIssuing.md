@@ -45,14 +45,15 @@ The virtual card has to be activated to be used.
 stateDiagram
 state fork_state3 <<fork>>
 
-  Activated --> fork_state3
+  Sent --> fork_state3
+  fork_state3 --> Activated
   fork_state3 --> Canceled
   fork_state3 --> Opposed
   fork_state3 --> Expired 
 
   Expired --> [*]
-	Canceled --> [*]
-	Opposed --> [*]
+  Canceled --> [*]
+  Opposed --> [*]
 
 ```
 
