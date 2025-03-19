@@ -1,4 +1,4 @@
-# Cards Issuing
+# Virtual card issuance
 This document applies for **Virtual Cards **.
 * * *
 ## Prerequisites
