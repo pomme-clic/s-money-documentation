@@ -283,7 +283,7 @@ If a new delivery point needs to be created, request it via a Zendesk ticket.
 <br/>
 
 * * *
-### Multiple holding of physical cards
+## Multiple holding of physical cards
 The multiple holding of physical cards is prohibited: it is not possible to order more than one physical card for the same bank account.
 
 Any new card request will be automatically declined if a card already exists on the account with one of the following statuses: "ordered," "sent," or "activated."
