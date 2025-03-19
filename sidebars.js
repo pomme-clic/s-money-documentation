@@ -109,7 +109,7 @@ module.exports = {
         type: 'category',
         label: 'Cards Management',
         items: [
-            'usecases/cards/issuing/CardsIssuing', 
+            'usecases/cards/issuing/PhysicalCardIssuing', 
             'usecases/cards/selfcare/physical', 
             'usecases/cards/selfcare/virtual'
         ]
