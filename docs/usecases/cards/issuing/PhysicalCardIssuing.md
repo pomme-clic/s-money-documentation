@@ -539,7 +539,9 @@ They are chosen by Xpollens and validated with BPCE PS.
 ### Card order 
 POST /api/v3.0/cards/physical
 
-
+### Callbacks
+CardOrderCreatedOrUpdated
+CardCreatedOrUpdated
 
 ### SDK Thales
 
@@ -548,4 +550,7 @@ POST /api/v3.0/cards/physical
 | Ask your Customer Integration Manager to get SDKs and documentation |
 
 * * *
-## How to test
+## FAQ
+### Why is the order not protected by an SCA?
+Placing an order is not a sensitive operation; therefore, the endpoint does not include /sca/.
+However, card activation is a sensitive operation. Whether the activation is done physically or virtually, strong authentication is required—using the PIN in the first case and a secret code for online activation.
