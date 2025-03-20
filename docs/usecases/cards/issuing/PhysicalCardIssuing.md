@@ -21,11 +21,11 @@ stateDiagram
 state fork_state <<fork>>
 
 [*] --> Pending
-Pending --> Published
-Pending --> Canceled
+Pending --> Published : Order sent to the manufacturer
+Pending --> Canceled : Order canceled
 Published --> fork_state
-fork_state --> Shipped
-fork_state --> Rejected
+fork_state --> Shipped : Order sent to the enduser
+fork_state --> Rejected: Order failed <br/> ReconciliationWhispin-Card failed 
 
 Shipped --> [*]
 Rejected --> [*]
@@ -69,6 +69,19 @@ state fork_state2 <<fork>>
 <br/>
 
 > Deactivated for remanufacturing
+
+<br/>
+
+* * *
+
+### Objectf Order vs. object Card
+
+Two objects exist when ordering a card:
+
+- The `Order` object tracks the card order from placement to shipment.
+- Once the card has been produced, the `Card` object appears and takes over, managing the card throughout its lifecycle.
+
+As a result, use the `Order` object from order placement to shipment, and the `Card` object thereafter.
 
 <br/>
 <br/>
