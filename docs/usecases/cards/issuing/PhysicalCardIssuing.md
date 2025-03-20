@@ -549,8 +549,9 @@ CardCreatedOrUpdated
 | -- |
 | Ask your Customer Integration Manager to get SDKs and documentation |
 
+
 * * *
 ## FAQ
-### Why is the order not protected by an SCA?
+### Why isn't the order protected by an SCA?
 Placing an order is not a sensitive operation; therefore, the endpoint does not include /sca/.
 However, card activation is a sensitive operation. Whether the activation is done physically or virtually, strong authentication is required—using the PIN in the first case and a secret code for online activation.
