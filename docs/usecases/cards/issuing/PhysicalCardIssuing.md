@@ -1,5 +1,6 @@
-# Cards Issuing
-This document applies for **Physical and Vitual cards Order **.
+# Physical card issuance
+This document applies for **Physical Card Order **.
+
 * * *
 ## Prerequisites
 The prerequisites to call this endpoint are:
@@ -8,10 +9,88 @@ The prerequisites to call this endpoint are:
 - Offer partner code.
 - Cardholder existence.
 - Account existence.
-* * *
-## Diagram & statuses
 
-### Order a card: sequence diagram for production and unmocked environment
+<br/>
+
+* * *
+## Diagram & status for a physical card
+
+### States diagram for a physical cardOrder
+```mermaid
+stateDiagram
+state fork_state <<fork>>
+
+[*] --> Pending
+Pending --> Published : Order sent to the manufacturer
+Pending --> Canceled : Order canceled
+Published --> fork_state
+fork_state --> Shipped : Order sent to the enduser
+fork_state --> Rejected: Order failed <br/> ReconciliationWhispin-Card failed 
+
+Shipped --> [*]
+Rejected --> [*]
+Canceled --> [*]
+
+```
+
+<br/>
+
+* * *
+
+### States diagram for physical cards
+```mermaid
+stateDiagram
+state fork_state <<fork>>
+state fork_state2 <<fork>>
+
+  [*] --> Ordered_(deprecated)
+  Ordered_(deprecated) --> fork_state
+  fork_state --> Cancelled
+  fork_state --> Sent: mailed by the manufacturer
+
+  
+  Sent --> fork_state2
+  Sent --> Activated
+
+  Activated --> fork_state2
+  fork_state2 --> Cancelled
+  fork_state2 --> Opposed
+  fork_state2 --> Expired
+  fork_state2 --> Deactivated
+
+  fork_state --> Failed_(deprecated) : pin not matched
+
+  Expired --> [*]
+	Cancelled --> [*]
+	Opposed --> [*]
+	Failed_(deprecated) --> [*]
+	Deactivated --> [*]
+```
+<br/>
+
+> Deactivated for remanufacturing
+
+<br/>
+
+* * *
+
+### Objectf Order vs. object Card
+
+Two objects exist when ordering a card:
+
+- The `Order` object tracks the card order from placement to shipment.
+- Once the card has been produced, the `Card` object appears and takes over, managing the card throughout its lifecycle.
+
+As a result, use the `Order` object from order placement to shipment, and the `Card` object thereafter.
+
+<br/>
+<br/>
+
+* * *
+
+## Order a physical card with individual delivery
+
+### Order a physical card: sequence diagram for production and unmocked environment
 **Physical card order process (Ramdom PIN)**
 
 ```mermaid
@@ -22,28 +101,36 @@ Participant Partner
 Participant XPO
 Participant BPCE
 
-Partner ->> XPO : Order a physical card (POST /api/v3.0/cards )
-XPO --) XPO : Create the card ( Status:ORDERED)
+Partner ->> XPO : Order a physical card (POST /api/v3.0/cards/physical)
+XPO --) XPO : Create the card order
 XPO ->> Partner :return OK (201)
-XPO --) BPCE : Generate the file all days at 6:30 Pm ( paris time)
-XPO -->> Partner : Send callback 21 ( status:Ordered)
-Alt BPCE Processing is KO
+XPO -->> Partner : Send CardOrderCreatedOrUpdated (status:Pending)
+
+XPO --) BPCE : Generate the file all days at 6:30 Pm (paris time)
+XPO -->> Partner : Send CardOrderCreatedOrUpdated (status:Published)
+
+alt BPCE Processing is KO
 %%note over BPCE: BPCE Processing is KO
-rect rgb(255, 0, 0, 0.3)
-BPCE --) BPCE : If order Processing KO
-BPCE -->> XPO : Send reject file
-XPO --) XPO : Integrate, process the reject file. <br/> And change status ( Status:Failed )
-XPO -->> Partner : Send callback 21 ( Status: Failed)
+	rect rgb(255, 0, 0, 0.1)
+		BPCE --) BPCE : If order Processing KO
+		BPCE -->> XPO : Send reject file
+		XPO --) XPO : Integrate, process the reject file. <br/> And change status
+		XPO -->> Partner : Send CardOrderCreatedOrUpdated (status:Rejected)
 	end
+	
 else BPCE Processing is OK
-rect rgb(0, 255, 0, 0.3)
-	BPCE --) BPCE :  If order Processing OK 
-BPCE -->> XPO : Send return file
-XPO --) XPO : Intégrate, process the return file. <br/> And change status ( Status: SENT )
-XPO -->> Partner : Send callback 21 ( Status:SENT)
-end
+	rect rgb(0, 255, 0, 0.1)
+		BPCE --) BPCE :  If order Processing OK 
+		BPCE -->> XPO : Send return file
+		XPO --) XPO : Integrate, process the return file. <br/> And change status (Status: Shipped)
+		XPO -->> Partner : Send CardOrderCreatedOrUpdated (status:Shipped)
+		XPO -->> Partner : Send CardCreatedOrUpdated (status:Sent)
+	end
 end
 ```
+
+<br/>
+
 * * *
 **Physical card order process ( Wishpin )**
 
@@ -58,70 +145,62 @@ Participant BPCE
 
 Partner ->> XPO : Order a physical card <br/>  (POST /api/v3.0/cards)
 XPO ->> Partner :return OK (201) {cardId}
-XPO --) XPO : Create the card ( Status:ORDERED)
+XPO -->> Partner : Send CardOrderCreatedOrUpdated ( status:Pending)
 
+par Whispin choice
 
 alt Wishpin
-Partner ->> XPO : GET /api/v2.0/tokensignature/{cardExternalRef} <br/> where cardExternalRef = cardId
-XPO -->> Partner: tokensignature outputs <br/> (see section Get the tokensignature)
-Partner -->> Partner: create token,  where token inputs  = tokensignature outputs  <br/> (see section tokensignature and token mapping) <br/><br/> create signature  <br/> (see section Token and Signature CB compliant) <br/>
-Partner -->> Thales : definePINToken {token, signature} 
-Thales -->> BPCE : Acknowledgement of receipt of the wishpin
-BPCE --) BPCE : Waiting for the matching between card order and whispin <br/> if matching isn't validated within 4 days , <br/>the creation is failed.
+
+	Partner ->> XPO : GET /api/v2.0/tokensignature/{cardExternalRef} <br/> where cardExternalRef = cardId
+	XPO -->> Partner: tokensignature outputs <br/> (see section Get the tokensignature)
+	Partner -->> Partner: create token,  where token inputs  = tokensignature outputs  <br/> (see section tokensignature and token mapping) <br/><br/> create signature  <br/> (see section Token and Signature CB compliant) <br/>
+	Partner -->> Thales : definePINToken {token, signature} 
+	Thales -->> BPCE : Acknowledgement of receipt of the wishpin
+	BPCE --) BPCE : Waiting for the matching between card order and whispin <br/> if matching isn't validated within 4 days , <br/>the creation is failed.
+	end
+	
+	and Card order
+
+	XPO ->> BPCE : Generate the file all days at 6:30 Pm ( paris time)
+	XPO -->> Partner : Send CardOrderCreatedOrUpdated ( status:Published)
+
 end
 
-XPO ->> BPCE : Generate the file all days at 6:30 Pm ( paris time)
-XPO -->> Partner : Send callback 21 ( status:Ordered)
-
-alt BPCE processing KO
-rect rgb(255, 0, 0, 0.2)
-BPCE --) BPCE : If order Processing KO
-BPCE -->> XPO : Send reject file
-XPO --) XPO : Intégrate, process the reject file. <br/> And change status ( Status:Failed )
-XPO -->> Partner : Send callback 21 ( Status: 5 'failed')
-	end	
-else BPCE Processing OK
-rect rgb(0, 255, 0, 0.2)
-BPCE --) BPCE : If order Processing OK
-BPCE -->> XPO : Send return file
-XPO --) XPO : Intégrate, process the return file. <br/> And change status ( Status: Sent)
-XPO -->> Partner : Send callback 21 ( Status:1 'sent')
+alt BPCE Processing is KO
+%%note over BPCE: BPCE Processing is KO
+	rect rgb(255, 0, 0, 0.1)
+		BPCE --) BPCE : If order Processing KO
+		BPCE -->> XPO : Send reject file
+		XPO --) XPO : Integrate, process the reject file. <br/> And change status
+		XPO -->> Partner : Send CardOrderCreatedOrUpdated (status:Rejected)
+	end
+	
+else BPCE Processing is OK
+	rect rgb(0, 255, 0, 0.1)
+		BPCE --) BPCE :  If order Processing OK 
+		BPCE -->> XPO : Send return file
+		XPO --) XPO : Integrate, process the return file. <br/> And change status (Status: Shipped)
+		XPO -->> Partner : Send CardOrderCreatedOrUpdated (status:Shipped)
+		XPO -->> Partner : Send CardCreatedOrUpdated (status:Sent)
 	end
 end
 ```
 <br/>
 
 > ⚠ If you are using the wishpin, you have 4 days to send the pin associated to your card.<br/>
-> Otherwise, the card order will fail at BPCE PS, and a callback 21 is received with the status "5" (failed).
+> Otherwise, the card order will fail at BPCE PS. The webhook `CardOrderCreatedOrUpdated` is received, status "failed"
 
-* * *
-**Virtual card order process**
-
-```mermaid
-sequenceDiagram
-Title Virtual card order process 
-autoNumber
-Participant Partner
-Participant XPO
-Participant BPCE
-
-Partner ->> XPO : Order a virtual card <br/> POST /api/v3.0/cards
-XPO --) XPO : Create the card (Status:Activated)
-XPO ->> Partner :return OK (201)
-XPO ->> BPCE : CardStatus: ACTIVATED 'cardCreaedOrUpdated'
-
-```
 <br/>
 
-> ⚠ Note: no callback 21 is sent when the virtual card is issued. <br/>
-> The synchronous response has to be treated immediatly.
+
 
 * * *
-### Order a card: sequence diagram for **mocked** environment
+
+### Order a physical card: sequence diagram for **mocked** environment
 In mocked environment, card oredering is mocked. As a consequence:
 
-- card status changes immediately from ordered to sent
-- callback 21 for creation is immediately received
+- the card is immediately created, and you receive immediately the webhook `CardOrderCreatedOrUpdated` with the status Shipped.
+- the card is immediately created, and you receive immediately the webhook `CardCreatedOrUpdated` with the status Sent.
 
 * * *
 **Physical card order process (Applies to Random PIN and Wish PIN)**
@@ -133,87 +212,91 @@ Participant Partner
 Participant XPO
 Participant BPCE
 
-Partner ->> XPO : Order a physical card (POST /api/v3.0/cards )
-XPO --) XPO : Create the card ( Status:ORDERED)
+Partner ->> XPO : Order a physical card (POST /api/v3.0/cards/physical )
 XPO ->> Partner :return OK (201)
-XPO -->> Partner : Send callback 21 ( status: Ordered)
-XPO -->> Partner : Send callback 21 ( status: Sent)
+XPO -->> Partner : CardOrderCreatedOrUpdated ( status: Shipped)
+XPO -->> Partner : CardCreatedOrUpdated ( status: Sent)
 ```
+
 <br/>
 
-For virtual card, the sequence diagram remains the same.
+* * *
+### Delivery address
+You can have your card delivered to an address different from your residential one.
 
-**Virtual card order process**
+That's why the POST /api/v3.0/cards/physical API includes the `deliveryAddress` field.
+
+If the end user prefers to receive their card at their residential address, they should provide their residential details in this field.
+
+<br/>
+
+* * *
+### Cancel a card
+Card creation can only be canceled before 6:00 PM on the day of ordering.
+
+After this deadline, the card will still be canceled, but it will be manufactured and shipped to the end user, arriving in a canceled state.
+
+<br/> 
+
+* * *
+## Deliver cards to a delivery point
+*This method is only available for physcial cards with random pin.*
+
+Cards can be shipped in bulk and delivered to a designated delivery point.
+
 
 ```mermaid
 sequenceDiagram
-Title Virtual card order process 
+Title: Physical card order process (Applies to Random PIN and WishPIN)
 autoNumber
+Actor Enduser
 Participant Partner
 Participant XPO
 Participant BPCE
 
-Partner ->> XPO : Order a virtual card <br/> POST /api/v3.0/cards
-XPO --) XPO : Create the card (Status:Activated)
-XPO ->> Partner :return OK (201)
-XPO ->> BPCE : CardStatus: ACTIVATED 'cardCreaedOrUpdated'
+Note over Partner, BPCE: Delivery point creation
+XPO -->> XPO: delivery point creation
+XPO -->> Partner: DeliveryPointCreatedOrUpdated {deliveryPointId}
+Partner -->> XPO: GET /api/v3.0/delivery-points
+
+Note over Enduser, XPO: Collect cards on the delivery point
+loop card creation by endusers
+	Enduser -->> Partner: card creation
+	Partner -->> XPO: POST /api/v3.0/cards/physical {deliveryPointId: X}
+	XPO -->> Partner: CardOrderCreatedOrUpdated {status: Pending, cardOrderId}
+end
+
+Note over Enduser, BPCE: Sent orders to the manufacturer
+Partner -->> XPO: GET /api/v3.0/card-orders/{cardOrderId}
+Partner -->> XPO: POST /api/v3.0/card-orders/publish {deliveryPointId}{deliveryPointId}
+XPO -->> BPCE: 6:30 PM Sent orders
+
+loop For each card order
+	XPO -->> Partner: CardOrderCreatedOrUpdated {status: Published}
+end
+
+Note over Enduser, BPCE: Card shipment
+loop For each card order and card created
+	XPO -->> Partner: CardOrderCreatedOrUpdated {status: Shipped}
+	XPO -->> Partner: CardCreatedOrUpdated {status: Sent}
+
+end
+
 
 ```
-* * *
-### States diagram for physical cards
-```mermaid
-stateDiagram
-state fork_state <<fork>>
-state fork_state2 <<fork>>
 
-  [*] --> Ordered
-  Ordered --> fork_state
-  fork_state --> Cancelled
-  fork_state --> Sent: mailed by the manufacturer
+The card and its order are linked by the attribute `cardid`.
+All cards created on the same delivery are visible through the `cardOrderId`.
 
-  
-  Sent --> fork_state2
-  Sent --> Activated
+:::note
+If a new delivery point needs to be created, request it via a Zendesk ticket.
+:::
 
-  Activated --> fork_state2
-  fork_state2 --> Cancelled
-  fork_state2 --> Opposed
-  fork_state2 --> Expired
-  fork_state2 --> Deactivated
-
-  fork_state --> Failed : pin not matched
-
-  Expired --> [*]
-	Cancelled --> [*]
-	Opposed --> [*]
-	Failed --> [*]
-	Deactivated --> [*]
-```
-<br/>
-
-> Deactivated for remanufacturing
-
-* * *
-### States diagram for virtual cards
-```mermaid
-stateDiagram
-state fork_state3 <<fork>>
-
-  Activated --> fork_state3
-  fork_state3 --> Canceled
-  fork_state3 --> Opposed
-  fork_state3 --> Expired 
-
-  Expired --> [*]
-	Canceled --> [*]
-	Opposed --> [*]
-
-```
 
 <br/>
 
 * * *
-### Multiple holding of physical cards
+## Multiple holding of physical cards
 The multiple holding of physical cards is prohibited: it is not possible to order more than one physical card for the same bank account.
 
 Any new card request will be automatically declined if a card already exists on the account with one of the following statuses: "ordered," "sent," or "activated."
@@ -221,8 +304,6 @@ Any new card request will be automatically declined if a card already exists on 
 From a technical standpoint, the API will return a 400 error with the following message: "Card can't be ordered because an active card is already attached to this account."
 
 Note: This restriction does not apply to virtual cards.
-
-
 
 <br/> <br/>
 
@@ -263,12 +344,14 @@ The PIN code entered by the end user in the partner mobile application is sent i
 **API Signature**<br/>
 Partner authentication toward PIN processor will be done against a BPCEPS/HSM token and then sent with the corresponding signature by the SDK.
 
+<br/>
+
 * * *
 ### Order the card with wishpin
 The first step required to set up a card with user-selected PIN is to order the card, specifying the use of the wishPIN in the API call.
 
 > Example
-> `POST /api/v3.0/cards`
+> `POST /api/v3.0/cards.physical`
 > ```json
 > {
 >  "cardId": "{{cardExternalRef}}",
@@ -280,17 +363,7 @@ The first step required to set up a card with user-selected PIN is to order the 
 >  "visualCode": "{{cardVisual}}"
 > }
 > ```
-> **Response**
-> ```json
-> {
- >   "cardExternalRef": "06ae7f8f02",
- >   "partnerCode": "xpo-bling-sb-mock-001"
-> }
->```
 
-<br/>
-
-A **callback 21** will be send to the partner after the card order has been received by the processor (BPCE PS).
 
 * * *
 ### Get the `tokensignature`
@@ -312,9 +385,11 @@ For this, the `GET api/v2.0/tokensignature/{{cardExternalRef}}` has to be called
 >}
 >```
 
-<br/>
+
 
 **Information returned by the `tokensignature` API will have be passed to the Thales SDK.**
+
+<br/>
 
 * * *
 ### Thales SDK
@@ -419,8 +494,10 @@ Once the `token` is built from the information returned by `tokensignature` API.
 >}
 > ```
 
+<br/><br/>
 
 * * *
+
 ## Configuration when creating the environment
 ### Random pin or wishpin?
 Random pin: the pin is chosen at random when the card is created.
@@ -453,12 +530,18 @@ For each offer, you can have several visuals. All these visuals are validated wi
 * * *
 ### Pan ranges
 They are chosen by Xpollens and validated with BPCE PS.
+
+<br/>
+<br/>
+
 * * *
 ## API, Callback & technical items
 ### Card order 
-[`POST /api/v3.0/cards`](https://docs.xpollens.com/api/CardFactory#post-/api/v3.0/cards)
+POST /api/v3.0/cards/physical
 
-**⚠** When ordering a virtual card, the wishpin and nfc attributes must be removed from the request.
+### Callbacks
+CardOrderCreatedOrUpdated
+CardCreatedOrUpdated
 
 ### SDK Thales
 
@@ -466,17 +549,9 @@ They are chosen by Xpollens and validated with BPCE PS.
 | -- |
 | Ask your Customer Integration Manager to get SDKs and documentation |
 
-* * *
-## How to test
-### Create a virtual card
-POST /api/v3.0/cards
-```json
 
-{
-    "cardId": "yourCardId",
-    "cardholderId": "yourCardHolderId",
-    "accountId": "yourAccountId",
-    "offerPartnerCode":"yourOfferPartnerCode",
-    "visualCode": "yourVisualCode"
-}
-```
+* * *
+## FAQ
+### Why isn't the order protected by an SCA?
+Placing an order is not a sensitive operation; therefore, the endpoint does not include /sca/.
+However, card activation is a sensitive operation. Whether the activation is done physically or virtually, strong authentication is required—using the PIN in the first case and a secret code for online activation.
