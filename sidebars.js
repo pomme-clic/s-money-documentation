@@ -145,9 +145,17 @@ module.exports = {
     },
     {
         type: 'category',
+        label: 'Strong Customer Authentication',
+        items: [
+            'usecases/strong_customer_authentication/Strong_Customer_Authentication'
+	]
+    },
+    {
+        type: 'category',
         label: 'Top Up',
         items: [
-            'usecases/topups/topups']
+            'usecases/topups/topups'
+	]
     },
     {
       type: 'category',
