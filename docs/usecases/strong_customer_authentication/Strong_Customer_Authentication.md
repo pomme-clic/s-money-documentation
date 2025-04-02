@@ -41,11 +41,10 @@ Partner ->> XPO: POST xx/sca/xx
 XPO ->> Partner: http 20x
 XPO ->> Entrust: push SCA
 Entrust ->> User: SCA requested
-XPO -->> Partner: callback 36
 
 Note over User, Entrust: SCA validation
 User -->> Entrust: SCA validation
-
+XPO -->> Partner: callback 36
 
 ```
 
