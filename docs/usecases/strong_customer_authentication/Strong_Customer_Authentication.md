@@ -123,7 +123,7 @@ Example
 
 ### Payload for failed SCA
 
-|Action|Endpoint|Payload| 
+|Action|Endpoint|Callback 36 Payload| 
 |:---|:---|:---|
 | SCA canceled by the enduser | "Reason": "CANCELED"|  "Payload": null |
 | Wallet not activated | "Reason": "UnprocessableEntity "|"Payload": null|
