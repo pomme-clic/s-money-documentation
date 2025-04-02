@@ -203,8 +203,9 @@ Completed --> [*]
 `data`: details to display on the mobile application
 
 
-<br/> <br/>
-  
+<br/>
+<br/>
+
 * * *
 
 ## Online payment: 3-D Secure (3DS)
