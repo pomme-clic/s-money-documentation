@@ -66,6 +66,10 @@ Failed --> [*]
 
 ```
 
+:::note
+The lifespan of SCAs is 5 minutes.
+:::
+
 <br/> 
 
 * * *
@@ -143,6 +147,7 @@ Example
 | SCA expired when performed by the enduser | "Reason": "TIMEOUT" |"Payload": null|
 
 <br/> <br/>
+
 
 * * *
 
