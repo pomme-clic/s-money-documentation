@@ -70,6 +70,17 @@ Failed --> [*]
 
 * * *
 
+### Callback 36 structure
+The callback 36 payload is composed of :
+
+`Header`: this part is composed by attributes regarding the SCA (requestDate, Status, ... )
+
+`Payload`: Which includes the request result upon successful SCA validation.
+
+<br/> 
+
+* * *
+
 ### Payload examples for a succedeed SCA (callback36)
 #### PATCH fatca eai
 Example
@@ -182,11 +193,12 @@ Completed --> [*]
 * * *
 
 ### Technical details
-context
-data
+`context`: Attribute at your disposal to specify the SCA reason.
+
+`data`: details to display on the mobile application
 
 
-<br/><br/>
+<br/> <br/>
   
 * * *
 
