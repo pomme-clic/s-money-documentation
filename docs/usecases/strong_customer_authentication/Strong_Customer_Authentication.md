@@ -92,6 +92,16 @@ The callback 36 payload is composed of :
 * * *
 
 
+### Functional aspects
+Depending on the endpoint, technical or functional controls may be executed either before or after SCA validation.
+
+For example, when using PUT /sca/v2.0/users/{appUserId}, the email uniqueness check is performed before SCA validation.
+In contrast, when creating a beneficiary via POST /sca/v2.0/users/{appUserId}/beneficiary, controls on the BIC and IBAN are performed after SCA validation.
+
+<br/> 
+
+* * *
+
 ### Payload examples for a succedeed SCA (callback36)
 #### PATCH fatca eai
 Example
