@@ -84,6 +84,13 @@ The callback 36 payload is composed of :
 <br/> 
 
 * * *
+### Link between request and webhook
+`authenticationId`: t	his data enables you to establish a link between the original request and the callback 36 received, confirming the SCA validation.
+
+<br/> 
+
+* * *
+
 
 ### Payload examples for a succedeed SCA (callback36)
 #### PATCH fatca eai
