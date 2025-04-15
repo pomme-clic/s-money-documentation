@@ -213,6 +213,9 @@ end
 > It is impossible to represent all possible cases. However, it is important to note the following:<br/>
 > **Callbacks are triggered as soon as an action modifies data related to the callback (User status for callback 34, Account status for callback 45, KYC status for callback 4, etc.)**<br/>
 
+<br/>
+<br/>
+
 * * *
 ### Detailed user onboarding sequence diagram - Anonymous Electronic Money Account
 Anonymous Electronic Money accounts creation does not require most of the previous steps to be completed.
@@ -260,6 +263,9 @@ XPO --) Partner : Callback 45<br/>accountRecordStatus : Validated
 > For this reason the validation of T&C can be performed in this case and **this case only** without Strong Authentication.<br/>
 > In the future, the callback 35 may be sent as soon as the user is created in order to initialize the authentication wallet. The T&C signature may require a Strong Authentication in this case, even for anonymous electronic money accounts.
 
+<br/>
+<br/>
+
 * * *
 
 ## User status diagram: UserRecordStatus
@@ -268,6 +274,31 @@ In accordance with CNIL regulations and rules:
 - the service provider must offer a fallback solution, enabling the customer to enter into a relationship.
 
 In the case of facial scanning, it is therefore **mandatory** to implement the "Identity" fallback solution with SCT IN diligence.
+
+<br/>
+
+* * *
+
+## Control performed during user creation
+
+The following controls are applied when creating a user:
+
+Address Validation:
+- For users located in French territories (both metropolitan France and DROM-COM), in the attribute `address`, the city and zipcode fields must be consistent and refer to the same geographical location.
+
+Birthplace Validation:
+- For users born in France (metropolitan France and DROM-COM), the `birthCity`  and `birthZipCode` fields must also be consistent and match the same locality.
+
+These validations are based on official governmental APIs, which are publicly accessible and free:
+
+https://api.gouv.fr/documentation/api-geo  with GET /communes
+and 
+
+https://api.gouv.fr/documentation/api_carto_codes_postaux with GET /api/codes-postaux/communes/{codePostal} 
+
+These controls are also performed during a PUT user.
+
+<br/>
 
 * * *
 ## APIs, callbacks and technical items
