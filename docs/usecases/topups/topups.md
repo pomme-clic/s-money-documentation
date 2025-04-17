@@ -689,11 +689,15 @@ POST {{URLT}}/V1.1/users/{{accountId}}/payins/cardpayments/{{orderId_TOPUP_1}}/p
 }
 ```
 
+
 * * *
 
 ### Production
 
 When the alphatests are launched, the Payplug library and url configurations need to be modified. Ask your Customer Integration Manager.
+
+<br/>
+<br/>
 
 * * *
 
