@@ -154,7 +154,8 @@ module.exports = {
         type: 'category',
         label: 'Top Up',
         items: [
-            'usecases/topups/topups'
+            'usecases/topups/topups',
+	    'usecases/topups/topup_dispute'
 	]
     },
     {
