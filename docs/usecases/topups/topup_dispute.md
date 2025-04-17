@@ -22,8 +22,8 @@ User ->> Partner : Top-up on my Xpollens account
 Partner ->> XPO : Top-up on the Xpollens account
 
 Note over User, Externalbank: Top-up dispute process
-User ->> ExternalBank: dispute requested
-ExternalBank ->> ExternalBank : dispute accepted
+User -->> ExternalBank: dispute requested
+ExternalBank -->> ExternalBank : dispute accepted
 ExternalBank -->> XPO: reimbursement requested
 XPO -->> ExternalBank: reimbursement completed
 XPO -->> Partner: callback ChargebackCompleted {chargebackId}
