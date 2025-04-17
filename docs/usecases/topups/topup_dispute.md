@@ -60,11 +60,11 @@ Here is an example of a chargeback callback
             "initialTopUpId": "4axxxxx5d5-2719-4f0d-96f2-7xxxxxf651",
             "status": "Completed",
             "amount": {
-                "value": "480.00",
+                "value": "30.00",
                 "currency": "EUR"
             },
             "chargebackReason": "CardHolderDisputeDefectiveNotAsDescribe",
-            "createdDate": "2025-04-04T17:30:55.92"
+            "createdDate": "2025-02-03T10:46:12.92"
         }
     }
 ```
