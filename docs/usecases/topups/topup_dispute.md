@@ -26,7 +26,7 @@ User ->> ExternalBank: dispute requested
 ExternalBank ->> ExternalBank : dispute accepted
 ExternalBank -->> XPO: reimbursement requested
 XPO -->> ExternalBank: reimbursement sent
-XPO -->> Partnet: callback ChargebackCompleted {chargebackId}
+XPO -->> Partner: callback ChargebackCompleted {chargebackId}
 
 Partner -->> XPO: Get v1.1/topups/chargebacks/{chargebackId}
 
