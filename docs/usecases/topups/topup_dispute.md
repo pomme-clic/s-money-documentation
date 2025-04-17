@@ -47,6 +47,28 @@ Completed --> [*]
 
 <br/>
 
+
+* * *
+## Callback ChargebackCompleted
+Here is an example of a chargeback callback
+
+```json
+    "Payload": {
+        "type": "ChargebackCompleted",
+        "data": {
+            "chargebackId": "3exxxxxf6-75a0-4ea7-9b53-a6dxxxxxc09",
+            "initialTopUpId": "4axxxxx5d5-2719-4f0d-96f2-7xxxxxf651",
+            "status": "Completed",
+            "amount": {
+                "value": "30.00",
+                "currency": "EUR"
+            },
+            "chargebackReason": "CardHolderDisputeDefectiveNotAsDescribe",
+            "createdDate": "2025-02-03T10:46:12.92"
+        }
+    }
+```
+
 * * *
 
 ## How to test
