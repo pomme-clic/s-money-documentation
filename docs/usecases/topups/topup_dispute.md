@@ -1,7 +1,4 @@
-# Unpaid card top-up
-An unpaid card top-up is also called a "chargeback".
-
-If the top-up chargeback is validated by the external bank, Xpollens must reimburse the amount. In this case, a chargeback is processed.
+# Top-up chargeback
 
 <br/>
 
@@ -80,4 +77,5 @@ Use the endpoint post v1.1/topups/{orderId}/simulate-chargeback
 
 ## FAQ
 ### FAQ1: Can we refuse a unpaid card top-up?
-No, Xpollens must reimburse it.
+No. If the top-up chargeback is validated by the external bank, Xpollens must reimburse the amount. In this case, a chargeback is processed.
+
