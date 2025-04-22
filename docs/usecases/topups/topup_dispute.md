@@ -1,7 +1,7 @@
-# Top-up dispute
-Also called a "chargeback", a top-up dispute occurs when an end user disputes a top-up transaction with their external bank.
+# Unpaid card top-up
+An unpaid card top-up is also called a "chargeback".
 
-If the top-up is validated by the external bank, Xpollens must reimburse the amount. In this case, a chargeback is processed.
+If the top-up chargeback is validated by the external bank, Xpollens must reimburse the amount. In this case, a chargeback is processed.
 
 <br/>
 
@@ -21,9 +21,9 @@ Participant ExternalBank
 User ->> Partner : Top-up on my Xpollens account
 Partner ->> XPO : Top-up on the Xpollens account
 
-Note over User, Externalbank: Top-up dispute process
-User -->> ExternalBank: dispute requested
-ExternalBank -->> ExternalBank : dispute accepted
+Note over User, Externalbank: Top-up chargeback process
+User -->> ExternalBank: chargeback requested
+ExternalBank -->> ExternalBank : chargeback accepted
 ExternalBank -->> XPO: reimbursement requested
 XPO -->> ExternalBank: reimbursement completed
 XPO -->> Partner: callback ChargebackCompleted {chargebackId}
@@ -79,5 +79,5 @@ Use the endpoint post v1.1/topups/{orderId}/simulate-chargeback
 * * *
 
 ## FAQ
-### FAQ1: Can we refuse a top-up dispute?
+### FAQ1: Can we refuse a unpaid card top-up?
 No, Xpollens must reimburse it.
