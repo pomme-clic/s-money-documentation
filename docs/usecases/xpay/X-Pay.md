@@ -153,6 +153,59 @@ The token status changes to DELETED if:
 
 <br/>
 
+## Callback 25 messageReasonCode
+|messageReasonCode|Definition|Token status|
+|---|---|---|
+|1400|Création du token|I|
+|1401|Suppression du token|D|
+|1402|Suspension du token|S|
+|1403|Réactivation du token|A|
+|1411|Résultat du device provisioning|I or A|
+|1413|Activation du token via vérification in-app |A|
+
+One callback 25 is received for each event mentionned above.
+
+### Greenflow activation
+```mermaid
+sequenceDiagram
+title: Greenflow
+autonumber
+    participant XPO
+	participant Partner
+
+Note over XPO, Partner: Token creation
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
+
+Note over XPO, Partner: Token activation
+	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1411}
+
+
+```
+
+<br/>
+
+### Yellowflow activation
+```mermaid
+sequenceDiagram
+title: Yellowflow
+autonumber
+    participant XPO
+	participant Partner
+
+Note over XPO, Partner: Token creation
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
+
+Note over XPO, Partner: Activation needed through the in-app verification
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1411}
+
+Note over XPO, Partner: Token activation
+	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1413}
+
+
+```
+
+<br/>
+
 * * *
 
 ## General rules
