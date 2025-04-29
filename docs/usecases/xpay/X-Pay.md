@@ -150,60 +150,8 @@ The token status changes to DELETED if:
 
 - the card is deleted from the wallet
 - the card is opposed
-
+  
 <br/>
-
-## Callback 25 messageReasonCode
-|messageReasonCode|Definition|Token status|
-|---|---|---|
-|1400|Création du token|I|
-|1401|Suppression du token|D|
-|1402|Suspension du token|S|
-|1403|Réactivation du token|A|
-|1411|Résultat du device provisioning|I or A|
-|1413|Activation du token via vérification in-app |A|
-
-One callback 25 is received for each event mentionned above.
-
-### Greenflow activation
-```mermaid
-sequenceDiagram
-title: Greenflow
-autonumber
-    participant XPO
-	participant Partner
-
-Note over XPO, Partner: Token creation
-	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
-
-Note over XPO, Partner: Token activation
-	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1411}
-
-
-```
-
-<br/>
-
-### Yellowflow activation
-```mermaid
-sequenceDiagram
-title: Yellowflow
-autonumber
-    participant XPO
-	participant Partner
-
-Note over XPO, Partner: Token creation
-	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
-
-Note over XPO, Partner: Activation needed through the in-app verification
-	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1411}
-
-Note over XPO, Partner: Token activation
-	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1413}
-
-
-```
-
 <br/>
 
 * * *
@@ -365,12 +313,10 @@ More information regarding this endpoint in the [API reference](/api/Xpay)
 
 <br/>
 
+* * *
 ## Webhook Type 25
 
 This Webhook is useful for all flows.
-
-Xpollens sends this Webhook to partners in case of a token status change.  
-Partners should act upon `"status": "A"` and ignore any other values.
 
 ```json
 "id": "integer",              // internal Id, e.g. 637877811699419000
@@ -388,10 +334,71 @@ Partners should act upon `"status": "A"` and ignore any other values.
                               // * "A" (Active)
                               // * "S" (Suspended)
                               // * "D" (Deleted)
-"messageReasonCode": "string",// useless for partners, e.g. null or "1400" (token created)
+"messageReasonCode": "string",//
 
 ```
 
+### Callback 25 messageReasonCode
+|messageReasonCode|Definition|Token status|
+|---|---|---|
+|1400|Création du token|I|
+|1401|Suppression du token|D|
+|1402|Suspension du token|S|
+|1403|Réactivation du token|A|
+|1411|Résultat du device provisioning|I or A|
+|1413|Activation du token via vérification in-app |A|
+
+One callback 25 is received for each event mentionned above.
+
+#### Greenflow activation
+```mermaid
+sequenceDiagram
+title: Greenflow
+autonumber
+    participant XPO
+	participant Partner
+
+Note over XPO, Partner: Token creation
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
+
+Note over XPO, Partner: Token activation
+	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1411}
+```
+
+<br/>
+
+#### Yellowflow activation
+```mermaid
+sequenceDiagram
+title: Yellowflow
+autonumber
+    participant XPO
+	participant Partner
+
+Note over XPO, Partner: Token creation
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
+
+Note over XPO, Partner: Activation needed through the in-app verification
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1411}
+
+Note over XPO, Partner: Token activation
+	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1413}
+```
+
+
+#### In app provisioning
+```mermaid
+sequenceDiagram
+autonumber
+    participant XPO
+	participant Partner
+
+Note over XPO, Partner: Token creation
+	XPO -->> Partner: Callback 25 {status:I, messageReasonCode:1400}
+
+Note over XPO, Partner: Token activation
+	XPO -->> Partner: Callback 25 {status:A, messageReasonCode:1411}
+```
 
   <br/>
   <br/>
