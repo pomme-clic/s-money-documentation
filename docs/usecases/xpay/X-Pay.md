@@ -346,7 +346,7 @@ This Webhook is useful for all flows.
 |1402|Suspension du token|S|
 |1403|Réactivation du token|A|
 |1411|Résultat du device provisioning|I or A|
-|1413|Activation du token via vérification in-app |A|
+|1413|Activation du token via vérification in-app verif |A|
 
 One callback 25 is received for each event mentionned above.
 
