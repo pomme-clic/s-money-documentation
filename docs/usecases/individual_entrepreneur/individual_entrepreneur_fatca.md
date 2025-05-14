@@ -181,7 +181,8 @@ In most cases, an employee will be asked to provide proof of tax assessment, whi
 
 The partner must make this document available for the customer at any time once the onboarding path has been confirmed. This certification is not archived in Xpollens DB, it is generated everytime a partner asks for it.
 
-[`GET /api/v2.0/users/{individualEntrepreneurId}/fatca/attachments/{Key}`](https://docs.xpollens.com/api/KYC#get-/api/v2.0/users/-AppUserId-/fatca/attachments/-Key-)
+[`GET /api/v2.1/user/{appUserId}/self-certification`](https://docs.xpollens.com/api/Compliance#get-/api/v2.1/user/-appUserId-/self-certification)
+
 
 <br/><br/>
 
