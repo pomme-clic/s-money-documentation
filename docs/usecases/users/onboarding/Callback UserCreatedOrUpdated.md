@@ -110,13 +110,13 @@ Then a second Callback is received, after controls.
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-		"street": "110 avenue de France",
-		"supplementIn": "3e etage",
-		"supplementOut": "Pilier D",
-		"zipCode": "75013",
-		"city": "Paris",
-		"country": "FR",
-		"area": ""
+			"street": "110 avenue de France",
+			"supplementIn": "3e etage",
+			"supplementOut": "Pilier D",
+			"zipCode": "75013",
+			"city": "Paris",
+			"country": "FR",
+			"area": ""
             }
         },
         "dataCorrectionLogs": [
@@ -203,13 +203,13 @@ First Callback received : the user is created and the city was fixed
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-		"street": "110 avenue de France",
-		"supplementIn": "3e etage",
-		"supplementOut": "Pilier D",
-		"zipCode": "75013",
-		"city": "Paris",
-		"country": "FR",
-		"area": ""
+			"street": "110 avenue de France",
+			"supplementIn": "3e etage",
+			"supplementOut": "Pilier D",
+			"zipCode": "75013",
+			"city": "Paris",
+			"country": "FR",
+			"area": ""
             }
         },
         "dataCorrectionLogs": [
@@ -264,13 +264,13 @@ The callback contains the new value.
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-		"street": "110 avenue de France",
-		"supplementIn": "3e etage",
-		"supplementOut": "Pilier D",
-		"zipCode": "75013",
-		"city": "Paris",
-		"country": "FR",
-		"area": ""
+			"street": "110 avenue de France",
+			"supplementIn": "3e etage",
+			"supplementOut": "Pilier D",
+			"zipCode": "75013",
+			"city": "Paris",
+			"country": "FR",
+			"area": ""
             }
         },
         "dataCorrectionLogs": []
