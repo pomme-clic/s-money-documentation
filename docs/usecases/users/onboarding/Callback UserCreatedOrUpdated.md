@@ -75,13 +75,13 @@ First Callback received : contains the information provided by the end user.
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-					"street": "110 avenue de France",
-      				"supplementIn": "3e etage",
-  				    "supplementOut": "Pilier D",
-      				"zipCode": "75013",
-      				"city": "Paris",
-      				"country": "FR",
-      				"area": ""
+		"street": "110 avenue de France",
+		"supplementIn": "3e etage",
+		"supplementOut": "Pilier D",
+		"zipCode": "75013",
+		"city": "Paris",
+		"country": "FR",
+		"area": ""
             }
         },
         "dataCorrectionLogs": []
@@ -110,13 +110,13 @@ Then a second Callback is received, after controls.
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-					"street": "110 avenue de France",
-      				"supplementIn": "3e etage",
-  				    "supplementOut": "Pilier D",
-      				"zipCode": "75013",
-      				"city": "Paris",
-      				"country": "FR",
-      				"area": ""
+		"street": "110 avenue de France",
+		"supplementIn": "3e etage",
+		"supplementOut": "Pilier D",
+		"zipCode": "75013",
+		"city": "Paris",
+		"country": "FR",
+		"area": ""
             }
         },
         "dataCorrectionLogs": [
@@ -203,13 +203,13 @@ First Callback received : the user is created and the city was fixed
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-					"street": "110 avenue de France",
-      				"supplementIn": "3e etage",
-  				    "supplementOut": "Pilier D",
-      				"zipCode": "75013",
-      				"city": "Paris",
-      				"country": "FR",
-      				"area": ""
+		"street": "110 avenue de France",
+		"supplementIn": "3e etage",
+		"supplementOut": "Pilier D",
+		"zipCode": "75013",
+		"city": "Paris",
+		"country": "FR",
+		"area": ""
             }
         },
         "dataCorrectionLogs": [
@@ -230,14 +230,15 @@ First Callback received : the user is created and the city was fixed
 
 
 ## Case: data correction
-In this case, the enduser changes the firstName.
-This case occurs during the onboarding, or during the relationship, and with or without Strong Authentication according to the use case.
+Data correction can occur either during onboarding or throughout the customer relationship, with or without strong authentication, depending on the use case.
+
+In this example, during onboarding, the end user corrects their first name, having initially entered "Colinne" instead of "Corinne."
 
 `PUT {{URLT}}/v2.0/users/{appUserId}`
 ```json
 {
   "profile": {
-    "firstName": "Colinne"
+    "firstName": "Corinne"
   }
 }
 ```
@@ -253,7 +254,7 @@ The callback contains the new value.
         "profile": {
             "email": "Madisyn_Lubowitz+LC_ACCEPTED@xpollens.com",
             "phoneNumber": "+33675449988",
-            "firstName": "Colinne",
+            "firstName": "Corinne",
             "lastName": "Berthier",
             "birthName": "Berthier",
             "birthCity": "Paris",
@@ -263,13 +264,13 @@ The callback contains the new value.
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-					"street": "110 avenue de France",
-      				"supplementIn": "3e etage",
-  				    "supplementOut": "Pilier D",
-      				"zipCode": "75013",
-      				"city": "Paris",
-      				"country": "FR",
-      				"area": ""
+		"street": "110 avenue de France",
+		"supplementIn": "3e etage",
+		"supplementOut": "Pilier D",
+		"zipCode": "75013",
+		"city": "Paris",
+		"country": "FR",
+		"area": ""
             }
         },
         "dataCorrectionLogs": []
