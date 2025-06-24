@@ -287,8 +287,8 @@ SDK -->> Front: Display pin
 | offline\_authentication\_token | Example |
 | --- | --- |
 | request | `POST https://sb-api.xpollens.com/api/sca/normal/v2.0/71844-1699268066172/carddisplay/43b13cbb-959e-45a2-beb5-33a67c4693d0?channelCode=66` |
-| secure\_display\_certificate | LS0t...LQ== |
-| offline\_authentication\_token | eyJhb...ztJMA |
+| secure\_display\_certificate | LS0...LQ== |
+| offline\_authentication\_token | eyJ...zMA |
 
 * * *
 
