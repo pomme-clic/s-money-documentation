@@ -75,13 +75,13 @@ First Callback received : contains the information provided by the end user.
             "birthDate": "1965-12-06",
             "civility": "Mrs",
             "address": {
-			"street": "110 avenue de France",
-			"supplementIn": "3e etage",
-			"supplementOut": "Pilier D",
-			"zipCode": "75013",
-			"city": "Paris",
-			"country": "FR",
-			"area": ""
+				"street": "110 avenue de France",
+				"supplementIn": "3e etage",
+				"supplementOut": "Pilier D",
+				"zipCode": "75013",
+				"city": "Paris",
+				"country": "FR",
+				"area": ""
             }
         },
         "dataCorrectionLogs": []
