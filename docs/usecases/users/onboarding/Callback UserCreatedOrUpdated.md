@@ -23,6 +23,7 @@ XPO ->> Partner: Callback UserCreatedOrUpdated {"nationality": "FR"}
 
 ### Technical aspects
 `POST {{URLT}}/v2.0/users`
+
 ```json
  {
   "appUserId": "{{appuserid}}",
@@ -48,9 +49,12 @@ XPO ->> Partner: Callback UserCreatedOrUpdated {"nationality": "FR"}
       "area": ""
     }
   }
+}
 ```
 
+
 First Callback received : contains the information provided by the end user.
+
 ```json
     "Payload": {
         "type": "UserCreatedOrUpdated",
@@ -175,6 +179,7 @@ XPO ->> Partner: Callback UserCreatedOrUpdated {"birthCity": "Paris"}
       "area": ""
     }
   }
+}
 ```
 
 First Callback received : the user is created and the city was fixed
