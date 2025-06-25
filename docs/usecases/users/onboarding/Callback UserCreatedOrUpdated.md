@@ -19,7 +19,7 @@ XPO ->> Partner: Callback UserCreatedOrUpdated
 XPO -->> KYC Provider: Check ID
 KYC Provider -->> XPO: ID validated but {"nationality": "FR"}
 KYC Provider -->> XPO: Data saved {"nationality": "FR"}
-XPO ->> Partner: Callback UserCreatedOrUpdated <br/> {"nationality": "FR"; dataCorrectionLogs.reason: "Correction"}
+XPO ->> Partner: Callback UserCreatedOrUpdated <br/> {"nationality": "FR"; dataCorrectionLogs .reason: "Correction"}
 ```
 
 ### Technical aspects
@@ -149,7 +149,7 @@ Participant KYC Provider
 User ->> Partner: User creation {"birthCity": "Pariss"}
 Partner ->> XPO: POST {{URLT}}/v2.0/users {"birthCity": "Pariss"}
 XPO ->> Partner: HTTP/200
-XPO ->> Partner: Callback UserCreatedOrUpdated <br/> {"birthCity": "Paris"; dataCorrectionLogs.reason: "Normalization"}
+XPO ->> Partner: Callback UserCreatedOrUpdated <br/> {"birthCity": "Paris"; dataCorrectionLogs .reason: "Normalization"}
 ```
 
 
