@@ -12,13 +12,14 @@ Actor User
 Participant Partner
 Participant XPO
 Participant KYC Provider
-User ->> Partner: Account creation {"nationality": "ES"}
+User ->> Partner: User creation {"nationality": "ES"}
 Partner ->> XPO: POST {{URLT}}/v2.0/users {"nationality": "ES"}
 XPO ->> Partner: HTTP/200
 XPO ->> Partner: Callback UserCreatedOrUpdated 
 XPO -->> KYC Provider: Check ID
 KYC Provider -->> XPO: ID validated but {"nationality": "FR"}
-XPO ->> Partner: Callback UserCreatedOrUpdated {"nationality": "FR"}
+KYC Provider -->> XPO: Data saved {"nationality": "FR"}
+XPO ->> Partner: Callback UserCreatedOrUpdated <br/> {"nationality": "FR", dat.reason: "Correction"}
 ```
 
 ### Technical aspects
@@ -26,7 +27,7 @@ XPO ->> Partner: Callback UserCreatedOrUpdated {"nationality": "FR"}
 
 ```json
  {
-  "appUserId": "{{appuserid}}",
+  "appUserId": "de731dd3J",
   "profile": {
     "civility": "Mrs",
     "firstName": "Corinne",
@@ -37,7 +38,7 @@ XPO ->> Partner: Callback UserCreatedOrUpdated {"nationality": "FR"}
     "birthZipCode": "75001",
     "birthCountry": "FR",
     "nationality": "ES",
-    "phoneNumber": "+33675449988",
+    "phoneNumber": "+33675444444",
     "email": "{{firstname}}_{{lastname}}+LC_ACCEPTED@xpollens.com",
     "address": {
       "street": "110 avenue de France",
@@ -63,8 +64,8 @@ First Callback received : contains the information provided by the end user.
         "identificationLevel": "None",
         "onboardingDate": "2025-05-28 13:15:56",
         "profile": {
-            "email": "Tomasa_Lang+LC_ACCEPTED@xpollens.com",
-            "phoneNumber": "+33675449988",
+            "email": "{{firstname}}_{{lastname}}+LC_ACCEPTED@xpollens.com",
+            "phoneNumber": "+33675444444",
             "firstName": "Corinne",
             "lastName": "Berthier",
             "birthName": "Berthier",
@@ -98,8 +99,8 @@ Then a second Callback is received, after controls.
         "identificationLevel": "None",
         "onboardingDate": "2025-05-28 13:15:56",
         "profile": {
-            "email": "Tomasa_Lang+LC_ACCEPTED@xpollens.com",
-            "phoneNumber": "+33675449988",
+            "email": "{{firstname}}_{{lastname}}+LC_ACCEPTED@xpollens.com",
+            "phoneNumber": "+33675444444",
             "firstName": "Corinne",
             "lastName": "Berthier",
             "birthName": "Berthier",
@@ -145,10 +146,10 @@ Actor User
 Participant Partner
 Participant XPO
 Participant KYC Provider
-User ->> Partner: Account creation {"birthCity": "Pariss"}
+User ->> Partner: User creation {"birthCity": "Pariss"}
 Partner ->> XPO: POST {{URLT}}/v2.0/users {"birthCity": "Pariss"}
 XPO ->> Partner: HTTP/200
-XPO ->> Partner: Callback UserCreatedOrUpdated {"birthCity": "Paris"}
+XPO ->> Partner: Callback UserCreatedOrUpdated <br/> {"birthCity": "Paris", dataCorrectionLogs.reason: "Normalization"}
 ```
 
 
@@ -167,7 +168,7 @@ XPO ->> Partner: Callback UserCreatedOrUpdated {"birthCity": "Paris"}
     "birthZipCode": "75001",
     "birthCountry": "FR",
     "nationality": "FR",
-    "phoneNumber": "+33675449988",
+    "phoneNumber": "+33675444444",
     "email": "{{firstname}}_{{lastname}}+LC_ACCEPTED@xpollens.com",
     "address": {
       "street": "110 avenue de France",
@@ -191,8 +192,8 @@ First Callback received : the user is created and the city was fixed
         "identificationLevel": "None",
         "onboardingDate": "2025-05-28 13:15:56",
         "profile": {
-            "email": "Tomasa_Lang+LC_ACCEPTED@xpollens.com",
-            "phoneNumber": "+33675449988",
+            "email": "{{firstname}}_{{lastname}}+LC_ACCEPTED@xpollens.com",
+            "phoneNumber": "+33675444444",
             "firstName": "Corinne",
             "lastName": "Berthier",
             "birthName": "Berthier",
@@ -252,8 +253,8 @@ The callback contains the new value.
         "identificationLevel": "None",
         "onboardingDate": "2025-05-28 14:37:42",
         "profile": {
-            "email": "Madisyn_Lubowitz+LC_ACCEPTED@xpollens.com",
-            "phoneNumber": "+33675449988",
+            "email": "{{firstname}}_{{lastname}}+LC_ACCEPTED@xpollens.com",
+            "phoneNumber": "+33675444444",
             "firstName": "Corinne",
             "lastName": "Berthier",
             "birthName": "Berthier",
