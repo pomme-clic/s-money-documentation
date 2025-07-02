@@ -1,4 +1,4 @@
-# Account closure
+# Account closure - deprecated
 You can ask for an account closure following your customer request or if your customer doesn't, for example, follow your service rules. In the first case the effective closure will take 30 days, in the second the closure will take 60 days. 
 
 :::note
