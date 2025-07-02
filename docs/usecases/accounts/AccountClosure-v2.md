@@ -23,7 +23,7 @@ Initialized	--> fork_state
 Activated --> fork_state
 
 fork_state --> PendingClosure
-PendingClosure --> Closed
+PendingClosure --> Closed: Accounting Balance €0
 Closed --> [*]
 ```
 
