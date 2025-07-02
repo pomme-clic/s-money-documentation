@@ -103,7 +103,8 @@ module.exports = {
         items: [
             'usecases/accounts/AccountStatements', 
             'usecases/accounts/DebtsManagement',        
-            'usecases/accounts/AccountClosure'
+            'usecases/accounts/AccountClosure',
+		'usecases/accounts/AccountClosure-v2'
         ]
     },    {
         type: 'category',
