@@ -53,9 +53,7 @@ Completed --> [*]
 <br/><br/>
 
 * * *
-# Account closure initiated by enduser
-
-## Overview
+## Account closure initiated by enduser
 
 The account is closed as soon as:
 * the balance is €0
@@ -68,9 +66,7 @@ The account is closed as soon as:
 
 
 * * *
-# Account closure initiated by the bank, with a notice period
-
-## Overview
+## Account closure initiated by the bank, with a notice period
 
 In this case, the account remains available for 60 days. After this "notice period", the closure process starts.
 Please note that this case does not apply when the account is closed due to fraud.
@@ -88,8 +84,8 @@ The account is closed after a minimum of 60 calendar days, as soon as one of the
 * * *
 
 
-# Closure condition
-## Case: account balance is 0 or beneficiaryAccountId available  
+## Closure condition
+### Case: account balance is 0 or beneficiaryAccountId available  
 As soon as the balance is €0, and all operations have a final status, the account is closed.
 
 If the holder's balance has been credited during this period, all funds are automatically sent to the  `beneficiaryAccountId`  indicated in the request made for the closure-request.
@@ -114,7 +110,7 @@ XPO -->> Partner: callback ClosureRequestCreatedOrUpdated {status:Completed}
 
 <br/><br/>
 
-## Case: missing beneficiaryAccountId and non-zero balance during account closure request
+### Case: missing beneficiaryAccountId and non-zero balance during account closure request
 
 When the closure is requested, but the `beneficiaryAccountId` is either not available or not provided, and the account still has a non-zero balance, it becomes impossible to execute the SCT OUT.
 
@@ -160,8 +156,8 @@ Corrective SCT operations are only available for Xpollens teams.
 
 * * *
 
-# Transaction accepted or refused 
-## During the PendingClosure period
+## Transaction accepted or refused 
+### During the PendingClosure period
 
 
 | **Type of transaction** | **Acceptation** |
@@ -198,7 +194,7 @@ If charges are to be levied, it is important to do so before the account closure
 
 * * *
 
-## As soon as the account is closed
+### As soon as the account is closed
 <br/>
 
 | **Type of transaction** | **Acceptation** |
@@ -235,7 +231,7 @@ Operations credited in the Xpollens's outstanding account are refunded manually 
 
 * * *
 
-# Suspended operations
+## Suspended operations
 In the event of receiving a credit or debit transaction on a closed account, the transaction is created with a "Suspended" status. The end user's account is not debited or credited; instead, the partner's suspense account is impacted.
 
 ```mermaid
@@ -257,8 +253,8 @@ XPO -->> Partner: callback CardOperationCreatedOrUpdated {"status": "Suspended",
 
 
 * * *
-# Technical items
-## Closure request
+## Technical items
+### Closure request
 [POST /api/v3.0/accounts/{accountId}/closure-request](https://docs.xpollens.com/api/Accounts#post-/api/v3.0/accounts/-accountId-/closure-request)
 
 :::warning  **Important Note**
@@ -274,7 +270,7 @@ In this case, a manual intervention by Xpollens will be necessary to return the 
 <br/>
 
 * * *
-# Best pratices
+## Best pratices
 
 ### Collect debts before closing the account 
 Commission cannot be taken out once the account has been closed.
@@ -287,9 +283,9 @@ It is therefore essential that accounts in ClosureRequested, Pendingclosure and 
 <br/>
 
 * * *
-# FAQ
+## FAQ
 
-## FAQ1: What should your application do when a customer requests account closure?
+### FAQ1: What should your application do when a customer requests account closure?
 When a customer initiates an account closure request, your application should immediately restrict access to the following functionalities:
 
 - SEPA Transfers: Block both standard SEPA Credit Transfers (SCT) and Instant Payments (IP).
@@ -300,10 +296,10 @@ If a request is made to any of these functionalities after the account closure r
 
 <br/>
 
-## FAQ2: When is the latest account statement available?
+### FAQ2: When is the latest account statement available?
 The last account statement is generated in the first few days after the account status is changed to Closed.
 
-## FAQ3: how to test
+### FAQ3: how to test
 :::note
 To allow testing, the closing delay time in sandbox is immediate. As a consequence, the `expectedCloseDate`  is set to the date of the closure request.  
 <br/>
