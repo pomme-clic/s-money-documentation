@@ -55,7 +55,7 @@ Completed --> [*]
 
 * * *
 ## Account closure initiated by enduser
-## Overview
+### Overview
 The account is closed as soon as:
 * the balance is €0
 * all operations have a final status 
