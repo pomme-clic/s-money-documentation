@@ -30,6 +30,7 @@ Closed --> [*]
 <br/>
 
 * * *
+
 ## State diagram of the closure request
 
 ```mermaid
@@ -37,7 +38,7 @@ stateDiagram
 
 state fork_state <<fork>>
 
-[*]	--> InNoticePeriod: Account Closure <br/> with notice period
+[*] --> InNoticePeriod: Account Closure <br/> with notice period
 [*] --> ClosureRequested: Account Closure <br/> without notice period
 InNoticePeriod --> ClosureRequested
 
@@ -45,7 +46,7 @@ ClosureRequested --> fork_state
 fork_state --> Completed
 fork_state --> AwaitingBeneficiaryUpdate: Beneficiary needed
 AwaitingBeneficiaryUpdate --> fork_state: Beneficiary updated
-fork_state --> AwaitingFundsReturn
+fork_state --> AwaitingFundsReturn: SCT OUT refused, awaiting funds return
 AwaitingFundsReturn --> Completed
 Completed --> [*]
 ```
@@ -54,7 +55,7 @@ Completed --> [*]
 
 * * *
 ## Account closure initiated by enduser
-
+## Overview
 The account is closed as soon as:
 * the balance is €0
 * all operations have a final status 
@@ -62,8 +63,14 @@ The account is closed as soon as:
 
 ![(AccountClosure_ClientInitiated_overview.png](_ressources/AccountClosure_ClientInitiated_overview.png)
 
-<br/><br/>
 
+<br/>
+
+### Best practise
+In the case where the end user requests an account closure, make sure the user has no outstanding debts before sending the API request.
+On Xpollens’ side, there is no condition related to the existence of debts before closing the account.
+
+<br/><br/>
 
 * * *
 ## Account closure initiated by the bank, with or without a notice period
@@ -284,6 +291,21 @@ In the case that the external account used to receive the funds is frozen / bloc
 In this case, a manual intervention by Xpollens will be necessary to return the accounts to another account. 
 
 <br/>
+
+### Callback ClosureRequestCreatedOrUpdated
+```json
+    "Payload": {
+        "type": "ClosureRequestCreatedOrUpdated",
+        "partnerCode": "oney",
+        "closureRequestId": "5a6e23fe-38e2-4e40-bba8-38d53c55adea",
+        "accountId": "7tidihh3np",
+        "reason": "KycEconomicDocument",
+        "initiative": "Bank",
+        "status": "InNoticePeriod",
+        "noticeEndDate": "2025-07-02T14:04:29.1829217Z",
+        "beneficiaryId": "a3b13f91-96a4-471b-a310-034dc228c490"
+    }
+```
 
 * * *
 ## Best pratices
