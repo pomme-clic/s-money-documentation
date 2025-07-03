@@ -66,7 +66,9 @@ The account is closed as soon as:
 
 
 * * *
-## Account closure initiated by the bank, with a notice period
+## Account closure initiated by the bank, with or without a notice period
+
+### Overview
 
 In this case, the account remains available for 60 days. After this "notice period", the closure process starts.
 Please note that this case does not apply when the account is closed due to fraud.
@@ -78,6 +80,20 @@ The account is closed after a minimum of 60 calendar days, as soon as one of the
 
 
 ![(AccountClosure_BankInitiated_overview.png](_ressources/AccountClosure_BankInitiated_overview.png)
+
+<br/>
+
+### Notice period
+
+| Motif | Description | Notice period | 
+| ---- | ---- | ----------- |
+| KycUpdate  | Failure to update KYC (Know Your Customer) information | Yes |
+| KycEconomicDocument | Failure to provide satisfactory justification for transactions carried out or planned on the account, despite repeated requests from the bank (An economic document is needed for customers collecting more than 1500€ over 2 rolling months) | Yes |
+| InactiveClient | No activity on account and no contact between the bank and the client | No |
+| DeceasedClient | The client is deceased | No | 
+| Fraud | The client has confirmed fraudulent behaviour | No |
+| ClientNotCompliantToY | Client not compliant with Xpollens Terms Of Use | Yes |
+
 
 <br/><br/>
 
