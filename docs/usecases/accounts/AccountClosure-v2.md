@@ -21,6 +21,7 @@ stateDiagram
 state fork_state <<fork>>
 Initialized	--> fork_state
 Activated --> fork_state
+Frozen --> fork_state
 
 fork_state --> PendingClosure
 PendingClosure --> Closed: Accounting Balance €0
