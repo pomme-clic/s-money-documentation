@@ -104,7 +104,7 @@ module.exports = {
             'usecases/accounts/AccountStatements', 
             'usecases/accounts/DebtsManagement',        
             'usecases/accounts/AccountClosure',
-		'usecases/accounts/AccountClosure-v2'
+		'usecases/accounts/AccountClosure_deprecated'
         ]
     },    {
         type: 'category',
