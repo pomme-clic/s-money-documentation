@@ -64,6 +64,10 @@ The account is closed as soon as:
 
 ![(AccountClosure_ClientInitiated_overview.png](_ressources/AccountClosure_ClientInitiated_overview.png)
 
+:::note
+The account is closed as soon as the closure SCT OUT is sent to the interbank market. As with any SCT OUT, we cannot guarantee that the transfer will be successfully credited.
+If the closure SCT OUT is returned — for example, if the external account is unavailable and the client account has already been closed — the funds will be credited to the partner's suspense account.
+:::
 
 <br/>
 
@@ -88,6 +92,11 @@ The account is closed after a minimum of 60 calendar days, as soon as one of the
 
 
 ![(AccountClosure_BankInitiated_overview.png](_ressources/AccountClosure_BankInitiated_overview.png)
+
+:::note
+The account is closed as soon as the closure SCT OUT is sent to the interbank market. As with any SCT OUT, we cannot guarantee that the transfer will be successfully credited.
+If the closure SCT OUT is returned — for example, if the external account is unavailable and the client account has already been closed — the funds will be credited to the partner's suspense account.
+:::
 
 <br/>
 
